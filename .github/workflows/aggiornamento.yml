@@ -1,0 +1,65 @@
+name: OpenSpese — Aggiornamento Giornaliero
+
+on:
+  workflow_dispatch:
+
+  # Ogni giorno alle 15:30 UTC (~17:30 italiane, dopo il run dell'albo-pretorio
+  # per non sovrapporre il carico sul portale comunale)
+  schedule:
+    - cron: '30 15 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: openspese-run
+  cancel-in-progress: false
+
+jobs:
+  aggiornamento:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Installa Tesseract e Poppler
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-ita poppler-utils
+
+      - name: Configura Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze Python
+        run: pip install -r requirements.txt
+
+      - name: Esegui scraper
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          for i in 1 2 3; do
+            python scripts/scraper.py && break
+            echo "Tentativo $i fallito, riprovo tra 60 secondi..."
+            sleep 60
+          done
+
+      - name: Pubblica su Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python scripts/publisher_telegram.py
+
+      - name: Aggiorna dati del sito
+        run: python scripts/genera_sito.py
+
+      - name: Salva risultati nel repository
+        run: |
+          git config user.name "OpenSpeseBot"
+          git config user.email "bot@openspese.local"
+          git pull --rebase --autostash
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Aggiornamento spese: $(date '+%Y-%m-%d')"
+          git push

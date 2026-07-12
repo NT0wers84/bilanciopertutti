@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenSpese Pieve Emanuele — Le spese del Comune, spiegate</title>
+<meta name="description" content="Monitoraggio civico indipendente della spesa del Comune di Pieve Emanuele: determinazioni contabili e liquidazioni estratte ogni giorno dall'Albo Pretorio, spiegate in parole semplici.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --blu: #1B4FCA; --blu-scuro: #123785; --verde: #0E7C5B;
+    --fondo: #F6F5F1; --carta: #FFFFFF; --testo: #26251F;
+    --grigio: #636158; --bordo: #E4E2DA; --rosso: #B3372B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--fondo); color: var(--testo); line-height: 1.55; }
+  a { color: var(--blu); }
+
+  header { background: var(--blu-scuro); color: #fff; padding: 28px 16px 24px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header .wrap { padding: 0; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header h1 { font-size: 26px; letter-spacing: -0.3px; }
+  header h1 span { color: #9DC4FF; }
+  header p { margin-top: 6px; font-size: 14px; opacity: .85; max-width: 640px; }
+  .badge-agg { display: inline-block; margin-top: 10px; font-size: 12px;
+               background: rgba(255,255,255,.12); padding: 3px 10px; border-radius: 20px; }
+
+  nav.filtri { background: var(--carta); border-bottom: 1px solid var(--bordo);
+               position: sticky; top: 0; z-index: 10; }
+  .filtri-inner { max-width: 1080px; margin: 0 auto; padding: 10px 16px;
+                  display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .filtri select, .filtri input[type=search] {
+    font: inherit; font-size: 13px; padding: 7px 10px; border: 1px solid var(--bordo);
+    border-radius: 8px; background: #fff; color: var(--testo); }
+  .filtri input[type=search] { flex: 1; min-width: 160px; }
+
+  .kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+         gap: 12px; margin: 20px 0; }
+  .kpi .card { background: var(--carta); border: 1px solid var(--bordo);
+               border-radius: 12px; padding: 16px; }
+  .kpi .valore { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+  .kpi .etichetta { font-size: 12px; color: var(--grigio); margin-top: 2px; }
+
+  .grafici { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 760px) { .grafici { grid-template-columns: 1fr; } }
+  .grafico-card { background: var(--carta); border: 1px solid var(--bordo);
+                  border-radius: 12px; padding: 16px; }
+  .grafico-card h3 { font-size: 14px; margin-bottom: 10px; color: var(--grigio);
+                     font-weight: 600; }
+  .grafico-card.largo { grid-column: 1 / -1; }
+  .grafico-contenitore { position: relative; height: 260px; }
+
+  h2.sezione { font-size: 18px; margin: 26px 0 12px; }
+  .conteggio-feed { font-size: 13px; color: var(--grigio); margin-bottom: 12px; }
+
+  .spesa-card { background: var(--carta); border: 1px solid var(--bordo);
+                border-radius: 12px; padding: 16px; margin-bottom: 10px; }
+  .spesa-testata { display: flex; justify-content: space-between; gap: 12px;
+                   flex-wrap: wrap; align-items: baseline; }
+  .spesa-importo { font-size: 20px; font-weight: 700; color: var(--blu-scuro);
+                   white-space: nowrap; }
+  .spesa-importo.nd { color: var(--grigio); font-size: 14px; font-weight: 500; }
+  .spesa-beneficiario { font-weight: 600; font-size: 15px; }
+  .spesa-descrizione { font-size: 14px; color: var(--testo); margin-top: 6px; }
+  .spesa-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px;
+                font-size: 11.5px; align-items: center; }
+  .tag { background: var(--fondo); border: 1px solid var(--bordo);
+         padding: 2px 9px; border-radius: 20px; color: var(--grigio); }
+  .tag.categoria { background: #E8F0FE; border-color: #C6DAFC; color: var(--blu-scuro); }
+  .tag.liquidazione { background: #E6F4EE; border-color: #C2E3D4; color: var(--verde); }
+  .spesa-oggetto { font-size: 12px; color: var(--grigio); margin-top: 8px;
+                   display: none; border-top: 1px dashed var(--bordo); padding-top: 8px; }
+  .spesa-card.aperta .spesa-oggetto { display: block; }
+  .spesa-azioni { margin-top: 10px; display: flex; gap: 14px; font-size: 12.5px; }
+  .spesa-azioni button { background: none; border: none; color: var(--blu);
+                         cursor: pointer; font: inherit; font-size: 12.5px; padding: 0; }
+
+  .paginazione { display: flex; justify-content: center; gap: 8px; margin: 20px 0 10px; }
+  .paginazione button { font: inherit; font-size: 13px; padding: 8px 18px;
+    border: 1px solid var(--bordo); background: var(--carta); border-radius: 8px;
+    cursor: pointer; }
+  .paginazione button:disabled { opacity: .4; cursor: default; }
+
+  .vuoto, .caricamento { text-align: center; color: var(--grigio); padding: 50px 0;
+                         font-size: 14px; }
+
+  footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
+           padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
+  footer .wrap p { margin-bottom: 8px; max-width: 780px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>OpenSpese <span>Pieve Emanuele</span></h1>
+    <p>Ogni determinazione contabile e liquidazione pubblicata dal Comune, letta
+       automaticamente e spiegata in parole semplici. Progetto civico indipendente,
+       non affiliato al Comune di Pieve Emanuele.</p>
+    <span class="badge-agg" id="badge-agg">caricamento…</span>
+  </div>
+</header>
+
+<nav class="filtri">
+  <div class="filtri-inner">
+    <select id="filtro-anno" title="Anno"></select>
+    <select id="filtro-categoria" title="Categoria"></select>
+    <select id="filtro-tipo" title="Tipo atto">
+      <option value="">Tutti gli atti</option>
+      <option value="determinazione">Determinazioni</option>
+      <option value="liquidazione">Liquidazioni</option>
+    </select>
+    <input type="search" id="filtro-testo" placeholder="Cerca beneficiario, oggetto, CIG…">
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="kpi" id="kpi"></div>
+
+  <div class="grafici">
+    <div class="grafico-card largo">
+      <h3>Spesa per mese</h3>
+      <div class="grafico-contenitore"><canvas id="grafico-mensile"></canvas></div>
+    </div>
+    <div class="grafico-card">
+      <h3>Spesa per categoria</h3>
+      <div class="grafico-contenitore"><canvas id="grafico-categorie"></canvas></div>
+    </div>
+    <div class="grafico-card">
+      <h3>Maggiori beneficiari</h3>
+      <div class="grafico-contenitore"><canvas id="grafico-beneficiari"></canvas></div>
+    </div>
+  </div>
+
+  <h2 class="sezione">Le spese, una per una</h2>
+  <div class="conteggio-feed" id="conteggio-feed"></div>
+  <div id="feed"><div class="caricamento">Caricamento dati…</div></div>
+  <div class="paginazione">
+    <button id="pag-prima">« Prima</button>
+    <button id="pag-prev">‹ Precedente</button>
+    <button id="pag-next">Successiva ›</button>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Come funziona.</strong> Un automatismo legge ogni giorno l'Albo Pretorio
+       del Comune di Pieve Emanuele, scarica le determinazioni contabili e le liquidazioni
+       e ne estrae con l'intelligenza artificiale beneficiario, importo e ambito di spesa.
+       L'estrazione automatica può contenere errori: fa fede sempre
+       l'<em>atto originale</em>, linkato in ogni scheda.</p>
+    <p>Dati: <a href="https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza" target="_blank" rel="noopener">Amministrazione Trasparente — Comune di Pieve Emanuele</a>.
+       Codice sorgente: <a href="https://github.com/NT0wers84/bilanciopertutti" target="_blank" rel="noopener">GitHub</a>.
+       Progetto gemello: <a href="https://nt0wers84.github.io/albo-pretorio/" target="_blank" rel="noopener">Albo Pretorio in parole semplici</a>.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+const PER_PAGINA = 25;
+let SPESE = [];
+let filtrate = [];
+let pagina = 0;
+let grafici = {};
+
+const eur = v => v == null ? null :
+  v.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: v >= 1000 ? 0 : 2 });
+const eurCompatto = v => {
+  if (v >= 1e6) return (v / 1e6).toLocaleString("it-IT", { maximumFractionDigits: 1 }) + " mln €";
+  if (v >= 1e3) return Math.round(v / 1e3).toLocaleString("it-IT") + " mila €";
+  return Math.round(v) + " €";
+};
+const dataIt = iso => {
+  if (!iso) return "";
+  const [a, m, g] = iso.split("-");
+  return `${g}/${m}/${a}`;
+};
+const esc = s => (s || "").replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+async function avvia() {
+  try {
+    const [spese, meta] = await Promise.all([
+      fetch("data/spese.json").then(r => r.json()),
+      fetch("data/meta.json").then(r => r.json()).catch(() => null),
+    ]);
+    SPESE = spese;
+    document.getElementById("badge-agg").textContent =
+      meta ? `Aggiornato al ${meta.aggiornato} · ${meta.n_spese} atti` : `${spese.length} atti`;
+    costruisciFiltri();
+    applicaFiltri();
+  } catch (e) {
+    document.getElementById("feed").innerHTML =
+      '<div class="vuoto">Dati non ancora disponibili. Il primo aggiornamento automatico li pubblicherà qui.</div>';
+    document.getElementById("badge-agg").textContent = "in attesa del primo aggiornamento";
+  }
+}
+
+function costruisciFiltri() {
+  const anni = [...new Set(SPESE.map(s => s.anno).filter(Boolean))].sort((a, b) => b - a);
+  const selAnno = document.getElementById("filtro-anno");
+  selAnno.innerHTML = '<option value="">Tutti gli anni</option>' +
+    anni.map(a => `<option value="${a}">${a}</option>`).join("");
+  if (anni.length) selAnno.value = anni[0];   // default: anno più recente
+
+  const categorie = [...new Set(SPESE.map(s => s.categoria).filter(Boolean))].sort();
+  document.getElementById("filtro-categoria").innerHTML =
+    '<option value="">Tutte le categorie</option>' +
+    categorie.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
+
+  ["filtro-anno", "filtro-categoria", "filtro-tipo"].forEach(id =>
+    document.getElementById(id).addEventListener("change", applicaFiltri));
+  let timer;
+  document.getElementById("filtro-testo").addEventListener("input", () => {
+    clearTimeout(timer); timer = setTimeout(applicaFiltri, 250);
+  });
+}
+
+function applicaFiltri() {
+  const anno = document.getElementById("filtro-anno").value;
+  const cat = document.getElementById("filtro-categoria").value;
+  const tipo = document.getElementById("filtro-tipo").value;
+  const testo = document.getElementById("filtro-testo").value.trim().toLowerCase();
+
+  filtrate = SPESE.filter(s => {
+    if (anno && String(s.anno) !== anno) return false;
+    if (cat && s.categoria !== cat) return false;
+    if (tipo && s.tipo_atto !== tipo) return false;
+    if (testo) {
+      const blob = `${s.beneficiario || ""} ${s.oggetto || ""} ${s.descrizione_sintetica || ""} ${s.cig || ""} ${s.numero_raw || ""}`.toLowerCase();
+      if (!blob.includes(testo)) return false;
+    }
+    return true;
+  });
+
+  pagina = 0;
+  aggiornaKpi();
+  aggiornaGrafici();
+  disegnaFeed();
+}
+
+function aggiornaKpi() {
+  const conImporto = filtrate.filter(s => s.importo_euro != null);
+  const totale = conImporto.reduce((t, s) => t + s.importo_euro, 0);
+  const beneficiari = new Set(filtrate.map(s => s.beneficiario).filter(Boolean));
+  const massima = conImporto.reduce((mx, s) => s.importo_euro > (mx?.importo_euro ?? -1) ? s : mx, null);
+
+  document.getElementById("kpi").innerHTML = `
+    <div class="card"><div class="valore">${eurCompatto(totale)}</div>
+      <div class="etichetta">spesa tracciata (${conImporto.length} atti con importo)</div></div>
+    <div class="card"><div class="valore">${filtrate.length.toLocaleString("it-IT")}</div>
+      <div class="etichetta">atti di spesa</div></div>
+    <div class="card"><div class="valore">${beneficiari.size.toLocaleString("it-IT")}</div>
+      <div class="etichetta">beneficiari distinti</div></div>
+    <div class="card"><div class="valore">${massima ? eurCompatto(massima.importo_euro) : "—"}</div>
+      <div class="etichetta">spesa singola più alta${massima?.beneficiario ? " · " + esc(massima.beneficiario).slice(0, 40) : ""}</div></div>`;
+}
+
+const PALETTE = ["#1B4FCA","#0E7C5B","#B3372B","#B08A00","#6B4FA1","#0E7C9B",
+                 "#C05B21","#4A6B2A","#8A3A62","#425364","#7A6A52","#2E8B8B",
+                 "#9B4F2E","#5E5A9B","#3A7A4A","#A05252"];
+
+function nuovoGrafico(id, config) {
+  if (grafici[id]) grafici[id].destroy();
+  grafici[id] = new Chart(document.getElementById(id), config);
+}
+
+function aggiornaGrafici() {
+  const conImporto = filtrate.filter(s => s.importo_euro != null);
+
+  // Mensile
+  const mesi = {};
+  conImporto.forEach(s => {
+    const m = (s.data_pubblicazione || "").slice(0, 7);
+    if (m) mesi[m] = (mesi[m] || 0) + s.importo_euro;
+  });
+  const chiaviMese = Object.keys(mesi).sort();
+  const nomiMese = ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+  nuovoGrafico("grafico-mensile", {
+    type: "bar",
+    data: { labels: chiaviMese.map(k => nomiMese[+k.slice(5) - 1] + " " + k.slice(2, 4)),
+      datasets: [{ data: chiaviMese.map(k => mesi[k]), backgroundColor: "#1B4FCA", borderRadius: 4 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: c => eur(c.raw) } } },
+      scales: { y: { ticks: { callback: v => eurCompatto(v) } } } }
+  });
+
+  // Categorie
+  const cats = {};
+  conImporto.forEach(s => { cats[s.categoria || "Da classificare"] =
+    (cats[s.categoria || "Da classificare"] || 0) + s.importo_euro; });
+  const catOrd = Object.entries(cats).sort((a, b) => b[1] - a[1]);
+  nuovoGrafico("grafico-categorie", {
+    type: "doughnut",
+    data: { labels: catOrd.map(c => c[0]),
+      datasets: [{ data: catOrd.map(c => c[1]), backgroundColor: PALETTE, borderWidth: 1 }] },
+    options: { maintainAspectRatio: false, plugins: {
+      legend: { position: "right", labels: { boxWidth: 10, font: { size: 10 },
+        generateLabels: ch => ch.data.labels.map((l, i) => ({
+          text: l.length > 22 ? l.slice(0, 22) + "…" : l,
+          fillStyle: PALETTE[i % PALETTE.length], index: i, strokeStyle: "transparent" })) } },
+      tooltip: { callbacks: { label: c => `${c.label}: ${eur(c.raw)}` } } } }
+  });
+
+  // Top beneficiari
+  const bens = {};
+  conImporto.forEach(s => { if (s.beneficiario)
+    bens[s.beneficiario] = (bens[s.beneficiario] || 0) + s.importo_euro; });
+  const top = Object.entries(bens).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  nuovoGrafico("grafico-beneficiari", {
+    type: "bar",
+    data: { labels: top.map(b => b[0].length > 26 ? b[0].slice(0, 26) + "…" : b[0]),
+      datasets: [{ data: top.map(b => b[1]), backgroundColor: "#0E7C5B", borderRadius: 4 }] },
+    options: { indexAxis: "y", maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: c => eur(c.raw) } } },
+      scales: { x: { ticks: { callback: v => eurCompatto(v) } },
+                y: { ticks: { font: { size: 10 } } } } }
+  });
+}
+
+function disegnaFeed() {
+  const feed = document.getElementById("feed");
+  document.getElementById("conteggio-feed").textContent =
+    `${filtrate.length.toLocaleString("it-IT")} atti trovati`;
+
+  if (!filtrate.length) {
+    feed.innerHTML = '<div class="vuoto">Nessuna spesa corrisponde ai filtri.</div>';
+    aggiornaPaginazione();
+    return;
+  }
+
+  const blocco = filtrate.slice(pagina * PER_PAGINA, (pagina + 1) * PER_PAGINA);
+  feed.innerHTML = blocco.map(s => {
+    const tipoTag = s.tipo_atto === "liquidazione"
+      ? '<span class="tag liquidazione">Liquidazione</span>'
+      : '<span class="tag">Determinazione</span>';
+    return `
+    <article class="spesa-card">
+      <div class="spesa-testata">
+        <div class="spesa-beneficiario">${esc(s.beneficiario) || "<em>Beneficiario non indicato</em>"}</div>
+        <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""}">
+          ${s.importo_euro != null ? eur(s.importo_euro) : "importo n.d."}</div>
+      </div>
+      <div class="spesa-descrizione">${esc(s.descrizione_sintetica) || esc((s.oggetto || "").slice(0, 160))}</div>
+      <div class="spesa-meta">
+        ${tipoTag}
+        <span class="tag categoria">${esc(s.categoria || "Da classificare")}</span>
+        <span class="tag">n. ${esc(s.numero_raw)}</span>
+        ${s.data_pubblicazione ? `<span class="tag">${dataIt(s.data_pubblicazione)}</span>` : ""}
+        ${s.cig ? `<span class="tag">CIG ${esc(s.cig)}</span>` : ""}
+      </div>
+      <div class="spesa-oggetto"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}
+        ${s.capitolo_bilancio ? `<br><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}` : ""}</div>
+      <div class="spesa-azioni">
+        <button onclick="this.closest('.spesa-card').classList.toggle('aperta')">dettagli ▾</button>
+        ${s.url_atto ? `<a href="${esc(s.url_atto)}" target="_blank" rel="noopener">Vedi atto originale ↗</a>` : ""}
+      </div>
+    </article>`;
+  }).join("");
+  aggiornaPaginazione();
+}
+
+function aggiornaPaginazione() {
+  const ultime = Math.max(Math.ceil(filtrate.length / PER_PAGINA) - 1, 0);
+  document.getElementById("pag-prima").disabled = pagina === 0;
+  document.getElementById("pag-prev").disabled = pagina === 0;
+  document.getElementById("pag-next").disabled = pagina >= ultime;
+}
+document.getElementById("pag-prima").onclick = () => { pagina = 0; disegnaFeed(); scrollAlFeed(); };
+document.getElementById("pag-prev").onclick = () => { if (pagina > 0) { pagina--; disegnaFeed(); scrollAlFeed(); } };
+document.getElementById("pag-next").onclick = () => { pagina++; disegnaFeed(); scrollAlFeed(); };
+const scrollAlFeed = () => document.querySelector("h2.sezione").scrollIntoView({ behavior: "smooth" });
+
+avvia();
+</script>
+</body>
+</html>

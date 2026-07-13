@@ -51,5 +51,56 @@
     "spese": 5
    }
   }
+ },
+ "finestre_completate": [],
+ "censimento_ricerca": {
+  "provvedimenti|2026-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "provvedimenti|2024-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "provvedimenti|2022-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "provvedimenti|2020-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "provvedimenti|2018-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "provvedimenti|2016-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2026-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2024-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2022-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2020-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2018-06": {
+   "totale": 0,
+   "spese": 0
+  },
+  "albo|2016-06": {
+   "totale": 0,
+   "spese": 0
+  }
  }
 }

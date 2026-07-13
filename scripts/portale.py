@@ -84,31 +84,90 @@ def _fetch(url: str) -> str:
 # GRIGLIE ATTI (lista + paginazione)
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _ha_tabella_atti(html: str) -> bool:
+    """True se la pagina contiene una tabella con le colonne tipiche degli atti."""
+    soup = BeautifulSoup(html, "html.parser")
+    for tabella in soup.find_all("table"):
+        intestazioni = " ".join(th.get_text(strip=True).lower() for th in tabella.find_all("th"))
+        if "oggetto" in intestazioni and ("numero" in intestazioni or "registro" in intestazioni):
+            return True
+    return False
+
+
+def _url_mostra_lista(pagina_path: str) -> str:
+    """URL con l'azione mostraLista del portlet pubblicazioni (lista completa)."""
+    return (f"{BASE_URL}/web/trasparenza/{pagina_path}"
+            "?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet"
+            "&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view"
+            "&p_p_col_id=column-1&p_p_col_count=1"
+            "&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista")
+
+
 def scopri_griglie_storico() -> list[str]:
     """
-    Le sezioni 'Provvedimenti' di JCityGov espongono le griglie come link
-    /-/papca/igrid/<id>/<nome>/. La struttura esatta varia da comune a comune,
-    quindi la scopriamo a runtime e la logghiamo per diagnosi.
+    Trova gli URL da cui scaricare l'archivio storico dei provvedimenti.
+    Strategie, in ordine:
+      1. link /-/papca/igrid/ nelle landing papca-g
+      2. link con action mostraLista/cercaPubblicazioni già presenti in pagina
+      3. URL mostraLista costruito a mano (pattern JCityGov standard)
+      4. la landing stessa, se contiene direttamente la tabella atti
+    Se tutto fallisce, logga i link candidati della pagina per diagnosi.
     """
     griglie: list[str] = []
+
+    def aggiungi(url: str, motivo: str):
+        if url not in griglie:
+            griglie.append(url)
+            log.info(f"Griglia storico trovata ({motivo}): {url[:140]}")
+
     for landing in STORICO_LANDING_URLS:
         try:
             html = _fetch(landing)
         except requests.RequestException as e:
             log.warning(f"Landing storico non raggiungibile ({landing}): {e}")
             continue
+
         soup = BeautifulSoup(html, "html.parser")
+        candidati_diagnosi = []
+
+        # 1+2. Link utili già presenti nell'HTML
         for a in soup.find_all("a", href=True):
             href = a["href"]
+            url = href if href.startswith("http") else BASE_URL + href
             if "/-/papca/igrid/" in href:
-                url = href if href.startswith("http") else BASE_URL + href
-                url = url.split("?")[0]
-                if url not in griglie:
-                    griglie.append(url)
-                    log.info(f"Griglia storico trovata: {url}  (testo link: {a.get_text(strip=True)!r})")
+                aggiungi(url.split("?")[0], "link igrid")
+            elif "mostraLista" in href or "cercaPubblicazioni" in href:
+                aggiungi(url, "link mostraLista")
+            elif "papca" in href or "jcitygov" in href.lower():
+                candidati_diagnosi.append(f"{a.get_text(strip=True)[:40]!r} → {href[:120]}")
+
+        # 4. La landing contiene già la tabella?
+        if _ha_tabella_atti(html):
+            aggiungi(landing, "tabella nella landing")
+
+        # 3. mostraLista costruito a mano
+        if not griglie:
+            pagina_path = landing.rstrip("/").split("/")[-1]
+            url_tentativo = _url_mostra_lista(pagina_path)
+            try:
+                html_lista = _fetch(url_tentativo)
+                if _ha_tabella_atti(html_lista):
+                    aggiungi(url_tentativo, "mostraLista costruito")
+                else:
+                    log.info(f"mostraLista su {pagina_path}: risponde ma senza tabella atti "
+                             f"({len(html_lista)} byte)")
+            except requests.RequestException as e:
+                log.info(f"mostraLista su {pagina_path} non funziona: {e}")
+
+        # Diagnosi: se ancora nulla, mostra cosa c'è davvero in pagina
+        if not griglie and candidati_diagnosi:
+            log.warning(f"DIAGNOSI {landing} — link papca/jcitygov presenti in pagina:")
+            for c in candidati_diagnosi[:40]:
+                log.warning(f"  {c}")
+
     if not griglie:
-        log.warning("Nessuna griglia storico trovata sulle pagine papca-g. "
-                    "Il backfill userà solo l'albo corrente.")
+        log.warning("Nessuna griglia storico trovata. Il backfill userà solo l'albo corrente. "
+                    "Controlla i log DIAGNOSI qui sopra per capire la struttura reale.")
     return griglie
 
 

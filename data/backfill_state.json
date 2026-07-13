@@ -6,6 +6,38 @@
     "totale": 40,
     "spese": 10
    }
+  },
+  "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_resetFilter=true&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista": {
+   "2025": {
+    "totale": 29,
+    "spese": 0
+   },
+   "2026": {
+    "totale": 11,
+    "spese": 0
+   }
+  },
+  "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_paginationAction=NEXT&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista": {
+   "2024": {
+    "totale": 11,
+    "spese": 0
+   },
+   "2025": {
+    "totale": 9,
+    "spese": 0
+   }
+  },
+  "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_paginationAction=LAST&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista": {
+   "2021": {
+    "totale": 12,
+    "spese": 5
+   }
+  },
+  "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g": {
+   "2021": {
+    "totale": 12,
+    "spese": 5
+   }
   }
  }
 }

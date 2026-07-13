@@ -184,11 +184,15 @@ def scrape_griglia(url_griglia: str,
     """
     atti_noti = atti_noti or set()
     atti: list[dict] = []
+    chiavi_raccolte: set[tuple] = set()
     url_corrente: str | None = url_griglia
     pagina = 1
+    firma_precedente = None
+    modalita_cur = False
 
     while url_corrente and pagina <= max_pagine:
-        log.info(f"Scarico pagina {pagina}: {url_corrente[:120]}")
+        if pagina == 1 or pagina % 25 == 0 or not modalita_cur:
+            log.info(f"Scarico pagina {pagina}: {url_corrente[:120]}")
         try:
             html = _fetch(url_corrente)
         except requests.RequestException as e:
@@ -198,32 +202,75 @@ def scrape_griglia(url_griglia: str,
         soup = BeautifulSoup(html, "html.parser")
         tabella = soup.find("table")
         if not tabella:
-            log.warning(f"Nessuna tabella a pagina {pagina}. Fine elenco.")
+            log.info(f"Nessuna tabella a pagina {pagina}. Fine elenco.")
             break
 
         intestazioni = [th.get_text(strip=True) for th in tabella.find_all("th")]
         idx = _trova_indici_colonne(intestazioni)
 
-        nuovi_in_pagina = 0
+        righe_pagina = []
         for riga in tabella.find_all("tr")[1:]:
             celle = riga.find_all("td")
             if len(celle) < max(idx.values()) + 1:
                 continue
             atto = _estrai_atto_da_riga(celle, idx, riga)
             if atto:
-                atti.append(atto)
-                if (atto["numero_raw"], atto["oggetto"]) not in atti_noti:
-                    nuovi_in_pagina += 1
+                righe_pagina.append(atto)
+
+        if not righe_pagina:
+            log.info(f"Pagina {pagina} senza righe. Fine elenco.")
+            break
+
+        # Stop anti-loop: la paginazione _cur ignorata restituisce sempre pagina 1
+        firma = (righe_pagina[0]["numero_raw"], righe_pagina[0]["oggetto"],
+                 righe_pagina[-1]["numero_raw"], righe_pagina[-1]["oggetto"])
+        if firma == firma_precedente:
+            log.info(f"Pagina {pagina} identica alla precedente: fine paginazione.")
+            break
+        firma_precedente = firma
+
+        nuovi_in_pagina = 0
+        duplicate_scrape = 0
+        for atto in righe_pagina:
+            chiave = (atto["numero_raw"], atto["oggetto"])
+            if chiave in chiavi_raccolte:
+                duplicate_scrape += 1
+                continue
+            chiavi_raccolte.add(chiave)
+            atti.append(atto)
+            if chiave not in atti_noti:
+                nuovi_in_pagina += 1
+
+        # Se l'intera pagina è fatta di righe già viste in questo scrape,
+        # la paginazione sta girando a vuoto.
+        if duplicate_scrape == len(righe_pagina):
+            log.info(f"Pagina {pagina}: solo righe già raccolte, stop.")
+            break
 
         if stop_se_tutti_noti and atti_noti and nuovi_in_pagina == 0:
             log.info(f"  Pagina {pagina}: tutti gli atti già noti, stop paginazione")
             break
 
-        url_corrente = _trova_link_avanti(soup, url_corrente)
+        prossimo = _trova_link_avanti(soup, url_corrente)
+        if prossimo is None and len(righe_pagina) >= 10:
+            # 'Avanti' è solo JavaScript: ripiego sul parametro Liferay _cur
+            prossimo = _url_con_cur(url_griglia, pagina + 1)
+            if not modalita_cur:
+                log.info(f"Paginazione JS rilevata: passo al parametro _cur "
+                         f"({prossimo[:120]})")
+                modalita_cur = True
+        url_corrente = prossimo
         pagina += 1
         time.sleep(1)  # rispetto del server
 
-    log.info(f"Griglia {url_griglia[:80]}: {len(atti)} righe totali")
+    tipi = {}
+    for a in atti:
+        tipi[a["tipo"]] = tipi.get(a["tipo"], 0) + 1
+    log.info(f"Griglia {url_griglia[:80]}: {len(atti)} righe in {pagina} pagine")
+    log.info("Tipi distinti trovati (per capire le etichette delle spese):")
+    for t, c in sorted(tipi.items(), key=lambda x: -x[1]):
+        marcatore = " ← SPESA" if e_spesa(t) else ""
+        log.info(f"  {c:5} × {t!r}{marcatore}")
     return atti
 
 
@@ -288,14 +335,37 @@ def _iso(data_it: str) -> str:
 
 
 def _trova_link_avanti(soup: BeautifulSoup, url_corrente: str) -> str | None:
+    """
+    Cerca il link 'Avanti'. Nelle griglie igrid è un href statico; nelle
+    griglie mostraLista è javascript:void(0) con l'URL vero (se c'è) dentro
+    l'onclick. Gli href javascript:/# vengono scartati.
+    """
     paginazione = soup.find("div", class_="pagination pagination-centered")
     candidati = paginazione.find_all("a") if paginazione else soup.find_all("a")
     for link in candidati:
-        if link.get_text(strip=True) in ("Avanti", "»", "›", "Next", ">"):
-            href = link.get("href", "")
-            if href and href != "#" and href != url_corrente:
-                return href if href.startswith("http") else BASE_URL + href
+        if link.get_text(strip=True) not in ("Avanti", "»", "›", "Next", ">"):
+            continue
+        href = link.get("href", "")
+        if href and href not in ("#", url_corrente) and not href.lower().startswith("javascript"):
+            return href if href.startswith("http") else BASE_URL + href
+        # URL nascosto nell'onclick (pattern Liferay: location.href='...' o open('...'))
+        onclick = link.get("onclick", "") or ""
+        m = re.search(r"['\"](https?://[^'\"]+|/[^'\"]{10,})['\"]", onclick)
+        if m:
+            u = m.group(1)
+            return u if u.startswith("http") else BASE_URL + u
     return None
+
+
+def _url_con_cur(url_griglia: str, cur: int) -> str:
+    """
+    Paginazione Liferay SearchContainer: parametro _<portlet>_cur=N.
+    Usata come ripiego quando 'Avanti' è solo JavaScript.
+    """
+    param = "_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_cur"
+    base = re.sub(rf"[&?]{param}=\d+", "", url_griglia)
+    sep = "&" if "?" in base else "?"
+    return f"{base}{sep}{param}={cur}"
 
 
 def e_spesa(tipo: str) -> bool:

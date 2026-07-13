@@ -41,13 +41,23 @@ SESSION.headers.update({"User-Agent": "Mozilla/5.0 (civic-tech; OpenSpese Pieve 
 
 def lista_dataset(max_pagine: int) -> list[dict]:
     trovati = []
+    errori_consecutivi = 0
     for pagina in range(max_pagine):
         url = f"{BASE}/catalog?page={pagina}"
         try:
-            r = SESSION.get(url, timeout=30)
+            r = SESSION.get(url, timeout=15)
             r.raise_for_status()
+            errori_consecutivi = 0
         except requests.RequestException as e:
+            errori_consecutivi += 1
             log.warning(f"Pagina {pagina} non raggiungibile: {e}")
+            if errori_consecutivi >= 3:
+                log.error("3 errori consecutivi: il sito RGS è irraggiungibile da "
+                          "questa rete (blocca gli IP dei datacenter, GitHub Actions "
+                          "incluso). Lancia questo script dalla tua rete di casa: "
+                          "pip install requests beautifulsoup4 && "
+                          "python scripts/bdap_scopri.py")
+                break
             continue
 
         soup = BeautifulSoup(r.text, "html.parser")

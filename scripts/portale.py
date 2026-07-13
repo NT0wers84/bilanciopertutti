@@ -441,87 +441,134 @@ def _iso_a_it(data_iso: str) -> str:
         return data_iso
 
 
-def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | None:
-    """
-    Invia il form di ricerca del portlet pubblicazioni con un intervallo di
-    date di pubblicazione (ISO, con ripiego dd/mm/yyyy). Il filtro resta
-    nella sessione Liferay: le pagine successive si leggono con la normale
-    paginazione della lista (mostraLista + _cur).
+# Il form nella pagina ha action=eseguiOrdinamentoLista (ordinamento!):
+# il JS lo riscrive al submit. Action di ricerca candidate del portlet:
+AZIONI_RICERCA = ["cercaPubblicazioni", "eseguiRicerca", "ricercaPubblicazioni",
+                  "cerca", "eseguiRicercaAvanzata", "mostraLista"]
 
-    Restituisce l'HTML della prima pagina dei risultati, o None se il form
-    non è disponibile.
-    """
+# Cache della combinazione funzionante per pagina-form: {url_pagina: (azione, sse, formato)}
+_COMBO_RICERCA: dict[str, tuple] = {}
+
+
+def _parse_tabella(html: str) -> list[dict]:
+    """Estrae le righe atti dalla prima tabella di una pagina (senza paginare)."""
+    soup = BeautifulSoup(html, "html.parser")
+    tabella = soup.find("table")
+    if not tabella:
+        return []
+    intestazioni = [th.get_text(strip=True) for th in tabella.find_all("th")]
+    idx = _trova_indici_colonne(intestazioni)
+    righe = []
+    for riga in tabella.find_all("tr")[1:]:
+        celle = riga.find_all("td")
+        if len(celle) < max(idx.values()) + 1:
+            continue
+        atto = _estrai_atto_da_riga(celle, idx, riga)
+        if atto:
+            righe.append(atto)
+    return righe
+
+
+def _leggi_form_ricerca(url_pagina: str):
+    """Trova il form con i campi data. Restituisce (action_url, dati_base) o None."""
     try:
         html = _fetch(url_pagina)
     except requests.RequestException as e:
         log.warning(f"Ricerca: pagina form non raggiungibile ({e})")
         return None
-
     soup = BeautifulSoup(html, "html.parser")
-    form = None
     for f in soup.find_all("form"):
         if f.find("input", attrs={"name": f"{PORTLET_PREFIX}dataPubblicazioneDa"}):
-            form = f
-            break
-    if form is None:
-        log.warning(f"Ricerca: nessun form con campo data in {url_pagina[:100]}")
-        return None
-    azione = form.get("action", "")
-    if not azione or azione == "#":
-        log.warning("Ricerca: form senza action utilizzabile")
-        return None
-
-    log.info(f"Ricerca: action completa del form → {azione}")
-
-    base_dati = {}
-    for campo in form.find_all(["input", "button"]):
-        nome = campo.get("name")
-        if nome:
-            base_dati[nome] = campo.get("value", "")
-
-    ultimo_html = None
-    for formatta, etichetta in ((lambda d: d, "ISO"), (_iso_a_it, "it")):
-        dati = dict(base_dati)
-        dati[f"{PORTLET_PREFIX}dataPubblicazioneDa"] = formatta(data_da)
-        dati[f"{PORTLET_PREFIX}dataPubblicazioneA"] = formatta(data_a)
-        try:
-            r = SESSION.post(azione, data=dati, timeout=90)
-            r.raise_for_status()
-        except requests.RequestException as e:
-            log.warning(f"Ricerca: POST fallito ({e})")
-            return None
-        redirect = " → ".join(h.url[:90] for h in r.history) or "nessuno"
-        log.info(f"Ricerca POST (formato {etichetta}): status {r.status_code}, "
-                 f"{len(r.text)} byte, redirect: {redirect}")
-        log.info(f"  URL finale: {r.url[:150]}")
-
-        n = _conta_righe_tabella(r.text)
-        log.info(f"  Righe nella risposta diretta: {n}")
-        ultimo_html = r.text
-        if n > 0:
-            return r.text
-
-        # I risultati potrebbero essere renderizzati su un'altra pagina
-        # (il filtro vive nella sessione): sonda i render possibili.
-        slug = re.search(r"/web/trasparenza/([a-z0-9\-]+)", azione)
-        slug = slug.group(1) if slug else "papca-g"
-        pagine_render = [
-            ("mostraLista", _url_mostra_lista(slug)),
-            ("risultati-ricerca", f"{BASE_URL}/web/trasparenza/risultati-ricerca"),
-            ("pagina base", f"{BASE_URL}/web/trasparenza/{slug}"),
-        ]
-        for nome_render, url_render in pagine_render:
-            try:
-                html_render = _fetch(url_render)
-            except requests.RequestException as e:
-                log.info(f"  render {nome_render}: non raggiungibile ({e})")
+            azione = f.get("action", "")
+            if not azione or azione == "#":
                 continue
-            n_render = _conta_righe_tabella(html_render)
-            log.info(f"  render {nome_render}: {n_render} righe")
-            if n_render > 0:
-                return html_render
-    # Tutti i tentativi a zero righe
-    return ultimo_html
+            dati = {}
+            for campo in f.find_all(["input", "button"]):
+                nome = campo.get("name")
+                if nome:
+                    dati[nome] = campo.get("value", "")
+            return azione, dati
+    log.warning(f"Ricerca: nessun form con campo data in {url_pagina[:100]}")
+    return None
+
+
+def _post_filtro(azione: str, dati_base: dict, nome_azione: str, sse: str,
+                 data_da: str, data_a: str, formato: str) -> str | None:
+    """Un singolo tentativo di POST del filtro. Restituisce l'HTML di risposta."""
+    url_azione = re.sub(r"(_action=)[A-Za-z]+", rf"\g<1>{nome_azione}", azione)
+    dati = dict(dati_base)
+    dati[f"{PORTLET_PREFIX}simpleSearchEnable"] = sse
+    conv = _iso_a_it if formato == "it" else (lambda d: d)
+    dati[f"{PORTLET_PREFIX}dataPubblicazioneDa"] = conv(data_da)
+    dati[f"{PORTLET_PREFIX}dataPubblicazioneA"] = conv(data_a)
+    try:
+        r = SESSION.post(url_azione, data=dati, timeout=90)
+        r.raise_for_status()
+        return r.text
+    except requests.RequestException as e:
+        log.info(f"    POST {nome_azione}/sse={sse}/{formato}: errore {e}")
+        return None
+
+
+def _righe_in_finestra(html: str, data_da: str, data_a: str) -> tuple[int, int]:
+    righe = _parse_tabella(html)
+    dentro = sum(1 for r in righe
+                 if r.get("data_inizio") and data_da <= r["data_inizio"] <= data_a)
+    return dentro, len(righe)
+
+
+def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | None:
+    """
+    Invia il form di ricerca del portlet con un intervallo di date.
+    L'action nel form è quella dell'ordinamento (il JS la riscrive al submit),
+    quindi la prima volta CALIBRA: prova le action di ricerca note ×
+    simpleSearchEnable × formato data, accettando solo la combinazione le cui
+    righe cadono davvero nell'intervallo. La combinazione buona viene
+    riusata per tutte le finestre successive.
+
+    Restituisce l'HTML della prima pagina dei risultati (può avere 0 righe se
+    la finestra è realmente vuota), o None se la ricerca non è replicabile.
+    """
+    letto = _leggi_form_ricerca(url_pagina)
+    if letto is None:
+        return None
+    azione, dati_base = letto
+    log.debug(f"Ricerca: action del form → {azione}")
+
+    # Combinazione già calibrata per questa pagina?
+    if url_pagina in _COMBO_RICERCA:
+        nome_azione, sse, formato = _COMBO_RICERCA[url_pagina]
+        html = _post_filtro(azione, dati_base, nome_azione, sse, data_da, data_a, formato)
+        if html is not None:
+            dentro, totale = _righe_in_finestra(html, data_da, data_a)
+            log.info(f"Ricerca {data_da}→{data_a} [{nome_azione}/sse={sse}/{formato}]: "
+                     f"{dentro} righe in finestra ({totale} totali, prima pagina)")
+            return html
+        return None
+
+    # Calibrazione: prova le combinazioni finché una restituisce righe in finestra
+    log.info(f"Ricerca: calibrazione su {url_pagina[:80]} "
+             f"(finestra test {data_da} → {data_a})")
+    for nome_azione in AZIONI_RICERCA:
+        for sse in ("true", "false"):
+            for formato in ("ISO", "it"):
+                html = _post_filtro(azione, dati_base, nome_azione, sse,
+                                    data_da, data_a, formato)
+                if html is None:
+                    continue
+                dentro, totale = _righe_in_finestra(html, data_da, data_a)
+                log.info(f"    {nome_azione}/sse={sse}/{formato}: "
+                         f"{dentro} in finestra su {totale} righe")
+                if dentro > 0 and (totale == 0 or dentro / totale >= 0.5):
+                    log.info(f"Ricerca CALIBRATA: azione={nome_azione}, "
+                             f"simpleSearch={sse}, formato={formato}")
+                    _COMBO_RICERCA[url_pagina] = (nome_azione, sse, formato)
+                    return html
+                time.sleep(0.5)
+    log.warning("Ricerca: nessuna combinazione ha prodotto righe nella finestra "
+                "di calibrazione. La ricerca via HTTP non è replicabile così: "
+                "servono i parametri esatti dal browser (network tab / estensione).")
+    return None
 
 
 def dump_moduli_ricerca(url_pagina: str) -> None:

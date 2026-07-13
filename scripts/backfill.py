@@ -25,7 +25,7 @@ import logging
 import argparse
 import calendar
 from pathlib import Path
-from datetime import date
+from datetime import date, timedelta
 
 import portale
 from scraper import carica_archivio, chiavi_note, elabora_spesa, salva
@@ -102,11 +102,27 @@ def raccogli_finestra(slug: str, url_form: str, etichetta: str) -> list[dict] | 
     return in_finestra
 
 
+def calibra_sorgente(nome: str, url_form: str) -> bool:
+    """
+    Calibra la ricerca su una finestra sicuramente piena (ultimi 30 giorni):
+    l'albo pubblica atti in continuazione, quindi zero righe = ricerca rotta,
+    non archivio vuoto.
+    """
+    oggi = date.today()
+    da = (oggi - timedelta(days=30)).isoformat()
+    html = portale.imposta_filtro_ricerca(url_form, da, oggi.isoformat())
+    if html is None:
+        log.warning(f"Sorgente {nome!r}: ricerca non calibrabile, la salto.")
+        return False
+    return True
+
+
 def censimento(stato: dict) -> None:
     """Sonda l'archivio con finestre campione e logga il verdetto."""
     for nome, url_form, slug in portale.SORGENTI_RICERCA:
         log.info(f"=== SONDA RICERCA sorgente {nome!r} ===")
-        portale.dump_moduli_ricerca(url_form)
+        if not calibra_sorgente(nome, url_form):
+            continue
         for etichetta in FINESTRE_SONDA:
             righe = raccogli_finestra(slug, url_form, etichetta)
             if righe is None:
@@ -152,6 +168,8 @@ def main():
     for nome, url_form, slug in portale.SORGENTI_RICERCA:
         if elaborate >= args.max_atti:
             break
+        if not calibra_sorgente(nome, url_form):
+            continue
         for etichetta in finestre_mensili(args.anno_min):
             if elaborate >= args.max_atti:
                 break

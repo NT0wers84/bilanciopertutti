@@ -98,6 +98,8 @@ def main():
             continue
 
         log.info(f"--- Scansione griglia: {griglia[:100]}")
+        if args.solo_censimento:
+            portale.dump_moduli_ricerca(griglia)
         righe = portale.scrape_griglia(griglia, stop_se_tutti_noti=False)
 
         # 2. Censimento: quanto è profondo l'archivio?

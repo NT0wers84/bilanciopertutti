@@ -412,6 +412,43 @@ def e_spesa(tipo: str) -> bool:
     return any(k in t for k in TIPI_SPESA)
 
 
+def dump_moduli_ricerca(url_pagina: str) -> None:
+    """
+    Diagnostica: logga i form presenti in una pagina del portale con i nomi
+    dei campi e le opzioni dei menu a tendina. Serve a scoprire come
+    interrogare il modulo di ricerca (action=cercaPubblicazioni), dietro cui
+    potrebbe trovarsi l'archivio completo degli atti che le liste di
+    default non mostrano.
+    """
+    try:
+        html = _fetch(url_pagina)
+    except requests.RequestException as e:
+        log.warning(f"dump form: pagina non raggiungibile ({e})")
+        return
+    soup = BeautifulSoup(html, "html.parser")
+    forms = soup.find_all("form")
+    log.info(f"FORM in {url_pagina[:100]}: {len(forms)} trovati")
+    for i, form in enumerate(forms, 1):
+        azione = form.get("action", "")[:160]
+        metodo = form.get("method", "get").upper()
+        log.info(f"  form {i}: {metodo} → {azione}")
+        for campo in form.find_all(["input", "select", "textarea"]):
+            nome = campo.get("name")
+            if not nome:
+                continue
+            if campo.name == "select":
+                opzioni = [(o.get("value", ""), o.get_text(strip=True)[:40])
+                           for o in campo.find_all("option")]
+                log.info(f"    select {nome}:")
+                for val, testo in opzioni[:25]:
+                    log.info(f"      {val!r} = {testo!r}")
+                if len(opzioni) > 25:
+                    log.info(f"      … altre {len(opzioni)-25} opzioni")
+            else:
+                log.info(f"    {campo.name} {nome} (type={campo.get('type','text')}, "
+                         f"value={campo.get('value','')[:40]!r})")
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # DETTAGLIO ATTO + PDF + TESTO
 # ─────────────────────────────────────────────────────────────────────────────

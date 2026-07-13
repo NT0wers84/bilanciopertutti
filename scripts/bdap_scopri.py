@@ -61,10 +61,21 @@ def lista_dataset(max_pagine: int) -> list[dict]:
             continue
 
         soup = BeautifulSoup(r.text, "html.parser")
-        schede = soup.select("h3 a[href*='/content/']")
+        schede = soup.select("a[href*='/content/']")
         if not schede:
             log.info(f"Pagina {pagina}: nessun dataset, fine catalogo.")
             break
+
+        # Il catalogo è renderizzato in JS: se il parametro page è ignorato,
+        # ogni pagina restituisce gli stessi dataset. Rilevalo e fermati.
+        firma = schede[0].get("href", "")
+        if pagina > 0 and firma == getattr(lista_dataset, "_firma_p0", None):
+            log.error("Il parametro ?page= è ignorato dal server (catalogo solo-JS): "
+                      "il crawl HTML non può funzionare. Usa l'API CKAN o scarica "
+                      "i dataset manualmente dal catalogo.")
+            break
+        if pagina == 0:
+            lista_dataset._firma_p0 = firma
 
         for a in schede:
             titolo = a.get_text(strip=True)
@@ -103,38 +114,76 @@ def risorse_dataset(url_ds: str) -> list[dict]:
     return risorse
 
 
+# Parole che identificano i dataset dei bilanci armonizzati degli enti
+# territoriali nei nomi macchina dei package (es. rendiconto, previsione)
+RE_NOME_INTERESSANTE = re.compile(
+    r"(rendicont|prevision|consuntiv|bilanc|schemi|missio|_fet_|enti[_\-]territorial)",
+    re.IGNORECASE)
+
+
 def prova_api_ckan() -> list[dict]:
     """
-    Il portale dichiara API CKAN (v1/v2/v3). Se package_search risponde,
-    è la via maestra: niente crawl, e datastore_search permetterà di
-    filtrare i dati per 'PIEVE EMANUELE' senza scaricare i CSV nazionali.
+    API CKAN documentate dal portale (sottoinsieme):
+      /SpodCkanApi/api/3/action/package_list  → elenco nomi dataset
+      /SpodCkanApi/api/{1,2}/rest/dataset/<n> → dettaglio con risorse
+    Niente package_search: non è nel sottoinsieme esposto.
     """
+    base = f"{BASE}/SpodCkanApi/api"
+
+    # 1. Elenco completo dei nomi
+    try:
+        r = SESSION.get(f"{base}/3/action/package_list", timeout=30)
+        r.raise_for_status()
+        dati = r.json()
+        nomi = dati.get("result") or dati  # v3 action → {result: [...]}; tolleranza
+        if isinstance(nomi, dict):
+            nomi = nomi.get("results", [])
+    except Exception as e:
+        log.info(f"package_list non risponde: {e}")
+        return []
+    if not isinstance(nomi, list) or not nomi:
+        log.info(f"package_list: risposta inattesa ({str(dati)[:200]})")
+        return []
+    log.info(f"API CKAN OK: {len(nomi)} dataset nel catalogo")
+
+    # 2. Filtra i nomi pertinenti
+    candidati = [n for n in nomi if RE_NOME_INTERESSANTE.search(str(n))]
+    log.info(f"Dataset con nomi pertinenti (rendiconto/previsione/bilancio/...): {len(candidati)}")
+    for n in candidati:
+        log.info(f"  candidato: {n}")
+
+    # 3. Dettaglio + risorse per ogni candidato
     trovati = []
-    for base_api in (f"{BASE}/SpodCkanApi/api/3/action", f"{BASE}/api/3/action"):
-        for query in ("schemi di bilancio", "rendiconto gestione", "bilancio previsione enti"):
-            url = f"{base_api}/package_search?q={requests.utils.quote(query)}&rows=50"
+    for nome in candidati:
+        pkg = None
+        for endpoint in (f"{base}/3/action/package_show?id={nome}",
+                         f"{base}/2/rest/dataset/{nome}",
+                         f"{base}/1/rest/dataset/{nome}"):
             try:
-                r = SESSION.get(url, timeout=15)
-                r.raise_for_status()
-                dati = r.json()
-            except Exception as e:
-                log.info(f"API CKAN non risponde ({url[:80]}): {e}")
-                break  # prova l'altra base
-            risultati = dati.get("result", {}).get("results", [])
-            log.info(f"API CKAN OK ({base_api}): query {query!r} → {len(risultati)} dataset")
-            for pkg in risultati:
-                titolo = pkg.get("title") or pkg.get("name", "")
-                risorse = [{"testo": (ris.get("name") or ris.get("format", ""))[:80],
-                            "url": ris.get("url", ""),
-                            "id_risorsa": ris.get("id", "")}
-                           for ris in pkg.get("resources", [])]
-                trovati.append({"titolo": titolo, "url": pkg.get("name", ""),
-                                "risorse": risorse, "fonte": "ckan"})
-                log.info(f"  CKAN: {titolo}")
-                for ris in risorse[:5]:
-                    log.info(f"    {ris['testo']!r} → {ris['url'][:140]}")
-        if trovati:
-            return trovati
+                r = SESSION.get(endpoint, timeout=30)
+                if r.status_code != 200:
+                    continue
+                pkg = r.json()
+                if isinstance(pkg, dict) and "result" in pkg:
+                    pkg = pkg["result"]
+                break
+            except Exception:
+                continue
+        if not isinstance(pkg, dict):
+            log.warning(f"  {nome}: dettaglio non recuperabile")
+            continue
+        risorse = [{"testo": (ris.get("name") or ris.get("description") or ris.get("format", ""))[:80],
+                    "formato": ris.get("format", ""),
+                    "url": ris.get("url", ""),
+                    "id_risorsa": ris.get("id", "")}
+                   for ris in pkg.get("resources", [])]
+        trovati.append({"titolo": pkg.get("title", nome), "nome": nome,
+                        "note": (pkg.get("notes") or "")[:200],
+                        "risorse": risorse, "fonte": "ckan"})
+        log.info(f"--- {pkg.get('title', nome)}")
+        for ris in risorse[:8]:
+            log.info(f"    [{ris['formato']}] {ris['testo']!r} → {ris['url'][:140]}")
+        time.sleep(0.3)
     return trovati
 
 

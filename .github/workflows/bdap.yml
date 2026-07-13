@@ -1,0 +1,47 @@
+name: OpenSpese — Sonda catalogo BDAP
+
+# Manuale. Fase 2: scopre i dataset dei bilanci armonizzati (previsione e
+# rendiconto) nel catalogo Open Data BDAP e ne salva/logga le risorse.
+on:
+  workflow_dispatch:
+    inputs:
+      max_pagine:
+        description: 'Pagine del catalogo da scansionare (361 = tutto)'
+        required: false
+        default: '361'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: openspese-run
+  cancel-in-progress: false
+
+jobs:
+  sonda:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze Python
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Esegui sonda catalogo
+        run: python scripts/bdap_scopri.py --max-pagine ${{ inputs.max_pagine }}
+
+      - name: Salva risultati nel repository
+        run: |
+          git config user.name "OpenSpeseBot"
+          git config user.email "bot@openspese.local"
+          git pull --rebase --autostash
+          git add data/
+          git diff --staged --quiet || git commit -m "Sonda catalogo BDAP: $(date '+%Y-%m-%d')"
+          git push

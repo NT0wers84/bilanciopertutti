@@ -121,38 +121,93 @@ RE_NOME_INTERESSANTE = re.compile(
     re.IGNORECASE)
 
 
+def _json(url: str):
+    """GET + parse JSON, con svolgimento dell'involucro {result: ...} delle v3."""
+    r = SESSION.get(url, timeout=30)
+    r.raise_for_status()
+    dati = r.json()
+    if isinstance(dati, dict) and "result" in dati:
+        return dati["result"]
+    return dati
+
+
 def prova_api_ckan() -> list[dict]:
     """
-    API CKAN documentate dal portale (sottoinsieme):
-      /SpodCkanApi/api/3/action/package_list  → elenco nomi dataset
-      /SpodCkanApi/api/{1,2}/rest/dataset/<n> → dettaglio con risorse
-    Niente package_search: non è nel sottoinsieme esposto.
+    API CKAN documentate dal portale (sottoinsieme, niente package_search):
+      /SpodCkanApi/api/3/action/package_list          → nomi dataset
+      /SpodCkanApi/api/3/action/group_list            → temi
+      /SpodCkanApi/api/{1,2}/rest/group/<nome>        → dataset di un tema
+      /SpodCkanApi/api/1/rest/tag/<nome>              → dataset con una parola chiave
+      /SpodCkanApi/api/{1,2}/rest/dataset/<nome>      → dettaglio con risorse
+
+    Strategia: prima i nomi (se leggibili), poi il tema 'Bilanci degli Enti',
+    poi i tag 'Schemi di Bilancio'. Ogni passaggio logga ciò che vede.
     """
     base = f"{BASE}/SpodCkanApi/api"
+    candidati: list[str] = []
 
     # 1. Elenco completo dei nomi
     try:
-        r = SESSION.get(f"{base}/3/action/package_list", timeout=30)
-        r.raise_for_status()
-        dati = r.json()
-        nomi = dati.get("result") or dati  # v3 action → {result: [...]}; tolleranza
-        if isinstance(nomi, dict):
-            nomi = nomi.get("results", [])
+        nomi = _json(f"{base}/3/action/package_list")
     except Exception as e:
         log.info(f"package_list non risponde: {e}")
         return []
     if not isinstance(nomi, list) or not nomi:
-        log.info(f"package_list: risposta inattesa ({str(dati)[:200]})")
+        log.info(f"package_list: risposta inattesa ({str(nomi)[:200]})")
         return []
     log.info(f"API CKAN OK: {len(nomi)} dataset nel catalogo")
+    log.info(f"Campione di nomi (convenzione di denominazione): {nomi[:15]}")
 
-    # 2. Filtra i nomi pertinenti
     candidati = [n for n in nomi if RE_NOME_INTERESSANTE.search(str(n))]
-    log.info(f"Dataset con nomi pertinenti (rendiconto/previsione/bilancio/...): {len(candidati)}")
-    for n in candidati:
-        log.info(f"  candidato: {n}")
+    log.info(f"Nomi pertinenti per pattern testuale: {len(candidati)}")
 
-    # 3. Dettaglio + risorse per ogni candidato
+    # 2. Tema (group): 'Bilanci degli Enti della Pubblica Amministrazione'
+    try:
+        gruppi = _json(f"{base}/3/action/group_list")
+        log.info(f"Temi disponibili: {gruppi}")
+        for gruppo in gruppi if isinstance(gruppi, list) else []:
+            if re.search(r"bilanci.*enti|enti.*bilanci", str(gruppo), re.IGNORECASE):
+                for endpoint in (f"{base}/2/rest/group/{gruppo}",
+                                 f"{base}/1/rest/group/{gruppo}",
+                                 f"{base}/3/action/group_show?id={gruppo}&include_datasets=true"):
+                    try:
+                        dettaglio = _json(endpoint)
+                    except Exception:
+                        continue
+                    pacchetti = dettaglio.get("packages", []) if isinstance(dettaglio, dict) else []
+                    nomi_pkg = [p if isinstance(p, str) else p.get("name", "") for p in pacchetti]
+                    log.info(f"Tema {gruppo!r}: {len(nomi_pkg)} dataset")
+                    candidati.extend(n for n in nomi_pkg if n and n not in candidati)
+                    break
+    except Exception as e:
+        log.info(f"group_list non risponde: {e}")
+
+    # 3. Parole chiave (tag): 'Rendiconto - Schemi di Bilancio' ecc.
+    try:
+        tags = _json(f"{base}/3/action/tag_list")
+        pertinenti = [t for t in tags if isinstance(t, str) and
+                      re.search(r"schemi di bilancio|previsione|rendiconto|indicatori",
+                                t, re.IGNORECASE)] if isinstance(tags, list) else []
+        log.info(f"Tag pertinenti: {pertinenti}")
+        for tag in pertinenti:
+            for endpoint in (f"{base}/1/rest/tag/{requests.utils.quote(tag)}",
+                             f"{base}/2/rest/tag/{requests.utils.quote(tag)}"):
+                try:
+                    ids = _json(endpoint)
+                except Exception:
+                    continue
+                if isinstance(ids, list):
+                    log.info(f"Tag {tag!r}: {len(ids)} dataset")
+                    candidati.extend(str(i) for i in ids if str(i) not in candidati)
+                    break
+    except Exception as e:
+        log.info(f"tag_list non risponde: {e}")
+
+    log.info(f"Candidati totali da tutte le vie: {len(candidati)}")
+    if not candidati:
+        return []
+
+    # 4. Dettaglio + risorse per ogni candidato
     trovati = []
     for nome in candidati:
         pkg = None

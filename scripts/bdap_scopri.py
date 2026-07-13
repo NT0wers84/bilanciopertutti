@@ -242,14 +242,86 @@ def prova_api_ckan() -> list[dict]:
     return trovati
 
 
+CACHE = Path("data/bdap/dettagli_cache.json")
+
+# Titoli che identificano gli schemi di bilancio armonizzati degli enti
+RE_TITOLO_SDB = re.compile(
+    r"(SDB|schemi di bilancio|riepilogo missioni|spese riepilogo|PDI)", re.IGNORECASE)
+
+
+def censimento_completo() -> list[dict]:
+    """
+    Modalità esaustiva: i nomi dei package sono UUID, quindi per trovare
+    gli anni recenti bisogna leggere i metadati di TUTTI i dataset.
+    Cache incrementale in data/bdap/dettagli_cache.json: interrompibile e
+    rilanciabile senza ripetere le richieste già fatte (~20 min la prima volta).
+    """
+    base = f"{BASE}/SpodCkanApi/api"
+    nomi = _json(f"{base}/3/action/package_list")
+    log.info(f"Censimento completo: {len(nomi)} dataset da esaminare")
+
+    cache = {}
+    if CACHE.exists():
+        try:
+            cache = json.loads(CACHE.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            pass
+    log.info(f"In cache: {len(cache)}")
+
+    da_fare = [n for n in nomi if str(n) not in cache]
+    for i, nome in enumerate(da_fare, 1):
+        try:
+            pkg = _json(f"{base}/2/rest/dataset/{nome}")
+            if not isinstance(pkg, dict):
+                pkg = {}
+        except Exception:
+            pkg = {}
+        cache[str(nome)] = {
+            "titolo": pkg.get("title", ""),
+            "note": (pkg.get("notes") or "")[:150],
+            "risorse": [{"formato": r.get("format", ""), "url": r.get("url", ""),
+                         "testo": (r.get("name") or r.get("description") or "")[:80]}
+                        for r in pkg.get("resources", [])],
+        }
+        if i % 50 == 0:
+            CACHE.parent.mkdir(parents=True, exist_ok=True)
+            CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+            log.info(f"  {i}/{len(da_fare)} esaminati…")
+        time.sleep(0.15)
+    CACHE.parent.mkdir(parents=True, exist_ok=True)
+    CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+
+    trovati = []
+    for nome, info in cache.items():
+        if info.get("titolo") and RE_TITOLO_SDB.search(info["titolo"]):
+            trovati.append({"titolo": info["titolo"], "nome": nome,
+                            "note": info.get("note", ""),
+                            "risorse": info.get("risorse", []), "fonte": "censimento"})
+    trovati.sort(key=lambda d: d["titolo"])
+    log.info(f"Dataset SDB/schemi di bilancio nel catalogo completo: {len(trovati)}")
+    anni = sorted({d["titolo"][:4] for d in trovati if d["titolo"][:4].isdigit()})
+    log.info(f"Anni coperti: {anni}")
+    return trovati
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-pagine", type=int, default=361)
+    parser.add_argument("--tutti", action="store_true",
+                        help="Censimento esaustivo di tutti i dataset (cache "
+                             "incrementale, ~20 min la prima volta)")
     args = parser.parse_args()
 
     log.info("=" * 60)
     log.info("SONDA CATALOGO OPEN DATA BDAP")
     log.info("=" * 60)
+
+    if args.tutti:
+        dataset = censimento_completo()
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        OUT.write_text(json.dumps(dataset, ensure_ascii=False, indent=1), encoding="utf-8")
+        log.info(f"Catalogo completo salvato in {OUT} ({len(dataset)} dataset)")
+        return
 
     # Via maestra: API CKAN dichiarata dal portale
     dataset = prova_api_ckan()

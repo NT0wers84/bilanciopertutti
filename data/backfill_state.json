@@ -3,13 +3,13 @@
  "censimento": {
   "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/igrid/0/Albo_pretorio/": {
    "2026": {
-    "totale": 40,
-    "spese": 10
+    "totale": 23,
+    "spese": 8
    }
   },
   "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_resetFilter=true&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista": {
    "2025": {
-    "totale": 29,
+    "totale": 28,
     "spese": 0
    },
    "2026": {
@@ -18,12 +18,24 @@
    }
   },
   "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-g?p_p_id=jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_paginationAction=NEXT&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista": {
+   "2021": {
+    "totale": 29,
+    "spese": 17
+   },
+   "2022": {
+    "totale": 23,
+    "spese": 8
+   },
+   "2023": {
+    "totale": 32,
+    "spese": 8
+   },
    "2024": {
-    "totale": 11,
+    "totale": 17,
     "spese": 0
    },
    "2025": {
-    "totale": 9,
+    "totale": 29,
     "spese": 0
    }
   },

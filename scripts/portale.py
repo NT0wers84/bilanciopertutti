@@ -212,7 +212,8 @@ def scopri_griglie_storico() -> list[str]:
 def scrape_griglia(url_griglia: str,
                    atti_noti: set[tuple] | None = None,
                    max_pagine: int = 10_000,
-                   stop_se_tutti_noti: bool = True) -> list[dict]:
+                   stop_se_tutti_noti: bool = True,
+                   html_prima_pagina: str | None = None) -> list[dict]:
     """
     Scarica una griglia atti JCityGov pagina per pagina.
     Restituisce righe grezze: numero_raw, tipo, oggetto, date, url_dettaglio.
@@ -231,11 +232,14 @@ def scrape_griglia(url_griglia: str,
     while url_corrente and pagina <= max_pagine:
         if pagina == 1 or pagina % 25 == 0 or not modalita_cur:
             log.info(f"Scarico pagina {pagina}: {url_corrente[:120]}")
-        try:
-            html = _fetch(url_corrente)
-        except requests.RequestException as e:
-            log.error(f"Errore HTTP sulla pagina {pagina}: {e}")
-            break
+        if pagina == 1 and html_prima_pagina is not None:
+            html = html_prima_pagina
+        else:
+            try:
+                html = _fetch(url_corrente)
+            except requests.RequestException as e:
+                log.error(f"Errore HTTP sulla pagina {pagina}: {e}")
+                break
 
         soup = BeautifulSoup(html, "html.parser")
         tabella = soup.find("table")
@@ -410,6 +414,88 @@ def e_spesa(tipo: str) -> bool:
     """True se il tipo/sottocategoria dell'atto rappresenta una spesa."""
     t = (tipo or "").lower()
     return any(k in t for k in TIPI_SPESA)
+
+
+PORTLET_PREFIX = "_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_"
+
+# Pagine con il form di ricerca del portlet pubblicazioni:
+# (nome, pagina col form, slug per costruire l'URL lista)
+SORGENTI_RICERCA = [
+    ("provvedimenti", f"{BASE_URL}/web/trasparenza/papca-g", "papca-g"),
+    ("albo", ALBO_URL, "papca-ap"),
+]
+
+
+def _conta_righe_tabella(html: str) -> int:
+    soup = BeautifulSoup(html, "html.parser")
+    tabella = soup.find("table")
+    if not tabella:
+        return 0
+    return sum(1 for tr in tabella.find_all("tr") if tr.find_all("td"))
+
+
+def _iso_a_it(data_iso: str) -> str:
+    try:
+        return datetime.strptime(data_iso, "%Y-%m-%d").strftime("%d/%m/%Y")
+    except ValueError:
+        return data_iso
+
+
+def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | None:
+    """
+    Invia il form di ricerca del portlet pubblicazioni con un intervallo di
+    date di pubblicazione (ISO, con ripiego dd/mm/yyyy). Il filtro resta
+    nella sessione Liferay: le pagine successive si leggono con la normale
+    paginazione della lista (mostraLista + _cur).
+
+    Restituisce l'HTML della prima pagina dei risultati, o None se il form
+    non è disponibile.
+    """
+    try:
+        html = _fetch(url_pagina)
+    except requests.RequestException as e:
+        log.warning(f"Ricerca: pagina form non raggiungibile ({e})")
+        return None
+
+    soup = BeautifulSoup(html, "html.parser")
+    form = None
+    for f in soup.find_all("form"):
+        if f.find("input", attrs={"name": f"{PORTLET_PREFIX}dataPubblicazioneDa"}):
+            form = f
+            break
+    if form is None:
+        log.warning(f"Ricerca: nessun form con campo data in {url_pagina[:100]}")
+        return None
+    azione = form.get("action", "")
+    if not azione or azione == "#":
+        log.warning("Ricerca: form senza action utilizzabile")
+        return None
+
+    base_dati = {}
+    for inp in form.find_all("input"):
+        nome = inp.get("name")
+        if nome:
+            base_dati[nome] = inp.get("value", "")
+
+    ultimo_html = None
+    for formatta, etichetta in ((lambda d: d, "ISO"), (_iso_a_it, "it")):
+        dati = dict(base_dati)
+        dati[f"{PORTLET_PREFIX}dataPubblicazioneDa"] = formatta(data_da)
+        dati[f"{PORTLET_PREFIX}dataPubblicazioneA"] = formatta(data_a)
+        try:
+            r = SESSION.post(azione, data=dati, timeout=90)
+            r.raise_for_status()
+        except requests.RequestException as e:
+            log.warning(f"Ricerca: POST fallito ({e})")
+            return None
+        n = _conta_righe_tabella(r.text)
+        log.info(f"Ricerca {data_da} → {data_a} (formato {etichetta}): "
+                 f"{n} righe nella prima pagina")
+        ultimo_html = r.text
+        if n > 0:
+            return r.text
+    # Entrambi i formati a zero righe: finestra probabilmente vuota davvero
+    return ultimo_html
 
 
 def dump_moduli_ricerca(url_pagina: str) -> None:

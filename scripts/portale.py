@@ -441,13 +441,17 @@ def _iso_a_it(data_iso: str) -> str:
         return data_iso
 
 
-# Il form nella pagina ha action=eseguiOrdinamentoLista (ordinamento!):
-# il JS lo riscrive al submit. Action di ricerca candidate del portlet:
-AZIONI_RICERCA = ["cercaPubblicazioni", "eseguiRicerca", "ricercaPubblicazioni",
-                  "cerca", "eseguiRicercaAvanzata", "mostraLista"]
-
-# Cache della combinazione funzionante per pagina-form: {url_pagina: (azione, sse, formato)}
-_COMBO_RICERCA: dict[str, tuple] = {}
+# ─────────────────────────────────────────────────────────────────────────────
+# RICERCA ARCHIVIO — ricetta verificata sul portale reale (browser, 2026-07):
+#   1. POST eseguiOrdinamentoLista con annoRegistrazioneDa=<anno> imposta il
+#      filtro nella sessione. IL FILTRO DATA (dataPubblicazioneDa/A) È ROTTO
+#      LATO SERVER: qualunque valore restituisce 0 risultati. Mai inviarlo.
+#      annoRegistrazioneDa è un filtro "da anno in poi" (>=).
+#   2. POST eseguiPaginazione con hidden_page_to=N e hidden_page_size=100
+#      scorre la lista filtrata (il filtro resta in sessione).
+# Senza filtri l'albo espone TUTTO l'archivio storico (7.954 atti al 2026-07,
+# dal maggio 2021 in poi).
+# ─────────────────────────────────────────────────────────────────────────────
 
 
 def _parse_tabella(html: str) -> list[dict]:

@@ -3,3 +3,8 @@ __pycache__/
 .DS_Store
 .env
 venv/
+
+# CSV regionali BDAP scaricati a mano (8+ GB): restano locali.
+# Nel repo va solo l'estratto di Pieve Emanuele (data/bilanci_pieve.json),
+# generato da scripts/bilanci_estrai.py.
+bilanci/

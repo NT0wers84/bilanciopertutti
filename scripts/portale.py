@@ -42,7 +42,13 @@ ALBO_URL = f"{BASE_URL}/web/trasparenza/papca-ap/-/papca/igrid/0/Albo_pretorio/"
 # a runtime da scopri_griglie_storico(); questi sono i punti di partenza.
 STORICO_LANDING_URLS = [
     f"{BASE_URL}/web/trasparenza/papca-g",
-    f"{BASE_URL}/web/trasparenza/papca-g9",
+]
+
+# Radici da cui scoprire TUTTE le sezioni con griglie atti:
+# l'albero di Amministrazione Trasparente e la Pubblicità Legale (albo).
+RADICI_DISCOVERY = [
+    f"{BASE_URL}/web/trasparenza/trasparenza",
+    f"{BASE_URL}/web/trasparenza",
 ]
 
 # Sottocategorie che rappresentano spese
@@ -103,14 +109,48 @@ def _url_mostra_lista(pagina_path: str) -> str:
             "&_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_action=mostraLista")
 
 
+def scopri_sezioni() -> list[str]:
+    """
+    Scopre tutte le sezioni del portale (Amministrazione Trasparente +
+    Pubblicità Legale) che potrebbero contenere griglie di atti.
+    Restituisce gli URL delle pagine di sezione /web/trasparenza/<slug>.
+    """
+    sezioni: list[str] = list(STORICO_LANDING_URLS)
+    for radice in RADICI_DISCOVERY:
+        try:
+            html = _fetch(radice)
+        except requests.RequestException as e:
+            log.warning(f"Radice discovery non raggiungibile ({radice}): {e}")
+            continue
+        soup = BeautifulSoup(html, "html.parser")
+        for a in soup.find_all("a", href=True):
+            href = a["href"].split("#")[0]
+            if not href:
+                continue
+            url = href if href.startswith("http") else BASE_URL + href
+            # Solo pagine di sezione interne, senza parametri (le griglie
+            # con parametri vengono scoperte dentro le sezioni)
+            m = re.match(rf"{re.escape(BASE_URL)}/web/trasparenza/([a-z0-9\-]+)/?$", url)
+            if not m:
+                continue
+            slug = m.group(1)
+            if slug in ("trasparenza",) or url in sezioni:
+                continue
+            sezioni.append(url)
+    log.info(f"Sezioni del portale scoperte: {len(sezioni)}")
+    for s in sezioni:
+        log.info(f"  sezione: {s}")
+    return sezioni
+
+
 def scopri_griglie_storico() -> list[str]:
     """
-    Trova gli URL da cui scaricare l'archivio storico dei provvedimenti.
-    Strategie, in ordine:
-      1. link /-/papca/igrid/ nelle landing papca-g
+    Trova gli URL da cui scaricare l'archivio storico degli atti, scandagliando
+    tutte le sezioni del portale. Strategie per ogni sezione, in ordine:
+      1. link /-/papca/igrid/ nella pagina
       2. link con action mostraLista/cercaPubblicazioni già presenti in pagina
       3. URL mostraLista costruito a mano (pattern JCityGov standard)
-      4. la landing stessa, se contiene direttamente la tabella atti
+      4. la pagina stessa, se contiene direttamente la tabella atti
     Se tutto fallisce, logga i link candidati della pagina per diagnosi.
     """
     griglie: list[str] = []
@@ -120,7 +160,7 @@ def scopri_griglie_storico() -> list[str]:
             griglie.append(url)
             log.info(f"Griglia storico trovata ({motivo}): {url[:140]}")
 
-    for landing in STORICO_LANDING_URLS:
+    for landing in scopri_sezioni():
         try:
             html = _fetch(landing)
         except requests.RequestException as e:
@@ -129,40 +169,38 @@ def scopri_griglie_storico() -> list[str]:
 
         soup = BeautifulSoup(html, "html.parser")
         candidati_diagnosi = []
+        griglie_prima = len(griglie)
 
         # 1+2. Link utili già presenti nell'HTML
         for a in soup.find_all("a", href=True):
             href = a["href"]
             url = href if href.startswith("http") else BASE_URL + href
             if "/-/papca/igrid/" in href:
-                aggiungi(url.split("?")[0], "link igrid")
+                aggiungi(url.split("?")[0], f"link igrid in {landing.rsplit('/',1)[-1]}")
             elif "mostraLista" in href or "cercaPubblicazioni" in href:
-                aggiungi(url, "link mostraLista")
+                aggiungi(url, f"link mostraLista in {landing.rsplit('/',1)[-1]}")
             elif "papca" in href or "jcitygov" in href.lower():
                 candidati_diagnosi.append(f"{a.get_text(strip=True)[:40]!r} → {href[:120]}")
 
-        # 4. La landing contiene già la tabella?
+        # 4. La pagina contiene già la tabella?
         if _ha_tabella_atti(html):
-            aggiungi(landing, "tabella nella landing")
+            aggiungi(landing, "tabella nella pagina")
 
-        # 3. mostraLista costruito a mano
-        if not griglie:
+        # 3. mostraLista costruito a mano (solo se questa sezione non ha dato nulla)
+        if len(griglie) == griglie_prima:
             pagina_path = landing.rstrip("/").split("/")[-1]
             url_tentativo = _url_mostra_lista(pagina_path)
             try:
                 html_lista = _fetch(url_tentativo)
                 if _ha_tabella_atti(html_lista):
                     aggiungi(url_tentativo, "mostraLista costruito")
-                else:
-                    log.info(f"mostraLista su {pagina_path}: risponde ma senza tabella atti "
-                             f"({len(html_lista)} byte)")
-            except requests.RequestException as e:
-                log.info(f"mostraLista su {pagina_path} non funziona: {e}")
+            except requests.RequestException:
+                pass
 
-        # Diagnosi: se ancora nulla, mostra cosa c'è davvero in pagina
-        if not griglie and candidati_diagnosi:
+        # Diagnosi: se questa sezione non ha dato nulla ma ha link sospetti
+        if len(griglie) == griglie_prima and candidati_diagnosi:
             log.warning(f"DIAGNOSI {landing} — link papca/jcitygov presenti in pagina:")
-            for c in candidati_diagnosi[:40]:
+            for c in candidati_diagnosi[:20]:
                 log.warning(f"  {c}")
 
     if not griglie:

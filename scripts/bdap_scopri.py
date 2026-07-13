@@ -103,6 +103,41 @@ def risorse_dataset(url_ds: str) -> list[dict]:
     return risorse
 
 
+def prova_api_ckan() -> list[dict]:
+    """
+    Il portale dichiara API CKAN (v1/v2/v3). Se package_search risponde,
+    è la via maestra: niente crawl, e datastore_search permetterà di
+    filtrare i dati per 'PIEVE EMANUELE' senza scaricare i CSV nazionali.
+    """
+    trovati = []
+    for base_api in (f"{BASE}/SpodCkanApi/api/3/action", f"{BASE}/api/3/action"):
+        for query in ("schemi di bilancio", "rendiconto gestione", "bilancio previsione enti"):
+            url = f"{base_api}/package_search?q={requests.utils.quote(query)}&rows=50"
+            try:
+                r = SESSION.get(url, timeout=15)
+                r.raise_for_status()
+                dati = r.json()
+            except Exception as e:
+                log.info(f"API CKAN non risponde ({url[:80]}): {e}")
+                break  # prova l'altra base
+            risultati = dati.get("result", {}).get("results", [])
+            log.info(f"API CKAN OK ({base_api}): query {query!r} → {len(risultati)} dataset")
+            for pkg in risultati:
+                titolo = pkg.get("title") or pkg.get("name", "")
+                risorse = [{"testo": (ris.get("name") or ris.get("format", ""))[:80],
+                            "url": ris.get("url", ""),
+                            "id_risorsa": ris.get("id", "")}
+                           for ris in pkg.get("resources", [])]
+                trovati.append({"titolo": titolo, "url": pkg.get("name", ""),
+                                "risorse": risorse, "fonte": "ckan"})
+                log.info(f"  CKAN: {titolo}")
+                for ris in risorse[:5]:
+                    log.info(f"    {ris['testo']!r} → {ris['url'][:140]}")
+        if trovati:
+            return trovati
+    return trovati
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-pagine", type=int, default=361)
@@ -112,6 +147,15 @@ def main():
     log.info("SONDA CATALOGO OPEN DATA BDAP")
     log.info("=" * 60)
 
+    # Via maestra: API CKAN dichiarata dal portale
+    dataset = prova_api_ckan()
+    if dataset:
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        OUT.write_text(json.dumps(dataset, ensure_ascii=False, indent=1), encoding="utf-8")
+        log.info(f"Catalogo salvato via API CKAN in {OUT} ({len(dataset)} dataset)")
+        return
+
+    log.info("API CKAN non disponibile: ripiego sul crawl del catalogo HTML.")
     dataset = lista_dataset(args.max_pagine)
     log.info(f"Dataset candidati totali: {len(dataset)}")
 

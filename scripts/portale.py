@@ -471,11 +471,13 @@ def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | 
         log.warning("Ricerca: form senza action utilizzabile")
         return None
 
+    log.info(f"Ricerca: action completa del form → {azione}")
+
     base_dati = {}
-    for inp in form.find_all("input"):
-        nome = inp.get("name")
+    for campo in form.find_all(["input", "button"]):
+        nome = campo.get("name")
         if nome:
-            base_dati[nome] = inp.get("value", "")
+            base_dati[nome] = campo.get("value", "")
 
     ultimo_html = None
     for formatta, etichetta in ((lambda d: d, "ISO"), (_iso_a_it, "it")):
@@ -488,13 +490,37 @@ def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | 
         except requests.RequestException as e:
             log.warning(f"Ricerca: POST fallito ({e})")
             return None
+        redirect = " → ".join(h.url[:90] for h in r.history) or "nessuno"
+        log.info(f"Ricerca POST (formato {etichetta}): status {r.status_code}, "
+                 f"{len(r.text)} byte, redirect: {redirect}")
+        log.info(f"  URL finale: {r.url[:150]}")
+
         n = _conta_righe_tabella(r.text)
-        log.info(f"Ricerca {data_da} → {data_a} (formato {etichetta}): "
-                 f"{n} righe nella prima pagina")
+        log.info(f"  Righe nella risposta diretta: {n}")
         ultimo_html = r.text
         if n > 0:
             return r.text
-    # Entrambi i formati a zero righe: finestra probabilmente vuota davvero
+
+        # I risultati potrebbero essere renderizzati su un'altra pagina
+        # (il filtro vive nella sessione): sonda i render possibili.
+        slug = re.search(r"/web/trasparenza/([a-z0-9\-]+)", azione)
+        slug = slug.group(1) if slug else "papca-g"
+        pagine_render = [
+            ("mostraLista", _url_mostra_lista(slug)),
+            ("risultati-ricerca", f"{BASE_URL}/web/trasparenza/risultati-ricerca"),
+            ("pagina base", f"{BASE_URL}/web/trasparenza/{slug}"),
+        ]
+        for nome_render, url_render in pagine_render:
+            try:
+                html_render = _fetch(url_render)
+            except requests.RequestException as e:
+                log.info(f"  render {nome_render}: non raggiungibile ({e})")
+                continue
+            n_render = _conta_righe_tabella(html_render)
+            log.info(f"  render {nome_render}: {n_render} righe")
+            if n_render > 0:
+                return html_render
+    # Tutti i tentativi a zero righe
     return ultimo_html
 
 

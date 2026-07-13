@@ -81,14 +81,25 @@ def finestre_mensili(anno_min: int) -> list[str]:
 
 
 def raccogli_finestra(slug: str, url_form: str, etichetta: str) -> list[dict] | None:
-    """POST del filtro data per una finestra e lettura della lista filtrata."""
+    """
+    POST del filtro data per una finestra e lettura della lista filtrata.
+    Le righe vengono validate contro l'intervallo: se il portale ha ignorato
+    il filtro (righe fuori finestra), vengono scartate e il log lo segnala.
+    """
     da, a = confini_mese(etichetta)
     html1 = portale.imposta_filtro_ricerca(url_form, da, a)
     if html1 is None:
         return None
     url_lista = portale._url_mostra_lista(slug)
-    return portale.scrape_griglia(url_lista, stop_se_tutti_noti=False,
-                                  html_prima_pagina=html1)
+    righe = portale.scrape_griglia(url_lista, stop_se_tutti_noti=False,
+                                   html_prima_pagina=html1)
+    in_finestra = [r for r in righe
+                   if r.get("data_inizio") and da <= r["data_inizio"] <= a]
+    fuori = len(righe) - len(in_finestra)
+    if fuori:
+        log.warning(f"  {etichetta}: {fuori} righe FUORI finestra scartate "
+                    f"(il filtro data non è stato applicato dal portale?)")
+    return in_finestra
 
 
 def censimento(stato: dict) -> None:

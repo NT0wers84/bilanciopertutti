@@ -1,31 +1,26 @@
 """
-backfill.py — OpenSpese Pieve Emanuele: recupero dello storico.
+backfill.py — OpenSpese Pieve Emanuele: recupero dello storico (v3).
 
-Strategia (v2, guidata dalla ricerca): il portlet pubblicazioni espone un
-form di ricerca con intervallo di date di pubblicazione. Il filtro resta
-nella sessione Liferay, quindi: POST del form per una finestra mensile →
-paginazione normale della lista filtrata → elaborazione delle spese.
-Le liste di default (griglie) mostrano solo un sottoinsieme curato: la
-ricerca è l'unica via all'archivio completo, se esiste.
+Ricetta verificata sul portale reale (browser, 2026-07): l'albo espone
+l'INTERO archivio storico (7.954 atti dal maggio 2021) tramite
+POST eseguiOrdinamentoLista + paginazione eseguiPaginazione.
+Il filtro annoRegistrazioneDa (">= anno") restringe la scansione;
+il filtro per data è rotto lato server e non va mai usato.
 
-Modalità censimento (--solo-censimento): interroga finestre-sonda su più
-anni (2026, 2024, 2022, 2020, 2018, 2016) e logga quante righe restituisce
-il portale: verdetto immediato sulla profondità reale dell'archivio.
-
-A blocchi: --max-atti per run, stato in data/backfill_state.json
-(finestre completate per sorgente), rilanciabile fino a esaurimento.
+Flusso per run:
+  1. scansione archivio (albo + provvedimenti) da anno_min in poi (~5-10 min)
+  2. censimento per anno/tipo nel log
+  3. elaborazione di max --max-atti spese nuove (dalle più recenti),
+     con salvataggio incrementale: rilanciare finché il log non dice
+     "ARCHIVIO ESAURITO".
 
 Uso:
-  python scripts/backfill.py --max-atti 300 [--anno-min 2016] [--solo-censimento]
+  python scripts/backfill.py --max-atti 300 [--anno-min 2021] [--solo-censimento]
 """
 
-import json
 import time
 import logging
 import argparse
-import calendar
-from pathlib import Path
-from datetime import date, timedelta
 
 import portale
 from scraper import carica_archivio, chiavi_note, elabora_spesa, salva
@@ -37,199 +32,107 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-STATE_JSON = Path("data/backfill_state.json")
-
-# Finestre-sonda per il censimento: un mese campione ogni due anni
-FINESTRE_SONDA = ["2026-06", "2024-06", "2022-06", "2020-06", "2018-06", "2016-06"]
-
-
-def carica_stato() -> dict:
-    if STATE_JSON.exists():
-        try:
-            stato = json.loads(STATE_JSON.read_text(encoding="utf-8"))
-            stato.setdefault("finestre_completate", [])
-            stato.setdefault("censimento_ricerca", {})
-            return stato
-        except json.JSONDecodeError:
-            pass
-    return {"finestre_completate": [], "censimento_ricerca": {}}
+# (nome, pagina con i form di ricerca/paginazione)
+SORGENTI = [
+    ("albo", portale.ALBO_URL),
+    ("provvedimenti", f"{portale.BASE_URL}/web/trasparenza/papca-g"),
+]
 
 
-def salva_stato(stato: dict) -> None:
-    STATE_JSON.parent.mkdir(exist_ok=True)
-    STATE_JSON.write_text(json.dumps(stato, ensure_ascii=False, indent=1), encoding="utf-8")
-
-
-def confini_mese(etichetta: str) -> tuple[str, str]:
-    """'2024-06' → ('2024-06-01', '2024-06-30')"""
-    anno, mese = int(etichetta[:4]), int(etichetta[5:7])
-    ultimo = calendar.monthrange(anno, mese)[1]
-    return f"{anno}-{mese:02d}-01", f"{anno}-{mese:02d}-{ultimo:02d}"
-
-
-def finestre_mensili(anno_min: int) -> list[str]:
-    """Etichette 'YYYY-MM' dal mese corrente a ritroso fino a gennaio anno_min."""
-    oggi = date.today()
-    finestre = []
-    anno, mese = oggi.year, oggi.month
-    while anno >= anno_min:
-        finestre.append(f"{anno}-{mese:02d}")
-        mese -= 1
-        if mese == 0:
-            mese, anno = 12, anno - 1
-    return finestre
-
-
-def raccogli_finestra(slug: str, url_form: str, etichetta: str) -> list[dict] | None:
-    """
-    POST del filtro data per una finestra e lettura della lista filtrata.
-    Le righe vengono validate contro l'intervallo: se il portale ha ignorato
-    il filtro (righe fuori finestra), vengono scartate e il log lo segnala.
-    """
-    da, a = confini_mese(etichetta)
-    html1 = portale.imposta_filtro_ricerca(url_form, da, a)
-    if html1 is None:
-        return None
-    url_lista = portale._url_mostra_lista(slug)
-    righe = portale.scrape_griglia(url_lista, stop_se_tutti_noti=False,
-                                   html_prima_pagina=html1)
-    in_finestra = [r for r in righe
-                   if r.get("data_inizio") and da <= r["data_inizio"] <= a]
-    fuori = len(righe) - len(in_finestra)
-    if fuori:
-        log.warning(f"  {etichetta}: {fuori} righe FUORI finestra scartate "
-                    f"(il filtro data non è stato applicato dal portale?)")
-    return in_finestra
-
-
-def calibra_sorgente(nome: str, url_form: str) -> bool:
-    """
-    Calibra la ricerca su una finestra sicuramente piena (ultimi 30 giorni):
-    l'albo pubblica atti in continuazione, quindi zero righe = ricerca rotta,
-    non archivio vuoto.
-    """
-    oggi = date.today()
-    da = (oggi - timedelta(days=30)).isoformat()
-    html = portale.imposta_filtro_ricerca(url_form, da, oggi.isoformat())
-    if html is None:
-        log.warning(f"Sorgente {nome!r}: ricerca non calibrabile, la salto.")
-        return False
-    return True
-
-
-def censimento(stato: dict) -> None:
-    """Sonda l'archivio con finestre campione e logga il verdetto."""
-    for nome, url_form, slug in portale.SORGENTI_RICERCA:
-        log.info(f"=== SONDA RICERCA sorgente {nome!r} ===")
-        if not calibra_sorgente(nome, url_form):
-            continue
-        for etichetta in FINESTRE_SONDA:
-            righe = raccogli_finestra(slug, url_form, etichetta)
-            if righe is None:
-                log.warning(f"  {etichetta}: form di ricerca non disponibile su {nome}")
-                break
-            spese = sum(1 for r in righe if portale.e_spesa(r["tipo"]))
-            log.info(f"  SONDA {nome} {etichetta}: {len(righe)} atti, "
-                     f"di cui {spese} spese")
-            stato["censimento_ricerca"][f"{nome}|{etichetta}"] = {
-                "totale": len(righe), "spese": spese}
-            salva_stato(stato)
-            time.sleep(1)
+def censimento_righe(nome: str, righe: list[dict]) -> None:
+    per_anno: dict[int, dict] = {}
+    tipi: dict[str, int] = {}
+    for r in righe:
+        anno = portale.estrai_anno(r)
+        per_anno.setdefault(anno, {"totale": 0, "spese": 0})
+        per_anno[anno]["totale"] += 1
+        if portale.e_spesa(r["tipo"]):
+            per_anno[anno]["spese"] += 1
+        tipi[r["tipo"]] = tipi.get(r["tipo"], 0) + 1
+    log.info(f"CENSIMENTO {nome} — {len(righe)} atti:")
+    for anno, c in sorted(per_anno.items()):
+        log.info(f"  {anno}: {c['totale']} atti, di cui {c['spese']} spese")
+    log.info(f"Tipi più frequenti in {nome}:")
+    for t, c in sorted(tipi.items(), key=lambda x: -x[1])[:10]:
+        marcatore = " ← SPESA" if portale.e_spesa(t) else ""
+        log.info(f"  {c:5} × {t!r}{marcatore}")
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-atti", type=int, default=300,
-                        help="Massimo numero di atti da elaborare in questo run")
-    parser.add_argument("--anno-min", type=int, default=2016,
-                        help="Non risalire oltre quest'anno")
+                        help="Massimo numero di spese da elaborare in questo run")
+    parser.add_argument("--anno-min", type=int, default=2021,
+                        help="Non risalire oltre quest'anno (archivio del "
+                             "portale: da maggio 2021)")
     parser.add_argument("--solo-censimento", action="store_true",
-                        help="Solo finestre-sonda, nessuna elaborazione")
+                        help="Solo scansione e censimento, nessuna elaborazione")
     args = parser.parse_args()
 
     log.info("=" * 60)
-    log.info("OPENSPESE — BACKFILL STORICO (ricerca per finestre)")
+    log.info("OPENSPESE — BACKFILL STORICO v3 (archivio completo albo)")
     log.info(f"max-atti={args.max_atti}  anno-min={args.anno_min}  "
              f"solo-censimento={args.solo_censimento}")
     log.info("=" * 60)
 
     portale.init_sessione()
-    stato = carica_stato()
-
-    if args.solo_censimento:
-        censimento(stato)
-        log.info("Censimento completato. Leggi le righe 'SONDA' qui sopra.")
-        return
-
     archivio = carica_archivio()
     note = chiavi_note(archivio)
-    elaborate = 0
 
-    for nome, url_form, slug in portale.SORGENTI_RICERCA:
-        if elaborate >= args.max_atti:
-            break
-        if not calibra_sorgente(nome, url_form):
-            continue
-        for etichetta in finestre_mensili(args.anno_min):
-            if elaborate >= args.max_atti:
-                break
-            chiave_finestra = f"{nome}|{etichetta}"
-            if chiave_finestra in stato["finestre_completate"]:
+    # 1. Scansione archivio di tutte le sorgenti
+    candidate: list[dict] = []
+    viste: set[tuple] = set()
+    for nome, url_pagina in SORGENTI:
+        log.info(f"=== Scansione archivio {nome!r} ===")
+        righe = portale.ricerca_archivio(url_pagina, anno_da=args.anno_min)
+        censimento_righe(nome, righe)
+        for r in righe:
+            chiave = (r["numero_raw"], r["oggetto"])
+            if not portale.e_spesa(r["tipo"]):
                 continue
+            if portale.estrai_anno(r) < args.anno_min:
+                continue
+            if chiave in note or chiave in viste:
+                continue
+            viste.add(chiave)
+            r["fonte"] = "storico"
+            candidate.append(r)
 
-            log.info(f"--- Finestra {chiave_finestra}")
-            righe = raccogli_finestra(slug, url_form, etichetta)
-            if righe is None:
-                log.warning(f"Form di ricerca non disponibile su {nome}: "
-                            f"salto la sorgente.")
-                break
+    candidate.sort(key=lambda r: (r.get("data_inizio") or "", r.get("numero_raw") or ""),
+                   reverse=True)
+    log.info(f"Spese nuove da elaborare (tutte le sorgenti): {len(candidate)}")
 
-            candidate, viste = [], set()
-            for r in righe:
-                chiave = (r["numero_raw"], r["oggetto"])
-                if not portale.e_spesa(r["tipo"]):
-                    continue
-                if chiave in note or chiave in viste:
-                    continue
-                viste.add(chiave)
-                r["fonte"] = "storico"
-                candidate.append(r)
-            log.info(f"  {len(righe)} atti nella finestra, "
-                     f"{len(candidate)} spese nuove da elaborare")
+    if args.solo_censimento:
+        log.info("Solo censimento: nessuna elaborazione. Fine.")
+        return
 
-            nuove = []
-            finestra_esaurita = True
-            for atto in candidate:
-                if elaborate >= args.max_atti:
-                    finestra_esaurita = False
-                    log.info(f"Limite {args.max_atti} raggiunto: rilancia il "
-                             f"workflow per continuare da {chiave_finestra}.")
-                    break
-                elaborate += 1
-                log.info(f"[{elaborate}/{args.max_atti}] {atto['tipo']} "
-                         f"{atto['numero_raw']} — {atto['oggetto'][:60]}")
-                try:
-                    spesa = elabora_spesa(atto)
-                    nuove.append(spesa)
-                    note.add((atto["numero_raw"], atto["oggetto"]))
-                except Exception as e:
-                    log.error(f"  Elaborazione fallita, salto: {e}")
-                time.sleep(1)
+    # 2. Elaborazione a blocchi
+    nuove: list[dict] = []
+    elaborate = 0
+    for atto in candidate[:args.max_atti]:
+        elaborate += 1
+        log.info(f"[{elaborate}/{min(args.max_atti, len(candidate))}] "
+                 f"{atto['tipo']} {atto['numero_raw']} — {atto['oggetto'][:60]}")
+        try:
+            spesa = elabora_spesa(atto)
+            nuove.append(spesa)
+        except Exception as e:
+            log.error(f"  Elaborazione fallita, salto: {e}")
+        # Salvataggio incrementale ogni 25 atti: nulla si perde
+        if len(nuove) and len(nuove) % 25 == 0:
+            salva(nuove + archivio, nuove)
+        time.sleep(1)
 
-            if nuove:
-                archivio = nuove + archivio
-                salva(archivio, nuove)  # incrementale: nulla si perde
-
-            if finestra_esaurita:
-                stato["finestre_completate"].append(chiave_finestra)
-            salva_stato(stato)
+    if nuove:
+        salva(nuove + archivio, nuove)
 
     log.info("=" * 60)
-    log.info(f"Backfill: {elaborate} atti elaborati in questo run.")
-    if elaborate >= args.max_atti:
-        log.info("ARCHIVIO NON ESAURITO: rilancia il workflow per il blocco successivo.")
+    log.info(f"Backfill: {elaborate} spese elaborate in questo run.")
+    if len(candidate) > args.max_atti:
+        log.info(f"ARCHIVIO NON ESAURITO: restano {len(candidate) - args.max_atti} "
+                 f"spese. Rilancia il workflow.")
     else:
-        log.info("Tutte le finestre elaborate (fino ad anno-min).")
+        log.info("ARCHIVIO ESAURITO fino ad anno-min. Backfill completo.")
     log.info("=" * 60)
 
 

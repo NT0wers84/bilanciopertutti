@@ -10,9 +10,9 @@ on:
         required: false
         default: '300'
       anno_min:
-        description: 'Anno minimo (non elaborare atti precedenti)'
+        description: 'Anno minimo (archivio del portale: da maggio 2021)'
         required: false
-        default: '2016'
+        default: '2021'
       solo_censimento:
         description: 'Solo censimento archivio (nessuna elaborazione)'
         type: boolean

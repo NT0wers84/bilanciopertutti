@@ -496,83 +496,106 @@ def _leggi_form_ricerca(url_pagina: str):
     return None
 
 
-def _post_filtro(azione: str, dati_base: dict, nome_azione: str, sse: str,
-                 data_da: str, data_a: str, formato: str) -> str | None:
-    """Un singolo tentativo di POST del filtro. Restituisce l'HTML di risposta."""
-    url_azione = re.sub(r"(_action=)[A-Za-z]+", rf"\g<1>{nome_azione}", azione)
-    dati = dict(dati_base)
-    dati[f"{PORTLET_PREFIX}simpleSearchEnable"] = sse
-    conv = _iso_a_it if formato == "it" else (lambda d: d)
-    dati[f"{PORTLET_PREFIX}dataPubblicazioneDa"] = conv(data_da)
-    dati[f"{PORTLET_PREFIX}dataPubblicazioneA"] = conv(data_a)
-    try:
-        r = SESSION.post(url_azione, data=dati, timeout=90)
-        r.raise_for_status()
-        return r.text
-    except requests.RequestException as e:
-        log.info(f"    POST {nome_azione}/sse={sse}/{formato}: errore {e}")
-        return None
+def _leggi_form_paginazione(html: str) -> str | None:
+    """Estrae l'action del form eseguiPaginazione da una pagina."""
+    soup = BeautifulSoup(html, "html.parser")
+    for f in soup.find_all("form"):
+        if "eseguiPaginazione" in (f.get("action") or ""):
+            return f["action"]
+    return None
 
 
-def _righe_in_finestra(html: str, data_da: str, data_a: str) -> tuple[int, int]:
-    righe = _parse_tabella(html)
-    dentro = sum(1 for r in righe
-                 if r.get("data_inizio") and data_da <= r["data_inizio"] <= data_a)
-    return dentro, len(righe)
+RE_RISULTATI = re.compile(r"Pagina\s+(\d+)\s+di\s+(\d+)\s+\((\d+)\s+risultati\)")
 
 
-def imposta_filtro_ricerca(url_pagina: str, data_da: str, data_a: str) -> str | None:
+def ricerca_archivio(url_pagina: str, anno_da: int | None = None,
+                     page_size: int = 100, max_pagine: int = 10_000) -> list[dict]:
     """
-    Invia il form di ricerca del portlet con un intervallo di date.
-    L'action nel form è quella dell'ordinamento (il JS la riscrive al submit),
-    quindi la prima volta CALIBRA: prova le action di ricerca note ×
-    simpleSearchEnable × formato data, accettando solo la combinazione le cui
-    righe cadono davvero nell'intervallo. La combinazione buona viene
-    riusata per tutte le finestre successive.
-
-    Restituisce l'HTML della prima pagina dei risultati (può avere 0 righe se
-    la finestra è realmente vuota), o None se la ricerca non è replicabile.
+    Scarica l'archivio storico di una sezione del portale con la ricetta
+    verificata nel browser (2026-07):
+      1. POST eseguiOrdinamentoLista con annoRegistrazioneDa=<anno_da>
+         (filtro ">= anno"; None = nessun filtro = tutto l'archivio).
+         Mai inviare dataPubblicazioneDa/A: il filtro data è rotto e
+         restituisce sempre 0 risultati.
+      2. POST eseguiPaginazione con hidden_page_to=N, hidden_page_size.
+    Restituisce tutte le righe (grezze, come scrape_griglia).
     """
     letto = _leggi_form_ricerca(url_pagina)
     if letto is None:
-        return None
-    azione, dati_base = letto
-    log.debug(f"Ricerca: action del form → {azione}")
+        return []
+    azione_ord, dati_base = letto
 
-    # Combinazione già calibrata per questa pagina?
-    if url_pagina in _COMBO_RICERCA:
-        nome_azione, sse, formato = _COMBO_RICERCA[url_pagina]
-        html = _post_filtro(azione, dati_base, nome_azione, sse, data_da, data_a, formato)
-        if html is not None:
-            dentro, totale = _righe_in_finestra(html, data_da, data_a)
-            log.info(f"Ricerca {data_da}→{data_a} [{nome_azione}/sse={sse}/{formato}]: "
-                     f"{dentro} righe in finestra ({totale} totali, prima pagina)")
-            return html
-        return None
+    # 1. Imposta il filtro (o azzera i filtri) nella sessione
+    dati = dict(dati_base)
+    dati[f"{PORTLET_PREFIX}dataPubblicazioneDa"] = ""
+    dati[f"{PORTLET_PREFIX}dataPubblicazioneA"] = ""
+    dati[f"{PORTLET_PREFIX}annoRegistrazioneDa"] = str(anno_da) if anno_da else ""
+    try:
+        r = SESSION.post(azione_ord, data=dati, timeout=90)
+        r.raise_for_status()
+    except requests.RequestException as e:
+        log.error(f"Archivio: POST filtro fallito ({e})")
+        return []
+    m = RE_RISULTATI.search(r.text)
+    if not m:
+        log.warning("Archivio: risposta senza conteggio risultati "
+                    f"({len(r.text)} byte) — struttura inattesa.")
+        return _parse_tabella(r.text)
+    log.info(f"Archivio {url_pagina[:80]}: {m.group(3)} risultati totali "
+             f"(annoRegistrazioneDa={anno_da or 'nessuno'})")
 
-    # Calibrazione: prova le combinazioni finché una restituisce righe in finestra
-    log.info(f"Ricerca: calibrazione su {url_pagina[:80]} "
-             f"(finestra test {data_da} → {data_a})")
-    for nome_azione in AZIONI_RICERCA:
-        for sse in ("true", "false"):
-            for formato in ("ISO", "it"):
-                html = _post_filtro(azione, dati_base, nome_azione, sse,
-                                    data_da, data_a, formato)
-                if html is None:
-                    continue
-                dentro, totale = _righe_in_finestra(html, data_da, data_a)
-                log.info(f"    {nome_azione}/sse={sse}/{formato}: "
-                         f"{dentro} in finestra su {totale} righe")
-                if dentro > 0 and (totale == 0 or dentro / totale >= 0.5):
-                    log.info(f"Ricerca CALIBRATA: azione={nome_azione}, "
-                             f"simpleSearch={sse}, formato={formato}")
-                    _COMBO_RICERCA[url_pagina] = (nome_azione, sse, formato)
-                    return html
-                time.sleep(0.5)
-    log.warning("Ricerca: nessuna combinazione ha prodotto righe nella finestra "
-                "di calibrazione. La ricerca via HTTP non è replicabile così: "
-                "servono i parametri esatti dal browser (network tab / estensione).")
-    return None
+    azione_pag = _leggi_form_paginazione(r.text)
+    if not azione_pag:
+        log.warning("Archivio: form eseguiPaginazione non trovato, "
+                    "leggo solo la prima pagina.")
+        return _parse_tabella(r.text)
+
+    def pagina(n: int) -> str:
+        d = {
+            "hidden_page_to": str(n),
+            "hidden_page_size": str(page_size),
+            f"{PORTLET_PREFIX}hidden_page_to": str(n),
+            f"{PORTLET_PREFIX}hidden_page_size": str(page_size),
+            f"{PORTLET_PREFIX}formDate": str(int(time.time() * 1000)),
+        }
+        rp = SESSION.post(azione_pag, data=d, timeout=90)
+        rp.raise_for_status()
+        return rp.text
+
+    # 2. Prima pagina con page_size richiesto → numero pagine effettivo
+    righe: list[dict] = []
+    chiavi: set[tuple] = set()
+
+    def aggiungi(html: str) -> int:
+        nuove = 0
+        for atto in _parse_tabella(html):
+            chiave = (atto["numero_raw"], atto["oggetto"])
+            if chiave not in chiavi:
+                chiavi.add(chiave)
+                righe.append(atto)
+                nuove += 1
+        return nuove
+
+    html1 = pagina(1)
+    m1 = RE_RISULTATI.search(html1)
+    tot_pagine = int(m1.group(2)) if m1 else 1
+    aggiungi(html1)
+    log.info(f"Archivio: {tot_pagine} pagine da {page_size} righe")
+
+    for n in range(2, min(tot_pagine, max_pagine) + 1):
+        try:
+            nuove = aggiungi(pagina(n))
+        except requests.RequestException as e:
+            log.error(f"Archivio: pagina {n} fallita ({e}), continuo")
+            continue
+        if n % 5 == 0 or n == tot_pagine:
+            log.info(f"  pagina {n}/{tot_pagine} — righe raccolte: {len(righe)}")
+        if nuove == 0:
+            log.info(f"  pagina {n}: nessuna riga nuova, fine anticipata")
+            break
+        time.sleep(1)
+
+    return righe
 
 
 def dump_moduli_ricerca(url_pagina: str) -> None:

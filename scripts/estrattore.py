@@ -21,12 +21,19 @@ import logging
 
 log = logging.getLogger(__name__)
 
-MODELLO_DEFAULT = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-MODELLO_FALLBACK = "llama-3.1-8b-instant"
+# L'8B è il default: sul free tier il 70B ha TPM così bassi che ogni chiamata
+# finisce in 429 (verificato nel backfill del 2026-07-16); l'8B risponde
+# stabilmente e per un'estrazione JSON strutturata è più che sufficiente.
+MODELLO_DEFAULT = os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
+MODELLO_RISERVA = "llama-3.3-70b-versatile"
 
 # Pausa tra chiamate: free tier Groq = 30 RPM → 2.5s è prudente
 PAUSA_TRA_CHIAMATE = float(os.environ.get("GROQ_PAUSA", "2.5"))
-TESTO_MAX_CHARS = 15_000  # ~4.000 token: sta nel TPM free tier
+TESTO_MAX_CHARS = 10_000  # ~2.800 token: sotto i limiti per-richiesta free tier
+
+# Modelli disattivati per il resto del run (3 fallimenti consecutivi)
+_MODELLI_SALTATI: set[str] = set()
+_FALLIMENTI_CONSECUTIVI: dict[str, int] = {}
 
 # Categorie ammesse (chiave = etichetta mostrata sul sito, valore = Missione BDAP)
 CATEGORIE = {
@@ -103,42 +110,74 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
 # GROQ
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | None:
+    """
+    Una estrazione con un singolo modello. Gestione errori differenziata:
+      - 413 (payload troppo grande): deterministico → dimezza il testo e
+        ritenta subito, mai backoff
+      - 429 (rate limit): backoff esponenziale con jitter
+      - altro: non recuperabile, esci subito
+    """
+    testo_corrente = testo
+    for tentativo in range(3):
+        prompt_utente = (f"Oggetto dell'atto: {oggetto}\n\nTesto dell'atto:\n"
+                         f"{testo_corrente if testo_corrente else '(testo non disponibile: deduci il possibile dal solo oggetto)'}")
+        try:
+            risposta = client.chat.completions.create(
+                model=modello,
+                max_tokens=500,
+                temperature=0,
+                response_format={"type": "json_object"},
+                messages=[
+                    {"role": "system", "content": PROMPT_SISTEMA},
+                    {"role": "user", "content": prompt_utente},
+                ],
+            )
+            time.sleep(PAUSA_TRA_CHIAMATE)
+            dati = json.loads(risposta.choices[0].message.content)
+            if isinstance(dati, dict):
+                return dati
+            log.warning(f"  {modello}: JSON non-dict, riprovo")
+        except json.JSONDecodeError as e:
+            log.warning(f"  {modello}: JSON malformato ({e}), tentativo {tentativo+1}")
+        except Exception as e:
+            messaggio = str(e)
+            if "413" in messaggio or "too large" in messaggio.lower():
+                testo_corrente = testo_corrente[: len(testo_corrente) // 2]
+                log.info(f"  {modello}: payload troppo grande, dimezzo il testo "
+                         f"a {len(testo_corrente)} char")
+                if len(testo_corrente) < 500:
+                    return None
+                continue  # ritenta subito: niente attesa
+            if "429" in messaggio or "rate" in messaggio.lower():
+                attesa = (2 ** tentativo) * 5 + random.uniform(0, 3)
+                log.warning(f"  {modello}: rate limit, attendo {attesa:.0f}s "
+                            f"(tentativo {tentativo+1})")
+                time.sleep(attesa)
+                continue
+            log.error(f"  {modello}: errore non recuperabile: {e}")
+            return None
+    return None
+
+
 def _estrai_con_groq(testo: str, oggetto: str) -> dict | None:
     from groq import Groq
-    client = Groq(api_key=os.environ["GROQ_API_KEY"])
+    # max_retries=0: i retry li gestiamo noi (l'SDK ritenterebbe anche i 413,
+    # che sono deterministici e non vanno mai ritentati uguali)
+    client = Groq(api_key=os.environ["GROQ_API_KEY"], max_retries=0)
 
-    prompt_utente = f"Oggetto dell'atto: {oggetto}\n\nTesto dell'atto:\n{testo if testo else '(testo non disponibile: deduci il possibile dal solo oggetto)'}"
-
-    for modello in (MODELLO_DEFAULT, MODELLO_FALLBACK):
-        for tentativo in range(4):
-            try:
-                risposta = client.chat.completions.create(
-                    model=modello,
-                    max_tokens=500,
-                    temperature=0,
-                    response_format={"type": "json_object"},
-                    messages=[
-                        {"role": "system", "content": PROMPT_SISTEMA},
-                        {"role": "user", "content": prompt_utente},
-                    ],
-                )
-                time.sleep(PAUSA_TRA_CHIAMATE)
-                dati = json.loads(risposta.choices[0].message.content)
-                if isinstance(dati, dict):
-                    return dati
-                log.warning(f"  Groq: JSON non-dict ({type(dati)}), riprovo")
-            except json.JSONDecodeError as e:
-                log.warning(f"  Groq: JSON malformato ({e}), tentativo {tentativo+1}")
-            except Exception as e:
-                messaggio = str(e)
-                if "429" in messaggio or "rate" in messaggio.lower():
-                    attesa = (2 ** tentativo) * 5 + random.uniform(0, 3)
-                    log.warning(f"  Groq rate limit, attendo {attesa:.0f}s (tentativo {tentativo+1})")
-                    time.sleep(attesa)
-                else:
-                    log.error(f"  Groq errore ({modello}): {e}")
-                    break  # errore non recuperabile con questo modello → prova fallback
-        log.info(f"  Passo al modello di riserva dopo {modello}")
+    for modello in (MODELLO_DEFAULT, MODELLO_RISERVA):
+        if modello in _MODELLI_SALTATI:
+            continue
+        risultato = _chiama_modello(client, modello, testo, oggetto)
+        if risultato is not None:
+            _FALLIMENTI_CONSECUTIVI[modello] = 0
+            return risultato
+        _FALLIMENTI_CONSECUTIVI[modello] = _FALLIMENTI_CONSECUTIVI.get(modello, 0) + 1
+        if _FALLIMENTI_CONSECUTIVI[modello] >= 3:
+            _MODELLI_SALTATI.add(modello)
+            log.warning(f"  Modello {modello} disattivato per il resto del run "
+                        f"(3 fallimenti consecutivi)")
     return None
 
 

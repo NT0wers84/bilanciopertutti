@@ -27,9 +27,24 @@ log = logging.getLogger(__name__)
 MODELLO_DEFAULT = os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
 MODELLO_RISERVA = "llama-3.3-70b-versatile"
 
-# Pausa tra chiamate: free tier Groq = 30 RPM → 2.5s è prudente
+# Pausa tra chiamate, ADATTIVA: cresce a ogni 429, si riassesta sui successi.
+# Il vero collo di bottiglia del free tier è il TPM (token/minuto).
 PAUSA_TRA_CHIAMATE = float(os.environ.get("GROQ_PAUSA", "2.5"))
-TESTO_MAX_CHARS = 10_000  # ~2.800 token: sotto i limiti per-richiesta free tier
+_pausa_corrente = PAUSA_TRA_CHIAMATE
+TESTO_MAX_CHARS = 7_000  # ~2.000 token/chiamata: raddoppia la resa sul TPM
+
+
+def _riduci_testo(testo: str, max_chars: int = TESTO_MAX_CHARS) -> str:
+    """
+    Taglio intelligente: negli atti l'intestazione (oggetto, beneficiario,
+    CIG) sta all'inizio ma il dispositivo con gli IMPORTI sta in fondo.
+    Tagliare solo la coda perde gli importi: teniamo testa e coda.
+    """
+    if len(testo) <= max_chars:
+        return testo
+    testa = int(max_chars * 0.6)
+    coda = max_chars - testa
+    return testo[:testa] + "\n[... parte centrale omessa ...]\n" + testo[-coda:]
 
 # Modelli disattivati per il resto del run (3 fallimenti consecutivi)
 _MODELLI_SALTATI: set[str] = set()
@@ -82,7 +97,7 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     Estrae i dati strutturati della spesa. Prova Groq, poi regex.
     Restituisce sempre un dict con le chiavi dello schema + "estrazione".
     """
-    testo = (testo or "")[:TESTO_MAX_CHARS]
+    testo = _riduci_testo(testo or "")
     risultato = None
 
     if os.environ.get("GROQ_API_KEY"):
@@ -118,6 +133,7 @@ def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | No
       - 429 (rate limit): backoff esponenziale con jitter
       - altro: non recuperabile, esci subito
     """
+    global _pausa_corrente
     testo_corrente = testo
     for tentativo in range(3):
         prompt_utente = (f"Oggetto dell'atto: {oggetto}\n\nTesto dell'atto:\n"
@@ -133,7 +149,9 @@ def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | No
                     {"role": "user", "content": prompt_utente},
                 ],
             )
-            time.sleep(PAUSA_TRA_CHIAMATE)
+            # Successo: la pausa adattiva si riassesta lentamente verso la base
+            _pausa_corrente = max(_pausa_corrente * 0.9, PAUSA_TRA_CHIAMATE)
+            time.sleep(_pausa_corrente)
             dati = json.loads(risposta.choices[0].message.content)
             if isinstance(dati, dict):
                 return dati
@@ -143,16 +161,19 @@ def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | No
         except Exception as e:
             messaggio = str(e)
             if "413" in messaggio or "too large" in messaggio.lower():
-                testo_corrente = testo_corrente[: len(testo_corrente) // 2]
-                log.info(f"  {modello}: payload troppo grande, dimezzo il testo "
+                testo_corrente = _riduci_testo(testo_corrente, len(testo_corrente) // 2)
+                log.info(f"  {modello}: payload troppo grande, riduco il testo "
                          f"a {len(testo_corrente)} char")
                 if len(testo_corrente) < 500:
                     return None
                 continue  # ritenta subito: niente attesa
             if "429" in messaggio or "rate" in messaggio.lower():
+                # Il TPM è saturo: alza la pausa di regime per le prossime chiamate
+                _pausa_corrente = min(_pausa_corrente * 1.5, 30.0)
                 attesa = (2 ** tentativo) * 5 + random.uniform(0, 3)
                 log.warning(f"  {modello}: rate limit, attendo {attesa:.0f}s "
-                            f"(tentativo {tentativo+1})")
+                            f"(tentativo {tentativo+1}, pausa di regime → "
+                            f"{_pausa_corrente:.1f}s)")
                 time.sleep(attesa)
                 continue
             log.error(f"  {modello}: errore non recuperabile: {e}")

@@ -18,6 +18,11 @@ on:
         type: boolean
         required: false
         default: false
+      riestrai_regex:
+        description: 'Rielabora con Groq le spese estratte col fallback regex'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -55,6 +60,9 @@ jobs:
           FLAGS="--max-atti ${{ inputs.max_atti }} --anno-min ${{ inputs.anno_min }}"
           if [ "${{ inputs.solo_censimento }}" = "true" ]; then
             FLAGS="$FLAGS --solo-censimento"
+          fi
+          if [ "${{ inputs.riestrai_regex }}" = "true" ]; then
+            FLAGS="$FLAGS --riestrai-regex"
           fi
           python scripts/backfill.py $FLAGS
 

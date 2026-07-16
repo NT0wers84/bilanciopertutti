@@ -21,8 +21,10 @@ Uso:
 import time
 import logging
 import argparse
+from datetime import datetime
 
 import portale
+from estrattore import estrai_dati
 from scraper import carica_archivio, chiavi_note, elabora_spesa, salva
 
 logging.basicConfig(
@@ -30,6 +32,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+logging.getLogger("httpx").setLevel(logging.WARNING)  # meno rumore nel log
 log = logging.getLogger(__name__)
 
 # (nome, pagina con i form di ricerca/paginazione)
@@ -58,6 +61,45 @@ def censimento_righe(nome: str, righe: list[dict]) -> None:
         log.info(f"  {c:5} × {t!r}{marcatore}")
 
 
+def riestrai_regex(max_atti: int) -> None:
+    """
+    Rielabora con Groq le spese archiviate col solo fallback regex
+    (finite così nei momenti di saturazione dei rate limit).
+    """
+    archivio = carica_archivio()
+    candidate = [s for s in archivio
+                 if s.get("estrazione") == "regex" and s.get("url_atto")]
+    log.info(f"Spese con estrazione regex da rielaborare: {len(candidate)} "
+             f"(max questo run: {max_atti})")
+    rielaborate = 0
+    for s in candidate[:max_atti]:
+        rielaborate += 1
+        log.info(f"[{rielaborate}] {s['numero_raw']} — {s['oggetto'][:60]}")
+        try:
+            testo = portale.estrai_testo_atto({"url_dettaglio": s["url_atto"]})
+            dati = estrai_dati(testo, s["oggetto"], s.get("tipo_atto", ""))
+            if dati["estrazione"] != "groq":
+                log.info("  ancora regex (Groq non disponibile), lascio invariato")
+                continue
+            for campo in ("beneficiario", "importo_euro", "cig", "categoria",
+                          "missione_bdap", "capitolo_bilancio",
+                          "descrizione_sintetica", "tipo_atto", "estrazione"):
+                s[campo] = dati[campo]
+            s["caratteri_testo"] = len(testo)
+            s["data_elaborazione"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+            log.info(f"  → {s['beneficiario'] or '?'} | "
+                     f"{s['importo_euro'] if s['importo_euro'] is not None else '?'} € | "
+                     f"{s['categoria']}")
+        except Exception as e:
+            log.error(f"  Rielaborazione fallita: {e}")
+        if rielaborate % 25 == 0:
+            salva(archivio, [])
+        time.sleep(1)
+    salva(archivio, [])
+    log.info(f"Rielaborate {rielaborate} spese. "
+             f"Restanti con regex: {max(len(candidate) - max_atti, 0)}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--max-atti", type=int, default=300,
@@ -67,7 +109,16 @@ def main():
                              "portale: da maggio 2021)")
     parser.add_argument("--solo-censimento", action="store_true",
                         help="Solo scansione e censimento, nessuna elaborazione")
+    parser.add_argument("--riestrai-regex", action="store_true",
+                        help="Non scansiona il portale: rielabora con Groq le "
+                             "spese archiviate con estrazione regex")
     args = parser.parse_args()
+
+    if args.riestrai_regex:
+        log.info("MODALITÀ RIESTRAZIONE REGEX")
+        portale.init_sessione()
+        riestrai_regex(args.max_atti)
+        return
 
     log.info("=" * 60)
     log.info("OPENSPESE — BACKFILL STORICO v3 (archivio completo albo)")

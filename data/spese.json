@@ -1,5 +1,26 @@
 [
  {
+  "id": "liquidazione-1449-2026",
+  "numero_raw": "2026/1449",
+  "numero": "1449",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-17",
+  "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE SINISTRO N. 20230050153 EVENTO DEL 25/07/2023",
+  "beneficiario": "sig.ra T.G.",
+  "importo_euro": 2499.0,
+  "cig": null,
+  "categoria": "Polizia locale e sicurezza",
+  "missione_bdap": 3,
+  "capitolo_bilancio": "5015/0",
+  "descrizione_sintetica": "Liquidazione sinistro del 25/07/2023",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5519541",
+  "estrazione": "groq",
+  "caratteri_testo": 8448,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-18 16:15"
+ },
+ {
   "id": "liquidazione-1446-2026",
   "numero_raw": "2026/1446",
   "numero": "1446",

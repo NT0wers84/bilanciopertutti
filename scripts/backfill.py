@@ -61,16 +61,27 @@ def censimento_righe(nome: str, righe: list[dict]) -> None:
         log.info(f"  {c:5} × {t!r}{marcatore}")
 
 
-def riestrai_regex(max_atti: int) -> None:
+VERSIONE_ESTRAZIONE = 2  # v2: importi testuali, tabelle, beneficiari multipli, pluriennali
+
+
+def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
     """
-    Rielabora con Groq le spese archiviate col solo fallback regex
-    (finite così nei momenti di saturazione dei rate limit).
+    Rielabora con Groq le spese archiviate:
+      - tutte=False: solo quelle col fallback regex (rate limit saturi)
+      - tutte=True:  anche quelle estratte con una versione precedente
+                     dell'estrattore (schema vecchio)
     """
     archivio = carica_archivio()
-    candidate = [s for s in archivio
-                 if s.get("estrazione") == "regex" and s.get("url_atto")]
-    log.info(f"Spese con estrazione regex da rielaborare: {len(candidate)} "
-             f"(max questo run: {max_atti})")
+    if tutte:
+        candidate = [s for s in archivio
+                     if s.get("url_atto")
+                     and s.get("versione_estrazione", 1) < VERSIONE_ESTRAZIONE]
+    else:
+        candidate = [s for s in archivio
+                     if s.get("estrazione") == "regex" and s.get("url_atto")]
+    log.info(f"Spese da rielaborare: {len(candidate)} "
+             f"({'tutte le versioni obsolete' if tutte else 'solo estrazione regex'}) "
+             f"— max questo run: {max_atti}")
     rielaborate = 0
     for s in candidate[:max_atti]:
         rielaborate += 1
@@ -81,10 +92,13 @@ def riestrai_regex(max_atti: int) -> None:
             if dati["estrazione"] != "groq":
                 log.info("  ancora regex (Groq non disponibile), lascio invariato")
                 continue
-            for campo in ("beneficiario", "importo_euro", "cig", "categoria",
-                          "missione_bdap", "capitolo_bilancio",
+            for campo in ("beneficiario", "n_beneficiari", "beneficiari_dettaglio",
+                          "importo_euro", "importo_testuale", "importo_e_pluriennale",
+                          "durata_anni", "importo_primo_anno", "iva_inclusa",
+                          "cig", "categoria", "missione_bdap", "capitolo_bilancio",
                           "descrizione_sintetica", "tipo_atto", "estrazione"):
-                s[campo] = dati[campo]
+                s[campo] = dati.get(campo)
+            s["versione_estrazione"] = VERSIONE_ESTRAZIONE
             s["caratteri_testo"] = len(testo)
             s["data_elaborazione"] = datetime.now().strftime("%Y-%m-%d %H:%M")
             log.info(f"  → {s['beneficiario'] or '?'} | "
@@ -112,12 +126,17 @@ def main():
     parser.add_argument("--riestrai-regex", action="store_true",
                         help="Non scansiona il portale: rielabora con Groq le "
                              "spese archiviate con estrazione regex")
+    parser.add_argument("--riestrai-tutto", action="store_true",
+                        help="Rielabora TUTTE le spese con schema obsoleto "
+                             "(nuovi campi: importi da tabella, beneficiari "
+                             "multipli, spese pluriennali)")
     args = parser.parse_args()
 
-    if args.riestrai_regex:
-        log.info("MODALITÀ RIESTRAZIONE REGEX")
+    if args.riestrai_regex or args.riestrai_tutto:
+        log.info("MODALITÀ RIESTRAZIONE "
+                 f"({'TUTTE le spese obsolete' if args.riestrai_tutto else 'solo regex'})")
         portale.init_sessione()
-        riestrai_regex(args.max_atti)
+        riestrai_regex(args.max_atti, tutte=args.riestrai_tutto)
         return
 
     log.info("=" * 60)

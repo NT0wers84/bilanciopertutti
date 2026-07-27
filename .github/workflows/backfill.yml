@@ -23,6 +23,11 @@ on:
         type: boolean
         required: false
         default: false
+      riestrai_tutto:
+        description: 'Rielabora TUTTE le spese con schema obsoleto (nuovi campi)'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -63,6 +68,9 @@ jobs:
           fi
           if [ "${{ inputs.riestrai_regex }}" = "true" ]; then
             FLAGS="$FLAGS --riestrai-regex"
+          fi
+          if [ "${{ inputs.riestrai_tutto }}" = "true" ]; then
+            FLAGS="$FLAGS --riestrai-tutto"
           fi
           python scripts/backfill.py $FLAGS
 

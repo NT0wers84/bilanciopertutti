@@ -22,7 +22,9 @@ DOCS_DATA = Path("docs/data")
 
 CAMPI_SITO = [
     "id", "numero_raw", "anno", "tipo_atto", "data_pubblicazione", "oggetto",
-    "beneficiario", "importo_euro", "cig", "categoria", "capitolo_bilancio",
+    "beneficiario", "n_beneficiari", "beneficiari_dettaglio",
+    "importo_euro", "importo_e_pluriennale", "durata_anni", "importo_primo_anno",
+    "iva_inclusa", "cig", "categoria", "capitolo_bilancio",
     "descrizione_sintetica", "url_atto", "estrazione",
 ]
 

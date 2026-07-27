@@ -69,6 +69,37 @@
          padding: 2px 9px; border-radius: 20px; color: var(--grigio); }
   .tag.categoria { background: #E8F0FE; border-color: #C6DAFC; color: var(--blu-scuro); }
   .tag.liquidazione { background: #E6F4EE; border-color: #C2E3D4; color: var(--verde); }
+  .tag.determinazione { background: #FDF1DC; border-color: #EFD9A8; color: #8A6400; }
+  .tag.pluriennale { background: #F3ECFB; border-color: #DDCCF0; color: #5B3E8E; }
+  .tag.multi { background: #FBEDE9; border-color: #F0D2C8; color: #9B3B22; }
+
+  /* Colore del bordo sinistro per distinguere a colpo d'occhio i due tipi */
+  .spesa-card.tipo-liquidazione { border-left: 4px solid var(--verde); }
+  .spesa-card.tipo-determinazione { border-left: 4px solid #C99A16; }
+  .spesa-card.tipo-liquidazione .spesa-importo { color: var(--verde); }
+  .spesa-card.tipo-determinazione .spesa-importo { color: #8A6400; }
+
+  /* Tab della vista */
+  .viste { display: flex; gap: 0; margin: 22px 0 4px; border-bottom: 2px solid var(--bordo); }
+  .viste button { font: inherit; font-size: 14px; padding: 10px 18px; border: none;
+    background: none; cursor: pointer; color: var(--grigio); border-bottom: 3px solid transparent;
+    margin-bottom: -2px; font-weight: 500; }
+  .viste button.attiva { color: var(--testo); font-weight: 700; }
+  .viste button[data-vista="liquidazione"].attiva { border-bottom-color: var(--verde); }
+  .viste button[data-vista="determinazione"].attiva { border-bottom-color: #C99A16; }
+  .viste button[data-vista=""].attiva { border-bottom-color: var(--blu); }
+  .viste .conteggio-vista { font-size: 12px; color: var(--grigio); font-weight: 400; }
+  .spiega-vista { font-size: 12.5px; color: var(--grigio); margin: 10px 0 14px;
+    background: var(--carta); border: 1px solid var(--bordo); border-radius: 10px;
+    padding: 10px 14px; }
+
+  .dettaglio-beneficiari { margin-top: 8px; }
+  .dettaglio-beneficiari table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .dettaglio-beneficiari td { padding: 3px 6px; border-bottom: 1px solid var(--bordo); }
+  .dettaglio-beneficiari td:last-child { text-align: right; white-space: nowrap;
+    font-variant-numeric: tabular-nums; }
+  .nota-pluriennale { margin-top: 8px; font-size: 12px; background: #F3ECFB;
+    border: 1px solid #DDCCF0; border-radius: 8px; padding: 8px 10px; color: #4A3175; }
   .spesa-oggetto { font-size: 12px; color: var(--grigio); margin-top: 8px;
                    display: none; border-top: 1px dashed var(--bordo); padding-top: 8px; }
   .spesa-card.aperta .spesa-oggetto { display: block; }
@@ -110,11 +141,6 @@
   <div class="filtri-inner">
     <select id="filtro-anno" title="Anno"></select>
     <select id="filtro-categoria" title="Categoria"></select>
-    <select id="filtro-tipo" title="Tipo atto">
-      <option value="">Tutti gli atti</option>
-      <option value="determinazione">Determinazioni</option>
-      <option value="liquidazione">Liquidazioni</option>
-    </select>
     <input type="search" id="filtro-testo" placeholder="Cerca beneficiario, oggetto, CIG…">
   </div>
 </nav>
@@ -138,6 +164,15 @@
   </div>
 
   <h2 class="sezione">Le spese, una per una</h2>
+  <div class="viste" id="viste">
+    <button data-vista="liquidazione" class="attiva">Soldi usciti
+      <span class="conteggio-vista" id="cnt-liquidazione"></span></button>
+    <button data-vista="determinazione">Spese impegnate
+      <span class="conteggio-vista" id="cnt-determinazione"></span></button>
+    <button data-vista="">Tutto
+      <span class="conteggio-vista" id="cnt-tutto"></span></button>
+  </div>
+  <div class="spiega-vista" id="spiega-vista"></div>
   <div class="conteggio-feed" id="conteggio-feed"></div>
   <div id="feed"><div class="caricamento">Caricamento dati…</div></div>
   <div class="paginazione">
@@ -168,13 +203,18 @@ let SPESE = [];
 let filtrate = [];
 let pagina = 0;
 let grafici = {};
+let vista = "liquidazione";   // vista predefinita: i soldi realmente usciti
 
+// Formato italiano: punto per le migliaia, SEMPRE due decimali (1.234,50 €).
+// useGrouping:"always" è necessario perché la locale it-IT di default NON
+// raggruppa i numeri a 4 cifre (darebbe "8540,00" invece di "8.540,00").
 const eur = v => v == null ? null :
-  v.toLocaleString("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: v >= 1000 ? 0 : 2 });
+  v.toLocaleString("it-IT", { style: "currency", currency: "EUR",
+    minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: "always" });
 const eurCompatto = v => {
   if (v >= 1e6) return (v / 1e6).toLocaleString("it-IT", { maximumFractionDigits: 1 }) + " mln €";
-  if (v >= 1e3) return Math.round(v / 1e3).toLocaleString("it-IT") + " mila €";
-  return Math.round(v) + " €";
+  if (v >= 1e3) return Math.round(v / 1e3).toLocaleString("it-IT", { useGrouping: "always" }) + " mila €";
+  return v.toLocaleString("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
 };
 const dataIt = iso => {
   if (!iso) return "";
@@ -214,30 +254,56 @@ function costruisciFiltri() {
     '<option value="">Tutte le categorie</option>' +
     categorie.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join("");
 
-  ["filtro-anno", "filtro-categoria", "filtro-tipo"].forEach(id =>
+  ["filtro-anno", "filtro-categoria"].forEach(id =>
     document.getElementById(id).addEventListener("change", applicaFiltri));
   let timer;
   document.getElementById("filtro-testo").addEventListener("input", () => {
     clearTimeout(timer); timer = setTimeout(applicaFiltri, 250);
   });
+  document.querySelectorAll("#viste button").forEach(b =>
+    b.addEventListener("click", () => {
+      vista = b.dataset.vista;
+      document.querySelectorAll("#viste button").forEach(x =>
+        x.classList.toggle("attiva", x === b));
+      applicaFiltri();
+    }));
+}
+
+const SPIEGA = {
+  liquidazione: "<strong>Soldi usciti.</strong> Le liquidazioni sono i pagamenti " +
+    "effettivi: il Comune ha ricevuto la fattura, verificato il servizio e " +
+    "autorizzato il bonifico. Qui vedi i soldi che hanno davvero lasciato le casse comunali.",
+  determinazione: "<strong>Spese impegnate.</strong> Le determinazioni contabili " +
+    "vincolano una somma del bilancio a un fornitore o a un progetto: sono promesse " +
+    "di spesa, non pagamenti. Il pagamento arriverà dopo, con una liquidazione.",
+  "": "<strong>Tutto insieme.</strong> Attenzione: sommare impegni e pagamenti conta " +
+    "due volte la stessa spesa (prima impegnata, poi pagata). Per capire quanto è " +
+    "davvero uscito guarda \"Soldi usciti\".",
+};
+
+function filtroComune(s) {
+  const anno = document.getElementById("filtro-anno").value;
+  const cat = document.getElementById("filtro-categoria").value;
+  const testo = document.getElementById("filtro-testo").value.trim().toLowerCase();
+  if (anno && String(s.anno) !== anno) return false;
+  if (cat && s.categoria !== cat) return false;
+  if (testo) {
+    const blob = `${s.beneficiario || ""} ${s.oggetto || ""} ${s.descrizione_sintetica || ""} ${s.cig || ""} ${s.numero_raw || ""}`.toLowerCase();
+    if (!blob.includes(testo)) return false;
+  }
+  return true;
 }
 
 function applicaFiltri() {
-  const anno = document.getElementById("filtro-anno").value;
-  const cat = document.getElementById("filtro-categoria").value;
-  const tipo = document.getElementById("filtro-tipo").value;
-  const testo = document.getElementById("filtro-testo").value.trim().toLowerCase();
+  const base = SPESE.filter(filtroComune);
+  filtrate = vista ? base.filter(s => s.tipo_atto === vista) : base;
 
-  filtrate = SPESE.filter(s => {
-    if (anno && String(s.anno) !== anno) return false;
-    if (cat && s.categoria !== cat) return false;
-    if (tipo && s.tipo_atto !== tipo) return false;
-    if (testo) {
-      const blob = `${s.beneficiario || ""} ${s.oggetto || ""} ${s.descrizione_sintetica || ""} ${s.cig || ""} ${s.numero_raw || ""}`.toLowerCase();
-      if (!blob.includes(testo)) return false;
-    }
-    return true;
-  });
+  const nLiq = base.filter(s => s.tipo_atto === "liquidazione").length;
+  const nDet = base.filter(s => s.tipo_atto === "determinazione").length;
+  document.getElementById("cnt-liquidazione").textContent = `(${nLiq})`;
+  document.getElementById("cnt-determinazione").textContent = `(${nDet})`;
+  document.getElementById("cnt-tutto").textContent = `(${base.length})`;
+  document.getElementById("spiega-vista").innerHTML = SPIEGA[vista];
 
   pagina = 0;
   aggiornaKpi();
@@ -251,11 +317,25 @@ function aggiornaKpi() {
   const beneficiari = new Set(filtrate.map(s => s.beneficiario).filter(Boolean));
   const massima = conImporto.reduce((mx, s) => s.importo_euro > (mx?.importo_euro ?? -1) ? s : mx, null);
 
+  // Gli importi pluriennali non sono spesa dell'anno: nel totale usiamo la
+  // quota del primo anno quando è nota, altrimenti la media annua.
+  const quotaAnnua = s => {
+    if (s.importo_euro == null) return 0;
+    if (s.importo_e_pluriennale && s.durata_anni)
+      return s.importo_primo_anno != null ? s.importo_primo_anno : s.importo_euro / s.durata_anni;
+    return s.importo_euro;
+  };
+  const totaleAnnuo = conImporto.reduce((t, s) => t + quotaAnnua(s), 0);
+  const nPluri = conImporto.filter(s => s.importo_e_pluriennale && s.durata_anni).length;
+  const etichettaTot = vista === "liquidazione" ? "usciti dalle casse comunali"
+    : vista === "determinazione" ? "impegnati (non ancora pagati)" : "totale (impegni + pagamenti)";
+
   document.getElementById("kpi").innerHTML = `
-    <div class="card"><div class="valore">${eurCompatto(totale)}</div>
-      <div class="etichetta">spesa tracciata (${conImporto.length} atti con importo)</div></div>
+    <div class="card"><div class="valore">${eurCompatto(totaleAnnuo)}</div>
+      <div class="etichetta">${etichettaTot}${nPluri ? ` · ${nPluri} spese pluriennali contate pro quota` : ""}</div></div>
     <div class="card"><div class="valore">${filtrate.length.toLocaleString("it-IT")}</div>
-      <div class="etichetta">atti di spesa</div></div>
+      <div class="etichetta">atti${conImporto.length < filtrate.length
+        ? ` · ${filtrate.length - conImporto.length} senza importo` : ""}</div></div>
     <div class="card"><div class="valore">${beneficiari.size.toLocaleString("it-IT")}</div>
       <div class="etichetta">beneficiari distinti</div></div>
     <div class="card"><div class="valore">${massima ? eurCompatto(massima.importo_euro) : "—"}</div>
@@ -273,12 +353,17 @@ function nuovoGrafico(id, config) {
 
 function aggiornaGrafici() {
   const conImporto = filtrate.filter(s => s.importo_euro != null);
+  // Nei grafici gli importi pluriennali entrano pro quota, altrimenti un
+  // affidamento da 15 anni schiaccia tutte le altre voci.
+  const quota = s => (s.importo_e_pluriennale && s.durata_anni)
+    ? (s.importo_primo_anno != null ? s.importo_primo_anno : s.importo_euro / s.durata_anni)
+    : s.importo_euro;
 
   // Mensile
   const mesi = {};
   conImporto.forEach(s => {
     const m = (s.data_pubblicazione || "").slice(0, 7);
-    if (m) mesi[m] = (mesi[m] || 0) + s.importo_euro;
+    if (m) mesi[m] = (mesi[m] || 0) + quota(s);
   });
   const chiaviMese = Object.keys(mesi).sort();
   const nomiMese = ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
@@ -294,7 +379,7 @@ function aggiornaGrafici() {
   // Categorie
   const cats = {};
   conImporto.forEach(s => { cats[s.categoria || "Da classificare"] =
-    (cats[s.categoria || "Da classificare"] || 0) + s.importo_euro; });
+    (cats[s.categoria || "Da classificare"] || 0) + quota(s); });
   const catOrd = Object.entries(cats).sort((a, b) => b[1] - a[1]);
   nuovoGrafico("grafico-categorie", {
     type: "doughnut",
@@ -311,7 +396,7 @@ function aggiornaGrafici() {
   // Top beneficiari
   const bens = {};
   conImporto.forEach(s => { if (s.beneficiario)
-    bens[s.beneficiario] = (bens[s.beneficiario] || 0) + s.importo_euro; });
+    bens[s.beneficiario] = (bens[s.beneficiario] || 0) + quota(s); });
   const top = Object.entries(bens).sort((a, b) => b[1] - a[1]).slice(0, 8);
   nuovoGrafico("grafico-beneficiari", {
     type: "bar",
@@ -338,11 +423,36 @@ function disegnaFeed() {
 
   const blocco = filtrate.slice(pagina * PER_PAGINA, (pagina + 1) * PER_PAGINA);
   feed.innerHTML = blocco.map(s => {
-    const tipoTag = s.tipo_atto === "liquidazione"
-      ? '<span class="tag liquidazione">Liquidazione</span>'
-      : '<span class="tag">Determinazione</span>';
+    const liq = s.tipo_atto === "liquidazione";
+    const tipoTag = liq
+      ? '<span class="tag liquidazione">Liquidazione · soldi usciti</span>'
+      : '<span class="tag determinazione">Determinazione · spesa impegnata</span>';
+
+    const voci = Array.isArray(s.beneficiari_dettaglio) ? s.beneficiari_dettaglio : [];
+    const multi = (s.n_beneficiari || 1) > 1 || voci.length > 1;
+
+    // Nota pluriennale: l'importo totale non è spesa di quest'anno
+    let notaPluri = "";
+    if (s.importo_e_pluriennale && s.durata_anni) {
+      const media = s.importo_euro ? s.importo_euro / s.durata_anni : null;
+      notaPluri = `<div class="nota-pluriennale">
+        <strong>Spesa su ${s.durata_anni} anni.</strong> L'importo indicato è il totale
+        dell'affidamento, non la spesa di quest'anno.
+        ${s.importo_primo_anno != null
+          ? ` Il primo anno vale <strong>${eur(s.importo_primo_anno)}</strong>.`
+          : (media ? ` In media <strong>${eur(media)}</strong> all'anno.` : "")}
+      </div>`;
+    }
+
+    const tabellaVoci = voci.length ? `
+      <div class="dettaglio-beneficiari">
+        <strong>Dettaglio (${voci.length} voci):</strong>
+        <table>${voci.map(v => `<tr><td>${esc(v.nome)}</td>
+          <td>${v.importo != null ? eur(v.importo) : "—"}</td></tr>`).join("")}</table>
+      </div>` : "";
+
     return `
-    <article class="spesa-card">
+    <article class="spesa-card tipo-${liq ? "liquidazione" : "determinazione"}">
       <div class="spesa-testata">
         <div class="spesa-beneficiario">${esc(s.beneficiario) || "<em>Beneficiario non indicato</em>"}</div>
         <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""}">
@@ -352,12 +462,19 @@ function disegnaFeed() {
       <div class="spesa-meta">
         ${tipoTag}
         <span class="tag categoria">${esc(s.categoria || "Da classificare")}</span>
+        ${multi ? `<span class="tag multi">${s.n_beneficiari || voci.length} beneficiari</span>` : ""}
+        ${s.importo_e_pluriennale && s.durata_anni ? `<span class="tag pluriennale">su ${s.durata_anni} anni</span>` : ""}
         <span class="tag">n. ${esc(s.numero_raw)}</span>
         ${s.data_pubblicazione ? `<span class="tag">${dataIt(s.data_pubblicazione)}</span>` : ""}
         ${s.cig ? `<span class="tag">CIG ${esc(s.cig)}</span>` : ""}
       </div>
-      <div class="spesa-oggetto"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}
-        ${s.capitolo_bilancio ? `<br><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}` : ""}</div>
+      ${notaPluri}
+      <div class="spesa-oggetto">${tabellaVoci}
+        <div style="margin-top:8px"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}</div>
+        ${s.capitolo_bilancio ? `<div><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}</div>` : ""}
+        ${s.importo_euro != null && s.iva_inclusa != null
+          ? `<div><strong>IVA:</strong> ${s.iva_inclusa ? "inclusa nell'importo" : "esclusa dall'importo"}</div>` : ""}
+      </div>
       <div class="spesa-azioni">
         <button onclick="this.closest('.spesa-card').classList.toggle('aperta')">dettagli ▾</button>
         ${s.url_atto ? `<a href="${esc(s.url_atto)}" target="_blank" rel="noopener">Vedi atto originale ↗</a>` : ""}

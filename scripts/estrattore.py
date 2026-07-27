@@ -34,17 +34,98 @@ _pausa_corrente = PAUSA_TRA_CHIAMATE
 TESTO_MAX_CHARS = 7_000  # ~2.000 token/chiamata: raddoppia la resa sul TPM
 
 
+RE_HA_IMPORTO = re.compile(
+    r"(€|euro\b|importo|totale|iva|imponibile|impegn|liquidaz|fattura|cig)",
+    re.IGNORECASE)
+
+
 def _riduci_testo(testo: str, max_chars: int = TESTO_MAX_CHARS) -> str:
     """
-    Taglio intelligente: negli atti l'intestazione (oggetto, beneficiario,
-    CIG) sta all'inizio ma il dispositivo con gli IMPORTI sta in fondo.
-    Tagliare solo la coda perde gli importi: teniamo testa e coda.
+    Riduzione che PRESERVA le righe con gli importi.
+    Negli atti gli importi stanno spesso in tabelle a metà documento
+    (pdfplumber le rende come righe "a | b | c"): tagliare testa+coda le
+    perdeva. Qui teniamo: intestazione + tutte le righe che contengono
+    importi/parole chiave + coda (dispositivo).
     """
     if len(testo) <= max_chars:
         return testo
-    testa = int(max_chars * 0.6)
-    coda = max_chars - testa
-    return testo[:testa] + "\n[... parte centrale omessa ...]\n" + testo[-coda:]
+
+    righe = testo.splitlines()
+    quota_testa = int(max_chars * 0.3)
+    testa, usato = [], 0
+    for r in righe:
+        if usato + len(r) > quota_testa:
+            break
+        testa.append(r)
+        usato += len(r) + 1
+    n_testa = len(testa)
+
+    quota_coda = int(max_chars * 0.25)
+    coda, usato = [], 0
+    for r in reversed(righe[n_testa:]):
+        if usato + len(r) > quota_coda:
+            break
+        coda.insert(0, r)
+        usato += len(r) + 1
+    n_coda = len(coda)
+
+    centro = righe[n_testa: len(righe) - n_coda] if n_coda else righe[n_testa:]
+    rilevanti, usato = [], 0
+    disponibile = max_chars - quota_testa - quota_coda
+    for r in centro:
+        if not RE_HA_IMPORTO.search(r):
+            continue
+        if usato + len(r) > disponibile:
+            break
+        rilevanti.append(r)
+        usato += len(r) + 1
+
+    parti = ["\n".join(testa)]
+    if rilevanti:
+        parti.append("[... righe rilevanti dal corpo dell'atto ...]")
+        parti.append("\n".join(rilevanti))
+    if coda:
+        parti.append("[... ...]")
+        parti.append("\n".join(coda))
+    return "\n".join(parti)
+
+
+def importo_italiano(valore) -> float | None:
+    """
+    Converte un importo scritto all'italiana ("8.540,00", "121.530.402",
+    "1.234,56 €") in float. Regole:
+      - se c'è una virgola, è il separatore decimale e i punti sono migliaia
+      - se ci sono solo punti: sono migliaia se raggruppano cifre a 3
+        ("8.540" → 8540; "1.234.567" → 1234567), decimali solo se il gruppo
+        finale non ha 3 cifre ("8.5" → 8.5)
+    È QUESTA funzione a decidere il valore, non il modello: i LLM sbagliano
+    sistematicamente il formato italiano (8.540,00 letto come 8.54).
+    """
+    if valore is None:
+        return None
+    if isinstance(valore, (int, float)):
+        v = float(valore)
+        return round(v, 2) if v > 0 else None
+
+    s = str(valore).strip()
+    s = re.sub(r"(?i)(€|euro|eur|iva|inclusa|esclusa|compresa)", " ", s)
+    s = re.sub(r"[^\d.,\-]", "", s).strip()
+    if not s or s in ("-", ".", ","):
+        return None
+
+    if "," in s:
+        s = s.replace(".", "").replace(",", ".")
+    elif "." in s:
+        gruppi = s.split(".")
+        # migliaia se tutti i gruppi dopo il primo hanno esattamente 3 cifre
+        if all(len(g) == 3 for g in gruppi[1:]):
+            s = "".join(gruppi)
+        # altrimenti resta un decimale anglosassone
+    try:
+        v = float(s)
+    except ValueError:
+        return None
+    return round(v, 2) if v > 0 else None
 
 # Modelli disattivati per il resto del run (3 fallimenti consecutivi)
 _MODELLI_SALTATI: set[str] = set()
@@ -75,18 +156,37 @@ Rispondi SOLO con un oggetto JSON valido, senza testo aggiuntivo, con questo sch
 
 {
   "tipo_atto": "determinazione" oppure "liquidazione",
-  "beneficiario": "ragione sociale o nome del fornitore/beneficiario principale (string, null se assente)",
-  "importo_euro": importo totale della spesa in euro (number, null se assente; usa il punto come separatore decimale),
+  "beneficiario": "chi riceve i soldi (string, mai null: vedi REGOLE BENEFICIARIO)",
+  "n_beneficiari": numero di soggetti che ricevono i soldi (number, 1 se uno solo),
+  "beneficiari_dettaglio": [ {"nome": "...", "importo_testuale": "1.234,56"} ],
+  "importo_testuale": "l'importo TOTALE copiato ESATTAMENTE come appare nell'atto, es. \\"8.540,00\\" (string, null se assente)",
+  "importo_e_pluriennale": true/false,
+  "durata_anni": numero di anni coperti dalla spesa (number, null se non pluriennale),
+  "importo_primo_anno_testuale": "importo del primo anno copiato esattamente (string, null se non indicato)",
+  "iva_inclusa": true/false/null,
   "cig": "Codice Identificativo Gara (string, null se assente)",
-  "capitolo_bilancio": "capitolo/i di bilancio citati nel testo (string, null se assenti)",
+  "capitolo_bilancio": "capitolo/i di bilancio citati (string, null se assenti)",
   "descrizione_sintetica": "una frase semplice, max 25 parole, che spiega a un cittadino cosa paga il Comune e perché",
   "categoria": una tra le categorie elencate sotto (string, esattamente come scritta)
 }
 
-REGOLE:
-- importo_euro: usa l'importo TOTALE impegnato o liquidato dall'atto (IVA inclusa se indicata). Se ci sono più importi, somma solo quelli effettivamente impegnati/liquidati da questo atto, non quelli citati come riferimento.
-- Non inventare: se un dato non c'è, usa null.
-- categoria: scegli quella che meglio descrive l'ambito della spesa.
+REGOLE IMPORTI (le più importanti):
+- COPIA l'importo come stringa ESATTAMENTE come scritto nell'atto, con i suoi punti e virgole: "8.540,00", "121.530.402,00", "1.300,00". NON convertirlo, NON arrotondarlo, NON toglierne i separatori. In italiano il PUNTO separa le migliaia e la VIRGOLA i decimali.
+- Gli importi spesso stanno in una TABELLA (colonne come "Importo", "Importo Iva comp.", "Totale"): leggila e usala. Se la tabella elenca più righe/fatture, SOMMA gli importi positivi delle righe e scrivi la somma in importo_testuale in formato italiano; elenca ogni riga in beneficiari_dettaglio.
+- Ignora le righe di sola IVA a favore dell'erario ("ESATTORIA - IVA", "scissione dei pagamenti", "split payment") e gli importi negativi di storno: non sono spesa aggiuntiva.
+- Se l'atto impegna una spesa per PIÙ ANNI (es. "durata 15 anni", "triennio"), metti importo_e_pluriennale=true, indica durata_anni, e se l'atto specifica quanto vale il primo anno mettilo in importo_primo_anno_testuale. In importo_testuale metti comunque il TOTALE dell'affidamento.
+- Non confondere importi citati come riferimento (impegni precedenti, quadri economici, importi di gara) con quanto questo atto effettivamente impegna o liquida.
+
+REGOLE BENEFICIARIO:
+- Se c'è un fornitore o una ditta, usa la sua ragione sociale.
+- Se i beneficiari sono più di uno, in "beneficiario" scrivi una sintesi leggibile (es. "7 fornitori", "12 dipendenti comunali") e metti l'elenco completo in beneficiari_dettaglio.
+- Se il beneficiario è una persona fisica, NON scrivere il nome: usa una descrizione della categoria (es. "un cittadino con disabilità", "3 famiglie in difficoltà", "un dipendente comunale").
+- Se sono dipendenti o amministratori, scrivi la categoria (es. "personale amministrativo", "personale della polizia locale", "amministratori comunali").
+- Se davvero non si capisce chi riceve i soldi, scrivi una descrizione dello scopo (es. "rimborsi tributi ai contribuenti"). Non lasciare mai il campo vuoto o null.
+
+ALTRE REGOLE:
+- Non inventare: se un dato non c'è, usa null (tranne beneficiario, vedi sopra).
+- categoria: scegli quella che meglio descrive l'AMBITO della spesa (rifiuti → Ambiente; scuola → Istruzione; strade e manutenzione stradale → Strade; edilizia e patrimonio → Urbanistica).
 
 CATEGORIE AMMESSE:
 """ + "\n".join(f"- {c}" for c in CATEGORIE)
@@ -109,15 +209,66 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     else:
         risultato["estrazione"] = "groq"
 
-    # Normalizzazioni difensive
+    # ── Normalizzazioni difensive ────────────────────────────────────────
     risultato["tipo_atto"] = _normalizza_tipo(risultato.get("tipo_atto"), tipo_portale)
-    risultato["importo_euro"] = _normalizza_importo(risultato.get("importo_euro"))
+
+    # L'importo lo decidiamo NOI dalla stringa testuale (i LLM sbagliano il
+    # formato italiano); il numero del modello è solo un ripiego.
+    imp = importo_italiano(risultato.get("importo_testuale"))
+    if imp is None:
+        imp = importo_italiano(risultato.get("importo_euro"))
+    risultato["importo_euro"] = imp
+    risultato["importo_primo_anno"] = importo_italiano(
+        risultato.get("importo_primo_anno_testuale"))
+
+    # Beneficiari multipli: normalizza la lista e, se manca il totale,
+    # ricavalo dalla somma delle voci.
+    dettaglio = risultato.get("beneficiari_dettaglio")
+    voci = []
+    if isinstance(dettaglio, list):
+        for v in dettaglio[:60]:
+            if not isinstance(v, dict):
+                continue
+            nome = (v.get("nome") or "").strip()
+            valore = importo_italiano(v.get("importo_testuale") or v.get("importo"))
+            if nome or valore:
+                voci.append({"nome": nome or "—", "importo": valore})
+    risultato["beneficiari_dettaglio"] = voci or None
+    if risultato["importo_euro"] is None and voci:
+        somma = sum(v["importo"] for v in voci if v["importo"])
+        if somma > 0:
+            risultato["importo_euro"] = round(somma, 2)
+
+    # Conta i soggetti DISTINTI (le tabelle ripetono lo stesso fornitore su
+    # più righe/fatture: non sono beneficiari diversi)
+    nomi_distinti = {v["nome"].strip().lower() for v in voci if v["nome"] != "—"}
+    try:
+        n_ben = int(risultato.get("n_beneficiari"))
+    except (TypeError, ValueError):
+        n_ben = 0
+    risultato["n_beneficiari"] = max(n_ben, len(nomi_distinti), 1)
+
+    # Pluriennale
+    risultato["importo_e_pluriennale"] = bool(risultato.get("importo_e_pluriennale"))
+    try:
+        durata = int(risultato.get("durata_anni"))
+        risultato["durata_anni"] = durata if 1 < durata <= 50 else None
+    except (TypeError, ValueError):
+        risultato["durata_anni"] = None
+    if risultato["durata_anni"]:
+        risultato["importo_e_pluriennale"] = True
+    if not risultato["importo_e_pluriennale"]:
+        risultato["importo_primo_anno"] = None
+
     if risultato.get("categoria") not in CATEGORIE:
         risultato["categoria"] = "Da classificare"
     risultato["missione_bdap"] = CATEGORIE[risultato["categoria"]]
-    for k in ("beneficiario", "cig", "capitolo_bilancio", "descrizione_sintetica"):
+    for k in ("beneficiario", "cig", "capitolo_bilancio", "descrizione_sintetica",
+              "importo_testuale"):
         v = risultato.get(k)
         risultato[k] = v.strip() if isinstance(v, str) and v.strip() else None
+    risultato["iva_inclusa"] = (risultato.get("iva_inclusa")
+                                if isinstance(risultato.get("iva_inclusa"), bool) else None)
     return risultato
 
 
@@ -222,10 +373,9 @@ def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     importi = []
     for m in RE_IMPORTO.finditer(completo):
         raw = m.group(1) or m.group(2)
-        try:
-            importi.append(float(raw.replace(".", "").replace(",", ".")))
-        except ValueError:
-            pass
+        v = importo_italiano(raw)   # conversione italiana corretta
+        if v:
+            importi.append(v)
     importo = max(importi) if importi else None
 
     cig = None
@@ -241,7 +391,14 @@ def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     return {
         "tipo_atto": None,
         "beneficiario": beneficiario,
+        "n_beneficiari": 1,
+        "beneficiari_dettaglio": None,
+        "importo_testuale": None,
         "importo_euro": importo,
+        "importo_e_pluriennale": False,
+        "durata_anni": None,
+        "importo_primo_anno_testuale": None,
+        "iva_inclusa": None,
         "cig": cig,
         "capitolo_bilancio": None,
         "descrizione_sintetica": oggetto[:180] if oggetto else None,

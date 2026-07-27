@@ -11,6 +11,7 @@ Derivato dallo scraper del progetto albo-pretorio (stesso autore, stesso portale
 """
 
 import re
+import gzip
 import json
 import time
 import base64
@@ -639,13 +640,53 @@ def dump_moduli_ricerca(url_pagina: str) -> None:
 # DETTAGLIO ATTO + PDF + TESTO
 # ─────────────────────────────────────────────────────────────────────────────
 
-def estrai_testo_atto(atto: dict) -> str:
+CACHE_TESTI = Path("data/testi")
+
+
+def _percorso_cache(id_atto: str) -> Path:
+    return CACHE_TESTI / f"{id_atto}.txt.gz"
+
+
+def leggi_cache_testo(id_atto: str) -> str | None:
+    """Testo già estratto in passato, se presente."""
+    p = _percorso_cache(id_atto)
+    if not p.exists():
+        return None
+    try:
+        with gzip.open(p, "rt", encoding="utf-8") as f:
+            return f.read()
+    except Exception as e:
+        log.warning(f"  cache testo illeggibile ({p.name}): {e}")
+        return None
+
+
+def scrivi_cache_testo(id_atto: str, testo: str) -> None:
+    if not testo or len(testo.strip()) < 300:
+        return
+    CACHE_TESTI.mkdir(parents=True, exist_ok=True)
+    try:
+        with gzip.open(_percorso_cache(id_atto), "wt", encoding="utf-8") as f:
+            f.write(testo)
+    except Exception as e:
+        log.warning(f"  cache testo non scrivibile: {e}")
+
+
+def estrai_testo_atto(atto: dict, id_cache: str | None = None) -> str:
     """
-    Visita la pagina di dettaglio, scarica il documento principale (PDF)
-    in una cartella temporanea, ne estrae il testo e lo restituisce.
-    I PDF NON vengono conservati (il repository resterebbe enorme con anni
-    di backfill): resta il link all'atto originale sul portale.
+    Restituisce il testo dell'atto. Ordine:
+      1. cache locale data/testi/<id>.txt.gz (indipendente dal portale)
+      2. download del PDF dalla pagina di dettaglio, poi salvataggio in cache
+
+    La cache è l'assicurazione contro la sparizione degli atti dal portale:
+    una volta letto, il testo resta nel repository e le rielaborazioni
+    future non richiedono più il sito del Comune.
     """
+    if id_cache:
+        testo_cache = leggi_cache_testo(id_cache)
+        if testo_cache:
+            log.info(f"  testo da cache locale ({len(testo_cache)} char)")
+            return testo_cache
+
     url = atto.get("url_dettaglio")
     if not url:
         return ""
@@ -674,10 +715,15 @@ def estrai_testo_atto(atto: dict) -> str:
             if _scarica_pdf(link_pdf[0], percorso):
                 testo = _estrai_testo_pdf(percorso)
                 if testo:
+                    if id_cache:
+                        scrivi_cache_testo(id_cache, testo)
                     return testo
 
     # Fallback: testo incorporato nell'HTML della pagina di dettaglio
-    return _estrai_testo_inline_html(soup)
+    testo = _estrai_testo_inline_html(soup)
+    if testo and id_cache:
+        scrivi_cache_testo(id_cache, testo)
+    return testo
 
 
 def url_display_stabile(url_dettaglio: str) -> str:

@@ -118,7 +118,8 @@ def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
             # URL fresco (con token di sessione) se disponibile: senza, gli
             # allegati PDF non sono raggiungibili e il testo resta vuoto
             url = url_freschi.get((s["numero_raw"], s["oggetto"]), s["url_atto"])
-            testo = portale.estrai_testo_atto({"url_dettaglio": url})
+            testo = portale.estrai_testo_atto({"url_dettaglio": url},
+                                              id_cache=s.get("id"))
             if len(testo.strip()) < 300:
                 log.warning(f"  Testo non recuperato ({len(testo)} char): "
                             f"azzero gli importi inventati e vado avanti")

@@ -46,11 +46,12 @@ def chiavi_note(archivio: list[dict]) -> set[tuple]:
 
 def elabora_spesa(atto: dict) -> dict:
     """Atto grezzo dal portale → record spesa completo."""
-    testo = portale.estrai_testo_atto(atto)
+    id_atto = portale.genera_id(atto)
+    testo = portale.estrai_testo_atto(atto, id_cache=id_atto)
     dati = estrai_dati(testo, atto.get("oggetto", ""), atto.get("tipo", ""))
 
     return {
-        "id": portale.genera_id(atto),
+        "id": id_atto,
         "numero_raw": atto.get("numero_raw", ""),
         "numero": portale.estrai_numero(atto.get("numero_raw", "")),
         "anno": portale.estrai_anno(atto),

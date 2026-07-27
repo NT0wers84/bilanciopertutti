@@ -36,8 +36,13 @@ Il run giornaliero parte da solo (cron 15:30 UTC).
 
 ## Note
 
-- I PDF non vengono conservati nel repository: resta il link all'atto
-  originale sul portale comunale.
+- I PDF non vengono conservati, ma il **testo estratto sì**: `data/testi/<id>.txt.gz`
+  (compresso, pochi KB per atto). È l'assicurazione contro la sparizione degli
+  atti dal portale: una volta letto un atto, le rielaborazioni future non
+  dipendono più dalla disponibilità del sito comunale. Resta comunque il link
+  all'atto originale.
 - L'estrazione automatica può contenere errori: fa fede l'atto originale.
-- Fase 2 (pianificata): riconciliazione con il bilancio di previsione e
-  il consuntivo da OpenBDAP (Missioni/Programmi).
+  Quando il testo dell'atto non è recuperabile, gli importi restano vuoti
+  ("da verificare nell'atto"): mai valori inventati dal modello.
+- La sezione **Bilanci** copre 2016-2026 con i dati ufficiali OpenBDAP
+  (`scripts/bilanci_estrai.py`, da rilanciare quando escono i nuovi anni).

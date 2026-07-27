@@ -2579,7 +2579,7 @@
   "data_pubblicazione": "2026-07-09",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA' LA SEGNALETICA ITALIA GROUP SRL PER FORNITURA CARTELLI STRADALI",
   "beneficiario": "Società La Segnaletica Italia Group Srl",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -2591,18 +2591,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:27",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società La Segnaletica Italia Group Srl",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "determinazione-1397-2026",
@@ -3151,7 +3147,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "LIQUIDAZIONE RIMBORSI RELATIVI A TRIBUTI VARI",
   "beneficiario": "rimborsi tributi ai contribuenti",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Debito e anticipazioni",
   "missione_bdap": 50,
@@ -3163,18 +3159,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:36",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "rimborsi tributi ai contribuenti",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1381-2026",
@@ -3185,7 +3177,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE PRESTAZIONE DI LAVORO STRAORDINARIO EFFETTUATO DAL PERSONALE DEL SERVIZIO TRIBUTI NEL MESE DI GIUGNO 2026",
   "beneficiario": "personale del Servizio Tributi",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -3197,18 +3189,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:36",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "personale del Servizio Tributi",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1380-2026",
@@ -3219,7 +3207,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "COMPENSO INCENTIVANTE LA PRODUTTIVITÀ DEL PERSONALE DEI LIVELLI, ANNO 2025. LIQUIDAZIONE ACCONTO.",
   "beneficiario": "personale dei livelli",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -3231,18 +3219,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:37",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "personale dei livelli",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1377-2026",
@@ -3253,7 +3237,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "LIQUIDAZIONE FATTURA PROVECO S.R.L. UNIPERSONALE – RATA SEMESTRALE DAL 01/01/2026 AL 30/06/2026 PER SERVIZIO SAAS, MANUTENZIONE E UPDATE DEL SOFTWARE REM-W, SERVIZIO SAPI",
   "beneficiario": "Proveco S.r.l. unipersonale",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
@@ -3265,18 +3249,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:37",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Proveco S.r.l. unipersonale",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1375-2026",
@@ -3287,8 +3267,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "RETE VERDE METROPOLITANA: RINATRURALIZZAZIONE DI AREE DISMESSE OVVERO DEGRADATE E AUMENTO DELLE SUPERFICI DA RIQUALIFICARE A VERDE, CON DIMINUZIONE DELLE AREE PAVIMENTATE TRA LA VIA OLMI E VIA LEONCAVALLO AI FINI DEI FINANZIAMENTI NELL’AMBIUTO DEL PNRR- ART. 21 D.L. 152/2021- PIANI INTEGRATI – M5C2 – INVESTIMENTO 2.2. APPROVAZIONE RELAZIONE SUL CONTO FINALE E CRE. DETERMINZIONE DI LIQUIDAZIONE DEL CREDITO RESIDUO A FAVORE DELL’AZIENDA AGRICOLO CATTANEO SRL DI BERGAMO. CONTABILITA' FINALE. CIG 9573046777 CUP J47B220000300006",
   "beneficiario": "azienda agricola Cattaneo SRL di Bergamo",
-  "importo_euro": 8540.0,
-  "cig": "9573046777",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
   "capitolo_bilancio": null,
@@ -3299,18 +3279,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:37",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "azienda agricola Cattaneo SRL di Bergamo",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1374-2026",
@@ -3321,11 +3297,11 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "DETERMINA DI LIQUIDAZIONE FATTURA N° 143D DITTA CS&L CONSORZIO S.A.S. CERTIFICATO DI PAGAMENTO IV - SAL 4 ° - MANUTENZIONE DEL VERDE PUBBLICO E CURA DEL DECORO URBANO TRIENNIO 2025/2028 - CIG. B59F01EBE5.",
   "beneficiario": "CS&L Consorzio S.A.S.",
-  "importo_euro": 121530402.0,
-  "cig": "B59F01EBE5",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
-  "capitolo_bilancio": "Manutenzione del verde pubblico e cura del decoro urbano",
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "Manutenzione del verde pubblico e cura del decoro urbano",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5493506",
   "estrazione": "groq",
@@ -3333,18 +3309,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:37",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "CS&L Consorzio S.A.S.",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
-  "importo_e_pluriennale": true,
-  "durata_anni": 3,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1373-2026",
@@ -3355,8 +3327,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD.FATTURA NR. 400-2026 E FATTURA NR. 399-2026 EMESSA DALLA SOCIETÀ ECODIS SRL CIG BBCC3CF328",
   "beneficiario": "Ecodis Srl",
-  "importo_euro": 121530402.0,
-  "cig": "BBCC3CF328",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -3367,18 +3339,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Ecodis Srl",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1372-2026",
@@ -3389,8 +3357,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR 000587/2026, EMESSA DALLA SOCIETÀ DIMCAR S.R.L. PANCHINA CLEMATIS RIBBON CIG BBA5C3B56C",
   "beneficiario": "Società Dimcar S.r.l.",
-  "importo_euro": 8540.0,
-  "cig": "BBA5C3B56C",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -3401,18 +3369,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Dimcar S.r.l.",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1371-2026",
@@ -3423,8 +3387,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. NR. 1011006744 EMESSA DA KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A. RATA: 10 RELATIVA AL PERIODO DAL 02.03.2026 AL 01.06.2026 CIG Z9C3CDEC44",
   "beneficiario": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
-  "importo_euro": 8540.0,
-  "cig": "Z9C3CDEC44",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
   "capitolo_bilancio": null,
@@ -3435,18 +3399,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1370-2026",
@@ -3457,8 +3417,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA DIFFERITA DI CUI ALL´ART. 21, COMMA 4, LETT. A) NR. 2/103 EMESSA DALLA SOCIETÀ CAPITAL ACQUE S.B. S.R.L. SOCIETA' A SOCIO UNICO - PER CANONE NOLEGGIO ANTICIP. EROG.ACQUA MOD.REFRIG.OFFICE PERIODO DAL: 01/04/2026 AL 30/06/2026- CIG BB119CBFCD",
   "beneficiario": "Società Capital Acque S.B. S.R.L. Socio Unico",
-  "importo_euro": 1234.56,
-  "cig": "BB119CBFCD",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -3469,18 +3429,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Capital Acque S.B. S.R.L. Socio Unico",
-    "importo": 1234.56
-   }
-  ],
-  "importo_testuale": "1.234,56",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1369-2026",
@@ -3491,8 +3447,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 1044FATTPA , EMESSA DALLA UPEL - UNIONE PROVINCIALE ENTI LOCALI ISCRIZIONE CORSO PER NR. 4 DIPENDENTI DENOMINATO - FASE ESECUTIVA PER SERVIZI E FORNITURE - L1/SF1 CODICE CIG BB4EB39989",
   "beneficiario": "4 dipendenti comunali",
-  "importo_euro": 1234.56,
-  "cig": "BB4EB39989",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": null,
@@ -3503,18 +3459,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
   "n_beneficiari": 4,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "dipendenti comunali",
-    "importo": 1234.56
-   }
-  ],
-  "importo_testuale": "1.234,56",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1368-2026",
@@ -3525,8 +3477,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD FATTURA NR. 220 , EMESSA DALLA SOCIETÀ AGORA' S.R.L. - SERVIZIO DI PULIZIA E MANUTENZIONE DEGLI ORTI COMUNALI CIG: BBC449ECF5",
   "beneficiario": "Agorà' S.r.l.",
-  "importo_euro": 8540.0,
-  "cig": "BBC449ECF5",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -3537,18 +3489,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:39",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Agorà' S.r.l.",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1358-2026",
@@ -3559,8 +3507,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE IN FAVORE DI BFM S.R.L - CIG: BBA0551C22 E AREA SUD - CIG: BBDBD8FCCD - FESTA SPORT E GIOVANI ANNO 2026",
   "beneficiario": "BFM S.R.L e Area Sud",
-  "importo_euro": 17080.0,
-  "cig": "BBA0551C22 e BBDBD8FCCD",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Sport e tempo libero",
   "missione_bdap": 6,
   "capitolo_bilancio": null,
@@ -3571,22 +3519,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:39",
   "n_beneficiari": 2,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "BFM S.R.L",
-    "importo": 8540.0
-   },
-   {
-    "nome": "Area Sud",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "17.080,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1357-2026",
@@ -3597,7 +3537,7 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETÀ SCHINDLER SPA PER CANONE MENSILE MANUTENZIONE IMPIANTI ASCENSORI SCOLASTICI MESE DI GIUGNO 2026",
   "beneficiario": "Società Schindler Spa",
-  "importo_euro": 1300.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -3609,18 +3549,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:39",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Schindler Spa",
-    "importo": 1300.0
-   }
-  ],
-  "importo_testuale": "1.300,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1356-2026",
@@ -3631,8 +3567,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE FATTURA EMESSA DALLA SOCIETA' COOP. SOCIALE SPAZIO APERTO SERVIZI RELATIVA AL PROGETTO DI EDUCAZIONE MUSICALE - SALDO PERIODO GENNAIO-MAGGIO 2026 - CIG B8334980DD",
   "beneficiario": "Spazio Aperto Servizi",
-  "importo_euro": 8540.0,
-  "cig": "B8334980DD",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Istruzione e scuola",
   "missione_bdap": 4,
   "capitolo_bilancio": null,
@@ -3643,18 +3579,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:39",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Spazio Aperto Servizi",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1355-2026",
@@ -3665,8 +3597,8 @@
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE IL BALZO RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO A TRE ALUNNI RESIDENTI - CIG B8D80F7B07",
   "beneficiario": "3 alunni residenti",
-  "importo_euro": 3703.68,
-  "cig": "B8D80F7B07",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Istruzione e scuola",
   "missione_bdap": 4,
   "capitolo_bilancio": null,
@@ -3677,18 +3609,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:40",
   "n_beneficiari": 3,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "alunni",
-    "importo": 1234.56
-   }
-  ],
-  "importo_testuale": "3.703,68",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1348-2026",
@@ -3699,7 +3627,7 @@
   "data_pubblicazione": "2026-07-03",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0001121572 DEL 31/05/2026 MAGGIOLI SPA",
   "beneficiario": "Maggioli Spa",
-  "importo_euro": 121530402.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -3711,18 +3639,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:40",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Maggioli Spa",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1347-2026",
@@ -3733,7 +3657,7 @@
   "data_pubblicazione": "2026-07-03",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA' AZIENDA TRASPORTI MILANESI SPA DI MILANO PER LA MODIDFICA DELLA LINEA 220 PIAZZA CURIEL- PIEVE EMANUELE",
   "beneficiario": "Società Azienda Trasporti Milanesi SPA di Milano",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 10,
@@ -3745,18 +3669,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:40",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Azienda Trasporti Milanesi SPA di Milano",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "determinazione-1346-2026",
@@ -3835,7 +3755,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLA DITTA: Q FARMA SPA",
   "beneficiario": "Q Farma Spa",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -3847,18 +3767,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:42",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Q Farma Spa",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1340-2026",
@@ -3869,7 +3785,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 5226019172 DEL 15/06/2026 - PAGOPA S.P.A.",
   "beneficiario": "Pagopa S.p.A.",
-  "importo_euro": 121530402.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
@@ -3881,18 +3797,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:43",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Pagopa S.p.A.",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1339-2026",
@@ -3903,7 +3815,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 15/2026PA DEL 17/06/2026 - PELIZZA SRL",
   "beneficiario": "Pelizza Srl",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -3915,18 +3827,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:43",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Pelizza Srl",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1337-2026",
@@ -3937,8 +3845,8 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DA VIVENDA SPA RELATIVE ALLA FORNITURA DEI PASTI AGLI INSEGNANTI E AL CONGUAGLIO FASCE ISEE ALUNNI DEI MESI DI APRILE E MAGGIO 2026 - CIG 9290151B1F",
   "beneficiario": "Vivenda SPA",
-  "importo_euro": 121530402.0,
-  "cig": "9290151B1F",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": null,
@@ -3949,18 +3857,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:43",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Vivenda SPA",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1336-2026",
@@ -3971,7 +3875,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "LIQUIDAZIONE FATTURA IN FAVORE DELLA SOCIETA’ ALIMAT DI VITIELLO ANTONIO PER NOLEGGIO EROGATORE D’ACQUA",
   "beneficiario": "Società Alimat di Viitelio Antonio",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -3983,18 +3887,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:43",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Alimat di Viitelio Antonio",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1335-2026",
@@ -4005,7 +3905,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURA N° 20/PA DEL 25.06.2026",
   "beneficiario": "un fornitore",
-  "importo_euro": 1234.56,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
@@ -4017,18 +3917,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:44",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Fornitore",
-    "importo": 1234.56
-   }
-  ],
-  "importo_testuale": "1.234,56",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1334-2026",
@@ -4039,7 +3935,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURE N° 108/PA E N° 109/PA DEL 31.05.2026",
   "beneficiario": "fornitori",
-  "importo_euro": 3580.23,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -4051,22 +3947,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:44",
   "n_beneficiari": 2,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Fornitore A",
-    "importo": 1234.56
-   },
-   {
-    "nome": "Fornitore B",
-    "importo": 2345.67
-   }
-  ],
-  "importo_testuale": "3.580,23",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1333-2026",
@@ -4077,8 +3965,8 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA’ CREA. MI SRL DI MILANO PER I LAVORI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANETRO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: M.L. KING/COLLODI - CUP J44H20001220001 CIG DERIVATO 99780470DF, FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - MEDIE OPERE SCORRIMENTO E CONFLUITI NELLA GRADUATORIA (DM DEL 08.11.2021). APPROVAZIONE RELAZIONE E FINALE E CRE. LIQUIDAZIONE CREDITO RESIDUO.",
   "beneficiario": "Società Crea. Mi Srl di Milano",
-  "importo_euro": 121530402.0,
-  "cig": "99780470DF",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -4089,18 +3977,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:44",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Crea. Mi Srl di Milano",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1332-2026",
@@ -4111,7 +3995,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA' B&B SERVICE SOC. COOPERATIVA PER IL SERVIZIO DI PORTIERATO PRESSO IL COMUNE DI PIEVE EMANUELE EDIFICI A E B",
   "beneficiario": "Società B&B Service Soc. Cooperativa",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -4123,18 +4007,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:44",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società B&B Service Soc. Cooperativa",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1331-2026",
@@ -4145,8 +4025,8 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA’ CREA.MI SRL DI MILANO PER I LAVORI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANETRO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: ALESSANDRINI - CUP J44H20001120001 CIG DERIVATO 9977943B09, FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - MEDIE OPERE SCORRIMENTO E CONFLUITI NELLA GRADUATORIA (DM DEL 08.11.2021). APPROVAZIONE RELAZIONE E FINALE E CRE. LIQUIDAZIONE CREDITO RESIDUO.",
   "beneficiario": "Società Crea.mi Srl di Milano",
-  "importo_euro": 121530402.0,
-  "cig": "9977943B09",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": null,
@@ -4157,18 +4037,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Crea.mi Srl di Milano",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1330-2026",
@@ -4179,7 +4055,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETA LEROY MERLIN ITALIA SRL DI ROZZANO",
   "beneficiario": "Società Leroy Merlin Italia Srl di Rozzano",
-  "importo_euro": 8540.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
@@ -4191,18 +4067,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Leroy Merlin Italia Srl di Rozzano",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1329-2026",
@@ -4213,8 +4085,8 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLO STUDIO BELVEDERE & PARTNERS PER PARERE E CONSULENZA PRU FATT. 380/B2B SALDO ANNO 2025 - CIG ZD03D840E1",
   "beneficiario": "Studio Belvedere & Partners",
-  "importo_euro": 8540.0,
-  "cig": "ZD03D840E1",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": null,
@@ -4225,18 +4097,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Studio Belvedere & Partners",
-    "importo": 8540.0
-   }
-  ],
-  "importo_testuale": "8.540,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1328-2026",
@@ -4247,7 +4115,7 @@
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLO STUDIO BELEVEDERE & PARTNERS PER PARERE E CONSUZLENZA PRU FATT. 379/B2B",
   "beneficiario": "Studio Belevedere & Partners",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -4259,18 +4127,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Studio Belevedere & Partners",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1326-2026",
@@ -4281,7 +4145,7 @@
   "data_pubblicazione": "2026-07-01",
   "oggetto": "LIQUIDAZIONE NOTA SPESE PER IL SERVIZIO DI VIDEO RIPRESE DELLE RIUNIONI DEL CONSIGLIO COMUNALE",
   "beneficiario": "fornitore di servizi",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -4293,18 +4157,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "fornitore di servizi",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1325-2026",
@@ -4316,10 +4176,10 @@
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE NELL’AMBITO DELLA MISURA B2 – DGR N. 3719/2024 – DECRETO N. 1279/2025",
   "beneficiario": "fornitori",
   "importo_euro": null,
-  "cig": "null",
+  "cig": null,
   "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 14,
-  "capitolo_bilancio": "null",
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "pagamento di fatture diverse nell'ambito della misura B2",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5483740",
   "estrazione": "groq",
@@ -4327,18 +4187,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:46",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "fornitori",
-    "importo": null
-   }
-  ],
-  "importo_testuale": "null",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1323-2026",
@@ -4349,8 +4205,8 @@
   "data_pubblicazione": "2026-07-01",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 131/E, EMESSA DALLA SOCIETÀ AREA SUD MILANO SPA PER L’ESECUZIONE DEL SERVIZIO DI TRASPORTO RECUPERO VIA GARIBALDI CIG BAF2471558",
   "beneficiario": "Area Sud Milano Spa",
-  "importo_euro": 121530402.0,
-  "cig": "BAF2471558",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 10,
   "capitolo_bilancio": null,
@@ -4361,18 +4217,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:46",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Area Sud Milano Spa",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1322-2026",
@@ -4383,8 +4235,8 @@
   "data_pubblicazione": "2026-07-01",
   "oggetto": "LIQUIDAZIONE FATTURA NR. 138/E DEL 22/06/2026, EMESSA DALLA SOCIETÀ AREA SUD MILANO SPA - P. IVA 03442430967 CAUSALE: FINANZIATO DALL’UNIONE EUROPEA NEXTGENERATIONEU PNRR MISSIONE 2 RIVOLUZIONE VERDE E TRANSIZIONE ECOLOGICA COMPONENTE 1 ECONOMIA CIRCOLARE E AGRICOLTURA SOSTENIBILE - REALIZZAZIONE NUOVI IMPIANTI DI GESTIONE RIFIUTI E AMMODERNAMENTO DI IMPIANTI ESISTENTI – SISTEMA DI GESTIONE ACCESSI PIATTAFORMA ECOLOGICA CON INTEGRAZIONE SISTEMA PESATURA - CUP J41E22000310001 CIG B7B5479F5F.",
   "beneficiario": "Area Sud Milano Spa",
-  "importo_euro": 121530402.0,
-  "cig": "B7B5479F5F",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
   "capitolo_bilancio": null,
@@ -4395,18 +4247,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:46",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Area Sud Milano Spa",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1321-2026",
@@ -4417,8 +4265,8 @@
   "data_pubblicazione": "2026-07-01",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURE NR.149/E NR.150/E NR.151/E NR.152/E NR.135 EMESSE DALLLA SOCIETÀ: AREA SUD MILANO S.P.A. PER IL SERVIZIO SMALTIMENTO RIFIUTI MESE DI GIUGNO CIG B9BFF18D01",
   "beneficiario": "Area Sud Milano S.p.A.",
-  "importo_euro": 121530402.0,
-  "cig": "B9BFF18D01",
+  "importo_euro": null,
+  "cig": null,
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
   "capitolo_bilancio": null,
@@ -4429,18 +4277,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:46",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Area Sud Milano S.p.A.",
-    "importo": 121530402.0
-   }
-  ],
-  "importo_testuale": "121.530.402,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "liquidazione-1320-2026",
@@ -4451,7 +4295,7 @@
   "data_pubblicazione": "2026-07-01",
   "oggetto": "LIQUIDAZIONE SALDO DEL CONTRIBUTO AD ASSOCIAZIONE CULTURALE MAGNA GRECIA – FESTA DEI POPOLI 2026",
   "beneficiario": "associazione culturale Magna Grecia",
-  "importo_euro": 1200.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Cultura",
   "missione_bdap": 5,
@@ -4463,18 +4307,14 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:47",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "associazione culturale Magna Grecia",
-    "importo": 1200.0
-   }
-  ],
-  "importo_testuale": "1.200,00",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 1,
+  "testo_disponibile": false
  },
  {
   "id": "determinazione-1306-2026",
@@ -10313,7 +10153,7 @@
   "data_pubblicazione": "2026-02-19",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER SERVIZI ED INTEVRVENTI NELL’AMBITO DELLE POLITICHE PER LE PARI OPPORTUNITA – CIG BA6CBE1FA9",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA6CBE1FA9",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10323,7 +10163,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9614,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-343-2026",
@@ -10334,7 +10175,7 @@
   "data_pubblicazione": "2026-02-19",
   "oggetto": "PROROGA FORNITURA BUONI PASTO ELETTRONICI DAY RISTOSERVICE",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "B5E30A865C",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10344,7 +10185,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8015,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-342-2026",
@@ -10355,7 +10197,7 @@
   "data_pubblicazione": "2026-02-19",
   "oggetto": "IMPEGNO DI SPESA PER MONTAGGIO E SMONTAGGIO TABELLONI E SEGGI PER I REFERENDUM DEL 22/23 MARZO 2026",
   "beneficiario": null,
-  "importo_euro": 40000.0,
+  "importo_euro": null,
   "cig": "BA4E18AB82",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10365,7 +10207,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7406,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-340-2026",
@@ -10397,7 +10240,7 @@
   "data_pubblicazione": "2026-02-18",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER LA REALIZZAZIONE ASILO NIDO QUARTIERE DELLE ROSE IN COMUNE DI PIEVE EMANUELE , NELL’AMBITO DEL PNRR – MISSIONE M5C2 C2 INV. 2.3 – FINANZIATO DA NEXT GENERATION UE – PINQUA – CODICE INTERVENTO 459. APPROVAZIONE PROCEDURA SINTEL . AFFIDAMENTO ALL’ING. MARIO VISMARA DI MOLTENO (LC). ASSUNZIONE IMEPGNO DI SPESA . CUP J47H21000230001- CIG BA3B2AAAC7.",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA3B2AAAC7",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10407,7 +10250,8 @@
   "estrazione": "regex",
   "caratteri_testo": 21165,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-329-2026",
@@ -10523,7 +10367,7 @@
   "data_pubblicazione": "2026-02-17",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI RIPRISTINO BAGNO E LINEE FOGNARIE NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE DELL’EDIFICIO SCOLASTICO E. DE FILIPPO, FINANZIATO DA NEXT GENERATION EU M2C4 INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR). – RIFINAZIAMENTO CONFLUITO NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA D.M. DEL 08/11/2021. CUP J44H20001160001- CIG BA5D42C59C",
   "beneficiario": "F.A.F. srl con",
-  "importo_euro": 150000.0,
+  "importo_euro": null,
   "cig": "BA5D42C59C",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10533,7 +10377,8 @@
   "estrazione": "regex",
   "caratteri_testo": 20013,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-323-2026",
@@ -10565,7 +10410,7 @@
   "data_pubblicazione": "2026-02-17",
   "oggetto": "DETERMINA A CONTRARRE - RDO TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER IL SERVIZIO DI PREDISPOSIZIONE , PRODUZIONE, STAMPA, NOTIFICA E RENDICONTAZIONE DEI VERBALI DI CONTESTAZIONE PER VIOLAZIONI AL CODICE DELLA STRADA E D EXTRA CODICE DELLA STRADA - CIG BA5420CF8A",
   "beneficiario": "MAGGIOLI SPA",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA5420CF8A",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10575,7 +10420,8 @@
   "estrazione": "regex",
   "caratteri_testo": 12043,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-321-2026",
@@ -10607,7 +10453,7 @@
   "data_pubblicazione": "2026-02-12",
   "oggetto": "DECISIONE A CONTRARRE PER SERVIZIO DI FORNITURA DI SACCHI DI BITUME A FREDDO PER RIPRISTINO BUCHE STRADALI AI SENSI DELL'ART.50 COMMA 1 LETTERA B) D.LGS. N. 36/2023. ASSUNZIONE IMPEGNO DI SPESA . AFFIDAMENTO ALLA SOCIETA' BETON ASFALTI SRL DI CIS TRENTO. CIG BA539D4746",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA539D4746",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10617,7 +10463,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10898,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-293-2026",
@@ -10628,7 +10475,7 @@
   "data_pubblicazione": "2026-02-12",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER L’AMPLIAMENTO CENTRO DI ROMAZIONE PROFESSIONALE E CO WORKING IN COMUNE DI PEIVE EMANUELE, NELL’AMBITO DEL PNRR – MISSIONE M5C2 C2 INV. 2.3 – FINANZIATO DA NEXT GENE-RATION UE – PINQUA – CODICE INTERVENTO 458. APPROVAZIONE PROCEDURA SIN-TEL . AFFIDAMENTO ALL’ING. MARIO VISMARA DI MOLTENO (LC). ASSUNZIONE IME-PGNO DI SPESA . CUP J47H21000220001- CIG BA3B3B571E",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA3B3B571E",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10638,7 +10485,8 @@
   "estrazione": "regex",
   "caratteri_testo": 21238,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-292-2026",
@@ -10670,7 +10518,7 @@
   "data_pubblicazione": "2026-02-11",
   "oggetto": "DETERMINA A CONTRARRE - ODA TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA VESTIARIO PER IL PERSONALE DELLA POLIZIA LOCALE - CIG BA56A8FDF6",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA56A8FDF6",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10680,7 +10528,8 @@
   "estrazione": "regex",
   "caratteri_testo": 11454,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-282-2026",
@@ -10775,7 +10624,7 @@
   "data_pubblicazione": "2026-02-11",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER LA REALIZZAZIONE DI SERVIZI COMPLEMENTARI E DI SUPPORTO ALLE POLITICHE GIOVANILI ANNUALITÀ 2026 – CIG: BA3FF5D619",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA3FF5D619",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10785,7 +10634,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10530,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-277-2026",
@@ -10796,7 +10646,7 @@
   "data_pubblicazione": "2026-02-11",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO DI SERVIZIO PER LE OPERAZIONI DI FRAZIONAMENTO CATASTALE DELL’AREA URBANA NELL’INTERVENTO DI RINATURALIZZAZIONE AREE DISMESSE OVVERO DEGRADATE E AUMENTO DELLE SUPERFICI DA RIQUALIFICARE A VERDE, CON DIMINUZIONE DELLE AREE PAVIMENTATE TRA VIA OLMI E VIA LEONCAVALLO , ART. 21 D.L. 152/2021 – PIANI INTEGRATI – M5C2 – INVESTIMENTO 2.2. CUP J47B22000030006. AFFIDAMENTO AL GEOMETRA PAOLO VACCHELLI DI GARLASCO (PV). CIG BA46E4D286",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA46E4D286",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10806,7 +10656,8 @@
   "estrazione": "regex",
   "caratteri_testo": 18211,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-276-2026",
@@ -10880,7 +10731,7 @@
   "data_pubblicazione": "2026-02-11",
   "oggetto": "IMPEGNO DI SPESA FORNITURA MANIFESTI PROMOZIONALI RELATIVI A INIZIATIVE ORGANIZZATE DALL'AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI: AFFIDAMENTO DIRETTO A GRAFICHE NOÈ EDOARDO DI NOÈ ALDO & C. SNC - CIG BA47BDE488",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA47BDE488",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10890,7 +10741,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7583,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-250-2026",
@@ -10922,7 +10774,7 @@
   "data_pubblicazione": "2026-02-06",
   "oggetto": "IMPEGNO DI SPESA PER INTERVENTI DI FACCHINAGGIO, RIMOZIONE, TRASPORTO E DEPOSITO IN DISCARICA DI ARREDI E MASSERIZIE. AFFIDAMENTO DIRETTO AD AGORA' SRL - CIG BA4037461C",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA4037461C",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -10932,7 +10784,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7240,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-238-2026",
@@ -11027,7 +10880,7 @@
   "data_pubblicazione": "2026-02-05",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA DITTA ECOLOGIA AMBIENTE SRL PER RITIRO FARMACI SCADUTI E INVENDIBILI (CIG: BA2DD9DA1F)",
   "beneficiario": "Ecologia Ambiente srl a socio unico",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA2DD9DA1F",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11037,7 +10890,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10586,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-222-2026",
@@ -11048,7 +10902,7 @@
   "data_pubblicazione": "2026-02-04",
   "oggetto": "PROCEDURA APERTA PER LA FORNITURA ORDINARIA DI MEDICINALI, PARAFARMACI E ALTRI GENERI VENDIBILI NELLE FARMACIE COMUNALI DI PIEVE EMANUELE (MI) - LOTTO 1 CIG 8719228690_AGGIUDICATARIO UNICO LA FAMACIA DEI FARMACISTI - LOTTO 2 CIG CIG 8727293603 COOP. ESERCENTI FARMACIA ART. 3 DEL DOCUMENTO DI GARA AI SENSI DELL'AART 3 DEL DOCUMENTO DI GARA",
   "beneficiario": "UNICO LA FARMACIA DEI FARMACISTI",
-  "importo_euro": 1000000.0,
+  "importo_euro": null,
   "cig": "8727293603",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11058,7 +10912,8 @@
   "estrazione": "regex",
   "caratteri_testo": 11440,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-205-2026",
@@ -11132,7 +10987,7 @@
   "data_pubblicazione": "2026-02-02",
   "oggetto": "DETERMINA A CONTRARRE - ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO ABBONAMENTO AI SERVIZI DI BASE - ANCI RISPONDE E ADESIONE ACCESSO BANCA DATI ACI -PRA - ANCI DIGITALE S.PA. - ANNO 2026 - CIG BA2D6B357A",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA2D6B357A",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11142,7 +10997,8 @@
   "estrazione": "regex",
   "caratteri_testo": 12184,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-195-2026",
@@ -11174,7 +11030,7 @@
   "data_pubblicazione": "2026-02-02",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA DITTA CARLOTTI SNC PER MANUTEZIONE BILANCE E PESIERE PRESENTI NELLA FARMACIA COM.LE 1 E FARMACIA COM.LE 2",
   "beneficiario": "Carlotti snc sita in Milano via Mincio",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA29B93AD9",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11184,7 +11040,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10375,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-190-2026",
@@ -11216,7 +11073,7 @@
   "data_pubblicazione": "2026-01-30",
   "oggetto": "IMPEGNO DI SPESA RINNOVO ANNUALE DEL SERVIZIO IAR (INVIO AUTOMATICO REPORT) INERENTE ALLA FARMACIA COMUNALE 1- (CIG: BA2CFE03CF)",
   "beneficiario": "Tecnofarma srl sita in Voghera via Prati Nuovi",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA2CFE03CF",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11226,7 +11083,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10510,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-187-2026",
@@ -11321,7 +11179,7 @@
   "data_pubblicazione": "2026-01-29",
   "oggetto": "IMPEGNO DI SPESA PER ACQUISTO MATERIALE VARIO DI CANCELLERIA PER FUNZIONAMENTO UFFICI COMUNALI",
   "beneficiario": "HARTEX GROUP SRL la fornitura di carta e materiali vari",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11331,7 +11189,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7047,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-177-2026",
@@ -11384,7 +11243,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER STAMPA MANIFESTI A PARTIRE DA GENNAIO 2026",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA0A1FE2AB",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11394,7 +11253,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7155,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-174-2026",
@@ -11426,7 +11286,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "IMPEGNO DI SPESA PER ACQUISTO SCHEDE CARBURANTE IN ACCORDO QUADRO PER AUTOMEZZI COMUNALI",
   "beneficiario": "ITALIANA PETROLI S.P.A. di complessivi",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11436,7 +11296,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8188,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-171-2026",
@@ -11510,7 +11371,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTI DI MANUTENZIONE ORDINARIA E AGGIORNAMENTI DEI REGISTRATORI DI CASSA IN DOTAZIONE ALLE FARMACIE COMUNALI",
   "beneficiario": "Dieffe Sistemti srl sita in Vimodrone via Martesana",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA12DE4550",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11520,7 +11381,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10495,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-165-2026",
@@ -11531,7 +11393,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA LOCAZIONE FARMACIA COMUNALE 2 SITA IN VIA DEI PINI,3 - PIEVE EMANUELE A FAVORE DELLA DITTA: ARIES GROUP SRL",
   "beneficiario": "Aries Group S.r.l. per il pagamento",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11541,7 +11403,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10680,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-164-2026",
@@ -11552,7 +11415,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "IMPEGNO DI SPESA RINNOVO CANONE FATTURAZIONE ELETTRONICA INERENTE ALLE FARMACIE COMUNALI, A FAVORE DELLA DITTA: PROMOFARMA SRL",
   "beneficiario": "Promofarma srl",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "BA1CC38D5E",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11562,7 +11425,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10505,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-163-2026",
@@ -11573,7 +11437,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER SERVIZIO RACCOLTA DIFFERENZIATA PRESSO ALLOGGI SAP DI PROPRIETÀ COMUNALE E SUPPORTO EVENTI",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "B9AB5AD4DF",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11583,7 +11447,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10395,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-162-2026",
@@ -11741,7 +11606,7 @@
   "data_pubblicazione": "2026-01-27",
   "oggetto": "IMPEGNO DI SPESA PER NOLEGGIO PER MESI 12 DEL VEICOLO TARGATO GG777LJ FIAT PANDA IN DOTAZIONE AL SETTORE IV AREA AMBIENTE, ECOLOGIA E COMMERCIO - CIG B975426366.",
   "beneficiario": "Leasys Italia S.p.A",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "B975426366",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11751,7 +11616,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8409,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-144-2026",
@@ -11804,7 +11670,7 @@
   "data_pubblicazione": "2026-01-27",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI PUBBLICA ILLUMINZIONE SUL PONTE PEDONALE IN PIEVE EMANUELE, AI SENSI DELL’ART. 50 CO. 1 LETT A) DEL D.LGS. N. 36/2023. APPROVAZIONE REPORT SINTEL. AFFIDAMENTO ALLA SOCIETÀ TECNI-LUX S.R.L. DI CARBONARA AL TICINO (PV). CIG B9ECFD2030",
   "beneficiario": null,
-  "importo_euro": 150000.0,
+  "importo_euro": null,
   "cig": "B9ECFD2030",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -11814,7 +11680,8 @@
   "estrazione": "regex",
   "caratteri_testo": 19844,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-141-2026",
@@ -12014,7 +11881,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "DETERMINA A CONTRARRE - ODA TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA VESTIARIO PER IL PERSONALE DELLA POLIZIA LOCALE IN MISSIONE PER LE OLIMPIADI INVERNALI MILANO - CORTINA 2026 - CIG B9F137F938",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "B9F137F938",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -12024,7 +11891,8 @@
   "estrazione": "regex",
   "caratteri_testo": 12653,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-110-2026",
@@ -12098,7 +11966,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "IMPEGNO DI SPESA RAPPRESENTAZIONE TEATRALE DELL’ASSOCIAZIONE CULTURALE “TEATRO DELL’ULTIMA ORA – CULTURA DI SPETTACOLO\" PER LA CELEBRAZIONE DELLA GIORNATA DELLA MEMORIA",
   "beneficiario": null,
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": null,
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -12108,7 +11976,8 @@
   "estrazione": "regex",
   "caratteri_testo": 6688,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-106-2026",
@@ -12182,7 +12051,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "DECISIONE A CONTRARRE. SERVIZIO DI PRONTO INTERVENTO PER EVENTI IMPREVEDIBILI E INDIFFERIBILI PER SERVIZIO SPURGHI E PULIZIE CONDOTTE FOGNARIE PRESSO LE STRUTTURE COMUNALI . AFFIDAMENTO DIRETTO ALLA SOCIETA' LA RONDINE DI BUCCINASCO (MI). CIG B9ECEF05AE",
   "beneficiario": "La Rondine srl",
-  "importo_euro": 140000.0,
+  "importo_euro": null,
   "cig": "B9ECEF05AE",
   "categoria": "Da classificare",
   "missione_bdap": 99,
@@ -12192,7 +12061,8 @@
   "estrazione": "regex",
   "caratteri_testo": 11902,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "importo_testuale": null
  },
  {
   "id": "determinazione-100-2026",

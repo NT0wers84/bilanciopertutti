@@ -192,12 +192,22 @@ CATEGORIE AMMESSE:
 """ + "\n".join(f"- {c}" for c in CATEGORIE)
 
 
+# Sotto questa soglia il testo dell'atto è inutilizzabile: senza dati il
+# modello INVENTA importi plausibili, e con temperature=0 inventa sempre lo
+# stesso (nel run del 2026-07 ha prodotto 121.530.402,00 su 10 atti diversi).
+TESTO_MIN_UTILE = 300
+
+
 def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     """
     Estrae i dati strutturati della spesa. Prova Groq, poi regex.
     Restituisce sempre un dict con le chiavi dello schema + "estrazione".
+    Se il testo dell'atto non è disponibile, gli importi restano null:
+    mai inventati dal modello.
     """
-    testo = _riduci_testo(testo or "")
+    testo_grezzo = testo or ""
+    testo = _riduci_testo(testo_grezzo)
+    testo_utile = len(testo_grezzo.strip()) >= TESTO_MIN_UTILE
     risultato = None
 
     if os.environ.get("GROQ_API_KEY"):
@@ -211,6 +221,20 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
 
     # ── Normalizzazioni difensive ────────────────────────────────────────
     risultato["tipo_atto"] = _normalizza_tipo(risultato.get("tipo_atto"), tipo_portale)
+
+    # SENZA TESTO NON CI SONO IMPORTI. Il modello, interrogato sul solo
+    # oggetto, produce cifre verosimili e sempre identiche fra loro:
+    # meglio "importo n.d." che un numero inventato.
+    risultato["testo_disponibile"] = testo_utile
+    if not testo_utile:
+        for campo in ("importo_testuale", "importo_euro", "importo_primo_anno_testuale",
+                      "beneficiari_dettaglio", "cig", "capitolo_bilancio"):
+            risultato[campo] = None
+        risultato["importo_e_pluriennale"] = False
+        risultato["durata_anni"] = None
+        risultato["iva_inclusa"] = None
+        log.warning("  Testo dell'atto non disponibile: importi azzerati "
+                    "(niente valori inventati)")
 
     # L'importo lo decidiamo NOI dalla stringa testuale (i LLM sbagliano il
     # formato italiano); il numero del modello è solo un ripiego.
@@ -367,15 +391,33 @@ RE_BENEFICIARIO = re.compile(
 )
 
 
+# Soglie normative citate nel boilerplate degli atti (Codice dei contratti):
+# NON sono importi di spesa. Il fallback regex le prendeva per buone,
+# attribuendo 140.000,00 € a 26 atti diversi.
+SOGLIE_NORMATIVE = {40_000.0, 139_000.0, 140_000.0, 143_000.0, 150_000.0,
+                    200_000.0, 215_000.0, 221_000.0, 750_000.0, 1_000_000.0,
+                    5_382_000.0, 5_538_000.0}
+
+RE_CONTESTO_SPESA = re.compile(
+    r"(impegn\w*|liquid\w*|affid\w*|spesa complessiva|importo complessivo|"
+    r"per un totale|corrispettivo)", re.IGNORECASE)
+
+
 def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     completo = f"{oggetto}\n{testo}"
 
-    importi = []
+    # Cerca gli importi preferendo quelli in un contesto di spesa effettiva
+    # (impegno/liquidazione/affidamento) entro i 120 caratteri precedenti.
+    candidati_contesto, candidati_tutti = [], []
     for m in RE_IMPORTO.finditer(completo):
         raw = m.group(1) or m.group(2)
-        v = importo_italiano(raw)   # conversione italiana corretta
-        if v:
-            importi.append(v)
+        v = importo_italiano(raw)
+        if not v or v in SOGLIE_NORMATIVE:
+            continue
+        candidati_tutti.append(v)
+        if RE_CONTESTO_SPESA.search(completo[max(0, m.start() - 120): m.start()]):
+            candidati_contesto.append(v)
+    importi = candidati_contesto or candidati_tutti
     importo = max(importi) if importi else None
 
     cig = None

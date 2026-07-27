@@ -61,15 +61,37 @@ def censimento_righe(nome: str, righe: list[dict]) -> None:
         log.info(f"  {c:5} × {t!r}{marcatore}")
 
 
-VERSIONE_ESTRAZIONE = 2  # v2: importi testuali, tabelle, beneficiari multipli, pluriennali
+VERSIONE_ESTRAZIONE = 3  # v3: niente importi inventati quando manca il testo
+
+
+def mappa_url_freschi() -> dict:
+    """
+    L'URL /display/<id> salvato è stabile ma NON basta a scaricare gli
+    allegati: senza il token di sessione la pagina non espone la tabella
+    PDF e il testo risulta vuoto. Qui riscansioniamo l'archivio per
+    ottenere url_dettaglio freschi (con p_auth valido), indicizzati per
+    numero atto.
+    """
+    mappa = {}
+    for nome, url_pagina in SORGENTI:
+        righe = portale.ricerca_archivio(url_pagina, anno_da=None)
+        for r in righe:
+            chiave = (r["numero_raw"], r["oggetto"])
+            if r.get("url_dettaglio"):
+                mappa[chiave] = r["url_dettaglio"]
+    log.info(f"URL freschi disponibili per {len(mappa)} atti")
+    return mappa
 
 
 def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
     """
     Rielabora con Groq le spese archiviate:
       - tutte=False: solo quelle col fallback regex (rate limit saturi)
-      - tutte=True:  anche quelle estratte con una versione precedente
-                     dell'estrattore (schema vecchio)
+      - tutte=True:  anche quelle con versione di estrazione obsoleta
+
+    Vengono SEMPRE rielaborate anche le spese il cui testo non era stato
+    recuperato (caratteri_testo == 0): sono quelle su cui il modello aveva
+    inventato gli importi.
     """
     archivio = carica_archivio()
     if tutte:
@@ -78,16 +100,36 @@ def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
                      and s.get("versione_estrazione", 1) < VERSIONE_ESTRAZIONE]
     else:
         candidate = [s for s in archivio
-                     if s.get("estrazione") == "regex" and s.get("url_atto")]
+                     if s.get("url_atto")
+                     and (s.get("estrazione") == "regex"
+                          or not s.get("caratteri_testo"))]
     log.info(f"Spese da rielaborare: {len(candidate)} "
-             f"({'tutte le versioni obsolete' if tutte else 'solo estrazione regex'}) "
+             f"({'tutte le versioni obsolete' if tutte else 'regex o senza testo'}) "
              f"— max questo run: {max_atti}")
+    if not candidate:
+        return
+
+    url_freschi = mappa_url_freschi()
     rielaborate = 0
     for s in candidate[:max_atti]:
         rielaborate += 1
         log.info(f"[{rielaborate}] {s['numero_raw']} — {s['oggetto'][:60]}")
         try:
-            testo = portale.estrai_testo_atto({"url_dettaglio": s["url_atto"]})
+            # URL fresco (con token di sessione) se disponibile: senza, gli
+            # allegati PDF non sono raggiungibili e il testo resta vuoto
+            url = url_freschi.get((s["numero_raw"], s["oggetto"]), s["url_atto"])
+            testo = portale.estrai_testo_atto({"url_dettaglio": url})
+            if len(testo.strip()) < 300:
+                log.warning(f"  Testo non recuperato ({len(testo)} char): "
+                            f"azzero gli importi inventati e vado avanti")
+                for campo in ("importo_euro", "importo_testuale", "beneficiari_dettaglio",
+                              "importo_primo_anno", "cig", "capitolo_bilancio"):
+                    s[campo] = None
+                s["importo_e_pluriennale"] = False
+                s["durata_anni"] = None
+                s["caratteri_testo"] = len(testo)
+                s["testo_disponibile"] = False
+                continue
             dati = estrai_dati(testo, s["oggetto"], s.get("tipo_atto", ""))
             if dati["estrazione"] != "groq":
                 log.info("  ancora regex (Groq non disponibile), lascio invariato")
@@ -99,6 +141,7 @@ def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
                           "descrizione_sintetica", "tipo_atto", "estrazione"):
                 s[campo] = dati.get(campo)
             s["versione_estrazione"] = VERSIONE_ESTRAZIONE
+            s["testo_disponibile"] = True
             s["caratteri_testo"] = len(testo)
             s["data_elaborazione"] = datetime.now().strftime("%Y-%m-%d %H:%M")
             log.info(f"  → {s['beneficiario'] or '?'} | "

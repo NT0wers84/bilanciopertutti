@@ -455,8 +455,9 @@ function disegnaFeed() {
     <article class="spesa-card tipo-${liq ? "liquidazione" : "determinazione"}">
       <div class="spesa-testata">
         <div class="spesa-beneficiario">${esc(s.beneficiario) || "<em>Beneficiario non indicato</em>"}</div>
-        <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""}">
-          ${s.importo_euro != null ? eur(s.importo_euro) : "importo n.d."}</div>
+        <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""}"
+             ${s.importo_euro == null ? 'title="Importo non estratto automaticamente: leggilo nell\'atto originale"' : ""}>
+          ${s.importo_euro != null ? eur(s.importo_euro) : "importo da verificare nell'atto"}</div>
       </div>
       <div class="spesa-descrizione">${esc(s.descrizione_sintetica) || esc((s.oggetto || "").slice(0, 160))}</div>
       <div class="spesa-meta">

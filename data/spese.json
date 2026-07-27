@@ -18,7 +18,7 @@
   "estrazione": "groq",
   "caratteri_testo": 13640,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:46",
+  "data_elaborazione": "2026-07-27 07:43",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -31,7 +31,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1502-2026",
@@ -52,7 +53,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8865,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:47",
+  "data_elaborazione": "2026-07-27 07:43",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -65,7 +66,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1501-2026",
@@ -86,7 +88,7 @@
   "estrazione": "groq",
   "caratteri_testo": 13194,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:48",
+  "data_elaborazione": "2026-07-27 07:44",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -99,7 +101,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1499-2026",
@@ -114,13 +117,13 @@
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
-  "capitolo_bilancio": "400/6, 2810/8, 5635/0, 2970/8, 3885/4, 6500/6, 6370/2",
+  "capitolo_bilancio": "Cap. 400/6, Cap. 2810/8, Cap. 5635/0, Cap. 2970/8, Cap. 3885/4, Cap. 6500/6, Cap. 6370/2",
   "descrizione_sintetica": "Pagamento forniture acqua per edifici comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5538123",
   "estrazione": "groq",
   "caratteri_testo": 6532,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:48",
+  "data_elaborazione": "2026-07-27 07:45",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -133,7 +136,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1496-2026",
@@ -154,7 +158,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7852,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:48",
+  "data_elaborazione": "2026-07-27 07:45",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -167,7 +171,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1495-2026",
@@ -177,31 +182,32 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-24",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630035578 DEL 03/07/2026 E FATTURA N. 0000202630039487 DEL 16/07/2026 - LEASYS ITALIA S.P.A.",
-  "beneficiario": "LEASYS SPA",
-  "importo_euro": 1123.63,
+  "beneficiario": "LEASYS ITALIA S.P.A.",
+  "importo_euro": 948.87,
   "cig": "ZD3314A43F",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "2250/0 imp. 737/2021 anno 2025 ed imp. 1394/2022 anno 2026",
-  "descrizione_sintetica": "pagamento canone noleggio auto e riaddebito tassa automobilistica",
+  "categoria": "Polizia locale e sicurezza",
+  "missione_bdap": 3,
+  "capitolo_bilancio": "2250/0",
+  "descrizione_sintetica": "Pagamento canone noleggio auto",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5538112",
   "estrazione": "groq",
   "caratteri_testo": 9387,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:49",
+  "data_elaborazione": "2026-07-27 07:46",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "LEASYS SPA",
-    "importo": 943.87
+    "nome": "LEASYS ITALIA S.P.A.",
+    "importo": 948.87
    }
   ],
-  "importo_testuale": "1.123,63",
+  "importo_testuale": "948,87",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1494-2026",
@@ -222,7 +228,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8767,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:50",
+  "data_elaborazione": "2026-07-27 07:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -235,7 +241,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1493-2026",
@@ -256,7 +263,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9513,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:50",
+  "data_elaborazione": "2026-07-27 07:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -269,7 +276,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1486-2026",
@@ -290,7 +298,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6228,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:51",
+  "data_elaborazione": "2026-07-27 07:47",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
@@ -311,7 +319,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1485-2026",
@@ -332,7 +341,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7051,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:51",
+  "data_elaborazione": "2026-07-27 07:48",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -345,7 +354,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1484-2026",
@@ -366,7 +376,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6167,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:52",
+  "data_elaborazione": "2026-07-27 07:49",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -379,7 +389,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1483-2026",
@@ -400,7 +411,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7975,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:52",
+  "data_elaborazione": "2026-07-27 07:49",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -413,7 +424,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1482-2026",
@@ -434,7 +446,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8011,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:53",
+  "data_elaborazione": "2026-07-27 07:50",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -447,7 +459,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1481-2026",
@@ -468,7 +481,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8648,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:53",
+  "data_elaborazione": "2026-07-27 07:50",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -481,7 +494,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1480-2026",
@@ -502,7 +516,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8208,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:54",
+  "data_elaborazione": "2026-07-27 07:51",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -515,7 +529,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1479-2026",
@@ -536,7 +551,7 @@
   "estrazione": "groq",
   "caratteri_testo": 14538,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:55",
+  "data_elaborazione": "2026-07-27 07:52",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -573,7 +588,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1478-2026",
@@ -594,7 +610,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8508,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:55",
+  "data_elaborazione": "2026-07-27 07:52",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -607,7 +623,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1477-2026",
@@ -628,7 +645,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7548,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:56",
+  "data_elaborazione": "2026-07-27 07:53",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
@@ -649,7 +666,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1476-2026",
@@ -670,7 +688,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9501,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:56",
+  "data_elaborazione": "2026-07-27 07:53",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -683,7 +701,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1475-2026",
@@ -704,7 +723,7 @@
   "estrazione": "groq",
   "caratteri_testo": 16387,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:57",
+  "data_elaborazione": "2026-07-27 07:54",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -717,7 +736,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1474-2026",
@@ -738,7 +758,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7662,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:57",
+  "data_elaborazione": "2026-07-27 07:54",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -751,7 +771,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1473-2026",
@@ -772,7 +793,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9708,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:58",
+  "data_elaborazione": "2026-07-27 07:55",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -785,7 +806,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1472-2026",
@@ -806,7 +828,7 @@
   "estrazione": "groq",
   "caratteri_testo": 13835,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:59",
+  "data_elaborazione": "2026-07-27 07:55",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -819,7 +841,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1471-2026",
@@ -840,7 +863,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9415,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 00:59",
+  "data_elaborazione": "2026-07-27 07:56",
   "n_beneficiari": 4,
   "beneficiari_dettaglio": [
    {
@@ -865,7 +888,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1470-2026",
@@ -886,7 +910,7 @@
   "estrazione": "groq",
   "caratteri_testo": 14545,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:00",
+  "data_elaborazione": "2026-07-27 07:57",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -923,7 +947,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1469-2026",
@@ -944,7 +969,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6868,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:01",
+  "data_elaborazione": "2026-07-27 07:57",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -957,7 +982,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1468-2026",
@@ -978,7 +1004,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6905,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:01",
+  "data_elaborazione": "2026-07-27 07:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -991,7 +1017,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1467-2026",
@@ -1012,7 +1039,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8528,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:02",
+  "data_elaborazione": "2026-07-27 07:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1025,7 +1052,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1465-2026",
@@ -1046,7 +1074,7 @@
   "estrazione": "groq",
   "caratteri_testo": 5992,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:02",
+  "data_elaborazione": "2026-07-27 07:59",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1059,7 +1087,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1464-2026",
@@ -1080,7 +1109,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8344,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:03",
+  "data_elaborazione": "2026-07-27 07:59",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1093,7 +1122,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1463-2026",
@@ -1114,7 +1144,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10449,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:03",
+  "data_elaborazione": "2026-07-27 08:00",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1127,7 +1157,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1462-2026",
@@ -1148,7 +1179,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6874,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:04",
+  "data_elaborazione": "2026-07-27 08:01",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1161,7 +1192,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1461-2026",
@@ -1182,7 +1214,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8840,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:05",
+  "data_elaborazione": "2026-07-27 08:01",
   "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
@@ -1199,7 +1231,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1460-2026",
@@ -1220,7 +1253,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7104,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:05",
+  "data_elaborazione": "2026-07-27 08:02",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1233,7 +1266,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1459-2026",
@@ -1244,17 +1278,17 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA MINORI E FAMIGLIA",
   "beneficiario": "7 fornitori",
-  "importo_euro": 8540.0,
+  "importo_euro": 13111.48,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Pagamento di fatture diverse per l'Area Minori e Famiglia",
+  "descrizione_sintetica": "Liquidazione fatture diverse Area Minori e Famiglia",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5529170",
   "estrazione": "groq",
   "caratteri_testo": 10415,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:06",
+  "data_elaborazione": "2026-07-27 08:03",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -1286,12 +1320,13 @@
     "importo": 3900.0
    }
   ],
-  "importo_testuale": "8.540,00",
+  "importo_testuale": "13.111,48",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1457-2026",
@@ -1301,27 +1336,23 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-20",
   "oggetto": "ATTO DI LIQUIDAZIONE NOTA PROT. 16943 DEL 15.07.2026",
-  "beneficiario": "3 fornitori",
+  "beneficiario": "2 fornitori",
   "importo_euro": 250.0,
-  "cig": null,
+  "cig": "BB4FE27895",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "Pagamento di fatture a fornitori",
+  "capitolo_bilancio": "01021.03.00, 90100.03.00, 99017.01.09",
+  "descrizione_sintetica": "Liquidazione fatture a due fornitori",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5525212",
   "estrazione": "groq",
   "caratteri_testo": 8873,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:06",
-  "n_beneficiari": 3,
+  "data_elaborazione": "2026-07-27 08:04",
+  "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
     "nome": "MARIANI GIANCARLO",
-    "importo": 250.0
-   },
-   {
-    "nome": "MARIANI GIANCARLO",
-    "importo": null
+    "importo": 200.0
    },
    {
     "nome": "AGENZIA DELLE ENTRATE",
@@ -1333,7 +1364,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1456-2026",
@@ -1345,29 +1377,21 @@
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURA N° 1626019848 DEL 26.006.2026",
   "beneficiario": "SIAE",
   "importo_euro": 296.69,
-  "cig": null,
+  "cig": "129537",
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "Pagamento fattura SIAE per servizi culturali",
+  "capitolo_bilancio": "06011.03.06",
+  "descrizione_sintetica": "Pagamento a SIAE per servizi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5525210",
   "estrazione": "groq",
   "caratteri_testo": 8779,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:07",
-  "n_beneficiari": 2,
+  "data_elaborazione": "2026-07-27 08:05",
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "SIAE",
     "importo": 296.69
-   },
-   {
-    "nome": "SIAE",
-    "importo": null
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 53.5
    }
   ],
   "importo_testuale": "296,69",
@@ -1375,7 +1399,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1455-2026",
@@ -1385,39 +1410,32 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-20",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURA N° 24/PA DEL 29.06.2026",
-  "beneficiario": "7 fornitori",
-  "importo_euro": 247.47,
+  "beneficiario": "ADF GROUP SRL",
+  "importo_euro": 203.5,
   "cig": "BA0A07A27B",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "pagamento di fornitori per servizi culturali e sportivi",
+  "capitolo_bilancio": "05021.03.04, 90100.01.03",
+  "descrizione_sintetica": "Liquidazione fattura per servizi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5525208",
   "estrazione": "groq",
   "caratteri_testo": 8815,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:07",
-  "n_beneficiari": 3,
+  "data_elaborazione": "2026-07-27 08:06",
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "ADF GROUP SRL",
-    "importo": 248.27
-   },
-   {
-    "nome": "ADF GROUP SRL",
-    "importo": null
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 44.77
+    "importo": 203.5
    }
   ],
-  "importo_testuale": "247,47",
+  "importo_testuale": "203,50",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1453-2026",
@@ -1433,12 +1451,12 @@
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
   "capitolo_bilancio": "1332/4",
-  "descrizione_sintetica": "Pagamento per servizio di derattizzazione presso la scuola M.L. King",
+  "descrizione_sintetica": "Derattizzazione scuola M.L. King",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5523526",
   "estrazione": "groq",
   "caratteri_testo": 8657,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:08",
+  "data_elaborazione": "2026-07-27 08:07",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1451,7 +1469,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1452-2026",

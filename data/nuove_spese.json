@@ -1,70 +1,138 @@
 [
  {
-  "id": "determinazione-1507-2026",
-  "numero_raw": "2026/1507",
-  "numero": "1507",
+  "id": "liquidazione-1510-2026",
+  "numero_raw": "2026/1510",
+  "numero": "1510",
   "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-07-27",
-  "oggetto": "RENDICONTO ECONOMATO - SECONDO TRIMESTRE 2026",
-  "beneficiario": "Economo comunale",
-  "n_beneficiari": 1,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-28",
+  "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
+  "beneficiario": "7 fornitori",
+  "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
-    "nome": "Nicola Forenza",
-    "importo": 2131.35
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 123.81
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 147.79
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 100.0
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 100.0
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 185.17
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 194.41
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 195.09
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 194.18
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 194.64
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 194.64
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 115.16
+   },
+   {
+    "nome": "VIA LIBERA COOP.",
+    "importo": 206.22
+   },
+   {
+    "nome": "VIA LIBERA COOP.",
+    "importo": null
+   },
+   {
+    "nome": "ESATTORIA - IVA",
+    "importo": 9.82
    }
   ],
-  "importo_euro": 2131.35,
-  "importo_testuale": "2.131,35",
+  "importo_euro": 1960.93,
+  "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Fondo di Economato",
-  "descrizione_sintetica": "Rendiconto economato secondo trimestre 2026",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5541269",
+  "categoria": "Da classificare",
+  "missione_bdap": 99,
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": null,
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5542181",
   "estrazione": "groq",
   "versione_estrazione": 2,
-  "caratteri_testo": 5573,
+  "caratteri_testo": 16124,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 17:14"
+  "data_elaborazione": "2026-07-28 16:55"
  },
  {
-  "id": "determinazione-1506-2026",
-  "numero_raw": "2026/1506",
-  "numero": "1506",
+  "id": "liquidazione-1509-2026",
+  "numero_raw": "2026/1509",
+  "numero": "1509",
   "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-07-27",
-  "oggetto": "IMPEGNO DI SPESA PER ATTIVITA' DI TRASLOCO IN VIA DEI GIGLI SERVIZI VOCE E DATI TELECOM PER SETTORE SERVIZI SOCIALI E ISTITUTO VIA VIQUARTERIO (CIG BC7B3E7907)",
-  "beneficiario": "Telecom Italia",
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-28",
+  "oggetto": "LIQUIDAZIONE FATTURA EMESSA DAL DOTT. MIRKO MELIS PER ATTIVITA' DI REVISIONE AMMINISTRATIVO-CONTABILE PROGETTO SAI - ANNUALITA' 2025",
+  "beneficiario": "Dott. Mirko Melis",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "Telecom Italia",
-    "importo": 23000.0
+    "nome": "Dott. Mirko Melis",
+    "importo": 2030.08
    }
   ],
-  "importo_euro": 28060.0,
-  "importo_testuale": "28.060,00",
+  "importo_euro": 2030.08,
+  "importo_testuale": "2.030,08",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "cig": "BC7B3E7907",
+  "cig": "B2C9599E1D",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "9003/3",
-  "descrizione_sintetica": "Servizi di connettività voce e dati per il settore Servizi Sociali e Istituto Via Viquarterio",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5541266",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "Liquidazione fattura per attività di revisione amministrativo-contabile progetto SAI",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5542179",
   "estrazione": "groq",
   "versione_estrazione": 2,
-  "caratteri_testo": 8578,
+  "caratteri_testo": 8467,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 17:14"
+  "data_elaborazione": "2026-07-28 16:56"
  }
 ]

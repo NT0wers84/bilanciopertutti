@@ -197,6 +197,35 @@ CATEGORIE AMMESSE:
 # stesso (nel run del 2026-07 ha prodotto 121.530.402,00 su 10 atti diversi).
 TESTO_MIN_UTILE = 300
 
+# L'IVA versata allo Stato (split payment) non è un fornitore del Comune
+RE_ERARIO = re.compile(r"(esattoria|erario|agenzia delle entrate|"
+                       r"scissione dei pagamenti|split ?payment|^iva\b|\biva$)",
+                       re.IGNORECASE)
+
+
+def _e_erario(nome: str) -> bool:
+    return bool(RE_ERARIO.search((nome or "").strip()))
+
+
+def _etichetta_multipla(beneficiario: str | None) -> str:
+    """
+    '7 fornitori' → 'Fornitori diversi'. Il numero esatto sta già nel tag
+    dedicato: nel titolo serve un'etichetta leggibile e non ridondante.
+    """
+    b = (beneficiario or "").strip()
+    testo = re.sub(r"^\W*\d+\s+", "", b).strip()          # toglie "7 " iniziale
+    if not testo or testo.lower() in ("beneficiari", "soggetti"):
+        return "Beneficiari diversi"
+    testo = testo[0].upper() + testo[1:]
+    # Una o due parole → aggiungi "divers*" concordando col genere.
+    # Femminili plurali tipici: -e (famiglie, ditte), -zioni/-sioni
+    # (associazioni), -tà (società). Tutto il resto al maschile.
+    if len(testo.split()) <= 2 and not re.search(r"\bdivers[ei]\b", testo, re.I):
+        prima = testo.split()[0].lower()
+        femminile = re.search(r"(e|zioni|sioni|tà)$", prima) is not None
+        return f"{testo} {'diverse' if femminile else 'diversi'}"
+    return testo
+
 
 def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     """
@@ -241,12 +270,18 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     imp = importo_italiano(risultato.get("importo_testuale"))
     if imp is None:
         imp = importo_italiano(risultato.get("importo_euro"))
+    # Ripiego: se il modello non ha trovato l'importo ma il testo c'è,
+    # riusa il rilevatore regex (stesso codice del fallback, nessun duplicato)
+    if imp is None and testo_utile:
+        imp = _estrai_con_regex(testo, oggetto)["importo_euro"]
+        if imp is not None:
+            log.info(f"  Importo non trovato dal modello, recuperato dal testo: {imp}")
+            risultato["importo_da_regex"] = True
     risultato["importo_euro"] = imp
     risultato["importo_primo_anno"] = importo_italiano(
         risultato.get("importo_primo_anno_testuale"))
 
-    # Beneficiari multipli: normalizza la lista e, se manca il totale,
-    # ricavalo dalla somma delle voci.
+    # ── Beneficiari multipli ─────────────────────────────────────────────
     dettaglio = risultato.get("beneficiari_dettaglio")
     voci = []
     if isinstance(dettaglio, list):
@@ -254,23 +289,45 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
             if not isinstance(v, dict):
                 continue
             nome = (v.get("nome") or "").strip()
+            if _e_erario(nome):        # l'IVA allo Stato non è un fornitore
+                continue
             valore = importo_italiano(v.get("importo_testuale") or v.get("importo"))
-            if nome or valore:
-                voci.append({"nome": nome or "—", "importo": valore})
-    risultato["beneficiari_dettaglio"] = voci or None
+            if nome and len(nome) > 3:
+                voci.append({"nome": nome, "importo": valore})
+
+    # Se manca il totale, ricavalo dalla somma delle voci
     if risultato["importo_euro"] is None and voci:
         somma = sum(v["importo"] for v in voci if v["importo"])
         if somma > 0:
             risultato["importo_euro"] = round(somma, 2)
 
+    # COERENZA: se le voci hanno importi ma non sommano al totale, il
+    # dettaglio è inaffidabile (il modello legge numeri di fattura o
+    # impegni come importi). Meglio nessun dettaglio che uno sbagliato.
+    con_importo = [v for v in voci if v["importo"]]
+    if con_importo and risultato["importo_euro"]:
+        somma = sum(v["importo"] for v in con_importo)
+        scarto = abs(somma - risultato["importo_euro"]) / risultato["importo_euro"]
+        if scarto > 0.02:
+            log.warning(f"  Dettaglio beneficiari incoerente "
+                        f"(somma {somma:.2f} ≠ totale {risultato['importo_euro']:.2f}): "
+                        f"scartato")
+            voci = []
+    risultato["beneficiari_dettaglio"] = voci or None
+
     # Conta i soggetti DISTINTI (le tabelle ripetono lo stesso fornitore su
     # più righe/fatture: non sono beneficiari diversi)
-    nomi_distinti = {v["nome"].strip().lower() for v in voci if v["nome"] != "—"}
+    nomi_distinti = {v["nome"].strip().lower() for v in voci}
     try:
         n_ben = int(risultato.get("n_beneficiari"))
     except (TypeError, ValueError):
         n_ben = 0
     risultato["n_beneficiari"] = max(n_ben, len(nomi_distinti), 1)
+
+    # Etichetta generica quando i beneficiari sono più d'uno: il conteggio
+    # esatto lo dà il tag, il nome deve restare leggibile
+    if risultato["n_beneficiari"] > 1:
+        risultato["beneficiario"] = _etichetta_multipla(risultato.get("beneficiario"))
 
     # Pluriennale
     risultato["importo_e_pluriennale"] = bool(risultato.get("importo_e_pluriennale"))

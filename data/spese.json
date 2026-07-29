@@ -7,82 +7,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 123.81
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 147.79
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 100.0
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 100.0
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 185.17
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 194.41
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 195.09
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 194.18
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 194.64
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 194.64
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 115.16
-   },
-   {
-    "nome": "VIA LIBERA COOP.",
-    "importo": 206.22
-   },
-   {
-    "nome": "VIA LIBERA COOP.",
-    "importo": null
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 9.82
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 1960.93,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -179,12 +106,7 @@
   "oggetto": "IMPEGNO DI SPESA PER ATTIVITA' DI TRASLOCO IN VIA DEI GIGLI SERVIZI VOCE E DATI TELECOM PER SETTORE SERVIZI SOCIALI E ISTITUTO VIA VIQUARTERIO (CIG BC7B3E7907)",
   "beneficiario": "Telecom Italia",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Telecom Italia",
-    "importo": 23000.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 28060.0,
   "importo_testuale": "28.060,00",
   "importo_e_pluriennale": false,
@@ -364,12 +286,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Comune di Siziano",
-    "importo": 1025.73
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.367,83",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -491,7 +408,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-23",
   "oggetto": "LIQUIDAZIONE CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": "3 utenti in difficoltà socio-economica",
+  "beneficiario": "Utenti in difficoltà socio-economica",
   "importo_euro": 1685.0,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -744,7 +661,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "PROROGA INTERVENTI MISURA B2 AL 30/06/2026 (DGR N. XII/5926 DEL 30/03/2026) - RICOGNIZIONE RISORSE RESIDUE E ASSUNZIONE NUOVO IMPEGNO DI SPESA.",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 1700.0,
   "cig": "B7E3FABA47",
   "categoria": "Amministrazione e servizi generali",
@@ -757,36 +674,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:52",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Progetto Persona Coop. Sociale",
-    "importo": 250.0
-   },
-   {
-    "nome": "Via Libera Coop. Sociale Onlus",
-    "importo": 250.0
-   },
-   {
-    "nome": "Spazio Aperto Servizi Soc. Coop.",
-    "importo": 250.0
-   },
-   {
-    "nome": "L’Impronta Associazione Onlus",
-    "importo": 250.0
-   },
-   {
-    "nome": "Fornitori diversi",
-    "importo": 50.0
-   },
-   {
-    "nome": "L’Impronta Associazione Onlus",
-    "importo": 250.0
-   },
-   {
-    "nome": "Spazio Aperto Servizi Soc. Coop.",
-    "importo": 250.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.700,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -838,7 +726,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": "3 utenti in difficoltà socio-economica",
+  "beneficiario": "Utenti in difficoltà socio-economica",
   "importo_euro": 1670.0,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -851,20 +739,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:53",
   "n_beneficiari": 3,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "utente 1",
-    "importo": 885.0
-   },
-   {
-    "nome": "utente 2",
-    "importo": 885.0
-   },
-   {
-    "nome": "utente 3",
-    "importo": 800.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.670,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -929,12 +804,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:54",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Edictum S.r.l.s.",
-    "importo": 2170.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.387,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -999,12 +869,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:55",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "WIP Architetti S.r.l.",
-    "importo": 1900.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.412,34",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1056,7 +921,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE TONERGROSS S.R.L., SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A., CONVERGE S.R.L.",
-  "beneficiario": "4 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 1409.1,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -1069,24 +934,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:56",
   "n_beneficiari": 4,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "TONERGROSS SRL",
-    "importo": 197.41
-   },
-   {
-    "nome": "SHARP ELECTRONICS SPA",
-    "importo": 104.82
-   },
-   {
-    "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
-    "importo": 412.9
-   },
-   {
-    "nome": "CONVERGE SRL",
-    "importo": 785.07
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.409,10",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1103,7 +951,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: ARIES GROUP SRL, GAS TECNICI FOLIGNO SRL, SAPIO LIFE SRL, DIEFFE SISTEMI SRL, ECOLOGIA AMBIENTE SRL, TOWA PHARMACEUTICAL SPA, BIOS LINE SPA",
-  "beneficiario": "7 ditte",
+  "beneficiario": "Ditte diverse",
   "importo_euro": 1219.8,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -1116,36 +964,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:57",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Aries Group Srl",
-    "importo": 207.4
-   },
-   {
-    "nome": "Ecologia Ambiente Srl",
-    "importo": 207.4
-   },
-   {
-    "nome": "Gas Teciici Foligno Srl",
-    "importo": 22.45
-   },
-   {
-    "nome": "Sapio Life Srl",
-    "importo": 54.35
-   },
-   {
-    "nome": "Dieffe Sistemi Srl",
-    "importo": 689.3
-   },
-   {
-    "nome": "Towa Pharmaceutical Spa",
-    "importo": null
-   },
-   {
-    "nome": "Bios Line Spa",
-    "importo": null
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.219,80",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1350,12 +1169,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:00",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "DUE MAICH SERVIZI SRL",
-    "importo": 219.6
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "439,20",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1407,7 +1221,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURA N° 1/26 DEL 08.07.2026",
-  "beneficiario": "due fornitori",
+  "beneficiario": "Due fornitori diverse",
   "importo_euro": 280.0,
   "cig": "BC3C0EF1EB",
   "categoria": "Cultura",
@@ -1424,10 +1238,6 @@
    {
     "nome": "NEPA-RCHE' SRLS",
     "importo": 280.0
-   },
-   {
-    "nome": "ESATTORIA - IVA",
-    "importo": 50.49
    }
   ],
   "importo_testuale": "280,00",
@@ -1481,7 +1291,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA MINORI E FAMIGLIA",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 13111.48,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -1494,36 +1304,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:03",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "COOPERATIVA",
-    "importo": null
-   },
-   {
-    "nome": "SOCIETA' COOPERATIVA SOCIALE IL MOSAICO SERVIZI",
-    "importo": 57509.0
-   },
-   {
-    "nome": "FUORILUOGHI SOCIETA' COOPERATIVA SOCIALE ONLUS",
-    "importo": 128671.0
-   },
-   {
-    "nome": "FUORILUOGHI SOCIETA' COOPERATIVA SOCIALE ONLUS",
-    "importo": 128672.0
-   },
-   {
-    "nome": "ASSOCIAZIONE SOS GIOVANI ONLUS",
-    "importo": 3900.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "13.111,48",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1540,7 +1321,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-20",
   "oggetto": "ATTO DI LIQUIDAZIONE NOTA PROT. 16943 DEL 15.07.2026",
-  "beneficiario": "2 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 250.0,
   "cig": "BB4FE27895",
   "categoria": "Amministrazione e servizi generali",
@@ -1553,16 +1334,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:04",
   "n_beneficiari": 2,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "MARIANI GIANCARLO",
-    "importo": 200.0
-   },
-   {
-    "nome": "AGENZIA DELLE ENTRATE",
-    "importo": 50.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "250,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1820,7 +1592,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-16",
   "oggetto": "LIQUIDAZIONE INCENTIVI PER FUNZIONI TECNICHE, DI CUI ALLA DETERMINAZIONE N. 1796 DEL 18/11/2024, RELATIVI ALLA PROCEDURA DI GARA PER L'INDIVIDUAZIONE DI UN ENTE ATTUATORE PER L'ACCOGLIENZA INTEGRATA DI TITOLARI DI PROTEZIONE INTERNAZIONALE NELL'AMBITO DEL SISTEMA SAI - CIG B2C9599E1D",
-  "beneficiario": "7 dipendenti comunali",
+  "beneficiario": "Dipendenti comunali diversi",
   "importo_euro": 1095.5,
   "cig": "B2C9599E1D",
   "categoria": "Amministrazione e servizi generali",
@@ -1833,36 +1605,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:11",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Colelli",
-    "importo": 80.21
-   },
-   {
-    "nome": "Giovanelli",
-    "importo": 365.82
-   },
-   {
-    "nome": "Dott.ssa Stefania",
-    "importo": 649.47
-   },
-   {
-    "nome": "CIG B2C9599E1D",
-    "importo": 489.06
-   },
-   {
-    "nome": "Nettis",
-    "importo": 60.4
-   },
-   {
-    "nome": "Giuseppe",
-    "importo": 275.47
-   },
-   {
-    "nome": "ArubaPEC S.p.A.",
-    "importo": 824.93
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.095,50",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1878,7 +1621,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-16",
   "oggetto": "LIQUIDAZIONE FATTURA N. 141/2026 DELLA CARTOLERIA ENRICA E DANIELA PETTINARI SNC - N. 13/2026 DELLA CARTOLERIA GERLI MONICA E N. 13/2026 DELLA CARTOLERIA YAKINE FRUNGILLO AMINA RELATIVE ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 12992.74,
   "cig": "U.1.03.0",
   "categoria": "Istruzione e scuola",
@@ -1891,20 +1634,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:12",
   "n_beneficiari": 3,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cartoleria Enrica e Daniela Pettinari SNC",
-    "importo": 4954.0
-   },
-   {
-    "nome": "Cartoleria Gerli Monica",
-    "importo": 5792.09
-   },
-   {
-    "nome": "Cartoleria Yakine Frungillo Amina",
-    "importo": 1245.75
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "12.992,74",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2204,12 +1934,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:17",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "dipendenti comunali",
-    "importo": 19922.06
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "13.290,59",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2225,7 +1950,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-13",
   "oggetto": "INSERIMENTO MINORI PRESSO CENTRO DIURNO VISMARA GESTITO DALLA FONDAZIONE DON CARLO GNOCCHI - ETS - ASSUNZIOONE IMPEGNO DI SPESA (CIG BC4E1BD62E)",
-  "beneficiario": "2 minori",
+  "beneficiario": "Minori diversi",
   "importo_euro": 1400.0,
   "cig": "BC4E1BD62E",
   "categoria": "Amministrazione e servizi generali",
@@ -2238,16 +1963,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:17",
   "n_beneficiari": 2,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "minori",
-    "importo": 50.0
-   },
-   {
-    "nome": "minori",
-    "importo": 50.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.400,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2378,12 +2094,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:20",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Guzzonato S.R.L.",
-    "importo": 23555.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "28.737,10",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2446,12 +2157,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:21",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Monaco SpA",
-    "importo": 50000.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "55.000,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2480,12 +2186,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:22",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "MIOS TECHNOLOGY S.R.L.",
-    "importo": 3532.87
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "4.311,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2548,12 +2249,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:23",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Costruire srl di Locate di Triulzi (MI)",
-    "importo": 125482.29
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "230.000,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2603,7 +2299,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-13",
   "oggetto": "LIQUIDAZIONE NOTE DI DEBITO PER SERVIZI RESI A FAVORE DI MINORI E UTENTI CON DISABILITÀ",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 15540.0,
   "cig": "BA10D1523E",
   "categoria": "Amministrazione e servizi generali",
@@ -2674,12 +2370,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 01:25",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "La Cordata Società Cooperativa Sociale",
-    "importo": 981.49
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.158,50",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2831,7 +2522,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-07",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER ATTIVITA' AFFERENTI SERVIZI CULTURALI ANNO 2026",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 2220.8,
   "cig": "BC3C0EF1EB",
   "categoria": "Cultura",
@@ -2844,36 +2535,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:27",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Arte Ludica Spettacoli ed Eventi di Regazzoni Maristella",
-    "importo": 420.0
-   },
-   {
-    "nome": "Nepa-Rchè S.r.l.s.",
-    "importo": 280.0
-   },
-   {
-    "nome": "ICO Computer Market Srl",
-    "importo": 170.8
-   },
-   {
-    "nome": "Ditta X",
-    "importo": 300.0
-   },
-   {
-    "nome": "Ditta Y",
-    "importo": 250.0
-   },
-   {
-    "nome": "Ditta Z",
-    "importo": 120.0
-   },
-   {
-    "nome": "Ditta W",
-    "importo": 180.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.220,80",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3038,12 +2700,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:30",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Schindler S.p.A.",
-    "importo": 859.26
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.048,30",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3106,12 +2763,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:31",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "L.G. Tecno Impianti srl",
-    "importo": 607.54
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "741,20",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3140,12 +2792,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:32",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Maggioli S.p.A.",
-    "importo": 3491.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "4.260,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3310,12 +2957,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:35",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Maggioli S.p.A.",
-    "importo": 10592.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "12.923,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3331,7 +2973,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-07",
   "oggetto": "DETERMINA A CONTRARRE PER ISCRIZIONE AD UN CORSO DI AGGIORNAMENTO PER DUE DIPENDENTI DEL SETTORE IV AREA AMBIENTE, ECOLOGIA E COMMERCIO PROPEDEUTICO ALL’ACQUISIZIONE DELLE NOVITÀ LEGISLATIVE E COMPLEMENTARI ALLE ATTIVITÀ D’UFFICIO - DIRITTO ITALIA",
-  "beneficiario": "2 dipendenti del Settore IV Area Ambiente, Ecologia e Commercio",
+  "beneficiario": "Dipendenti del Settore IV Area Ambiente, Ecologia e Commercio",
   "importo_euro": 602.0,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -3669,7 +3311,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 1044FATTPA , EMESSA DALLA UPEL - UNIONE PROVINCIALE ENTI LOCALI ISCRIZIONE CORSO PER NR. 4 DIPENDENTI DENOMINATO - FASE ESECUTIVA PER SERVIZI E FORNITURE - L1/SF1 CODICE CIG BB4EB39989",
-  "beneficiario": "4 dipendenti comunali",
+  "beneficiario": "Dipendenti comunali diversi",
   "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -3819,7 +3461,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-06",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE IL BALZO RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO A TRE ALUNNI RESIDENTI - CIG B8D80F7B07",
-  "beneficiario": "3 alunni residenti",
+  "beneficiario": "Alunni residenti diversi",
   "importo_euro": null,
   "cig": null,
   "categoria": "Istruzione e scuola",
@@ -3922,12 +3564,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:41",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "AFM",
-    "importo": 377870.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "377.870,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3956,12 +3593,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:42",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Aemme Linea Ambiente Srl",
-    "importo": 3120036.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "121.530.402,20",
   "importo_e_pluriennale": true,
   "durata_anni": 15,
@@ -4157,7 +3789,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-02",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURE N° 108/PA E N° 109/PA DEL 31.05.2026",
-  "beneficiario": "fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -4547,7 +4179,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-29",
   "oggetto": "MISURA B1 FNA 2025 - ACCERTAMENTO DI ENTRATA E CORRISPONDENTE IMPEGNO DI SPESA PER CONTINUITA' INTERVENTI AL 30/06/2026 (DGR N. XII/5926 DEL 30/03/2026)",
-  "beneficiario": "4 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 2580.0,
   "cig": "B959F0CE3C, B8AD272260, B8AD595906, B959F21F90",
   "categoria": "Sociale e famiglia",
@@ -4746,12 +4378,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:50",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Grafiche Noè di Noè Aldo & C. Snc",
-    "importo": 1420.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.732,40",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -4916,12 +4543,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:52",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Libreria Verso srl",
-    "importo": 382.59
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "12.669,58",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -4950,12 +4572,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:53",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "B. & B. Service società cooperativa",
-    "importo": 81500.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "99.430,00",
   "importo_e_pluriennale": true,
   "durata_anni": 3,
@@ -4984,12 +4601,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:54",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cap Holding S.p.A.",
-    "importo": 155082.45
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "249.425,52",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5039,7 +4651,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-22",
   "oggetto": "DETERMINAZIONE A CONTRARRE E APPROVAZIONE ATTI DI GARA AVVISO PUBBLICO DI PROCEDURA APERTA – AI SENSI DELL’ARTICOLO 71, D.LGS 36/2023 -, IN MODALITA’ DIGITALE PER L’AFFIDAMENTO DEL SERVIZIO DI GESTIONE DELLE ATTIVITA’ CONNESSE ALLA SCUOLA CIVICA DI MUSICA - A.S. – 2026/2027 – 2027/2028 (OLTRE EVENTUALE RIPETIZIONE PER ULTERIORI 2 ANNI) - LOTTO 1 – CIG BC135D5394",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 621000.0,
   "cig": "BC135D5394",
   "categoria": "Istruzione e scuola",
@@ -5209,7 +4821,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-18",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": "7 utenti in difficoltà socio-economica",
+  "beneficiario": "Utenti in difficoltà socio-economica",
   "importo_euro": 1365.0,
   "cig": null,
   "categoria": "Sociale e famiglia",
@@ -5222,36 +4834,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:57",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "utente 1",
-    "importo": 965.0
-   },
-   {
-    "nome": "utente 2",
-    "importo": 965.0
-   },
-   {
-    "nome": "utente 3",
-    "importo": 965.0
-   },
-   {
-    "nome": "utente 4",
-    "importo": 400.0
-   },
-   {
-    "nome": "utente 5",
-    "importo": null
-   },
-   {
-    "nome": "utente 6",
-    "importo": null
-   },
-   {
-    "nome": "utente 7",
-    "importo": null
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.365,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5348,12 +4931,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:59",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Technocontrol System srl",
-    "importo": 440.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "536,80",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5382,12 +4960,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:00",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società A.C.M. srl Società Unipersonale",
-    "importo": 572614.39
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.000.000,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5552,12 +5125,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:02",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "ECODIS S.r.l.",
-    "importo": 427.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "3.416,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5620,12 +5188,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:03",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "un cittadino con grave disabilità",
-    "importo": 732.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.500,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5641,7 +5204,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-12",
   "oggetto": "ASSUNZIONE DI IMPEGNO DI SPESA PER L'AFFIDAMENTO DEL SERVIZIO DI COPERTURA ASSICURATIVA SANITARIA INTEGRATIVA A FAVORE DEL PERSONALE DELLA POLIZIA LOCALE, AI SENSI DELL'ART. 208, COMMA 4, LETT. C), DEL D.LGS. 30 APRILE 1992, N. 285. CIG: BBF 295E63E.",
-  "beneficiario": "personale della Polizia Locale",
+  "beneficiario": "Personale della Polizia Locale",
   "importo_euro": 4032.0,
   "cig": "BBF 295E63E",
   "categoria": "Polizia locale e sicurezza",
@@ -5743,7 +5306,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-09",
   "oggetto": "AFFIDAMENTO DIRETTO PER LA FORNITURA DI UN LETTORE MICROCHIP A BASTONE PER L'IDENTIFICAZIONE DEGLI ANIMALI D'AFFEZIONE DA ASSEGNARE AGLI AGENTI ACCERTATORI ECOLOGICI VOLONTARI – IMPEGNO DI SPESA CIG: BBEAACA19F",
-  "beneficiario": "7 Agenti Accertatori Ecologici Volontari",
+  "beneficiario": "Agenti Accertatori Ecologici Volontari",
   "importo_euro": 1432.6,
   "cig": "BBEAACA19F",
   "categoria": "Ambiente, verde e rifiuti",
@@ -5777,7 +5340,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-09",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER ESERCITAZIONI DI TIRO PER IL PERSONALE DELLA POLIZIA LOCALE PRESSO IL TIRO A SEGNO NAZIONALE DI PAVIA ANNO 2026",
-  "beneficiario": "personale della Polizia Locale",
+  "beneficiario": "Personale della Polizia Locale",
   "importo_euro": 3000.0,
   "cig": null,
   "categoria": "Polizia locale e sicurezza",
@@ -5981,7 +5544,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-08",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER SERVIZI ED INTERVENTI AGGIUNTIVI IN SUPPORTO DELLA REALIZZAZIONE DELLE INZIATIVA IN FAVORE DELLE POLTICHE GIOVANILI E DELLO SPORT CIG: BBDBD55CF0; / CIG: BBDBD7140E/ CIG: BBDBD8FCCD/ CIG: BBDBDA6FC7",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 2318.0,
   "cig": "BBDBD55CF0",
   "categoria": "Amministrazione e servizi generali",
@@ -5994,24 +5557,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:09",
   "n_beneficiari": 4,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Ge.Co SrlS",
-    "importo": 1900.0
-   },
-   {
-    "nome": "AD security",
-    "importo": 320.0
-   },
-   {
-    "nome": "Rozzano (MI) - C.F. e P.IVA n. 03442430967",
-    "importo": 120.0
-   },
-   {
-    "nome": "Assago 20090 – P. ta IVA 07624250150",
-    "importo": 460.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.318,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6108,12 +5654,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:11",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Maggioli S.p.A.",
-    "importo": 170.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "208,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6163,7 +5704,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-04",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER REALIZZAZIONE EVENTI CULTURALI PRIMAVERA 2026",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 2928.0,
   "cig": "BBD1CF21FE",
   "categoria": "Cultura",
@@ -6176,20 +5717,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:12",
   "n_beneficiari": 3,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Suono e Luce di Sergio Felleti",
-    "importo": 2928.0
-   },
-   {
-    "nome": "Curti e Zilioli",
-    "importo": 366.0
-   },
-   {
-    "nome": "Società Cooperativa Sociale Comete-ETS",
-    "importo": 366.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.928,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6252,12 +5780,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:13",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "SIVIS scpa",
-    "importo": 41557.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "50.699,54",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6354,12 +5877,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:15",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società Policoperture Srl",
-    "importo": 27525.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "33.580,50",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6456,12 +5974,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:17",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "DCE S.R.L.",
-    "importo": 2181.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.660,82",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6783,7 +6296,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-26",
   "oggetto": "CONFERIMENTO INCARICHI DI COLLABORAZIONE DEGLI ARTISTI MUSICALI PER LA FESTA DELLA MUSICA – ANNO 2026",
-  "beneficiario": "3 artisti musicali",
+  "beneficiario": "Artisti musicali diversi",
   "importo_euro": 1312.5,
   "cig": null,
   "categoria": "Cultura",
@@ -6974,12 +6487,7 @@
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 02:24",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Società TONERGROSS SRL",
-    "importo": 1559.25
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "1.902,29",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6995,7 +6503,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER SERVIZI ED INTERVENTI NELL’AMBITO DELLE POLTIICHE GIOVANILI E DELLO SPORT CIG: BBA0506E3D/CIG: BBA0551C22/CIG: BBA05BE617",
-  "beneficiario": "3 fornitori",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 6540.88,
   "cig": "BBA0506E3D, BBA0551C22, BBA05BE617",
   "categoria": "Sport e tempo libero",

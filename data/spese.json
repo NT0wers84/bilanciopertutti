@@ -9,8 +9,33 @@
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
   "beneficiario": "Fornitori diversi",
   "n_beneficiari": 7,
-  "beneficiari_dettaglio": null,
-  "importo_euro": 1960.93,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "COOPERATIVA",
+    "importo": null
+   },
+   {
+    "nome": "VIA LIBERA COOP.",
+    "importo": 206.22
+   },
+   {
+    "nome": "VIA LIBERA COOP.",
+    "importo": null
+   }
+  ],
+  "importo_euro": 206.22,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -23,10 +48,11 @@
   "descrizione_sintetica": null,
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5542181",
   "estrazione": "groq",
-  "versione_estrazione": 2,
+  "versione_estrazione": 3,
   "caratteri_testo": 16124,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-28 16:55"
+  "data_elaborazione": "2026-07-29 15:44",
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1509-2026",
@@ -54,13 +80,14 @@
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Liquidazione fattura per attività di revisione amministrativo-contabile progetto SAI",
+  "descrizione_sintetica": "Liquidazione fattura per attività di revisione amministrativo-contabile",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5542179",
   "estrazione": "groq",
-  "versione_estrazione": 2,
+  "versione_estrazione": 3,
   "caratteri_testo": 8467,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-28 16:56"
+  "data_elaborazione": "2026-07-29 15:45",
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1507-2026",
@@ -88,13 +115,14 @@
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "Fondo di Economato",
-  "descrizione_sintetica": "Rendiconto economato secondo trimestre 2026",
+  "descrizione_sintetica": "Rendiconto economato per il secondo trimestre 2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5541269",
   "estrazione": "groq",
-  "versione_estrazione": 2,
+  "versione_estrazione": 3,
   "caratteri_testo": 5573,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 17:14"
+  "data_elaborazione": "2026-07-29 15:45",
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1506-2026",
@@ -120,10 +148,11 @@
   "descrizione_sintetica": "Servizi di connettività voce e dati per il settore Servizi Sociali e Istituto Via Viquarterio",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5541266",
   "estrazione": "groq",
-  "versione_estrazione": 2,
+  "versione_estrazione": 3,
   "caratteri_testo": 8578,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 17:14"
+  "data_elaborazione": "2026-07-29 15:45",
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1503-2026",
@@ -1456,31 +1485,32 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-20",
   "oggetto": "LIQUIDAZIONE PRESTAZIONI STRAORDINARI SETTORE IV AREA AMBIENTE, ECOLOGIA E COMMERCIO APRILE, MAGGIO E GIUGNO 2026",
-  "beneficiario": "personale del Settore IV Area Ambiente, Ecologia e Commercio",
-  "importo_euro": 251.85,
+  "beneficiario": "dipendenti comunali",
+  "importo_euro": 601.22,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "6350/20, 6530/10, 7803/00, 7804/10",
-  "descrizione_sintetica": "liquidazione compensi per lavoro straordinario del personale del Settore IV Area Ambiente, Ecologia e Commercio",
+  "capitolo_bilancio": "6350/20, 7803/00",
+  "descrizione_sintetica": "Liquidazione prestazioni straordinari per dipendenti del Settore IV",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5523524",
   "estrazione": "groq",
   "caratteri_testo": 8713,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:09",
+  "data_elaborazione": "2026-07-29 15:46",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "personale del Settore IV Area Ambiente, Ecologia e Commercio",
-    "importo": 251.85
+    "nome": "dipendenti del Settore IV Area Ambiente, Ecologia e Commercio",
+    "importo": 601.22
    }
   ],
-  "importo_testuale": "251,85",
+  "importo_testuale": "601,22",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1451-2026",
@@ -1501,7 +1531,7 @@
   "estrazione": "groq",
   "caratteri_testo": 12028,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:09",
+  "data_elaborazione": "2026-07-29 15:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1514,7 +1544,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1450-2026",
@@ -1535,7 +1566,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9180,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:10",
+  "data_elaborazione": "2026-07-29 15:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1548,7 +1579,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1449-2026",
@@ -1569,7 +1601,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8448,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:10",
+  "data_elaborazione": "2026-07-29 15:48",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1582,7 +1614,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1446-2026",
@@ -1603,7 +1636,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11504,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:11",
+  "data_elaborazione": "2026-07-29 15:48",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.095,50",
@@ -1611,7 +1644,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1445-2026",
@@ -1632,7 +1666,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8945,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:12",
+  "data_elaborazione": "2026-07-29 15:49",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": null,
   "importo_testuale": "12.992,74",
@@ -1640,7 +1674,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1442-2026",
@@ -1661,7 +1696,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6618,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:12",
+  "data_elaborazione": "2026-07-29 15:50",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1674,7 +1709,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1441-2026",
@@ -1695,7 +1731,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6815,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:13",
+  "data_elaborazione": "2026-07-29 15:50",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1708,7 +1744,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1437-2026",
@@ -1729,7 +1766,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6903,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:14",
+  "data_elaborazione": "2026-07-29 15:51",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1746,7 +1783,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1436-2026",
@@ -1767,7 +1805,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11112,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:14",
+  "data_elaborazione": "2026-07-29 15:52",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1780,7 +1818,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1435-2026",
@@ -1801,7 +1840,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8946,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:15",
+  "data_elaborazione": "2026-07-29 15:52",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1814,7 +1853,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1434-2026",
@@ -1835,7 +1875,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7660,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:15",
+  "data_elaborazione": "2026-07-29 15:53",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1848,7 +1888,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1433-2026",
@@ -1869,7 +1910,7 @@
   "estrazione": "groq",
   "caratteri_testo": 16084,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:16",
+  "data_elaborazione": "2026-07-29 15:54",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -1882,7 +1923,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1432-2026",
@@ -1893,7 +1935,7 @@
   "data_pubblicazione": "2026-07-15",
   "oggetto": "VARIAZIONE COMPENSATIVA AL BILANCIO DI PREVISIONE 2026/2028 TRA CAPITOLI DI SPESA APPARTENENTI ALLO STESSO MACROAGGREGATO (ART. 175, COMMA 5-QUATER, LETT. A), D.LGS. N. 267/000",
   "beneficiario": "il Comune di Pieve Emanuele",
-  "importo_euro": null,
+  "importo_euro": 7799281.32,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -1903,7 +1945,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9613,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:17",
+  "data_elaborazione": "2026-07-29 15:54",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": null,
@@ -1911,7 +1953,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1430-2026",
@@ -1932,7 +1975,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10206,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:17",
+  "data_elaborazione": "2026-07-29 15:55",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "13.290,59",
@@ -1940,7 +1983,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1429-2026",
@@ -1961,7 +2005,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9079,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:17",
+  "data_elaborazione": "2026-07-29 15:55",
   "n_beneficiari": 2,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.400,00",
@@ -1969,7 +2013,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1428-2026",
@@ -1990,7 +2035,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9585,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:18",
+  "data_elaborazione": "2026-07-29 15:56",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2003,7 +2048,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1427-2026",
@@ -2024,7 +2070,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10116,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:19",
+  "data_elaborazione": "2026-07-29 15:57",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2037,7 +2083,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1426-2026",
@@ -2058,7 +2105,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10970,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:19",
+  "data_elaborazione": "2026-07-29 15:57",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2071,7 +2118,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1425-2026",
@@ -2092,7 +2140,7 @@
   "estrazione": "groq",
   "caratteri_testo": 19241,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:20",
+  "data_elaborazione": "2026-07-29 15:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "28.737,10",
@@ -2100,7 +2148,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1424-2026",
@@ -2121,7 +2170,7 @@
   "estrazione": "groq",
   "caratteri_testo": 25146,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:21",
+  "data_elaborazione": "2026-07-29 15:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2134,7 +2183,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1423-2026",
@@ -2155,7 +2205,7 @@
   "estrazione": "groq",
   "caratteri_testo": 12740,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:21",
+  "data_elaborazione": "2026-07-29 15:59",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "55.000,00",
@@ -2163,7 +2213,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1422-2026",
@@ -2179,12 +2230,12 @@
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "8985/10, 500/0, 695/0",
-  "descrizione_sintetica": "aggiornamento e ampliamento rete wifi plesso Via dei Gigli 7",
+  "descrizione_sintetica": "aggiornamento e ampliamento rete wifi plesso via dei gigli 7",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5510046",
   "estrazione": "groq",
   "caratteri_testo": 6918,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:22",
+  "data_elaborazione": "2026-07-29 16:00",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "4.311,00",
@@ -2192,7 +2243,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1421-2026",
@@ -2213,7 +2265,7 @@
   "estrazione": "groq",
   "caratteri_testo": 5567,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:22",
+  "data_elaborazione": "2026-07-29 16:00",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2226,7 +2278,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1420-2026",
@@ -2247,7 +2300,7 @@
   "estrazione": "groq",
   "caratteri_testo": 27422,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:23",
+  "data_elaborazione": "2026-07-29 16:01",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "230.000,00",
@@ -2255,7 +2308,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1419-2026",
@@ -2276,7 +2330,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8777,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:24",
+  "data_elaborazione": "2026-07-29 16:01",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2289,7 +2343,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1418-2026",
@@ -2310,7 +2365,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7848,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:24",
+  "data_elaborazione": "2026-07-29 16:02",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -2347,7 +2402,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1417-2026",
@@ -2368,7 +2424,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6825,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:25",
+  "data_elaborazione": "2026-07-29 16:03",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.158,50",
@@ -2376,7 +2432,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1416-2026",
@@ -2397,7 +2454,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8080,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:26",
+  "data_elaborazione": "2026-07-29 16:04",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2410,7 +2467,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1415-2026",
@@ -2431,7 +2489,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8010,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:26",
+  "data_elaborazione": "2026-07-29 16:04",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2448,7 +2506,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1414-2026",
@@ -2469,7 +2528,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7046,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-27 01:26",
+  "data_elaborazione": "2026-07-29 16:05",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2482,7 +2541,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1407-2026",
@@ -2533,7 +2593,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10811,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:27",
+  "data_elaborazione": "2026-07-29 16:05",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.220,80",
@@ -2541,7 +2601,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1396-2026",
@@ -2562,7 +2623,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10705,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:28",
+  "data_elaborazione": "2026-07-29 16:05",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2575,7 +2636,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1395-2026",
@@ -2591,25 +2653,21 @@
   "categoria": "Istruzione e scuola",
   "missione_bdap": 4,
   "capitolo_bilancio": "9072/5",
-  "descrizione_sintetica": "Fornitura di arredi per la nuova porzione del plesso scolastico King",
+  "descrizione_sintetica": "Fornitura di arredi per la nuova porzione di edificio del plesso King",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5495541",
   "estrazione": "groq",
   "caratteri_testo": 6501,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:29",
+  "data_elaborazione": "2026-07-29 16:06",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Mobilferro Srl",
-    "importo": 31273.72
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "31.273,72",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1394-2026",
@@ -2630,7 +2688,7 @@
   "estrazione": "groq",
   "caratteri_testo": 6462,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:29",
+  "data_elaborazione": "2026-07-29 16:07",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2643,7 +2701,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1393-2026",
@@ -2664,7 +2723,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8781,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:30",
+  "data_elaborazione": "2026-07-29 16:07",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2677,7 +2736,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1392-2026",
@@ -2698,7 +2758,7 @@
   "estrazione": "groq",
   "caratteri_testo": 21414,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:30",
+  "data_elaborazione": "2026-07-29 16:08",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.048,30",
@@ -2706,7 +2766,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1391-2026",
@@ -2727,7 +2788,7 @@
   "estrazione": "groq",
   "caratteri_testo": 22460,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:31",
+  "data_elaborazione": "2026-07-29 16:09",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2740,7 +2801,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1390-2026",
@@ -2761,7 +2823,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11379,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:31",
+  "data_elaborazione": "2026-07-29 16:09",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "741,20",
@@ -2769,7 +2831,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1389-2026",
@@ -2790,7 +2853,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9894,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:32",
+  "data_elaborazione": "2026-07-29 16:10",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "4.260,00",
@@ -2798,7 +2861,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1388-2026",
@@ -2819,7 +2883,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10475,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:33",
+  "data_elaborazione": "2026-07-29 16:10",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2832,7 +2896,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1387-2026",
@@ -2853,7 +2918,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10289,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:33",
+  "data_elaborazione": "2026-07-29 16:11",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2866,7 +2931,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1386-2026",
@@ -2887,7 +2953,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11900,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:34",
+  "data_elaborazione": "2026-07-29 16:11",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2900,7 +2966,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1385-2026",
@@ -2921,7 +2988,7 @@
   "estrazione": "groq",
   "caratteri_testo": 22550,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:34",
+  "data_elaborazione": "2026-07-29 16:12",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -2934,7 +3001,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1384-2026",
@@ -2955,7 +3023,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11149,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:35",
+  "data_elaborazione": "2026-07-29 16:13",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "12.923,00",
@@ -2963,7 +3031,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1383-2026",
@@ -2984,7 +3053,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9628,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:35",
+  "data_elaborazione": "2026-07-29 16:13",
   "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
@@ -3001,7 +3070,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1382-2026",
@@ -3551,26 +3621,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-03",
   "oggetto": "LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AL SERVIZIO ABITATIVO PUBBLICO IN VIA GEMELLI E VIA ROMA CUP J47H21001810001, FINANZIATO DA NEXTGENERATION EU, NELL’AMBITO DEL PNRR – M5C2 – 2.1: INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE NONCHÉ AL MIGLIORAMENTO DELLA QUALITÀ DEL DECORO URBANO E DEL TESSUTO SOCIALE ED AMBIENTALE. APPROVAZIONE DEL QUADRO ECONOMICO FINALE E CONSEGUENTE DIMINUZIONE DELL’ACCERTAMENTO AL CAP. 2914/5 E STRALCIO DELE ECONOMIE DAGLI IMPEGNI ASSUNTI AL CAP. 9095/100.",
-  "beneficiario": "AFM",
-  "importo_euro": 377870.0,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 550000.0,
   "cig": "99703408D8",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
-  "capitolo_bilancio": "2914/5, 9095/100",
-  "descrizione_sintetica": "Lavori di ristrutturazione edilizia di immobili pubblici",
+  "capitolo_bilancio": "2914/5 e 9095/100",
+  "descrizione_sintetica": "Lavori di ristrutturazione edilizia di immobili pubblici destinati al servizio abitativo pubblico",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5488272",
   "estrazione": "groq",
   "caratteri_testo": 20157,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:41",
-  "n_beneficiari": 1,
+  "data_elaborazione": "2026-07-29 16:14",
+  "n_beneficiari": 7,
   "beneficiari_dettaglio": null,
-  "importo_testuale": "377.870,00",
+  "importo_testuale": "550.000,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": false,
-  "versione_estrazione": 2
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1342-2026",
@@ -3591,7 +3662,7 @@
   "estrazione": "groq",
   "caratteri_testo": 19824,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:42",
+  "data_elaborazione": "2026-07-29 16:15",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "121.530.402,20",
@@ -3599,7 +3670,8 @@
   "durata_anni": 15,
   "importo_primo_anno": 3120036.0,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "liquidazione-1341-2026",
@@ -4181,41 +4253,25 @@
   "oggetto": "MISURA B1 FNA 2025 - ACCERTAMENTO DI ENTRATA E CORRISPONDENTE IMPEGNO DI SPESA PER CONTINUITA' INTERVENTI AL 30/06/2026 (DGR N. XII/5926 DEL 30/03/2026)",
   "beneficiario": "Fornitori diversi",
   "importo_euro": 2580.0,
-  "cig": "B959F0CE3C, B8AD272260, B8AD595906, B959F21F90",
-  "categoria": "Sociale e famiglia",
-  "missione_bdap": 12,
-  "capitolo_bilancio": "7040/10",
-  "descrizione_sintetica": "Interventi di assistenza diretta a favore dei beneficiari della Misura B1",
+  "cig": null,
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "835/0",
+  "descrizione_sintetica": "Contributo per interventi sociali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5475931",
   "estrazione": "groq",
   "caratteri_testo": 12772,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:47",
-  "n_beneficiari": 4,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "97247540152",
-    "importo": 390.0
-   },
-   {
-    "nome": "C.F./P.IVA 04314310964",
-    "importo": 900.0
-   },
-   {
-    "nome": "C.F./P.IVA 10860990158",
-    "importo": 900.0
-   },
-   {
-    "nome": "Coop. Sociale IL BALZO C.F./P.IVA 05382430964",
-    "importo": 390.0
-   }
-  ],
+  "data_elaborazione": "2026-07-29 16:16",
+  "n_beneficiari": 7,
+  "beneficiari_dettaglio": null,
   "importo_testuale": "2.580,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1305-2026",
@@ -4236,7 +4292,7 @@
   "estrazione": "groq",
   "caratteri_testo": 32202,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:48",
+  "data_elaborazione": "2026-07-29 16:17",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4249,7 +4305,8 @@
   "durata_anni": 3,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1304-2026",
@@ -4270,7 +4327,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7865,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:48",
+  "data_elaborazione": "2026-07-29 16:17",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4287,7 +4344,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1303-2026",
@@ -4308,7 +4366,7 @@
   "estrazione": "groq",
   "caratteri_testo": 5761,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:49",
+  "data_elaborazione": "2026-07-29 16:18",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4321,7 +4379,8 @@
   "durata_anni": 3,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1302-2026",
@@ -4342,7 +4401,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10308,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:49",
+  "data_elaborazione": "2026-07-29 16:18",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4355,7 +4414,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1301-2026",
@@ -4376,7 +4436,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8285,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:50",
+  "data_elaborazione": "2026-07-29 16:19",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.732,40",
@@ -4384,7 +4444,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1300-2026",
@@ -4405,7 +4466,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8986,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:50",
+  "data_elaborazione": "2026-07-29 16:19",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4418,7 +4479,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1298-2026",
@@ -4439,7 +4501,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8274,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:51",
+  "data_elaborazione": "2026-07-29 16:20",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4452,7 +4514,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1297-2026",
@@ -4473,7 +4536,7 @@
   "estrazione": "groq",
   "caratteri_testo": 13595,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:51",
+  "data_elaborazione": "2026-07-29 16:21",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4486,7 +4549,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1296-2026",
@@ -4507,7 +4571,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7400,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:52",
+  "data_elaborazione": "2026-07-29 16:21",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4520,7 +4584,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1285-2026",
@@ -4541,7 +4606,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8441,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:52",
+  "data_elaborazione": "2026-07-29 16:22",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "12.669,58",
@@ -4549,7 +4614,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1284-2026",
@@ -4570,7 +4636,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9217,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:53",
+  "data_elaborazione": "2026-07-29 16:22",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "99.430,00",
@@ -4578,7 +4644,8 @@
   "durata_anni": 3,
   "importo_primo_anno": 20714.58,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1283-2026",
@@ -4599,15 +4666,21 @@
   "estrazione": "groq",
   "caratteri_testo": 33589,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:54",
+  "data_elaborazione": "2026-07-29 16:23",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Cap Holding S.p.A.",
+    "importo": 249425.52
+   }
+  ],
   "importo_testuale": "249.425,52",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1282-2026",
@@ -4628,7 +4701,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9891,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:54",
+  "data_elaborazione": "2026-07-29 16:23",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4641,7 +4714,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1256-2026",
@@ -4662,7 +4736,7 @@
   "estrazione": "groq",
   "caratteri_testo": 22865,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:55",
+  "data_elaborazione": "2026-07-29 16:24",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -4675,7 +4749,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1255-2026",
@@ -4696,7 +4771,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8586,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:55",
+  "data_elaborazione": "2026-07-29 16:24",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4709,7 +4784,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1238-2026",
@@ -4730,7 +4806,7 @@
   "estrazione": "groq",
   "caratteri_testo": 17695,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:56",
+  "data_elaborazione": "2026-07-29 16:25",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4743,7 +4819,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1236-2026",
@@ -4759,12 +4836,12 @@
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "Cap. 9187/0 Codice SIOPE 7029999999 del Bilancio di Previsione 2026",
-  "descrizione_sintetica": "Rilascio di CIE (Carta d'Identità Elettronica) al Ministero dell'Interno",
+  "descrizione_sintetica": "Rilascio di CIE",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5454037",
   "estrazione": "groq",
   "caratteri_testo": 10117,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:56",
+  "data_elaborazione": "2026-07-29 16:26",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4777,7 +4854,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1235-2026",
@@ -4798,7 +4876,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8695,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:57",
+  "data_elaborazione": "2026-07-29 16:26",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4811,7 +4889,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1234-2026",
@@ -4832,7 +4911,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7531,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:57",
+  "data_elaborazione": "2026-07-29 16:26",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.365,00",
@@ -4840,7 +4919,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1233-2026",
@@ -4861,7 +4941,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8202,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:58",
+  "data_elaborazione": "2026-07-29 16:27",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4874,7 +4954,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1232-2026",
@@ -4895,7 +4976,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7147,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:59",
+  "data_elaborazione": "2026-07-29 16:27",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -4908,7 +4989,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1231-2026",
@@ -4929,7 +5011,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8002,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 01:59",
+  "data_elaborazione": "2026-07-29 16:28",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "536,80",
@@ -4937,7 +5019,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1219-2026",
@@ -4958,7 +5041,7 @@
   "estrazione": "groq",
   "caratteri_testo": 37973,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:00",
+  "data_elaborazione": "2026-07-29 16:29",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.000.000,00",
@@ -4966,7 +5049,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1218-2026",
@@ -4987,7 +5071,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8615,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:00",
+  "data_elaborazione": "2026-07-29 16:29",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5000,7 +5084,8 @@
   "durata_anni": 2,
   "importo_primo_anno": 1800.0,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1217-2026",
@@ -5021,7 +5106,7 @@
   "estrazione": "groq",
   "caratteri_testo": 13133,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:01",
+  "data_elaborazione": "2026-07-29 16:30",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5034,7 +5119,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1216-2026",
@@ -5050,12 +5136,12 @@
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
   "capitolo_bilancio": "6370/1",
-  "descrizione_sintetica": "Recupero evento principio di incendio in Via Aceri",
+  "descrizione_sintetica": "Recupero evento incendio in Via Aceri",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5445972",
   "estrazione": "groq",
   "caratteri_testo": 9302,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:01",
+  "data_elaborazione": "2026-07-29 16:30",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5068,7 +5154,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1194-2026",
@@ -5089,7 +5176,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8096,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:02",
+  "data_elaborazione": "2026-07-29 16:31",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5102,7 +5189,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1193-2026",
@@ -5123,7 +5211,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8306,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:02",
+  "data_elaborazione": "2026-07-29 16:31",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "3.416,00",
@@ -5131,7 +5219,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1192-2026",
@@ -5152,7 +5241,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8000,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:03",
+  "data_elaborazione": "2026-07-29 16:32",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5165,7 +5254,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1191-2026",
@@ -5186,7 +5276,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8960,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:03",
+  "data_elaborazione": "2026-07-29 16:32",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.500,00",
@@ -5194,7 +5284,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1190-2026",
@@ -5215,7 +5306,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9176,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:04",
+  "data_elaborazione": "2026-07-29 16:33",
   "n_beneficiari": 14,
   "beneficiari_dettaglio": [
    {
@@ -5228,7 +5319,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1189-2026",
@@ -5249,7 +5341,7 @@
   "estrazione": "groq",
   "caratteri_testo": 5460,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:05",
+  "data_elaborazione": "2026-07-29 16:34",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5262,7 +5354,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1176-2026",
@@ -5283,7 +5376,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8064,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:05",
+  "data_elaborazione": "2026-07-29 16:34",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5296,7 +5389,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1175-2026",
@@ -5317,7 +5411,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8796,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:05",
+  "data_elaborazione": "2026-07-29 16:34",
   "n_beneficiari": 7,
   "beneficiari_dettaglio": [
    {
@@ -5330,7 +5424,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1174-2026",
@@ -5351,7 +5446,7 @@
   "estrazione": "groq",
   "caratteri_testo": 12755,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:06",
+  "data_elaborazione": "2026-07-29 16:35",
   "n_beneficiari": 13,
   "beneficiari_dettaglio": [
    {
@@ -5364,7 +5459,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1145-2026",
@@ -5385,7 +5481,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7946,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:07",
+  "data_elaborazione": "2026-07-29 16:36",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5398,7 +5494,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": false,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1144-2026",
@@ -5419,7 +5516,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7181,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:07",
+  "data_elaborazione": "2026-07-29 16:36",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5432,7 +5529,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1143-2026",
@@ -5453,7 +5551,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8445,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:08",
+  "data_elaborazione": "2026-07-29 16:37",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5466,7 +5564,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1142-2026",
@@ -5487,7 +5586,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8799,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:08",
+  "data_elaborazione": "2026-07-29 16:37",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5500,7 +5599,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1141-2026",
@@ -5521,7 +5621,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9999,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:09",
+  "data_elaborazione": "2026-07-29 16:38",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5534,7 +5634,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1140-2026",
@@ -5555,7 +5656,7 @@
   "estrazione": "groq",
   "caratteri_testo": 12092,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:09",
+  "data_elaborazione": "2026-07-29 16:38",
   "n_beneficiari": 4,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.318,00",
@@ -5563,7 +5664,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1139-2026",
@@ -5584,7 +5686,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10291,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:10",
+  "data_elaborazione": "2026-07-29 16:39",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5597,7 +5699,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1138-2026",
@@ -5618,7 +5721,7 @@
   "estrazione": "groq",
   "caratteri_testo": 17792,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:11",
+  "data_elaborazione": "2026-07-29 16:40",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5631,7 +5734,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1137-2026",
@@ -5652,7 +5756,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10024,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:11",
+  "data_elaborazione": "2026-07-29 16:40",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "208,00",
@@ -5660,7 +5764,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1134-2026",
@@ -5681,7 +5786,7 @@
   "estrazione": "groq",
   "caratteri_testo": 9142,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:12",
+  "data_elaborazione": "2026-07-29 16:41",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5694,7 +5799,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1127-2026",
@@ -5715,7 +5821,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10393,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:12",
+  "data_elaborazione": "2026-07-29 16:41",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.928,00",
@@ -5723,7 +5829,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1126-2026",
@@ -5744,7 +5851,7 @@
   "estrazione": "groq",
   "caratteri_testo": 10218,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:13",
+  "data_elaborazione": "2026-07-29 16:42",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5757,7 +5864,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1125-2026",
@@ -5778,7 +5886,7 @@
   "estrazione": "groq",
   "caratteri_testo": 14681,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:13",
+  "data_elaborazione": "2026-07-29 16:42",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "50.699,54",
@@ -5786,7 +5894,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1110-2026",
@@ -5807,7 +5916,7 @@
   "estrazione": "groq",
   "caratteri_testo": 11847,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:14",
+  "data_elaborazione": "2026-07-29 16:43",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5820,7 +5929,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1109-2026",
@@ -5841,7 +5951,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8042,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:14",
+  "data_elaborazione": "2026-07-29 16:44",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5854,7 +5964,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1108-2026",
@@ -5875,7 +5986,7 @@
   "estrazione": "groq",
   "caratteri_testo": 16306,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:15",
+  "data_elaborazione": "2026-07-29 16:44",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "33.580,50",
@@ -5883,7 +5994,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1107-2026",
@@ -5904,7 +6016,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8395,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:15",
+  "data_elaborazione": "2026-07-29 16:45",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -5917,7 +6029,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1106-2026",
@@ -5927,31 +6040,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "AGGIUDICAZIONE DEFINITIVA DETERMINA A CONTRARRE SU PIATTAFORMA SINTEL PER IL SERVIZIO DI NOLEGGIO INSTALLAZIONE E GESTIONE DISTRIBUTORI PER L’EROGAZIONE DI ACQUA POTABILE MICROFILTRATA, REFRIGERATA E GASSATA NELLE SCUOLE, NEL PALAZZO COMUNALE E PRESSO IL CENTRO POLIFUNZIONALE – DURATA TRIENNALE 2026-2029 – CIG BB119CBFCD",
-  "beneficiario": "CAPITAL ACQUE SOCIETA' BENEFINT SRL",
-  "importo_euro": 26824.23,
+  "beneficiario": "Capital Acque Società Benefint SRL",
+  "importo_euro": 8791.81,
   "cig": "BB119CBFCD",
-  "categoria": "Ambiente, verde e rifiuti",
-  "missione_bdap": 9,
-  "capitolo_bilancio": "6371/0",
-  "descrizione_sintetica": "Noleggio e gestione distributori di acqua potabile nelle scuole e uffici comunali",
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
+  "capitolo_bilancio": "Servizi di noleggio",
+  "descrizione_sintetica": "Affidamento servizio di noleggio installazione e gestione distributori per l'erogazione di acqua potabile microfiltrata, refrigerata e gassata",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5406152",
   "estrazione": "groq",
   "caratteri_testo": 10812,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:16",
+  "data_elaborazione": "2026-07-29 16:45",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "CAPITAL ACQUE SOCIETA' BENEFINT SRL",
-    "importo": 26375.43
-   }
-  ],
-  "importo_testuale": "26.824,23",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "8.791,81 €",
   "importo_e_pluriennale": true,
   "durata_anni": 3,
-  "importo_primo_anno": 8791.81,
+  "importo_primo_anno": 4154.4,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1105-2026",
@@ -5972,7 +6081,7 @@
   "estrazione": "groq",
   "caratteri_testo": 8906,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:17",
+  "data_elaborazione": "2026-07-29 16:46",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.660,82",
@@ -5980,7 +6089,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1104-2026",
@@ -5993,15 +6103,15 @@
   "beneficiario": "Società Pituello Impianti di Pituello Andrea & C. sas",
   "importo_euro": 24278.0,
   "cig": "BBC94FAD82",
-  "categoria": "Strade, viabilità e trasporti",
-  "missione_bdap": 10,
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Manutenzione stradale e chiusura buche",
+  "descrizione_sintetica": "Affidamento del servizio di manutenzione ordinaria di chiusura buche e ripristini stradali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405356",
   "estrazione": "groq",
   "caratteri_testo": 17971,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:18",
+  "data_elaborazione": "2026-07-29 16:46",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6014,7 +6124,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1103-2026",
@@ -6026,29 +6137,42 @@
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO SERVIZI DI FONIA VOCE + NUMERI VERDI + CONNETTIVITA' SU FIBRA OTTICA PER EDIFICI COMUNALI PER 12 MESI CON FORNITORE TELECOM ITALIA",
   "beneficiario": "Telecom Italia",
   "importo_euro": 93940.0,
-  "cig": "BBB2C54FAE e BBB21D77F5",
+  "cig": "BBB2C54FAE",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "3180/4, 676/3, 2026/0, 2810/5",
-  "descrizione_sintetica": "Rinnovo servizi di fonia e connettività dati per edifici comunali",
+  "descrizione_sintetica": "Rinnovo servizi di fonia voce + numeri verdi e connettività dati su fibra ottica per 12 mesi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405353",
   "estrazione": "groq",
   "caratteri_testo": 8993,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:19",
+  "data_elaborazione": "2026-07-29 16:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "Telecom Italia",
-    "importo": 93940.0
+    "importo": 24200.0
+   },
+   {
+    "nome": "Telecom Italia",
+    "importo": 16060.0
+   },
+   {
+    "nome": "Telecom Italia",
+    "importo": 37800.0
+   },
+   {
+    "nome": "Telecom Italia",
+    "importo": 15880.0
    }
   ],
   "importo_testuale": "93.940,00",
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
+  "importo_e_pluriennale": true,
+  "durata_anni": 12,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1102-2026",
@@ -6058,18 +6182,18 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "VARIAZIONE IMPEGNO DI SPESA PER CONFERIMENTO INCARICHI DI COLLABORAZIONE DEGLI ARTISTI MUSICALI PER LA FESTA DELLA MUSICA – ANNO 2026",
-  "beneficiario": "Giovanni Tessera",
+  "beneficiario": "un artista musicale",
   "importo_euro": 62.5,
   "cig": null,
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": "4053/10",
-  "descrizione_sintetica": "Variazione impegno di spesa per incarico di collaborazione musicale alla Festa della Musica 2026",
+  "capitolo_bilancio": "4053/10 BP 2026",
+  "descrizione_sintetica": "pagamento di un artista musicale per la Festa della musica",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405350",
   "estrazione": "groq",
   "caratteri_testo": 7613,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:20",
+  "data_elaborazione": "2026-07-29 16:47",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6081,8 +6205,9 @@
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 2
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1101-2026",
@@ -6092,31 +6217,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "FORNITURA DI CARTELLI PER SEGNALETICA STRADALE PER ESECUZIONE INTERVENTI IN AMMINISTRAZIONE DIRETTA. DETERMINA A CONTRARRE, AFFFIDAMENTO DIRETTO ED IMPEGNO DI SPESA IN FAVORE DELLA SOCIETA' LA SEGNALETICA GROUP ITALIA SRL DI ROZZANO (MI)",
-  "beneficiario": "La Segnaletica Group Italia Srl",
-  "importo_euro": 5978.0,
+  "beneficiario": "La Segnaletica Group Italia Srl di Rozzano (MI)",
+  "importo_euro": 4900.0,
   "cig": "BBD2A7F0B4",
-  "categoria": "Strade, viabilità e trasporti",
-  "missione_bdap": 10,
-  "capitolo_bilancio": "7356/0",
-  "descrizione_sintetica": "Fornitura di cartelli per segnaletica stradale",
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
+  "capitolo_bilancio": "7356/0 BP 2026",
+  "descrizione_sintetica": "Fornitura di cartelli per segnaletica stradale per interventi in amministrazione diretta",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405347",
   "estrazione": "groq",
   "caratteri_testo": 13346,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:21",
+  "data_elaborazione": "2026-07-29 16:48",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "La Segnaletica Group Italia Srl",
-    "importo": 5978.0
+    "nome": "La Segnaletica Group Italia Srl di Rozzano (MI)",
+    "importo": 4900.0
    }
   ],
-  "importo_testuale": "5.978,00",
+  "importo_testuale": "4.900,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1100-2026",
@@ -6126,22 +6252,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "INTERVENTI VOLTI AL RECUPERO E RIQUALIFICAZIONE DEL PATRIMONIO ADIBITO A SERVIZI ABITATIVI PUBBLICI (S.A.P.) LINEA B, IN ATTUAZIONE DELL’ART.4 DELLA LEGGE N. 80/2014 E AI SENSI DELLA D.G.R. N. XII/2619 DEL 24 GIUGNO 2024. TIPOLOGIA DI INTERVENTO B6 - INTERVENTI DI MANUTENZIONE STRAORDINARIA DELLE PARTI COMUNI DI IMMOBILI DESTINATI AL SERVIZIO ABITATIVO PUBBLICO IN COMUNE DI PIEVE EMANUELE (VIA GEMELLI 5 – VIA ROMA 14). APPROVAZIONE PROGETTO ESECUTIVO INTEGRATO. DECISIONE A CONTRARRE. APPROVAZIONE LETTERA DI INVITO/DISCIPLINARE E ALLEGATI TECNICI. PROCEDURA NEGOZIATA SENZA PUBBLICAZIONE DI BANDO DI GARA, AI SENSI DELL’ART. 50, COMMA 1, LETTERA C) DEL D.LGS. N. 36/2023. CIG BBD2F3FC2A CUP J42D24000050006",
-  "beneficiario": "un'impresa di costruzioni",
+  "beneficiario": "Comune di Pieve Emanuele",
   "importo_euro": 513949.67,
   "cig": "BBD2F3FC2A",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "9060/50 BP 2026 / 2027, 9095/2 BP 2027",
-  "descrizione_sintetica": "Interventi di manutenzione straordinaria di immobili adibiti a servizi abitativi pubblici",
+  "descrizione_sintetica": "Interventi di manutenzione straordinaria degli alloggi SAP in Via Gemelli 5 e Via Roma 14",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405344",
   "estrazione": "groq",
   "caratteri_testo": 35359,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:21",
+  "data_elaborazione": "2026-07-29 16:49",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "non specificato",
+    "nome": "Comune di Pieve Emanuele",
     "importo": 513949.67
    }
   ],
@@ -6149,8 +6275,9 @@
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": false,
-  "versione_estrazione": 2
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1099-2026",
@@ -6160,22 +6287,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 7319 DEL 23/03/2026.",
-  "beneficiario": "un cittadino",
+  "beneficiario": "un proprietario di aree",
   "importo_euro": 2500.0,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "Trasformazione diritto di superficie in proprietà",
+  "descrizione_sintetica": "trasformazione diritto di superficie in proprietà",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405341",
   "estrazione": "groq",
   "caratteri_testo": 7312,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:22",
+  "data_elaborazione": "2026-07-29 16:49",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "non specificato",
+    "nome": "un proprietario di aree",
     "importo": 2500.0
    }
   ],
@@ -6184,7 +6311,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1098-2026",
@@ -6194,31 +6322,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-29",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER ACQUISTO TESSERE PER IMPIANTO CONTROLLO ACCESSI DEL POLIFUNZIONALE DI VIA DEI GIGLI - CIG BBC207CB9E",
-  "beneficiario": "2F IMPIANTI s.r.l.",
+  "beneficiario": "Tessere per personale dell'Area Politiche Socio Educative",
   "importo_euro": 219.6,
   "cig": "BBC207CB9E",
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Acquisto tessere per impianto controllo accessi del polifunzionale",
+  "descrizione_sintetica": "Acquisto tessere per accesso al polifunzionale di Via dei Gigli",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405338",
   "estrazione": "groq",
   "caratteri_testo": 10400,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:22",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "2F IMPIANTI s.r.l.",
-    "importo": 219.6
-   }
-  ],
+  "data_elaborazione": "2026-07-29 16:50",
+  "n_beneficiari": 30,
+  "beneficiari_dettaglio": null,
   "importo_testuale": "219,60",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1066-2026",
@@ -6239,7 +6363,7 @@
   "estrazione": "groq",
   "caratteri_testo": 7672,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:22",
+  "data_elaborazione": "2026-07-29 16:50",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6252,7 +6376,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1065-2026",
@@ -6262,18 +6387,18 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-26",
   "oggetto": "ADEMPIMENTI CONNESSI ALLA DGC N. 55 DEL 13/5/2026 A TITOLO DI RISARCIMENTO DANNI IN VIA STRAGIUDIZIALE",
-  "beneficiario": "una cittadina",
+  "beneficiario": "sig.ra G.M. PA.",
   "importo_euro": 5629.48,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "680/0",
+  "capitolo_bilancio": "680/0 (codice gestionale n. U 1.03.02.99.000)",
   "descrizione_sintetica": "Risarcimento danni in via stragiudiziale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5392288",
   "estrazione": "groq",
   "caratteri_testo": 5029,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:23",
+  "data_elaborazione": "2026-07-29 16:51",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6286,7 +6411,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1064-2026",
@@ -6301,25 +6427,25 @@
   "cig": null,
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": "4053/10",
-  "descrizione_sintetica": "Pagamento a 3 artisti musicali per la Festa della Musica 2026",
+  "capitolo_bilancio": "4053/10 BP 2026",
+  "descrizione_sintetica": "Pagamento di artisti musicali per la Festa della Musica",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5392285",
   "estrazione": "groq",
   "caratteri_testo": 8776,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:23",
+  "data_elaborazione": "2026-07-29 16:51",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
-    "nome": "Jacopo Stefani",
+    "nome": "JACOPO STEFANI",
     "importo": 687.5
    },
    {
-    "nome": "Matteo Franchi",
+    "nome": "MATTEO FRANCHI",
     "importo": 250.0
    },
    {
-    "nome": "Giovanni Tessera",
+    "nome": "GIOVANNI TESSERA",
     "importo": 375.0
    }
   ],
@@ -6327,8 +6453,9 @@
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": false,
-  "versione_estrazione": 2
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1063-2026",
@@ -6338,22 +6465,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-26",
   "oggetto": "DETERMINA A CONTRARRE - ODA TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA DI PORTATESSERE PER IL PERSONALE DELLA POLIZIA LOCALE - CIG BBBE7EACB1",
-  "beneficiario": "PSP EQUIPEMENT srl",
+  "beneficiario": "personale della polizia locale",
   "importo_euro": 934.96,
   "cig": "BBBE7EACB1",
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Fornitura di portatessere per il personale della Polizia Locale",
+  "descrizione_sintetica": "Fornitura di portatessere per il personale della polizia locale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5392282",
   "estrazione": "groq",
   "caratteri_testo": 11286,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:23",
+  "data_elaborazione": "2026-07-29 16:52",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "PSP EQUIPEMENT srl",
+    "nome": "personale della polizia locale",
     "importo": 934.96
    }
   ],
@@ -6362,7 +6489,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1045-2026",
@@ -6372,31 +6500,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-22",
   "oggetto": "DETERMINA A CONTRARRE - RDO TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA DI VESTIARIO PER IL PERSONALE DELLA POLIZIA LOCALE - CIG BBBE774B51",
-  "beneficiario": "FORINT spa",
-  "importo_euro": 5233.92,
+  "beneficiario": "personale della polizia locale",
+  "importo_euro": 4290.1,
   "cig": "BBBE774B51",
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Acquisto vestiario per personale polizia locale",
+  "descrizione_sintetica": "acquisto di vestiario per il personale della polizia locale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5387295",
   "estrazione": "groq",
   "caratteri_testo": 11275,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:23",
+  "data_elaborazione": "2026-07-29 16:52",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "FORINT spa",
-    "importo": 5233.92
+    "nome": "personale della polizia locale",
+    "importo": 4290.1
    }
   ],
-  "importo_testuale": "5.233,92",
+  "importo_testuale": "4.290,10",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": true,
-  "versione_estrazione": 2
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1041-2026",
@@ -6409,15 +6538,15 @@
   "beneficiario": "Società AVR SPA di Roma",
   "importo_euro": 390.0,
   "cig": "B1426B17DE",
-  "categoria": "Strade, viabilità e trasporti",
-  "missione_bdap": 10,
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Manutenzione stradale per chiusura buche",
+  "descrizione_sintetica": "Manutenzione ordinaria di chiusura buche e ripristini stradali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384648",
   "estrazione": "groq",
   "caratteri_testo": 14509,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:24",
+  "data_elaborazione": "2026-07-29 16:53",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6430,7 +6559,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1040-2026",
@@ -6440,18 +6570,18 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "IMPEGNO DI SPESA PER ACQUISTO MATERIALE DI CANCELLERIA VARIO PER FUNZIONAMENTO DEGLI UFFICI COMUNALI, DALLA DITTA UFFIXO ITALIA SRL CIG NR. BBB7445DDF",
-  "beneficiario": "UFFIXO ITALIA SRL",
+  "beneficiario": "ditta UFFIXO ITALIA SRL",
   "importo_euro": 5996.23,
   "cig": "BBB7445DDF",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "400/8 BP 2025",
-  "descrizione_sintetica": "Acquisto materiale di cancelleria per uffici comunali",
+  "descrizione_sintetica": "Acquisto di materiali di cancelleria per uffici comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384645",
   "estrazione": "groq",
   "caratteri_testo": 7262,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:24",
+  "data_elaborazione": "2026-07-29 16:54",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6464,7 +6594,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1039-2026",
@@ -6475,25 +6606,31 @@
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ACQUISTO SULLA PIATTAFORMA MEPA DETERMINAZIONE A CONTRARRE AFFIDAMENTO DIRETTO PER LA FORNITURA DI TONER MARCA BROTHER PER STAMPANTI DEGLI UFFICI COMUNALI AFFIDATO ALLA SOCIETÀ TONERGROSS SRL - CIG N. BBBCA180EE - ASSUNZIONE IMPEGNO DI SPESA",
   "beneficiario": "Società TONERGROSS SRL",
-  "importo_euro": 1902.29,
+  "importo_euro": 1559.25,
   "cig": "BBBCA180EE",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "500/00",
-  "descrizione_sintetica": "Acquisto toner originali Brother per uffici comunali",
+  "descrizione_sintetica": "Acquisto toner per stampanti degli uffici comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384642",
   "estrazione": "groq",
   "caratteri_testo": 9610,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:24",
+  "data_elaborazione": "2026-07-29 16:54",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_testuale": "1.902,29",
+  "beneficiari_dettaglio": [
+   {
+    "nome": "TONERGROSS SRL",
+    "importo": 1559.25
+   }
+  ],
+  "importo_testuale": "1.559,25",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1038-2026",
@@ -6504,38 +6641,26 @@
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER SERVIZI ED INTERVENTI NELL’AMBITO DELLE POLTIICHE GIOVANILI E DELLO SPORT CIG: BBA0506E3D/CIG: BBA0551C22/CIG: BBA05BE617",
   "beneficiario": "Fornitori diversi",
-  "importo_euro": 6540.88,
-  "cig": "BBA0506E3D, BBA0551C22, BBA05BE617",
-  "categoria": "Sport e tempo libero",
-  "missione_bdap": 6,
-  "capitolo_bilancio": "4053/10, 6540/0",
-  "descrizione_sintetica": "Servizi per la Festa della musica e dello sport",
+  "importo_euro": 5502.2,
+  "cig": "BBA0506E3D",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "Cap. 4053/10 del BP 2026 e Cap. 6540/0 del BP 2026",
+  "descrizione_sintetica": "Servizi e forniture per la Festa della musica e dello sport",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384639",
   "estrazione": "groq",
   "caratteri_testo": 11690,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:24",
+  "data_elaborazione": "2026-07-29 16:55",
   "n_beneficiari": 3,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "On Air Group",
-    "importo": 5502.2
-   },
-   {
-    "nome": "Fornitore di servizi igienici mobili",
-    "importo": 480.68
-   },
-   {
-    "nome": "Fornitore di servizio di intrattenimento Bubble soccer",
-    "importo": 488.0
-   }
-  ],
-  "importo_testuale": "6.540,88",
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "5.502,20",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1037-2026",
@@ -6545,22 +6670,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "IMPEGNO DI SPESA PER AFFIDAMENTO SERVIZIO DI TRINCIATURA, LAVORAZIONI AGRICOLE MECCANIZZATE E MOVIMENTO TERRA PER LA MANUTENZIONE DEL VERDE PUBBLICO COMUNALE ALLA DITTA GRIGNANI BIO AGRICOLTURA S.N.C. CIG: BBA5CE3011",
-  "beneficiario": "GRIGNANI BIO AGRICOLTURA S.N.C.",
+  "beneficiario": "ditta GRIGNANI BIO AGRICOLTURA S.N.C. DI GRIGNANI ANDREA & C.",
   "importo_euro": 6098.78,
   "cig": "BBA5CE3011",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
-  "capitolo_bilancio": "cap.6370/3",
+  "capitolo_bilancio": "6370/3",
   "descrizione_sintetica": "Manutenzione del verde pubblico comunale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384636",
   "estrazione": "groq",
   "caratteri_testo": 9480,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:24",
+  "data_elaborazione": "2026-07-29 16:55",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "GRIGNANI BIO AGRICOLTURA S.N.C.",
+    "nome": "GRIGNANI BIO AGRICOLTURA S.N.C. DI GRIGNANI ANDREA & C.",
     "importo": 6098.78
    }
   ],
@@ -6569,7 +6694,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1036-2026",
@@ -6579,8 +6705,8 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ACQUISTO SULLA PIATTAFORMA MEPA DETERMINAZIONE A CONTRARRE AFFIDAMENTO DIRETTO PER NOLEGGIO AFFRANCATRICE MODELLO POSTBASE 30 IN DOTAZIONE ALL’UFFICIO PROTOCOLLO AFFIDATO ALLA SOCIETÀ FRANCOTYP-POSTALIA ITALIA S.R.L. PER IL PERIODO 1/07/2026–30/06/2031 - CIG. BBAAB124F6",
-  "beneficiario": "FRANCOTYP-POSTALIA ITALIA S.R.L.",
-  "importo_euro": 3001.2,
+  "beneficiario": "Società FRANCOTYP-POSTALIA ITALIA S.R.L.",
+  "importo_euro": 2460.0,
   "cig": "BBAAB124F6",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -6590,20 +6716,21 @@
   "estrazione": "groq",
   "caratteri_testo": 10075,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:25",
+  "data_elaborazione": "2026-07-29 16:56",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "FRANCOTYP-POSTALIA ITALIA S.R.L.",
-    "importo": 3001.2
+    "nome": "Società FRANCOTYP-POSTALIA ITALIA S.R.L.",
+    "importo": 2460.0
    }
   ],
-  "importo_testuale": "3.001,20",
+  "importo_testuale": "2.460,00",
   "importo_e_pluriennale": true,
   "durata_anni": 5,
-  "importo_primo_anno": 601.0,
+  "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1035-2026",
@@ -6616,15 +6743,15 @@
   "beneficiario": "Lavorare in Farmacia srl",
   "importo_euro": 10248.0,
   "cig": "BA845B4A03",
-  "categoria": "Sanità",
-  "missione_bdap": 13,
-  "capitolo_bilancio": "4640/9",
-  "descrizione_sintetica": "Ampliamento incarico alla ditta Lavorare in Farmacia srl per servizio farmacia comunale",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "4640/9 Anno 2026, P.Fin. U.1.03.02.11.999",
+  "descrizione_sintetica": "Ampliamento incarico Farmacia Comunale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384630",
   "estrazione": "groq",
   "caratteri_testo": 10160,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:25",
+  "data_elaborazione": "2026-07-29 16:56",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6637,7 +6764,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1034-2026",
@@ -6647,31 +6775,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI ILLUMINAZIONE SUL PERCORSO - VIALE DELL’EDIFICIO SCOLASTICO M.L. KING - COLLODI, COMPRESO NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: M.L. KING/COLLODI - CUP J44H20001220001 - FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - FONDI CONFLUITI NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA (DM DEL 08.11.2021). AFFIDAMENO ALLA SOCIETA TECNI-LUX SRL DI CARBONAR AL TICINO (PV). CIG BA53C11023",
-  "beneficiario": "Tecni-Lux Srl",
-  "importo_euro": 303148.34,
+  "beneficiario": "Società Tecni-Lux SRL di Carbonar al Ticino (PV)",
+  "importo_euro": 297673.82,
   "cig": "BA53C11023",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "9003/15",
-  "descrizione_sintetica": "Lavori di illuminazione per edificio scolastico",
+  "descrizione_sintetica": "Affidamento lavori di realizzazione impianto di illuminazione sul percorso - Viale dell'Edificio Scolastico M.L. King - Colloidi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384627",
   "estrazione": "groq",
   "caratteri_testo": 35797,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:25",
+  "data_elaborazione": "2026-07-29 16:57",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "Tecni-Lux Srl",
-    "importo": 303148.34
+    "nome": "Società Tecni-Lux SRL di Carbonar al Ticino (PV)",
+    "importo": 297673.82
    }
   ],
-  "importo_testuale": "303.148,34",
+  "importo_testuale": "297.673,82",
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
-  "iva_inclusa": false,
-  "versione_estrazione": 2
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1033-2026",
@@ -6681,22 +6810,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ADESIONE ALLA CONVENZIONE CONSIP CON CITTA' METROPOLITANA DI MILANO E PROVINCIA DI MONZA BRIANZA, PER IL SERVIZIO DI PULIZIA IMMOBILI AD USO UFFICI E AREE VERDI E PRESTAZIONI ACCESSORIE A RIDOTTO IMPATTO AMBIENTALE – LOTTO 1 - CIG 9573900835. DETERMINAZIONE A CONTRARRE E ASSUNZIONE IMPEGNI DI SPESA A FAVORE DELL’IMPRESA AGGIUDICATARIA RTI – B&B SERVICE SOCIETA’ COOPERATIVA, MULTISERVICE S.C.A.R.L. CIG DERIVATO BB10709514.",
-  "beneficiario": "RTI - B&B SERVICE SOCIETA' COOPERATIVA, MULTISERVICE S.C.A.R.L.",
+  "beneficiario": "7 fornitori",
   "importo_euro": 702790.27,
   "cig": "BB10709514",
-  "categoria": "Ambiente, verde e rifiuti",
-  "missione_bdap": 9,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "Servizio di pulizia immobili ad uso uffici e aree verdi",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "Servizi di pulizia immobili ad uso uffici e aree verdi e prestazioni accessorie",
+  "descrizione_sintetica": "Servizio di pulizia immobili comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5384624",
   "estrazione": "groq",
   "caratteri_testo": 15748,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:25",
+  "data_elaborazione": "2026-07-29 16:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "RTI - B&B SERVICE SOCIETA' COOPERATIVA, MULTISERVICE S.C.A.R.L.",
+    "nome": "B&B Service Società Cooperativa e Multiservice s.c.a.r.l.",
     "importo": 702790.27
    }
   ],
@@ -6705,7 +6834,8 @@
   "durata_anni": 3,
   "importo_primo_anno": null,
   "iva_inclusa": true,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1031-2026",
@@ -6718,15 +6848,15 @@
   "beneficiario": "Comune di Siziano",
   "importo_euro": null,
   "cig": null,
-  "categoria": "Polizia locale e sicurezza",
-  "missione_bdap": 3,
-  "capitolo_bilancio": "Cap. 2355/10 e Cap. 256/20 del Bilancio di Previsione 2026 e Pluriennale 2026/2028",
-  "descrizione_sintetica": "Rinnovo convenzione per gestione associata polizia municipale e polizia amministrativa locale",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "Cap. 2355/10 del Bilancio di Previsione 2026 e Pluriennale 2026/2028",
+  "descrizione_sintetica": "Rinnovo convenzione tra Comune di Pieve Emanuele e Comune di Siziano per la gestione in forma associata delle funzioni di Polizia Municipale e Polizia Amministrativa Locale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5383804",
   "estrazione": "groq",
   "caratteri_testo": 8640,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:26",
+  "data_elaborazione": "2026-07-29 16:58",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -6734,12 +6864,13 @@
     "importo": null
    }
   ],
-  "importo_testuale": "non specificato",
+  "importo_testuale": "0,00",
   "importo_e_pluriennale": true,
   "durata_anni": 3,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1014-2026",
@@ -6749,22 +6880,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-20",
   "oggetto": "ASSUNZIONE E ACCERTAMENTO D’ENTRATA - VENDITA UNITÀ IMMOBILIARE ASSEGNATA IN DIRITTO DI PROPRIETÀ AI SENSI DELL’ART. 35 LEGGE 865/71 COMMA 11, IN SEGUITO ALLA RICHIESTA PROTOCOLLO N. 9986 DEL 24/04/2026.",
-  "beneficiario": "un cittadino",
+  "beneficiario": "un cittadino avente i requisiti per l'assegnazione di alloggi dell'alienazione",
   "importo_euro": 19902.77,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "Accertamento di entrata per vendita unità immobiliare",
+  "descrizione_sintetica": "pagamento per l'immissione in libero mercato dell'alloggio di edilizia economica popolare",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5379547",
   "estrazione": "groq",
   "caratteri_testo": 10159,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:26",
+  "data_elaborazione": "2026-07-29 16:59",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "un cittadino",
+    "nome": "un cittadino avente i requisiti per l'assegnazione di alloggi dell'alienazione",
     "importo": 19902.77
    }
   ],
@@ -6773,7 +6904,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-1004-2026",
@@ -6783,22 +6915,22 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-19",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONI DI LAVORO STRAORDINARIO DEL PERSONALE DEL SERVIZIO FARMACIE",
-  "beneficiario": "personale del Servizio Farmacie",
+  "beneficiario": "personale del servizio farmacie",
   "importo_euro": 8500.0,
   "cig": null,
-  "categoria": "Sanità",
-  "missione_bdap": 13,
-  "capitolo_bilancio": "4615/0",
-  "descrizione_sintetica": "Impegno di spesa per prestazioni di lavoro straordinario del personale del Servizio Farmacie",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "4615/0 1102 Compensi per straordinario",
+  "descrizione_sintetica": "pagamento di straordinari al personale del servizio farmacie",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5375869",
   "estrazione": "groq",
   "caratteri_testo": 5835,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-27 02:26",
+  "data_elaborazione": "2026-07-29 17:00",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
-    "nome": "personale del Servizio Farmacie",
+    "nome": "personale del servizio farmacie",
     "importo": 8500.0
    }
   ],
@@ -6807,7 +6939,8 @@
   "durata_anni": null,
   "importo_primo_anno": null,
   "iva_inclusa": null,
-  "versione_estrazione": 2
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-993-2026",
@@ -6817,18 +6950,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-18",
   "oggetto": "IMPEGNO DI SPESA E AFFIDAMENTO DIRETTO PER LA FORNITURA DI UNA PANCHINA ROSA DEDICATA ALLA SENSIBILIZZAZIONE SULLA FIBROMIALGIA CIG BBA5C3B56C",
-  "beneficiario": "DIMCAR S.R.L",
+  "beneficiario": "la ditta DIMCAR S.R.L",
   "importo_euro": 657.58,
   "cig": "BBA5C3B56C",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
-  "capitolo_bilancio": "9096/0",
-  "descrizione_sintetica": "Fornitura di una panchina rosa per sensibilizzazione sulla fibromialgia",
+  "capitolo_bilancio": "capitolo 9096/0",
+  "descrizione_sintetica": "fornitura di una panchina rosa per sensibilizzazione sulla fibromialgia",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5374570",
   "estrazione": "groq",
   "caratteri_testo": 8303,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:52"
+  "data_elaborazione": "2026-07-29 17:00",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "657,58",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-981-2026",
@@ -6838,18 +6980,40 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-18",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": null,
-  "importo_euro": 900.0,
+  "beneficiario": "Utenti in difficoltà socio-economica",
+  "importo_euro": 1400.0,
   "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 6920/0 e Cap. 6973/0",
+  "categoria": "Sociale e famiglia",
+  "missione_bdap": 12,
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "Contributi economici a favore di persone in condizione di disagio socio-economico",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5371999",
   "estrazione": "groq",
   "caratteri_testo": 7496,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:53"
+  "data_elaborazione": "2026-07-29 17:01",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "utente 1",
+    "importo": 500.0
+   },
+   {
+    "nome": "utente 2",
+    "importo": 500.0
+   },
+   {
+    "nome": "utente 3",
+    "importo": 400.0
+   }
+  ],
+  "importo_testuale": "1.400,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-980-2026",
@@ -6859,18 +7023,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-18",
   "oggetto": "AFFIDAMENTO DIRETTO ED IMPEGNO DI SPESA PER INTERVENTI URGENTI DI DERATTIZZAZIONE PRESSO LA SCUOLA DELL’INFANZIA “ALESSANDRINI” E LA SCUOLA PRIMARIA “DE FILIPPO” CIG BBA5D48369",
-  "beneficiario": "FE.MA S.r.l.",
+  "beneficiario": "Due scuole comunali",
   "importo_euro": 305.0,
   "cig": "BBA5D48369",
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "1332/4",
-  "descrizione_sintetica": "Interventi urgenti di derattizzazione presso la Scuola dell'Infanzia \"Alessandrini\" e la Scuola Primaria \"De Filippo\"",
+  "categoria": "Istruzione e scuola",
+  "missione_bdap": 4,
+  "capitolo_bilancio": "capitolo 1332/4",
+  "descrizione_sintetica": "Interventi urgenti di derattizzazione presso due scuole comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5371996",
   "estrazione": "groq",
   "caratteri_testo": 7669,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:53"
+  "data_elaborazione": "2026-07-29 17:01",
+  "n_beneficiari": 2,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "305,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-964-2026",
@@ -6880,18 +7053,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-15",
   "oggetto": "MISURA NIDI GRATIS PLUS A.E. 2025-2026 - RENDICONTAZIONE MENSILITA' DA GENNAIO AD APRILE 2026",
-  "beneficiario": "Cooperativa Spazio Aperto Servizi Coop. Soc. Onlus P.IVA 10860990158",
-  "importo_euro": null,
+  "beneficiario": "famiglie beneficiarie della Misura Nidi Gratis Plus",
+  "importo_euro": 19106.27,
   "cig": null,
-  "categoria": "Istruzione e scuola",
-  "missione_bdap": 4,
-  "capitolo_bilancio": "905/10, 6150/20",
-  "descrizione_sintetica": "Pagamento rette nidi gratis plus per famiglie ammesse",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "905/10",
+  "descrizione_sintetica": "copertura delle rette di frequenza dei beneficiari della Misura Nidi Gratis Plus",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5368889",
   "estrazione": "groq",
   "caratteri_testo": 9072,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:01"
+  "data_elaborazione": "2026-07-29 17:02",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "famiglie beneficiarie della Misura Nidi Gratis Plus",
+    "importo": 19106.27
+   }
+  ],
+  "importo_testuale": "19.106,27",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-952-2026",
@@ -6901,18 +7088,44 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-14",
   "oggetto": "DETERMINA IMPEGNO DI SPESA RELATIVA ALLE DITTE: BIOS LINE SPA, GAS TECNICI FOLIGNO SRL,TOWA PHARMACEUTICAL SPA E SAPIO LIFE SRL",
-  "beneficiario": null,
-  "importo_euro": 8.15,
-  "cig": "BBE3E89FA",
-  "categoria": "Sanità",
-  "missione_bdap": 13,
+  "beneficiario": "Ditte diverse",
+  "importo_euro": 8200.0,
+  "cig": "BB6FCD98FE, BB7CF0D012, BB9EDD4A0D, BB9E8237B3",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
   "capitolo_bilancio": "4640/8 Anno 2026, P.Fin. U.1.03.01.05.001",
   "descrizione_sintetica": "Acquisto di farmaci e parafarmaci per le farmacie comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5365812",
   "estrazione": "groq",
   "caratteri_testo": 11278,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:54"
+  "data_elaborazione": "2026-07-29 17:02",
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Bios Line spa",
+    "importo": 6100.0
+   },
+   {
+    "nome": "Towa Pharmaceutical spa",
+    "importo": 1100.0
+   },
+   {
+    "nome": "Gas Tecnici Foligno srl",
+    "importo": 550.0
+   },
+   {
+    "nome": "Sapio Life srl",
+    "importo": 550.0
+   }
+  ],
+  "importo_testuale": "8.200,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-951-2026",
@@ -6922,18 +7135,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-14",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA SOCIETA’ CURTI & ZILIOLI PER EVENTO TORNEO DEI POPOLI 2026 – CIG BB9B9E6F7D",
-  "beneficiario": "Curti & Zilioli snc",
+  "beneficiario": "Società Curti & Zilioli snc",
   "importo_euro": 207.4,
   "cig": "BB9B9E6F7D",
-  "categoria": "Cultura",
-  "missione_bdap": 5,
-  "capitolo_bilancio": null,
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "4025/0",
   "descrizione_sintetica": "Fornitura di coppe e medaglie per la premiazione finale del Torneo dei Popoli 2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5365809",
   "estrazione": "groq",
   "caratteri_testo": 8131,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:01"
+  "data_elaborazione": "2026-07-29 17:03",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "207,40",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-950-2026",
@@ -6943,18 +7165,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-14",
   "oggetto": "APPROVAZIONE DELL'AVVISO PUBBLICO PER L’UTILIZZO AD ORE DELL’IMPIANTO DI ATLETICA LEGGERA DEL CENTRO SPORTIVO MAZZOLA",
-  "beneficiario": null,
+  "beneficiario": "utilizzatori dell'impianto di atletica leggera del Centro Sportivo Mazzola",
   "importo_euro": null,
   "cig": null,
   "categoria": "Sport e tempo libero",
   "missione_bdap": 6,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Approvazione avviso pubblico per l'utilizzo dell'impianto di atletica leggera del centro sportivo Mazzola",
+  "descrizione_sintetica": "approvazione avviso pubblico per l'utilizzo dell'impianto di atletica leggera del Centro Sportivo Mazzola",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5365806",
   "estrazione": "groq",
   "caratteri_testo": 6696,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:55"
+  "data_elaborazione": "2026-07-29 17:03",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "utilizzatori dell'impianto di atletica leggera del Centro Sportivo Mazzola",
+    "importo": null
+   }
+  ],
+  "importo_testuale": null,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-940-2026",
@@ -6964,18 +7200,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-11",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA NEI CONFRONTI DELLA SIAE",
-  "beneficiario": "SIAE di Melegnano",
+  "beneficiario": "Società Italiana Autori ed Editori (SIAE)",
   "importo_euro": 8000.0,
   "cig": null,
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": "6560/0 del B.P. 2026 - P.F. 1.03.02.99.000",
+  "capitolo_bilancio": "Servizi culturali e sportivi",
   "descrizione_sintetica": "Pagamento diritti alla SIAE per servizi culturali e sportivi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5358046",
   "estrazione": "groq",
   "caratteri_testo": 7976,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:55"
+  "data_elaborazione": "2026-07-29 17:04",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Società Italiana Autori ed Editori (SIAE)",
+    "importo": 8000.0
+   }
+  ],
+  "importo_testuale": "8.000,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-939-2026",
@@ -6985,18 +7235,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-11",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI FUNZIONARIO AMMINISTRATIVO CONTABILE – AREA DEI FUNZIONARI E DELL’ELEVATA QUALIFICAZIONE (EX CAT. D – POSIZIONE ECONOMICA INIZIALE D1) – NELL’AREA LAVORI PUBBLICI E URBANISTICA, DELLA SIG.RA IRENE SOFFIENTINI E COSTITUZIONE RAPPORTO DI LAVORO.",
-  "beneficiario": "Soffientini Irene",
+  "beneficiario": "un dipendente comunale",
   "importo_euro": null,
-  "cig": null,
+  "cig": "null",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 1655/0",
+  "capitolo_bilancio": "Cap. 1655/0 del Bilancio di Previsione e Pluriennale 2025/2027",
   "descrizione_sintetica": "Assunzione a tempo pieno e indeterminato di un funzionario amministrativo contabile",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5358043",
   "estrazione": "groq",
   "caratteri_testo": 8889,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:02"
+  "data_elaborazione": "2026-07-29 17:04",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Irene Soffientini",
+    "importo": null
+   }
+  ],
+  "importo_testuale": "null",
+  "importo_e_pluriennale": true,
+  "durata_anni": 3,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-936-2026",
@@ -7006,18 +7270,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-11",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI ISTRUTTORE DELL’AREA DEGLI ISTRUTTORI (EX CAT. C – POSIZIONE ECONOMICA DI ACCESSO C1), NELL’AREA COMUNICAZIONE E RELAZIONI ESTERNE, EVENTI, SERVIZI CULTURALI E SPORTIVI, DELLA SIG.RA LICIA PUNZO E COSTITUZIONE RAPPORTO DI LAVORO.",
-  "beneficiario": "Licia Punzo",
+  "beneficiario": "un dipendente comunale",
   "importo_euro": null,
-  "cig": null,
-  "categoria": "Istruzione e scuola",
-  "missione_bdap": 4,
+  "cig": "null",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
   "capitolo_bilancio": "Cap. 3710/0",
-  "descrizione_sintetica": "Assunzione a tempo indeterminato e a tempo pieno di un Istruttore nell'Area Comunicazione e Relazioni Esterne, Eventi, Servizi Culturali e Sportivi",
+  "descrizione_sintetica": "assunzione di un dipendente comunale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5358036",
   "estrazione": "groq",
   "caratteri_testo": 9568,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:56"
+  "data_elaborazione": "2026-07-29 17:05",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Licia Punzo",
+    "importo": null
+   }
+  ],
+  "importo_testuale": "null",
+  "importo_e_pluriennale": true,
+  "durata_anni": 3,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-917-2026",
@@ -7027,18 +7305,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-07",
   "oggetto": "CONCESSIONE CONTRIBUTO ECONOMICO E PATROCINIO ONEROSO ALL’ASSOCIAZIONE MAGNA GRECIA APS PER LA “FESTA DEI POPOLI”",
-  "beneficiario": "Magna Grecia APS",
+  "beneficiario": "Associazione Magna Grecia APS",
   "importo_euro": 2700.0,
   "cig": null,
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": "6510/0",
-  "descrizione_sintetica": "Contributo economico per l'organizzazione della Festa dei Popoli 2026",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "Contributo per la Festa dei Popoli 2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5351257",
   "estrazione": "groq",
   "caratteri_testo": 7442,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:56"
+  "data_elaborazione": "2026-07-29 17:05",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Associazione Magna Grecia APS",
+    "importo": 2700.0
+   }
+  ],
+  "importo_testuale": "2.700,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-910-2026",
@@ -7048,18 +7340,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-06",
   "oggetto": "DETERMINA A CONTRARRE. SERVIZIO DI PORTIERATO PRESSO IL COMUNE DI PIEVE EMANUELE. AFFIDAMENTO ALLA B&B SERVICE SOCIETA’ COOPERATIVA MULTISERVICE S.C.A.R.L. ASSUNZIONE IMPEGNO DI SPESA.",
-  "beneficiario": "B&B Service Società Cooperativa Multiservice s.c.a.r.l.",
+  "beneficiario": "Cooperativa B&B Service s.c.a.r.l.",
   "importo_euro": 2049.6,
   "cig": "BB10709514",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
   "capitolo_bilancio": "1332/1 BP 2026",
   "descrizione_sintetica": "Affidamento del servizio di portierato presso il Comune di Pieve Emanuele",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5347585",
   "estrazione": "groq",
   "caratteri_testo": 13864,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:02"
+  "data_elaborazione": "2026-07-29 17:06",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Cooperativa B&B Service s.c.a.r.l.",
+    "importo": 2049.6
+   }
+  ],
+  "importo_testuale": "2.049,60",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-909-2026",
@@ -7069,18 +7375,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-06",
   "oggetto": "ASSUNZIONE NUOVO IMPEGNO DI SPESA PER COLLOCAMENTO MINORI IN COMUNITA' EDUCATIVA. RIDUZIONE IMPEGNI DI SPESA PER CONCLUSIONE ANTICIPATA PROGETTI DI COLLOCAMENTO A FAVORE DI MINORI CIG BB8186FEC0 - CIG BB81974625",
-  "beneficiario": null,
-  "importo_euro": null,
+  "beneficiario": "Minori e 1 minore in asilo nido",
+  "importo_euro": 33169.5,
   "cig": "BB8186FEC0, BB81974625",
-  "categoria": "Istruzione e scuola",
-  "missione_bdap": 4,
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
   "capitolo_bilancio": "6145/0, 6150/0",
-  "descrizione_sintetica": "Collocamento minori in comunità educativa e inserimento in asilo nido",
+  "descrizione_sintetica": "collocamento minori in comunità educativa e asilo nido",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5347100",
   "estrazione": "groq",
   "caratteri_testo": 9413,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:57"
+  "data_elaborazione": "2026-07-29 17:06",
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "33.169,50",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-904-2026",
@@ -7090,7 +7405,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-05",
   "oggetto": "PARIFICAZIONE RESA DEL CONTO ANNO 2025 – AGENTI CONTABILI DEL COMUNE DI PIEVE EMANUELE",
-  "beneficiario": null,
+  "beneficiario": "amministrazione comunale",
   "importo_euro": null,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -7101,7 +7416,21 @@
   "estrazione": "groq",
   "caratteri_testo": 3387,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:57"
+  "data_elaborazione": "2026-07-29 17:07",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "amministrazione comunale",
+    "importo": null
+   }
+  ],
+  "importo_testuale": null,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-903-2026",
@@ -7111,18 +7440,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-05",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTO ECONOMICO A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": null,
+  "beneficiario": "un utente in difficoltà socio-economica",
   "importo_euro": 400.0,
   "cig": null,
   "categoria": "Sociale e famiglia",
   "missione_bdap": 12,
-  "capitolo_bilancio": "6920/0",
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "Contributo economico a favore di un utente in difficoltà socio-economica",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5342067",
   "estrazione": "groq",
   "caratteri_testo": 7287,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:58"
+  "data_elaborazione": "2026-07-29 17:07",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "nome del beneficiario (nascosto per ragioni di riservatezza)",
+    "importo": 400.0
+   }
+  ],
+  "importo_testuale": "400,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-902-2026",
@@ -7135,15 +7478,29 @@
   "beneficiario": "TECHNOLOGY ASSOCIATES srl",
   "importo_euro": 124482.7,
   "cig": "BB67FDC43D",
-  "categoria": "Polizia locale e sicurezza",
-  "missione_bdap": 3,
-  "capitolo_bilancio": "9010/0, 9010/3",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "9010/0 - 9010/3",
   "descrizione_sintetica": "Implementazione impianto videosorveglianza cofinanziato",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5342064",
   "estrazione": "groq",
   "caratteri_testo": 12179,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:03"
+  "data_elaborazione": "2026-07-29 17:08",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "TECHNOLOGY ASSOCIATES srl",
+    "importo": 124482.7
+   }
+  ],
+  "importo_testuale": "124.482,70",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-897-2026",
@@ -7153,18 +7510,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-05",
   "oggetto": "ACCERTAMENTO IMPEGNO DI SPESA DELLE SOMME DOVUTE AL MINISTERO PER IL RILASCIO DI N. 128 CIE DAL 01/04/2026 AL 15/04/2026 E DI N. 148 CIE DAL 16/04/2026 AL 30/04/2026",
-  "beneficiario": null,
-  "importo_euro": 4638.04,
+  "beneficiario": "Ministero dell'Interno",
+  "importo_euro": 2433.04,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "cap. 9187/0, cap. 3887/0",
-  "descrizione_sintetica": "Pagamento corrispettivo per il rilascio di carte d'identità elettroniche",
+  "capitolo_bilancio": "Cap. 9187/0 Codice SIOPE 7029999999 del Bilancio di Previsione 2026",
+  "descrizione_sintetica": "Rilascio di CIE (Carta d'Identità Elettronica) al Ministero dell'Interno",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5341241",
   "estrazione": "groq",
   "caratteri_testo": 10117,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:58"
+  "data_elaborazione": "2026-07-29 17:09",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Ministero dell'Interno",
+    "importo": 2433.04
+   }
+  ],
+  "importo_testuale": "2.433,04",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-894-2026",
@@ -7174,18 +7545,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-05",
   "oggetto": "ASSISTENZA TECNICA DI INGEGNERIA PER IL DEPOSITO E LA DENUNCIA DELLA STRUTTURA DI PROGETTO PER I LAVORI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORAMENTO SISMICO OVVERO EFFICIENTAMENTO ENERGETICO OVVERO ADEGUAMENTO IMPIANTISTICO OVVERO ABBATTIMENTO BARRIERE ARCHITETTONICHE DELL’EDIFICIO SCOLASTICO VIQUARTERIO, A FAVORE DELLA SOCIETÀ ALMA INGEGNERIA DI PAVIA AI SENSI DELL’ART. 120 CO. 9 (QUINTO D’OBBLIGO) DEL D.LGS. N. 36/2023.",
-  "beneficiario": "Alma Ingegneria di Pavia",
+  "beneficiario": "Società Alma Ingegneria srl di Pavia",
   "importo_euro": 799.99,
   "cig": "A017267B3A",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "9024/4",
-  "descrizione_sintetica": "Assistenza tecnica per il deposito e la denuncia della struttura di progetto per i lavori di manutenzione straordinaria dell'edificio scolastico Viquarterio",
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
+  "capitolo_bilancio": "9024/4 imp. padre Pavia P.IVA 02619450188",
+  "descrizione_sintetica": "Assistenza tecnica di ingegneria per la messa in sicurezza dell'edificio scolastico Viquarterio",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5341117",
   "estrazione": "groq",
   "caratteri_testo": 13971,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:03"
+  "data_elaborazione": "2026-07-29 17:09",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Società Alma Ingegneria srl di Pavia",
+    "importo": 799.99
+   }
+  ],
+  "importo_testuale": "799,99",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-884-2026",
@@ -7195,18 +7580,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-30",
   "oggetto": "FORNITURA E POSA DI UNA CABINA FONOISOLANTE PRESSO LA CASA DELLA CULTURA IN VIA LUIGI GEMELLI 7 PIEVE EMANUELE. APPROVAZIONE PROCEDURA SINTEL. AFFIDAMENTO ALLA SOCIETA‘ SILENT KONTROL DI MONZA. ASSUNZIONE IMPEGNO DI SPESA . CIG BB6C45A9BF",
-  "beneficiario": "Silent Kontrol srl",
-  "importo_euro": null,
+  "beneficiario": "Società Silent Kontrol srl di Monza",
+  "importo_euro": 13017.77,
   "cig": "BB6C45A9BF",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
-  "capitolo_bilancio": "Urbanistica e casa",
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "Fornitura e posa di una cabina fonoisolante presso la Casa della Cultura",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5336773",
   "estrazione": "groq",
   "caratteri_testo": 16488,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 20:59"
+  "data_elaborazione": "2026-07-29 17:10",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Società Silent Kontrol srl di Monza",
+    "importo": 13017.77
+   }
+  ],
+  "importo_testuale": "13.017,77",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-883-2026",
@@ -7216,18 +7615,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-30",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA RELATIVO AL PREVENTIVO P05Y5414 PER FORNTURA ENERGIA ELETTRICA PER NUOVO SERVIZO DI ALLACCIAMENTO IN BASSA TENSIONE IN VIA GIGLI 8, PER I LAVORI DI REALIZZAZIONE ASILO NIDO E AMPLIAMENTO CENTRO DI FORMAZIONE PROFESSIONALE E CO WORKING NELL’AMBITO DEL PNRR – M5C2 INV. 2.3 – FINANZIARTO DA NEXT GENERATION EU – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITA’ DELL’ABITARE (PINQUA). CUP J47H21000220001 CIG BB6C55DF79",
-  "beneficiario": "Duereti Srl",
-  "importo_euro": null,
+  "beneficiario": "Società duereti srl di Milano",
+  "importo_euro": 17593.14,
   "cig": "BB6C55DF79",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "9004/4",
-  "descrizione_sintetica": "Pagamento per fornitura energia elettrica per asilo nido e centro di formazione professionale",
+  "descrizione_sintetica": "Fornitura energia elettrica per asilo nido e ampliamento centro di formazione professionale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5336770",
   "estrazione": "groq",
   "caratteri_testo": 10894,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:04"
+  "data_elaborazione": "2026-07-29 17:10",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Società duereti srl di Milano",
+    "importo": 17593.14
+   }
+  ],
+  "importo_testuale": "17.593,14",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-882-2026",
@@ -7237,18 +7650,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-30",
   "oggetto": "ASSUNZIONE ACCERTAMENTO IN ENTRATA SPETTANTI AL COMUNE PER IL CANONE DI CONCESSIONE ORTI E FORNITURA ACQUA PER L'ANNO 2026",
-  "beneficiario": null,
+  "beneficiario": "Comune di Pieve Emanuele",
   "importo_euro": 15966.8,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "CANONE AFFITTO ORTI COMUNALI",
-  "descrizione_sintetica": "Assunzione accertamento canone concessione orti e fornitura acqua per l'anno 2026",
+  "descrizione_sintetica": "Assunzione accertamento entrata canone concessione orti e fornitura acqua 2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5336767",
   "estrazione": "groq",
   "caratteri_testo": 6587,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:00"
+  "data_elaborazione": "2026-07-29 17:11",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Comune di Pieve Emanuele",
+    "importo": 15966.8
+   }
+  ],
+  "importo_testuale": "15.966,80",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-881-2026",
@@ -7263,13 +7690,22 @@
   "cig": "BB6B3FA667",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
-  "capitolo_bilancio": "7001/0",
-  "descrizione_sintetica": "Servizio di assistenza al cittadino per la presentazione della domanda telematica relativa ai servizi abitativi pubblici",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "assistenza ai cittadini per la presentazione della domanda telematica per i servizi abitativi pubblici",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5336764",
   "estrazione": "groq",
   "caratteri_testo": 8766,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:00"
+  "data_elaborazione": "2026-07-29 17:12",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "981,49",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-863-2026",
@@ -7279,18 +7715,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N.6685/2026 DEL 16/03/2026.",
-  "beneficiario": null,
+  "beneficiario": "un proprietario di aree",
   "importo_euro": 2500.0,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "Trasformazione diritto di superficie in proprietà di aree",
+  "descrizione_sintetica": "trasformazione diritto di superficie in proprietà",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330466",
   "estrazione": "groq",
   "caratteri_testo": 7328,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:04"
+  "data_elaborazione": "2026-07-29 17:12",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "un proprietario di aree",
+    "importo": 2500.0
+   }
+  ],
+  "importo_testuale": "2.500,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-862-2026",
@@ -7300,18 +7750,52 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA RELATIVI ALLE PRESTAZIONI DI LAVORO STRAORDINARIO E RIMBORSO SPESE E INDENNITÀ CHILOMETRICHE ESERCIZIO 2026 DEL PERSONALE DELL’AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI",
-  "beneficiario": null,
-  "importo_euro": 4300.0,
+  "beneficiario": "Personale dell’Area Politiche Sociali e Servizi Scolastici",
+  "importo_euro": 4700.0,
   "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "6815/0, 6815/10, 6815/25, 6815/30, 3375/0, 3385/10",
-  "descrizione_sintetica": "Impegni di spesa per prestazioni di lavoro straordinario e rimborso spese del personale dell'Area Politiche Sociali e Servizi Scolastici",
+  "categoria": "Sociale e famiglia",
+  "missione_bdap": 12,
+  "capitolo_bilancio": "6815/0, 3375/0, 6815/25, 6815/10, 3385/10, 6815/30",
+  "descrizione_sintetica": "Impegno di spesa per lavoro straordinario e rimborsi spese del personale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330463",
   "estrazione": "groq",
   "caratteri_testo": 5615,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:01"
+  "data_elaborazione": "2026-07-29 17:13",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Servizi Sociali",
+    "importo": 3000.0
+   },
+   {
+    "nome": "Servizi Scolastici",
+    "importo": 800.0
+   },
+   {
+    "nome": "Ufficio di Piano",
+    "importo": 500.0
+   },
+   {
+    "nome": "Servizi Sociali",
+    "importo": 200.0
+   },
+   {
+    "nome": "Servizi Scolastici",
+    "importo": 100.0
+   },
+   {
+    "nome": "Ufficio di Piano",
+    "importo": 100.0
+   }
+  ],
+  "importo_testuale": "4.700,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-861-2026",
@@ -7321,18 +7805,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "RETTIFICA/INTEGRAZIONE DETERMINAZIONE N° 526/2026 AD OGGETTO “ASSUNZIONE IMPEGNI DI SPESA PER LA REALIZZAZIONE DELL’EVENTO DENOMINATO PRIMAVERA INSIEME 2026”",
-  "beneficiario": null,
+  "beneficiario": "Sig. Luca Martinelli",
   "importo_euro": 375.0,
   "cig": "BAE12A96E5",
   "categoria": "Cultura",
   "missione_bdap": 5,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Rettifica impegno di spesa per evento Primavera Insieme 2026",
+  "descrizione_sintetica": "Spesa per la realizzazione dell'evento Primavera Insieme 2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330460",
   "estrazione": "groq",
   "caratteri_testo": 12105,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:01"
+  "data_elaborazione": "2026-07-29 17:14",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Sig. Luca Martinelli",
+    "importo": 375.0
+   }
+  ],
+  "importo_testuale": "375,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-860-2026",
@@ -7342,18 +7840,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER PARTECIPAZIONE AL CORSO DI AGGIORNAMENTO COORDINATORI PER LA SICUREZZA (CSE/CSP) IN MODALITA’ WEBINAR.",
-  "beneficiario": "ASSING PAVIA (Ordine degli ingegneri della Provincia di Pavia)",
+  "beneficiario": "Ordine degli Ingegneri della Provincia di Pavia",
   "importo_euro": 150.0,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "1670/0",
-  "descrizione_sintetica": "Pagamento per la partecipazione del funzionario incaricato di E.O al corso di aggiornamento coordinatori per la sicurezza",
+  "descrizione_sintetica": "Partecipazione al corso di aggiornamento coordinatori per la sicurezza",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330296",
   "estrazione": "groq",
   "caratteri_testo": 11069,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:05"
+  "data_elaborazione": "2026-07-29 17:16",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Ordine degli Ingegneri della Provincia di Pavia",
+    "importo": 150.0
+   }
+  ],
+  "importo_testuale": "150,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-859-2026",
@@ -7363,18 +7875,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTO TECNICO URGENTE AL PORTONE MOTORIZZATO DEL COMANDO POLIZIA LOCALE - CIG BB579F6421",
-  "beneficiario": "OLMI AUTOMAZIONI s.r.l.",
+  "beneficiario": "OLMI Automazioni srl",
   "importo_euro": 644.16,
   "cig": "BB579F6421",
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
-  "capitolo_bilancio": "2810/1",
+  "capitolo_bilancio": null,
   "descrizione_sintetica": "Intervento tecnico urgente al portone motorizzato del Comando Polizia Locale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330165",
   "estrazione": "groq",
   "caratteri_testo": 10003,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:02"
+  "data_elaborazione": "2026-07-29 17:16",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "OLMI Automazioni srl",
+    "importo": 644.16
+   }
+  ],
+  "importo_testuale": "644,16",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-858-2026",
@@ -7384,18 +7910,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL SERVIZIO DI MANUTENZIONE ORDINARIA DEL PATRIMONIO COMUNALE - OPERE DA ELETTRICISTA, AI SENSI DELL’ART. 50 CO. 1 LETT B) DEL D.LGS. N. 36/2023. APPROVAZIONE PROCEDURA SINTEL. AFFIDAMENTO ALLA SOCIETÀ FIMEL SAS DI OPERA (MI) . CIG BB5F6A8AFD",
-  "beneficiario": "Fimel SAS di Opera (MI)",
-  "importo_euro": 31.0,
+  "beneficiario": "Fimel sas",
+  "importo_euro": 16805.5,
   "cig": "BB5F6A8AFD",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "Servizio di manutenzione ordinaria del patrimonio comunale - opere da elettricista",
+  "capitolo_bilancio": "2970/1 BP 2026, 1332/2 BP 2026",
+  "descrizione_sintetica": "Manutenzione ordinaria del patrimonio comunale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330162",
   "estrazione": "groq",
   "caratteri_testo": 17318,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:05"
+  "data_elaborazione": "2026-07-29 17:16",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Fimel sas",
+    "importo": 16805.5
+   }
+  ],
+  "importo_testuale": "16.805,50",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-857-2026",
@@ -7405,18 +7945,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-29",
   "oggetto": "IMPEGNO DI SPESA PER LA PARTECIPAZIONE DI N. 4 DIPENDENTI AL CORSO DI FORMAZIONE “FASE ESECUTIVA PER SERVIZI E FORNITURE” ORGANIZZATO DA UPEL – UNIONE PROVINCIALE ENTI LOCALI – CIG BB4EB39989.",
-  "beneficiario": null,
+  "beneficiario": "Dipendenti del Settore IV Area Ambiente, Ecologia e Commercio",
   "importo_euro": 322.0,
   "cig": "BB4EB39989",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "7089/0",
-  "descrizione_sintetica": "Formazione dipendenti Settore IV Area Ambiente, Ecologia e Commercio",
+  "descrizione_sintetica": "Formazione per dipendenti del Settore IV",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330159",
   "estrazione": "groq",
   "caratteri_testo": 8901,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:03"
+  "data_elaborazione": "2026-07-29 17:17",
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "322,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-846-2026",
@@ -7426,18 +7975,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-27",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER LA REALIZZAZIONE DELLA MANIFESTAZIONE CELEBRATIVA DEL 25/4/2026",
-  "beneficiario": null,
-  "importo_euro": 983.0,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 1233.0,
   "cig": "BB4FE27895",
   "categoria": "Cultura",
   "missione_bdap": 5,
-  "capitolo_bilancio": "450/10, 4025/0",
-  "descrizione_sintetica": "Pagamento per la manifestazione celebrativa del 25/4/2026",
+  "capitolo_bilancio": "450/10 del B.P. 2026 - P.F. 1030299000",
+  "descrizione_sintetica": "Spesa per la realizzazione della manifestazione celebrativa del 25/4/2026",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323034",
   "estrazione": "groq",
   "caratteri_testo": 11377,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:03"
+  "data_elaborazione": "2026-07-29 17:17",
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "1.233,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-845-2026",
@@ -7453,12 +8011,26 @@
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
   "capitolo_bilancio": "2190/7",
-  "descrizione_sintetica": "Pagamento per servizi di rimozione, custodia e alienazione di veicoli sequestrati",
+  "descrizione_sintetica": "Rimozione, custodia e alienazione veicoli sequestrati",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323031",
   "estrazione": "groq",
   "caratteri_testo": 9807,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:06"
+  "data_elaborazione": "2026-07-29 17:17",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Impresa Sangalli Giancarlo & C: S.r.l.",
+    "importo": 1135.52
+   }
+  ],
+  "importo_testuale": "1.135,52",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-844-2026",
@@ -7468,18 +8040,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-27",
   "oggetto": "ACCERTAMENTI DI ENTRATA QUALI PROVENTI DELLE SANZIONI AMMINISTRATIVE PECUNARIE PER LE VIOLAZIONI PREVISTE DAL CODICE DELLA STRADA E VIOLAZIONI DIVERSE DAL CODICE DELLA STRADA - ANNO 2026",
-  "beneficiario": null,
-  "importo_euro": 657000.0,
+  "beneficiario": "erario",
+  "importo_euro": 658000.0,
   "cig": null,
   "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 3,
   "capitolo_bilancio": "1230/0, 1230/5, 1230/6, 1235/0",
-  "descrizione_sintetica": "Accertamento di entrata dei proventi delle sanzioni amministrative pecunarie per le violazioni del Codice della Strada e diverse.",
+  "descrizione_sintetica": "Accertamento di entrata per proventi di sanzioni amministrative",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323028",
   "estrazione": "groq",
   "caratteri_testo": 7517,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:04"
+  "data_elaborazione": "2026-07-29 17:18",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "658.000,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-842-2026",
@@ -7495,12 +8076,26 @@
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "680/0",
-  "descrizione_sintetica": "Pagamento imposta di registro liquidata dall'Agenzia delle Entrate",
+  "descrizione_sintetica": "Rimborso imposta di registrazione a Energy Green City spa",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323023",
   "estrazione": "groq",
   "caratteri_testo": 6205,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:04"
+  "data_elaborazione": "2026-07-29 17:18",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Energy Green City spa",
+    "importo": 590.0
+   }
+  ],
+  "importo_testuale": "590,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-841-2026",
@@ -7510,18 +8105,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-27",
   "oggetto": "DECISONE A CONTRARRE. AFFIDAMENTO DEL SERVIZIO DI CONTROLLO CIRCUITO ACQUA IMPIANTO IDRICO PRESSO IL COMUNE DI PIEVE EMANUELE VIA VIQUARTERIO 1, A FAVORE DELLA SOCIETÀ IMMOBILIARE SKY SRL DI SOLARO (MI). ASSUNZIONE IMPEGNO DI SPESA. CIG BB5F5FDDDF",
-  "beneficiario": "Società Immobiliare Sky srl di Solaro (MI)",
+  "beneficiario": "Società Immobiliare Sky srl",
   "importo_euro": 1220.0,
   "cig": "BB5F5FDDDF",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "1332/2",
-  "descrizione_sintetica": "Controllo e ricerca perdite nel circuito dell'impianto idrico presso il Comune di Pieve Emanuele",
+  "descrizione_sintetica": "Controllo circuito acqua impianto idrico Comune Pieve Emanuele",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323020",
   "estrazione": "groq",
   "caratteri_testo": 9469,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:07"
+  "data_elaborazione": "2026-07-29 17:18",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Società Immobiliare Sky srl",
+    "importo": 1220.0
+   }
+  ],
+  "importo_testuale": "1.220,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-840-2026",
@@ -7531,18 +8140,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-27",
   "oggetto": "ASSUNZIONE ACCERTAMENTO DI ENTRATA RELATIVO AI PROVENTI DA COMPARTECIPAZIONE ALLA SPESA PER GLI UTENTI DEI CENTRI ESTIVI COMUNALI 2026",
-  "beneficiario": null,
+  "beneficiario": "famiglie con bambini iscritti ai centri estivi",
   "importo_euro": 53000.0,
   "cig": null,
   "categoria": "Istruzione e scuola",
   "missione_bdap": 4,
-  "capitolo_bilancio": "Cap. di entrata 1290/0 \"PROVENTI PER I SERVIZI ALL'INFANZIA - CENTRO DIURNO RICREATIVO ESTIVO\"",
-  "descrizione_sintetica": "Assunzione accertamento di entrata per proventi da compartecipazione alla spesa per i centri estivi comunali 2026",
+  "capitolo_bilancio": "1290/0",
+  "descrizione_sintetica": "Accertamento di entrata per proventi da centri estivi",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323017",
   "estrazione": "groq",
   "caratteri_testo": 6240,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:05"
+  "data_elaborazione": "2026-07-29 17:18",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "53.000,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-839-2026",
@@ -7558,12 +8176,26 @@
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
   "capitolo_bilancio": "1332/2",
-  "descrizione_sintetica": "Acquisto di materiale da ferramenta edile per manutenzione degli stabili comunali",
+  "descrizione_sintetica": "Acquisto materiale di ferramenta-edile-idraulica per manutenzione strutture comunali",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323014",
   "estrazione": "groq",
   "caratteri_testo": 10771,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:06"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Leroy Merlin Italia Srl",
+    "importo": 4900.0
+   }
+  ],
+  "importo_testuale": "4.900,00",
+  "importo_e_pluriennale": true,
+  "durata_anni": 2,
+  "importo_primo_anno": 2450.0,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-836-2026",
@@ -7573,18 +8205,32 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-27",
   "oggetto": "APPROVAZIONE DISCIPLINARE D’INCARICO PROFESSIONALE AL RAG. ANGELO LEONE COMMERCIALISTA PER PERIZIA DI STIMA DEL VALORE PATRIMONIALE DELLA PARTECIPAZIONE NELLA SOCIETA'AREA SUD MILANO . APPROVAZIONE PREVENTIVO E ASSUNZIONE IMPEGNO DI SPESA. CIG BB15530361",
-  "beneficiario": "Rag. Angelo Leone Commercialista",
-  "importo_euro": null,
+  "beneficiario": "Rag. Angelo Leone",
+  "importo_euro": 6000.0,
   "cig": "BB15530361",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
   "capitolo_bilancio": "810/10",
-  "descrizione_sintetica": "Approvazione disciplinare d'incarico per perizia di stima del valore patrimoniale della partecipazione nella società Area Sud Milano",
+  "descrizione_sintetica": "Perizia di stima del valore patrimoniale della partecipazione nella società Area Sud Milano",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323007",
   "estrazione": "groq",
   "caratteri_testo": 7455,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:07"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Rag. Angelo Leone",
+    "importo": 6000.0
+   }
+  ],
+  "importo_testuale": "6.000,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-806-2026",
@@ -7594,18 +8240,27 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-21",
   "oggetto": "INTERVENTO DI MESSA IN SICUREZZA DEL DISSESTO IDROGEOLOGICO - MANUTENZIONE STRAORDINARIA DELLA TOMBINATURA DELLA ROGGIA CORIO - TRATTO VIA ROMA N. 11 . APPROVAZIONE PROCEDURA SINTEL E AGGIUDICAZIONE ALL’IMPRESA EDILE FRANCO SRL DI STRAMBINO TORINO. CIG B9254A521D - CUP J48B25000490005",
-  "beneficiario": "Impresa Edile Franco srl Unipersonale di Strambino (TO)",
+  "beneficiario": "Impresa Edile Franco srl",
   "importo_euro": 400000.0,
   "cig": "B9254A521D",
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "Urbanistica e casa",
-  "descrizione_sintetica": "Messa in sicurezza del dissesto idrogeologico e manutenzione straordinaria della tombinatura della Roggia Corio",
+  "categoria": "Strade, viabilità e trasporti",
+  "missione_bdap": 10,
+  "capitolo_bilancio": "9080/20, 9080/28",
+  "descrizione_sintetica": "Messa in sicurezza del dissesto idrogeologico della Roggia Corio",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5307703",
   "estrazione": "groq",
   "caratteri_testo": 25702,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:06"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_testuale": "400.000,00",
+  "importo_e_pluriennale": true,
+  "durata_anni": 2,
+  "importo_primo_anno": null,
+  "iva_inclusa": false,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-803-2026",
@@ -7615,18 +8270,48 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-21",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
-  "beneficiario": null,
+  "beneficiario": "Utenti in difficoltà socio-economica",
   "importo_euro": 1407.0,
   "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 6920/0 e Cap. 6973/0",
-  "descrizione_sintetica": "Contributi economici a favore di persone in condizione di disagio socio-economico",
+  "categoria": "Sociale e famiglia",
+  "missione_bdap": 12,
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "Contributi economici per utenti in difficoltà socio-economica",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5307163",
   "estrazione": "groq",
   "caratteri_testo": 7545,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:08"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 5,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "utente 1",
+    "importo": null
+   },
+   {
+    "nome": "utente 2",
+    "importo": null
+   },
+   {
+    "nome": "utente 3",
+    "importo": null
+   },
+   {
+    "nome": "utente 4",
+    "importo": null
+   },
+   {
+    "nome": "utente 5",
+    "importo": null
+   }
+  ],
+  "importo_testuale": "1.407,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-802-2026",
@@ -7636,18 +8321,40 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-21",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER ACQUISTO LIBRI BIBLIOTECA COMUNALE DI PIEVE EMANUELE FINANZIATO AI SENSI DEL D.M. N. 272 DEL 05 AGOSTO 2025, RECANTE \"DISPOSIZIONI ATTUATIVE DELLA MISURA DI CUI ALL’ART. 3, COMMA 2, D.L. N. 201 DEL 27 DICEMBRE 2024, \"MISURE URGENTI IN MATERIA DI CULTURA\" L. N. 16 DEL 21 FEBBRAIO 2025",
-  "beneficiario": null,
-  "importo_euro": null,
-  "cig": null,
+  "beneficiario": "Librerie diverse",
+  "importo_euro": 12286.99,
+  "cig": "BB361843D4, BB361C48A3, BB3621075B",
   "categoria": "Cultura",
   "missione_bdap": 5,
   "capitolo_bilancio": null,
-  "descrizione_sintetica": "Acquisto libri per la biblioteca comunale di Pieve Emanuele",
+  "descrizione_sintetica": "Acquisto libri per la biblioteca comunale",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5307160",
   "estrazione": "groq",
   "caratteri_testo": 12504,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:07"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Il Mio Libro di Cristina Di Canio",
+    "importo": 4000.0
+   },
+   {
+    "nome": "Libreria Verso srl",
+    "importo": 4286.99
+   },
+   {
+    "nome": "Libreria Linea D’Ombra di Testa Roberto",
+    "importo": 4000.0
+   }
+  ],
+  "importo_testuale": "12.286,99",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-801-2026",
@@ -7663,12 +8370,26 @@
   "categoria": "Sociale e famiglia",
   "missione_bdap": 12,
   "capitolo_bilancio": "6920/1",
-  "descrizione_sintetica": "Pagamento per l'inserimento di un nucleo familiare in situazione di fragilità presso Ripamonti Residence & Hotel Milano",
+  "descrizione_sintetica": "Inserimento nucleo familiare in situazione di fragilità presso Ripamonti Residence & Hotel Milano",
   "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5307157",
   "estrazione": "groq",
   "caratteri_testo": 8302,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:08"
+  "data_elaborazione": "2026-07-29 17:19",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Aries Group Srl",
+    "importo": 5500.0
+   }
+  ],
+  "importo_testuale": "5.500,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "versione_estrazione": 3,
+  "testo_disponibile": true
  },
  {
   "id": "determinazione-795-2026",

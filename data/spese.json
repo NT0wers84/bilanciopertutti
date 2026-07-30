@@ -1,5 +1,241 @@
 [
  {
+  "id": "liquidazione-1540-2026",
+  "numero_raw": "2026/1540",
+  "numero": "1540",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "LIQUIDAZIONE FATTURE DIVERSE NELL’AMBITO DELLA MISURA B1 E B2 - FNA 2025 – DGR N. XII/5926",
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 7,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "COOPERATIVA SOCIALE IL BALZO",
+    "importo": 390.0
+   },
+   {
+    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 125.0
+   },
+   {
+    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 125.0
+   },
+   {
+    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
+    "importo": null
+   },
+   {
+    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
+    "importo": null
+   },
+   {
+    "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
+    "importo": 390.0
+   },
+   {
+    "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
+    "importo": 230.0
+   }
+  ],
+  "importo_euro": 1260.0,
+  "importo_testuale": "18.57 + 390.00 + 125.00 + 125.00 - 5.95 - 5.95 + 390.00 + 230.00 = 1.188.00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "cig": "99017.01.09",
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "Liquidazione fatture diverse nell'ambito della Misura B1 e B2 - FNA 2025",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5551797",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 8547,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:56"
+ },
+ {
+  "id": "liquidazione-1538-2026",
+  "numero_raw": "2026/1538",
+  "numero": "1538",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "LIQUIDAZIONE FATTURA N. 4/2026 DELLA CARTOLERIA LA FIABA DI VEROLA ANNA RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
+  "beneficiario": "7 fornitori",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Cartoleria La Fiaba di Verola Anna",
+    "importo": 835.28
+   }
+  ],
+  "importo_euro": 835.28,
+  "importo_testuale": "835,28",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "cig": "U.1.03.0",
+  "categoria": "Istruzione e scuola",
+  "missione_bdap": 4,
+  "capitolo_bilancio": "Servizi scolastici",
+  "descrizione_sintetica": "Liquidazione fattura per la fornitura di libri di testo agli alunni della scuola primaria",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5551598",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 7586,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:57"
+ },
+ {
+  "id": "liquidazione-1537-2026",
+  "numero_raw": "2026/1537",
+  "numero": "1537",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA A FAVORE DELLA COOPERATIVA DEMETRA DI SAN GIORGIO LOMELLINA (PV) PER IL SERVIZIO DI SGOMBERO NEVE E SPARGIMENTO SALE SUL TERRITORIO COMUNALE PER LA STAGIONE INVERNALE 2025-2026 ZONA 1-A",
+  "beneficiario": "Cooperativa Demetra di San Giorgio Lomellina",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Cooperativa Demetra di San Giorgio Lomellina",
+    "importo": 3538.0
+   }
+  ],
+  "importo_euro": 3538.0,
+  "importo_testuale": "3.538,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "cig": "B46250B089",
+  "categoria": "Strade, viabilità e trasporti",
+  "missione_bdap": 10,
+  "capitolo_bilancio": "7360",
+  "descrizione_sintetica": "Liquidazione fattura per servizio di sgombero neve e spargimento sale",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5551301",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 10790,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:58"
+ },
+ {
+  "id": "liquidazione-1535-2026",
+  "numero_raw": "2026/1535",
+  "numero": "1535",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "LIQUIDAZIONE CONTRIBUTO ECONOMICO A FAVORE DI PERSONA IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
+  "beneficiario": "Utenti in condizione di disagio socio-economico",
+  "n_beneficiari": 2,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "utente 1",
+    "importo": 2100.0
+   },
+   {
+    "nome": "utente 2",
+    "importo": 2100.0
+   }
+  ],
+  "importo_euro": 4200.0,
+  "importo_testuale": "4.200,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": null,
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "Servizi sociali",
+  "descrizione_sintetica": "Contributo economico a favore di persone in condizione di disagio socio-economico",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5550267",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 5908,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:58"
+ },
+ {
+  "id": "liquidazione-1534-2026",
+  "numero_raw": "2026/1534",
+  "numero": "1534",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA DITTA DAVIDE MERLI DI VIGEVANO (PV) PER INTERVENTO STRUTTURA VIGILI DEL FUOCO IN VIA NILDE IOTTI - PIEVE EMANUELE",
+  "beneficiario": "la ditta Merli Asfalti di Davide Merli",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Merli Asfalti di Davide Merli",
+    "importo": 2440.0
+   }
+  ],
+  "importo_euro": 2440.0,
+  "importo_testuale": "2.440,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": true,
+  "cig": "B8938CD5BC",
+  "categoria": "Urbanistica e casa",
+  "missione_bdap": 8,
+  "capitolo_bilancio": "capitolo 9180/30 imp. 2290/2025 e capitolo 1332/2 imp. 199 BP 2026",
+  "descrizione_sintetica": "pagamento fattura per intervento struttura Vigili del Fuoco",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5549776",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 9599,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:58"
+ },
+ {
+  "id": "liquidazione-1533-2026",
+  "numero_raw": "2026/1533",
+  "numero": "1533",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-07-30",
+  "oggetto": "LIQUIDAZIONE CONTRIBUTO ECONOMICO A FAVORE DI PERSONA IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
+  "beneficiario": "Persona in condizione di disagio socio-economico",
+  "n_beneficiari": 2,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "persona in condizione di disagio socio-economico",
+    "importo": 150.0
+   },
+   {
+    "nome": "persona in condizione di disagio socio-economico",
+    "importo": 150.0
+   }
+  ],
+  "importo_euro": 300.0,
+  "importo_testuale": "300,00",
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": null,
+  "categoria": "Amministrazione e servizi generali",
+  "missione_bdap": 1,
+  "capitolo_bilancio": "Area Politiche Sociali e Servizi Scolastici",
+  "descrizione_sintetica": "Contributo economico a favore di persone in condizione di disagio socio-economico",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5549555",
+  "estrazione": "groq",
+  "versione_estrazione": 2,
+  "caratteri_testo": 5896,
+  "fonte": "albo",
+  "data_elaborazione": "2026-07-30 16:59"
+ },
+ {
   "id": "liquidazione-1527-2026",
   "numero_raw": "2026/1527",
   "numero": "1527",

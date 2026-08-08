@@ -233,9 +233,12 @@ const esc = s => (s || "").replace(/[&<>"']/g, c =>
 
 async function avvia() {
   try {
+    // ?v=<minuto> aggira la cache di GitHub Pages: senza, il browser
+    // continua a mostrare i dati vecchi anche dopo un aggiornamento
+    const v = `?v=${Math.floor(Date.now() / 60000)}`;
     const [spese, meta] = await Promise.all([
-      fetch("data/spese.json").then(r => r.json()),
-      fetch("data/meta.json").then(r => r.json()).catch(() => null),
+      fetch("data/spese.json" + v).then(r => r.json()),
+      fetch("data/meta.json" + v).then(r => r.json()).catch(() => null),
     ]);
     SPESE = spese;
     document.getElementById("badge-agg").textContent =

@@ -149,7 +149,8 @@ const pulisci = m => m.replace(/\s+/g, " ").trim();
 
 async function avvia() {
   try {
-    DATI = await fetch("data/bilanci.json").then(r => r.json());
+    DATI = await fetch(`data/bilanci.json?v=${Math.floor(Date.now() / 60000)}`)
+      .then(r => r.json());
   } catch (e) {
     document.getElementById("kpi").innerHTML =
       '<div class="card">Dati bilanci non ancora disponibili.</div>';

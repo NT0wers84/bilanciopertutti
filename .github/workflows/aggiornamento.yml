@@ -55,11 +55,17 @@ jobs:
       - name: Aggiorna dati del sito
         run: python scripts/genera_sito.py
 
+      - name: Verifica integrità dei dati
+        run: python scripts/verifica_dati.py
+
       - name: Salva risultati nel repository
         run: |
           git config user.name "OpenSpeseBot"
           git config user.email "bot@openspese.local"
           git pull --rebase --autostash
+          # Il pull può creare conflitti sui JSON generati: se restano
+          # marcatori di conflitto il job deve fallire, mai pubblicarli
+          python scripts/verifica_dati.py
           git add data/ docs/
           git diff --staged --quiet || git commit -m "Aggiornamento spese: $(date '+%Y-%m-%d')"
           git push

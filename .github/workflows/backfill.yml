@@ -73,6 +73,7 @@ jobs:
             FLAGS="$FLAGS --riestrai-tutto"
           fi
           python scripts/backfill.py $FLAGS
+          python scripts/verifica_dati.py
 
       - name: Aggiorna dati del sito
         run: python scripts/genera_sito.py

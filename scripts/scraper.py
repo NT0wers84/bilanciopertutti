@@ -68,6 +68,7 @@ def elabora_spesa(atto: dict) -> dict:
         "importo_primo_anno": dati.get("importo_primo_anno"),
         "iva_inclusa": dati.get("iva_inclusa"),
         "cig": dati["cig"],
+        "e_rimodulazione": dati.get("e_rimodulazione", False),
         "categoria": dati["categoria"],
         "missione_bdap": dati["missione_bdap"],
         "capitolo_bilancio": dati["capitolo_bilancio"],
@@ -115,7 +116,7 @@ def main():
     nuove_righe = []
     for r in righe:
         chiave = (r["numero_raw"], r["oggetto"])
-        if not portale.e_spesa(r["tipo"]):
+        if not portale.e_spesa(r["tipo"], r.get("oggetto", "")):
             continue
         if chiave in note or chiave in viste:
             continue

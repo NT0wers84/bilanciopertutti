@@ -411,10 +411,17 @@ def _url_con_cur(url_griglia: str, cur: int) -> str:
     return f"{base}{sep}{param}={cur}"
 
 
-def e_spesa(tipo: str) -> bool:
-    """True se il tipo/sottocategoria dell'atto rappresenta una spesa."""
+def e_spesa(tipo: str, oggetto: str = "") -> bool:
+    """
+    True se l'atto rappresenta una spesa verso terzi.
+    Esclude le variazioni di bilancio e gli altri movimenti contabili
+    interni: spostano fondi tra capitoli, non pagano nessuno.
+    """
     t = (tipo or "").lower()
-    return any(k in t for k in TIPI_SPESA)
+    if not any(k in t for k in TIPI_SPESA):
+        return False
+    from estrattore import e_variazione_bilancio
+    return not e_variazione_bilancio(oggetto)
 
 
 PORTLET_PREFIX = "_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_"

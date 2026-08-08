@@ -31,7 +31,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 6297,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:22"
+  "data_elaborazione": "2026-08-03 17:22",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1566-2026",
@@ -65,7 +66,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 8191,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:23"
+  "data_elaborazione": "2026-08-03 17:23",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1565-2026",
@@ -99,7 +101,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 8024,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:24"
+  "data_elaborazione": "2026-08-03 17:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1564-2026",
@@ -133,7 +136,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7923,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:24"
+  "data_elaborazione": "2026-08-03 17:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1563-2026",
@@ -144,7 +148,7 @@
   "data_pubblicazione": "2026-08-03",
   "oggetto": "LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI, PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO - FINANZIATO DA NEXT GENERATION EU, NELL’AMBITO DEL PNRR – M5C2 - 2.1. CUP J47H21001830001, CIG A01BC0F3B3. APPROVAZIONE MODIFICA DEL CONTRATTO AI SENSI DELL’ART. 106 DEL D.LGS. N. 50/2016 E RIDETERMINAZIONE DEL QUADRO ECONOMICO.",
   "beneficiario": "Due scuole comunali",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 2200000.0,
   "importo_testuale": "2.200.000,00",
@@ -162,7 +166,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 52697,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:24"
+  "data_elaborazione": "2026-08-03 17:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1562-2026",
@@ -196,7 +201,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7314,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:25"
+  "data_elaborazione": "2026-08-03 17:25",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1559-2026",
@@ -230,7 +236,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 11229,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:26"
+  "data_elaborazione": "2026-08-03 17:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1558-2026",
@@ -241,7 +248,7 @@
   "data_pubblicazione": "2026-08-03",
   "oggetto": "INTEGRAZIONE IMPEGNI DI SPESA PER COLLOCAMENTO ANZIANI E DISABILI PRESSO STRUTTURE RESIDENZIALI - PERIODO AGOSTO - DICEMBRE 2026",
   "beneficiario": "Anziani e disabili presso strutture residenziali",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 50308.95,
   "importo_testuale": "50.308,95",
@@ -259,7 +266,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9970,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:26"
+  "data_elaborazione": "2026-08-03 17:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1557-2026",
@@ -293,7 +301,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 15110,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:27"
+  "data_elaborazione": "2026-08-03 17:27",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1556-2026",
@@ -327,7 +336,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 6865,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-03 17:28"
+  "data_elaborazione": "2026-08-03 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1553-2026",
@@ -361,7 +371,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 12617,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:00"
+  "data_elaborazione": "2026-07-31 17:00",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1552-2026",
@@ -395,7 +406,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 12820,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:01"
+  "data_elaborazione": "2026-07-31 17:01",
+  "e_rimodulazione": true
  },
  {
   "id": "liquidazione-1551-2026",
@@ -429,7 +441,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 10444,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:01"
+  "data_elaborazione": "2026-07-31 17:01",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1550-2026",
@@ -463,7 +476,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9106,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:02"
+  "data_elaborazione": "2026-07-31 17:02",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1549-2026",
@@ -497,7 +511,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 11704,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:03"
+  "data_elaborazione": "2026-07-31 17:03",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1548-2026",
@@ -531,7 +546,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 8922,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:03"
+  "data_elaborazione": "2026-07-31 17:03",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1547-2026",
@@ -565,7 +581,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 10056,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:04"
+  "data_elaborazione": "2026-07-31 17:04",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1546-2026",
@@ -599,7 +616,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9345,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:04"
+  "data_elaborazione": "2026-07-31 17:04",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1545-2026",
@@ -633,7 +651,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9506,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:05"
+  "data_elaborazione": "2026-07-31 17:05",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1544-2026",
@@ -667,7 +686,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 13970,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:05"
+  "data_elaborazione": "2026-07-31 17:05",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1543-2026",
@@ -701,7 +721,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 10569,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:06"
+  "data_elaborazione": "2026-07-31 17:06",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1542-2026",
@@ -735,7 +756,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9182,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:07"
+  "data_elaborazione": "2026-07-31 17:07",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1541-2026",
@@ -769,7 +791,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9061,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-31 17:07"
+  "data_elaborazione": "2026-07-31 17:07",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1540-2026",
@@ -780,7 +803,7 @@
   "data_pubblicazione": "2026-07-30",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE NELL’AMBITO DELLA MISURA B1 E B2 - FNA 2025 – DGR N. XII/5926",
   "beneficiario": "Fornitori diversi",
-  "n_beneficiari": 7,
+  "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
     "nome": "COOPERATIVA SOCIALE IL BALZO",
@@ -827,7 +850,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 8547,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:56"
+  "data_elaborazione": "2026-07-30 16:56",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1538-2026",
@@ -837,7 +861,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-30",
   "oggetto": "LIQUIDAZIONE FATTURA N. 4/2026 DELLA CARTOLERIA LA FIABA DI VEROLA ANNA RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Cartoleria La Fiaba di Verola Anna",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
@@ -861,7 +885,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7586,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:57"
+  "data_elaborazione": "2026-07-30 16:57",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1537-2026",
@@ -895,7 +920,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 10790,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:58"
+  "data_elaborazione": "2026-07-30 16:58",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1535-2026",
@@ -933,7 +959,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 5908,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:58"
+  "data_elaborazione": "2026-07-30 16:58",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1534-2026",
@@ -967,7 +994,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9599,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:58"
+  "data_elaborazione": "2026-07-30 16:58",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1533-2026",
@@ -978,7 +1006,7 @@
   "data_pubblicazione": "2026-07-30",
   "oggetto": "LIQUIDAZIONE CONTRIBUTO ECONOMICO A FAVORE DI PERSONA IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
   "beneficiario": "Persona in condizione di disagio socio-economico",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "persona in condizione di disagio socio-economico",
@@ -1005,7 +1033,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 5896,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-30 16:59"
+  "data_elaborazione": "2026-07-30 16:59",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1527-2026",
@@ -1025,7 +1054,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLA DITTA: Q FARMA SPA E FEDERFARMA LOMBARDIA",
@@ -1034,7 +1063,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 25925,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:24"
+  "data_elaborazione": "2026-07-29 17:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1526-2026",
@@ -1068,7 +1098,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7144,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:24"
+  "data_elaborazione": "2026-07-29 17:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1525-2026",
@@ -1088,7 +1119,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
@@ -1097,7 +1128,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7533,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:26"
+  "data_elaborazione": "2026-07-29 17:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1524-2026",
@@ -1117,7 +1149,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": "BC59CADA32",
-  "categoria": "Da classificare",
+  "categoria": "Protezione civile",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER MANUTENZIONE AUTOMEZZI COMUNALI DI SERVIZIO E PROTEZIONE CIVILE",
@@ -1126,7 +1158,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7453,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:27"
+  "data_elaborazione": "2026-07-29 17:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1523-2026",
@@ -1146,7 +1179,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA ASSUNZIONE IMPEGNO DI SPESA FEDERFARMA LOMBARDIA PER QUOTE ASSOCIATIVE RELATIVE ALLE FARMACIE COMUNALI 1 E 2 DI PIEVE EMANUELE (ESENTE CIG)",
@@ -1155,7 +1188,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 10392,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:28"
+  "data_elaborazione": "2026-07-29 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1522-2026",
@@ -1175,7 +1209,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": "8727293603",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "PROCEDURA APERTA PER LA FORNITURA ORDINARIA DI MEDICINALI, PARAFARMACI E ALTRI GENERI VENDIBILI NELLE FARMACIE COMUNALI DI PIEVE EMANUELE (MI) - LOTTO 1 CIG 8719228690_AGGIUDICATAR",
@@ -1184,7 +1218,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 9702,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:28"
+  "data_elaborazione": "2026-07-29 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1520-2026",
@@ -1204,7 +1239,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": "BC8A15CDB1",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER INSERIMENTO CITTADINO DISABILE PRESSO RSA VILLA ANTEA PER IL PERIODO DAL 22/07/2026 AL 30/09/2026 - CIG BC8A15CDB1",
@@ -1213,7 +1248,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7883,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:28"
+  "data_elaborazione": "2026-07-29 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1518-2026",
@@ -1233,7 +1269,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "LIQUIDAZIONESOMME DOVUTE AL COMUNE DI MILANO PER DEPOSITO SALME: C.T. / U.C.",
@@ -1242,7 +1278,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 6034,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:28"
+  "data_elaborazione": "2026-07-29 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1515-2026",
@@ -1262,7 +1299,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": "BBDBD7140E",
-  "categoria": "Da classificare",
+  "categoria": "Sport e tempo libero",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "LIQUIDAZIONE SERVIZI ED INTERVENTI FESTA DEI GIOVANI E DELLO SPORT ANNUALITA' 2026 IN FAVORE DI ON AIR GROUP E AD SECURITY INVESTIGATION_CIG: BBA0506E3D - CIG: BBDBD7140E",
@@ -1271,7 +1308,8 @@
   "versione_estrazione": 2,
   "caratteri_testo": 7484,
   "fonte": "albo",
-  "data_elaborazione": "2026-07-29 17:28"
+  "data_elaborazione": "2026-07-29 17:28",
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1510-2026",
@@ -1282,7 +1320,7 @@
   "data_pubblicazione": "2026-07-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
   "beneficiario": "Fornitori diversi",
-  "n_beneficiari": 7,
+  "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
     "nome": "COOPERATIVA",
@@ -1316,7 +1354,7 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": null,
@@ -1326,7 +1364,8 @@
   "caratteri_testo": 16124,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:44",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1509-2026",
@@ -1361,7 +1400,8 @@
   "caratteri_testo": 8467,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:45",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1507-2026",
@@ -1396,7 +1436,8 @@
   "caratteri_testo": 5573,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:45",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1506-2026",
@@ -1426,7 +1467,8 @@
   "caratteri_testo": 8578,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:45",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1503-2026",
@@ -1461,7 +1503,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1502-2026",
@@ -1496,7 +1539,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1501-2026",
@@ -1531,7 +1575,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1499-2026",
@@ -1566,7 +1611,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1496-2026",
@@ -1596,7 +1642,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1495-2026",
@@ -1631,7 +1678,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1494-2026",
@@ -1666,7 +1714,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1493-2026",
@@ -1701,7 +1750,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1486-2026",
@@ -1744,7 +1794,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1485-2026",
@@ -1779,7 +1830,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1484-2026",
@@ -1814,7 +1866,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1483-2026",
@@ -1849,7 +1902,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1482-2026",
@@ -1884,7 +1938,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1481-2026",
@@ -1919,7 +1974,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1480-2026",
@@ -1954,7 +2010,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1479-2026",
@@ -1976,7 +2033,7 @@
   "caratteri_testo": 14538,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:52",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.700,00",
   "importo_e_pluriennale": false,
@@ -1984,7 +2041,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1478-2026",
@@ -2019,7 +2077,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1477-2026",
@@ -2041,7 +2100,7 @@
   "caratteri_testo": 7548,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:53",
-  "n_beneficiari": 3,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.670,00",
   "importo_e_pluriennale": false,
@@ -2049,7 +2108,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1476-2026",
@@ -2084,7 +2144,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1475-2026",
@@ -2114,7 +2175,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1474-2026",
@@ -2149,7 +2211,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1473-2026",
@@ -2179,7 +2242,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1472-2026",
@@ -2214,7 +2278,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1471-2026",
@@ -2236,7 +2301,7 @@
   "caratteri_testo": 9415,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:56",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.409,10",
   "importo_e_pluriennale": false,
@@ -2244,7 +2309,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1470-2026",
@@ -2266,7 +2332,7 @@
   "caratteri_testo": 14545,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:57",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.219,80",
   "importo_e_pluriennale": false,
@@ -2274,7 +2340,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1469-2026",
@@ -2309,7 +2376,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1468-2026",
@@ -2344,7 +2412,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1467-2026",
@@ -2379,7 +2448,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1465-2026",
@@ -2414,7 +2484,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1464-2026",
@@ -2449,7 +2520,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1463-2026",
@@ -2479,7 +2551,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1462-2026",
@@ -2514,7 +2587,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1461-2026",
@@ -2536,7 +2610,7 @@
   "caratteri_testo": 8840,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:01",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "NEPA-RCHE' SRLS",
@@ -2549,7 +2623,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1460-2026",
@@ -2584,7 +2659,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1459-2026",
@@ -2606,7 +2682,7 @@
   "caratteri_testo": 10415,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:03",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "13.111,48",
   "importo_e_pluriennale": false,
@@ -2614,7 +2690,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1457-2026",
@@ -2636,7 +2713,7 @@
   "caratteri_testo": 8873,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:04",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "250,00",
   "importo_e_pluriennale": false,
@@ -2644,7 +2721,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1456-2026",
@@ -2679,7 +2757,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1455-2026",
@@ -2714,7 +2793,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1453-2026",
@@ -2749,7 +2829,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1452-2026",
@@ -2784,7 +2865,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1451-2026",
@@ -2819,7 +2901,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1450-2026",
@@ -2854,7 +2937,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1449-2026",
@@ -2889,7 +2973,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1446-2026",
@@ -2911,7 +2996,7 @@
   "caratteri_testo": 11504,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:48",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.095,50",
   "importo_e_pluriennale": false,
@@ -2919,7 +3004,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1445-2026",
@@ -2941,7 +3027,7 @@
   "caratteri_testo": 8945,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:49",
-  "n_beneficiari": 3,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "12.992,74",
   "importo_e_pluriennale": false,
@@ -2949,7 +3035,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1442-2026",
@@ -2984,7 +3071,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1441-2026",
@@ -3019,7 +3107,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1437-2026",
@@ -3058,7 +3147,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1436-2026",
@@ -3093,7 +3183,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1435-2026",
@@ -3128,7 +3219,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1434-2026",
@@ -3138,7 +3230,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-15",
   "oggetto": "LIQUIDAZIONE FATTURA N. 136/2026 DELLA CARTOLERIA ENRICA E DANIELA PETTINARI SNC RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Cartoleria Enrica e Daniela Pettinari SNC",
   "importo_euro": 6578.25,
   "cig": "U.1.03.0",
   "categoria": "Istruzione e scuola",
@@ -3163,7 +3255,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1433-2026",
@@ -3198,37 +3291,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
- },
- {
-  "id": "determinazione-1432-2026",
-  "numero_raw": "2026/1432",
-  "numero": "1432",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-07-15",
-  "oggetto": "VARIAZIONE COMPENSATIVA AL BILANCIO DI PREVISIONE 2026/2028 TRA CAPITOLI DI SPESA APPARTENENTI ALLO STESSO MACROAGGREGATO (ART. 175, COMMA 5-QUATER, LETT. A), D.LGS. N. 267/000",
-  "beneficiario": "il Comune di Pieve Emanuele",
-  "importo_euro": 7799281.32,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "Variazione compensativa al bilancio di previsione 2026/2028",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5513275",
-  "estrazione": "groq",
-  "caratteri_testo": 9613,
-  "fonte": "albo",
-  "data_elaborazione": "2026-07-29 15:54",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_testuale": null,
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1430-2026",
@@ -3258,7 +3322,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1429-2026",
@@ -3280,7 +3345,7 @@
   "caratteri_testo": 9079,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:55",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.400,00",
   "importo_e_pluriennale": false,
@@ -3288,7 +3353,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1428-2026",
@@ -3323,7 +3389,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1427-2026",
@@ -3358,7 +3425,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1426-2026",
@@ -3393,7 +3461,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1425-2026",
@@ -3423,7 +3492,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1424-2026",
@@ -3458,7 +3528,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1423-2026",
@@ -3488,7 +3559,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1422-2026",
@@ -3518,7 +3590,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1421-2026",
@@ -3553,7 +3626,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1420-2026",
@@ -3583,7 +3657,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1419-2026",
@@ -3618,7 +3693,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1418-2026",
@@ -3640,7 +3716,7 @@
   "caratteri_testo": 7848,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 16:02",
-  "n_beneficiari": 7,
+  "n_beneficiari": 4,
   "beneficiari_dettaglio": [
    {
     "nome": "LA PIDUNS APS",
@@ -3677,7 +3753,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1417-2026",
@@ -3707,7 +3784,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1416-2026",
@@ -3742,7 +3820,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1415-2026",
@@ -3781,7 +3860,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1414-2026",
@@ -3816,7 +3896,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1407-2026",
@@ -3846,7 +3927,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1397-2026",
@@ -3868,7 +3950,7 @@
   "caratteri_testo": 10811,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:05",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.220,80",
   "importo_e_pluriennale": false,
@@ -3876,7 +3958,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1396-2026",
@@ -3911,7 +3994,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1395-2026",
@@ -3941,7 +4025,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1394-2026",
@@ -3976,7 +4061,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1393-2026",
@@ -4011,7 +4097,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1392-2026",
@@ -4041,7 +4128,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1391-2026",
@@ -4076,7 +4164,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-1390-2026",
@@ -4106,7 +4195,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1389-2026",
@@ -4136,7 +4226,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1388-2026",
@@ -4171,7 +4262,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1387-2026",
@@ -4206,7 +4298,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1386-2026",
@@ -4241,7 +4334,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1385-2026",
@@ -4276,7 +4370,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-1384-2026",
@@ -4306,7 +4401,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1383-2026",
@@ -4328,7 +4424,7 @@
   "caratteri_testo": 9628,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:13",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "dipendenti del Settore IV Area Ambiente, Ecologia e Commercio",
@@ -4345,7 +4441,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1382-2026",
@@ -4375,7 +4472,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1381-2026",
@@ -4405,7 +4503,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1380-2026",
@@ -4435,7 +4534,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1377-2026",
@@ -4465,7 +4565,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1375-2026",
@@ -4495,7 +4596,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1374-2026",
@@ -4525,7 +4627,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1373-2026",
@@ -4555,7 +4658,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1372-2026",
@@ -4585,7 +4689,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1371-2026",
@@ -4615,7 +4720,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1370-2026",
@@ -4645,7 +4751,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1369-2026",
@@ -4667,7 +4774,7 @@
   "caratteri_testo": 0,
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:38",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -4675,7 +4782,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1368-2026",
@@ -4705,7 +4813,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1358-2026",
@@ -4727,7 +4836,7 @@
   "caratteri_testo": 0,
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:39",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -4735,7 +4844,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1357-2026",
@@ -4765,7 +4875,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1356-2026",
@@ -4795,7 +4906,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1355-2026",
@@ -4817,7 +4929,7 @@
   "caratteri_testo": 0,
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:40",
-  "n_beneficiari": 3,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -4825,7 +4937,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1348-2026",
@@ -4855,7 +4968,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1347-2026",
@@ -4885,7 +4999,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1346-2026",
@@ -4907,7 +5022,7 @@
   "caratteri_testo": 20157,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:14",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "550.000,00",
   "importo_e_pluriennale": false,
@@ -4915,7 +5030,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1342-2026",
@@ -4925,10 +5041,10 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-02",
   "oggetto": "DETERMINA A CONTRARRE IMPEGNO DI SPESA PER IL SERVIZIO INTEGRATO IN HOUSE DI GESTIONE DEI RIFIUTI URBANI SUL TERRITORIO COMUNALE DI DURATA 15 ANNI ALLA SOC. AEMME LINEA AMBIENTE SRL - CIG BC028D9A80",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "Aemme Linea Ambiente Srl",
   "importo_euro": 121530402.2,
   "cig": "BC028D9A80",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": "Ambiente, verde e rifiuti",
   "descrizione_sintetica": "Affidamento servizio gestione rifiuti urbani a Aemme Linea Ambiente Srl",
@@ -4945,7 +5061,8 @@
   "importo_primo_anno": 3120036.0,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1341-2026",
@@ -4975,7 +5092,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1340-2026",
@@ -5005,7 +5123,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1339-2026",
@@ -5035,7 +5154,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1337-2026",
@@ -5065,7 +5185,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1336-2026",
@@ -5095,7 +5216,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1335-2026",
@@ -5125,7 +5247,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1334-2026",
@@ -5147,7 +5270,7 @@
   "caratteri_testo": 0,
   "fonte": "storico",
   "data_elaborazione": "2026-07-27 01:44",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -5155,7 +5278,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1333-2026",
@@ -5185,7 +5309,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1332-2026",
@@ -5215,7 +5340,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1331-2026",
@@ -5245,7 +5371,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1330-2026",
@@ -5275,7 +5402,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1329-2026",
@@ -5305,7 +5433,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1328-2026",
@@ -5335,7 +5464,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1326-2026",
@@ -5365,7 +5495,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1325-2026",
@@ -5395,7 +5526,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1323-2026",
@@ -5425,7 +5557,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1322-2026",
@@ -5455,7 +5588,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1321-2026",
@@ -5485,7 +5619,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "liquidazione-1320-2026",
@@ -5515,7 +5650,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 1,
-  "testo_disponibile": false
+  "testo_disponibile": false,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1306-2026",
@@ -5537,7 +5673,7 @@
   "caratteri_testo": 12772,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:16",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.580,00",
   "importo_e_pluriennale": false,
@@ -5545,7 +5681,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1305-2026",
@@ -5580,7 +5717,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-1304-2026",
@@ -5619,7 +5757,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1303-2026",
@@ -5654,7 +5793,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1302-2026",
@@ -5689,7 +5829,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1301-2026",
@@ -5719,7 +5860,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1300-2026",
@@ -5754,7 +5896,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1298-2026",
@@ -5789,7 +5932,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1297-2026",
@@ -5824,7 +5968,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1296-2026",
@@ -5859,7 +6004,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1285-2026",
@@ -5889,7 +6035,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1284-2026",
@@ -5919,7 +6066,8 @@
   "importo_primo_anno": 20714.58,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1283-2026",
@@ -5954,7 +6102,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1282-2026",
@@ -5989,7 +6138,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1256-2026",
@@ -6011,7 +6161,7 @@
   "caratteri_testo": 22865,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:24",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "fornitori",
@@ -6024,7 +6174,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1255-2026",
@@ -6059,7 +6210,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-1238-2026",
@@ -6094,7 +6246,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1236-2026",
@@ -6129,7 +6282,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1235-2026",
@@ -6164,7 +6318,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1234-2026",
@@ -6186,7 +6341,7 @@
   "caratteri_testo": 7531,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:26",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.365,00",
   "importo_e_pluriennale": false,
@@ -6194,7 +6349,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1233-2026",
@@ -6229,7 +6385,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1232-2026",
@@ -6264,7 +6421,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1231-2026",
@@ -6294,7 +6452,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1219-2026",
@@ -6324,7 +6483,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-1218-2026",
@@ -6359,7 +6519,8 @@
   "importo_primo_anno": 1800.0,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1217-2026",
@@ -6394,7 +6555,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1216-2026",
@@ -6429,7 +6591,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1194-2026",
@@ -6464,7 +6627,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1193-2026",
@@ -6494,7 +6658,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1192-2026",
@@ -6529,7 +6694,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1191-2026",
@@ -6559,7 +6725,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1190-2026",
@@ -6581,7 +6748,7 @@
   "caratteri_testo": 9176,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:33",
-  "n_beneficiari": 14,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "personale della Polizia Locale",
@@ -6594,7 +6761,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1189-2026",
@@ -6629,7 +6797,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1176-2026",
@@ -6664,7 +6833,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1175-2026",
@@ -6686,7 +6856,7 @@
   "caratteri_testo": 8796,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:34",
-  "n_beneficiari": 7,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "Agenti Accertatori Ecologici Volontari",
@@ -6699,7 +6869,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1174-2026",
@@ -6721,7 +6892,7 @@
   "caratteri_testo": 12755,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:35",
-  "n_beneficiari": 13,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": [
    {
     "nome": "personale della Polizia Locale",
@@ -6734,7 +6905,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1145-2026",
@@ -6769,7 +6941,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1144-2026",
@@ -6804,7 +6977,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1143-2026",
@@ -6839,7 +7013,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1142-2026",
@@ -6874,7 +7049,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1141-2026",
@@ -6909,7 +7085,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1140-2026",
@@ -6931,7 +7108,7 @@
   "caratteri_testo": 12092,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:38",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.318,00",
   "importo_e_pluriennale": false,
@@ -6939,7 +7116,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1139-2026",
@@ -6974,7 +7152,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1138-2026",
@@ -7009,7 +7188,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1137-2026",
@@ -7039,7 +7219,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1134-2026",
@@ -7074,7 +7255,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1127-2026",
@@ -7096,7 +7278,7 @@
   "caratteri_testo": 10393,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:41",
-  "n_beneficiari": 3,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "2.928,00",
   "importo_e_pluriennale": false,
@@ -7104,7 +7286,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1126-2026",
@@ -7139,7 +7322,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1125-2026",
@@ -7169,7 +7353,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1110-2026",
@@ -7204,7 +7389,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1109-2026",
@@ -7239,7 +7425,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1108-2026",
@@ -7269,7 +7456,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1107-2026",
@@ -7304,7 +7492,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1106-2026",
@@ -7334,7 +7523,8 @@
   "importo_primo_anno": 4154.4,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1105-2026",
@@ -7364,7 +7554,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1104-2026",
@@ -7399,7 +7590,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1103-2026",
@@ -7446,7 +7638,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1102-2026",
@@ -7481,7 +7674,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1101-2026",
@@ -7516,7 +7710,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1100-2026",
@@ -7551,7 +7746,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1099-2026",
@@ -7586,7 +7782,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1098-2026",
@@ -7608,7 +7805,7 @@
   "caratteri_testo": 10400,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:50",
-  "n_beneficiari": 30,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "219,60",
   "importo_e_pluriennale": false,
@@ -7616,7 +7813,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1066-2026",
@@ -7651,7 +7849,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1065-2026",
@@ -7686,7 +7885,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1064-2026",
@@ -7729,7 +7929,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1063-2026",
@@ -7764,7 +7965,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1045-2026",
@@ -7799,7 +8001,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1041-2026",
@@ -7834,7 +8037,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1040-2026",
@@ -7869,7 +8073,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1039-2026",
@@ -7904,7 +8109,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1038-2026",
@@ -7926,7 +8132,7 @@
   "caratteri_testo": 11690,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 16:55",
-  "n_beneficiari": 3,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "5.502,20",
   "importo_e_pluriennale": false,
@@ -7934,7 +8140,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1037-2026",
@@ -7969,7 +8176,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1036-2026",
@@ -8004,7 +8212,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1035-2026",
@@ -8039,7 +8248,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1034-2026",
@@ -8074,7 +8284,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1033-2026",
@@ -8084,7 +8295,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-05-21",
   "oggetto": "ADESIONE ALLA CONVENZIONE CONSIP CON CITTA' METROPOLITANA DI MILANO E PROVINCIA DI MONZA BRIANZA, PER IL SERVIZIO DI PULIZIA IMMOBILI AD USO UFFICI E AREE VERDI E PRESTAZIONI ACCESSORIE A RIDOTTO IMPATTO AMBIENTALE – LOTTO 1 - CIG 9573900835. DETERMINAZIONE A CONTRARRE E ASSUNZIONE IMPEGNI DI SPESA A FAVORE DELL’IMPRESA AGGIUDICATARIA RTI – B&B SERVICE SOCIETA’ COOPERATIVA, MULTISERVICE S.C.A.R.L. CIG DERIVATO BB10709514.",
-  "beneficiario": "7 fornitori",
+  "beneficiario": "B&B Service Società Cooperativa e Multiservice s.c.a.r.l.",
   "importo_euro": 702790.27,
   "cig": "BB10709514",
   "categoria": "Amministrazione e servizi generali",
@@ -8109,7 +8320,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1031-2026",
@@ -8144,7 +8356,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1014-2026",
@@ -8179,7 +8392,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-1004-2026",
@@ -8214,7 +8428,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-993-2026",
@@ -8244,7 +8459,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-981-2026",
@@ -8287,7 +8503,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-980-2026",
@@ -8309,7 +8526,7 @@
   "caratteri_testo": 7669,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 17:01",
-  "n_beneficiari": 2,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "305,00",
   "importo_e_pluriennale": false,
@@ -8317,7 +8534,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-964-2026",
@@ -8352,7 +8570,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-952-2026",
@@ -8399,7 +8618,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-951-2026",
@@ -8429,7 +8649,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-950-2026",
@@ -8464,7 +8685,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-940-2026",
@@ -8499,7 +8721,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-939-2026",
@@ -8534,7 +8757,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-936-2026",
@@ -8569,7 +8793,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-917-2026",
@@ -8604,7 +8829,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-910-2026",
@@ -8639,7 +8865,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-909-2026",
@@ -8661,7 +8888,7 @@
   "caratteri_testo": 9413,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 17:06",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "33.169,50",
   "importo_e_pluriennale": false,
@@ -8669,7 +8896,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-904-2026",
@@ -8704,7 +8932,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-903-2026",
@@ -8739,7 +8968,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-902-2026",
@@ -8774,7 +9004,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-897-2026",
@@ -8809,7 +9040,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-894-2026",
@@ -8844,7 +9076,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-884-2026",
@@ -8879,7 +9112,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-883-2026",
@@ -8914,7 +9148,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-882-2026",
@@ -8949,7 +9184,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-881-2026",
@@ -8979,7 +9215,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-863-2026",
@@ -9014,7 +9251,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-862-2026",
@@ -9069,7 +9307,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-861-2026",
@@ -9104,7 +9343,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-860-2026",
@@ -9139,7 +9379,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-859-2026",
@@ -9174,7 +9415,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-858-2026",
@@ -9209,7 +9451,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-857-2026",
@@ -9231,7 +9474,7 @@
   "caratteri_testo": 8901,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 17:17",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "322,00",
   "importo_e_pluriennale": false,
@@ -9239,7 +9482,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-846-2026",
@@ -9261,7 +9505,7 @@
   "caratteri_testo": 11377,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 17:17",
-  "n_beneficiari": 4,
+  "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_testuale": "1.233,00",
   "importo_e_pluriennale": false,
@@ -9269,7 +9513,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-845-2026",
@@ -9304,7 +9549,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-844-2026",
@@ -9334,7 +9580,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-842-2026",
@@ -9369,7 +9616,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-841-2026",
@@ -9404,7 +9652,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-840-2026",
@@ -9434,7 +9683,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-839-2026",
@@ -9469,7 +9719,8 @@
   "importo_primo_anno": 2450.0,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-836-2026",
@@ -9504,7 +9755,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-806-2026",
@@ -9534,7 +9786,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": false,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-803-2026",
@@ -9585,7 +9838,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-802-2026",
@@ -9628,7 +9882,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": null,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-801-2026",
@@ -9663,7 +9918,8 @@
   "importo_primo_anno": null,
   "iva_inclusa": true,
   "versione_estrazione": 3,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-795-2026",
@@ -9684,7 +9940,8 @@
   "estrazione": "groq",
   "caratteri_testo": 17765,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:08"
+  "data_elaborazione": "2026-07-16 21:08",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-789-2026",
@@ -9705,7 +9962,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7787,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:09"
+  "data_elaborazione": "2026-07-17 16:09",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-788-2026",
@@ -9726,7 +9984,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9345,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:09"
+  "data_elaborazione": "2026-07-16 21:09",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-785-2026",
@@ -9747,7 +10006,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8830,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:09"
+  "data_elaborazione": "2026-07-17 16:09",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-784-2026",
@@ -9768,7 +10028,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6782,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:10"
+  "data_elaborazione": "2026-07-16 21:10",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-770-2026",
@@ -9789,7 +10050,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8067,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:10"
+  "data_elaborazione": "2026-07-16 21:10",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-761-2026",
@@ -9810,7 +10072,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10120,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:10"
+  "data_elaborazione": "2026-07-17 16:10",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-740-2026",
@@ -9831,7 +10094,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9103,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:11"
+  "data_elaborazione": "2026-07-16 21:11",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-739-2026",
@@ -9852,7 +10116,8 @@
   "estrazione": "groq",
   "caratteri_testo": 23338,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:10"
+  "data_elaborazione": "2026-07-17 16:10",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-738-2026",
@@ -9873,7 +10138,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10969,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:12"
+  "data_elaborazione": "2026-07-16 21:12",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-737-2026",
@@ -9894,7 +10160,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14705,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:11"
+  "data_elaborazione": "2026-07-17 16:11",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-736-2026",
@@ -9915,7 +10182,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9543,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:12"
+  "data_elaborazione": "2026-07-16 21:12",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-735-2026",
@@ -9936,7 +10204,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7688,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:13"
+  "data_elaborazione": "2026-07-16 21:13",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-734-2026",
@@ -9957,7 +10226,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7589,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:13"
+  "data_elaborazione": "2026-07-16 21:13",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-733-2026",
@@ -9978,7 +10248,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13515,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:11"
+  "data_elaborazione": "2026-07-17 16:11",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-732-2026",
@@ -9999,7 +10270,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14101,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:14"
+  "data_elaborazione": "2026-07-16 21:14",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-730-2026",
@@ -10020,7 +10292,8 @@
   "estrazione": "groq",
   "caratteri_testo": 11240,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:12"
+  "data_elaborazione": "2026-07-17 16:12",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-729-2026",
@@ -10041,7 +10314,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7325,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:15"
+  "data_elaborazione": "2026-07-16 21:15",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-728-2026",
@@ -10062,7 +10336,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9592,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:12"
+  "data_elaborazione": "2026-07-17 16:12",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-726-2026",
@@ -10083,7 +10358,8 @@
   "estrazione": "groq",
   "caratteri_testo": 36532,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:16"
+  "data_elaborazione": "2026-07-16 21:16",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-725-2026",
@@ -10104,7 +10380,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10320,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:13"
+  "data_elaborazione": "2026-07-17 16:13",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-724-2026",
@@ -10125,7 +10402,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10157,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:16"
+  "data_elaborazione": "2026-07-16 21:16",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-723-2026",
@@ -10146,7 +10424,8 @@
   "estrazione": "groq",
   "caratteri_testo": 11485,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:13"
+  "data_elaborazione": "2026-07-17 16:13",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-722-2026",
@@ -10167,7 +10446,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7430,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:17"
+  "data_elaborazione": "2026-07-16 21:17",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-712-2026",
@@ -10188,7 +10468,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7670,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:17"
+  "data_elaborazione": "2026-07-16 21:17",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-711-2026",
@@ -10209,7 +10490,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10691,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:14"
+  "data_elaborazione": "2026-07-17 16:14",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-710-2026",
@@ -10230,7 +10512,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6745,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:18"
+  "data_elaborazione": "2026-07-16 21:18",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-690-2026",
@@ -10251,7 +10534,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9891,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:15"
+  "data_elaborazione": "2026-07-17 16:15",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-669-2026",
@@ -10272,7 +10556,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9587,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:19"
+  "data_elaborazione": "2026-07-16 21:19",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-668-2026",
@@ -10293,7 +10578,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10577,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:15"
+  "data_elaborazione": "2026-07-17 16:15",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-667-2026",
@@ -10314,7 +10600,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14865,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:20"
+  "data_elaborazione": "2026-07-16 21:20",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-666-2026",
@@ -10335,7 +10622,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8493,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:20"
+  "data_elaborazione": "2026-07-16 21:20",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-665-2026",
@@ -10356,7 +10644,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9225,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:21"
+  "data_elaborazione": "2026-07-16 21:21",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-664-2026",
@@ -10377,7 +10666,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6734,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:16"
+  "data_elaborazione": "2026-07-17 16:16",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-663-2026",
@@ -10398,7 +10688,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8822,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:21"
+  "data_elaborazione": "2026-07-16 21:21",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-662-2026",
@@ -10419,7 +10710,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7807,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:16"
+  "data_elaborazione": "2026-07-17 16:16",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-661-2026",
@@ -10440,7 +10732,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9964,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:17"
+  "data_elaborazione": "2026-07-17 16:17",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-655-2026",
@@ -10461,7 +10754,8 @@
   "estrazione": "groq",
   "caratteri_testo": 12601,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:17"
+  "data_elaborazione": "2026-07-17 16:17",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-654-2026",
@@ -10482,7 +10776,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9229,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:18"
+  "data_elaborazione": "2026-07-17 16:18",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-614-2026",
@@ -10503,7 +10798,8 @@
   "estrazione": "groq",
   "caratteri_testo": 19933,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:18"
+  "data_elaborazione": "2026-07-17 16:18",
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-613-2026",
@@ -10524,7 +10820,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7526,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:19"
+  "data_elaborazione": "2026-07-17 16:19",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-612-2026",
@@ -10545,7 +10842,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9324,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:19"
+  "data_elaborazione": "2026-07-17 16:19",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-611-2026",
@@ -10566,7 +10864,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7621,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:20"
+  "data_elaborazione": "2026-07-17 16:20",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-602-2026",
@@ -10587,7 +10886,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8711,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:20"
+  "data_elaborazione": "2026-07-17 16:20",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-601-2026",
@@ -10608,7 +10908,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10666,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:21"
+  "data_elaborazione": "2026-07-17 16:21",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-600-2026",
@@ -10629,7 +10930,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9414,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:21"
+  "data_elaborazione": "2026-07-17 16:21",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-599-2026",
@@ -10650,7 +10952,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7330,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:22"
+  "data_elaborazione": "2026-07-17 16:22",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-598-2026",
@@ -10671,7 +10974,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6228,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:22"
+  "data_elaborazione": "2026-07-17 16:22",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-597-2026",
@@ -10692,7 +10996,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13183,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:23"
+  "data_elaborazione": "2026-07-17 16:23",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-586-2026",
@@ -10713,7 +11018,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6461,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:24"
+  "data_elaborazione": "2026-07-17 16:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-578-2026",
@@ -10734,7 +11040,8 @@
   "estrazione": "groq",
   "caratteri_testo": 30190,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:24"
+  "data_elaborazione": "2026-07-17 16:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-577-2026",
@@ -10755,7 +11062,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14247,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:24"
+  "data_elaborazione": "2026-07-17 16:24",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-576-2026",
@@ -10776,7 +11084,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7988,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:25"
+  "data_elaborazione": "2026-07-17 16:25",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-575-2026",
@@ -10797,7 +11106,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7696,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:26"
+  "data_elaborazione": "2026-07-17 16:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-554-2026",
@@ -10818,7 +11128,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14934,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:26"
+  "data_elaborazione": "2026-07-17 16:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-549-2026",
@@ -10839,7 +11150,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8555,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:27"
+  "data_elaborazione": "2026-07-17 16:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-548-2026",
@@ -10860,7 +11172,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7980,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:27"
+  "data_elaborazione": "2026-07-17 16:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-545-2026",
@@ -10881,7 +11194,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6994,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:28"
+  "data_elaborazione": "2026-07-17 16:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-544-2026",
@@ -10902,7 +11216,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13041,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:28"
+  "data_elaborazione": "2026-07-17 16:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-543-2026",
@@ -10923,7 +11238,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13251,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:29"
+  "data_elaborazione": "2026-07-17 16:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-542-2026",
@@ -10944,7 +11260,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13185,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:29"
+  "data_elaborazione": "2026-07-17 16:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-525-2026",
@@ -10965,7 +11282,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7833,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:30"
+  "data_elaborazione": "2026-07-17 16:30",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-523-2026",
@@ -10986,7 +11304,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6689,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:30"
+  "data_elaborazione": "2026-07-17 16:30",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-521-2026",
@@ -11007,7 +11326,8 @@
   "estrazione": "groq",
   "caratteri_testo": 11520,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:31"
+  "data_elaborazione": "2026-07-17 16:31",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-520-2026",
@@ -11028,7 +11348,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8121,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:31"
+  "data_elaborazione": "2026-07-17 16:31",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-515-2026",
@@ -11049,7 +11370,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13090,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:32"
+  "data_elaborazione": "2026-07-17 16:32",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-514-2026",
@@ -11070,7 +11392,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7315,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:33"
+  "data_elaborazione": "2026-07-17 16:33",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-501-2026",
@@ -11091,7 +11414,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9324,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:33"
+  "data_elaborazione": "2026-07-17 16:33",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-498-2026",
@@ -11112,7 +11436,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7780,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:34"
+  "data_elaborazione": "2026-07-17 16:34",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-496-2026",
@@ -11133,7 +11458,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7969,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:34"
+  "data_elaborazione": "2026-07-17 16:34",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-494-2026",
@@ -11154,7 +11480,8 @@
   "estrazione": "groq",
   "caratteri_testo": 16412,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:35"
+  "data_elaborazione": "2026-07-17 16:35",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-490-2026",
@@ -11175,7 +11502,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8016,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:35"
+  "data_elaborazione": "2026-07-17 16:35",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-488-2026",
@@ -11196,7 +11524,8 @@
   "estrazione": "groq",
   "caratteri_testo": 12123,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:36"
+  "data_elaborazione": "2026-07-17 16:36",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-487-2026",
@@ -11217,7 +11546,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7545,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:36"
+  "data_elaborazione": "2026-07-17 16:36",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-486-2026",
@@ -11238,7 +11568,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6774,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:37"
+  "data_elaborazione": "2026-07-17 16:37",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-482-2026",
@@ -11259,7 +11590,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9520,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:37"
+  "data_elaborazione": "2026-07-17 16:37",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-464-2026",
@@ -11280,7 +11612,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8770,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:38"
+  "data_elaborazione": "2026-07-17 16:38",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-463-2026",
@@ -11301,7 +11634,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6395,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:38"
+  "data_elaborazione": "2026-07-17 16:38",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-462-2026",
@@ -11322,7 +11656,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9098,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:39"
+  "data_elaborazione": "2026-07-17 16:39",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-460-2026",
@@ -11343,7 +11678,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8828,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:40"
+  "data_elaborazione": "2026-07-17 16:40",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-459-2026",
@@ -11364,7 +11700,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8667,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:41"
+  "data_elaborazione": "2026-07-17 16:41",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-458-2026",
@@ -11385,7 +11722,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6542,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:42"
+  "data_elaborazione": "2026-07-17 16:42",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-456-2026",
@@ -11406,7 +11744,8 @@
   "estrazione": "groq",
   "caratteri_testo": 12592,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:43"
+  "data_elaborazione": "2026-07-17 16:43",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-453-2026",
@@ -11427,7 +11766,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8442,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:43"
+  "data_elaborazione": "2026-07-17 16:43",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-451-2026",
@@ -11448,7 +11788,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9309,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:43"
+  "data_elaborazione": "2026-07-17 16:43",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-440-2026",
@@ -11469,7 +11810,8 @@
   "estrazione": "groq",
   "caratteri_testo": 8151,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:44"
+  "data_elaborazione": "2026-07-17 16:44",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-439-2026",
@@ -11490,7 +11832,8 @@
   "estrazione": "groq",
   "caratteri_testo": 13948,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:44"
+  "data_elaborazione": "2026-07-17 16:44",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-438-2026",
@@ -11511,7 +11854,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7779,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:44"
+  "data_elaborazione": "2026-07-17 16:44",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-437-2026",
@@ -11532,7 +11876,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7893,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:45"
+  "data_elaborazione": "2026-07-17 16:45",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-436-2026",
@@ -11553,28 +11898,8 @@
   "estrazione": "groq",
   "caratteri_testo": 6467,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:45"
- },
- {
-  "id": "determinazione-435-2026",
-  "numero_raw": "2026/435",
-  "numero": "435",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-27",
-  "oggetto": "“CCNL SOTTOSCRITTO IL 23/02/2026 TRIENNIO GIURIDICO ED ECONOMICO 2022/2024, DEL PERSONALE DELL’AREA DELLE FUNZIONI LOCALI (ART. 7 COMMA 3 CCNQ 22/02/2024). APPLICAZIONE AVANZO ACCANTONATO CONTO DEL BILANCIO 2024",
-  "beneficiario": null,
-  "importo_euro": 48557.99,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "200/15 - INCREMENTI CONTRATTUALI NUOVO CCNL del BP 2026",
-  "descrizione_sintetica": "Utilizzo quota accantonata per rinnovi contrattuali",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5179176",
-  "estrazione": "groq",
-  "caratteri_testo": 9874,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:45"
+  "data_elaborazione": "2026-07-17 16:45",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-432-2026",
@@ -11595,7 +11920,8 @@
   "estrazione": "groq",
   "caratteri_testo": 11057,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:45"
+  "data_elaborazione": "2026-07-17 16:45",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-427-2026",
@@ -11616,7 +11942,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9279,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-426-2026",
@@ -11637,7 +11964,8 @@
   "estrazione": "groq",
   "caratteri_testo": 12791,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-406-2026",
@@ -11658,7 +11986,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9096,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-405-2026",
@@ -11679,7 +12008,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9561,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-404-2026",
@@ -11700,7 +12030,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9031,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-403-2026",
@@ -11721,7 +12052,8 @@
   "estrazione": "groq",
   "caratteri_testo": 7578,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-402-2026",
@@ -11742,7 +12074,8 @@
   "estrazione": "groq",
   "caratteri_testo": 5500,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46"
+  "data_elaborazione": "2026-07-17 16:46",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-358-2026",
@@ -11763,7 +12096,8 @@
   "estrazione": "groq",
   "caratteri_testo": 9685,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:47"
+  "data_elaborazione": "2026-07-17 16:47",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-350-2026",
@@ -11784,7 +12118,8 @@
   "estrazione": "groq",
   "caratteri_testo": 16628,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:47"
+  "data_elaborazione": "2026-07-17 16:47",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-349-2026",
@@ -11805,7 +12140,8 @@
   "estrazione": "groq",
   "caratteri_testo": 27328,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:47"
+  "data_elaborazione": "2026-07-17 16:47",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-347-2026",
@@ -11826,7 +12162,8 @@
   "estrazione": "groq",
   "caratteri_testo": 14615,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:48"
+  "data_elaborazione": "2026-07-17 16:48",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-346-2026",
@@ -11847,7 +12184,8 @@
   "estrazione": "groq",
   "caratteri_testo": 10122,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:48"
+  "data_elaborazione": "2026-07-17 16:48",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-345-2026",
@@ -11868,7 +12206,8 @@
   "estrazione": "groq",
   "caratteri_testo": 5375,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:48"
+  "data_elaborazione": "2026-07-17 16:48",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-344-2026",
@@ -11881,7 +12220,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA6CBE1FA9",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER SERVIZI ED INTEVRVENTI NELL’AMBITO DELLE POLITICHE PER LE PARI OPPORTUNITA – CIG BA6CBE1FA9",
@@ -11890,7 +12229,8 @@
   "caratteri_testo": 9614,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-343-2026",
@@ -11903,7 +12243,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "B5E30A865C",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "PROROGA FORNITURA BUONI PASTO ELETTRONICI DAY RISTOSERVICE",
@@ -11912,7 +12252,8 @@
   "caratteri_testo": 8015,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-342-2026",
@@ -11925,7 +12266,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA4E18AB82",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER MONTAGGIO E SMONTAGGIO TABELLONI E SEGGI PER I REFERENDUM DEL 22/23 MARZO 2026",
@@ -11934,7 +12275,8 @@
   "caratteri_testo": 7406,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-340-2026",
@@ -11947,7 +12289,7 @@
   "beneficiario": null,
   "importo_euro": 6007753.42,
   "cig": "6478451AE1",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "APPROVAZIONE PROGETTO ESECUTIVO PER LA MANUTENZIONE STRAORDINARIA DEGLI IMPIANTI TECNOLOGICI DI CLIMATIZZAZIONE PRESSO IL CENTRO POLIFUNZIONALE IN VIA GIGLI REDATTO DALLO STUDIO CH",
@@ -11955,7 +12297,8 @@
   "estrazione": "regex",
   "caratteri_testo": 18489,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-333-2026",
@@ -11968,7 +12311,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA3B2AAAC7",
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER LA REALIZZAZIONE ASILO NIDO QUARTIERE DELLE ROSE IN COMUNE",
@@ -11977,7 +12320,8 @@
   "caratteri_testo": 21165,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-329-2026",
@@ -11990,7 +12334,7 @@
   "beneficiario": null,
   "importo_euro": 73082.11,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER COMPARTECIPAZIONI RETTE DI RICOVERO ANZIANI E/O DISABILI INSERITI IN STRUTTURE RESIDENZIALI",
@@ -11998,7 +12342,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8406,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-328-2026",
@@ -12011,7 +12356,7 @@
   "beneficiario": null,
   "importo_euro": 2440.0,
   "cig": "BA56E57CC8",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINAZIONE A CONTRATTARE PER LA FORNITURA, TRAMITE TRATTATIVA DIRETTA SUL MEPA, DEL SERVIZIO HELPDESK E ASSISTENZA SOFTWARE PER IL REFERENDUM POPOLARE CONFERMATIVO DEL 22-23 MA",
@@ -12019,7 +12364,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8342,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-327-2026",
@@ -12032,7 +12378,7 @@
   "beneficiario": null,
   "importo_euro": 193162.88,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER COLLOCAMENTO MINORI IN COMUNITA' E PER PROSECUZIONE PROGETTI DI HOUSING SOCIALE. PERIODO GENNAIO - LUGLIO 2026",
@@ -12040,7 +12386,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9144,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-326-2026",
@@ -12053,7 +12400,7 @@
   "beneficiario": "Cooperativa",
   "importo_euro": 19551.0,
   "cig": "BA5F33B6FB",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "INTEGRAZIONE IMPEGNO DI SPESA N. 134/2026 PER PROSECUZIONE PROGETTO DI COLLOCAMENTO A FAVORE DI MINORE - ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTO DI ASSISTENZA OSPEDALIERA NOTTUR",
@@ -12061,7 +12408,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9515,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-325-2026",
@@ -12074,7 +12422,7 @@
   "beneficiario": null,
   "importo_euro": 2500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 29564 DEL 19/12/2025.",
@@ -12082,7 +12430,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7308,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-324-2026",
@@ -12095,7 +12444,7 @@
   "beneficiario": "F.A.F. srl con",
   "importo_euro": null,
   "cig": "BA5D42C59C",
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI RIPRISTINO BAGNO E LINEE FOGNARIE NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZ",
@@ -12104,7 +12453,8 @@
   "caratteri_testo": 20013,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-323-2026",
@@ -12117,7 +12467,7 @@
   "beneficiario": null,
   "importo_euro": 200.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTO ECONOMICO A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
@@ -12125,7 +12475,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7285,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-322-2026",
@@ -12138,7 +12489,7 @@
   "beneficiario": "MAGGIOLI SPA",
   "importo_euro": null,
   "cig": "BA5420CF8A",
-  "categoria": "Da classificare",
+  "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE - RDO TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER IL SERVIZIO DI PREDISPOSIZIONE , PRODUZIONE, STAMPA, NOTIFICA E RENDICONTAZIONE DEI VERBALI D",
@@ -12147,7 +12498,8 @@
   "caratteri_testo": 12043,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-321-2026",
@@ -12160,7 +12512,7 @@
   "beneficiario": "Italiana",
   "importo_euro": 4500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "RICARICA MACCHINA AFFRANCATRICE – IMPEGNO DI SPESA ANNO 2026 - CIG IDENTIFICATIVO LOTTO BA6897A3A8 DEL 13.02.2026",
@@ -12168,7 +12520,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8773,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-295-2026",
@@ -12181,7 +12534,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA539D4746",
-  "categoria": "Da classificare",
+  "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE PER SERVIZIO DI FORNITURA DI SACCHI DI BITUME A FREDDO PER RIPRISTINO BUCHE STRADALI AI SENSI DELL'ART.50 COMMA 1 LETTERA B) D.LGS. N. 36/2023. ASSUNZIONE IMP",
@@ -12190,7 +12543,8 @@
   "caratteri_testo": 10898,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-293-2026",
@@ -12203,7 +12557,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA3B3B571E",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER L’AMPLIAMENTO CENTRO DI ROMAZIONE PROFESSIONALE E CO WORKIN",
@@ -12212,7 +12566,8 @@
   "caratteri_testo": 21238,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-292-2026",
@@ -12225,7 +12580,7 @@
   "beneficiario": null,
   "importo_euro": 533682.76,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "COSTITUZIONE E DESTINAZIONE PROVVISORIA DEL FONDO RISORSE DECENTRATE ANNO 2026 – ARTT. 79 E 80 DEL CCNL 16/11/2022, IN CONFORMITA’ ALLE DISPOSIZIONI PREVISTE DAL DPCM 17/03/2020.",
@@ -12233,7 +12588,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9634,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-283-2026",
@@ -12246,7 +12602,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA56A8FDF6",
-  "categoria": "Da classificare",
+  "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE - ODA TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA VESTIARIO PER IL PERSONALE DELLA POLIZIA LOCALE - CIG BA56A8FDF6",
@@ -12255,7 +12611,8 @@
   "caratteri_testo": 11454,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:26",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-282-2026",
@@ -12268,7 +12625,7 @@
   "beneficiario": null,
   "importo_euro": 1285.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
@@ -12276,7 +12633,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7516,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-281-2026",
@@ -12289,7 +12647,7 @@
   "beneficiario": "Cooperativa Sociale Via Libera",
   "importo_euro": 2268.94,
   "cig": "BA48292C9C",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA COOPERATIVA SOCIALE VIA LIBERA ONLUS PER PROGETTO VOUCHER SOCIO-ASSISTENZIALE PERIODO DA FEBBRAIO A LUGLIO 2026 - CIG BA48292C9C",
@@ -12297,7 +12655,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9898,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-280-2026",
@@ -12310,7 +12669,7 @@
   "beneficiario": null,
   "importo_euro": 8000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LA LIQUIDAZIONE SINISTRI DI RESPONSABILITA' CIVILE VERSO TERZI ( RCT ) GESTITI IN SELF INSURANCE RETENTION (SIR) - ANNO 2026",
@@ -12318,7 +12677,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8395,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26"
+  "data_elaborazione": "2026-07-16 21:26",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-279-2026",
@@ -12331,7 +12691,7 @@
   "beneficiario": null,
   "importo_euro": 2000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LA LIQUIDAZIONE SPESE LEGALI PER RIMBORSI SANZIONI CDS - ANNO 2026",
@@ -12339,7 +12699,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7862,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-278-2026",
@@ -12352,7 +12713,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA3FF5D619",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LA REALIZZAZIONE DI SERVIZI COMPLEMENTARI E DI SUPPORTO ALLE POLITICHE GIOVANILI ANNUALITÀ 2026 – CIG: BA3FF5D619",
@@ -12361,7 +12722,8 @@
   "caratteri_testo": 10530,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-277-2026",
@@ -12374,7 +12736,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA46E4D286",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. INCARICO DI SERVIZIO PER LE OPERAZIONI DI FRAZIONAMENTO CATASTALE DELL’AREA URBANA NELL’INTERVENTO DI RINATURALIZZAZIONE AREE DISMESSE OVVERO DEGRADATE E AUM",
@@ -12383,7 +12745,8 @@
   "caratteri_testo": 18211,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-276-2026",
@@ -12396,7 +12759,7 @@
   "beneficiario": null,
   "importo_euro": 15000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ACCERTAMENTO ED ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONI DI SERVIZI RICHIESTI DA ALTRI ENTI",
@@ -12404,7 +12767,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8364,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-275-2026",
@@ -12417,7 +12781,7 @@
   "beneficiario": null,
   "importo_euro": 252.03,
   "cig": "BA4695E044",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER RINNOVO ABBONAMENTO AI SERVIZI VVR- ANCITEL SPA IN LIQUIDAZIONE - ANNO 2026 - CIG BA4695E044",
@@ -12425,7 +12789,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9017,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-274-2026",
@@ -12438,7 +12803,7 @@
   "beneficiario": null,
   "importo_euro": 2134.0,
   "cig": "B9382185A2",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "SVINCOLO IMPEGNO DI SPESA ASSUNZIONE IMPEGNO DI SPESA PER SERVIZIO DI INTERVENTI DI PROFILASSI ANTIMURINA, INSTALLAZIONE EROGATORI PERIMETRO ESTERNO COMUNALE E BIBLIOTECA AFFIDATO",
@@ -12446,7 +12811,8 @@
   "estrazione": "regex",
   "caratteri_testo": 6974,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-273-2026",
@@ -12459,7 +12825,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA47BDE488",
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA FORNITURA MANIFESTI PROMOZIONALI RELATIVI A INIZIATIVE ORGANIZZATE DALL'AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI: AFFIDAMENTO DIRETTO A GRAFICHE NOÈ EDOARDO DI",
@@ -12468,7 +12834,8 @@
   "caratteri_testo": 7583,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-250-2026",
@@ -12481,7 +12848,7 @@
   "beneficiario": null,
   "importo_euro": 12000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER CONTRIBUTI ALLE FAMIGLIE AFFIDATARIE - ANNO 2026",
@@ -12489,7 +12856,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7048,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-244-2026",
@@ -12502,7 +12870,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA4037461C",
-  "categoria": "Da classificare",
+  "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER INTERVENTI DI FACCHINAGGIO, RIMOZIONE, TRASPORTO E DEPOSITO IN DISCARICA DI ARREDI E MASSERIZIE. AFFIDAMENTO DIRETTO AD AGORA' SRL - CIG BA4037461C",
@@ -12511,7 +12879,8 @@
   "caratteri_testo": 7240,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-238-2026",
@@ -12524,7 +12893,7 @@
   "beneficiario": null,
   "importo_euro": 1000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Lavoro",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONI DI LAVORO STRAORDINARIO E MISSIONI DEL PERSONALE SETTORE II AREA AFFARI GENERALI DEMOGRAFICI E SIC ANNO 2026",
@@ -12532,7 +12901,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9217,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-237-2026",
@@ -12545,7 +12915,7 @@
   "beneficiario": null,
   "importo_euro": 2500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28572 DEL 09/12/2025",
@@ -12553,7 +12923,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7306,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-236-2026",
@@ -12566,7 +12937,7 @@
   "beneficiario": null,
   "importo_euro": 2500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28573 DEL 09/12/2025",
@@ -12574,7 +12945,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7312,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-235-2026",
@@ -12587,7 +12959,7 @@
   "beneficiario": null,
   "importo_euro": 1800.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Urbanistica e casa",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNI DI SPESA PER PRESTAZIONI DI LAVORO STRAORDINARIO E MISSIONI-TRASFERTE DEL PERSONALE DELL’AREA LAVORIPUBBLICI – URBANISTICA - ANNO 2026",
@@ -12595,7 +12967,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8007,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-234-2026",
@@ -12608,7 +12981,7 @@
   "beneficiario": "Ecologia Ambiente srl a socio unico",
   "importo_euro": null,
   "cig": "BA2DD9DA1F",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA DITTA ECOLOGIA AMBIENTE SRL PER RITIRO FARMACI SCADUTI E INVENDIBILI (CIG: BA2DD9DA1F)",
@@ -12617,7 +12990,8 @@
   "caratteri_testo": 10586,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-222-2026",
@@ -12630,7 +13004,7 @@
   "beneficiario": "UNICO LA FARMACIA DEI FARMACISTI",
   "importo_euro": null,
   "cig": "8727293603",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "PROCEDURA APERTA PER LA FORNITURA ORDINARIA DI MEDICINALI, PARAFARMACI E ALTRI GENERI VENDIBILI NELLE FARMACIE COMUNALI DI PIEVE EMANUELE (MI) - LOTTO 1 CIG 8719228690_AGGIUDICATAR",
@@ -12639,7 +13013,8 @@
   "caratteri_testo": 11440,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-205-2026",
@@ -12652,7 +13027,7 @@
   "beneficiario": null,
   "importo_euro": 1317.6,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER TRASLOCO ED UPGRADE LINEA TELEFONICA TELECOM ASSOCIAZIONE DONNE INSIEME",
@@ -12660,7 +13035,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7962,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-204-2026",
@@ -12673,7 +13049,7 @@
   "beneficiario": null,
   "importo_euro": 39000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Urbanistica e casa",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ACCERTAMENTO D’ENTRATA DERIVANTE DAI CANONI DI LOCAZIONE DELLE UNITA’ IMMOBILIARI REALIZZATE NELL’AMBITO DEL PROGRAMMA SPERIMENTALE DI AUTOCOSTRUZIONE - ANNO 2026",
@@ -12681,7 +13057,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8383,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-203-2026",
@@ -12694,7 +13071,7 @@
   "beneficiario": "PNEUS 4 S.R.L.",
   "importo_euro": 500000.0,
   "cig": "BA1EEAFE56",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINAZIONE A CONTRARRE PER AFFIDAMENTO DIRETTO DELLA MANUTENZIONE ORDINARIA – SOSTITUZIONE PNEUMATICI DEL VEICOLO COMUNALE PIAGGIO PORTER TARGATO GK607DD",
@@ -12702,7 +13079,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8375,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-202-2026",
@@ -12715,7 +13093,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA2D6B357A",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE - ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO ABBONAMENTO AI SERVIZI DI BASE - ANCI RISPONDE E ADESIONE ACCESSO BANCA DATI ACI -PRA - ANCI DIGITALE S.PA. - ANNO 2",
@@ -12724,7 +13102,8 @@
   "caratteri_testo": 12184,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-195-2026",
@@ -12737,7 +13116,7 @@
   "beneficiario": null,
   "importo_euro": 1067000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI ALLE ATTIVITA’ SPORTIVE IN VIA PINI E VIA MOLISE. FINANZIATO DA NEXT GENERATION EU- M5C2 - INVESTIMENTO 2.1,",
@@ -12745,7 +13124,8 @@
   "estrazione": "regex",
   "caratteri_testo": 34052,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-194-2026",
@@ -12758,7 +13138,7 @@
   "beneficiario": "Carlotti snc sita in Milano via Mincio",
   "importo_euro": null,
   "cig": "BA29B93AD9",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA DITTA CARLOTTI SNC PER MANUTEZIONE BILANCE E PESIERE PRESENTI NELLA FARMACIA COM.LE 1 E FARMACIA COM.LE 2",
@@ -12767,7 +13147,8 @@
   "caratteri_testo": 10375,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-190-2026",
@@ -12780,7 +13161,7 @@
   "beneficiario": null,
   "importo_euro": 1600.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Urbanistica e casa",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA E CONTESTUALE ACCERTAMENTO DI ENTRATA PER REGISTRAZIONE E RINNOVO CONTRATTI ALLOGGI SAP DI PROPRIETA’ COMUNALE - ANNO 2026",
@@ -12788,7 +13169,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9342,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-189-2026",
@@ -12801,7 +13183,7 @@
   "beneficiario": "Tecnofarma srl sita in Voghera via Prati Nuovi",
   "importo_euro": null,
   "cig": "BA2CFE03CF",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA RINNOVO ANNUALE DEL SERVIZIO IAR (INVIO AUTOMATICO REPORT) INERENTE ALLA FARMACIA COMUNALE 1- (CIG: BA2CFE03CF)",
@@ -12810,7 +13192,8 @@
   "caratteri_testo": 10510,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-187-2026",
@@ -12823,7 +13206,7 @@
   "beneficiario": null,
   "importo_euro": 5000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Protezione civile",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LAVORI E/O FORNITURE IN ECONOMIA PER IL SERVIZIO DI PROTEZIONE CIVILE",
@@ -12831,7 +13214,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8960,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-185-2026",
@@ -12844,7 +13228,7 @@
   "beneficiario": null,
   "importo_euro": 8500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONI EX ART. 20 DELLA CONVENZIONE PER LA GESTIONE ASSOCIATA DI POLIZIA LOCALE",
@@ -12852,7 +13236,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7976,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-180-2026",
@@ -12865,7 +13250,7 @@
   "beneficiario": null,
   "importo_euro": 41000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Urbanistica e casa",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ACCERTAMENTO DI ENTRATA DERIVANTE DA CANONI DI LOCAZIONE E SPESE CONDOMINIALI DEGLI ALLOGGI COMUNALI DESTINATI AI SERVIZI ABITATIVI PUBBLICI - ANNO 2026",
@@ -12873,7 +13258,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9679,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-179-2026",
@@ -12886,7 +13272,7 @@
   "beneficiario": null,
   "importo_euro": 32500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Urbanistica e casa",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER IL PAGAMENTO DELLE SPESE CONDOMINIALI DERIVANTI DA IMMOBILI DI PROPRIETÀ COMUNALI IN CONDOMINI MISTI - ANNO 2026",
@@ -12894,7 +13280,8 @@
   "estrazione": "regex",
   "caratteri_testo": 11502,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27"
+  "data_elaborazione": "2026-07-16 21:27",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-178-2026",
@@ -12907,7 +13294,7 @@
   "beneficiario": "HARTEX GROUP SRL la fornitura di carta e materiali vari",
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER ACQUISTO MATERIALE VARIO DI CANCELLERIA PER FUNZIONAMENTO UFFICI COMUNALI",
@@ -12916,7 +13303,8 @@
   "caratteri_testo": 7047,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:27",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-177-2026",
@@ -12929,7 +13317,7 @@
   "beneficiario": null,
   "importo_euro": 2000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "AFFIDAMENTO DIRETTO PER IL SERVIZIO VIDEO RIPRESE DEL CONSIGLIO COMUNALE ANNO 2026",
@@ -12937,7 +13325,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7126,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-176-2026",
@@ -12950,7 +13339,7 @@
   "beneficiario": null,
   "importo_euro": 2500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Lavoro",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONI DI LAVORO STRAORDINARIO DEL PERSONALE DEL SERVIZIO TRIBUTI",
@@ -12958,7 +13347,8 @@
   "estrazione": "regex",
   "caratteri_testo": 5831,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-175-2026",
@@ -12971,7 +13361,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "BA0A1FE2AB",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNI DI SPESA PER STAMPA MANIFESTI A PARTIRE DA GENNAIO 2026",
@@ -12980,7 +13370,8 @@
   "caratteri_testo": 7155,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-174-2026",
@@ -12993,7 +13384,7 @@
   "beneficiario": null,
   "importo_euro": 8200.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER RIMBORSI TRIBUTI LOCALI VARI VERSATI IN ECCEDENZA",
@@ -13001,7 +13392,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7512,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-173-2026",
@@ -13014,7 +13406,7 @@
   "beneficiario": "ITALIANA PETROLI S.P.A. di complessivi",
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER ACQUISTO SCHEDE CARBURANTE IN ACCORDO QUADRO PER AUTOMEZZI COMUNALI",
@@ -13023,7 +13415,8 @@
   "caratteri_testo": 8188,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-171-2026",
@@ -13036,7 +13429,7 @@
   "beneficiario": null,
   "importo_euro": 2476.6,
   "cig": "B9FF537E14",
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. SERVIZIO PER PROVE DI MATERIALI E STRUTTURE (COMPRESSIONE CUBETTI IN CLS E PROVE A TRAZIONE DI BARRE D’ARMATURA), PER I LAVORI DI MESSA IN SICUREZZA DELL’EDI",
@@ -13044,7 +13437,8 @@
   "estrazione": "regex",
   "caratteri_testo": 13564,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-170-2026",
@@ -13057,7 +13451,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "COSTITUZIONE UFFICIO ELETTORALE E AUTORIZZAZIONE AL PERSONALE PER EFFETTUARE PRESTAZIONI STRAORDINARIE IN OCCASIONE DEL 22/23 MARZO 2026",
@@ -13065,7 +13459,8 @@
   "estrazione": "regex",
   "caratteri_testo": 15518,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-169-2026",
@@ -13078,7 +13473,7 @@
   "beneficiario": "Regione Lombardia",
   "importo_euro": 750.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA IMPEGNO DI SPESA A FAVORE DI REGIONE LOMBARDIA PER RINNOVO CONCESSIONE REGIONALE ANNO TRIBUTARIO 2026 INERENTE ALLE FARMACIE COMUNALI",
@@ -13086,7 +13481,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7893,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-166-2026",
@@ -13099,7 +13495,7 @@
   "beneficiario": "Dieffe Sistemti srl sita in Vimodrone via Martesana",
   "importo_euro": null,
   "cig": "BA12DE4550",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTI DI MANUTENZIONE ORDINARIA E AGGIORNAMENTI DEI REGISTRATORI DI CASSA IN DOTAZIONE ALLE FARMACIE COMUNALI",
@@ -13108,7 +13504,8 @@
   "caratteri_testo": 10495,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-165-2026",
@@ -13121,7 +13518,7 @@
   "beneficiario": "Aries Group S.r.l. per il pagamento",
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA LOCAZIONE FARMACIA COMUNALE 2 SITA IN VIA DEI PINI,3 - PIEVE EMANUELE A FAVORE DELLA DITTA: ARIES GROUP SRL",
@@ -13130,7 +13527,8 @@
   "caratteri_testo": 10680,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-164-2026",
@@ -13143,7 +13541,7 @@
   "beneficiario": "Promofarma srl",
   "importo_euro": null,
   "cig": "BA1CC38D5E",
-  "categoria": "Da classificare",
+  "categoria": "Sanità",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA RINNOVO CANONE FATTURAZIONE ELETTRONICA INERENTE ALLE FARMACIE COMUNALI, A FAVORE DELLA DITTA: PROMOFARMA SRL",
@@ -13152,7 +13550,8 @@
   "caratteri_testo": 10505,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-163-2026",
@@ -13165,7 +13564,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "B9AB5AD4DF",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER SERVIZIO RACCOLTA DIFFERENZIATA PRESSO ALLOGGI SAP DI PROPRIETÀ COMUNALE E SUPPORTO EVENTI",
@@ -13174,7 +13573,8 @@
   "caratteri_testo": 10395,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-162-2026",
@@ -13187,7 +13587,7 @@
   "beneficiario": "Comune di Rozzano",
   "importo_euro": 16534.2,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER INSERIMENTO UTENTE DISABILE PRESSO C.S.E. CIDIQUI‘ DI NOVERASCO (OPERA) – ANNO 2026",
@@ -13195,7 +13595,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8066,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-160-2026",
@@ -13208,7 +13609,7 @@
   "beneficiario": null,
   "importo_euro": 45000.0,
   "cig": "9806437FCD",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER SERVIZIO NOTIFICHE DIGITALI ( SEND ) TRAMITE PAGOPA",
@@ -13216,7 +13617,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9076,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-159-2026",
@@ -13229,7 +13631,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sviluppo economico e commercio",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "APPROVAZIONE DELLA GRADUATORIA DEFINITIVA RELATIVA AL BANDO PUBBLICO PER L’ASSEGNAZIONE DI N. 17 CONCESSIONI DI COMMERCIO SU AREE PUBBLICHE NEI MERCATI SETTIMANALI DEL COMUNE DI PI",
@@ -13237,7 +13639,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8378,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-158-2026",
@@ -13250,7 +13653,7 @@
   "beneficiario": null,
   "importo_euro": 550.0,
   "cig": "BA1ECF0D76",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONFERENZA DENOMINATA “DRONI E FOTOTRAPPOLE” CIG BA1ECF0D76",
@@ -13258,7 +13661,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8712,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-156-2026",
@@ -13271,7 +13675,7 @@
   "beneficiario": null,
   "importo_euro": 9500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ANTICIPO ECONOMATO ANNO 2026",
@@ -13279,7 +13683,8 @@
   "estrazione": "regex",
   "caratteri_testo": 6338,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-147-2026",
@@ -13292,7 +13697,7 @@
   "beneficiario": null,
   "importo_euro": 10500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Lavoro",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "RIMBORSO ONERI AI DATORI DI LAVORO PER PERMESSI RETRIBUITI USUFRUITI DAGLI AMMINISTRATORI COMUNALI ANNO 2026 ASSUNZIONE IMPEGNO DI SPESA",
@@ -13300,7 +13705,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7525,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-146-2026",
@@ -13313,7 +13719,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO SOMMA PER IL DEPOSITO SALME NELL'OBITORIO DEL COMUNE DI MILANO -ANNO 2026",
@@ -13321,7 +13727,8 @@
   "estrazione": "regex",
   "caratteri_testo": 5807,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-145-2026",
@@ -13334,7 +13741,7 @@
   "beneficiario": "Leasys Italia S.p.A",
   "importo_euro": null,
   "cig": "B975426366",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER NOLEGGIO PER MESI 12 DEL VEICOLO TARGATO GG777LJ FIAT PANDA IN DOTAZIONE AL SETTORE IV AREA AMBIENTE, ECOLOGIA E COMMERCIO - CIG B975426366.",
@@ -13343,7 +13750,8 @@
   "caratteri_testo": 8409,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-144-2026",
@@ -13356,7 +13764,7 @@
   "beneficiario": null,
   "importo_euro": 14500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER PRESTAZIONE DI LAVORO STRAORDINARIO DEL PERSONALE SETTORE V AREA SICUREZZA E POLIZIA LOCALE - ANNO 2026",
@@ -13364,7 +13772,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7905,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-143-2026",
@@ -13377,7 +13786,7 @@
   "beneficiario": null,
   "importo_euro": 4500.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER IL FUNZIONAMENTO DELLA CECIR - ANNO 2026",
@@ -13385,7 +13794,8 @@
   "estrazione": "regex",
   "caratteri_testo": 5600,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-142-2026",
@@ -13398,7 +13808,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "B9ECFD2030",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI PUBBLICA ILLUMINZIONE SUL PONTE PEDONALE IN PIEVE EMANUELE, AI SENSI D",
@@ -13407,7 +13817,8 @@
   "caratteri_testo": 19844,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:28",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-141-2026",
@@ -13420,7 +13831,7 @@
   "beneficiario": null,
   "importo_euro": 400.0,
   "cig": "B9E5963427",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "INTERVENTO DI PRONTO INTERVENTO PER POSIZIONAMENTO ESCHE COME DA ORDINANZA SINDACALE N.1-2026 - CIG B9E5963427",
@@ -13428,7 +13839,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8172,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-140-2026",
@@ -13441,7 +13853,7 @@
   "beneficiario": null,
   "importo_euro": 5000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LAVORI E/O FORNITURE IN ECONOMIA",
@@ -13449,7 +13861,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8814,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-139-2026",
@@ -13462,7 +13875,7 @@
   "beneficiario": null,
   "importo_euro": 5000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER LE SPESE SOSTENUTE DALLA ALIQUOTA DEL CORPO INTERCOMUNALE DI POLIZIA LOCALE A SUPPORTO DEGLI ORGANICI DI POLIZIA LOCALE OPERANTE NELLA PROVINCIA DI",
@@ -13470,7 +13883,8 @@
   "estrazione": "regex",
   "caratteri_testo": 11028,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-138-2026",
@@ -13483,7 +13897,7 @@
   "beneficiario": null,
   "importo_euro": 13466.25,
   "cig": "BA05D381BD",
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER INSERIMENTO MINORI IN COMUNITA' EDUCATIVE - CIG BA05D381BD",
@@ -13491,7 +13905,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7424,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-137-2026",
@@ -13504,7 +13919,7 @@
   "beneficiario": null,
   "importo_euro": 6000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ACCERTAMENTO DELLE SOMME RELATIVE AI SERVIZI DI NATURA SOCIO ASSISTENZIALE – ANNO 2026",
@@ -13512,7 +13927,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7235,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-135-2026",
@@ -13525,7 +13941,7 @@
   "beneficiario": null,
   "importo_euro": 580.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO E LIQUIDAZIONE DELLA SOMMA PER ADESIONE AD ANUSCA - ANNO 2026",
@@ -13533,7 +13949,8 @@
   "estrazione": "regex",
   "caratteri_testo": 6022,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:28"
+  "data_elaborazione": "2026-07-16 21:28",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-134-2026",
@@ -13546,7 +13963,7 @@
   "beneficiario": null,
   "importo_euro": 72573.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER FREQUENZA CITTADINI DISABILI PRESSO CENTRI DIURNI - ANNO 2026",
@@ -13554,7 +13971,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8276,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-094-2026",
@@ -13567,7 +13985,7 @@
   "beneficiario": null,
   "importo_euro": 5000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO ABBONAMENTO ED AVVISI DI PAGAMENTO DEL SERVIZIO DI INFORMATICA DEL CENTRO ELABORAZIONI DATI DELLA EX DIREZIOINE GENERALE MOTORIZZAZIONE CIVI",
@@ -13575,7 +13993,8 @@
   "estrazione": "regex",
   "caratteri_testo": 9355,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-093-2026",
@@ -13588,7 +14007,7 @@
   "beneficiario": null,
   "importo_euro": 100.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Protezione civile",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER L'ADESIONE AL COMITATO DI COORDINAMENTO DEL VOLONTARIATO DI PROTEZIONE CIVILE DELLA CITTA' METROPOLITANA DI MILANO DENOMINATO \" ODV CV MILANO PRETEZ",
@@ -13596,7 +14015,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8346,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-092-2026",
@@ -13609,7 +14029,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": "B9F137F938",
-  "categoria": "Da classificare",
+  "categoria": "Polizia locale e sicurezza",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE - ODA TRAMITE PIATTAFORMA MEPA - ASSUNZIONE IMPEGNO DI SPESA PER FORNITURA VESTIARIO PER IL PERSONALE DELLA POLIZIA LOCALE IN MISSIONE PER LE OLIMPIADI INVERN",
@@ -13618,7 +14038,8 @@
   "caratteri_testo": 12653,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:29",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-110-2026",
@@ -13631,7 +14052,7 @@
   "beneficiario": null,
   "importo_euro": 1000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI ECONOMICI A FAVORE DI PERSONE IN CONDIZIONE DI DISAGIO SOCIO-ECONOMICO",
@@ -13639,7 +14060,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7485,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-109-2026",
@@ -13652,7 +14074,7 @@
   "beneficiario": null,
   "importo_euro": 22450.0,
   "cig": "B9FB178631",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER INSERIMENTO MINORE IN STRUTTURA COMUNITARIA - CIG B9FB178631",
@@ -13660,7 +14082,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7606,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-108-2026",
@@ -13673,7 +14096,7 @@
   "beneficiario": null,
   "importo_euro": 268.48,
   "cig": "B9FA95E6AC",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTO DERATTIZZAZIONE INTERNA AULE SCUOLA DELL'INFANZIA COLLODI CIG B9FA95E6AC",
@@ -13681,7 +14104,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8416,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-107-2026",
@@ -13694,7 +14118,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Cultura",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA RAPPRESENTAZIONE TEATRALE DELL’ASSOCIAZIONE CULTURALE “TEATRO DELL’ULTIMA ORA – CULTURA DI SPETTACOLO\" PER LA CELEBRAZIONE DELLA GIORNATA DELLA MEMORIA",
@@ -13703,7 +14127,8 @@
   "caratteri_testo": 6688,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:29",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-106-2026",
@@ -13716,7 +14141,7 @@
   "beneficiario": "BARONIO EREDI S.R.L. VIA GIOVANNI",
   "importo_euro": 500000.0,
   "cig": "B9FAD53A9F",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE PER L’AFFIDAMENTO DIRETTO DEI LAVORI EDILI DI ADEGUAMENTO DELLA PIATTAFORMA ECOLOGICA COMUNALE PER L’INSTALLAZIONE DI UNA PESA PRESSO IL CENTRO DI RACCOLTA DI",
@@ -13724,7 +14149,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8721,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-105-2026",
@@ -13737,7 +14163,7 @@
   "beneficiario": null,
   "importo_euro": 78214.98,
   "cig": "B9F70150BD",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "IMPEGNO DI SPESA PER FREQUENZA UTENTI CON DISABILITA' PRESSO IL CDD L'AIRONE DI PIEVE EMANUELE DAL 01/01/2026 AL 30/09/2026 - CIG B9F70150BD",
@@ -13745,7 +14171,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8300,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-104-2026",
@@ -13758,7 +14185,7 @@
   "beneficiario": null,
   "importo_euro": 4500.0,
   "cig": "B9FA852982",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER PER L‘INTERVENTO DI PULIZIA, DISINFEZIONE E SANIFICAZIONE DEGLI AMBIENTI SCOLASTICI INTERESSATI, NEL RISPETTO DELLE NORMATIVE IGIENICO-SANITARIE CIG",
@@ -13766,7 +14193,8 @@
   "estrazione": "regex",
   "caratteri_testo": 10693,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-101-2026",
@@ -13779,7 +14207,7 @@
   "beneficiario": "La Rondine srl",
   "importo_euro": null,
   "cig": "B9ECEF05AE",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DECISIONE A CONTRARRE. SERVIZIO DI PRONTO INTERVENTO PER EVENTI IMPREVEDIBILI E INDIFFERIBILI PER SERVIZIO SPURGHI E PULIZIE CONDOTTE FOGNARIE PRESSO LE STRUTTURE COMUNALI . AFFIDA",
@@ -13788,7 +14216,8 @@
   "caratteri_testo": 11902,
   "fonte": "storico",
   "data_elaborazione": "2026-07-16 21:29",
-  "importo_testuale": null
+  "importo_testuale": null,
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-100-2026",
@@ -13801,7 +14230,7 @@
   "beneficiario": null,
   "importo_euro": 569.46,
   "cig": "B67286FF69",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "SERVIZIO DI MANUTENZIONE ORDINARIA DEGLI ASCENSORI E ELEVATORI PRESENTI NELLE STRUTTURE ISTITUZIONALI DI PROPRIETÀ COMUNALE. PROROGA TECNICA AI SENSI DELL’ART. 120 CO. 11 DEL D.LGS",
@@ -13809,7 +14238,8 @@
   "estrazione": "regex",
   "caratteri_testo": 20607,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-058-2026",
@@ -13822,7 +14252,7 @@
   "beneficiario": "Organa SPV",
   "importo_euro": 6968.86,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINAZIONE N. 1621 DEL 23/12/2025. PROCEDIMENTO ESECUTIVO TRIBUNALE DI PAVIA DEL 22/12/2025 - ADEMPIMENTI CONSEGUENTI.",
@@ -13830,7 +14260,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8280,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-053-2026",
@@ -13843,7 +14274,7 @@
   "beneficiario": null,
   "importo_euro": 889400.0,
   "cig": "B9F03F2400",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE: APPROVAZIONE DOCUMENTI E ATTI DI GARA DELLA PROCEDURA APERTA AI SENSI DELL’ART.71 D.LGS. 36/2023, MEDIANTE PIATTAFORMA SINTEL, PER L’AFFIDAMENTO DEL SERVIZIO",
@@ -13851,7 +14282,8 @@
   "estrazione": "regex",
   "caratteri_testo": 15482,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": true
  },
  {
   "id": "determinazione-052-2026",
@@ -13864,7 +14296,7 @@
   "beneficiario": null,
   "importo_euro": 17000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "CONVENZIONE TRA I COMUNI DI PIEVE EMANUELE E SIZIANO PER LA GESIONE IN FORMA ASSOCIATA DELLE FUNZIONI DI POLIZIA MUNICIAPE E POLIZIA AMMINISTRATIVA LOCALE – ART. 30 DEL D.LGS. 267/",
@@ -13872,7 +14304,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8558,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-049-2026",
@@ -13885,7 +14318,7 @@
   "beneficiario": null,
   "importo_euro": 889400.0,
   "cig": "B9F03F2400",
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "DETERMINA A CONTRARRE: APPROVAZIONE DOCUMENTI E ATTI DI GARA DELLA PROCEDURA APERTA AI SENSI DELL’ART.71 D.LGS. 36/2023, MEDIANTE PIATTAFORMA SINTEL, PER L’AFFIDAMENTO DEL SERVIZIO",
@@ -13893,7 +14326,8 @@
   "estrazione": "regex",
   "caratteri_testo": 14744,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-047-2026",
@@ -13906,7 +14340,7 @@
   "beneficiario": null,
   "importo_euro": null,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER IL RINNOVO DELL’ISCRIZIONE ALL’ALBO DELL’ORDINE DEI GIORNALISTI (CONSIGLIO REGIONALE DELLA LOMBARDIA) DEL SINDACO PIERLUIGI COSTANZO. ANNUALITÀ 2025",
@@ -13914,7 +14348,8 @@
   "estrazione": "regex",
   "caratteri_testo": 6600,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-046-2026",
@@ -13927,7 +14362,7 @@
   "beneficiario": null,
   "importo_euro": 30000.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE ACCERTAMENTO DI ENTRATA RELATIVO AI SERVIZI A DOMANDA INDIVIDUALE DI PRE E POST SCUOLA ANNO 2026",
@@ -13935,7 +14370,8 @@
   "estrazione": "regex",
   "caratteri_testo": 4762,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-045-2026",
@@ -13948,7 +14384,7 @@
   "beneficiario": null,
   "importo_euro": 15200.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER CONTRIBUTI A FAVORE DI UTENTI CON GRAVE DISABILITA’",
@@ -13956,7 +14392,8 @@
   "estrazione": "regex",
   "caratteri_testo": 7748,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-044-2026",
@@ -13969,7 +14406,7 @@
   "beneficiario": null,
   "importo_euro": 46620.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER L’EROGAZIONE DELL’INDENNITÀ DI POSIZIONE AI TITOLARI INCARICATI DI E.Q. - PRIMO SEMESTRE ESERCIZIO 2026 -.",
@@ -13977,7 +14414,8 @@
   "estrazione": "regex",
   "caratteri_testo": 5742,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-043-2026",
@@ -13990,7 +14428,7 @@
   "beneficiario": null,
   "importo_euro": 80730.0,
   "cig": null,
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "ASSUNZIONE IMPEGNO DI SPESA PER INDENNITA' DI FUNZIONE DEI COMPONENTI LA GIUNTA COMUNALE E DEL PRESIDENTE DEL CONSIGLIO ANNO 2026",
@@ -13998,7 +14436,8 @@
   "estrazione": "regex",
   "caratteri_testo": 13828,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-025-2026",
@@ -14011,7 +14450,7 @@
   "beneficiario": null,
   "importo_euro": 268.48,
   "cig": "B9E59547C5",
-  "categoria": "Da classificare",
+  "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "INTERVENTO DERATTIZZAZIONE INTERNA AULE M.L. KING - CIG B9E59547C5",
@@ -14019,7 +14458,8 @@
   "estrazione": "regex",
   "caratteri_testo": 8108,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  },
  {
   "id": "determinazione-024-2026",
@@ -14032,7 +14472,7 @@
   "beneficiario": null,
   "importo_euro": 400.0,
   "cig": "B9E5963427",
-  "categoria": "Da classificare",
+  "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
   "capitolo_bilancio": null,
   "descrizione_sintetica": "SERVIZIO DI PRONTO INTERVENTO PER POSIZIONAMENTO ESCHE COME DA ORDINANZA SINDACALE N.1-2026 - CIG B9E5963427",
@@ -14040,6 +14480,7 @@
   "estrazione": "regex",
   "caratteri_testo": 8167,
   "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29"
+  "data_elaborazione": "2026-07-16 21:29",
+  "e_rimodulazione": false
  }
 ]

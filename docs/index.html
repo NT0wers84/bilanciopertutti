@@ -480,6 +480,12 @@ function disegnaFeed() {
     const multi = (s.n_beneficiari || 1) > 1 || voci.length > 1;
 
     // Nota pluriennale: l'importo totale non è spesa di quest'anno
+    const notaRimod = s.e_rimodulazione ? `<div class="nota-pluriennale"
+      style="background:#FDF1DC;border-color:#EFD9A8;color:#6B4E00">
+      <strong>Rimodulazione di una spesa già approvata.</strong> Questo atto
+      ridefinisce il quadro economico di un intervento esistente: l'importo
+      non è necessariamente spesa aggiuntiva.</div>` : "";
+
     let notaPluri = "";
     if (s.importo_e_pluriennale && s.durata_anni) {
       const media = s.importo_euro ? s.importo_euro / s.durata_anni : null;
@@ -513,11 +519,12 @@ function disegnaFeed() {
         <span class="tag categoria">${esc(s.categoria || "Da classificare")}</span>
         ${multi ? `<span class="tag multi">${s.n_beneficiari || voci.length} beneficiari</span>` : ""}
         ${s.importo_e_pluriennale && s.durata_anni ? `<span class="tag pluriennale">su ${s.durata_anni} anni</span>` : ""}
+        ${s.e_rimodulazione ? '<span class="tag determinazione">rimodulazione</span>' : ""}
         <span class="tag">n. ${esc(s.numero_raw)}</span>
         ${s.data_pubblicazione ? `<span class="tag">${dataIt(s.data_pubblicazione)}</span>` : ""}
         ${s.cig ? `<span class="tag">CIG ${esc(s.cig)}</span>` : ""}
       </div>
-      ${notaPluri}
+      ${notaRimod}${notaPluri}
       <div class="spesa-oggetto">${tabellaVoci}
         <div style="margin-top:8px"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}</div>
         ${s.capitolo_bilancio ? `<div><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}</div>` : ""}

@@ -55,13 +55,51 @@ def eur(v) -> str:
     return f"{v:,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
 
 
+def spiega_importo(s: dict) -> str:
+    """
+    Una riga che spiega COSA rappresenta la cifra, usando solo i campi
+    già estratti. Serve a non far leggere un numero senza contesto.
+    """
+    if s.get("importo_euro") is None:
+        return "Importo non indicato nell'atto: consulta il documento originale."
+
+    note = []
+    if s.get("tipo_atto") == "liquidazione":
+        note.append("soldi effettivamente pagati")
+    else:
+        note.append("somma impegnata, il pagamento avverrà dopo")
+
+    if s.get("importo_e_pluriennale") and s.get("durata_anni"):
+        anni = s["durata_anni"]
+        if s.get("importo_primo_anno"):
+            note.append(f"totale per {anni} anni, di cui {eur(s['importo_primo_anno'])} "
+                        f"il primo anno")
+        else:
+            note.append(f"totale per {anni} anni, non di un anno solo")
+
+    n = s.get("n_beneficiari") or 1
+    if n > 1:
+        note.append(f"somma di più voci verso {n} beneficiari")
+
+    if s.get("iva_inclusa") is True:
+        note.append("IVA inclusa")
+    elif s.get("iva_inclusa") is False:
+        note.append("IVA esclusa")
+
+    if s.get("e_rimodulazione"):
+        note.append("rimodulazione di una spesa già approvata, non spesa nuova")
+
+    return "; ".join(note).capitalize() + "."
+
+
 def formatta_spesa(s: dict) -> str:
     em = EMOJI_CATEGORIA.get(s.get("categoria") or "", "📄")
     tipo = "Liquidazione" if s.get("tipo_atto") == "liquidazione" else "Determinazione"
     parti = [
         f"{em} *{esc(eur(s.get('importo_euro')))}* — {esc(s.get('beneficiario') or 'beneficiario n.d.')}",
         f"_{esc(s.get('descrizione_sintetica') or (s.get('oggetto') or '')[:200])}_",
-        f"{esc(tipo)} n\\. {esc(s.get('numero_raw',''))} · {esc(s.get('categoria') or 'Da classificare')}",
+        f"💡 {esc(spiega_importo(s))}",
+        f"{esc(tipo)} n\\. {esc(s.get('numero_raw',''))} · {esc(s.get('categoria') or '')}",
     ]
     if s.get("url_atto"):
         parti.append(f"[Vedi atto originale]({s['url_atto']})")

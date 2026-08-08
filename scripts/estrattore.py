@@ -148,7 +148,7 @@ CATEGORIE = {
     "Sviluppo economico e commercio": 14,
     "Lavoro": 15,
     "Debito e anticipazioni": 50,
-    "Da classificare": 99,
+    "Da classificare": 99,   # ammessa nello schema, mai nel risultato finale
 }
 
 PROMPT_SISTEMA = """Sei un estrattore di dati da atti amministrativi comunali italiani (determinazioni contabili e liquidazioni).
@@ -205,6 +205,116 @@ RE_ERARIO = re.compile(r"(esattoria|erario|agenzia delle entrate|"
 
 def _e_erario(nome: str) -> bool:
     return bool(RE_ERARIO.search((nome or "").strip()))
+
+
+# Parole chiave → categoria. Usate quando il modello risponde
+# "Da classificare": nessuna spesa deve restare senza ambito.
+PAROLE_CATEGORIA = [
+    (r"rifiut|igiene urbana|spazzament|raccolta differenziat|verde pubblic|"
+     r"ambient|ecolog|disinfestaz|derattizz", "Ambiente, verde e rifiuti"),
+    (r"scuol|scolastic|mensa|refezion|nido|infanzia|istruzion|student|"
+     r"didattic|educativ|centro estivo", "Istruzione e scuola"),
+    (r"strad|viabilit|marciapied|segnaletic|asfalt|illuminazione pubblica|"
+     r"trasport|mobilit|autobus|parcheggi", "Strade, viabilità e trasporti"),
+    (r"social|disabil|anziani|minori|famigli|assistenz|domiciliar|"
+     r"povert|inclusion|tutela minor|affid", "Sociale e famiglia"),
+    (r"cultur|bibliotec|museo|teatr|mostra|spettacol|concert", "Cultura"),
+    (r"sport|palestr|piscin|impianti sportiv|tempo libero", "Sport e tempo libero"),
+    (r"polizia local|vigil|sicurezz|videosorveglianz|contravvenzion", "Polizia locale e sicurezza"),
+    (r"urbanistic|edilizi|patrimonio|immobil|manutenzione (?:degli )?stabil|"
+     r"cimiter|alloggi|casa|ristrutturazion|lavori di", "Urbanistica e casa"),
+    (r"protezione civil|emergenz|soccorso", "Protezione civile"),
+    (r"sanit|medic|farmac|veterinar|salute", "Sanità"),
+    (r"commerc|impres|attivit[àa] produttiv|mercato|fiera|suap", "Sviluppo economico e commercio"),
+    (r"turism|pro loco", "Turismo"),
+    (r"lavoro|occupazion|tirocin|formazione professional", "Lavoro"),
+    (r"mutuo|prestit|debito|interessi passiv|anticipazion", "Debito e anticipazioni"),
+]
+
+
+def categoria_da_testo(testo: str) -> str:
+    """
+    Categoria dedotta dalle parole chiave. Ultima risorsa quando il modello
+    non classifica: meglio una categoria approssimata che "Da classificare".
+    Il ripiego finale è l'ambito generale di funzionamento del Comune.
+    """
+    t = (testo or "").lower()
+    for pattern, categoria in PAROLE_CATEGORIA:
+        if re.search(pattern, t):
+            return categoria
+    return "Amministrazione e servizi generali"
+
+
+# Atti puramente contabili: non sono spese verso terzi, vanno esclusi
+RE_VARIAZIONE_BILANCIO = re.compile(
+    r"variazion\w*\s+(?:compensativ\w*\s+)?(?:al |del |di )?bilancio|"
+    r"variazione compensativa|storno di fondi|prelevamento dal fondo di riserva|"
+    r"assestamento generale|riaccertamento (?:ordinario|dei residui)|"
+    r"applicazione (?:dell')?avanzo", re.IGNORECASE)
+
+# Atti che rimodulano una spesa già impegnata: non è spesa nuova
+RE_RIMODULAZIONE = re.compile(
+    r"ridefinizione|rimodulazion\w*|riapprovazione|nuovo quadro economico|"
+    r"quadro economico (?:rimodulato|aggiornato|ridefinito)|"
+    r"variante|perizia di variante|assestamento del quadro", re.IGNORECASE)
+
+
+def e_variazione_bilancio(oggetto: str) -> bool:
+    """True per gli atti di sola movimentazione contabile interna."""
+    return bool(RE_VARIAZIONE_BILANCIO.search(oggetto or ""))
+
+
+def e_rimodulazione(oggetto: str) -> bool:
+    """True per gli atti che ridefiniscono un quadro economico esistente."""
+    return bool(RE_RIMODULAZIONE.search(oggetto or ""))
+
+
+RE_CONTEGGIO = re.compile(r"^\W*\d+\s+\w+", re.IGNORECASE)
+
+# Ragione sociale: nome seguito (o preceduto) da una forma societaria
+RE_RAGIONE_SOCIALE = re.compile(
+    r"\b([A-ZÀ-Ù][\w'&.\-]*(?:\s+[A-ZÀ-Ùa-zà-ù][\w'&.\-]*){0,4}\s+"
+    r"(?:S\.?R\.?L\.?|S\.?P\.?A\.?|S\.?N\.?C\.?|S\.?A\.?S\.?|"
+    r"COOP\w*|ONLUS|SOC\.?\s?COOP\w*|SCARL|S\.?C\.?S\.?))\b",
+    re.IGNORECASE)
+
+
+def _sembra_conteggio(beneficiario: str | None) -> bool:
+    """True per etichette tipo '7 fornitori', '12 utenti'."""
+    return bool(RE_CONTEGGIO.match((beneficiario or "").strip()))
+
+
+# Parole di servizio che precedono la ragione sociale e non ne fanno parte
+STOPWORD_NOME = {
+    "liquidazione", "liquidazioni", "determinazione", "determina", "impegno",
+    "impegni", "spesa", "spese", "fattura", "fatture", "pagamento", "pagamenti",
+    "affidamento", "servizio", "servizi", "fornitura", "forniture", "acquisto",
+    "incarico", "contratto", "canone", "rimborso", "contributo", "gestione",
+    "manutenzione", "lavori", "urbani", "comunale", "comunali", "digitale",
+    "per", "di", "del", "della", "dei", "delle", "a", "al", "alla", "ai", "in",
+    "sd", "nr", "n", "cig", "cup", "da", "emessa", "dalla", "dal", "favore",
+    "societa", "società", "ditta", "alle", "con", "e", "ed", "il", "lo", "la",
+}
+
+
+def nome_da_testo(*testi: str) -> str | None:
+    """
+    Cerca una ragione sociale nel testo (es. 'Aemme Linea Ambiente Srl').
+    Serve quando il modello dichiara più beneficiari senza elencarli:
+    il nome vero è quasi sempre nell'oggetto o nella descrizione.
+    """
+    for t in testi:
+        m = RE_RAGIONE_SOCIALE.search(t or "")
+        if not m:
+            continue
+        parole = re.sub(r"\s+", " ", m.group(1)).strip(" .,;").split()
+        # scarta dall'inizio le parole di servizio ("liquidazione fattura ...")
+        while len(parole) > 1 and parole[0].lower().strip(".,'") in STOPWORD_NOME:
+            parole.pop(0)
+        nome = " ".join(parole)
+        if len(nome) > 4 and not nome.lower().strip(".,").rstrip(".") in STOPWORD_NOME:
+            return nome
+    return None
 
 
 def _etichetta_multipla(beneficiario: str | None) -> str:
@@ -315,19 +425,22 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
             voci = []
     risultato["beneficiari_dettaglio"] = voci or None
 
-    # Conta i soggetti DISTINTI (le tabelle ripetono lo stesso fornitore su
-    # più righe/fatture: non sono beneficiari diversi)
+    # Il numero di beneficiari deve essere PROVATO dal dettaglio: il modello
+    # dichiarava "7 fornitori" anche per atti con un solo destinatario
+    # (es. Aemme Linea Ambiente). Senza elenco a supporto, il beneficiario
+    # resta uno e il suo nome viene mantenuto.
     nomi_distinti = {v["nome"].strip().lower() for v in voci}
-    try:
-        n_ben = int(risultato.get("n_beneficiari"))
-    except (TypeError, ValueError):
-        n_ben = 0
-    risultato["n_beneficiari"] = max(n_ben, len(nomi_distinti), 1)
-
-    # Etichetta generica quando i beneficiari sono più d'uno: il conteggio
-    # esatto lo dà il tag, il nome deve restare leggibile
+    risultato["n_beneficiari"] = max(len(nomi_distinti), 1)
     if risultato["n_beneficiari"] > 1:
+        # Etichetta generica: il conteggio esatto lo dà il tag
         risultato["beneficiario"] = _etichetta_multipla(risultato.get("beneficiario"))
+    elif _sembra_conteggio(risultato.get("beneficiario")):
+        # "7 fornitori" ma un solo beneficiario reale: recupera il nome
+        # dalla voce di dettaglio o, in mancanza, dal testo dell'atto
+        risultato["beneficiario"] = (
+            voci[0]["nome"] if voci
+            else nome_da_testo(risultato.get("descrizione_sintetica") or "", oggetto)
+            or risultato.get("beneficiario"))
 
     # Pluriennale
     risultato["importo_e_pluriennale"] = bool(risultato.get("importo_e_pluriennale"))
@@ -341,9 +454,17 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     if not risultato["importo_e_pluriennale"]:
         risultato["importo_primo_anno"] = None
 
-    if risultato.get("categoria") not in CATEGORIE:
-        risultato["categoria"] = "Da classificare"
-    risultato["missione_bdap"] = CATEGORIE[risultato["categoria"]]
+    # Nessuna spesa resta "Da classificare": se il modello non sceglie,
+    # deduciamo la categoria dalle parole chiave di oggetto e descrizione.
+    cat = risultato.get("categoria")
+    if cat not in CATEGORIE or cat == "Da classificare":
+        cat = categoria_da_testo(f"{oggetto} {risultato.get('descrizione_sintetica') or ''}")
+        log.info(f"  Categoria dedotta dal testo: {cat}")
+    risultato["categoria"] = cat
+    risultato["missione_bdap"] = CATEGORIE[cat]
+
+    # Rimodulazione di un quadro economico già approvato: non è spesa nuova
+    risultato["e_rimodulazione"] = e_rimodulazione(oggetto)
     for k in ("beneficiario", "cig", "capitolo_bilancio", "descrizione_sintetica",
               "importo_testuale"):
         v = risultato.get(k)
@@ -442,6 +563,13 @@ RE_IMPORTO = re.compile(
     r"(?:€|euro|eur)\s*\.?\s*([\d.]{1,12},\d{2})|([\d.]{1,12},\d{2})\s*(?:€|euro|eur)",
     re.IGNORECASE,
 )
+# Nelle tabelle (righe rese da pdfplumber come "a | b | c") gli importi
+# compaiono senza simbolo di valuta: la virgola con due decimali è comunque
+# una firma affidabile (i numeri di protocollo e i CIG non ne hanno).
+RE_IMPORTO_NUDO = re.compile(r"(?<![\d,.])(\d{1,3}(?:\.\d{3})*,\d{2})(?![\d])")
+RE_RIGA_MONETARIA = re.compile(
+    r"(import|total|fattur|imponibil|iva|corrispettiv|canone|liquidaz|impegn|\|)",
+    re.IGNORECASE)
 RE_CIG = re.compile(r"\bCIG[:\s.]*([A-Z0-9]{10})\b", re.IGNORECASE)
 RE_BENEFICIARIO = re.compile(
     r"(?:a favore (?:di|della|del)|ditta|società|societa'?)\s+([A-Z][A-Za-z0-9&.'\s]{3,60}?)(?:[,;\n]|con sede|P\.?\s?IVA|C\.?F\.?)",
@@ -460,6 +588,24 @@ RE_CONTESTO_SPESA = re.compile(
     r"per un totale|corrispettivo)", re.IGNORECASE)
 
 
+def _schema_vuoto(oggetto: str) -> dict:
+    """Record con tutti i campi dello schema, valorizzati a vuoto."""
+    return {
+        "tipo_atto": None, "beneficiario": None, "n_beneficiari": 1,
+        "beneficiari_dettaglio": None, "importo_testuale": None,
+        "importo_euro": None, "importo_e_pluriennale": False,
+        "durata_anni": None, "importo_primo_anno_testuale": None,
+        "iva_inclusa": None, "cig": None, "capitolo_bilancio": None,
+        "descrizione_sintetica": oggetto[:180] if oggetto else None,
+        "categoria": "Da classificare",
+    }
+
+
+def _cerca_cig(testo: str) -> str | None:
+    m = RE_CIG.search(testo)
+    return m.group(1).upper() if m else None
+
+
 def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     completo = f"{oggetto}\n{testo}"
 
@@ -474,35 +620,36 @@ def _estrai_con_regex(testo: str, oggetto: str) -> dict:
         candidati_tutti.append(v)
         if RE_CONTESTO_SPESA.search(completo[max(0, m.start() - 120): m.start()]):
             candidati_contesto.append(v)
+
+    # Nessun importo con simbolo di valuta: cerca nelle righe di tabella,
+    # dove gli importi compaiono nudi (caso tipico delle liquidazioni fatture)
+    if not candidati_tutti:
+        voci_tabella = []
+        for riga in completo.splitlines():
+            if not RE_RIGA_MONETARIA.search(riga):
+                continue
+            for m in RE_IMPORTO_NUDO.finditer(riga):
+                v = importo_italiano(m.group(1))
+                if v and v not in SOGLIE_NORMATIVE:
+                    voci_tabella.append(v)
+        if voci_tabella:
+            # Più voci nella stessa liquidazione: è la somma a interessare
+            somma = round(sum(voci_tabella), 2)
+            log.info(f"  Importi da tabella senza valuta: {voci_tabella} → {somma}")
+            return {**_schema_vuoto(oggetto), "importo_euro": somma,
+                    "cig": _cerca_cig(completo)}
+
     importi = candidati_contesto or candidati_tutti
     importo = max(importi) if importi else None
-
-    cig = None
-    m = RE_CIG.search(completo)
-    if m:
-        cig = m.group(1).upper()
 
     beneficiario = None
     m = RE_BENEFICIARIO.search(completo)
     if m:
         beneficiario = m.group(1).strip()
+    beneficiario = beneficiario or nome_da_testo(oggetto, testo)
 
-    return {
-        "tipo_atto": None,
-        "beneficiario": beneficiario,
-        "n_beneficiari": 1,
-        "beneficiari_dettaglio": None,
-        "importo_testuale": None,
-        "importo_euro": importo,
-        "importo_e_pluriennale": False,
-        "durata_anni": None,
-        "importo_primo_anno_testuale": None,
-        "iva_inclusa": None,
-        "cig": cig,
-        "capitolo_bilancio": None,
-        "descrizione_sintetica": oggetto[:180] if oggetto else None,
-        "categoria": "Da classificare",
-    }
+    return {**_schema_vuoto(oggetto), "importo_euro": importo,
+            "cig": _cerca_cig(completo), "beneficiario": beneficiario}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

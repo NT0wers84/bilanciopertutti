@@ -49,7 +49,7 @@ def censimento_righe(nome: str, righe: list[dict]) -> None:
         anno = portale.estrai_anno(r)
         per_anno.setdefault(anno, {"totale": 0, "spese": 0})
         per_anno[anno]["totale"] += 1
-        if portale.e_spesa(r["tipo"]):
+        if portale.e_spesa(r["tipo"], r.get("oggetto", "")):
             per_anno[anno]["spese"] += 1
         tipi[r["tipo"]] = tipi.get(r["tipo"], 0) + 1
     log.info(f"CENSIMENTO {nome} — {len(righe)} atti:")
@@ -139,7 +139,8 @@ def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
                           "importo_euro", "importo_testuale", "importo_e_pluriennale",
                           "durata_anni", "importo_primo_anno", "iva_inclusa",
                           "cig", "categoria", "missione_bdap", "capitolo_bilancio",
-                          "descrizione_sintetica", "tipo_atto", "estrazione"):
+                          "descrizione_sintetica", "tipo_atto", "estrazione",
+                          "e_rimodulazione"):
                 s[campo] = dati.get(campo)
             s["versione_estrazione"] = VERSIONE_ESTRAZIONE
             s["testo_disponibile"] = True
@@ -202,7 +203,7 @@ def main():
         censimento_righe(nome, righe)
         for r in righe:
             chiave = (r["numero_raw"], r["oggetto"])
-            if not portale.e_spesa(r["tipo"]):
+            if not portale.e_spesa(r["tipo"], r.get("oggetto", "")):
                 continue
             if portale.estrai_anno(r) < args.anno_min:
                 continue

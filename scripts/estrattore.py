@@ -207,6 +207,41 @@ def _e_erario(nome: str) -> bool:
     return bool(RE_ERARIO.search((nome or "").strip()))
 
 
+def _importo_presente(valore: float, testo: str) -> bool:
+    """
+    True se la cifra compare nel testo, in una delle scritture possibili:
+    1.234,56 · 1234,56 · 1.234.56 · 1234.56 · 1.234 (se intera).
+    """
+    if not testo:
+        return False
+    intero, decimali = divmod(round(valore * 100), 100)
+    con_punti = f"{intero:,}".replace(",", ".")
+    varianti = {
+        f"{con_punti},{decimali:02d}",
+        f"{intero},{decimali:02d}",
+        f"{con_punti}.{decimali:02d}",
+        f"{intero}.{decimali:02d}",
+    }
+    if decimali == 0:
+        varianti |= {con_punti, str(intero)}
+    testo_compatto = re.sub(r"\s+", "", testo)
+    return any(v in testo or v in testo_compatto for v in varianti)
+
+
+def _somma_voci_verificate(voci, testo: str) -> float | None:
+    """Somma delle voci di dettaglio che compaiono davvero nel testo."""
+    if not isinstance(voci, list):
+        return None
+    valori = []
+    for v in voci:
+        if not isinstance(v, dict):
+            continue
+        imp = importo_italiano(v.get("importo_testuale") or v.get("importo"))
+        if imp and _importo_presente(imp, testo):
+            valori.append(imp)
+    return round(sum(valori), 2) if valori else None
+
+
 # Parole chiave → categoria. Usate quando il modello risponde
 # "Da classificare": nessuna spesa deve restare senza ambito.
 PAROLE_CATEGORIA = [
@@ -380,6 +415,19 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     imp = importo_italiano(risultato.get("importo_testuale"))
     if imp is None:
         imp = importo_italiano(risultato.get("importo_euro"))
+
+    # VERIFICA ANTI-ALLUCINAZIONE: la cifra deve comparire nel testo dell'atto.
+    # Un modello interrogato su un atto senza importi ne inventa uno
+    # verosimile (e sempre lo stesso, con temperature=0).
+    if imp is not None and testo_utile and not _importo_presente(imp, testo_grezzo):
+        voci_ok = _somma_voci_verificate(risultato.get("beneficiari_dettaglio"),
+                                         testo_grezzo)
+        if voci_ok is not None and abs(voci_ok - imp) / max(imp, 1) <= 0.02:
+            pass  # è la somma di voci realmente presenti: valido
+        else:
+            log.warning(f"  Importo {imp} NON presente nel testo dell'atto: scartato")
+            imp = None
+            risultato["importo_testuale"] = None
     # Ripiego: se il modello non ha trovato l'importo ma il testo c'è,
     # riusa il rilevatore regex (stesso codice del fallback, nessun duplicato)
     if imp is None and testo_utile:
@@ -624,20 +672,32 @@ def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     # Nessun importo con simbolo di valuta: cerca nelle righe di tabella,
     # dove gli importi compaiono nudi (caso tipico delle liquidazioni fatture)
     if not candidati_tutti:
-        voci_tabella = []
+        voci_tabella, viste = [], set()
         for riga in completo.splitlines():
             if not RE_RIGA_MONETARIA.search(riga):
                 continue
+            if _e_erario(riga):
+                continue          # l'IVA allo Stato non è spesa verso terzi
             for m in RE_IMPORTO_NUDO.finditer(riga):
+                if riga[max(0, m.start() - 1): m.start()] == "-":
+                    continue      # storni/note di credito
                 v = importo_italiano(m.group(1))
-                if v and v not in SOGLIE_NORMATIVE:
-                    voci_tabella.append(v)
+                if not v or v in SOGLIE_NORMATIVE:
+                    continue
+                # pdfplumber rende la stessa tabella due volte (testo + celle):
+                # deduplica per (creditore, importo) ignorando codici e numeri
+                soggetto = re.sub(r"[^A-Za-zÀ-ù]", "", riga).upper()[:15]
+                chiave = (soggetto, v)
+                if chiave in viste:
+                    continue
+                viste.add(chiave)
+                voci_tabella.append(v)
         if voci_tabella:
-            # Più voci nella stessa liquidazione: è la somma a interessare
             somma = round(sum(voci_tabella), 2)
             log.info(f"  Importi da tabella senza valuta: {voci_tabella} → {somma}")
             return {**_schema_vuoto(oggetto), "importo_euro": somma,
-                    "cig": _cerca_cig(completo)}
+                    "cig": _cerca_cig(completo),
+                    "beneficiario": nome_da_testo(oggetto, testo)}
 
     importi = candidati_contesto or candidati_tutti
     importo = max(importi) if importi else None

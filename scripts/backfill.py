@@ -61,7 +61,13 @@ def censimento_righe(nome: str, righe: list[dict]) -> None:
         log.info(f"  {c:5} × {t!r}{marcatore}")
 
 
-VERSIONE_ESTRAZIONE = 3  # v3: niente importi inventati quando manca il testo
+# Alzare a ogni cambio delle regole di estrazione: le spese con versione
+# inferiore vengono rielaborate da --riestrai-tutto.
+#   v2: importi testuali, tabelle, beneficiari multipli, pluriennali
+#   v3: niente importi inventati quando manca il testo
+#   v4: importi da tabelle senza valuta, categorie sempre valorizzate,
+#       beneficiari provati dal dettaglio, rimodulazioni segnalate
+VERSIONE_ESTRAZIONE = 4
 
 
 def mappa_url_freschi() -> dict:

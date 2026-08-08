@@ -75,7 +75,7 @@ def elabora_spesa(atto: dict) -> dict:
         "descrizione_sintetica": dati["descrizione_sintetica"],
         "url_atto": portale.url_display_stabile(atto.get("url_dettaglio", "")),
         "estrazione": dati["estrazione"],
-        "versione_estrazione": 2,
+        "versione_estrazione": 4,   # allineata a backfill.VERSIONE_ESTRAZIONE
         "caratteri_testo": len(testo),
         "fonte": atto.get("fonte", "albo"),
         "data_elaborazione": datetime.now().strftime("%Y-%m-%d %H:%M"),

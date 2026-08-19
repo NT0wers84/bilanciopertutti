@@ -9,6 +9,7 @@ e docs/data/meta.json via fetch. Questo script:
 Eseguito dal workflow dopo scraper.py / backfill.py.
 """
 
+import os
 import json
 import logging
 from pathlib import Path
@@ -30,6 +31,17 @@ CAMPI_SITO = [
 ]
 
 
+def _scrivi(percorso: Path, contenuto: str) -> None:
+    """
+    Scrittura via file temporaneo + rename atomico: evita di lasciare file
+    a metà se il processo muore e aggira i lock del filesystem quando la
+    cartella è condivisa con altri programmi.
+    """
+    tmp = percorso.with_name(f".{percorso.name}.tmp")
+    tmp.write_text(contenuto, encoding="utf-8")
+    os.replace(tmp, percorso)
+
+
 def main():
     spese = []
     if SPESE_JSON.exists():
@@ -38,10 +50,8 @@ def main():
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
 
     ridotte = [{k: s.get(k) for k in CAMPI_SITO} for s in spese]
-    (DOCS_DATA / "spese.json").write_text(
-        json.dumps(ridotte, ensure_ascii=False, separators=(",", ":")),
-        encoding="utf-8",
-    )
+    _scrivi(DOCS_DATA / "spese.json",
+            json.dumps(ridotte, ensure_ascii=False, separators=(",", ":")))
 
     anni = sorted({s.get("anno") for s in spese if s.get("anno")}, reverse=True)
     meta = {
@@ -50,9 +60,7 @@ def main():
         "anni": anni,
         "totale_euro": round(sum(s.get("importo_euro") or 0 for s in spese), 2),
     }
-    (DOCS_DATA / "meta.json").write_text(
-        json.dumps(meta, ensure_ascii=False), encoding="utf-8"
-    )
+    _scrivi(DOCS_DATA / "meta.json", json.dumps(meta, ensure_ascii=False))
     log.info(f"Sito aggiornato: {len(spese)} spese, totale € {meta['totale_euro']:,.2f}")
 
 

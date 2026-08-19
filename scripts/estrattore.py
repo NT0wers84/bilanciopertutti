@@ -178,6 +178,10 @@ REGOLE IMPORTI (le più importanti):
 - Non confondere importi citati come riferimento (impegni precedenti, quadri economici, importi di gara) con quanto questo atto effettivamente impegna o liquida.
 
 REGOLE BENEFICIARIO:
+- Il beneficiario è CHI RICEVE I SOLDI. NON è mai chi firma l'atto, né il
+  dirigente, né il responsabile del procedimento, né il certificatore della
+  firma digitale (ArubaPEC, InfoCert, Namirial e simili in calce all'atto).
+- Se l'oggetto dice "fattura emessa da X" o "a favore di X", il beneficiario è X.
 - Se c'è un fornitore o una ditta, usa la sua ragione sociale.
 - Se i beneficiari sono più di uno, in "beneficiario" scrivi una sintesi leggibile (es. "7 fornitori", "12 dipendenti comunali") e metti l'elenco completo in beneficiari_dettaglio.
 - Se il beneficiario è una persona fisica, NON scrivere il nome: usa una descrizione della categoria (es. "un cittadino con disabilità", "3 famiglie in difficoltà", "un dipendente comunale").
@@ -201,6 +205,30 @@ TESTO_MIN_UTILE = 300
 RE_ERARIO = re.compile(r"(esattoria|erario|agenzia delle entrate|"
                        r"scissione dei pagamenti|split ?payment|^iva\b|\biva$)",
                        re.IGNORECASE)
+
+# Certificatori della firma digitale: compaiono in calce a OGNI atto
+# ("Il Funzionario di E.Q. Mario Rossi / ArubaPEC S.p.A.") e non hanno
+# nulla a che vedere con la spesa. Il modello li scambiava per fornitori.
+RE_CERTIFICATORE = re.compile(
+    r"(aruba\s?pec|arubapec|aruba s\.?p\.?a|infocert|namirial|actalis|"
+    r"trust technologies|intesi group|poste ?cert|firma digitale|"
+    r"documento firmato digitalmente|sottoscritto con firma)", re.IGNORECASE)
+
+
+def e_certificatore(nome: str) -> bool:
+    return bool(RE_CERTIFICATORE.search((nome or "").strip()))
+
+
+def pulisci_blocco_firma(testo: str) -> str:
+    """
+    Elimina le righe del blocco firma digitale in fondo agli atti.
+    Senza questa pulizia il modello attribuisce la spesa al certificatore
+    (ArubaPEC) invece che al fornitore vero.
+    """
+    if not testo:
+        return testo
+    righe = [r for r in testo.splitlines() if not RE_CERTIFICATORE.search(r)]
+    return "\n".join(righe)
 
 
 def _e_erario(nome: str) -> bool:
@@ -328,8 +356,26 @@ STOPWORD_NOME = {
     "manutenzione", "lavori", "urbani", "comunale", "comunali", "digitale",
     "per", "di", "del", "della", "dei", "delle", "a", "al", "alla", "ai", "in",
     "sd", "nr", "n", "cig", "cup", "da", "emessa", "dalla", "dal", "favore",
-    "societa", "società", "ditta", "alle", "con", "e", "ed", "il", "lo", "la",
+    "societa", "società", "ditta", "alle", "con",
+    "affidato", "affidata", "aggiudicata", "aggiudicato", "dovute", "dovuta",
+    "spettante", "relativa", "relativo", "somme", "importo", "saldo",
 }
+# Nota: articoli e congiunzioni (la, il, lo, e, ed) NON sono stopword:
+# fanno parte di ragioni sociali come "La Rondine Srl", "Il Mosaico".
+
+
+def _beneficiario_da_oggetto(oggetto: str) -> str | None:
+    """
+    Estrae il destinatario dall'oggetto dell'atto, che quasi sempre lo
+    nomina: 'FATTURA ... EMESSA DAL DR. CRIMELLA FAUSTO', 'A FAVORE DI ...'.
+    """
+    m = RE_BENEFICIARIO.search(oggetto or "")
+    if not m:
+        return None
+    nome = re.sub(r"\s+", " ", m.group(1)).strip(" .,;-")
+    if e_certificatore(nome) or len(nome) < 4:
+        return None
+    return nome
 
 
 def nome_da_testo(*testi: str) -> str | None:
@@ -379,7 +425,7 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     Se il testo dell'atto non è disponibile, gli importi restano null:
     mai inventati dal modello.
     """
-    testo_grezzo = testo or ""
+    testo_grezzo = pulisci_blocco_firma(testo or "")
     testo = _riduci_testo(testo_grezzo)
     testo_utile = len(testo_grezzo.strip()) >= TESTO_MIN_UTILE
     risultato = None
@@ -472,6 +518,15 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
                         f"scartato")
             voci = []
     risultato["beneficiari_dettaglio"] = voci or None
+
+    # Un certificatore di firma non è mai il beneficiario: recupera il
+    # destinatario vero dall'oggetto ("fattura emessa da X")
+    if e_certificatore(risultato.get("beneficiario")):
+        vero = _beneficiario_da_oggetto(oggetto) or nome_da_testo(oggetto, testo)
+        log.warning(f"  Beneficiario era il certificatore di firma "
+                    f"({risultato.get('beneficiario')}): sostituito con {vero or 'n.d.'}")
+        risultato["beneficiario"] = vero
+    voci = [v for v in voci if not e_certificatore(v["nome"])]
 
     # Il numero di beneficiari deve essere PROVATO dal dettaglio: il modello
     # dichiarava "7 fornitori" anche per atti con un solo destinatario
@@ -620,8 +675,13 @@ RE_RIGA_MONETARIA = re.compile(
     re.IGNORECASE)
 RE_CIG = re.compile(r"\bCIG[:\s.]*([A-Z0-9]{10})\b", re.IGNORECASE)
 RE_BENEFICIARIO = re.compile(
-    r"(?:a favore (?:di|della|del)|ditta|società|societa'?)\s+([A-Z][A-Za-z0-9&.'\s]{3,60}?)(?:[,;\n]|con sede|P\.?\s?IVA|C\.?F\.?)",
-)
+    r"(?:emessa\s+(?:da|dal|dalla)|(?:a|in)\s+favore\s+(?:di|della|del|dei)|"
+    r"dovute?\s+(?:al|alla|ai|allo)|spettante\s+(?:al|ai|alla)|"
+    r"ditta|società|societa'?)\s+"
+    r"((?:DR\.?|DOTT\.?|ING\.?|ARCH\.?|AVV\.?\s)?"
+    r"[A-Z][A-Za-z0-9&.'\s]{3,60}?)"
+    r"(?:[,;\n]|con sede|P\.?\s?IVA|C\.?F\.?|\s+-\s+|\sper\s|\srelativ)",
+    re.IGNORECASE)
 
 
 # Soglie normative citate nel boilerplate degli atti (Codice dei contratti):

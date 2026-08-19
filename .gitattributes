@@ -1,0 +1,17 @@
+# File di dati GENERATI dagli script: non vanno mai mergiati riga per riga.
+# Un merge testuale su questi JSON produce marcatori di conflitto che
+# rompono il sito (il browser non riesce più a leggere i dati).
+# In caso di divergenza si tiene una versione qualsiasi e si rigenera con:
+#     python3 scripts/genera_sito.py
+#
+# Per attivare la strategia serve una configurazione una tantum:
+#     git config merge.mantieni-locale.driver true
+data/spese.json          merge=mantieni-locale
+data/nuove_spese.json    merge=mantieni-locale
+data/backfill_state.json merge=mantieni-locale
+docs/data/spese.json     merge=mantieni-locale
+docs/data/meta.json      merge=mantieni-locale
+docs/data/bilanci.json   merge=mantieni-locale
+
+# I testi degli atti sono archivi compressi immutabili: mai mergiarli
+data/testi/*.txt.gz      binary -merge

@@ -663,7 +663,8 @@ def _estrai_con_groq(testo: str, oggetto: str) -> dict | None:
 # ─────────────────────────────────────────────────────────────────────────────
 
 RE_IMPORTO = re.compile(
-    r"(?:€|euro|eur)\s*\.?\s*([\d.]{1,12},\d{2})|([\d.]{1,12},\d{2})\s*(?:€|euro|eur)",
+    r"(?:€|euro|eur)\s*\.?\s*([\d.]{1,12},\d{2})"
+    r"|([\d.]{1,12},\d{2})\s*[\(\[]?\s*(?:€|euro|eur)",   # anche "761,28 (EUR)"
     re.IGNORECASE,
 )
 # Nelle tabelle (righe rese da pdfplumber come "a | b | c") gli importi
@@ -693,7 +694,7 @@ SOGLIE_NORMATIVE = {40_000.0, 139_000.0, 140_000.0, 143_000.0, 150_000.0,
 
 RE_CONTESTO_SPESA = re.compile(
     r"(impegn\w*|liquid\w*|affid\w*|spesa complessiva|importo complessivo|"
-    r"per un totale|corrispettivo)", re.IGNORECASE)
+    r"importo di|per un totale|per un importo|corrispettivo)", re.IGNORECASE)
 
 
 def _schema_vuoto(oggetto: str) -> dict:

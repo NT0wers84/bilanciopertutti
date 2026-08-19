@@ -10,7 +10,7 @@
   "beneficiario": "ORSOLINI AMEDEO S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 69.08,
+  "importo_euro": 34.54,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -27,7 +27,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 9173,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-19 09:41"
+  "data_elaborazione": "2026-08-19 09:41",
+  "importo_verificato": true
  },
  {
   "id": "liquidazione-1640-2026",
@@ -40,7 +41,7 @@
   "beneficiario": "WIP ARCHITETTI SRL",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 7237.02,
+  "importo_euro": 2412.34,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -57,7 +58,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 10748,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-19 09:41"
+  "data_elaborazione": "2026-08-19 09:41",
+  "importo_verificato": true
  },
  {
   "id": "liquidazione-1639-2026",
@@ -67,10 +69,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-08-18",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. FPA 47/26 EMESSA DAL DR. CRIMELLA FAUSTO - REALIZZAZIONE DUVRI PER MANUTENZIONE ASCENSORI - CIG B348B01043",
-  "beneficiario": "ArubaPEC S.p.A",
+  "beneficiario": "DR. CRIMELLA FAUSTO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 2408.64,
+  "importo_euro": 761.28,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -87,7 +89,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 9329,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-19 09:41"
+  "data_elaborazione": "2026-08-19 09:41",
+  "importo_verificato": true
  },
  {
   "id": "liquidazione-1638-2026",
@@ -97,10 +100,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-08-18",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 2/PA, EMESSA DALLA SOCIETÀ GE.CO DI RHO LAURA PER - COLLEGAMENTO ELETTRICO DELLE NUOVE PESE DELLA PIATTAFORMA ECOLOGICA DI VIA SICILIA - CODICE CIG BC394F46B1",
-  "beneficiario": "ArubaPEC S.p.A",
+  "beneficiario": "GE.CO DI RHO LAURA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 10800.0,
+  "importo_euro": 3600.0,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -117,7 +120,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8590,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-19 09:41"
+  "data_elaborazione": "2026-08-19 09:41",
+  "importo_verificato": true
  },
  {
   "id": "liquidazione-1637-2026",
@@ -160,7 +164,7 @@
   "beneficiario": "AREA SUD MILANO SPA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 3251.16,
+  "importo_euro": 1625.58,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -177,7 +181,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8947,
   "fonte": "albo",
-  "data_elaborazione": "2026-08-19 09:41"
+  "data_elaborazione": "2026-08-19 09:41",
+  "importo_verificato": true
  },
  {
   "id": "liquidazione-1635-2026",
@@ -3893,7 +3898,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 0000014/PA FATTURA NR. 0000015/PA EMESSE DA DUE MAICH SERVIZI SRL - AFFITTO CASSONETTI METALLICI PER IL SERVIZIO DELLA RACCOLTA DIFFERENZIATA DELL’OLIO VEGETALE DAL 01/07/2026 AL 30/09/2026 CIG Z1A32F10A4 - CIG Z89354FEBA",
   "beneficiario": "DUE MAICH SERVIZI SRL",
-  "importo_euro": 439.2,
+  "importo_euro": 219.6,
   "cig": "Z1A32F10A4",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,

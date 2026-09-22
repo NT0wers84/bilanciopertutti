@@ -37,6 +37,21 @@
     }
   },
 
+  "comuni_vicini_2022": {
+    "fonte": "OpenCivitas · Sogei — Comuni, servizi totali, indicatori 2022 (FC80TOT)",
+    "licenza": "CC BY 4.0",
+    "nota": "Comuni dell'ambito Visconteo Sud Milano, lo stesso con cui Pieve Emanuele condivide i servizi sociali. Le due percentuali sono indipendenti: un Comune può spendere sopra il fabbisogno e allo stesso tempo erogare servizi sopra o sotto la media.",
+    "avvertenza": "Lo scarto dal fabbisogno standard non misura lo spreco, e il livello dei servizi è calcolato sulla media dei comuni della stessa fascia di popolazione: comuni di dimensione molto diversa hanno metri di paragone diversi.",
+    "comuni": [
+      {"nome": "Pieve Emanuele", "istat": "015173", "storica": 13642364.47, "standard": 10215795.94, "scarto_pct": 33.54, "servizi_pct": -14.58, "pro_capite": 869.11, "livello_spesa": 10, "livello_servizi": 4, "evidenzia": true},
+      {"nome": "Rozzano", "istat": "015189", "storica": 39431480.07, "standard": 29290273.00, "scarto_pct": 34.62, "servizi_pct": 0.01, "pro_capite": 953.14, "livello_spesa": 10, "livello_servizi": 6, "evidenzia": false},
+      {"nome": "Basiglio", "istat": "015015", "storica": 6840551.44, "standard": 4824536.68, "scarto_pct": 41.79, "servizi_pct": 36.42, "pro_capite": 857.21, "livello_spesa": 10, "livello_servizi": 9, "evidenzia": false},
+      {"nome": "Lacchiarella", "istat": "015115", "storica": 6687109.26, "standard": 5818851.36, "scarto_pct": 14.92, "servizi_pct": 7.67, "pro_capite": 737.03, "livello_spesa": 8, "livello_servizi": 7, "evidenzia": false},
+      {"nome": "Locate di Triulzi", "istat": "015125", "storica": 6854112.58, "standard": 6298388.83, "scarto_pct": 8.82, "servizi_pct": 25.89, "pro_capite": 665.06, "livello_spesa": 7, "livello_servizi": 9, "evidenzia": false},
+      {"nome": "Opera", "istat": "015159", "storica": 9481148.51, "standard": 9460872.95, "scarto_pct": 0.21, "servizi_pct": -3.79, "pro_capite": 663.25, "livello_spesa": 6, "livello_servizi": 5, "evidenzia": false}
+    ]
+  },
+
   "composizione_spesa_2022": {
     "fonte": "BDAP · Rendiconto 2022, Allegato e) Spese correnti per macroaggregato (impegni), Regione Lombardia",
     "gruppo_confronto": "106 comuni lombardi con spesa corrente fra 10,3 e 24,0 milioni di euro",

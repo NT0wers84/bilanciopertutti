@@ -158,7 +158,33 @@ async function avvia() {
     <div class="cautela"><strong>Attenzione al confronto fra anni.</strong>
       ${esc(d.fabbisogni.avvertenza)}</div>
 
-    <h2 class="sezione">2. Dove vanno i soldi, rispetto ai comuni simili</h2>
+    <h2 class="sezione">2. Come se la cavano i comuni vicini</h2>
+    <div class="sottotitolo">Gli altri comuni dell'ambito Visconteo Sud Milano, con cui Pieve
+      Emanuele condivide i servizi sociali. Ogni punto è un Comune: a <strong>destra</strong> chi
+      spende più del proprio fabbisogno, in <strong>alto</strong> chi eroga più servizi della
+      media dei comuni di pari dimensione.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-vicini"></canvas></div></div>
+    <div class="card">
+      <table><thead><tr><th>Comune</th><th>Spesa</th><th>Per abitante</th>
+        <th>Scarto dal fabbisogno</th><th>Servizi vs media</th></tr></thead><tbody>
+        ${d.comuni_vicini_2022.comuni.slice().sort((a,b) => b.scarto_pct - a.scarto_pct)
+          .map(c => `<tr${c.evidenzia ? ' style="background:#EEF3FD;font-weight:600"' : ''}>
+          <td>${esc(c.nome)}</td><td>${eur(c.storica)}</td>
+          <td>${c.pro_capite.toLocaleString("it-IT",{minimumFractionDigits:2,maximumFractionDigits:2})} €</td>
+          <td class="${c.scarto_pct > 15 ? "sopra" : ""}">${pct(c.scarto_pct)}</td>
+          <td class="${c.servizi_pct < 0 ? "sopra" : "sotto"}">${pct(c.servizi_pct)}</td></tr>`).join("")}
+      </tbody></table>
+    </div>
+    <div class="spiegazione"><strong>Il confronto più istruttivo di questa pagina.</strong>
+      Spendere sopra il fabbisogno non porta automaticamente a servizi peggiori né migliori:
+      dipende da cosa si ottiene in cambio. <strong>Basiglio</strong> spende il 41,8% oltre il
+      fabbisogno ma eroga servizi il 36,4% <em>sopra</em> la media. <strong>Locate di Triulzi</strong>
+      spende appena l'8,8% in più e ottiene il 25,9% di servizi in più: è il più efficiente del gruppo.
+      <strong>Pieve Emanuele</strong> è l'unico a combinare spesa alta (+33,5%) con servizi
+      sotto la media (−14,6%).</div>
+    <div class="cautela">${esc(d.comuni_vicini_2022.avvertenza)}</div>
+
+    <h2 class="sezione">3. Dove vanno i soldi, rispetto ai comuni simili</h2>
     <div class="sottotitolo">Composizione della spesa corrente ${d.composizione_spesa_2022 ? 2022 : ""} a confronto con
       ${esc(d.composizione_spesa_2022.gruppo_confronto)}.</div>
     <div class="card"><div class="grafico"><canvas id="g-composizione"></canvas></div></div>
@@ -182,7 +208,7 @@ async function avvia() {
       mediana, ma in valore assoluto pesano poco (390 mila euro).</div>
     <div class="cautela">${esc(d.composizione_spesa_2022.avvertenza)}</div>
 
-    <h2 class="sezione">3. Quanto reddito ha il territorio</h2>
+    <h2 class="sezione">4. Quanto reddito ha il territorio</h2>
     <div class="sottotitolo">La capacità fiscale dice quante risorse il Comune può raccogliere
       dai suoi cittadini. Redditi dichiarati ${cf.anno_imposta}, dichiarazioni ${cf.anno_dichiarazione}.</div>
     <div class="kpi">
@@ -200,7 +226,7 @@ async function avvia() {
       da area metropolitana milanese con una base di redditi più debole del contesto in cui opera.</div>
     <div class="cautela">${esc(cf.avvertenza)}</div>
 
-    <h2 class="sezione">4. Il risanamento della cassa</h2>
+    <h2 class="sezione">5. Il risanamento della cassa</h2>
     <div class="sottotitolo">Le <strong>anticipazioni di tesoreria</strong> sono prestiti che il
       Comune chiede alla banca quando non ha liquidità per pagare, e restituisce entro l'anno.
       Usarne molte è il sintomo di una cassa in sofferenza.</div>
@@ -242,6 +268,31 @@ function disegnaGrafici(d) {
       scales: { y: { ticks: { callback: v => (v/1e6).toLocaleString("it-IT",{maximumFractionDigits:1})+" mln" } },
                 y2: { position: "right", grid: { drawOnChartArea: false },
                       ticks: { callback: v => v+"%" } } } }
+  });
+
+  // Dispersione spesa/servizi: ogni Comune è un punto, Pieve evidenziata
+  const vicini = d.comuni_vicini_2022.comuni;
+  new Chart(document.getElementById("g-vicini"), {
+    type: "scatter",
+    data: { datasets: [
+      { label: "Pieve Emanuele",
+        data: vicini.filter(c => c.evidenzia).map(c => ({x: c.scarto_pct, y: c.servizi_pct, nome: c.nome})),
+        backgroundColor: "#B3372B", pointRadius: 11, pointHoverRadius: 13 },
+      { label: "Altri comuni dell'ambito",
+        data: vicini.filter(c => !c.evidenzia).map(c => ({x: c.scarto_pct, y: c.servizi_pct, nome: c.nome})),
+        backgroundColor: "#1B4FCA", pointRadius: 8, pointHoverRadius: 10 },
+    ]},
+    options: { maintainAspectRatio: false,
+      plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c =>
+          `${c.raw.nome}: spesa ${c.raw.x > 0 ? "+" : ""}${c.raw.x}% · servizi ${c.raw.y > 0 ? "+" : ""}${c.raw.y}%` } } },
+      scales: {
+        x: { title: { display: true, text: "spesa rispetto al fabbisogno standard →" },
+             ticks: { callback: v => (v>0?"+":"")+v+"%" },
+             grid: { color: ctx => ctx.tick.value === 0 ? "#999" : "#E4E2DA" } },
+        y: { title: { display: true, text: "servizi rispetto alla media ↑" },
+             ticks: { callback: v => (v>0?"+":"")+v+"%" },
+             grid: { color: ctx => ctx.tick.value === 0 ? "#999" : "#E4E2DA" } } } }
   });
 
   const voci = d.composizione_spesa_2022.voci;

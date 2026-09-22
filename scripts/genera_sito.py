@@ -28,6 +28,7 @@ CAMPI_SITO = [
     "iva_inclusa", "cig", "categoria", "capitolo_bilancio",
     "descrizione_sintetica", "url_atto", "estrazione", "testo_disponibile",
     "e_rimodulazione", "beneficiario_generico", "atti_gemelli",
+    "importo_incerto", "regola_importo",
 ]
 
 

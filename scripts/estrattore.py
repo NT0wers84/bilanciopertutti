@@ -520,13 +520,23 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
             log.warning(f"  Importo {imp} NON presente nel testo dell'atto: scartato")
             imp = None
             risultato["importo_testuale"] = None
-    # Ripiego: se il modello non ha trovato l'importo ma il testo c'è,
-    # riusa il rilevatore regex (stesso codice del fallback, nessun duplicato)
-    if imp is None and testo_utile:
-        imp = _estrai_con_regex(testo, oggetto)["importo_euro"]
-        if imp is not None:
-            log.info(f"  Importo non trovato dal modello, recuperato dal testo: {imp}")
-            risultato["importo_da_regex"] = True
+    # CONTROLLO DI SICUREZZA: se il testo dichiara esplicitamente un totale
+    # (quadro economico, importo contrattuale), quella dichiarazione vince
+    # sulla lettura del modello. Il modello tende a raccogliere il valore
+    # più vistoso del documento, che spesso è il valore di una convenzione
+    # pluriennale e non la spesa dell'atto.
+    dichiarato, regola, incerto = estrai_importo(testo, oggetto)
+    risultato["regola_importo"] = regola
+    risultato["importo_incerto"] = incerto
+
+    if dichiarato is not None and testo_utile:
+        if imp is None:
+            log.info(f"  Importo dal testo ('{regola}'): {dichiarato:,.2f}")
+            imp = dichiarato
+        elif abs(imp - dichiarato) / max(dichiarato, 1) > 0.02:
+            log.warning(f"  Modello dice {imp:,.2f} ma il testo dichiara "
+                        f"{dichiarato:,.2f} ('{regola}'): vince il testo")
+            imp = dichiarato
     risultato["importo_euro"] = imp
     risultato["importo_primo_anno"] = importo_italiano(
         risultato.get("importo_primo_anno_testuale"))
@@ -743,6 +753,162 @@ RE_CONTESTO_SPESA = re.compile(
     r"importo di|per un totale|per un importo|corrispettivo)", re.IGNORECASE)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# LETTURA DELL'IMPORTO — gerarchia di priorità
+#
+# Gli atti contengono molti importi: il valore complessivo di una
+# convenzione pluriennale, le soglie di legge, i quadri economici, gli
+# imponibili, le singole fatture. Prendere il più grande è sbagliato:
+# nell'atto 2026/340 il massimo era 6.007.753,42 € (valore dell'intera
+# concessione Siram-Veolia) mentre la spesa dell'atto era 220.000,00 €,
+# scritta nel testo come "TOTALE GENERALE".
+#
+# Regola: vince la dichiarazione più esplicita, non la cifra più alta.
+# ─────────────────────────────────────────────────────────────────────────────
+
+_N = r"(\d{1,3}(?:\.\d{3})*,\d{2}|\d+,\d{2}|\d{1,3}(?:\.\d{3})+)"
+
+# Limiti di plausibilità per la somma di righe (mai per i totali dichiarati)
+MAX_RIGHE_SOMMABILI = 12        # oltre: è un computo metrico, non fatture
+TETTO_SOMMA_TABELLA = 5_000_000 # oltre: un totale così va dichiarato, non dedotto
+
+# Ordinate per affidabilità decrescente: la prima che trova un valore vince
+REGOLE_IMPORTO = [
+    ("totale generale",
+     re.compile(r"totale\s+generale[^\d\n]{0,40}" + _N, re.IGNORECASE)),
+    ("totale complessivo",
+     re.compile(r"totale\s+(?:complessivo|progetto|quadro economico)"
+                r"[^\d\n]{0,40}" + _N, re.IGNORECASE)),
+    ("totale dell'intervento",
+     re.compile(r"totale\s+(?:dell[''’]?\s*)?(?:intervento|opera|appalto|"
+                r"affidamento|servizio|fornitura)[^\d\n]{0,40}" + _N,
+                re.IGNORECASE)),
+    ("totale del quadro (A+B)",
+     re.compile(r"(?:importo\s+)?totale\s*\(\s*[A-Z]\s*\+\s*[A-Z]\s*\)"
+                r"[^\d\n]{0,40}" + _N, re.IGNORECASE)),
+    ("importo contrattuale",
+     re.compile(r"importo\s+contrattuale\s+(?:di\s+)?[^\d\n]{0,20}" + _N,
+                re.IGNORECASE)),
+    ("importo complessivo",
+     re.compile(r"(?:per\s+un\s+)?importo\s+(?:complessivo\s+)?"
+                r"(?:di|pari\s+a)\s*[^\d\n]{0,20}" + _N, re.IGNORECASE)),
+    ("spesa complessiva",
+     re.compile(r"spesa\s+(?:complessiva|totale)\s+(?:di|pari\s+a)"
+                r"\s*[^\d\n]{0,20}" + _N, re.IGNORECASE)),
+    ("somma impegnata/liquidata",
+     re.compile(r"(?:impegn\w+|liquid\w+)\s+(?:la\s+)?(?:somma|spesa|"
+                r"importo)?\s*(?:complessiv\w+\s+)?(?:di|pari\s+a)"
+                r"\s*[^\d\n]{0,20}" + _N, re.IGNORECASE)),
+]
+
+
+def _valori(pattern, testo: str) -> list[float]:
+    fuori = []
+    for m in pattern.finditer(testo):
+        v = importo_italiano(m.group(1))
+        if v and v not in SOGLIE_NORMATIVE:
+            fuori.append(v)
+    return fuori
+
+
+def estrai_importo(testo: str, oggetto: str = "",
+                   tipo_atto: str = "") -> tuple[float | None, str, bool]:
+    """
+    Restituisce (importo, regola_usata, incerto).
+
+    Applica la gerarchia: la dichiarazione esplicita batte qualunque
+    euristica. Il massimo del documento NON è mai usato: se nessuna
+    regola trova un valore, l'importo resta vuoto.
+
+    L'ordine dipende dal tipo di atto: in una liquidazione conta quanto
+    si paga adesso (fatture), non il quadro economico dell'opera; in una
+    determinazione di impegno conta il totale impegnato.
+
+    `incerto=True` segnala che il valore va verificato sull'atto: o la
+    stessa formula compare con valori diversi, o l'atto contiene più
+    candidati plausibili in conflitto fra loro.
+    """
+    completo = f"{oggetto}\n{testo}"
+
+    regole = REGOLE_IMPORTO
+    if "liquidazione" in (tipo_atto or "").lower():
+        # nelle liquidazioni il quadro economico complessivo dell'opera
+        # non è la spesa dell'atto: va in fondo alla scala
+        priorità = {"somma impegnata/liquidata": 0, "importo complessivo": 1,
+                    "importo contrattuale": 2}
+        regole = sorted(REGOLE_IMPORTO,
+                        key=lambda r: priorità.get(r[0], 10))
+
+    for nome, pattern in regole:
+        valori = _valori(pattern, completo)
+        if not valori:
+            continue
+        # Più occorrenze della stessa dichiarazione (il PDF ripete la
+        # tabella): se concordano è il valore giusto, altrimenti il maggiore
+        # fra quelli dichiarati con la stessa formula.
+        scelto = max(valori)
+        incerto = len(set(valori)) > 1
+        return scelto, nome, incerto
+
+    # Nessuna dichiarazione esplicita: somma delle righe di tabella,
+    # deduplicate e senza IVA erario né storni (caso liquidazione fatture)
+    somma, voci = _somma_righe_tabella(completo)
+    if somma:
+        # Una liquidazione somma poche fatture. Decine o centinaia di righe
+        # sono un computo metrico o un elenco analitico: la loro somma non è
+        # l'importo dell'atto (nell'atto 2026/1563 dava 59,8 milioni).
+        if voci > MAX_RIGHE_SOMMABILI:
+            return None, f"tabella di {voci} righe: somma non attendibile", False
+        # Nessun atto comunale liquida milioni di euro in fatture multiple
+        # senza dichiarare da nessuna parte il totale.
+        if somma > TETTO_SOMMA_TABELLA:
+            return None, f"somma {somma:,.0f} oltre il tetto di plausibilità", False
+        return somma, f"somma di {voci} righe di tabella", voci > 6
+
+    return None, "nessuna regola applicabile", False
+
+
+# Importi citati come riferimento normativo, non come spesa:
+# "di importo pari o superiore a 5.000,00 euro", "soglia di 140.000".
+RE_CONTESTO_NORMATIVO = re.compile(
+    r"(pari\s+o\s+superiore|inferiore\s+a|superiore\s+a|non\s+superiore|"
+    r"ai\s+sensi|art\w*\.?\s*\d|soglia|d\.?\s?lgs|comma|limite\s+di)",
+    re.IGNORECASE)
+
+
+def _somma_righe_tabella(testo: str) -> tuple[float | None, int]:
+    """
+    Somma gli importi delle VERE righe di tabella, deduplicando le
+    ripetizioni. Richiede il separatore di colonna: le righe di prosa
+    ("totale di €4.104,15 oltre IVA") non sono voci di una tabella e
+    non vanno sommate fra loro.
+    """
+    voci, viste = [], set()
+    for riga in testo.splitlines():
+        if "|" not in riga:
+            continue
+        if not RE_RIGA_MONETARIA.search(riga) or _e_erario(riga):
+            continue
+        if RE_CONTESTO_NORMATIVO.search(riga):
+            continue
+        # Le righe di totale sono già aggregati: sommarle insieme alle voci
+        # conta due volte lo stesso denaro (quadri economici con subtotali)
+        if re.search(r"(?i)\b(totale|subtotale|riepilogo|sommano)\b", riga):
+            continue
+        for m in RE_IMPORTO_NUDO.finditer(riga):
+            if riga[max(0, m.start() - 1): m.start()] == "-":
+                continue
+            v = importo_italiano(m.group(1))
+            if not v or v in SOGLIE_NORMATIVE:
+                continue
+            chiave = (re.sub(r"[^A-Za-zÀ-ù]", "", riga).upper()[:15], v)
+            if chiave in viste:
+                continue
+            viste.add(chiave)
+            voci.append(v)
+    return (round(sum(voci), 2), len(voci)) if voci else (None, 0)
+
+
 def _schema_vuoto(oggetto: str) -> dict:
     """Record con tutti i campi dello schema, valorizzati a vuoto."""
     return {
@@ -762,52 +928,15 @@ def _cerca_cig(testo: str) -> str | None:
 
 
 def _estrai_con_regex(testo: str, oggetto: str) -> dict:
+    """
+    Estrazione senza modello. L'importo segue la gerarchia di
+    estrai_importo(): mai il massimo del documento.
+    """
     completo = f"{oggetto}\n{testo}"
-
-    # Cerca gli importi preferendo quelli in un contesto di spesa effettiva
-    # (impegno/liquidazione/affidamento) entro i 120 caratteri precedenti.
-    candidati_contesto, candidati_tutti = [], []
-    for m in RE_IMPORTO.finditer(completo):
-        raw = m.group(1) or m.group(2)
-        v = importo_italiano(raw)
-        if not v or v in SOGLIE_NORMATIVE:
-            continue
-        candidati_tutti.append(v)
-        if RE_CONTESTO_SPESA.search(completo[max(0, m.start() - 120): m.start()]):
-            candidati_contesto.append(v)
-
-    # Nessun importo con simbolo di valuta: cerca nelle righe di tabella,
-    # dove gli importi compaiono nudi (caso tipico delle liquidazioni fatture)
-    if not candidati_tutti:
-        voci_tabella, viste = [], set()
-        for riga in completo.splitlines():
-            if not RE_RIGA_MONETARIA.search(riga):
-                continue
-            if _e_erario(riga):
-                continue          # l'IVA allo Stato non è spesa verso terzi
-            for m in RE_IMPORTO_NUDO.finditer(riga):
-                if riga[max(0, m.start() - 1): m.start()] == "-":
-                    continue      # storni/note di credito
-                v = importo_italiano(m.group(1))
-                if not v or v in SOGLIE_NORMATIVE:
-                    continue
-                # pdfplumber rende la stessa tabella due volte (testo + celle):
-                # deduplica per (creditore, importo) ignorando codici e numeri
-                soggetto = re.sub(r"[^A-Za-zÀ-ù]", "", riga).upper()[:15]
-                chiave = (soggetto, v)
-                if chiave in viste:
-                    continue
-                viste.add(chiave)
-                voci_tabella.append(v)
-        if voci_tabella:
-            somma = round(sum(voci_tabella), 2)
-            log.info(f"  Importi da tabella senza valuta: {voci_tabella} → {somma}")
-            return {**_schema_vuoto(oggetto), "importo_euro": somma,
-                    "cig": _cerca_cig(completo),
-                    "beneficiario": nome_da_testo(oggetto, testo)}
-
-    importi = candidati_contesto or candidati_tutti
-    importo = max(importi) if importi else None
+    importo, regola, incerto = estrai_importo(testo, oggetto)
+    if importo:
+        log.info(f"  Importo da regola '{regola}': {importo:,.2f}"
+                 + ("  [DA VERIFICARE]" if incerto else ""))
 
     beneficiario = None
     m = RE_BENEFICIARIO.search(completo)
@@ -816,6 +945,7 @@ def _estrai_con_regex(testo: str, oggetto: str) -> dict:
     beneficiario = beneficiario or nome_da_testo(oggetto, testo)
 
     return {**_schema_vuoto(oggetto), "importo_euro": importo,
+            "regola_importo": regola, "importo_incerto": incerto,
             "cig": _cerca_cig(completo), "beneficiario": beneficiario}
 
 

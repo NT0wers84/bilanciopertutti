@@ -61,6 +61,12 @@
   .spesa-importo { font-size: 20px; font-weight: 700; color: var(--blu-scuro);
                    white-space: nowrap; }
   .spesa-importo.nd { color: var(--grigio); font-size: 14px; font-weight: 500; }
+  .spesa-importo.incerto { color: var(--ambra) !important; }
+  .spesa-importo .asterisco { font-size: 12px; vertical-align: super;
+    background: #FDF1DC; border: 1px solid #EFD9A8; border-radius: 50%;
+    padding: 0 5px; margin-left: 3px; font-weight: 700; }
+  .nota-incerto { margin-top: 8px; font-size: 12px; background: #FDF1DC;
+    border: 1px solid #EFD9A8; border-radius: 8px; padding: 8px 10px; color: #6B4E00; }
   .spesa-beneficiario { font-weight: 600; font-size: 15px; }
   .spesa-descrizione { font-size: 14px; color: var(--testo); margin-top: 6px; }
   .spesa-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px;
@@ -349,12 +355,14 @@ function aggiornaKpi() {
   };
   const totaleAnnuo = conImporto.reduce((t, s) => t + quotaAnnua(s), 0);
   const nPluri = conImporto.filter(s => s.importo_e_pluriennale && s.durata_anni).length;
+  const nIncerti = conImporto.filter(s => s.importo_incerto).length;
   const etichettaTot = vista === "liquidazione" ? "usciti dalle casse comunali"
     : vista === "determinazione" ? "impegnati (non ancora pagati)" : "totale (impegni + pagamenti)";
 
   document.getElementById("kpi").innerHTML = `
     <div class="card"><div class="valore">${eurCompatto(totaleAnnuo)}</div>
-      <div class="etichetta">${etichettaTot}${nPluri ? ` · ${nPluri} spese pluriennali contate pro quota` : ""}</div></div>
+      <div class="etichetta">${etichettaTot}${nPluri ? ` · ${nPluri} pluriennali pro quota` : ""}${
+        nIncerti ? ` · <strong style="color:var(--ambra)">${nIncerti} importi da verificare</strong>` : ""}</div></div>
     <div class="card"><div class="valore">${filtrate.length.toLocaleString("it-IT")}</div>
       <div class="etichetta">atti${conImporto.length < filtrate.length
         ? ` · ${filtrate.length - conImporto.length} senza importo` : ""}</div></div>
@@ -514,9 +522,11 @@ function disegnaFeed() {
     <article class="spesa-card tipo-${liq ? "liquidazione" : "determinazione"}">
       <div class="spesa-testata">
         <div class="spesa-beneficiario">${esc(s.beneficiario) || "<em>Beneficiario non indicato</em>"}</div>
-        <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""}"
-             ${s.importo_euro == null ? 'title="Importo non estratto automaticamente: leggilo nell\'atto originale"' : ""}>
-          ${s.importo_euro != null ? eur(s.importo_euro) : "importo da verificare nell'atto"}</div>
+        <div class="spesa-importo ${s.importo_euro == null ? "nd" : ""} ${s.importo_incerto ? "incerto" : ""}"
+             title="${s.importo_euro == null ? "Importo non estraibile automaticamente: leggilo nell'atto"
+                     : esc(s.regola_importo || "")}">
+          ${s.importo_euro != null ? eur(s.importo_euro) : "importo da verificare nell'atto"}
+          ${s.importo_incerto && s.importo_euro != null ? '<span class="asterisco">?</span>' : ""}</div>
       </div>
       <div class="spesa-descrizione">${esc(s.descrizione_sintetica) || esc((s.oggetto || "").slice(0, 160))}</div>
       <div class="spesa-meta">
@@ -531,6 +541,11 @@ function disegnaFeed() {
         ${s.data_pubblicazione ? `<span class="tag">${dataIt(s.data_pubblicazione)}</span>` : ""}
         ${s.cig ? `<span class="tag">CIG ${esc(s.cig)}</span>` : ""}
       </div>
+      ${s.importo_incerto && s.importo_euro != null ? `<div class="nota-incerto">
+        <strong>Importo da verificare.</strong> L'atto contiene più cifre plausibili
+        e la lettura automatica non è conclusiva${s.regola_importo
+          ? ` (criterio usato: ${esc(s.regola_importo)})` : ""}.
+        Controlla l'atto originale prima di citare questo numero.</div>` : ""}
       ${notaRimod}${notaPluri}
       ${Array.isArray(s.atti_gemelli) && s.atti_gemelli.length ? `<div class="nota-pluriennale"
         style="background:#FBEDE9;border-color:#F0D2C8;color:#7A2E18">

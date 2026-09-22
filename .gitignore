@@ -8,3 +8,8 @@ venv/
 # Nel repo va solo l'estratto di Pieve Emanuele (data/bilanci_pieve.json),
 # generato da scripts/bilanci_estrai.py.
 bilanci/
+
+# Dataset OpenCivitas per funzione scaricati a mano (ZIP scompattati):
+# restano locali, nel repo va solo l estratto in data/confronti.json
+fabbisogni/
+ifel/

@@ -62,6 +62,14 @@ def main():
         "totale_euro": round(sum(s.get("importo_euro") or 0 for s in spese), 2),
     }
     _scrivi(DOCS_DATA / "meta.json", json.dumps(meta, ensure_ascii=False))
+
+    # Dati di confronto (fabbisogni standard, IRPEF, benchmark lombardo):
+    # raccolti a mano dal portale dovevannoinostrisoldi e dai CSV BDAP,
+    # non aggiornabili dal workflow. Qui vengono solo ricopiati nel sito.
+    confronti = Path("data/confronti.json")
+    if confronti.exists():
+        _scrivi(DOCS_DATA / "confronti.json", confronti.read_text(encoding="utf-8"))
+        log.info("Dati di confronto copiati nel sito")
     log.info(f"Sito aggiornato: {len(spese)} spese, totale € {meta['totale_euro']:,.2f}")
 
 

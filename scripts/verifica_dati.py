@@ -17,6 +17,8 @@ FILE_DATI = [
     Path("docs/data/spese.json"),
     Path("docs/data/meta.json"),
     Path("docs/data/bilanci.json"),
+    Path("docs/data/confronti.json"),
+    Path("data/confronti.json"),
 ]
 MARCATORI = ("<<<<<<< ", "=======\n", ">>>>>>> ")
 

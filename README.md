@@ -19,7 +19,9 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
 - `scripts/genera_sito.py` — prepara `docs/data/` per il sito
 - `scripts/publisher_telegram.py` — pubblica le nuove spese sul canale Telegram
 - `data/spese.json` — database flat (unica fonte di verità)
-- `docs/` — sito statico servito da GitHub Pages
+- `scripts/normalizza.py` — manutenzione qualità: unifica le grafie dei beneficiari, segnala possibili doppi conteggi
+- `data/confronti.json` — dati di confronto (fabbisogni standard, IRPEF, benchmark lombardo) raccolti a mano dal portale dovevannoinostrisoldi.com: **non si aggiornano dal workflow**
+- `docs/` — sito statico servito da GitHub Pages: `index.html` (spese), `bilanci.html`, `confronti.html`
 
 ## Setup (una tantum)
 

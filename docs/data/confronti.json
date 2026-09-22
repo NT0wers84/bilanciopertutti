@@ -1,0 +1,88 @@
+{
+  "aggiornato": "2026-09-22",
+  "nota": "Dati raccolti tramite il portale dovevannoinostrisoldi.com (OpenCivitas/Sogei, MEF) e dai CSV BDAP. Non si aggiornano automaticamente: vanno rigenerati quando escono nuove annualità.",
+  "ente": {
+    "nome": "Comune di Pieve Emanuele",
+    "codice_istat": "015173",
+    "codice_fiscale": "80104290152",
+    "provincia": "Milano",
+    "popolazione_implicita_2022": 15697,
+    "nota_popolazione": "Ricavata dal rapporto fra spesa totale e spesa pro capite pubblicate da OpenCivitas; non è un dato anagrafico ufficiale."
+  },
+
+  "fabbisogni": {
+    "fonte": "OpenCivitas · Sogei/SOSE per RGS e Dipartimento delle Finanze",
+    "licenza": "CC BY 4.0",
+    "url": "https://www.opencivitas.it/it/open-data",
+    "avvertenza": "Ogni anno appartiene a una famiglia metodologica diversa (FC20TOT…FC80TOT): la fonte vieta il confronto diretto fra annualità. Il 2020 non è ricostruito. La differenza fra spesa storica e spesa standard NON è una misura di spreco.",
+    "serie": [
+      {"anno": 2015, "famiglia": "FC20TOT", "storica": 11120536.74, "standard": 8116891.35, "scarto_pct": 37.00, "servizi_pct": -5.74, "livello_spesa": 10, "livello_servizi": 5, "pro_capite_storica": 687.17},
+      {"anno": 2016, "famiglia": "FC30TOT", "storica": 12427297.33, "standard": 8592411.46, "scarto_pct": 44.63, "servizi_pct": 4.68, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 771.02},
+      {"anno": 2017, "famiglia": "FC40TOT", "storica": 12118396.28, "standard": 8796250.17, "scarto_pct": 37.77, "servizi_pct": -4.99, "livello_spesa": 10, "livello_servizi": 5, "pro_capite_storica": 759.82},
+      {"anno": 2018, "famiglia": "FC50TOT", "storica": 12567425.36, "standard": 8960860.52, "scarto_pct": 40.25, "servizi_pct": 0.24, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 805.09},
+      {"anno": 2019, "famiglia": "FC60TOT", "storica": 13526976.22, "standard": 9702977.06, "scarto_pct": 39.41, "servizi_pct": 4.68, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 866.67},
+      {"anno": 2021, "famiglia": "FC70TOT", "storica": 11686138.56, "standard": 9987072.55, "scarto_pct": 17.01, "servizi_pct": -22.35, "livello_spesa": 8, "livello_servizi": 2, "pro_capite_storica": 745.72},
+      {"anno": 2022, "famiglia": "FC80TOT", "storica": 13642364.47, "standard": 10215795.94, "scarto_pct": 33.54, "servizi_pct": -14.58, "livello_spesa": 10, "livello_servizi": 4, "pro_capite_storica": 869.11}
+    ],
+    "rifiuti_2022": {
+      "famiglia": "FC80RIFIUTI",
+      "storica": 2806887.68,
+      "standard": 2531098.79,
+      "scarto_pct": 10.90,
+      "servizi_pct": -28.85,
+      "livello_spesa": 7,
+      "livello_servizi": 2,
+      "pro_capite_storica": 178.82,
+      "pro_capite_standard": 161.25
+    }
+  },
+
+  "composizione_spesa_2022": {
+    "fonte": "BDAP · Rendiconto 2022, Allegato e) Spese correnti per macroaggregato (impegni), Regione Lombardia",
+    "gruppo_confronto": "106 comuni lombardi con spesa corrente fra 10,3 e 24,0 milioni di euro",
+    "avvertenza": "Le quote dicono COME il Comune distribuisce la spesa, non QUANTO spende rispetto ai pari: il gruppo è selezionato per spesa simile. Perimetro diverso da quello dei fabbisogni standard: i due dati non vanno sommati né sottratti.",
+    "totale_pieve": 17153149.91,
+    "voci": [
+      {"voce": "Acquisto di beni e servizi", "pieve_euro": 11557882.08, "pieve_pct": 67.4, "mediana_pct": 60.9},
+      {"voce": "Redditi da lavoro dipendente", "pieve_euro": 3430022.61, "pieve_pct": 20.0, "mediana_pct": 21.3},
+      {"voce": "Trasferimenti correnti", "pieve_euro": 1038408.69, "pieve_pct": 6.1, "mediana_pct": 11.5},
+      {"voce": "Altre spese correnti", "pieve_euro": 507023.34, "pieve_pct": 3.0, "mediana_pct": 1.9},
+      {"voce": "Interessi passivi", "pieve_euro": 390400.29, "pieve_pct": 2.3, "mediana_pct": 0.8},
+      {"voce": "Imposte e tasse a carico dell'ente", "pieve_euro": 229412.90, "pieve_pct": 1.3, "mediana_pct": 1.6}
+    ]
+  },
+
+  "capacita_fiscale": {
+    "fonte": "MEF · Dipartimento delle Finanze — Redditi e principali variabili IRPEF su base comunale",
+    "licenza": "CC BY 3.0",
+    "anno_imposta": 2024,
+    "anno_dichiarazione": 2025,
+    "avvertenza": "L'imposta netta è quella DICHIARATA nelle statistiche MEF: non è gettito riscosso e non va sottratta alla spesa comunale.",
+    "contribuenti": 12025,
+    "reddito_medio_pieve": 26120.30,
+    "reddito_medio_lombardia": 30202.23,
+    "reddito_medio_italia": 25818.41,
+    "scarto_lombardia_pct": -13.5,
+    "scarto_italia_pct": 1.2,
+    "imposta_netta_dichiarata": 55389982.00,
+    "addizionale_comunale_dovuta": 2277947.00,
+    "addizionale_regionale_dovuta": 4174970.00
+  },
+
+  "cassa_e_debito": {
+    "fonte": "BDAP · Rendiconti 2016-2025, impegni per missione (elaborazione del progetto)",
+    "avvertenza": "Le anticipazioni di tesoreria sono prestiti di cassa restituiti entro l'anno: sono partite finanziarie, non servizi ai cittadini. Il calo degli impegni totali non è quindi un taglio della spesa per i cittadini.",
+    "serie": [
+      {"anno": 2016, "impegni_totali": 38608133, "debito": 1158916, "debito_pct": 3.0, "anticipazioni": 15361219},
+      {"anno": 2017, "impegni_totali": 39179306, "debito": 1198763, "debito_pct": 3.1, "anticipazioni": 16751946},
+      {"anno": 2018, "impegni_totali": 35342922, "debito": 1595780, "debito_pct": 4.5, "anticipazioni": 12802397},
+      {"anno": 2019, "impegni_totali": 29346293, "debito": 1594832, "debito_pct": 5.4, "anticipazioni": 8545598},
+      {"anno": 2020, "impegni_totali": 25657132, "debito": 543837, "debito_pct": 2.1, "anticipazioni": 5220474},
+      {"anno": 2021, "impegni_totali": 23977797, "debito": 1415664, "debito_pct": 5.9, "anticipazioni": 3617745},
+      {"anno": 2022, "impegni_totali": 22473258, "debito": 1341033, "debito_pct": 6.0, "anticipazioni": 0},
+      {"anno": 2023, "impegni_totali": 25135838, "debito": 1051881, "debito_pct": 4.2, "anticipazioni": 0},
+      {"anno": 2024, "impegni_totali": 27953012, "debito": 1303047, "debito_pct": 4.7, "anticipazioni": 0},
+      {"anno": 2025, "impegni_totali": 28119759, "debito": 1613765, "debito_pct": 5.7, "anticipazioni": 0}
+    ]
+  }
+}

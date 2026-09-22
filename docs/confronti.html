@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come siamo messi — OpenSpese Pieve Emanuele</title>
+<meta name="description" content="Il Comune di Pieve Emanuele a confronto con i comuni simili: spesa rispetto al fabbisogno standard, livello dei servizi, capacità fiscale, debito e cassa. Dati ufficiali OpenCivitas, MEF e BDAP.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --blu: #1B4FCA; --blu-scuro: #123785; --verde: #0E7C5B; --ambra: #B08A00;
+    --rosso: #B3372B; --fondo: #F6F5F1; --carta: #FFFFFF; --testo: #26251F;
+    --grigio: #636158; --bordo: #E4E2DA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--fondo); color: var(--testo); line-height: 1.55; }
+  a { color: var(--blu); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  header { background: var(--blu-scuro); color: #fff; padding: 28px 16px 24px; }
+  header h1 { font-size: 26px; letter-spacing: -0.3px; }
+  header h1 span { color: #9DC4FF; }
+  header p { margin-top: 6px; font-size: 14px; opacity: .85; max-width: 700px; }
+  nav.principale { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  nav.principale a { color: #fff; text-decoration: none; font-size: 13px;
+    padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,.12); }
+  nav.principale a.attiva { background: #fff; color: var(--blu-scuro); font-weight: 600; }
+
+  h2.sezione { font-size: 20px; margin: 30px 0 4px; }
+  .sottotitolo { font-size: 13.5px; color: var(--grigio); margin-bottom: 14px; max-width: 760px; }
+
+  .card { background: var(--carta); border: 1px solid var(--bordo);
+          border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+  .kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .kpi .valore { font-size: 25px; font-weight: 700; letter-spacing: -0.5px; }
+  .kpi .etichetta { font-size: 12px; color: var(--grigio); margin-top: 3px; }
+  .rosso { color: var(--rosso); } .verde { color: var(--verde); } .ambra { color: var(--ambra); }
+
+  .grafico { position: relative; height: 300px; }
+  .grafico.alto { height: 360px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--bordo); }
+  th:first-child, td:first-child { text-align: left; }
+  th { background: var(--fondo); font-size: 11.5px; color: var(--grigio);
+       text-transform: uppercase; letter-spacing: .3px; }
+  tr:last-child td { border-bottom: none; }
+  td.sopra { color: var(--rosso); font-weight: 600; }
+  td.sotto { color: var(--verde); font-weight: 600; }
+
+  .spiegazione { background: #EEF3FD; border: 1px solid #C6DAFC; border-radius: 10px;
+    padding: 12px 14px; font-size: 13px; color: #123785; margin: 12px 0; }
+  .cautela { background: #FDF1DC; border: 1px solid #EFD9A8; border-radius: 10px;
+    padding: 12px 14px; font-size: 12.5px; color: #6B4E00; margin: 12px 0; }
+  .fonte { font-size: 11.5px; color: var(--grigio); margin-top: 10px; }
+
+  footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
+           padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
+  footer p { margin-bottom: 8px; max-width: 820px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>OpenSpese <span>Pieve Emanuele</span></h1>
+    <p>Come sta il Comune rispetto agli altri: quanto spende in confronto a quello che
+       lo Stato stima necessario, che servizi eroga, quanto reddito ha il territorio,
+       come sono andati debito e liquidità di cassa.</p>
+    <nav class="principale">
+      <a href="index.html">Spese quotidiane</a>
+      <a href="bilanci.html">Bilanci</a>
+      <a href="confronti.html" class="attiva">Come siamo messi</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="contenuto">
+  <p style="padding:40px 0;color:var(--grigio)">Caricamento dati…</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Perché questa pagina.</strong> I numeri delle singole spese dicono poco
+       se non si sa con cosa confrontarli. Qui ci sono i termini di paragone ufficiali:
+       il fabbisogno standard calcolato dallo Stato, i comuni di dimensione simile,
+       la media regionale dei redditi.</p>
+    <p><strong>Una cosa che questi dati non dicono.</strong> La differenza fra quanto un
+       Comune spende e il suo fabbisogno standard <em>non è una misura di spreco</em>:
+       lo dichiara espressamente la fonte. Può dipendere da caratteristiche del territorio
+       che il modello statistico non cattura, da scelte politiche o da costi ereditati.
+       Serve per fare domande, non per dare risposte.</p>
+    <p id="fonti"></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+const eur = v => v == null ? "—" : v.toLocaleString("it-IT",
+  { style: "currency", currency: "EUR", minimumFractionDigits: 0,
+    maximumFractionDigits: 0, useGrouping: "always" });
+const eurC = v => v === 0 ? "zero"
+  : v >= 1e6 ? (v/1e6).toLocaleString("it-IT",{maximumFractionDigits:1})+" mln €"
+  : v >= 1e3 ? Math.round(v/1e3).toLocaleString("it-IT")+" mila €"
+  : Math.round(v).toLocaleString("it-IT")+" €";
+const pct = v => (v > 0 ? "+" : "") + v.toLocaleString("it-IT", {maximumFractionDigits:1}) + "%";
+const esc = s => (s||"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+async function avvia() {
+  let d;
+  try {
+    d = await fetch(`data/confronti.json?v=${Math.floor(Date.now()/60000)}`).then(r => r.json());
+  } catch (e) {
+    document.getElementById("contenuto").innerHTML =
+      '<p style="padding:40px 0">Dati di confronto non disponibili.</p>';
+    return;
+  }
+  const ultimo = d.fabbisogni.serie[d.fabbisogni.serie.length - 1];
+  const rif = d.fabbisogni.rifiuti_2022;
+  const cf = d.capacita_fiscale;
+  const cassa = d.cassa_e_debito.serie;
+  const ultimaCassa = cassa[cassa.length - 1];
+
+  document.getElementById("contenuto").innerHTML = `
+    <h2 class="sezione">In sintesi</h2>
+    <div class="sottotitolo">I quattro numeri che dicono come sta il Comune, con l'anno a cui si riferiscono.</div>
+    <div class="kpi">
+      <div class="card"><div class="valore rosso">${pct(ultimo.scarto_pct)}</div>
+        <div class="etichetta">spesa oltre il fabbisogno standard (${ultimo.anno})</div></div>
+      <div class="card"><div class="valore ${ultimo.servizi_pct < 0 ? "rosso" : "verde"}">${pct(ultimo.servizi_pct)}</div>
+        <div class="etichetta">livello dei servizi vs comuni simili (${ultimo.anno})</div></div>
+      <div class="card"><div class="valore ambra">${pct(cf.scarto_lombardia_pct)}</div>
+        <div class="etichetta">reddito medio vs Lombardia (${cf.anno_imposta})</div></div>
+      <div class="card"><div class="valore verde">${eurC(0)}</div>
+        <div class="etichetta">anticipazioni di cassa nel ${ultimaCassa.anno}, erano ${eurC(cassa[0].anticipazioni)} nel ${cassa[0].anno}</div></div>
+    </div>
+
+    <h2 class="sezione">1. Spende più di quanto lo Stato stima necessario</h2>
+    <div class="sottotitolo">Lo Stato calcola per ogni Comune un <strong>fabbisogno standard</strong>:
+      quanto dovrebbe costare erogare i servizi, viste le caratteristiche del territorio.
+      Pieve Emanuele spende stabilmente di più.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-fabbisogni"></canvas></div></div>
+    <div class="card">
+      <table><thead><tr><th>Anno</th><th>Spesa storica</th><th>Fabbisogno</th>
+        <th>Scarto</th><th>Servizi vs simili</th></tr></thead><tbody>
+        ${d.fabbisogni.serie.map(r => `<tr>
+          <td>${r.anno}</td><td>${eur(r.storica)}</td><td>${eur(r.standard)}</td>
+          <td class="sopra">${pct(r.scarto_pct)}</td>
+          <td class="${r.servizi_pct < 0 ? "sopra" : "sotto"}">${pct(r.servizi_pct)}</td></tr>`).join("")}
+      </tbody></table>
+    </div>
+    <div class="spiegazione"><strong>Come si legge.</strong> In tutti e sette i rilevamenti
+      la spesa supera il fabbisogno. Dal 2021 il livello dei servizi scende sotto la media
+      dei comuni di pari dimensione: spendere sopra la norma ed erogare sotto la media è
+      la combinazione che merita più domande.</div>
+    <div class="cautela"><strong>Attenzione al confronto fra anni.</strong>
+      ${esc(d.fabbisogni.avvertenza)}</div>
+
+    <h2 class="sezione">2. Dove vanno i soldi, rispetto ai comuni simili</h2>
+    <div class="sottotitolo">Composizione della spesa corrente ${d.composizione_spesa_2022 ? 2022 : ""} a confronto con
+      ${esc(d.composizione_spesa_2022.gruppo_confronto)}.</div>
+    <div class="card"><div class="grafico"><canvas id="g-composizione"></canvas></div></div>
+    <div class="card">
+      <table><thead><tr><th>Voce</th><th>Pieve €</th><th>Pieve %</th>
+        <th>Mediana simili</th><th>Scarto</th></tr></thead><tbody>
+        ${d.composizione_spesa_2022.voci.map(v => {
+          const s = v.pieve_pct - v.mediana_pct;
+          return `<tr><td>${esc(v.voce)}</td><td>${eur(v.pieve_euro)}</td>
+            <td>${v.pieve_pct.toLocaleString("it-IT",{minimumFractionDigits:1})}%</td>
+            <td>${v.mediana_pct.toLocaleString("it-IT",{minimumFractionDigits:1})}%</td>
+            <td class="${s > 0 ? "sopra" : "sotto"}">${pct(s)} punti</td></tr>`;
+        }).join("")}
+      </tbody></table>
+    </div>
+    <div class="spiegazione"><strong>Il personale non è il problema.</strong>
+      Pieve Emanuele spende in stipendi una quota <em>inferiore</em> alla mediana dei comuni
+      di dimensione simile (20,0% contro 21,3%). Spende invece molto più in acquisto di beni
+      e servizi (67,4% contro 60,9%): il profilo di un Comune che compra all'esterno ciò che
+      altri producono internamente. Gli interessi sul debito sono quasi il triplo della
+      mediana, ma in valore assoluto pesano poco (390 mila euro).</div>
+    <div class="cautela">${esc(d.composizione_spesa_2022.avvertenza)}</div>
+
+    <h2 class="sezione">3. Quanto reddito ha il territorio</h2>
+    <div class="sottotitolo">La capacità fiscale dice quante risorse il Comune può raccogliere
+      dai suoi cittadini. Redditi dichiarati ${cf.anno_imposta}, dichiarazioni ${cf.anno_dichiarazione}.</div>
+    <div class="kpi">
+      <div class="card"><div class="valore">${eur(cf.reddito_medio_pieve)}</div>
+        <div class="etichetta">reddito medio dichiarato a Pieve Emanuele</div></div>
+      <div class="card"><div class="valore ambra">${pct(cf.scarto_lombardia_pct)}</div>
+        <div class="etichetta">rispetto alla media lombarda (${eur(cf.reddito_medio_lombardia)})</div></div>
+      <div class="card"><div class="valore">${pct(cf.scarto_italia_pct)}</div>
+        <div class="etichetta">rispetto alla media italiana (${eur(cf.reddito_medio_italia)})</div></div>
+      <div class="card"><div class="valore">${eur(cf.addizionale_comunale_dovuta)}</div>
+        <div class="etichetta">addizionale comunale IRPEF dovuta · ${cf.contribuenti.toLocaleString("it-IT")} contribuenti</div></div>
+    </div>
+    <div class="spiegazione"><strong>Come si legge.</strong> Pieve Emanuele è in linea con la
+      media nazionale ma <strong>sotto del 13,5% rispetto alla Lombardia</strong>: sostiene costi
+      da area metropolitana milanese con una base di redditi più debole del contesto in cui opera.</div>
+    <div class="cautela">${esc(cf.avvertenza)}</div>
+
+    <h2 class="sezione">4. Il risanamento della cassa</h2>
+    <div class="sottotitolo">Le <strong>anticipazioni di tesoreria</strong> sono prestiti che il
+      Comune chiede alla banca quando non ha liquidità per pagare, e restituisce entro l'anno.
+      Usarne molte è il sintomo di una cassa in sofferenza.</div>
+    <div class="card"><div class="grafico"><canvas id="g-cassa"></canvas></div></div>
+    <div class="spiegazione"><strong>Il dato più incoraggiante di questa pagina.</strong>
+      Le anticipazioni sono passate da ${eur(cassa[0].anticipazioni)} nel ${cassa[0].anno}
+      a <strong>zero dal 2022</strong>. Nello stesso periodo la quota di spesa destinata al
+      debito sale dal ${cassa[0].debito_pct}% al ${ultimaCassa.debito_pct}%: coerente con il
+      passaggio da debiti di cassa a debito strutturato, più costoso in interessi ma molto
+      meno rischioso.</div>
+    <div class="cautela">${esc(d.cassa_e_debito.avvertenza)}</div>
+
+    <h2 class="sezione">Domande ancora aperte</h2>
+    <div class="card" style="font-size:14px">
+      <p style="margin-bottom:10px">Tre ipotesi sullo scarto fra spesa e fabbisogno sono state
+        verificate con i dati:</p>
+      <p style="margin-bottom:8px">✗ <strong>Troppo personale</strong> — smentita: la quota è
+        sotto la mediana dei comuni simili.</p>
+      <p style="margin-bottom:8px">≈ <strong>Il peso del debito</strong> — ridimensionata: gli
+        interessi sono il triplo della mediana ma valgono ~250 mila euro sopra la norma,
+        una frazione dello scarto.</p>
+      <p style="margin-bottom:8px">? <strong>Servizi affidati all'esterno</strong> — coerente con
+        i dati ma non dimostrata: servirebbe l'elenco delle società partecipate e dei contratti
+        di servizio, che non è disponibile in formato aperto interrogabile.</p>
+      <p style="margin-top:12px;color:var(--grigio)">Lo scarto resta in larga parte senza
+        spiegazione documentata. Chi volesse cercarla dovrebbe partire dai contratti di servizio
+        e dalle società controllate dal Comune.</p>
+    </div>
+  `;
+
+  document.getElementById("fonti").innerHTML =
+    `Fonti: ${esc(d.fabbisogni.fonte)} (${esc(d.fabbisogni.licenza)}) · ${esc(cf.fonte)} · ` +
+    `${esc(d.composizione_spesa_2022.fonte)}. Dati raccolti il ${esc(d.aggiornato)}. ` +
+    `Non si aggiornano automaticamente. Codice: ` +
+    `<a href="https://github.com/NT0wers84/bilanciopertutti" target="_blank" rel="noopener">GitHub</a>.`;
+
+  disegnaGrafici(d);
+}
+
+function disegnaGrafici(d) {
+  const serie = d.fabbisogni.serie;
+  new Chart(document.getElementById("g-fabbisogni"), {
+    type: "bar",
+    data: { labels: serie.map(r => r.anno), datasets: [
+      { label: "Spesa storica", data: serie.map(r => r.storica), backgroundColor: "#B3372B", borderRadius: 3 },
+      { label: "Fabbisogno standard", data: serie.map(r => r.standard), backgroundColor: "#9DB9EE", borderRadius: 3 },
+      { label: "Livello servizi vs simili (%)", data: serie.map(r => r.servizi_pct),
+        type: "line", yAxisID: "y2", borderColor: "#0E7C5B", backgroundColor: "#0E7C5B",
+        tension: .3, pointRadius: 4 },
+    ]},
+    options: { maintainAspectRatio: false,
+      plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => c.dataset.yAxisID === "y2"
+          ? `${c.dataset.label}: ${c.raw > 0 ? "+" : ""}${c.raw}%`
+          : `${c.dataset.label}: ${c.raw.toLocaleString("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0})}` } } },
+      scales: { y: { ticks: { callback: v => (v/1e6).toLocaleString("it-IT",{maximumFractionDigits:1})+" mln" } },
+                y2: { position: "right", grid: { drawOnChartArea: false },
+                      ticks: { callback: v => v+"%" } } } }
+  });
+
+  const voci = d.composizione_spesa_2022.voci;
+  new Chart(document.getElementById("g-composizione"), {
+    type: "bar",
+    data: { labels: voci.map(v => v.voce.length > 28 ? v.voce.slice(0,28)+"…" : v.voce),
+      datasets: [
+        { label: "Pieve Emanuele", data: voci.map(v => v.pieve_pct), backgroundColor: "#1B4FCA", borderRadius: 3 },
+        { label: "Mediana comuni simili", data: voci.map(v => v.mediana_pct), backgroundColor: "#C9CCD4", borderRadius: 3 },
+      ]},
+    options: { indexAxis: "y", maintainAspectRatio: false,
+      plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw}%` } } },
+      scales: { x: { ticks: { callback: v => v+"%" } }, y: { ticks: { font: { size: 11 } } } } }
+  });
+
+  const cassa = d.cassa_e_debito.serie;
+  new Chart(document.getElementById("g-cassa"), {
+    type: "bar",
+    data: { labels: cassa.map(r => r.anno), datasets: [
+      { label: "Anticipazioni di cassa", data: cassa.map(r => r.anticipazioni),
+        backgroundColor: "#B3372B", borderRadius: 3 },
+      { label: "Spesa per debito", data: cassa.map(r => r.debito),
+        backgroundColor: "#B08A00", borderRadius: 3 },
+    ]},
+    options: { maintainAspectRatio: false,
+      plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw.toLocaleString("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0})}` } } },
+      scales: { y: { ticks: { callback: v => (v/1e6).toLocaleString("it-IT",{maximumFractionDigits:1})+" mln" } } } }
+  });
+}
+
+avvia();
+</script>
+</body>
+</html>

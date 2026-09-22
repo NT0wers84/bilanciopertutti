@@ -9,26 +9,95 @@
     "popolazione_implicita_2022": 15697,
     "nota_popolazione": "Ricavata dal rapporto fra spesa totale e spesa pro capite pubblicate da OpenCivitas; non è un dato anagrafico ufficiale."
   },
-
   "fabbisogni": {
     "fonte": "OpenCivitas · Sogei/SOSE per RGS e Dipartimento delle Finanze",
     "licenza": "CC BY 4.0",
     "url": "https://www.opencivitas.it/it/open-data",
-    "avvertenza": "Ogni anno appartiene a una famiglia metodologica diversa (FC20TOT…FC80TOT): la fonte vieta il confronto diretto fra annualità. Il 2020 non è ricostruito. La differenza fra spesa storica e spesa standard NON è una misura di spreco.",
+    "avvertenza": "Ogni anno appartiene a una famiglia metodologica diversa (FC20TOT…FC80TOT): la fonte vieta il confronto diretto fra annualità, perché la formula cambia. Il 2020 non è stato ricostruito.",
     "serie": [
-      {"anno": 2015, "famiglia": "FC20TOT", "storica": 11120536.74, "standard": 8116891.35, "scarto_pct": 37.00, "servizi_pct": -5.74, "livello_spesa": 10, "livello_servizi": 5, "pro_capite_storica": 687.17},
-      {"anno": 2016, "famiglia": "FC30TOT", "storica": 12427297.33, "standard": 8592411.46, "scarto_pct": 44.63, "servizi_pct": 4.68, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 771.02},
-      {"anno": 2017, "famiglia": "FC40TOT", "storica": 12118396.28, "standard": 8796250.17, "scarto_pct": 37.77, "servizi_pct": -4.99, "livello_spesa": 10, "livello_servizi": 5, "pro_capite_storica": 759.82},
-      {"anno": 2018, "famiglia": "FC50TOT", "storica": 12567425.36, "standard": 8960860.52, "scarto_pct": 40.25, "servizi_pct": 0.24, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 805.09},
-      {"anno": 2019, "famiglia": "FC60TOT", "storica": 13526976.22, "standard": 9702977.06, "scarto_pct": 39.41, "servizi_pct": 4.68, "livello_spesa": 10, "livello_servizi": 6, "pro_capite_storica": 866.67},
-      {"anno": 2021, "famiglia": "FC70TOT", "storica": 11686138.56, "standard": 9987072.55, "scarto_pct": 17.01, "servizi_pct": -22.35, "livello_spesa": 8, "livello_servizi": 2, "pro_capite_storica": 745.72},
-      {"anno": 2022, "famiglia": "FC80TOT", "storica": 13642364.47, "standard": 10215795.94, "scarto_pct": 33.54, "servizi_pct": -14.58, "livello_spesa": 10, "livello_servizi": 4, "pro_capite_storica": 869.11}
+      {
+        "anno": 2015,
+        "famiglia": "FC20TOT",
+        "storica": 11120536.74,
+        "standard": 8116891.35,
+        "scarto_pct": 37.0,
+        "servizi_pct": -5.74,
+        "livello_spesa": 10,
+        "livello_servizi": 5,
+        "pro_capite_storica": 687.17
+      },
+      {
+        "anno": 2016,
+        "famiglia": "FC30TOT",
+        "storica": 12427297.33,
+        "standard": 8592411.46,
+        "scarto_pct": 44.63,
+        "servizi_pct": 4.68,
+        "livello_spesa": 10,
+        "livello_servizi": 6,
+        "pro_capite_storica": 771.02
+      },
+      {
+        "anno": 2017,
+        "famiglia": "FC40TOT",
+        "storica": 12118396.28,
+        "standard": 8796250.17,
+        "scarto_pct": 37.77,
+        "servizi_pct": -4.99,
+        "livello_spesa": 10,
+        "livello_servizi": 5,
+        "pro_capite_storica": 759.82
+      },
+      {
+        "anno": 2018,
+        "famiglia": "FC50TOT",
+        "storica": 12567425.36,
+        "standard": 8960860.52,
+        "scarto_pct": 40.25,
+        "servizi_pct": 0.24,
+        "livello_spesa": 10,
+        "livello_servizi": 6,
+        "pro_capite_storica": 805.09
+      },
+      {
+        "anno": 2019,
+        "famiglia": "FC60TOT",
+        "storica": 13526976.22,
+        "standard": 9702977.06,
+        "scarto_pct": 39.41,
+        "servizi_pct": 4.68,
+        "livello_spesa": 10,
+        "livello_servizi": 6,
+        "pro_capite_storica": 866.67
+      },
+      {
+        "anno": 2021,
+        "famiglia": "FC70TOT",
+        "storica": 11686138.56,
+        "standard": 9987072.55,
+        "scarto_pct": 17.01,
+        "servizi_pct": -22.35,
+        "livello_spesa": 8,
+        "livello_servizi": 2,
+        "pro_capite_storica": 745.72
+      },
+      {
+        "anno": 2022,
+        "famiglia": "FC80TOT",
+        "storica": 13642364.47,
+        "standard": 10215795.94,
+        "scarto_pct": 33.54,
+        "servizi_pct": -14.58,
+        "livello_spesa": 10,
+        "livello_servizi": 4,
+        "pro_capite_storica": 869.11
+      }
     ],
     "rifiuti_2022": {
       "famiglia": "FC80RIFIUTI",
       "storica": 2806887.68,
       "standard": 2531098.79,
-      "scarto_pct": 10.90,
+      "scarto_pct": 10.9,
       "servizi_pct": -28.85,
       "livello_spesa": 7,
       "livello_servizi": 2,
@@ -36,37 +105,130 @@
       "pro_capite_standard": 161.25
     }
   },
-
   "comuni_vicini_2022": {
     "fonte": "OpenCivitas · Sogei — Comuni, servizi totali, indicatori 2022 (FC80TOT)",
     "licenza": "CC BY 4.0",
     "nota": "Comuni dell'ambito Visconteo Sud Milano, lo stesso con cui Pieve Emanuele condivide i servizi sociali. Le due percentuali sono indipendenti: un Comune può spendere sopra il fabbisogno e allo stesso tempo erogare servizi sopra o sotto la media.",
-    "avvertenza": "Lo scarto dal fabbisogno standard non misura lo spreco, e il livello dei servizi è calcolato sulla media dei comuni della stessa fascia di popolazione: comuni di dimensione molto diversa hanno metri di paragone diversi.",
+    "avvertenza": "Il livello dei servizi è calcolato sulla media dei comuni della stessa fascia di popolazione: Rozzano (41.000 abitanti) e Basiglio (8.000) hanno metri di paragone diversi fra loro, quindi le due percentuali non sono direttamente confrontabili da comune a comune.",
     "comuni": [
-      {"nome": "Pieve Emanuele", "istat": "015173", "storica": 13642364.47, "standard": 10215795.94, "scarto_pct": 33.54, "servizi_pct": -14.58, "pro_capite": 869.11, "livello_spesa": 10, "livello_servizi": 4, "evidenzia": true},
-      {"nome": "Rozzano", "istat": "015189", "storica": 39431480.07, "standard": 29290273.00, "scarto_pct": 34.62, "servizi_pct": 0.01, "pro_capite": 953.14, "livello_spesa": 10, "livello_servizi": 6, "evidenzia": false},
-      {"nome": "Basiglio", "istat": "015015", "storica": 6840551.44, "standard": 4824536.68, "scarto_pct": 41.79, "servizi_pct": 36.42, "pro_capite": 857.21, "livello_spesa": 10, "livello_servizi": 9, "evidenzia": false},
-      {"nome": "Lacchiarella", "istat": "015115", "storica": 6687109.26, "standard": 5818851.36, "scarto_pct": 14.92, "servizi_pct": 7.67, "pro_capite": 737.03, "livello_spesa": 8, "livello_servizi": 7, "evidenzia": false},
-      {"nome": "Locate di Triulzi", "istat": "015125", "storica": 6854112.58, "standard": 6298388.83, "scarto_pct": 8.82, "servizi_pct": 25.89, "pro_capite": 665.06, "livello_spesa": 7, "livello_servizi": 9, "evidenzia": false},
-      {"nome": "Opera", "istat": "015159", "storica": 9481148.51, "standard": 9460872.95, "scarto_pct": 0.21, "servizi_pct": -3.79, "pro_capite": 663.25, "livello_spesa": 6, "livello_servizi": 5, "evidenzia": false}
+      {
+        "nome": "Pieve Emanuele",
+        "istat": "015173",
+        "storica": 13642364.47,
+        "standard": 10215795.94,
+        "scarto_pct": 33.54,
+        "servizi_pct": -14.58,
+        "pro_capite": 869.11,
+        "livello_spesa": 10,
+        "livello_servizi": 4,
+        "evidenzia": true
+      },
+      {
+        "nome": "Rozzano",
+        "istat": "015189",
+        "storica": 39431480.07,
+        "standard": 29290273.0,
+        "scarto_pct": 34.62,
+        "servizi_pct": 0.01,
+        "pro_capite": 953.14,
+        "livello_spesa": 10,
+        "livello_servizi": 6,
+        "evidenzia": false
+      },
+      {
+        "nome": "Basiglio",
+        "istat": "015015",
+        "storica": 6840551.44,
+        "standard": 4824536.68,
+        "scarto_pct": 41.79,
+        "servizi_pct": 36.42,
+        "pro_capite": 857.21,
+        "livello_spesa": 10,
+        "livello_servizi": 9,
+        "evidenzia": false
+      },
+      {
+        "nome": "Lacchiarella",
+        "istat": "015115",
+        "storica": 6687109.26,
+        "standard": 5818851.36,
+        "scarto_pct": 14.92,
+        "servizi_pct": 7.67,
+        "pro_capite": 737.03,
+        "livello_spesa": 8,
+        "livello_servizi": 7,
+        "evidenzia": false
+      },
+      {
+        "nome": "Locate di Triulzi",
+        "istat": "015125",
+        "storica": 6854112.58,
+        "standard": 6298388.83,
+        "scarto_pct": 8.82,
+        "servizi_pct": 25.89,
+        "pro_capite": 665.06,
+        "livello_spesa": 7,
+        "livello_servizi": 9,
+        "evidenzia": false
+      },
+      {
+        "nome": "Opera",
+        "istat": "015159",
+        "storica": 9481148.51,
+        "standard": 9460872.95,
+        "scarto_pct": 0.21,
+        "servizi_pct": -3.79,
+        "pro_capite": 663.25,
+        "livello_spesa": 6,
+        "livello_servizi": 5,
+        "evidenzia": false
+      }
     ]
   },
-
   "composizione_spesa_2022": {
     "fonte": "BDAP · Rendiconto 2022, Allegato e) Spese correnti per macroaggregato (impegni), Regione Lombardia",
     "gruppo_confronto": "106 comuni lombardi con spesa corrente fra 10,3 e 24,0 milioni di euro",
     "avvertenza": "Le quote dicono COME il Comune distribuisce la spesa, non QUANTO spende rispetto ai pari: il gruppo è selezionato per spesa simile. Perimetro diverso da quello dei fabbisogni standard: i due dati non vanno sommati né sottratti.",
     "totale_pieve": 17153149.91,
     "voci": [
-      {"voce": "Acquisto di beni e servizi", "pieve_euro": 11557882.08, "pieve_pct": 67.4, "mediana_pct": 60.9},
-      {"voce": "Redditi da lavoro dipendente", "pieve_euro": 3430022.61, "pieve_pct": 20.0, "mediana_pct": 21.3},
-      {"voce": "Trasferimenti correnti", "pieve_euro": 1038408.69, "pieve_pct": 6.1, "mediana_pct": 11.5},
-      {"voce": "Altre spese correnti", "pieve_euro": 507023.34, "pieve_pct": 3.0, "mediana_pct": 1.9},
-      {"voce": "Interessi passivi", "pieve_euro": 390400.29, "pieve_pct": 2.3, "mediana_pct": 0.8},
-      {"voce": "Imposte e tasse a carico dell'ente", "pieve_euro": 229412.90, "pieve_pct": 1.3, "mediana_pct": 1.6}
+      {
+        "voce": "Acquisto di beni e servizi",
+        "pieve_euro": 11557882.08,
+        "pieve_pct": 67.4,
+        "mediana_pct": 60.9
+      },
+      {
+        "voce": "Redditi da lavoro dipendente",
+        "pieve_euro": 3430022.61,
+        "pieve_pct": 20.0,
+        "mediana_pct": 21.3
+      },
+      {
+        "voce": "Trasferimenti correnti",
+        "pieve_euro": 1038408.69,
+        "pieve_pct": 6.1,
+        "mediana_pct": 11.5
+      },
+      {
+        "voce": "Altre spese correnti",
+        "pieve_euro": 507023.34,
+        "pieve_pct": 3.0,
+        "mediana_pct": 1.9
+      },
+      {
+        "voce": "Interessi passivi",
+        "pieve_euro": 390400.29,
+        "pieve_pct": 2.3,
+        "mediana_pct": 0.8
+      },
+      {
+        "voce": "Imposte e tasse a carico dell'ente",
+        "pieve_euro": 229412.9,
+        "pieve_pct": 1.3,
+        "mediana_pct": 1.6
+      }
     ]
   },
-
   "capacita_fiscale": {
     "fonte": "MEF · Dipartimento delle Finanze — Redditi e principali variabili IRPEF su base comunale",
     "licenza": "CC BY 3.0",
@@ -74,30 +236,781 @@
     "anno_dichiarazione": 2025,
     "avvertenza": "L'imposta netta è quella DICHIARATA nelle statistiche MEF: non è gettito riscosso e non va sottratta alla spesa comunale.",
     "contribuenti": 12025,
-    "reddito_medio_pieve": 26120.30,
+    "reddito_medio_pieve": 26120.3,
     "reddito_medio_lombardia": 30202.23,
     "reddito_medio_italia": 25818.41,
     "scarto_lombardia_pct": -13.5,
     "scarto_italia_pct": 1.2,
-    "imposta_netta_dichiarata": 55389982.00,
-    "addizionale_comunale_dovuta": 2277947.00,
-    "addizionale_regionale_dovuta": 4174970.00
+    "imposta_netta_dichiarata": 55389982.0,
+    "addizionale_comunale_dovuta": 2277947.0,
+    "addizionale_regionale_dovuta": 4174970.0
   },
-
   "cassa_e_debito": {
     "fonte": "BDAP · Rendiconti 2016-2025, impegni per missione (elaborazione del progetto)",
     "avvertenza": "Le anticipazioni di tesoreria sono prestiti di cassa restituiti entro l'anno: sono partite finanziarie, non servizi ai cittadini. Il calo degli impegni totali non è quindi un taglio della spesa per i cittadini.",
     "serie": [
-      {"anno": 2016, "impegni_totali": 38608133, "debito": 1158916, "debito_pct": 3.0, "anticipazioni": 15361219},
-      {"anno": 2017, "impegni_totali": 39179306, "debito": 1198763, "debito_pct": 3.1, "anticipazioni": 16751946},
-      {"anno": 2018, "impegni_totali": 35342922, "debito": 1595780, "debito_pct": 4.5, "anticipazioni": 12802397},
-      {"anno": 2019, "impegni_totali": 29346293, "debito": 1594832, "debito_pct": 5.4, "anticipazioni": 8545598},
-      {"anno": 2020, "impegni_totali": 25657132, "debito": 543837, "debito_pct": 2.1, "anticipazioni": 5220474},
-      {"anno": 2021, "impegni_totali": 23977797, "debito": 1415664, "debito_pct": 5.9, "anticipazioni": 3617745},
-      {"anno": 2022, "impegni_totali": 22473258, "debito": 1341033, "debito_pct": 6.0, "anticipazioni": 0},
-      {"anno": 2023, "impegni_totali": 25135838, "debito": 1051881, "debito_pct": 4.2, "anticipazioni": 0},
-      {"anno": 2024, "impegni_totali": 27953012, "debito": 1303047, "debito_pct": 4.7, "anticipazioni": 0},
-      {"anno": 2025, "impegni_totali": 28119759, "debito": 1613765, "debito_pct": 5.7, "anticipazioni": 0}
+      {
+        "anno": 2016,
+        "impegni_totali": 38608133,
+        "debito": 1158916,
+        "debito_pct": 3.0,
+        "anticipazioni": 15361219
+      },
+      {
+        "anno": 2017,
+        "impegni_totali": 39179306,
+        "debito": 1198763,
+        "debito_pct": 3.1,
+        "anticipazioni": 16751946
+      },
+      {
+        "anno": 2018,
+        "impegni_totali": 35342922,
+        "debito": 1595780,
+        "debito_pct": 4.5,
+        "anticipazioni": 12802397
+      },
+      {
+        "anno": 2019,
+        "impegni_totali": 29346293,
+        "debito": 1594832,
+        "debito_pct": 5.4,
+        "anticipazioni": 8545598
+      },
+      {
+        "anno": 2020,
+        "impegni_totali": 25657132,
+        "debito": 543837,
+        "debito_pct": 2.1,
+        "anticipazioni": 5220474
+      },
+      {
+        "anno": 2021,
+        "impegni_totali": 23977797,
+        "debito": 1415664,
+        "debito_pct": 5.9,
+        "anticipazioni": 3617745
+      },
+      {
+        "anno": 2022,
+        "impegni_totali": 22473258,
+        "debito": 1341033,
+        "debito_pct": 6.0,
+        "anticipazioni": 0
+      },
+      {
+        "anno": 2023,
+        "impegni_totali": 25135838,
+        "debito": 1051881,
+        "debito_pct": 4.2,
+        "anticipazioni": 0
+      },
+      {
+        "anno": 2024,
+        "impegni_totali": 27953012,
+        "debito": 1303047,
+        "debito_pct": 4.7,
+        "anticipazioni": 0
+      },
+      {
+        "anno": 2025,
+        "impegni_totali": 28119759,
+        "debito": 1613765,
+        "debito_pct": 5.7,
+        "anticipazioni": 0
+      }
     ]
+  },
+  "funzioni_2022": {
+    "fonte": "OpenCivitas · SOSE per RGS e Dipartimento delle Finanze — indicatori per funzione fondamentale, rilascio 2022 (FC80)",
+    "licenza": "CC BY 4.0",
+    "url": "https://www.opencivitas.it/it/open-data",
+    "avvertenza": "Lo scarto fra spesa storica e fabbisogno standard NON misura lo spreco: dice solo quanto il Comune si scosta da ciò che, dati i suoi prezzi, la sua morfologia e la sua utenza, spende in media un comune comparabile. Il livello dei servizi è calcolato sulla media della fascia di popolazione, non su uno standard assoluto.",
+    "nota_amministrazione": "Per l'amministrazione generale la fonte non pubblica un livello dei servizi della funzione: i campi di output riportano il dato complessivo dell'ente. Qui sono omessi.",
+    "quadratura": {
+      "storica_somma_funzioni": 13642364.47,
+      "storica_totale_fonte": 13642364.47,
+      "storica_scarto_pct": -0.0,
+      "standard_somma_funzioni": 10074389.41,
+      "standard_totale_fonte": 10215795.94,
+      "standard_scarto_pct": -1.384
+    },
+    "funzioni": {
+      "Amministrazione generale": [
+        {
+          "nome": "Rozzano",
+          "istat": "015189",
+          "storica": 8355186.5,
+          "standard": 6080753.96,
+          "scarto_euro": 2274432.54,
+          "scarto_pct": 37.4,
+          "pro_capite_storica": 201.96,
+          "pro_capite_standard": 146.98,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso."
+        },
+        {
+          "nome": "Pieve Emanuele",
+          "istat": "015173",
+          "storica": 3330754.84,
+          "standard": 2068120.35,
+          "scarto_euro": 1262634.48,
+          "scarto_pct": 61.05,
+          "pro_capite_storica": 212.19,
+          "pro_capite_standard": 131.75,
+          "livello_spesa": 10.0,
+          "evidenzia": true,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso.",
+          "quota_scarto_pct": 36.85
+        },
+        {
+          "nome": "Locate di Triulzi",
+          "istat": "015125",
+          "storica": 2124410.59,
+          "standard": 1547558.8,
+          "scarto_euro": 576851.79,
+          "scarto_pct": 37.27,
+          "pro_capite_storica": 206.13,
+          "pro_capite_standard": 150.16,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso."
+        },
+        {
+          "nome": "Basiglio",
+          "istat": "015015",
+          "storica": 1847269.06,
+          "standard": 1310415.19,
+          "scarto_euro": 536853.87,
+          "scarto_pct": 40.97,
+          "pro_capite_storica": 231.49,
+          "pro_capite_standard": 164.21,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso."
+        },
+        {
+          "nome": "Lacchiarella",
+          "istat": "015115",
+          "storica": 2013947.61,
+          "standard": 1513464.55,
+          "scarto_euro": 500483.05,
+          "scarto_pct": 33.07,
+          "pro_capite_storica": 221.97,
+          "pro_capite_standard": 166.81,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso."
+        },
+        {
+          "nome": "Opera",
+          "istat": "015159",
+          "storica": 1654117.9,
+          "standard": 1952284.27,
+          "scarto_euro": -298166.36,
+          "scarto_pct": -15.27,
+          "pro_capite_storica": 115.71,
+          "pro_capite_standard": 136.57,
+          "livello_spesa": 4.0,
+          "evidenzia": false,
+          "servizi_pct": null,
+          "livello_servizi": null,
+          "nota_servizi": "Nella fonte il livello dei servizi di questa funzione riporta il dato complessivo dell'ente, non quello della funzione: qui è omesso."
+        }
+      ],
+      "Istruzione": [
+        {
+          "nome": "Basiglio",
+          "istat": "015015",
+          "storica": 1592245.79,
+          "standard": 1021813.82,
+          "scarto_euro": 570431.97,
+          "scarto_pct": 55.83,
+          "pro_capite_storica": 199.53,
+          "pro_capite_standard": 128.05,
+          "livello_spesa": 10.0,
+          "evidenzia": false,
+          "servizi_pct": 126.69,
+          "livello_servizi": 10.0
+        },
+        {
+          "nome": "Rozzano",
+          "istat": "015189",
+          "storica": 5236932.01,
+          "standard": 4673199.21,
+          "scarto_euro": 563732.8,
+          "scarto_pct": 12.06,
+          "pro_capite_storica": 126.59,
+          "pro_capite_standard": 112.96,
+          "livello_spesa": 7.0,
+          "evidenzia": false,
+          "servizi_pct": 110.27,
+          "livello_servizi": 10.0
+        },
+        {
+          "nome": "Opera",
+          "istat": "015159",
+          "storica": 1663232.18,
+          "standard": 1419473.98,
+          "scarto_euro": 243758.2,
+          "scarto_pct": 17.17,
+          "pro_capite_storica": 116.35,
+          "pro_capite_standard": 99.3,
+          "livello_spesa": 7.0,
+          "evidenzia": false,
+          "servizi_pct": 94.33,
+          "livello_servizi": 10.0
+        },
+        {
+          "nome": "Pieve Emanuele",
+          "istat": "015173",
+          "storica": 1776024.77,
+          "standard": 1586653.79,
+          "scarto_euro": 189370.98,
+          "scarto_pct": 11.94,
+          "pro_capite_storica": 113.14,
+          "pro_capite_standard": 101.08,
+          "livello_spesa": 7.0,
+          "evidenzia": true,
+          "servizi_pct": 48.8,
+          "livello_servizi": 8.0,
+          "quota_scarto_pct": 5.53
+        },
+        {
+          "nome": "Lacchiarella",
+          "istat": "015115",
+          "storica": 820591.27,
+          "standard": 931586.27,
+          "scarto_euro": -110995.0,
+          "scarto_pct": -11.91,
+          "pro_capite_storica": 90.44,
+          "pro_capite_standard": 102.68,
+          "livello_spesa": 5.0,
+          "evidenzia": false,
+          "servizi_pct": 93.32,
+          "livello_servizi": 10.0
+        },
+        {
+          "nome": "Locate di Triulzi",
+          "istat": "015125",
+          "storica": 748290.36,
+          "standard": 1071436.45,
+          "scarto_euro": -323146.09,
+          "scarto_pct": -30.16,
+          "pro_capite_storica": 72.61,
+          "pro_capite_standard": 103.96,
+          "livello_spesa": 3.0,
+          "evidenzia": false,
+          "servizi_pct": 64.32,
+          "livello_servizi": 9.0
+        }
+      ],
+      "Polizia locale": [
+        {
+          "nome": "Rozzano",
+          "istat": "015189",
+          "storica": 2279504.62,
+          "standard": 1744389.31,
+          "scarto_euro": 535115.31,
+          "scarto_pct": 30.68,
+          "pro_capite_storica": 55.1,
+          "pro_capite_standard": 42.17,
+          "livello_spesa": 8.0,
+          "evidenzia": false,
+          "servizi_pct": 2.88,
+          "livello_servizi": 6.0
+        },
+        {
+          "nome": "Opera",
+          "istat": "015159",
+          "storica": 872885.53,
+          "standard": 507054.15,
+          "scarto_euro": 365831.38,
+          "scarto_pct": 72.15,
+          "pro_capite_storica": 61.06,
+          "pro_capite_standard": 35.47,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": 28.32,
+          "livello_servizi": 7.0
+        },
+        {
+          "nome": "Pieve Emanuele",
+          "istat": "015173",
+          "storica": 794804.35,
+          "standard": 477478.19,
+          "scarto_euro": 317326.16,
+          "scarto_pct": 66.46,
+          "pro_capite_storica": 50.63,
+          "pro_capite_standard": 30.42,
+          "livello_spesa": 9.0,
+          "evidenzia": true,
+          "servizi_pct": -39.43,
+          "livello_servizi": 4.0,
+          "quota_scarto_pct": 9.26
+        },
+        {
+          "nome": "Basiglio",
+          "istat": "015015",
+          "storica": 416775.16,
+          "standard": 185730.22,
+          "scarto_euro": 231044.94,
+          "scarto_pct": 124.4,
+          "pro_capite_storica": 52.23,
+          "pro_capite_standard": 23.27,
+          "livello_spesa": 10.0,
+          "evidenzia": false,
+          "servizi_pct": 226.97,
+          "livello_servizi": 10.0
+        },
+        {
+          "nome": "Lacchiarella",
+          "istat": "015115",
+          "storica": 419581.15,
+          "standard": 293453.78,
+          "scarto_euro": 126127.37,
+          "scarto_pct": 42.98,
+          "pro_capite_storica": 46.25,
+          "pro_capite_standard": 32.34,
+          "livello_spesa": 8.0,
+          "evidenzia": false,
+          "servizi_pct": -26.71,
+          "livello_servizi": 4.0
+        },
+        {
+          "nome": "Locate di Triulzi",
+          "istat": "015125",
+          "storica": 318898.86,
+          "standard": 347608.69,
+          "scarto_euro": -28709.83,
+          "scarto_pct": -8.26,
+          "pro_capite_storica": 30.94,
+          "pro_capite_standard": 33.73,
+          "livello_spesa": 5.0,
+          "evidenzia": false,
+          "servizi_pct": 61.81,
+          "livello_servizi": 8.0
+        }
+      ],
+      "Sociale e asili nido": [
+        {
+          "nome": "Rozzano",
+          "istat": "015189",
+          "storica": 13293233.45,
+          "standard": 6409978.23,
+          "scarto_euro": 6883255.22,
+          "scarto_pct": 107.38,
+          "pro_capite_storica": 321.33,
+          "pro_capite_standard": 154.94,
+          "livello_spesa": 10.0,
+          "evidenzia": false,
+          "servizi_pct": -34.46,
+          "livello_servizi": 4.0
+        },
+        {
+          "nome": "Pieve Emanuele",
+          "istat": "015173",
+          "storica": 3966841.36,
+          "standard": 1869181.28,
+          "scarto_euro": 2097660.08,
+          "scarto_pct": 112.22,
+          "pro_capite_storica": 252.71,
+          "pro_capite_standard": 119.08,
+          "livello_spesa": 10.0,
+          "evidenzia": true,
+          "servizi_pct": -30.54,
+          "livello_servizi": 4.0,
+          "quota_scarto_pct": 61.22
+        },
+        {
+          "nome": "Locate di Triulzi",
+          "istat": "015125",
+          "storica": 2132427.31,
+          "standard": 1428220.16,
+          "scarto_euro": 704207.15,
+          "scarto_pct": 49.31,
+          "pro_capite_storica": 206.91,
+          "pro_capite_standard": 138.58,
+          "livello_spesa": 9.0,
+          "evidenzia": false,
+          "servizi_pct": 46.91,
+          "livello_servizi": 8.0
+        },
+        {
+          "nome": "Lacchiarella",
+          "istat": "015115",
+          "storica": 1746469.16,
+          "standard": 1221808.27,
+          "scarto_euro": 524660.89,
+          "scarto_pct": 42.94,
+          "pro_capite_storica": 192.49,
+          "pro_capite_standard": 134.66,
+          "livello_spesa": 8.0,
+          "evidenzia": false,
+          "servizi_pct": -1.22,
+          "livello_servizi": 5.0
+        },
+        {
+          "nome": "Opera",
+          "istat": "015159",
+          "storica": 2485779.48,
+          "standard": 1999565.01,
+          "scarto_euro": 486214.47,
+          "scarto_pct": 24.32,
+          "pro_capite_storica": 173.89,
+          "pro_capite_standard": 139.88,
+          "livello_spesa": 8.0,
+          "evidenzia": false,
+          "servizi_pct": -46.15,
+          "livello_servizi": 3.0
+        },
+        {
+          "nome": "Basiglio",
+          "istat": "015015",
+          "storica": 1324473.61,
+          "standard": 1052358.47,
+          "scarto_euro": 272115.14,
+          "scarto_pct": 25.86,
+          "pro_capite_storica": 165.97,
+          "pro_capite_standard": 131.87,
+          "livello_spesa": 8.0,
+          "evidenzia": false,
+          "servizi_pct": 14.82,
+          "livello_servizi": 7.0
+        }
+      ],
+      "Viabilità e territorio": [
+        {
+          "nome": "Lacchiarella",
+          "istat": "015115",
+          "storica": 573400.07,
+          "standard": 753005.48,
+          "scarto_euro": -179605.41,
+          "scarto_pct": -23.85,
+          "pro_capite_storica": 63.2,
+          "pro_capite_standard": 82.99,
+          "livello_spesa": 4.0,
+          "evidenzia": false,
+          "servizi_pct": 14.65,
+          "livello_servizi": 7.0
+        },
+        {
+          "nome": "Basiglio",
+          "istat": "015015",
+          "storica": 564887.82,
+          "standard": 751519.59,
+          "scarto_euro": -186631.77,
+          "scarto_pct": -24.83,
+          "pro_capite_storica": 70.79,
+          "pro_capite_standard": 94.18,
+          "livello_spesa": 4.0,
+          "evidenzia": false,
+          "servizi_pct": -21.37,
+          "livello_servizi": 4.0
+        },
+        {
+          "nome": "Opera",
+          "istat": "015159",
+          "storica": 858829.44,
+          "standard": 1052463.85,
+          "scarto_euro": -193634.41,
+          "scarto_pct": -18.4,
+          "pro_capite_storica": 60.08,
+          "pro_capite_standard": 73.62,
+          "livello_spesa": 4.0,
+          "evidenzia": false,
+          "servizi_pct": -38.29,
+          "livello_servizi": 3.0
+        },
+        {
+          "nome": "Locate di Triulzi",
+          "istat": "015125",
+          "storica": 354497.46,
+          "standard": 781937.15,
+          "scarto_euro": -427439.69,
+          "scarto_pct": -54.66,
+          "pro_capite_storica": 34.4,
+          "pro_capite_standard": 75.87,
+          "livello_spesa": 1.0,
+          "evidenzia": false,
+          "servizi_pct": 1.72,
+          "livello_servizi": 6.0
+        },
+        {
+          "nome": "Rozzano",
+          "istat": "015189",
+          "storica": 2406860.44,
+          "standard": 2880953.67,
+          "scarto_euro": -474093.23,
+          "scarto_pct": -16.46,
+          "pro_capite_storica": 58.18,
+          "pro_capite_standard": 69.64,
+          "livello_spesa": 4.0,
+          "evidenzia": false,
+          "servizi_pct": -5.22,
+          "livello_servizi": 5.0
+        },
+        {
+          "nome": "Pieve Emanuele",
+          "istat": "015173",
+          "storica": 967051.47,
+          "standard": 1541857.01,
+          "scarto_euro": -574805.54,
+          "scarto_pct": -37.28,
+          "pro_capite_storica": 61.61,
+          "pro_capite_standard": 98.23,
+          "livello_spesa": 2.0,
+          "evidenzia": true,
+          "servizi_pct": -11.74,
+          "livello_servizi": 5.0,
+          "quota_scarto_pct": -16.77
+        }
+      ]
+    },
+    "dettaglio_sociale": {
+      "nota": "Il sociale è la funzione che pesa di più sullo scarto. Questi indicatori distinguono l'erogazione di SERVIZI dalla distribuzione di CONTRIBUTI ECONOMICI: l'indice dei servizi calcolato da SOSE pesa soprattutto i primi, quindi un comune che sceglie i trasferimenti diretti risulta spendere molto e servire poco.",
+      "capofila_ambito": "Rozzano è il Comune capofila dell'ambito distrettuale Visconteo Sud Milano: la spesa sociale gestita in forma associata transita dal suo bilancio, non da quello di Pieve Emanuele. Ciò esclude che il dato di Pieve sia gonfiato dalla funzione di capofila.",
+      "anomalie_dichiarate": "La fonte marca come anomali, per Pieve Emanuele, gli indicatori sul costo del lavoro e sul numero di dipendenti del sociale: non sono usati qui.",
+      "etichette": {
+        "sociale_pro_capite": "Spesa sociale al netto dei nidi — € per abitante",
+        "nidi_pro_capite": "Spesa per asili nido — € per abitante",
+        "copertura_nido_pct": "Bambini 0-2 che frequentano il nido — % dei residenti 0-2",
+        "quota_0_2_anni_pct": "Bambini da 0 a 2 anni — % dei residenti",
+        "copertura_utenti_pct": "Utenti dei servizi sociali sulla popolazione — %",
+        "quota_over75_pct": "Popolazione oltre i 75 anni — % dei residenti",
+        "deprivazione_vs_italia_pct": "Indice di deprivazione socio-economica — scostamento % dalla media nazionale",
+        "reddito_imponibile_medio": "Reddito imponibile medio ai fini delle addizionali IRPEF — €",
+        "contributi_poverta_x1000ab": "Beneficiari di contributi economici per povertà e disagio adulti — per 1.000 abitanti",
+        "utenti_poverta_x1000ab": "Utenti di interventi e servizi per povertà e disagio adulti — per 1.000 abitanti",
+        "mq_per_utente_nido": "Spazi dell'asilo nido — mq per utente"
+      },
+      "comuni": {
+        "Basiglio": {
+          "sociale_pro_capite": 162.12338471,
+          "nidi_pro_capite": 3.8507518797,
+          "copertura_nido_pct": 37.647058824,
+          "quota_0_2_anni_pct": 2.1303258145,
+          "copertura_utenti_pct": 5.701754386,
+          "quota_over75_pct": 9.1646133236,
+          "deprivazione_vs_italia_pct": 13.43789344,
+          "reddito_imponibile_medio": 50104.303081,
+          "contributi_poverta_x1000ab": 0.3759398496,
+          "utenti_poverta_x1000ab": 5.2631578947,
+          "mq_per_utente_nido": 15.3125
+        },
+        "Lacchiarella": {
+          "sociale_pro_capite": 109.00736581,
+          "nidi_pro_capite": 83.483448694,
+          "copertura_nido_pct": 34.090909091,
+          "quota_0_2_anni_pct": 1.9398214483,
+          "copertura_utenti_pct": 4.4527719608,
+          "quota_over75_pct": 10.774888021,
+          "deprivazione_vs_italia_pct": -7.066810339,
+          "reddito_imponibile_medio": 24367.312958,
+          "contributi_poverta_x1000ab": 3.1962967045,
+          "utenti_poverta_x1000ab": 7.0538961755,
+          "mq_per_utente_nido": 44.75
+        },
+        "Locate di Triulzi": {
+          "sociale_pro_capite": 172.18761789,
+          "nidi_pro_capite": 34.723628954,
+          "copertura_nido_pct": 27.31277533,
+          "quota_0_2_anni_pct": 2.2026004269,
+          "copertura_utenti_pct": 16.175043664,
+          "quota_over75_pct": 10.030236994,
+          "deprivazione_vs_italia_pct": -30.25518006,
+          "reddito_imponibile_medio": 24632.631228,
+          "contributi_poverta_x1000ab": 1.0673394139,
+          "utenti_poverta_x1000ab": 19.018047739,
+          "mq_per_utente_nido": 20.967741935
+        },
+        "Opera": {
+          "sociale_pro_capite": 128.47008954,
+          "nidi_pro_capite": 45.421444561,
+          "copertura_nido_pct": 22.299651568,
+          "quota_0_2_anni_pct": 2.0076949983,
+          "copertura_utenti_pct": 2.672263029,
+          "quota_over75_pct": 12.547668991,
+          "deprivazione_vs_italia_pct": -18.84708651,
+          "reddito_imponibile_medio": 28152.042921,
+          "contributi_poverta_x1000ab": 1.7488632389,
+          "utenti_poverta_x1000ab": 7.4851346625,
+          "mq_per_utente_nido": 40.640625
+        },
+        "Pieve Emanuele": {
+          "sociale_pro_capite": 190.09729375,
+          "nidi_pro_capite": 62.616050201,
+          "copertura_nido_pct": 19.14893617,
+          "quota_0_2_anni_pct": 2.0959418997,
+          "copertura_utenti_pct": 5.9947760719,
+          "quota_over75_pct": 8.5239911946,
+          "deprivazione_vs_italia_pct": -34.39563421,
+          "reddito_imponibile_medio": 23094.82566,
+          "contributi_poverta_x1000ab": 11.46715933,
+          "utenti_poverta_x1000ab": 4.4594508505,
+          "mq_per_utente_nido": 10.6
+        },
+        "Rozzano": {
+          "sociale_pro_capite": 294.11974885,
+          "nidi_pro_capite": 27.20569108,
+          "copertura_nido_pct": 22.088835534,
+          "quota_0_2_anni_pct": 2.013536379,
+          "copertura_utenti_pct": 4.179357022,
+          "quota_over75_pct": 12.444727347,
+          "deprivazione_vs_italia_pct": 31.829612945,
+          "reddito_imponibile_medio": 22095.936295,
+          "contributi_poverta_x1000ab": 0.2417210539,
+          "utenti_poverta_x1000ab": 6.8890500363,
+          "mq_per_utente_nido": 31.847826087
+        }
+      },
+      "scomposizione_fabbisogno": {
+        "nota": "Contributo di ciascun determinante del modello al fabbisogno standard pro capite del sociale, confrontato con la media dei cinque comuni dell'ambito. La somma dei contributi ricostruisce il fabbisogno pubblicato. Il reddito NON è fra i determinanti: il modello usa l'indice di deprivazione socio-economica.",
+        "voci": [
+          {
+            "determinante": "Asilo nido",
+            "pieve": 31.7,
+            "media_ambito": 46.92,
+            "scarto": -15.22
+          },
+          {
+            "determinante": "Popolazione oltre i 75 anni",
+            "pieve": 13.74,
+            "media_ambito": 18.46,
+            "scarto": -4.71
+          },
+          {
+            "determinante": "Deprivazione socio-economica",
+            "pieve": -2.24,
+            "media_ambito": -0.4,
+            "scarto": -1.84
+          },
+          {
+            "determinante": "Alunni con disabilità",
+            "pieve": 2.05,
+            "media_ambito": 2.65,
+            "scarto": -0.6
+          },
+          {
+            "determinante": "Ore erogate nelle strutture",
+            "pieve": 8.65,
+            "media_ambito": 8.97,
+            "scarto": -0.33
+          },
+          {
+            "determinante": "Presenza di strutture sociali",
+            "pieve": 2.48,
+            "media_ambito": 2.57,
+            "scarto": -0.09
+          },
+          {
+            "determinante": "Utenti di interventi e contributi",
+            "pieve": 2.24,
+            "media_ambito": 2.32,
+            "scarto": -0.08
+          },
+          {
+            "determinante": "Popolazione straniera",
+            "pieve": 3.2,
+            "media_ambito": 3.08,
+            "scarto": 0.13
+          },
+          {
+            "determinante": "Popolazione in età da lavoro",
+            "pieve": 45.63,
+            "media_ambito": 45.31,
+            "scarto": 0.32
+          },
+          {
+            "determinante": "Popolazione fra 65 e 74 anni",
+            "pieve": 11.62,
+            "media_ambito": 11.22,
+            "scarto": 0.41
+          },
+          {
+            "determinante": "Fascia di popolazione",
+            "pieve": 0.0,
+            "media_ambito": -1.11,
+            "scarto": 1.11
+          }
+        ]
+      },
+      "costo_nido": {
+        "nota": "STIMA: spesa per asili nido divisa per i bambini iscritti, ricostruiti come popolazione × quota residenti 0-2 × copertura. Deriva da tre indicatori pubblicati, non è un dato ufficiale: affidabile nell'ordine di grandezza, non nella cifra esatta. Basiglio va letto a parte: la spesa comunale per il nido è quasi nulla, segno che il servizio non grava sul suo bilancio.",
+        "comuni": [
+          {
+            "nome": "Pieve Emanuele",
+            "popolazione_stimata": 15697,
+            "bambini_0_2": 329,
+            "copertura_pct": 19.1,
+            "utenti_stimati": 63,
+            "spesa_nido": 982884.14,
+            "costo_per_utente": 15601,
+            "evidenzia": true
+          },
+          {
+            "nome": "Lacchiarella",
+            "popolazione_stimata": 9073,
+            "bambini_0_2": 176,
+            "copertura_pct": 34.1,
+            "utenti_stimati": 60,
+            "spesa_nido": 757445.33,
+            "costo_per_utente": 12624,
+            "evidenzia": false
+          },
+          {
+            "nome": "Opera",
+            "popolazione_stimata": 14295,
+            "bambini_0_2": 287,
+            "copertura_pct": 22.3,
+            "utenti_stimati": 64,
+            "spesa_nido": 649299.55,
+            "costo_per_utente": 10145,
+            "evidenzia": false
+          },
+          {
+            "nome": "Rozzano",
+            "popolazione_stimata": 41370,
+            "bambini_0_2": 833,
+            "copertura_pct": 22.1,
+            "utenti_stimati": 184,
+            "spesa_nido": 1125499.44,
+            "costo_per_utente": 6117,
+            "evidenzia": false
+          },
+          {
+            "nome": "Locate di Triulzi",
+            "popolazione_stimata": 10306,
+            "bambini_0_2": 227,
+            "copertura_pct": 27.3,
+            "utenti_stimati": 62,
+            "spesa_nido": 357861.72,
+            "costo_per_utente": 5772,
+            "evidenzia": false
+          },
+          {
+            "nome": "Basiglio",
+            "popolazione_stimata": 7980,
+            "bambini_0_2": 170,
+            "copertura_pct": 37.6,
+            "utenti_stimati": 64,
+            "spesa_nido": 30729.0,
+            "costo_per_utente": 480,
+            "evidenzia": false
+          }
+        ]
+      }
+    }
   }
 }

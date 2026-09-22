@@ -21,6 +21,11 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
 - `data/spese.json` — database flat (unica fonte di verità)
 - `scripts/normalizza.py` — manutenzione qualità: unifica le grafie dei beneficiari, segnala possibili doppi conteggi
 - `data/confronti.json` — dati di confronto (fabbisogni standard, IRPEF, benchmark lombardo) raccolti a mano dal portale dovevannoinostrisoldi.com: **non si aggiornano dal workflow**
+- `scripts/fabbisogni_estrai.py` — fabbisogni standard **per singola funzione** dai dataset
+  OpenCivitas scaricati a mano in `fabbisogni/` (una sottocartella per funzione, con i
+  `Metadati_Enti_*.xlsx` che traducono gli `USERNAME` in codici ISTAT). I CSV sono in
+  formato lungo: una riga per coppia ente/indicatore. Lo script quadra la somma delle
+  funzioni con il totale FC80TOT e si ferma se non torna
 - `docs/` — sito statico servito da GitHub Pages: `index.html` (spese), `bilanci.html`, `confronti.html`
 
 ## Setup (una tantum)

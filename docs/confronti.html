@@ -55,6 +55,13 @@
     padding: 12px 14px; font-size: 12.5px; color: #6B4E00; margin: 12px 0; }
   .fonte { font-size: 11.5px; color: var(--grigio); margin-top: 10px; }
 
+  /* Glossario: le tre parole difficili, spiegate una volta sola in cima */
+  .glossario { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 14px; }
+  .glossario dt { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .glossario dd { font-size: 13px; color: var(--grigio); }
+  .glossario dd em { color: var(--testo); font-style: normal; font-weight: 600; }
+
   footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
            padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
   footer p { margin-bottom: 8px; max-width: 820px; }
@@ -86,11 +93,11 @@
        se non si sa con cosa confrontarli. Qui ci sono i termini di paragone ufficiali:
        il fabbisogno standard calcolato dallo Stato, i comuni di dimensione simile,
        la media regionale dei redditi.</p>
-    <p><strong>Una cosa che questi dati non dicono.</strong> La differenza fra quanto un
-       Comune spende e il suo fabbisogno standard <em>non è una misura di spreco</em>:
-       lo dichiara espressamente la fonte. Può dipendere da caratteristiche del territorio
-       che il modello statistico non cattura, da scelte politiche o da costi ereditati.
-       Serve per fare domande, non per dare risposte.</p>
+    <p><strong>Perché uno scarto dal fabbisogno non è una condanna.</strong> Può dipendere
+       da caratteristiche del territorio che il modello statistico non cattura, da scelte
+       politiche legittime o da costi ereditati da amministrazioni precedenti. E come mostra
+       il caso dell'asilo nido, in certi casi la formula stessa produce risultati
+       controintuitivi. Questi dati servono per sapere quali documenti chiedere.</p>
     <p id="fonti"></p>
   </div>
 </footer>
@@ -106,7 +113,246 @@ const eurC = v => v === 0 ? "zero"
   : v >= 1e3 ? Math.round(v/1e3).toLocaleString("it-IT")+" mila €"
   : Math.round(v).toLocaleString("it-IT")+" €";
 const pct = v => (v > 0 ? "+" : "") + v.toLocaleString("it-IT", {maximumFractionDigits:1}) + "%";
+// toFixed() produce il punto decimale: in italiano serve la virgola
+const dec = (v, n = 1) => v == null ? "—"
+  : v.toLocaleString("it-IT", {minimumFractionDigits: n, maximumFractionDigits: n});
 const esc = s => (s||"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+// Righe per funzione riferite a Pieve Emanuele, rifiuti inclusi, ordinate
+// per contributo allo scarto. I rifiuti stanno in un rilascio separato.
+function funzioniPieve(d) {
+  if (!d.funzioni_2022) return [];
+  const righe = Object.entries(d.funzioni_2022.funzioni)
+    .map(([nome, comuni]) => {
+      const p = comuni.find(c => c.evidenzia);
+      // lo spread va PRIMA di `nome`: la riga del comune ha un proprio campo
+      // `nome` (il Comune) che altrimenti sovrascriverebbe quello della funzione
+      return p ? { ...p, nome, comune: p.nome } : null;
+    }).filter(Boolean);
+  const rif = d.fabbisogni.rifiuti_2022;
+  if (rif) righe.push({
+    nome: "Rifiuti", storica: rif.storica, standard: rif.standard,
+    scarto_euro: rif.storica - rif.standard, scarto_pct: rif.scarto_pct,
+    servizi_pct: rif.servizi_pct, livello_spesa: rif.livello_spesa,
+    livello_servizi: rif.livello_servizi,
+    pro_capite_storica: rif.pro_capite_storica,
+    pro_capite_standard: rif.pro_capite_standard,
+  });
+  return righe.sort((a, b) => b.scarto_euro - a.scarto_euro);
+}
+
+// Perché il fabbisogno standard assegnato a Pieve è il più basso dell'ambito.
+// La risposta sta nei determinanti del modello, non nel reddito del territorio.
+function bloccoPerche(d) {
+  const ds = (d.funzioni_2022 || {}).dettaglio_sociale || {};
+  const sc = (ds.scomposizione_fabbisogno || {}).voci || [];
+  const cn = (ds.costo_nido || {}).comuni || [];
+  if (!sc.length) return "";
+  const pv = (ds.comuni || {})["Pieve Emanuele"] || {};
+  const soc = funzioniPieve(d).find(r => r.nome === "Sociale e asili nido");
+  if (!soc) return "";
+  const gap = sc.reduce((s, v) => s + v.scarto, 0);
+  const pieveNido = cn.find(c => c.evidenzia);
+  const confronto = cn.filter(c => !c.evidenzia && c.costo_per_utente > 1000);
+
+  const fabPieve = Math.round(sc.reduce((s, v) => s + v.pieve, 0));
+  const deprivazione = sc.find(v => v.determinante === "Deprivazione socio-economica");
+  const coperture = cn.filter(c => !c.evidenzia).map(c => c.copertura_pct);
+  const mqAltri = Object.entries(ds.comuni).filter(([n]) => n !== "Pieve Emanuele")
+    .map(([, v]) => v.mq_per_utente_nido).filter(v => v != null);
+  // "uno su cinque" si capisce meglio di "19,1%", e in lettere meglio che in cifre
+  const PAROLE = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto",
+                  "nove", "dieci"];
+  const suQuanti = p => PAROLE[Math.round(100 / p)] || Math.round(100 / p);
+
+  return `
+    <h3 class="sezione" style="font-size:1.05rem;margin-top:26px">
+      Perché lo Stato si aspetta che Pieve spenda poco</h3>
+    <div class="sottotitolo">Per il sociale la formula statale assegna a Pieve Emanuele
+      ${dec(fabPieve, 0)} euro per abitante all'anno: il preventivo più basso dei sei comuni
+      della zona. La formula è pubblica e si può smontare pezzo per pezzo — ecco da dove
+      viene quel numero.</div>
+
+    <div class="spiegazione"><strong>Quasi tutto il divario nasce da una cosa: il nido.</strong>
+      <br><br>Pieve Emanuele ha tanti bambini piccoli quanto i comuni vicini — sono il
+      ${dec(pv.quota_0_2_anni_pct, 2)}% dei residenti, la seconda quota più alta della zona.
+      Ma al nido ne va solo il <strong>${dec(pv.copertura_nido_pct)}%</strong> — meno di uno
+      su ${suQuanti(pv.copertura_nido_pct)} — mentre negli altri comuni si va dal
+      ${dec(Math.min(...coperture), 0)}% al ${dec(Math.max(...coperture), 0)}%: a Basiglio
+      più di un bambino su tre.
+      <br><br>E qui c'è il punto che sorprende. <strong>La formula dello Stato non conta i
+      bambini che potrebbero andare al nido: conta quelli che ci vanno davvero.</strong>
+      Meno posti un Comune offre, meno soldi la formula ritiene che gli servano. Sembra un
+      dettaglio tecnico, ma cambia il senso di tutto il confronto: se Pieve aprisse più
+      posti, il suo preventivo salirebbe e lo scarto del ${dec(Math.abs(soc.scarto_pct), 0)}%
+      si ridurrebbe da solo — senza che nessuno abbia speso un euro in meno.
+      <br><br><strong>Attenzione a come si legge.</strong> Questo meccanismo va
+      <em>a favore</em> del Comune quando si guarda lo scarto, non contro. Chi usa quel
+      +${dec(soc.scarto_pct, 0)}% come prova di cattiva gestione sta usando un numero in
+      parte gonfiato dalla scarsità di posti nido.</div>
+
+    <div class="spiegazione"><strong>Il secondo pezzo del divario è semplicemente l'età di
+      chi ci abita.</strong>
+      <br><br>A Pieve gli over 75 sono l'${dec(pv.quota_over75_pct)}% dei residenti: la quota
+      più bassa della zona, dove Opera e Rozzano sfiorano il 12,5%. L'assistenza agli anziani
+      è la voce più costosa del sociale, quindi un paese giovane genera un preventivo più
+      basso. Su questo non c'è niente da obiettare: la formula fa il suo lavoro correttamente.</div>
+
+    <div class="spiegazione"><strong>Una cosa che la formula non guarda affatto: quanto
+      guadagnano i residenti.</strong>
+      <br><br>Verrebbe naturale pensare che un Comune con redditi bassi riceva un preventivo
+      più alto. Non funziona così: il reddito non entra nel calcolo. Al suo posto c'è un
+      indice statistico di disagio sociale, che a Pieve pesa meno di
+      ${dec(Math.ceil(Math.abs(deprivazione?.scarto || 0)), 0)} euro per abitante su un
+      divario di ${dec(Math.abs(gap), 0)}. Curiosamente quell'indice colloca Pieve
+      <strong>al di sotto</strong> della media italiana per disagio
+      (${dec(pv.deprivazione_vs_italia_pct, 0)}%) — meglio di Basiglio, dove il reddito medio
+      dichiarato è più del doppio. È un risultato strano, ma conta troppo poco per spostare
+      qualcosa.</div>
+
+    <div class="card" style="margin-top:16px">
+      <table><thead><tr><th>Cosa guarda la formula</th><th>Quanto vale a Pieve</th>
+        <th>In media qui intorno</th><th>Differenza</th></tr></thead><tbody>
+        ${sc.filter(v => Math.abs(v.scarto) >= 0.2).map(v => `<tr>
+          <td>${esc(v.determinante)}</td>
+          <td>${dec(v.pieve)} €</td><td>${dec(v.media_ambito)} €</td>
+          <td class="${v.scarto < 0 ? "sotto" : "sopra"}">${v.scarto > 0 ? "+" : ""}${dec(v.scarto)} €</td></tr>`).join("")}
+        <tr style="font-weight:700"><td>Totale del divario</td><td colspan="2"></td>
+          <td class="sotto">${dec(gap)} €</td></tr>
+      </tbody></table>
+      <div class="fonte">Tutti i valori sono euro per abitante all'anno. Sommando la colonna
+        «quanto vale a Pieve» si ottiene esattamente il preventivo pubblicato
+        (${dec(fabPieve, 0)} €): è la formula ufficiale, non una ricostruzione.</div>
+    </div>
+
+    <div class="spiegazione"><strong>Il numero che dovrebbe far alzare un sopracciglio è
+      un altro.</strong>
+      <br><br>Pieve spende per il nido ${dec(pv.nidi_pro_capite, 2)} euro per abitante: la
+      seconda cifra più alta della zona. Però ha la copertura più bassa. Mettendo insieme le
+      due cose: circa <strong>${pieveNido.utenti_stimati} bambini iscritti,
+      ${eur(pieveNido.spesa_nido)} di spesa — attorno ai
+      ${eur(pieveNido.costo_per_utente)} all'anno per bambino</strong>. Negli altri comuni
+      della zona la stessa stima va dai ${eur(Math.min(...confronto.map(c => c.costo_per_utente)))}
+      ai ${eur(Math.max(...confronto.map(c => c.costo_per_utente)))}.
+      <br><br>Nello stesso servizio ogni bambino ha <strong>${dec(pv.mq_per_utente_nido)}
+      metri quadri</strong> a disposizione, contro i ${dec(Math.min(...mqAltri), 0)}–${dec(Math.max(...mqAltri), 0)}
+      dei comuni vicini. Il nido è affidato interamente a un gestore esterno.
+      <br><br>Costo per posto il più alto della zona, posti pochi, spazi stretti: tre fatti
+      che stanno insieme e che <strong>non si spiegano con una formula statistica.</strong>
+      Si spiegano — o si smentiscono — leggendo il contratto con cui il servizio è stato
+      affidato. È un documento pubblico.</div>
+
+    <div class="card">
+      <table><thead><tr><th>Comune</th><th>Bambini 0-2</th><th>Al nido</th>
+        <th>Copertura</th><th>Spesa nido</th><th>Stima per bambino</th></tr></thead><tbody>
+        ${cn.map(c => `<tr${c.evidenzia ? ' style="background:#EEF3FD;font-weight:600"' : ''}>
+          <td>${esc(c.nome)}</td><td>${c.bambini_0_2}</td><td>${c.utenti_stimati}</td>
+          <td>${dec(c.copertura_pct)}%</td><td>${eur(c.spesa_nido)}</td>
+          <td class="${c.costo_per_utente > 12000 ? "sopra" : ""}">${
+            c.costo_per_utente < 1000 ? "—" : eur(c.costo_per_utente)}</td></tr>`).join("")}
+      </tbody></table>
+    </div>
+    <div class="cautela"><strong>Come è stato calcolato il costo per bambino.</strong>
+      Non è un dato ufficiale: è una stima. Il numero di bambini iscritti non è pubblicato
+      direttamente, lo abbiamo ricostruito da tre dati che invece lo sono (quanti abitanti,
+      quanti bambini fra 0 e 2 anni, che percentuale di loro frequenta il nido). L'ordine di
+      grandezza è solido, la cifra esatta no. <strong>Basiglio non è confrontabile</strong>:
+      con ${eur(cn.find(c => c.nome === "Basiglio")?.spesa_nido || 0)} di spesa comunale,
+      lì il nido evidentemente non è pagato dal Comune.</div>
+  `;
+}
+
+function bloccoFunzioni(d) {
+  const f = d.funzioni_2022;
+  if (!f) return "";
+  const righe = funzioniPieve(d);
+  const totale = d.fabbisogni.serie.find(r => r.anno === 2022);
+  const scartoTot = totale.storica - totale.standard;
+  const ds = f.dettaglio_sociale || {};
+  const soc = righe.find(r => r.nome === "Sociale e asili nido");
+  const amm = righe.find(r => r.nome === "Amministrazione generale");
+  const via = righe.find(r => r.nome === "Viabilità e territorio");
+  const q = f.quadratura;
+  const pv = (ds.comuni || {})["Pieve Emanuele"] || {};
+  const altri = Object.entries(ds.comuni || {}).filter(([n]) => n !== "Pieve Emanuele");
+
+  return `
+    <h2 class="sezione">2. Dove si concentra lo scarto</h2>
+    <div class="sottotitolo">Il dato complessivo dice che Pieve Emanuele spende
+      ${eurC(scartoTot)} oltre il proprio fabbisogno. I dati per <strong>funzione
+      fondamentale</strong> dicono dove: due funzioni su sei spiegano quasi tutto.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-funzioni"></canvas></div></div>
+    <div class="card">
+      <table><thead><tr><th>Funzione</th><th>Spesa storica</th><th>Fabbisogno</th>
+        <th>Scarto</th><th>In %</th><th>Quota dello scarto</th>
+        <th>Servizi vs media</th></tr></thead><tbody>
+        ${righe.map(r => {
+          const quota = scartoTot ? r.scarto_euro / scartoTot * 100 : 0;
+          return `<tr>
+          <td>${esc(r.nome)}</td><td>${eur(r.storica)}</td><td>${eur(r.standard)}</td>
+          <td class="${r.scarto_euro > 0 ? "sopra" : "sotto"}">${eur(r.scarto_euro)}</td>
+          <td class="${r.scarto_euro > 0 ? "sopra" : "sotto"}">${pct(r.scarto_pct)}</td>
+          <td>${quota.toLocaleString("it-IT",{maximumFractionDigits:1})}%</td>
+          <td class="${r.servizi_pct == null ? "" : r.servizi_pct < 0 ? "sopra" : "sotto"}">${
+            r.servizi_pct == null ? "non pubblicato" : pct(r.servizi_pct)}</td></tr>`;
+        }).join("")}
+      </tbody></table>
+    </div>
+    <div class="spiegazione"><strong>Due funzioni spiegano il 98% dello scarto.</strong>
+      Il <strong>sociale e gli asili nido</strong> pesano per ${eurC(soc.scarto_euro)}
+      (${(soc.scarto_euro/scartoTot*100).toFixed(0)}% del totale): Pieve Emanuele vi spende
+      <strong>${pct(soc.scarto_pct)}</strong> rispetto al fabbisogno, più del doppio.
+      L'<strong>amministrazione generale</strong> — uffici, segreteria, ufficio tecnico,
+      gestione del personale — aggiunge ${eurC(amm.scarto_euro)} (${pct(amm.scarto_pct)}).
+      In senso opposto, <strong>viabilità e territorio</strong> è l'unica funzione
+      <em>sotto</em> il fabbisogno, di ${eurC(Math.abs(via.scarto_euro))}: strade,
+      illuminazione e manutenzione del territorio ricevono il ${(100+via.scarto_pct).toFixed(0)}%
+      di quanto lo standard prevederebbe.</div>
+
+    <h3 class="sezione" style="font-size:1.05rem;margin-top:26px">Il sociale, da vicino</h3>
+    <div class="sottotitolo">È la voce che pesa di più: vale la pena guardare come è composta,
+      prima di trarne conclusioni.</div>
+    <div class="card">
+      <table><thead><tr><th>Indicatore</th><th>Pieve Emanuele</th>
+        <th>Resto dell'ambito (min–max)</th></tr></thead><tbody>
+        ${Object.entries(ds.etichette || {}).map(([k, et]) => {
+          const vals = altri.map(([, v]) => v[k]).filter(v => v != null);
+          if (pv[k] == null || !vals.length) return "";
+          const n = v => v.toLocaleString("it-IT", {maximumFractionDigits: v < 100 ? 2 : 0});
+          const fuori = pv[k] > Math.max(...vals) || pv[k] < Math.min(...vals);
+          return `<tr><td>${esc(et)}</td>
+            <td${fuori ? ' style="font-weight:700"' : ''}>${n(pv[k])}</td>
+            <td>${n(Math.min(...vals))} – ${n(Math.max(...vals))}</td></tr>`;
+        }).join("")}
+      </tbody></table>
+    </div>
+    <div class="spiegazione"><strong>Contributi in denaro invece di servizi.</strong>
+      ${(() => {
+        const v = altri.map(([, x]) => x.contributi_poverta_x1000ab).filter(x => x > 0);
+        const min = Math.min(...v), max = Math.max(...v), p = pv.contributi_poverta_x1000ab;
+        return `Pieve Emanuele eroga <strong>${dec(p)} contributi economici per povertà ogni
+        1.000 abitanti</strong>, da ${dec(p/max)} a ${dec(p/min, 0)} volte più di qualunque
+        altro comune dell'ambito`;
+      })()}, mentre il numero di <em>utenti presi in carico</em> dai servizi
+      per la stessa area resta nella norma. La quota complessiva di cittadini seguiti dai
+      servizi sociali (${dec(pv.copertura_utenti_pct)}%) è in media col gruppo.
+      È un'ipotesi controllabile: il Comune sceglie il trasferimento diretto di denaro dove
+      altri organizzano un servizio. L'indice con cui lo Stato misura i «servizi erogati»
+      pesa soprattutto le prestazioni organizzate, non i contributi: questo spiegherebbe
+      perché Pieve risulti allo stesso tempo spendere molto ed erogare poco.
+      </div>
+
+    ${bloccoPerche(d)}
+    <div class="cautela"><strong>Cosa è stato escluso.</strong>
+      ${esc(ds.capofila_ambito || "")} ${esc(ds.anomalie_dichiarate || "")}</div>
+    <div class="cautela">${esc(f.nota_amministrazione)}
+      ${q ? `La spesa storica delle sei funzioni ricostruisce il totale pubblicato
+      con uno scarto dello ${dec(Math.abs(q.storica_scarto_pct), 3)}%; i fabbisogni
+      sommano ${dec(Math.abs(q.standard_scarto_pct))}% in meno del fabbisogno
+      complessivo, perché ogni rilascio riproporziona la propria scala: le quote qui
+      sopra sono calcolate sullo scarto complessivo pubblicato.` : ""}</div>
+  `;
+}
 
 async function avvia() {
   let d;
@@ -124,11 +370,39 @@ async function avvia() {
   const ultimaCassa = cassa[cassa.length - 1];
 
   document.getElementById("contenuto").innerHTML = `
+    <h2 class="sezione">Le tre parole difficili di questa pagina</h2>
+    <div class="sottotitolo">Tornano in ogni sezione. Vale la pena leggerle una volta.</div>
+    <div class="card"><dl class="glossario">
+      <div><dt>Spesa storica</dt>
+        <dd>Quanto il Comune <em>ha speso davvero</em>. Nessuna stima: sono i soldi usciti
+          dalle casse, come risultano dai suoi bilanci.</dd></div>
+      <div><dt>Fabbisogno standard</dt>
+        <dd>Un <em>preventivo calcolato dallo Stato</em>. Prende le caratteristiche del
+          Comune — quanti bambini, quanti anziani, quanto costano gli affitti, quali
+          servizi esistono — le mette in una formula e stima quanto dovrebbe costare
+          farlo funzionare. È il metro per confrontare comuni molto diversi fra loro.</dd></div>
+      <div><dt>Livello dei servizi</dt>
+        <dd>Quanti servizi il Comune eroga <em>rispetto alla media dei comuni della sua
+          taglia</em>. Non è un voto di qualità: conta le prestazioni organizzate
+          (posti al nido, ore di assistenza, utenti seguiti), non quanto funzionino bene.</dd></div>
+    </dl></div>
+    <div class="cautela"><strong>Da qui nasce l'unico errore di lettura che conta.</strong>
+      La differenza fra spesa storica e fabbisogno standard <em>non misura lo spreco</em>,
+      e lo dice la fonte stessa. Misura di quanto un Comune si scosta da un comune medio
+      con le sue caratteristiche. Serve per sapere dove guardare, non per concludere.</div>
+
     <h2 class="sezione">In sintesi</h2>
-    <div class="sottotitolo">I quattro numeri che dicono come sta il Comune, con l'anno a cui si riferiscono.</div>
+    <div class="sottotitolo">I numeri che dicono come sta il Comune, con l'anno a cui si riferiscono.</div>
     <div class="kpi">
       <div class="card"><div class="valore rosso">${pct(ultimo.scarto_pct)}</div>
         <div class="etichetta">spesa oltre il fabbisogno standard (${ultimo.anno})</div></div>
+      ${(() => {
+        const f = funzioniPieve(d);
+        if (!f.length) return "";
+        const top = f[0], scartoTot = ultimo.storica - ultimo.standard;
+        return `<div class="card"><div class="valore rosso">${(top.scarto_euro/scartoTot*100).toFixed(0)}%</div>
+          <div class="etichetta">di quello scarto viene da una sola funzione: ${esc(top.nome.toLowerCase())}</div></div>`;
+      })()}
       <div class="card"><div class="valore ${ultimo.servizi_pct < 0 ? "rosso" : "verde"}">${pct(ultimo.servizi_pct)}</div>
         <div class="etichetta">livello dei servizi vs comuni simili (${ultimo.anno})</div></div>
       <div class="card"><div class="valore ambra">${pct(cf.scarto_lombardia_pct)}</div>
@@ -158,7 +432,9 @@ async function avvia() {
     <div class="cautela"><strong>Attenzione al confronto fra anni.</strong>
       ${esc(d.fabbisogni.avvertenza)}</div>
 
-    <h2 class="sezione">2. Come se la cavano i comuni vicini</h2>
+    ${bloccoFunzioni(d)}
+
+    <h2 class="sezione">3. Come se la cavano i comuni vicini</h2>
     <div class="sottotitolo">Gli altri comuni dell'ambito Visconteo Sud Milano, con cui Pieve
       Emanuele condivide i servizi sociali. Ogni punto è un Comune: a <strong>destra</strong> chi
       spende più del proprio fabbisogno, in <strong>alto</strong> chi eroga più servizi della
@@ -184,7 +460,7 @@ async function avvia() {
       sotto la media (−14,6%).</div>
     <div class="cautela">${esc(d.comuni_vicini_2022.avvertenza)}</div>
 
-    <h2 class="sezione">3. Dove vanno i soldi, rispetto ai comuni simili</h2>
+    <h2 class="sezione">4. Dove vanno i soldi, rispetto ai comuni simili</h2>
     <div class="sottotitolo">Composizione della spesa corrente ${d.composizione_spesa_2022 ? 2022 : ""} a confronto con
       ${esc(d.composizione_spesa_2022.gruppo_confronto)}.</div>
     <div class="card"><div class="grafico"><canvas id="g-composizione"></canvas></div></div>
@@ -208,7 +484,7 @@ async function avvia() {
       mediana, ma in valore assoluto pesano poco (390 mila euro).</div>
     <div class="cautela">${esc(d.composizione_spesa_2022.avvertenza)}</div>
 
-    <h2 class="sezione">4. Quanto reddito ha il territorio</h2>
+    <h2 class="sezione">5. Quanto reddito ha il territorio</h2>
     <div class="sottotitolo">La capacità fiscale dice quante risorse il Comune può raccogliere
       dai suoi cittadini. Redditi dichiarati ${cf.anno_imposta}, dichiarazioni ${cf.anno_dichiarazione}.</div>
     <div class="kpi">
@@ -226,7 +502,7 @@ async function avvia() {
       da area metropolitana milanese con una base di redditi più debole del contesto in cui opera.</div>
     <div class="cautela">${esc(cf.avvertenza)}</div>
 
-    <h2 class="sezione">5. Il risanamento della cassa</h2>
+    <h2 class="sezione">6. Il risanamento della cassa</h2>
     <div class="sottotitolo">Le <strong>anticipazioni di tesoreria</strong> sono prestiti che il
       Comune chiede alla banca quando non ha liquidità per pagare, e restituisce entro l'anno.
       Usarne molte è il sintomo di una cassa in sofferenza.</div>
@@ -234,14 +510,15 @@ async function avvia() {
     <div class="spiegazione"><strong>Il dato più incoraggiante di questa pagina.</strong>
       Le anticipazioni sono passate da ${eur(cassa[0].anticipazioni)} nel ${cassa[0].anno}
       a <strong>zero dal 2022</strong>. Nello stesso periodo la quota di spesa destinata al
-      debito sale dal ${cassa[0].debito_pct}% al ${ultimaCassa.debito_pct}%: coerente con il
+      debito sale dal ${dec(cassa[0].debito_pct)}% al ${dec(ultimaCassa.debito_pct)}%: coerente con il
       passaggio da debiti di cassa a debito strutturato, più costoso in interessi ma molto
       meno rischioso.</div>
     <div class="cautela">${esc(d.cassa_e_debito.avvertenza)}</div>
   `;
 
   document.getElementById("fonti").innerHTML =
-    `Fonti: ${esc(d.fabbisogni.fonte)} (${esc(d.fabbisogni.licenza)}) · ${esc(cf.fonte)} · ` +
+    `Fonti: ${esc(d.fabbisogni.fonte)} (${esc(d.fabbisogni.licenza)}) · ` +
+    (d.funzioni_2022 ? `${esc(d.funzioni_2022.fonte)} · ` : "") + `${esc(cf.fonte)} · ` +
     `${esc(d.composizione_spesa_2022.fonte)}. Dati raccolti il ${esc(d.aggiornato)}. ` +
     `Non si aggiornano automaticamente. Codice: ` +
     `<a href="https://github.com/NT0wers84/bilanciopertutti" target="_blank" rel="noopener">GitHub</a>.`;
@@ -269,6 +546,31 @@ function disegnaGrafici(d) {
                 y2: { position: "right", grid: { drawOnChartArea: false },
                       ticks: { callback: v => v+"%" } } } }
   });
+
+  // Scarto in euro per funzione: barre orizzontali, rosse sopra il fabbisogno
+  const fz = funzioniPieve(d);
+  if (fz.length && document.getElementById("g-funzioni")) {
+    new Chart(document.getElementById("g-funzioni"), {
+      type: "bar",
+      data: { labels: fz.map(r => r.nome), datasets: [{
+        label: "Scarto dal fabbisogno standard",
+        data: fz.map(r => r.scarto_euro),
+        backgroundColor: fz.map(r => r.scarto_euro > 0 ? "#B3372B" : "#0E7C5B"),
+        borderRadius: 3,
+      }]},
+      options: { indexAxis: "y", maintainAspectRatio: false,
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: c => {
+            const r = fz[c.dataIndex];
+            return [`${c.raw > 0 ? "+" : ""}${c.raw.toLocaleString("it-IT",
+              {style:"currency",currency:"EUR",maximumFractionDigits:0})} (${pct(r.scarto_pct)})`,
+              `spesa ${eurC(r.storica)} · fabbisogno ${eurC(r.standard)}`];
+          } } } },
+        scales: { x: { ticks: { callback: v => (v/1e6).toLocaleString("it-IT",
+          {maximumFractionDigits:1})+" mln" } },
+          y: { ticks: { font: { size: 11 } } } } }
+    });
+  }
 
   // Dispersione spesa/servizi: ogni Comune è un punto, Pieve evidenziata
   const vicini = d.comuni_vicini_2022.comuni;

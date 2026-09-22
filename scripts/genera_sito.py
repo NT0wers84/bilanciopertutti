@@ -27,7 +27,7 @@ CAMPI_SITO = [
     "importo_euro", "importo_e_pluriennale", "durata_anni", "importo_primo_anno",
     "iva_inclusa", "cig", "categoria", "capitolo_bilancio",
     "descrizione_sintetica", "url_atto", "estrazione", "testo_disponibile",
-    "e_rimodulazione",
+    "e_rimodulazione", "beneficiario_generico", "atti_gemelli",
 ]
 
 

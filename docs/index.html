@@ -445,8 +445,10 @@ function aggiornaGrafici() {
   }, catOrd.map(c => c[0]), "categoria");
 
   // Top beneficiari
+  // Le etichette generiche ("Fornitori diversi", "erario") non sono
+  // destinatari reali: falserebbero la classifica dei maggiori beneficiari
   const bens = {};
-  conImporto.forEach(s => { if (s.beneficiario)
+  conImporto.forEach(s => { if (s.beneficiario && !s.beneficiario_generico)
     bens[s.beneficiario] = (bens[s.beneficiario] || 0) + quota(s); });
   const top = Object.entries(bens).sort((a, b) => b[1] - a[1]).slice(0, 8);
   nuovoGrafico("grafico-beneficiari", {
@@ -523,11 +525,20 @@ function disegnaFeed() {
         ${multi ? `<span class="tag multi">${s.n_beneficiari || voci.length} beneficiari</span>` : ""}
         ${s.importo_e_pluriennale && s.durata_anni ? `<span class="tag pluriennale">su ${s.durata_anni} anni</span>` : ""}
         ${s.e_rimodulazione ? '<span class="tag determinazione">rimodulazione</span>' : ""}
+        ${Array.isArray(s.atti_gemelli) && s.atti_gemelli.length
+          ? `<span class="tag multi" title="Stesso importo e oggetto di: ${esc(s.atti_gemelli.join(', '))}">possibile doppio conteggio</span>` : ""}
         <span class="tag">n. ${esc(s.numero_raw)}</span>
         ${s.data_pubblicazione ? `<span class="tag">${dataIt(s.data_pubblicazione)}</span>` : ""}
         ${s.cig ? `<span class="tag">CIG ${esc(s.cig)}</span>` : ""}
       </div>
       ${notaRimod}${notaPluri}
+      ${Array.isArray(s.atti_gemelli) && s.atti_gemelli.length ? `<div class="nota-pluriennale"
+        style="background:#FBEDE9;border-color:#F0D2C8;color:#7A2E18">
+        <strong>Attenzione al doppio conteggio.</strong> Gli atti
+        ${esc(s.atti_gemelli.join(', '))} hanno lo stesso importo e lo stesso oggetto:
+        potrebbero essere la stessa spesa ripresa più volte (impegno e rimodulazione)
+        oppure pratiche distinte con la stessa tariffa. Verifica negli atti originali.
+      </div>` : ""}
       <div class="spesa-oggetto">${tabellaVoci}
         <div style="margin-top:8px"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}</div>
         ${s.capitolo_bilancio ? `<div><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}</div>` : ""}

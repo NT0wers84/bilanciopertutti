@@ -364,6 +364,52 @@ STOPWORD_NOME = {
 # fanno parte di ragioni sociali come "La Rondine Srl", "Il Mosaico".
 
 
+# Etichette che NON sono beneficiari: versamenti fiscali, segnaposto
+# generici rimasti dall'estrazione. Vanno riconosciute per non falsare
+# le classifiche dei maggiori destinatari.
+RE_NON_BENEFICIARIO = re.compile(
+    r"^(erario|iva|esattoria.*|agenzia delle entrate|tesoreria|"
+    r"cooperativa|societ[àa]|ditta|fornitor[ei].*|beneficiari.*|"
+    r"soggetti diversi|vari|n\.?d\.?|non indicato)$", re.IGNORECASE)
+
+# Forme societarie e qualificatori geografici: irrilevanti per capire
+# SE due grafie indicano lo stesso soggetto ("TEKNO GREEN SRL" e
+# "Tekno Green Srl di Melito di Napoli" sono la stessa impresa).
+# Le sigle compaiono in ogni grafia possibile: SRL, S.R.L., S. R. L.
+RE_FORMA_SOCIETARIA = re.compile(
+    r"\b(?:s\s*\.?\s*r\s*\.?\s*l\s*\.?\s*s?|s\s*\.?\s*p\s*\.?\s*a\s*\.?|"
+    r"s\s*\.?\s*n\s*\.?\s*c\s*\.?|s\s*\.?\s*a\s*\.?\s*s\s*\.?|"
+    r"s\s*\.?\s*c\s*\.?\s*s\s*\.?|scarl|"
+    r"soc(?:iet[àa])?\.?\s*coop(?:erativa)?|cooperativa|coop\.?|"
+    r"onlus|impresa sociale|sociale|societ[àa]|ditta|unipersonale|"
+    r"consorzio|consortile)\b", re.IGNORECASE)
+
+# Il qualificatore geografico va tolto SOLO se segue una forma societaria
+# ("Tekno Green Srl di Melito di Napoli"). Altrimenti si fonderebbero
+# soggetti diversi come "Comune di Milano" e "Comune di Pieve Emanuele".
+RE_SEDE_DOPO_SIGLA = re.compile(
+    r"(s\s*\.?\s*r\s*\.?\s*l\s*\.?\s*s?|s\s*\.?\s*p\s*\.?\s*a\s*\.?|"
+    r"coop\w*|onlus|scarl)\s+(?:di|in|con sede(?:\s+(?:in|a))?)\s+.*$",
+    re.IGNORECASE)
+
+
+def e_non_beneficiario(nome: str) -> bool:
+    """True per etichette che non identificano un destinatario reale."""
+    return bool(RE_NON_BENEFICIARIO.match((nome or "").strip()))
+
+
+def chiave_beneficiario(nome: str) -> str:
+    """
+    Chiave di confronto fra grafie diverse dello stesso soggetto.
+    Serve SOLO per raggruppare: il nome mostrato resta quello originale.
+    """
+    t = (nome or "").upper()
+    t = RE_SEDE_DOPO_SIGLA.sub(r"\1", t)     # via la sede dopo la sigla
+    t = RE_FORMA_SOCIETARIA.sub(" ", t)      # via la forma societaria
+    t = re.sub(r"[^A-Z0-9ÀÈÉÌÒÙ ]", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def _beneficiario_da_oggetto(oggetto: str) -> str | None:
     """
     Estrae il destinatario dall'oggetto dell'atto, che quasi sempre lo

@@ -89,28 +89,37 @@ def mappa_url_freschi() -> dict:
     return mappa
 
 
-def riestrai_regex(max_atti: int, tutte: bool = False) -> None:
+def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) -> None:
     """
     Rielabora con Groq le spese archiviate:
-      - tutte=False: solo quelle col fallback regex (rate limit saturi)
-      - tutte=True:  anche quelle con versione di estrazione obsoleta
+      - incerti=True: solo quelle con l'importo marcato dubbio
+      - tutte=True:   quelle con versione di estrazione obsoleta
+      - altrimenti:   solo quelle col fallback regex (rate limit saturi)
 
     Vengono SEMPRE rielaborate anche le spese il cui testo non era stato
     recuperato (caratteri_testo == 0): sono quelle su cui il modello aveva
     inventato gli importi.
     """
     archivio = carica_archivio()
-    if tutte:
+    if incerti:
+        # L'importo c'è ma la regola applicata non era conclusiva: sono i casi
+        # che il sito mostra già come "da verificare". Si riparte dall'atto.
+        candidate = [s for s in archivio
+                     if s.get("url_atto")
+                     and (s.get("importo_incerto") or not s.get("caratteri_testo"))]
+        motivo = "importo incerto o testo mancante"
+    elif tutte:
         candidate = [s for s in archivio
                      if s.get("url_atto")
                      and s.get("versione_estrazione", 1) < VERSIONE_ESTRAZIONE]
+        motivo = "tutte le versioni obsolete"
     else:
         candidate = [s for s in archivio
                      if s.get("url_atto")
                      and (s.get("estrazione") == "regex"
                           or not s.get("caratteri_testo"))]
-    log.info(f"Spese da rielaborare: {len(candidate)} "
-             f"({'tutte le versioni obsolete' if tutte else 'regex o senza testo'}) "
+        motivo = "regex o senza testo"
+    log.info(f"Spese da rielaborare: {len(candidate)} ({motivo}) "
              f"— max questo run: {max_atti}")
     if not candidate:
         return
@@ -181,13 +190,20 @@ def main():
                         help="Rielabora TUTTE le spese con schema obsoleto "
                              "(nuovi campi: importi da tabella, beneficiari "
                              "multipli, spese pluriennali)")
+    parser.add_argument("--riestrai-incerti", action="store_true",
+                        help="Rielabora solo le spese con l'importo marcato "
+                             "dubbio: sono quelle che il sito mostra già come "
+                             "«da verificare»")
     args = parser.parse_args()
 
-    if args.riestrai_regex or args.riestrai_tutto:
-        log.info("MODALITÀ RIESTRAZIONE "
-                 f"({'TUTTE le spese obsolete' if args.riestrai_tutto else 'solo regex'})")
+    if args.riestrai_regex or args.riestrai_tutto or args.riestrai_incerti:
+        quali = ("importi incerti" if args.riestrai_incerti
+                 else "TUTTE le spese obsolete" if args.riestrai_tutto
+                 else "solo regex")
+        log.info(f"MODALITÀ RIESTRAZIONE ({quali})")
         portale.init_sessione()
-        riestrai_regex(args.max_atti, tutte=args.riestrai_tutto)
+        riestrai_regex(args.max_atti, tutte=args.riestrai_tutto,
+                       incerti=args.riestrai_incerti)
         return
 
     log.info("=" * 60)

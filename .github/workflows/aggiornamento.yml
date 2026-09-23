@@ -62,6 +62,11 @@ jobs:
         run: |
           git config user.name "OpenSpeseBot"
           git config user.email "bot@openspese.local"
+          # I JSON generati sono marcati merge=mantieni-locale in .gitattributes.
+          # Il driver va definito in ogni ambiente, runner compresi: senza questa
+          # riga git ricade sul merge testuale ed è proprio lì che nascono i
+          # marcatori di conflitto dentro i dati del sito.
+          git config merge.mantieni-locale.driver true
           git pull --rebase --autostash
           # Il pull può creare conflitti sui JSON generati: se restano
           # marcatori di conflitto il job deve fallire, mai pubblicarli

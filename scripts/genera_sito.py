@@ -43,6 +43,26 @@ def _scrivi(percorso: Path, contenuto: str) -> None:
     os.replace(tmp, percorso)
 
 
+def _quota_annua(spesa: dict) -> float:
+    """Quanto pesa un atto su un singolo anno.
+
+    Un affidamento pluriennale non è spesa dell'anno: sommarlo alle liquidazioni
+    di singole fatture produce un totale che non significa niente (nell'archivio
+    un solo contratto quindicennale vale l'80% della somma lorda). Si usa la
+    quota del primo anno quando l'atto la dichiara, altrimenti la media annua.
+    Stessa regola applicata dal sito in docs/index.html: se cambia una, va
+    cambiata anche l'altra.
+    """
+    importo = spesa.get("importo_euro")
+    if not importo:
+        return 0.0
+    durata = spesa.get("durata_anni")
+    if spesa.get("importo_e_pluriennale") and durata:
+        primo = spesa.get("importo_primo_anno")
+        return float(primo) if primo is not None else importo / durata
+    return float(importo)
+
+
 def main():
     spese = []
     if SPESE_JSON.exists():
@@ -55,11 +75,20 @@ def main():
             json.dumps(ridotte, ensure_ascii=False, separators=(",", ":")))
 
     anni = sorted({s.get("anno") for s in spese if s.get("anno")}, reverse=True)
+    lordo = round(sum(s.get("importo_euro") or 0 for s in spese), 2)
+    annuo = round(sum(_quota_annua(s) for s in spese), 2)
     meta = {
         "aggiornato": datetime.now().strftime("%d/%m/%Y %H:%M"),
         "n_spese": len(spese),
         "anni": anni,
-        "totale_euro": round(sum(s.get("importo_euro") or 0 for s in spese), 2),
+        # Il totale lordo somma contratti pluriennali e liquidazioni di singole
+        # fatture: un affidamento di quindici anni lo domina da solo. È il dato
+        # grezzo, tenuto per compatibilità; per capire quanto pesa un anno serve
+        # totale_annuo, che è anche quello mostrato dal sito.
+        "totale_euro": lordo,
+        "totale_annuo_euro": annuo,
+        "n_pluriennali": sum(1 for s in spese
+                             if s.get("importo_e_pluriennale") and s.get("durata_anni")),
     }
     _scrivi(DOCS_DATA / "meta.json", json.dumps(meta, ensure_ascii=False))
 
@@ -70,7 +99,9 @@ def main():
     if confronti.exists():
         _scrivi(DOCS_DATA / "confronti.json", confronti.read_text(encoding="utf-8"))
         log.info("Dati di confronto copiati nel sito")
-    log.info(f"Sito aggiornato: {len(spese)} spese, totale € {meta['totale_euro']:,.2f}")
+    log.info(f"Sito aggiornato: {len(spese)} spese · su base annua "
+             f"€ {meta['totale_annuo_euro']:,.2f} · valore lordo degli atti "
+             f"€ {meta['totale_euro']:,.2f} ({meta['n_pluriennali']} pluriennali)")
 
 
 if __name__ == "__main__":

@@ -327,6 +327,34 @@ def e_variazione_bilancio(oggetto: str) -> bool:
     return bool(RE_VARIAZIONE_BILANCIO.search(oggetto or ""))
 
 
+# Un accertamento di entrata registra soldi che ENTRANO: canoni di locazione,
+# proventi delle multe, vendita di immobili, trasformazione del diritto di
+# superficie. Non è spesa e non va sommato alle uscite.
+RE_ACCERTAMENTO_ENTRATA = re.compile(
+    r"accertament\w*\s+(?:e\s+)?(?:di\s+|d['’]\s*)?entrat|"
+    r"accertament\w*\s+entrat|"
+    r"assunzione\s+(?:e\s+)?accertament\w*\s+d['’]?\s*entrat",
+    re.IGNORECASE)
+
+# Molti atti fanno entrambe le cose ("accertamento di entrata e contestuale
+# impegno di spesa"): quelli restano spese a tutti gli effetti. Serve un segno
+# esplicito di uscita — non la sola parola "spesa", perché compare anche in
+# "compartecipazione alla spesa", che è un'entrata.
+RE_SEGNO_DI_SPESA = re.compile(
+    r"impegn\w*\s+di\s+spesa|impegno\s+di\s+spes|contestuale\s+impegn|"
+    r"liquidazion|affidament|determina\s+a\s+contrarre|"
+    r"assunzione\s+impegn\w*|corrispondente\s+impegn",
+    re.IGNORECASE)
+
+
+def e_entrata_pura(oggetto: str) -> bool:
+    """True se l'atto registra solo un'entrata, senza impegnare spesa."""
+    testo = oggetto or ""
+    if not RE_ACCERTAMENTO_ENTRATA.search(testo):
+        return False
+    return not RE_SEGNO_DI_SPESA.search(testo)
+
+
 def e_rimodulazione(oggetto: str) -> bool:
     """True per gli atti che ridefiniscono un quadro economico esistente."""
     return bool(RE_RIMODULAZIONE.search(oggetto or ""))

@@ -414,14 +414,17 @@ def _url_con_cur(url_griglia: str, cur: int) -> str:
 def e_spesa(tipo: str, oggetto: str = "") -> bool:
     """
     True se l'atto rappresenta una spesa verso terzi.
-    Esclude le variazioni di bilancio e gli altri movimenti contabili
-    interni: spostano fondi tra capitoli, non pagano nessuno.
+
+    Esclude le variazioni di bilancio e gli altri movimenti contabili interni
+    (spostano fondi tra capitoli, non pagano nessuno) e gli accertamenti di
+    sola entrata: canoni, multe, vendite di immobili sono soldi che entrano,
+    metterli fra le uscite falsa i totali nel verso peggiore.
     """
     t = (tipo or "").lower()
     if not any(k in t for k in TIPI_SPESA):
         return False
-    from estrattore import e_variazione_bilancio
-    return not e_variazione_bilancio(oggetto)
+    from estrattore import e_variazione_bilancio, e_entrata_pura
+    return not e_variazione_bilancio(oggetto) and not e_entrata_pura(oggetto)
 
 
 PORTLET_PREFIX = "_jcitygovalbopubblicazioni_WAR_jcitygovalbiportlet_"

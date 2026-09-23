@@ -342,7 +342,6 @@ const mesiEsteso = k => k ? `${NOMI_MESE[+k.slice(5) - 1]} ${k.slice(0, 4)}` : "
 
 function aggiornaKpi() {
   const conImporto = filtrate.filter(s => s.importo_euro != null);
-  const totale = conImporto.reduce((t, s) => t + s.importo_euro, 0);
   const beneficiari = new Set(filtrate.map(s => s.beneficiario).filter(Boolean));
   const massima = conImporto.reduce((mx, s) => s.importo_euro > (mx?.importo_euro ?? -1) ? s : mx, null);
 
@@ -370,7 +369,9 @@ function aggiornaKpi() {
     <div class="card"><div class="valore">${beneficiari.size.toLocaleString("it-IT")}</div>
       <div class="etichetta">beneficiari distinti</div></div>
     <div class="card"><div class="valore">${massima ? eurCompatto(massima.importo_euro) : "—"}</div>
-      <div class="etichetta">spesa singola più alta${massima?.beneficiario ? " · " + esc(massima.beneficiario).slice(0, 40) : ""}</div></div>`;
+      <div class="etichetta">${massima?.importo_e_pluriennale && massima?.durata_anni
+        ? `atto singolo più alto · vale ${massima.durata_anni} anni, ${eurCompatto(quotaAnnua(massima))} l'anno`
+        : "spesa singola più alta"}${massima?.beneficiario ? " · " + esc(massima.beneficiario).slice(0, 40) : ""}</div></div>`;
 }
 
 const PALETTE = ["#1B4FCA","#0E7C5B","#B3372B","#B08A00","#6B4FA1","#0E7C9B",

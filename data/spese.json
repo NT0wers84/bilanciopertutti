@@ -7,7 +7,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0002142200 DEL 14/09/2026 - MAGGIOLI SPA",
-  "beneficiario": "MAGGIOLI SPA",
+  "beneficiario": "MAGGIOLI S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 1037.0,
@@ -27,7 +27,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 9739,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1885-2026",
@@ -57,7 +59,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 9991,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1884-2026",
@@ -67,7 +71,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630041422 DEL 04/08/2026 - LEASYS ITALIA S.P.A",
-  "beneficiario": "LEASYS ITALIA S.P.A",
+  "beneficiario": "Leasys Italia S.p.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 943.87,
@@ -87,7 +91,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8105,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1877-2026",
@@ -97,7 +103,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: LAVORARE IN FARMACIA SRL, ARIES GROUP SRL E CGM PHARMAONE SRL",
-  "beneficiario": "LAVORARE IN FARMACIA SRL",
+  "beneficiario": "Lavorare in Farmacia SRL",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 3023.71,
@@ -117,7 +123,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 12580,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1875-2026",
@@ -147,7 +155,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 7907,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1874-2026",
@@ -177,7 +187,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 7810,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1873-2026",
@@ -207,7 +219,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 11523,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1872-2026",
@@ -237,7 +251,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8327,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1871-2026",
@@ -247,7 +263,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-21",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA 487-2026, EMESSA DALLA SOCIETÀ ECODIS SRL PER - INTERVENTO DI DEZANZARIZZAZIONE PRESSO LA SCUOLA PRIMARIA \"DE FILIPPO\" E PRESSO LA SCUOLA PRIMARIA \"RODARI\" - CODICE CIG BBCC3CF328",
-  "beneficiario": "ECODIS SRL",
+  "beneficiario": "ECODIS S.r.l",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 854.0,
@@ -267,7 +283,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8795,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1870-2026",
@@ -297,7 +315,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8753,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1868-2026",
@@ -327,7 +347,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8464,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1867-2026",
@@ -337,7 +359,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE FATTURA N. V20000107 DEL 28/08/2026 EMESSA DA GRAFICHE NOE' EDOARDO DI NOE' ALDO&C S.N.C.PER LA STAMPA DI MANIFESTI DI AVVIO SERVIZI SCOLASTICI",
-  "beneficiario": "GRAFICHE NOE' EDOARDO DI NOE' ALDO&C S.N.C.PER LA STAMPA",
+  "beneficiario": "GRAFICHE NOE' EDOARDO DI NOE' ALDO&C S.N.C.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 85.4,
@@ -357,7 +379,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 6332,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1866-2026",
@@ -387,7 +411,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 17640,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1865-2026",
@@ -417,7 +443,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8798,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1864-2026",
@@ -427,7 +455,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE FATT. NR. 1003/PA DEL 31/08/2026 B & B SERVICE SOC. COOPERATIVA PER IL SERVIZIO DI PULIZIE IMMOBILI MESE DI AGOSTO 2026 - CIG BB10709514",
-  "beneficiario": "B & B Service Soc. Cooperativa",
+  "beneficiario": "B. & B. Service società cooperativa",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 19295.52,
@@ -447,7 +475,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8663,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1863-2026",
@@ -457,7 +487,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE ACCENTO (CIG B8D82CF08C) E DALLA COOPERATIVA SOCIALE LOGOS (CIG B8A17FB235) RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO AD ALUNNI RESIDENTI AVENTI DIRITTO",
-  "beneficiario": "Coop. Sociale ACCENTO del servizio di assistenza",
+  "beneficiario": "Cooperativa Sociale Accento",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 494.39,
@@ -477,7 +507,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8384,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1862-2026",
@@ -507,7 +539,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 5689,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1861-2026",
@@ -537,7 +571,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 11163,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1860-2026",
@@ -547,7 +583,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA NEI CONFRONTI DELLA DITTA NAVA SERVICE DI FREDA NICOLA DEL SERVIZIO DI PULIZIA PALESTRE ED ALTRI EDIFICI COMUNALI E SPAZI ASSIMILATI AD USO SPORTIVO/RICREATIVO - CODICE CIG BCF133E474",
-  "beneficiario": "NAVA SERVICE DI FREDA NICOLA DEL SERVIZIO DI PULIZIA",
+  "beneficiario": "NAVA SERVICE DI FREDA NICOLA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 2789.0,
@@ -567,7 +603,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8969,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1869-2026",
@@ -597,7 +635,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 18297,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-22 19:00"
+  "data_elaborazione": "2026-09-22 19:00",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1641-2026",
@@ -5109,9 +5149,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1416"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "importo complessivo",
   "importo_incerto": false
  },
@@ -5987,7 +6025,13 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1236",
+   "2026/897",
+   "2026/761",
+   "2026/724",
+   "2026/711"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,115.54)",
   "importo_incerto": true
  },
@@ -6437,9 +6481,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1460"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "somma di 2 righe di tabella (in conflitto con 4,148.00)",
   "importo_incerto": true
  },
@@ -8605,46 +8647,6 @@
   "importo_incerto": true
  },
  {
-  "id": "determinazione-1303-2026",
-  "numero_raw": "2026/1303",
-  "numero": "1303",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-06-29",
-  "oggetto": "ASSUNZIONE ACCERTAMENTO D’ENTRATA PER LA RISCOSSIONE DEL CREDITO, A TITOLO DI RISARCIMENTO DANNI , SOGGETTO LU. MA.",
-  "beneficiario": "Ente locale",
-  "importo_euro": null,
-  "cig": "null",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "null",
-  "descrizione_sintetica": "Riscossione credito per risarcimento danni",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5475922",
-  "estrazione": "groq",
-  "caratteri_testo": 5761,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 16:18",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Ente locale",
-    "importo": null
-   }
-  ],
-  "importo_testuale": "null",
-  "importo_e_pluriennale": true,
-  "durata_anni": 3,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "beneficiario_generico": false,
-  "regola_importo": "nessuna regola applicabile",
-  "importo_incerto": false,
-  "importo_verificato": false
- },
- {
   "id": "determinazione-1302-2026",
   "numero_raw": "2026/1302",
   "numero": "1302",
@@ -9201,7 +9203,13 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/897",
+   "2026/761",
+   "2026/724",
+   "2026/711"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,451.34)",
   "importo_incerto": true
  },
@@ -10883,52 +10891,6 @@
   "importo_incerto": false
  },
  {
-  "id": "determinazione-1099-2026",
-  "numero_raw": "2026/1099",
-  "numero": "1099",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-05-29",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 7319 DEL 23/03/2026.",
-  "beneficiario": "un proprietario di aree",
-  "importo_euro": 2500.0,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "trasformazione diritto di superficie in proprietà",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5405341",
-  "estrazione": "groq",
-  "caratteri_testo": 7312,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 16:49",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "un proprietario di aree",
-    "importo": 2500.0
-   }
-  ],
-  "importo_testuale": "2.500,00",
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/863",
-   "2026/325",
-   "2026/237",
-   "2026/236"
-  ],
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-1098-2026",
   "numero_raw": "2026/1098",
   "numero": "1098",
@@ -11582,47 +11544,6 @@
   "importo_verificato": false
  },
  {
-  "id": "determinazione-1014-2026",
-  "numero_raw": "2026/1014",
-  "numero": "1014",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-05-20",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO D’ENTRATA - VENDITA UNITÀ IMMOBILIARE ASSEGNATA IN DIRITTO DI PROPRIETÀ AI SENSI DELL’ART. 35 LEGGE 865/71 COMMA 11, IN SEGUITO ALLA RICHIESTA PROTOCOLLO N. 9986 DEL 24/04/2026.",
-  "beneficiario": "un cittadino avente i requisiti per l'assegnazione di alloggi dell'alienazione",
-  "importo_euro": 19902.77,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "pagamento per l'immissione in libero mercato dell'alloggio di edilizia economica popolare",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5379547",
-  "estrazione": "groq",
-  "caratteri_testo": 10159,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 16:59",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "un cittadino avente i requisiti per l'assegnazione di alloggi dell'alienazione",
-    "importo": 19902.77
-   }
-  ],
-  "importo_testuale": "19.902,77",
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-1004-2026",
   "numero_raw": "2026/1004",
   "numero": "1004",
@@ -11744,9 +11665,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/613"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "importo complessivo (in conflitto con 1,400.00)",
   "importo_incerto": true
  },
@@ -12354,7 +12273,13 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/1236",
+   "2026/761",
+   "2026/724",
+   "2026/711"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,484.92)",
   "importo_incerto": true
  },
@@ -12557,52 +12482,6 @@
   "atti_gemelli": null,
   "regola_importo": "importo complessivo (in conflitto con 981.49)",
   "importo_incerto": true
- },
- {
-  "id": "determinazione-863-2026",
-  "numero_raw": "2026/863",
-  "numero": "863",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-04-29",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N.6685/2026 DEL 16/03/2026.",
-  "beneficiario": "un proprietario di aree",
-  "importo_euro": 2500.0,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "trasformazione diritto di superficie in proprietà",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5330466",
-  "estrazione": "groq",
-  "caratteri_testo": 7328,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 17:12",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "un proprietario di aree",
-    "importo": 2500.0
-   }
-  ],
-  "importo_testuale": "2.500,00",
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1099",
-   "2026/325",
-   "2026/237",
-   "2026/236"
-  ],
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
  },
  {
   "id": "determinazione-862-2026",
@@ -12943,42 +12822,6 @@
   "importo_incerto": false
  },
  {
-  "id": "determinazione-844-2026",
-  "numero_raw": "2026/844",
-  "numero": "844",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-04-27",
-  "oggetto": "ACCERTAMENTI DI ENTRATA QUALI PROVENTI DELLE SANZIONI AMMINISTRATIVE PECUNARIE PER LE VIOLAZIONI PREVISTE DAL CODICE DELLA STRADA E VIOLAZIONI DIVERSE DAL CODICE DELLA STRADA - ANNO 2026",
-  "beneficiario": "erario",
-  "importo_euro": 657000.0,
-  "cig": null,
-  "categoria": "Polizia locale e sicurezza",
-  "missione_bdap": 3,
-  "capitolo_bilancio": "1230/0, 1230/5, 1230/6, 1235/0",
-  "descrizione_sintetica": "Accertamento di entrata per proventi di sanzioni amministrative",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323028",
-  "estrazione": "groq+tabella",
-  "caratteri_testo": 7517,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 17:18",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_testuale": null,
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": true,
-  "atti_gemelli": null,
-  "regola_importo": "somma di 3 righe di tabella",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-842-2026",
   "numero_raw": "2026/842",
   "numero": "842",
@@ -13059,42 +12902,6 @@
   "atti_gemelli": null,
   "regola_importo": "importo complessivo",
   "importo_incerto": true
- },
- {
-  "id": "determinazione-840-2026",
-  "numero_raw": "2026/840",
-  "numero": "840",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-04-27",
-  "oggetto": "ASSUNZIONE ACCERTAMENTO DI ENTRATA RELATIVO AI PROVENTI DA COMPARTECIPAZIONE ALLA SPESA PER GLI UTENTI DEI CENTRI ESTIVI COMUNALI 2026",
-  "beneficiario": "famiglie con bambini iscritti ai centri estivi",
-  "importo_euro": 53000.0,
-  "cig": null,
-  "categoria": "Istruzione e scuola",
-  "missione_bdap": 4,
-  "capitolo_bilancio": "1290/0",
-  "descrizione_sintetica": "Accertamento di entrata per proventi da centri estivi",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5323017",
-  "estrazione": "groq",
-  "caratteri_testo": 6240,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 17:18",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_testuale": "53.000,00",
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
  },
  {
   "id": "determinazione-839-2026",
@@ -13547,7 +13354,13 @@
   "importo_testuale": null,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/1236",
+   "2026/897",
+   "2026/724",
+   "2026/711"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,233.07)",
   "importo_incerto": true
  },
@@ -13657,33 +13470,6 @@
   "beneficiario_generico": false,
   "atti_gemelli": null,
   "regola_importo": "somma di 6 righe di tabella (in conflitto con 26,901.00)",
-  "importo_incerto": true
- },
- {
-  "id": "determinazione-736-2026",
-  "numero_raw": "2026/736",
-  "numero": "736",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-04-13",
-  "oggetto": "ACCERTAMENTO DI ENTRATA PER IL SERVIZIO DI INFORMATICA DEL CENTRO ELABORAZIONI DATI DELLA DIREZIONE GENERALE MOTORIZZAZIONE CIVILE - RIPARTIZIONE CON COMUNE IN CONVENZIONE ANNO 2025",
-  "beneficiario": null,
-  "importo_euro": 3637.0,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "2350/3",
-  "descrizione_sintetica": "Pagamento canone annuale e consultazioni all'archivio della Motorizzazione Civile",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5288493",
-  "estrazione": "groq",
-  "caratteri_testo": 9543,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:12",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 3,350.00)",
   "importo_incerto": true
  },
  {
@@ -13901,9 +13687,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/195"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "importo contrattuale (in conflitto con 1,067,000.00)",
   "importo_incerto": true
  },
@@ -13958,7 +13742,13 @@
   "importo_testuale": null,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/1236",
+   "2026/897",
+   "2026/761",
+   "2026/711"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,400.97)",
   "importo_incerto": true
  },
@@ -14066,7 +13856,13 @@
   "importo_testuale": null,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/1236",
+   "2026/897",
+   "2026/761",
+   "2026/724"
+  ],
   "regola_importo": "totale complessivo (in conflitto con 2,367.39)",
   "importo_incerto": true
  },
@@ -14402,7 +14198,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-03-30",
   "oggetto": "DETERMINA IMPEGNO PER COORDINAMENTO ALLA SICUREZZA IN FASE DI PROGETTAZIONE E ESECUZIONE PESA NELL’ISOLA ECOLOGICA DI VIA SICILIA DELLO STUDIO GEOM. FABIO IDINI DI CASALPUSTERLENGO (LO) – CIG BAE0B94EC0 - CUP J41E22000310001.",
-  "beneficiario": "Studio Idini, con sede in Via Marsala, n° 36 – 26841 Casalpusterlengo (LO) titolare Geom. Fabio Idini",
+  "beneficiario": "Studio Idini",
   "importo_euro": 2200.0,
   "cig": "BAE0B94EC0",
   "categoria": "Amministrazione e servizi generali",
@@ -14471,9 +14267,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/981"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "somma impegnata/liquidata (in conflitto con 1,400.00)",
   "importo_incerto": true
  },
@@ -15938,60 +15732,6 @@
   "importo_incerto": true
  },
  {
-  "id": "determinazione-404-2026",
-  "numero_raw": "2026/404",
-  "numero": "404",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-25",
-  "oggetto": "ACCERTAMENTO DI ENTRATA PER I CORRISPETTIVI DELL’ANNUALITÀ 2026 RELATIVO ALLE CONCESSIONI IN COMODATO D’USO DEI LOCALI DI PROPRIETÀ COMUNALE SITI IN VIA MASCAGNI, DESTINATI ALLO SVOLGIMENTO DI ATTIVITÀ DI LIBERA PROFESSIONE A CARATTERE SOCIO-SANITARIO E SOCIO-ASSISTENZIALE E DI ATTIVITÀ DI MEDICINA DI BASE",
-  "beneficiario": null,
-  "importo_euro": 26251.25,
-  "cig": null,
-  "categoria": "Sociale e famiglia",
-  "missione_bdap": 12,
-  "capitolo_bilancio": "1695/0",
-  "descrizione_sintetica": "Accertamento di entrata per corrispettivi di comodato d'uso locali",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5169796",
-  "estrazione": "groq",
-  "caratteri_testo": 9031,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
- },
- {
-  "id": "determinazione-403-2026",
-  "numero_raw": "2026/403",
-  "numero": "403",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-25",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62, IN SEGUITO ALLA RICHIESTA PROT. 26866 DEL 18/11/2025.",
-  "beneficiario": null,
-  "importo_euro": 1943.13,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 8,
-  "capitolo_bilancio": "E/2880/10",
-  "descrizione_sintetica": "Accertamento di entrata per trasformazione diritto di superficie in proprietà",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5169793",
-  "estrazione": "groq",
-  "caratteri_testo": 7578,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-17 16:46",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-402-2026",
   "numero_raw": "2026/402",
   "numero": "402",
@@ -16217,7 +15957,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-02-19",
   "oggetto": "PROROGA FORNITURA BUONI PASTO ELETTRONICI DAY RISTOSERVICE",
-  "beneficiario": "elettronici dal fornitore DAY RISTOSERVICE SPA",
+  "beneficiario": "DAY RISTOSERVICE SPA",
   "importo_euro": 20800.0,
   "cig": "B5E30A865C",
   "categoria": "Amministrazione e servizi generali",
@@ -16429,38 +16169,6 @@
   "importo_incerto": false
  },
  {
-  "id": "determinazione-325-2026",
-  "numero_raw": "2026/325",
-  "numero": "325",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-17",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 29564 DEL 19/12/2025.",
-  "beneficiario": null,
-  "importo_euro": 2500.0,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 29564 DEL 19/12/2025.",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5131726",
-  "estrazione": "regex",
-  "caratteri_testo": 7308,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:26",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1099",
-   "2026/863",
-   "2026/237",
-   "2026/236"
-  ],
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-324-2026",
   "numero_raw": "2026/324",
   "numero": "324",
@@ -16468,7 +16176,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-02-17",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI RIPRISTINO BAGNO E LINEE FOGNARIE NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE DELL’EDIFICIO SCOLASTICO E. DE FILIPPO, FINANZIATO DA NEXT GENERATION EU M2C4 INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR). – RIFINAZIAMENTO CONFLUITO NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA D.M. DEL 08/11/2021. CUP J44H20001160001- CIG BA5D42C59C",
-  "beneficiario": "F.A.F. srl con",
+  "beneficiario": "F.A.F. srl",
   "importo_euro": 6606.72,
   "cig": "BA5D42C59C",
   "categoria": "Istruzione e scuola",
@@ -16704,7 +16412,9 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/110"
+  ],
   "regola_importo": "somma impegnata/liquidata (in conflitto con 1,285.00)",
   "importo_incerto": true
  },
@@ -17037,70 +16747,6 @@
   "importo_incerto": true
  },
  {
-  "id": "determinazione-237-2026",
-  "numero_raw": "2026/237",
-  "numero": "237",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-05",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28572 DEL 09/12/2025",
-  "beneficiario": null,
-  "importo_euro": 2500.0,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28572 DEL 09/12/2025",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5104499",
-  "estrazione": "regex",
-  "caratteri_testo": 7306,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1099",
-   "2026/863",
-   "2026/325",
-   "2026/236"
-  ],
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
-  "id": "determinazione-236-2026",
-  "numero_raw": "2026/236",
-  "numero": "236",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-05",
-  "oggetto": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28573 DEL 09/12/2025",
-  "beneficiario": null,
-  "importo_euro": 2500.0,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ASSUNZIONE E ACCERTAMENTO DI ENTRATA – TRASFORMAZIONE DIRITTO DI SUPERFICIE IN PROPRIETÀ AREE 167/62 IN SEGUITO ALLA RICHIESTA PROTOCOLLO N 28573 DEL 09/12/2025",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5104496",
-  "estrazione": "regex",
-  "caratteri_testo": 7312,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/1099",
-   "2026/863",
-   "2026/325",
-   "2026/237"
-  ],
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
- },
- {
   "id": "determinazione-235-2026",
   "numero_raw": "2026/235",
   "numero": "235",
@@ -17211,33 +16857,6 @@
   "importo_incerto": true
  },
  {
-  "id": "determinazione-204-2026",
-  "numero_raw": "2026/204",
-  "numero": "204",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-02",
-  "oggetto": "ACCERTAMENTO D’ENTRATA DERIVANTE DAI CANONI DI LOCAZIONE DELLE UNITA’ IMMOBILIARI REALIZZATE NELL’AMBITO DEL PROGRAMMA SPERIMENTALE DI AUTOCOSTRUZIONE - ANNO 2026",
-  "beneficiario": null,
-  "importo_euro": 39000.0,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ACCERTAMENTO D’ENTRATA DERIVANTE DAI CANONI DI LOCAZIONE DELLE UNITA’ IMMOBILIARI REALIZZATE NELL’AMBITO DEL PROGRAMMA SPERIMENTALE DI AUTOCOSTRUZIONE - ANNO 2026",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5094973",
-  "estrazione": "regex",
-  "caratteri_testo": 8383,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
- },
- {
   "id": "determinazione-203-2026",
   "numero_raw": "2026/203",
   "numero": "203",
@@ -17315,9 +16934,7 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": [
-   "2026/726"
-  ],
+  "atti_gemelli": null,
   "regola_importo": "importo complessivo (in conflitto con 1,067,000.00)",
   "importo_incerto": true
  },
@@ -17459,33 +17076,6 @@
   "importo_incerto": true
  },
  {
-  "id": "determinazione-180-2026",
-  "numero_raw": "2026/180",
-  "numero": "180",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-01-29",
-  "oggetto": "ACCERTAMENTO DI ENTRATA DERIVANTE DA CANONI DI LOCAZIONE E SPESE CONDOMINIALI DEGLI ALLOGGI COMUNALI DESTINATI AI SERVIZI ABITATIVI PUBBLICI - ANNO 2026",
-  "beneficiario": null,
-  "importo_euro": 56200.0,
-  "cig": null,
-  "categoria": "Urbanistica e casa",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ACCERTAMENTO DI ENTRATA DERIVANTE DA CANONI DI LOCAZIONE E SPESE CONDOMINIALI DEGLI ALLOGGI COMUNALI DESTINATI AI SERVIZI ABITATIVI PUBBLICI - ANNO 2026",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5086606",
-  "estrazione": "regex",
-  "caratteri_testo": 9679,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:27",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 41,000.00)",
-  "importo_incerto": true
- },
- {
   "id": "determinazione-179-2026",
   "numero_raw": "2026/179",
   "numero": "179",
@@ -17520,7 +17110,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-01-29",
   "oggetto": "IMPEGNO DI SPESA PER ACQUISTO MATERIALE VARIO DI CANCELLERIA PER FUNZIONAMENTO UFFICI COMUNALI",
-  "beneficiario": "HARTEX GROUP SRL la fornitura di carta e materiali vari",
+  "beneficiario": "HARTEX GROUP SRL",
   "importo_euro": 5416.04,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -18055,7 +17645,8 @@
   "beneficiario_generico": false,
   "regola_importo": "somma impegnata/liquidata",
   "importo_incerto": false,
-  "importo_verificato": true
+  "importo_verificato": true,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-145-2026",
@@ -18147,7 +17738,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-01-27",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI PUBBLICA ILLUMINZIONE SUL PONTE PEDONALE IN PIEVE EMANUELE, AI SENSI DELL’ART. 50 CO. 1 LETT A) DEL D.LGS. N. 36/2023. APPROVAZIONE REPORT SINTEL. AFFIDAMENTO ALLA SOCIETÀ TECNI-LUX S.R.L. DI CARBONARA AL TICINO (PV). CIG B9ECFD2030",
-  "beneficiario": "SINTEL. AFFIDAMENTO ALLA SOCIETÀ TECNI-LUX S.R.L",
+  "beneficiario": "Tecni-Lux SRL di Carbonar al Ticino (PV)",
   "importo_euro": 9870.3,
   "cig": "B9ECFD2030",
   "categoria": "Sociale e famiglia",
@@ -18461,7 +18052,9 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/282"
+  ],
   "regola_importo": "importo complessivo",
   "importo_incerto": false
  },
@@ -18820,33 +18413,6 @@
   "regola_importo": "nessuna regola applicabile",
   "importo_incerto": false,
   "importo_verificato": false
- },
- {
-  "id": "determinazione-046-2026",
-  "numero_raw": "2026/46",
-  "numero": "046",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-01-14",
-  "oggetto": "ASSUNZIONE ACCERTAMENTO DI ENTRATA RELATIVO AI SERVIZI A DOMANDA INDIVIDUALE DI PRE E POST SCUOLA ANNO 2026",
-  "beneficiario": null,
-  "importo_euro": 30000.0,
-  "cig": null,
-  "categoria": "Istruzione e scuola",
-  "missione_bdap": 99,
-  "capitolo_bilancio": null,
-  "descrizione_sintetica": "ASSUNZIONE ACCERTAMENTO DI ENTRATA RELATIVO AI SERVIZI A DOMANDA INDIVIDUALE DI PRE E POST SCUOLA ANNO 2026",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5046963",
-  "estrazione": "regex",
-  "caratteri_testo": 4762,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-16 21:29",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": false
  },
  {
   "id": "determinazione-045-2026",

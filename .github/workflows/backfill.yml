@@ -28,6 +28,11 @@ on:
         type: boolean
         required: false
         default: false
+      riestrai_incerti:
+        description: 'Rielabora solo le spese con importo dubbio (mostrate come «da verificare»)'
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -69,6 +74,9 @@ jobs:
           if [ "${{ inputs.riestrai_regex }}" = "true" ]; then
             FLAGS="$FLAGS --riestrai-regex"
           fi
+          if [ "${{ inputs.riestrai_incerti }}" = "true" ]; then
+            FLAGS="$FLAGS --riestrai-incerti"
+          fi
           if [ "${{ inputs.riestrai_tutto }}" = "true" ]; then
             FLAGS="$FLAGS --riestrai-tutto"
           fi
@@ -82,7 +90,13 @@ jobs:
         run: |
           git config user.name "OpenSpeseBot"
           git config user.email "bot@openspese.local"
+          # Vedi la nota in aggiornamento.yml: senza il driver il merge dei
+          # JSON generati è testuale e può inserire marcatori di conflitto.
+          git config merge.mantieni-locale.driver true
           git pull --rebase --autostash
+          # Il pull può comunque produrre dati corrotti: meglio fallire qui
+          # che pubblicare un sito che non riesce più a leggere i propri dati.
+          python scripts/verifica_dati.py
           git add data/ docs/
           git diff --staged --quiet || git commit -m "Backfill storico: $(date '+%Y-%m-%d %H:%M')"
           git push

@@ -55,13 +55,6 @@
     padding: 12px 14px; font-size: 12.5px; color: #6B4E00; margin: 12px 0; }
   .fonte { font-size: 11.5px; color: var(--grigio); margin-top: 10px; }
 
-  /* Glossario: le tre parole difficili, spiegate una volta sola in cima */
-  .glossario { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 14px; }
-  .glossario dt { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
-  .glossario dd { font-size: 13px; color: var(--grigio); }
-  .glossario dd em { color: var(--testo); font-style: normal; font-weight: 600; }
-
   footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
            padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
   footer p { margin-bottom: 8px; max-width: 820px; }
@@ -93,11 +86,11 @@
        se non si sa con cosa confrontarli. Qui ci sono i termini di paragone ufficiali:
        il fabbisogno standard calcolato dallo Stato, i comuni di dimensione simile,
        la media regionale dei redditi.</p>
-    <p><strong>Perché uno scarto dal fabbisogno non è una condanna.</strong> Può dipendere
-       da caratteristiche del territorio che il modello statistico non cattura, da scelte
-       politiche legittime o da costi ereditati da amministrazioni precedenti. E come mostra
-       il caso dell'asilo nido, in certi casi la formula stessa produce risultati
-       controintuitivi. Questi dati servono per sapere quali documenti chiedere.</p>
+    <p><strong>Una cosa che questi dati non dicono.</strong> La differenza fra quanto un
+       Comune spende e il suo fabbisogno standard <em>non è una misura di spreco</em>:
+       lo dichiara espressamente la fonte. Può dipendere da caratteristiche del territorio
+       che il modello statistico non cattura, da scelte politiche o da costi ereditati.
+       Serve per fare domande, non per dare risposte.</p>
     <p id="fonti"></p>
   </div>
 </footer>
@@ -155,110 +148,54 @@ function bloccoPerche(d) {
   const pieveNido = cn.find(c => c.evidenzia);
   const confronto = cn.filter(c => !c.evidenzia && c.costo_per_utente > 1000);
 
-  const fabPieve = Math.round(sc.reduce((s, v) => s + v.pieve, 0));
-  const deprivazione = sc.find(v => v.determinante === "Deprivazione socio-economica");
-  const coperture = cn.filter(c => !c.evidenzia).map(c => c.copertura_pct);
-  const mqAltri = Object.entries(ds.comuni).filter(([n]) => n !== "Pieve Emanuele")
-    .map(([, v]) => v.mq_per_utente_nido).filter(v => v != null);
-  // "uno su cinque" si capisce meglio di "19,1%", e in lettere meglio che in cifre
-  const PAROLE = ["", "uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto",
-                  "nove", "dieci"];
-  const suQuanti = p => PAROLE[Math.round(100 / p)] || Math.round(100 / p);
+  const nido = sc.find(v => v.determinante === "Asilo nido");
+  const anziani = sc.find(v => v.determinante === "Popolazione oltre i 75 anni");
 
   return `
     <h3 class="sezione" style="font-size:1.05rem;margin-top:26px">
-      Perché lo Stato si aspetta che Pieve spenda poco</h3>
-    <div class="sottotitolo">Per il sociale la formula statale assegna a Pieve Emanuele
-      ${dec(fabPieve, 0)} euro per abitante all'anno: il preventivo più basso dei sei comuni
-      della zona. La formula è pubblica e si può smontare pezzo per pezzo — ecco da dove
-      viene quel numero.</div>
-
-    <div class="spiegazione"><strong>Quasi tutto il divario nasce da una cosa: il nido.</strong>
-      <br><br>Pieve Emanuele ha tanti bambini piccoli quanto i comuni vicini — sono il
-      ${dec(pv.quota_0_2_anni_pct, 2)}% dei residenti, la seconda quota più alta della zona.
-      Ma al nido ne va solo il <strong>${dec(pv.copertura_nido_pct)}%</strong> — meno di uno
-      su ${suQuanti(pv.copertura_nido_pct)} — mentre negli altri comuni si va dal
-      ${dec(Math.min(...coperture), 0)}% al ${dec(Math.max(...coperture), 0)}%: a Basiglio
-      più di un bambino su tre.
-      <br><br>E qui c'è il punto che sorprende. <strong>La formula dello Stato non conta i
-      bambini che potrebbero andare al nido: conta quelli che ci vanno davvero.</strong>
-      Meno posti un Comune offre, meno soldi la formula ritiene che gli servano. Sembra un
-      dettaglio tecnico, ma cambia il senso di tutto il confronto: se Pieve aprisse più
-      posti, il suo preventivo salirebbe e lo scarto del ${dec(Math.abs(soc.scarto_pct), 0)}%
-      si ridurrebbe da solo — senza che nessuno abbia speso un euro in meno.
-      <br><br><strong>Attenzione a come si legge.</strong> Questo meccanismo va
-      <em>a favore</em> del Comune quando si guarda lo scarto, non contro. Chi usa quel
-      +${dec(soc.scarto_pct, 0)}% come prova di cattiva gestione sta usando un numero in
-      parte gonfiato dalla scarsità di posti nido.</div>
-
-    <div class="spiegazione"><strong>Il secondo pezzo del divario è semplicemente l'età di
-      chi ci abita.</strong>
-      <br><br>A Pieve gli over 75 sono l'${dec(pv.quota_over75_pct)}% dei residenti: la quota
-      più bassa della zona, dove Opera e Rozzano sfiorano il 12,5%. L'assistenza agli anziani
-      è la voce più costosa del sociale, quindi un paese giovane genera un preventivo più
-      basso. Su questo non c'è niente da obiettare: la formula fa il suo lavoro correttamente.</div>
-
-    <div class="spiegazione"><strong>Una cosa che la formula non guarda affatto: quanto
-      guadagnano i residenti.</strong>
-      <br><br>Verrebbe naturale pensare che un Comune con redditi bassi riceva un preventivo
-      più alto. Non funziona così: il reddito non entra nel calcolo. Al suo posto c'è un
-      indice statistico di disagio sociale, che a Pieve pesa meno di
-      ${dec(Math.ceil(Math.abs(deprivazione?.scarto || 0)), 0)} euro per abitante su un
-      divario di ${dec(Math.abs(gap), 0)}. Curiosamente quell'indice colloca Pieve
-      <strong>al di sotto</strong> della media italiana per disagio
-      (${dec(pv.deprivazione_vs_italia_pct, 0)}%) — meglio di Basiglio, dove il reddito medio
-      dichiarato è più del doppio. È un risultato strano, ma conta troppo poco per spostare
-      qualcosa.</div>
-
-    <div class="card" style="margin-top:16px">
-      <table><thead><tr><th>Cosa guarda la formula</th><th>Quanto vale a Pieve</th>
-        <th>In media qui intorno</th><th>Differenza</th></tr></thead><tbody>
+      Perché il fabbisogno assegnato a Pieve è il più basso dell'ambito</h3>
+    <div class="sottotitolo">Il fabbisogno standard del sociale attribuito a Pieve Emanuele
+      (${dec(Math.round(sc.reduce((s,v) => s + v.pieve, 0)), 0)} € per abitante) è il più
+      basso dei sei comuni. Il modello dichiara da cosa è composto: la somma dei fattori qui
+      sotto ricostruisce esattamente quella cifra.</div>
+    <div class="card">
+      <table><thead><tr><th>Fattore considerato dal modello</th><th>Pieve</th>
+        <th>Media dell'ambito</th><th>Differenza</th></tr></thead><tbody>
         ${sc.filter(v => Math.abs(v.scarto) >= 0.2).map(v => `<tr>
           <td>${esc(v.determinante)}</td>
           <td>${dec(v.pieve)} €</td><td>${dec(v.media_ambito)} €</td>
           <td class="${v.scarto < 0 ? "sotto" : "sopra"}">${v.scarto > 0 ? "+" : ""}${dec(v.scarto)} €</td></tr>`).join("")}
-        <tr style="font-weight:700"><td>Totale del divario</td><td colspan="2"></td>
+        <tr style="font-weight:700"><td>Totale</td><td colspan="2"></td>
           <td class="sotto">${dec(gap)} €</td></tr>
       </tbody></table>
-      <div class="fonte">Tutti i valori sono euro per abitante all'anno. Sommando la colonna
-        «quanto vale a Pieve» si ottiene esattamente il preventivo pubblicato
-        (${dec(fabPieve, 0)} €): è la formula ufficiale, non una ricostruzione.</div>
     </div>
-
-    <div class="spiegazione"><strong>Il numero che dovrebbe far alzare un sopracciglio è
-      un altro.</strong>
-      <br><br>Pieve spende per il nido ${dec(pv.nidi_pro_capite, 2)} euro per abitante: la
-      seconda cifra più alta della zona. Però ha la copertura più bassa. Mettendo insieme le
-      due cose: circa <strong>${pieveNido.utenti_stimati} bambini iscritti,
-      ${eur(pieveNido.spesa_nido)} di spesa — attorno ai
-      ${eur(pieveNido.costo_per_utente)} all'anno per bambino</strong>. Negli altri comuni
-      della zona la stessa stima va dai ${eur(Math.min(...confronto.map(c => c.costo_per_utente)))}
-      ai ${eur(Math.max(...confronto.map(c => c.costo_per_utente)))}.
-      <br><br>Nello stesso servizio ogni bambino ha <strong>${dec(pv.mq_per_utente_nido)}
-      metri quadri</strong> a disposizione, contro i ${dec(Math.min(...mqAltri), 0)}–${dec(Math.max(...mqAltri), 0)}
-      dei comuni vicini. Il nido è affidato interamente a un gestore esterno.
-      <br><br>Costo per posto il più alto della zona, posti pochi, spazi stretti: tre fatti
-      che stanno insieme e che <strong>non si spiegano con una formula statistica.</strong>
-      Si spiegano — o si smentiscono — leggendo il contratto con cui il servizio è stato
-      affidato. È un documento pubblico.</div>
-
-    <div class="card">
-      <table><thead><tr><th>Comune</th><th>Bambini 0-2</th><th>Al nido</th>
-        <th>Copertura</th><th>Spesa nido</th><th>Stima per bambino</th></tr></thead><tbody>
-        ${cn.map(c => `<tr${c.evidenzia ? ' style="background:#EEF3FD;font-weight:600"' : ''}>
-          <td>${esc(c.nome)}</td><td>${c.bambini_0_2}</td><td>${c.utenti_stimati}</td>
-          <td>${dec(c.copertura_pct)}%</td><td>${eur(c.spesa_nido)}</td>
-          <td class="${c.costo_per_utente > 12000 ? "sopra" : ""}">${
-            c.costo_per_utente < 1000 ? "—" : eur(c.costo_per_utente)}</td></tr>`).join("")}
-      </tbody></table>
-    </div>
-    <div class="cautela"><strong>Come è stato calcolato il costo per bambino.</strong>
-      Non è un dato ufficiale: è una stima. Il numero di bambini iscritti non è pubblicato
-      direttamente, lo abbiamo ricostruito da tre dati che invece lo sono (quanti abitanti,
-      quanti bambini fra 0 e 2 anni, che percentuale di loro frequenta il nido). L'ordine di
-      grandezza è solido, la cifra esatta no. <strong>Basiglio non è confrontabile</strong>:
-      con ${eur(cn.find(c => c.nome === "Basiglio")?.spesa_nido || 0)} di spesa comunale,
-      lì il nido evidentemente non è pagato dal Comune.</div>
+    <div class="spiegazione"><strong>Due fattori su undici, e nessuno dei due è il reddito.</strong>
+      Il modello non guarda affatto al reddito dei residenti: usa l'indice di deprivazione
+      socio-economica, che pesa per appena ${dec(Math.abs(sc.find(v => v.determinante === "Deprivazione socio-economica")?.scarto || 0))} €.
+      Il divario di ${dec(Math.abs(gap))} € per abitante viene quasi tutto da due voci.
+      <br><br><strong>1. L'asilo nido: ${dec(Math.abs(nido.scarto))} € per abitante, il
+      ${Math.round(nido.scarto / gap * 100)}% del divario.</strong> Pieve Emanuele ha una quota
+      di bambini 0-2 anni in linea con i vicini (${dec(pv.quota_0_2_anni_pct, 2)}% dei residenti,
+      la seconda più alta), ma ne porta al nido solo il <strong>${dec(pv.copertura_nido_pct)}%</strong>,
+      la copertura più bassa del gruppo (gli altri stanno fra il ${dec(Math.min(...cn.filter(c => !c.evidenzia).map(c => c.copertura_pct)))}%
+      e il ${dec(Math.max(...cn.map(c => c.copertura_pct)))}%). Qui il modello ha un limite noto:
+      calcola il fabbisogno del nido a partire dal servizio <em>effettivamente erogato</em>,
+      non dai bambini che potrebbero averne bisogno. Meno posti offre un Comune, meno
+      fabbisogno gli viene riconosciuto. È un ragionamento circolare, e va a vantaggio del
+      Comune nel confronto: se Pieve coprisse come Lacchiarella, il suo fabbisogno salirebbe
+      e lo scarto apparente si ridurrebbe.
+      <br><br><strong>2. L'età: ${dec(Math.abs(anziani.scarto))} € per abitante.</strong>
+      Pieve ha l'${dec(pv.quota_over75_pct)}% di over 75, la quota più bassa dell'ambito
+      (Opera e Rozzano sfiorano il 12,5%). L'assistenza agli anziani è la voce più pesante
+      del sociale: una popolazione giovane genera meno fabbisogno. Questo pezzo del divario
+      è metodologicamente corretto e non c'è niente da obiettare.
+      <br><br><strong>Una nota a margine, da verificare sugli atti.</strong> Pieve spende
+      per i nidi ${dec(pv.nidi_pro_capite, 2)} € per abitante pur avendo la copertura più
+      bassa: rapportata ai bambini iscritti, la spesa vale circa
+      <strong>${eur(pieveNido.costo_per_utente)} l'anno per bambino</strong>, contro
+      ${eur(Math.min(...confronto.map(c => c.costo_per_utente)))}–${eur(Math.max(...confronto.map(c => c.costo_per_utente)))}
+      negli altri comuni dell'ambito. È una stima ricostruita, non un dato pubblicato: dice
+      dove guardare — il contratto di affidamento del servizio — non cosa concludere.</div>
   `;
 }
 
@@ -345,7 +282,7 @@ function bloccoFunzioni(d) {
     ${bloccoPerche(d)}
     <div class="cautela"><strong>Cosa è stato escluso.</strong>
       ${esc(ds.capofila_ambito || "")} ${esc(ds.anomalie_dichiarate || "")}</div>
-    <div class="cautela">${esc(f.nota_amministrazione)}
+    <div class="cautela">${esc(f.avvertenza)} ${esc(f.nota_amministrazione)}
       ${q ? `La spesa storica delle sei funzioni ricostruisce il totale pubblicato
       con uno scarto dello ${dec(Math.abs(q.storica_scarto_pct), 3)}%; i fabbisogni
       sommano ${dec(Math.abs(q.standard_scarto_pct))}% in meno del fabbisogno
@@ -370,27 +307,6 @@ async function avvia() {
   const ultimaCassa = cassa[cassa.length - 1];
 
   document.getElementById("contenuto").innerHTML = `
-    <h2 class="sezione">Le tre parole difficili di questa pagina</h2>
-    <div class="sottotitolo">Tornano in ogni sezione. Vale la pena leggerle una volta.</div>
-    <div class="card"><dl class="glossario">
-      <div><dt>Spesa storica</dt>
-        <dd>Quanto il Comune <em>ha speso davvero</em>. Nessuna stima: sono i soldi usciti
-          dalle casse, come risultano dai suoi bilanci.</dd></div>
-      <div><dt>Fabbisogno standard</dt>
-        <dd>Un <em>preventivo calcolato dallo Stato</em>. Prende le caratteristiche del
-          Comune — quanti bambini, quanti anziani, quanto costano gli affitti, quali
-          servizi esistono — le mette in una formula e stima quanto dovrebbe costare
-          farlo funzionare. È il metro per confrontare comuni molto diversi fra loro.</dd></div>
-      <div><dt>Livello dei servizi</dt>
-        <dd>Quanti servizi il Comune eroga <em>rispetto alla media dei comuni della sua
-          taglia</em>. Non è un voto di qualità: conta le prestazioni organizzate
-          (posti al nido, ore di assistenza, utenti seguiti), non quanto funzionino bene.</dd></div>
-    </dl></div>
-    <div class="cautela"><strong>Da qui nasce l'unico errore di lettura che conta.</strong>
-      La differenza fra spesa storica e fabbisogno standard <em>non misura lo spreco</em>,
-      e lo dice la fonte stessa. Misura di quanto un Comune si scosta da un comune medio
-      con le sue caratteristiche. Serve per sapere dove guardare, non per concludere.</div>
-
     <h2 class="sezione">In sintesi</h2>
     <div class="sottotitolo">I numeri che dicono come sta il Comune, con l'anno a cui si riferiscono.</div>
     <div class="kpi">

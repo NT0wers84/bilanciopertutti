@@ -13,7 +13,7 @@
     "fonte": "OpenCivitas · Sogei/SOSE per RGS e Dipartimento delle Finanze",
     "licenza": "CC BY 4.0",
     "url": "https://www.opencivitas.it/it/open-data",
-    "avvertenza": "Ogni anno appartiene a una famiglia metodologica diversa (FC20TOT…FC80TOT): la fonte vieta il confronto diretto fra annualità, perché la formula cambia. Il 2020 non è stato ricostruito.",
+    "avvertenza": "Ogni anno appartiene a una famiglia metodologica diversa (FC20TOT…FC80TOT): la fonte vieta il confronto diretto fra annualità. Il 2020 non è ricostruito. La differenza fra spesa storica e spesa standard NON è una misura di spreco.",
     "serie": [
       {
         "anno": 2015,
@@ -109,7 +109,7 @@
     "fonte": "OpenCivitas · Sogei — Comuni, servizi totali, indicatori 2022 (FC80TOT)",
     "licenza": "CC BY 4.0",
     "nota": "Comuni dell'ambito Visconteo Sud Milano, lo stesso con cui Pieve Emanuele condivide i servizi sociali. Le due percentuali sono indipendenti: un Comune può spendere sopra il fabbisogno e allo stesso tempo erogare servizi sopra o sotto la media.",
-    "avvertenza": "Il livello dei servizi è calcolato sulla media dei comuni della stessa fascia di popolazione: Rozzano (41.000 abitanti) e Basiglio (8.000) hanno metri di paragone diversi fra loro, quindi le due percentuali non sono direttamente confrontabili da comune a comune.",
+    "avvertenza": "Lo scarto dal fabbisogno standard non misura lo spreco, e il livello dei servizi è calcolato sulla media dei comuni della stessa fascia di popolazione: comuni di dimensione molto diversa hanno metri di paragone diversi.",
     "comuni": [
       {
         "nome": "Pieve Emanuele",

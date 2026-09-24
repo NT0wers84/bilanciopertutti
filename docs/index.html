@@ -67,6 +67,14 @@
     padding: 0 5px; margin-left: 3px; font-weight: 700; }
   .nota-incerto { margin-top: 8px; font-size: 12px; background: #FDF1DC;
     border: 1px solid #EFD9A8; border-radius: 8px; padding: 8px 10px; color: #6B4E00; }
+  .nota-archivio { margin-top: 8px; font-size: 12px; background: #EEF3FD;
+    border: 1px solid #C6DAFC; border-radius: 8px; padding: 8px 10px; color: #123785; }
+  .testo-atto { margin-top: 10px; font-size: 12.5px; line-height: 1.5;
+    background: #FAF9F6; border: 1px solid var(--bordo); border-radius: 8px;
+    padding: 12px 14px; max-height: 460px; overflow-y: auto;
+    white-space: pre-wrap; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .testo-atto .intestazione { font-family: inherit; font-weight: 600;
+    margin-bottom: 8px; color: var(--grigio); }
   .spesa-beneficiario { font-weight: 600; font-size: 15px; }
   .spesa-descrizione { font-size: 14px; color: var(--testo); margin-top: 6px; }
   .spesa-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px;
@@ -235,6 +243,47 @@ const dataIt = iso => {
   const [a, m, g] = iso.split("-");
   return `${g}/${m}/${a}`;
 };
+// Il Comune tiene le liquidazioni all'albo quindici giorni, poi il link
+// risponde "atto non più in pubblicazione". Le determinazioni invece restano
+// online per anni, quindi la regola vale solo per le liquidazioni.
+const GIORNI_ALBO = 15;
+function scaduto(s) {
+  if (s.tipo_atto !== "liquidazione" || !s.data_pubblicazione) return false;
+  const giorni = (Date.now() - new Date(s.data_pubblicazione)) / 86400000;
+  return giorni > GIORNI_ALBO;
+}
+
+// Il testo dell'atto è archiviato compresso: lo apre il browser stesso.
+const testiLetti = {};
+async function mostraTesto(id, bottone) {
+  const box = document.getElementById(`testo-${id}`);
+  if (!box) return;
+  if (!box.hidden) { box.hidden = true; bottone.textContent = "testo archiviato"; return; }
+  box.hidden = false;
+  bottone.textContent = "nascondi testo";
+  if (testiLetti[id]) { box.innerHTML = testiLetti[id]; return; }
+  box.textContent = "Carico il testo dell'atto…";
+  try {
+    const risposta = await fetch(`testi/${id}.txt.gz`);
+    if (!risposta.ok) throw new Error(risposta.status);
+    let testo;
+    try {
+      // Se il server ha già decompresso (Content-Encoding), il flusso non è
+      // più gzip: in quel caso il testo si legge direttamente.
+      const flusso = risposta.clone().body.pipeThrough(new DecompressionStream("gzip"));
+      testo = await new Response(flusso).text();
+    } catch {
+      testo = await risposta.text();
+    }
+    const html = `<div class="intestazione">Copia del testo salvata da OpenSpese il giorno
+      in cui l'atto era pubblicato all'albo. Fa fede l'originale del Comune.</div>${esc(testo)}`;
+    testiLetti[id] = html;
+    box.innerHTML = html;
+  } catch (e) {
+    box.textContent = "Non riesco a caricare il testo archiviato di questo atto.";
+  }
+}
+
 const esc = s => (s || "").replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -321,7 +370,7 @@ function applicaFiltri() {
   document.getElementById("cnt-liquidazione").textContent = `(${nLiq})`;
   document.getElementById("cnt-determinazione").textContent = `(${nDet})`;
   document.getElementById("cnt-tutto").textContent = `(${base.length})`;
-  document.getElementById("spiega-vista").innerHTML = SPIEGA[vista]
+  document.getElementById("spiega-vista").innerHTML = SPIEGA[vista] + avvisoLacuna()
     + (selezione ? ` <span class="chip-selezione">Filtro da grafico:
         ${ETICHETTA_SELEZIONE[selezione.tipo]} “${esc(selezione.tipo === "mese"
           ? mesiEsteso(selezione.valore) : selezione.valore)}”
@@ -331,6 +380,28 @@ function applicaFiltri() {
   aggiornaKpi();
   aggiornaGrafici();
   disegnaFeed();
+}
+
+// Nella vista dei pagamenti la serie mensile parte più tardi dell'anno, e non
+// perché il Comune non abbia pagato: le liquidazioni escono dall'albo dopo
+// quindici giorni, quindi quelle anteriori all'avvio di questo monitoraggio
+// non sono più recuperabili da nessuna fonte pubblica. Le determinazioni
+// restano invece online per anni, e infatti ci sono da gennaio.
+function avvisoLacuna() {
+  if (vista !== "liquidazione") return "";
+  const liq = SPESE.filter(s => s.tipo_atto === "liquidazione" && s.data_pubblicazione);
+  const det = SPESE.filter(s => s.tipo_atto === "determinazione" && s.data_pubblicazione);
+  if (!liq.length || !det.length) return "";
+  const primaLiq = liq.reduce((a, s) => s.data_pubblicazione < a ? s.data_pubblicazione : a, "9999");
+  const primaDet = det.reduce((a, s) => s.data_pubblicazione < a ? s.data_pubblicazione : a, "9999");
+  if (primaLiq.slice(0, 7) <= primaDet.slice(0, 7)) return "";
+  return `<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--bordo)">
+    <strong>Perché i pagamenti iniziano da ${mesiEsteso(primaLiq.slice(0, 7))}.</strong>
+    Il Comune pubblica le liquidazioni all'albo per quindici giorni, poi le ritira:
+    quelle precedenti non sono più consultabili sul portale e non è stato possibile
+    recuperarle. Le spese impegnate, che restano pubblicate per anni, partono invece
+    da ${mesiEsteso(primaDet.slice(0, 7))}. Da qui in avanti i pagamenti vengono
+    archiviati ogni giorno, testo dell'atto compreso.</div>`;
 }
 
 function azzeraSelezione() { selezione = null; applicaFiltri(); }
@@ -562,10 +633,18 @@ function disegnaFeed() {
         ${s.importo_euro != null && s.iva_inclusa != null
           ? `<div><strong>IVA:</strong> ${s.iva_inclusa ? "inclusa nell'importo" : "esclusa dall'importo"}</div>` : ""}
       </div>
+      ${scaduto(s) ? `<div class="nota-archivio">
+        <strong>Il Comune ha ritirato questo atto dall'albo.</strong> Le liquidazioni
+        restano pubblicate quindici giorni: il link qui sotto ora risponde «atto non
+        più in pubblicazione».${s.testo_archiviato
+          ? " Il testo però è stato salvato quando l'atto era online: aprilo con «testo archiviato»."
+          : ""}</div>` : ""}
       <div class="spesa-azioni">
         <button onclick="this.closest('.spesa-card').classList.toggle('aperta')">dettagli ▾</button>
+        ${s.testo_archiviato ? `<button onclick="mostraTesto('${esc(s.id)}', this)">testo archiviato</button>` : ""}
         ${s.url_atto ? `<a href="${esc(s.url_atto)}" target="_blank" rel="noopener">Vedi atto originale ↗</a>` : ""}
       </div>
+      <div class="testo-atto" id="testo-${esc(s.id)}" hidden></div>
     </article>`;
   }).join("");
   aggiornaPaginazione();

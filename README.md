@@ -46,11 +46,17 @@ Il run giornaliero parte da solo (cron 15:30 UTC).
 
 ## Note
 
+- **Le liquidazioni spariscono dal portale dopo quindici giorni.** Verificato:
+  un link a una liquidazione di luglio risponde «Atto non disponibile o non più
+  in pubblicazione», mentre le determinazioni restano online per anni (quelle
+  PNRR fino al 2031). Per questo la serie mensile dei pagamenti parte da luglio
+  2026: prima di allora nessuno li aveva archiviati, e non sono più recuperabili
+  da fonti pubbliche.
 - I PDF non vengono conservati, ma il **testo estratto sì**: `data/testi/<id>.txt.gz`
-  (compresso, pochi KB per atto). È l'assicurazione contro la sparizione degli
-  atti dal portale: una volta letto un atto, le rielaborazioni future non
-  dipendono più dalla disponibilità del sito comunale. Resta comunque il link
-  all'atto originale.
+  (compresso, pochi KB per atto). `genera_sito.py` lo copia in `docs/testi/`, il
+  sito lo mostra con il pulsante «testo archiviato» e il browser lo decomprime da
+  solo (`DecompressionStream`). È ciò che rende verificabile una spesa anche
+  quando il Comune ha già ritirato l'atto.
 - **Cosa non è una spesa.** L'archivio esclude le variazioni di bilancio (spostano
   fondi fra capitoli) e gli accertamenti di sola entrata (canoni, multe, vendite:
   sono soldi che entrano). Gli atti misti — accertamento di entrata *e* contestuale

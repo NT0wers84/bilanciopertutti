@@ -28,7 +28,7 @@ CAMPI_SITO = [
     "iva_inclusa", "cig", "categoria", "capitolo_bilancio",
     "descrizione_sintetica", "url_atto", "estrazione", "testo_disponibile",
     "e_rimodulazione", "beneficiario_generico", "atti_gemelli",
-    "importo_incerto", "regola_importo",
+    "importo_incerto", "regola_importo", "testo_archiviato",
 ]
 
 
@@ -41,6 +41,38 @@ def _scrivi(percorso: Path, contenuto: str) -> None:
     tmp = percorso.with_name(f".{percorso.name}.tmp")
     tmp.write_text(contenuto, encoding="utf-8")
     os.replace(tmp, percorso)
+
+
+def _pubblica_testi(spese: list[dict]) -> None:
+    """Mette nel sito il testo degli atti già archiviato.
+
+    Il Comune tiene le liquidazioni all'albo per quindici giorni: dopo, il
+    link al portale risponde «Atto non disponibile o non più in pubblicazione»
+    e la fonte di quella spesa sparisce. Il testo però lo abbiamo salvato al
+    momento della lettura, e pubblicarlo è ciò che rende verificabile tutto il
+    resto. Restano compressi: il browser li apre con DecompressionStream.
+    """
+    origine = Path("data/testi")
+    if not origine.exists():
+        return
+    destinazione = DOCS_DATA.parent / "testi"
+    destinazione.mkdir(parents=True, exist_ok=True)
+    voluti = {s["id"] for s in spese}
+    copiati = 0
+    for s in spese:
+        sorgente = origine / f"{s['id']}.txt.gz"
+        s["testo_archiviato"] = sorgente.exists()
+        if not sorgente.exists():
+            continue
+        arrivo = destinazione / sorgente.name
+        if not arrivo.exists() or arrivo.stat().st_mtime < sorgente.stat().st_mtime:
+            arrivo.write_bytes(sorgente.read_bytes())
+        copiati += 1
+    # Le copie di atti non più in archivio (entrate escluse, duplicati) vanno via
+    for vecchio in destinazione.glob("*.txt.gz"):
+        if vecchio.name[:-7] not in voluti:
+            vecchio.unlink()
+    log.info(f"Testi degli atti pubblicati: {copiati} su {len(spese)}")
 
 
 def _quota_annua(spesa: dict) -> float:
@@ -69,6 +101,10 @@ def main():
         spese = json.loads(SPESE_JSON.read_text(encoding="utf-8"))
 
     DOCS_DATA.mkdir(parents=True, exist_ok=True)
+
+    # Prima i testi: marca testo_archiviato su ogni spesa, che il sito usa per
+    # offrire la copia dell'atto quando il portale l'ha già tolto
+    _pubblica_testi(spese)
 
     ridotte = [{k: s.get(k) for k in CAMPI_SITO} for s in spese]
     _scrivi(DOCS_DATA / "spese.json",

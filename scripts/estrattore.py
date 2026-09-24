@@ -508,7 +508,7 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
         risultato = _estrai_con_groq(testo, oggetto)
 
     if risultato is None:
-        risultato = _estrai_con_regex(testo, oggetto)
+        risultato = _estrai_con_regex(testo, oggetto, tipo_portale)
         risultato["estrazione"] = "regex"
     else:
         risultato["estrazione"] = "groq"
@@ -827,13 +827,64 @@ REGOLE_IMPORTO = [
      re.compile(r"(?:impegn\w+|liquid\w+)\s+(?:la\s+)?(?:somma|spesa|"
                 r"importo)?\s*(?:complessiv\w+\s+)?(?:di|pari\s+a)"
                 r"\s*[^\d\n]{0,20}" + _N, re.IGNORECASE)),
+    # Quanto esce davvero dalle casse con QUESTO atto, IVA compresa. Conta
+    # soprattutto nelle liquidazioni, dove estrai_importo() la promuove in
+    # cima: un atto di SAL cita anche l'importo dell'intero appalto, che è
+    # un'altra cosa. Le due forme ricorrenti negli atti del Comune sono
+    # "oltre IVA al 10% per €601.334,66" e "per €601.334,66 IVA inclusa".
+    # In coda per le determinazioni, dove il quadro economico viene prima.
+    ("importo liquidato IVA compresa",
+     re.compile(r"oltre\s+I\.?\s?V\.?\s?A\.?[^\d\n]{0,35}per\s*[^\d\n]{0,8}" + _N
+                + r"|per\s*[^\d\n]{0,8}" + _N
+                + r"[^\d\n]{0,6}I\.?\s?V\.?\s?A\.?[^.\n]{0,25}inclus",
+                re.IGNORECASE)),
 ]
 
 
+# Il prospetto contabile in calce agli atti di liquidazione: una riga per
+# fattura, con la colonna "Importo Iva comp.". È la fonte più affidabile
+# dell'importo perché è l'atto stesso a fare il conto, e risolve i due casi
+# che le formule in prosa sbagliano: più fatture liquidate insieme (vanno
+# sommate) e lo split payment dell'IVA (storno negativo + riga esattoria,
+# che si annullano lasciando il lordo).
+RE_INTESTAZIONE_PROSPETTO = re.compile(
+    r"importo\s*\|?\s*iva\s*\n?\s*comp", re.IGNORECASE)
+# Un importo fra due pipe, seguito dal capitolo di bilancio (che è numerico):
+# "| 601.334,66 | 04022.02.90240"
+RE_RIGA_PROSPETTO = re.compile(r"\|\s*(-?\d{1,3}(?:\.\d{3})*,\d{2})\s*\|\s*\d")
+MAX_RIGHE_PROSPETTO = 40
+
+
+def somma_prospetto_liquidazione(testo: str) -> tuple[float | None, int]:
+    """Somma la colonna degli importi del prospetto finale di liquidazione."""
+    intestazioni = list(RE_INTESTAZIONE_PROSPETTO.finditer(testo or ""))
+    if not intestazioni:
+        return None, 0
+    blocco = testo[intestazioni[-1].end():]
+    valori = []
+    for grezzo in RE_RIGA_PROSPETTO.findall(blocco):
+        # importo_italiano() non legge il segno: lo storno dello split payment
+        # è negativo e senza di esso la somma conterebbe l'IVA due volte
+        negativo = grezzo.strip().startswith("-")
+        v = importo_italiano(grezzo.lstrip("-").strip())
+        if v is not None:
+            valori.append(-v if negativo else v)
+    if not valori or len(valori) > MAX_RIGHE_PROSPETTO:
+        return None, len(valori)
+    totale = round(sum(valori), 2)
+    return (totale if totale > 0 else None), len(valori)
+
+
 def _valori(pattern, testo: str) -> list[float]:
+    """Importi catturati da una regola, scartando le soglie di legge.
+
+    Il pattern può avere più alternative (e quindi più gruppi): si prende il
+    primo che ha catturato qualcosa.
+    """
     fuori = []
     for m in pattern.finditer(testo):
-        v = importo_italiano(m.group(1))
+        grezzo = next((g for g in m.groups() if g), None)
+        v = importo_italiano(grezzo)
         if v and v not in SOGLIE_NORMATIVE:
             fuori.append(v)
     return fuori
@@ -857,13 +908,23 @@ def estrai_importo(testo: str, oggetto: str = "",
     candidati plausibili in conflitto fra loro.
     """
     completo = f"{oggetto}\n{testo}"
+    e_liquidazione = "liquidazione" in (tipo_atto or "").lower()
+
+    # Nelle liquidazioni il prospetto contabile finale batte qualunque formula
+    # in prosa: è l'atto che fa il conto, riga per riga. Il testo in prosa cita
+    # anche l'impegno originario e il contratto dell'opera, che sono altro.
+    if e_liquidazione:
+        somma, n_righe = somma_prospetto_liquidazione(testo)
+        if somma:
+            return somma, f"prospetto di liquidazione ({n_righe} righe)", False
 
     regole = REGOLE_IMPORTO
-    if "liquidazione" in (tipo_atto or "").lower():
+    if e_liquidazione:
         # nelle liquidazioni il quadro economico complessivo dell'opera
         # non è la spesa dell'atto: va in fondo alla scala
-        priorità = {"somma impegnata/liquidata": 0, "importo complessivo": 1,
-                    "importo contrattuale": 2}
+        priorità = {"importo liquidato IVA compresa": 0,
+                    "somma impegnata/liquidata": 1, "importo complessivo": 2,
+                    "importo contrattuale": 3}
         regole = sorted(REGOLE_IMPORTO,
                         key=lambda r: priorità.get(r[0], 10))
 
@@ -955,13 +1016,17 @@ def _cerca_cig(testo: str) -> str | None:
     return m.group(1).upper() if m else None
 
 
-def _estrai_con_regex(testo: str, oggetto: str) -> dict:
+def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
     """
     Estrazione senza modello. L'importo segue la gerarchia di
     estrai_importo(): mai il massimo del documento.
+
+    Il tipo dell'atto va passato: è quello che manda in fondo alla scala il
+    quadro economico dell'opera quando si sta leggendo una liquidazione. Senza,
+    una liquidazione di SAL prende l'importo dell'intero appalto.
     """
     completo = f"{oggetto}\n{testo}"
-    importo, regola, incerto = estrai_importo(testo, oggetto)
+    importo, regola, incerto = estrai_importo(testo, oggetto, tipo_portale)
     if importo:
         log.info(f"  Importo da regola '{regola}': {importo:,.2f}"
                  + ("  [DA VERIFICARE]" if incerto else ""))

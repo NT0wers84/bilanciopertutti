@@ -1,5 +1,285 @@
 [
  {
+  "id": "determinazione-1900-2026",
+  "numero_raw": "2026/1900",
+  "anno": 2026,
+  "tipo_atto": "determinazione",
+  "data_pubblicazione": "2026-09-24",
+  "oggetto": "AFFIDAMENTO DIRETTO PER ACQUISTO ATTIVITÀ SISTEMISTICA PER ATTIVAZIONE SERVIZIO PAGAMENTO BOLLO PAGO-PA PER GLI SPORTELLI DELL’ENTE ASSUNZIONE IMPEGNO DI SPESA AFFIDATO ALLA SOCIETÀ MAGGIOLI S.P.A. CIG BD0A560E2B",
+  "beneficiario": "MAGGIOLI S.P.A. CIG BD0A560E2B",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 240,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "BD0A560E2B",
+  "categoria": "Sociale e famiglia",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "AFFIDAMENTO DIRETTO PER ACQUISTO ATTIVITÀ SISTEMISTICA PER ATTIVAZIONE SERVIZIO PAGAMENTO BOLLO PAGO-PA PER GLI SPORTELLI DELL’ENTE ASSUNZIONE IMPEGNO DI SPESA AFFIDATO ALLA SOCIET",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5665124",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "liquidazione-1898-2026",
+  "numero_raw": "2026/1898",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-24",
+  "oggetto": "LIQUIDAZIONE FATT. NR. 1522 DELL’1/09/2026 CAP HOLDING SPA PER SPESE TECNICHE LAVORI DI DEMOLIZIONE TORRE PIEZOMETRICA PIAZZA DELLA CHIESA CIG BC216C101A -",
+  "beneficiario": "Cap Holding S.p.A",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 5098.83,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "BC216C101A",
+  "categoria": "Urbanistica e casa",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "LIQUIDAZIONE FATT. NR. 1522 DELL’1/09/2026 CAP HOLDING SPA PER SPESE TECNICHE LAVORI DI DEMOLIZIONE TORRE PIEZOMETRICA PIAZZA DELLA CHIESA CIG BC216C101A -",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663552",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "determinazione-1897-2026",
+  "numero_raw": "2026/1897",
+  "anno": 2026,
+  "tipo_atto": "determinazione",
+  "data_pubblicazione": "2026-09-24",
+  "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER ESIGENZE CORRELATE ALLA REALIZZAZIONE DELLA XXVII EDIZIONE FESTA COLORI, SAPORI E MUSICHE DELLA MAGNA GRECIA",
+  "beneficiario": "la proposta della Antincendio Master s.a.s",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 4479.84,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "BD128EAAD6",
+  "categoria": "Amministrazione e servizi generali",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "ASSUNZIONE IMPEGNI DI SPESA PER ESIGENZE CORRELATE ALLA REALIZZAZIONE DELLA XXVII EDIZIONE FESTA COLORI, SAPORI E MUSICHE DELLA MAGNA GRECIA",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663550",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "liquidazione-1896-2026",
+  "numero_raw": "2026/1896",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0002141083 DEL 31/08/2026- MAGGIOLI SPA",
+  "beneficiario": "MAGGIOLI S.P.A",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 589.26,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": null,
+  "categoria": "Amministrazione e servizi generali",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0002141083 DEL 31/08/2026- MAGGIOLI SPA",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663010",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "liquidazione-1895-2026",
+  "numero_raw": "2026/1895",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "LIQUIDAZIONE FATTURE MIOS TECHNOLOGY SRL, SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
+  "beneficiario": "MIOS TECHNOLOGY S.R.L.",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 4827.82,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": null,
+  "categoria": "Amministrazione e servizi generali",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "LIQUIDAZIONE FATTURE MIOS TECHNOLOGY SRL, SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663008",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": false,
+  "regola_importo": "prospetto di liquidazione (15 righe)"
+ },
+ {
+  "id": "liquidazione-1894-2026",
+  "numero_raw": "2026/1894",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO - CUP J47H21001830001 - CIG A01BC0F3B3, FINANZIATO DA NEXT GENERATION EU - M5C2 - INVESTIMENTO 2.1 - INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE, NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR). LIQUIDAZIONE DELLA FT NR. 55 DEL 10/09/2026 PER €4.840,75 (IVA AL 22% INCLUSA) IN FAVORE DI MIOS TECHNOLOGY S.R.L. PER LA FORNITURA E INSTALLAZIONE DI APPARATI E COMPONENTI PER IL COLLEGAMENTO DELLA RETE DATI TRA I DUE CED, PRESSO LA SCUOLA PRIMARIA M.L. KING. – CIG BCD323E569.",
+  "beneficiario": "MIOS TECHNOLOGY S.R.L.",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 4840.75,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "A01BC0F3B3",
+  "categoria": "Istruzione e scuola",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663006",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": false,
+  "regola_importo": "prospetto di liquidazione (3 righe)"
+ },
+ {
+  "id": "liquidazione-1893-2026",
+  "numero_raw": "2026/1893",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO - CUP J47H21001830001 - CIG A01BC0F3B3, FINANZIATO DA NEXT GENERATION EU - M5C2 - INVESTIMENTO 2.1 - INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE, NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR). LIQUIDAZIONE IV SAL E CERTIFICATO DI PAGAMENTO N. 4 IN FAVORE DELL’OPERATORE I.M.E.T. S.R.L.",
+  "beneficiario": "I.M.E.T S.r.l.",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 601334.66,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "A01BC0F3B3",
+  "categoria": "Istruzione e scuola",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5663004",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": false,
+  "regola_importo": "prospetto di liquidazione (3 righe)"
+ },
+ {
+  "id": "liquidazione-1891-2026",
+  "numero_raw": "2026/1891",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "MIGLIORAMENTO DEL DECORO URBANO E DEL TESSUTO URBANO SOCIALE ED AMBIENTE CON INTERVENTI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI - LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI ALLE ATTIVITÀ SPORTIVE IN VIA PINI E VIA MOLISE - CUP J47H21001820001 - CIG A0127622C5, FINANZIATO DA NEXT GENERATION EU - M5C2 - INVESTIMENTO 2.1 - INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE, NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR). RETTIFICA DELLA DETERMINAZIONE N. 998 DEL 24/06/2026 MEDIANTE ASSOCIAZIONE DEL NUOVO CIG BC4A4273AB E CONSEGUENTE LIQUIDAZIONE FT. 202673500015365 DEL 21/09/2026 A FAVORE DI DUERETI S.R.L. PER L’IMPORTO DI €122,00 (IVA AL 22% INCLUSA) PER L’ITER DI CONNESSIONE E ATTIVAZIONE DELL’IMPIANTO DI PRODUZIONE PER FOTOVOLTAICO PRESSO IL CAMPO SPORTIVO VECCHIONE IN VIA MOLISE.",
+  "beneficiario": "duereti srl di Milano",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 122,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "A0127622C5",
+  "categoria": "Ambiente, verde e rifiuti",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "MIGLIORAMENTO DEL DECORO URBANO E DEL TESSUTO URBANO SOCIALE ED AMBIENTE CON INTERVENTI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI - LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI P",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5662687",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "liquidazione-1890-2026",
+  "numero_raw": "2026/1890",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "LIQUIDAZIONE DELLA FATTURA NR. 267/FE DEL 15/09/2026 IN FAVORE DI UNIVERSITA’ DEGLI STUDI GUGLIELMO MARCONI, PER LA PARTECIPAZIONE DI UNA DIPENDENTE AL CORSO DI FORMAZIONE “FINANZA PUBBLICA – PROCESSI, LOGICHE E STRUMENTI AMMINISTRATIVO-CONTABILI NELLA PA” – CIG BCD30389F0.",
+  "beneficiario": null,
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 180,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "BCD30389F0",
+  "categoria": "Amministrazione e servizi generali",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "LIQUIDAZIONE DELLA FATTURA NR. 267/FE DEL 15/09/2026 IN FAVORE DI UNIVERSITA’ DEGLI STUDI GUGLIELMO MARCONI, PER LA PARTECIPAZIONE DI UNA DIPENDENTE AL CORSO DI FORMAZIONE “FINANZA",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5662685",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
+  "id": "liquidazione-1889-2026",
+  "numero_raw": "2026/1889",
+  "anno": 2026,
+  "tipo_atto": "liquidazione",
+  "data_pubblicazione": "2026-09-23",
+  "oggetto": "LIQUIDAZIONE IN FAVORE DI GE.CO DI LAURA RHO PER INIZIATIVA ATTINENTE POLITICHE GIOVANILI - CIG: BBDBD55CF0",
+  "beneficiario": "GE.CO DI LAURA RHO",
+  "n_beneficiari": 1,
+  "beneficiari_dettaglio": null,
+  "importo_euro": 1900,
+  "importo_e_pluriennale": false,
+  "durata_anni": null,
+  "importo_primo_anno": null,
+  "iva_inclusa": null,
+  "cig": "BBDBD55CF0",
+  "categoria": "Amministrazione e servizi generali",
+  "capitolo_bilancio": null,
+  "descrizione_sintetica": "LIQUIDAZIONE IN FAVORE DI GE.CO DI LAURA RHO PER INIZIATIVA ATTINENTE POLITICHE GIOVANILI - CIG: BBDBD55CF0",
+  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5662636",
+  "estrazione": "regex",
+  "testo_disponibile": null,
+  "e_rimodulazione": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null,
+  "importo_incerto": null,
+  "regola_importo": null
+ },
+ {
   "id": "liquidazione-1886-2026",
   "numero_raw": "2026/1886",
   "numero": "1886",
@@ -106,7 +386,7 @@
   "beneficiario": "Lavorare in Farmacia SRL",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 3023.71,
+  "importo_euro": 15413.6,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -125,7 +405,9 @@
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": false,
-  "atti_gemelli": null
+  "atti_gemelli": null,
+  "regola_importo": "prospetto di liquidazione (19 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1875-2026",
@@ -202,7 +484,7 @@
   "beneficiario": "SIVIS",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 41557.0,
+  "importo_euro": 12064.58,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -221,7 +503,9 @@
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": false,
-  "atti_gemelli": null
+  "atti_gemelli": null,
+  "regola_importo": "prospetto di liquidazione (2 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1872-2026",
@@ -426,7 +710,7 @@
   "beneficiario": "Metalmec Carpenteria srls",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 916.3,
+  "importo_euro": 1117.89,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -445,7 +729,9 @@
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": false,
-  "atti_gemelli": null
+  "atti_gemelli": null,
+  "regola_importo": "prospetto di liquidazione (1 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1864-2026",
@@ -1856,7 +2142,7 @@
     "importo": 28.82
    }
   ],
-  "importo_euro": 319.64,
+  "importo_euro": 639.28,
   "importo_testuale": "298,33",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1876,8 +2162,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 6 righe di tabella (in conflitto con 298.33)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (20 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1579-2026",
@@ -2639,7 +2925,7 @@
     "importo": 6289.78
    }
   ],
-  "importo_euro": 5155.56,
+  "importo_euro": 6289.78,
   "importo_testuale": "6.289,78",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2660,8 +2946,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 6,289.78)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1549-2026",
@@ -2799,7 +3085,7 @@
     "importo": 2040.0
    }
   ],
-  "importo_euro": 1656.13,
+  "importo_euro": 2040.0,
   "importo_testuale": "2.040,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2820,8 +3106,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,040.00)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1545-2026",
@@ -2879,7 +3165,7 @@
     "importo": 450.81
    }
   ],
-  "importo_euro": 450.83,
+  "importo_euro": 450.81,
   "importo_testuale": "450,81",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2900,7 +3186,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 5 righe di tabella",
+  "regola_importo": "prospetto di liquidazione (17 righe)",
   "importo_incerto": false
  },
  {
@@ -2999,7 +3285,7 @@
     "importo": 538.29
    }
   ],
-  "importo_euro": 441.22,
+  "importo_euro": 538.29,
   "importo_testuale": "538,29",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3020,8 +3306,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 538.29)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1540-2026",
@@ -3063,7 +3349,7 @@
     "importo": 230.0
    }
   ],
-  "importo_euro": 1135.0,
+  "importo_euro": 1260.0,
   "importo_testuale": "18.57 + 390.00 + 125.00 + 125.00 - 5.95 - 5.95 + 390.00 + 230.00 = 1.188.00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3084,8 +3370,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma di 4 righe di tabella (in conflitto con 1,260.00)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (11 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1538-2026",
@@ -3650,7 +3936,7 @@
     "importo": null
    }
   ],
-  "importo_euro": 30287.58,
+  "importo_euro": 35450.84,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3672,8 +3958,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma di 11 righe di tabella (in conflitto con 206.22)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (39 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1509-2026",
@@ -3691,7 +3977,7 @@
     "importo": 2030.08
    }
   ],
-  "importo_euro": 2350.08,
+  "importo_euro": 2030.08,
   "importo_testuale": "2.030,08",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3713,8 +3999,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 3 righe di tabella (in conflitto con 2,030.08)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (4 righe)",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1507-2026",
@@ -4763,7 +5049,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: ARIES GROUP SRL, GAS TECNICI FOLIGNO SRL, SAPIO LIFE SRL, DIEFFE SISTEMI SRL, ECOLOGIA AMBIENTE SRL, TOWA PHARMACEUTICAL SPA, BIOS LINE SPA",
   "beneficiario": "Ditte diverse",
-  "importo_euro": 5322.77,
+  "importo_euro": 6126.97,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -4787,8 +5073,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 11 righe di tabella",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (25 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1469-2026",
@@ -5003,7 +5289,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 0000014/PA FATTURA NR. 0000015/PA EMESSE DA DUE MAICH SERVIZI SRL - AFFITTO CASSONETTI METALLICI PER IL SERVIZIO DELLA RACCOLTA DIFFERENZIATA DELL’OLIO VEGETALE DAL 01/07/2026 AL 30/09/2026 CIG Z1A32F10A4 - CIG Z89354FEBA",
   "beneficiario": "DUE MAICH SERVIZI SRL",
-  "importo_euro": 219.6,
+  "importo_euro": 439.2,
   "cig": "Z1A32F10A4",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -5027,7 +5313,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "prospetto di liquidazione (6 righe)",
   "importo_incerto": false
  },
  {
@@ -5149,7 +5435,9 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1416"
+  ],
   "regola_importo": "importo complessivo",
   "importo_incerto": false
  },
@@ -5162,7 +5450,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA MINORI E FAMIGLIA",
   "beneficiario": "Fornitori diversi",
-  "importo_euro": 17932.15,
+  "importo_euro": 17934.15,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -5186,8 +5474,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma di 9 righe di tabella",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (18 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1457-2026",
@@ -5198,7 +5486,7 @@
   "data_pubblicazione": "2026-07-20",
   "oggetto": "ATTO DI LIQUIDAZIONE NOTA PROT. 16943 DEL 15.07.2026",
   "beneficiario": "Fornitori diversi",
-  "importo_euro": 300.0,
+  "importo_euro": 250.0,
   "cig": "BB4FE27895",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -5222,8 +5510,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 250.00)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1456-2026",
@@ -5843,7 +6131,7 @@
   "data_pubblicazione": "2026-07-15",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
   "beneficiario": "utenti anziani e disabili",
-  "importo_euro": null,
+  "importo_euro": 33276.62,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -5872,7 +6160,7 @@
   "importo_verificato": false,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "tabella di 16 righe: somma non attendibile",
+  "regola_importo": "prospetto di liquidazione (37 righe)",
   "importo_incerto": false
  },
  {
@@ -6453,7 +6741,7 @@
   "data_pubblicazione": "2026-07-13",
   "oggetto": "LIQUIDAZIONE IN FAVORE DI MANUTENPUL SRLS PER SERVIZIO DI PULIZIA DI SPAZI COMUNALI – MAGGIO 2026",
   "beneficiario": "Manutenpul SRLS",
-  "importo_euro": 4896.0,
+  "importo_euro": 4148.0,
   "cig": "B80563DE77",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -6481,9 +6769,11 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 4,148.00)",
-  "importo_incerto": true
+  "atti_gemelli": [
+   "2026/1460"
+  ],
+  "regola_importo": "prospetto di liquidazione (9 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1415-2026",

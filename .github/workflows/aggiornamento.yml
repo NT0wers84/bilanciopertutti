@@ -1,4 +1,4 @@
-name: OpenSpese — Aggiornamento Giornaliero
+name: Conti in chiaro — Aggiornamento Giornaliero
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: openspese-run
+  group: conti-in-chiaro-run
   cancel-in-progress: false
 
 jobs:
@@ -60,8 +60,8 @@ jobs:
 
       - name: Salva risultati nel repository
         run: |
-          git config user.name "OpenSpeseBot"
-          git config user.email "bot@openspese.local"
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
           # I JSON generati sono marcati merge=mantieni-locale in .gitattributes.
           # Il driver va definito in ogni ambiente, runner compresi: senza questa
           # riga git ricade sul merge testuale ed è proprio lì che nascono i

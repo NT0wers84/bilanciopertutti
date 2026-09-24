@@ -1,5 +1,5 @@
 """
-scraper.py — OpenSpese Pieve Emanuele: aggiornamento giornaliero.
+scraper.py — Conti in chiaro — Pieve Emanuele: aggiornamento giornaliero.
 
 Flusso:
   1. Scarica l'albo pretorio corrente (papca-ap) e filtra le spese

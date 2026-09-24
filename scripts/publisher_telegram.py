@@ -141,7 +141,7 @@ def main():
     oggi = date.today().strftime("%d/%m/%Y")
     totale = sum(s.get("importo_euro") or 0 for s in spese)
     intro = (
-        f"💶 *OpenSpese — Pieve Emanuele*\n"
+        f"💶 *Conti in chiaro — Pieve Emanuele*\n"
         f"📅 {esc(oggi)}\n\n"
         f"{'È stata registrata' if len(spese) == 1 else 'Sono state registrate'} "
         f"*{len(spese)} {'spesa' if len(spese) == 1 else 'spese'}* "
@@ -154,7 +154,7 @@ def main():
         log.info(f"{len(spese)} spese > {MAX_MESSAGGI}: pubblico solo il riepilogo con link al sito.")
         invia(token, chat_id,
               esc("Troppe spese per elencarle una a una: le trovi tutte su ") +
-              "[openspese](https://nt0wers84.github.io/bilanciopertutti/)\\.")
+              "[conti in chiaro](https://nt0wers84.github.io/bilanciopertutti/)\\.")
         return
 
     for s in spese:

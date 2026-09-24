@@ -36,7 +36,7 @@ PAROLE_CONTESTO = re.compile(
     r"(spes[ae]|missio|bilanci|entrat)", re.IGNORECASE)
 
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "Mozilla/5.0 (civic-tech; OpenSpese Pieve Emanuele)"})
+SESSION.headers.update({"User-Agent": "Mozilla/5.0 (civic-tech; conti-in-chiaro Pieve Emanuele)"})
 
 
 def lista_dataset(max_pagine: int) -> list[dict]:

@@ -1,4 +1,4 @@
-name: OpenSpese — Backfill Storico
+name: Conti in chiaro — Backfill Storico
 
 # Solo manuale: dalla tab Actions → "Run workflow".
 # Rilancialo più volte finché il log non dice "Archivio esaurito".
@@ -38,7 +38,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: openspese-run
+  group: conti-in-chiaro-run
   cancel-in-progress: false
 
 jobs:
@@ -88,8 +88,8 @@ jobs:
 
       - name: Salva risultati nel repository
         run: |
-          git config user.name "OpenSpeseBot"
-          git config user.email "bot@openspese.local"
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
           # Vedi la nota in aggiornamento.yml: senza il driver il merge dei
           # JSON generati è testuale e può inserire marcatori di conflitto.
           git config merge.mantieni-locale.driver true

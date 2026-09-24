@@ -1,5 +1,5 @@
 """
-backfill.py — OpenSpese Pieve Emanuele: recupero dello storico (v3).
+backfill.py — Conti in chiaro — Pieve Emanuele: recupero dello storico (v3).
 
 Ricetta verificata sul portale reale (browser, 2026-07): l'albo espone
 l'INTERO archivio storico (7.954 atti dal maggio 2021) tramite

@@ -1,4 +1,4 @@
-# OpenSpese Pieve Emanuele
+# Conti in chiaro — Pieve Emanuele
 
 Monitoraggio civico indipendente della spesa del Comune di Pieve Emanuele (MI).
 
@@ -37,7 +37,7 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
    - `GROQ_API_KEY` — da https://console.groq.com (gratuita)
    - `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHANNEL_ID` — opzionali
 2. **GitHub Pages**: Settings → Pages → Source: `Deploy from a branch`, branch `main`, cartella `/docs`
-3. **Backfill**: tab Actions → "OpenSpese — Backfill Storico" → Run workflow.
+3. **Backfill**: tab Actions → "Conti in chiaro — Backfill Storico" → Run workflow.
    Primo giro consigliato con "solo censimento" = true per scoprire la
    profondità dell'archivio; poi rilanciarlo (senza censimento) più volte
    finché il log non dice "Archivio esaurito".

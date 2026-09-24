@@ -1,4 +1,4 @@
-name: OpenSpese — Sonda catalogo BDAP
+name: Conti in chiaro — Sonda catalogo BDAP
 
 # Manuale. Fase 2: scopre i dataset dei bilanci armonizzati (previsione e
 # rendiconto) nel catalogo Open Data BDAP e ne salva/logga le risorse.
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: openspese-run
+  group: conti-in-chiaro-run
   cancel-in-progress: false
 
 jobs:
@@ -39,8 +39,8 @@ jobs:
 
       - name: Salva risultati nel repository
         run: |
-          git config user.name "OpenSpeseBot"
-          git config user.email "bot@openspese.local"
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
           git pull --rebase --autostash
           git add data/
           git diff --staged --quiet || git commit -m "Sonda catalogo BDAP: $(date '+%Y-%m-%d')"

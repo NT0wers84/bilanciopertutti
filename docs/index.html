@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenSpese Pieve Emanuele — Le spese del Comune, spiegate</title>
+<title>Conti in chiaro — Pieve Emanuele</title>
 <meta name="description" content="Monitoraggio civico indipendente della spesa del Comune di Pieve Emanuele: determinazioni contabili e liquidazioni estratte ogni giorno dall'Albo Pretorio, spiegate in parole semplici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
@@ -17,14 +20,28 @@
          background: var(--fondo); color: var(--testo); line-height: 1.55; }
   a { color: var(--blu); }
 
-  header { background: var(--blu-scuro); color: #fff; padding: 28px 16px 24px; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-  header .wrap { padding: 0; max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-  header h1 { font-size: 26px; letter-spacing: -0.3px; }
-  header h1 span { color: #9DC4FF; }
-  header p { margin-top: 6px; font-size: 14px; opacity: .85; max-width: 640px; }
-  .badge-agg { display: inline-block; margin-top: 10px; font-size: 12px;
-               background: rgba(255,255,255,.12); padding: 3px 10px; border-radius: 20px; }
+
+  /* Header gemello di «Albo in chiaro»: stessa impaginazione centrata, stesso
+     blu, stesso titolo in DM Serif Display. I due siti sono lo stesso progetto
+     civico e devono riconoscersi al primo sguardo. */
+  header { background: var(--blu-scuro); color: #fff;
+           padding: 36px 16px 28px; text-align: center; }
+  header .cap { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                letter-spacing: .14em; color: rgba(255,255,255,.9); }
+  header h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400;
+              font-size: 34px; letter-spacing: -0.01em; margin: 10px 0 0; }
+  header .sub { font-size: 15px; margin-bottom: 7px; }
+  header .desc { font-size: 12px; color: rgba(255,255,255,.85); letter-spacing: .01em;
+                 line-height: 1.7; max-width: 560px; margin: 0 auto; }
+  .badge-agg { display: inline-block; margin-top: 14px; font-size: 11px;
+               color: rgba(255,255,255,.55); }
+
+  nav.principale { margin-top: 20px; display: flex; gap: 8px;
+                   flex-wrap: wrap; justify-content: center; }
+  nav.principale a { color: #fff; text-decoration: none; font-size: 13px;
+    padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,.12); }
+  nav.principale a.attiva { background: #fff; color: var(--blu-scuro); font-weight: 600; }
 
   nav.filtri { background: var(--carta); border-bottom: 1px solid var(--bordo);
                position: sticky; top: 0; z-index: 10; }
@@ -145,15 +162,17 @@
 
 <header>
   <div class="wrap">
-    <h1>OpenSpese <span>Pieve Emanuele</span></h1>
-    <p>Ogni determinazione contabile e liquidazione pubblicata dal Comune, letta
-       automaticamente e spiegata in parole semplici. Progetto civico indipendente,
-       non affiliato al Comune di Pieve Emanuele.</p>
+    <p class="cap">Monitoraggio civico indipendente</p>
+    <h1>Conti in chiaro</h1>
+    <p class="sub">Pieve Emanuele</p>
+    <p class="desc">Ogni euro che il Comune impegna o paga, letto automaticamente
+       dagli atti dell'albo pretorio e spiegato in parole semplici. Progetto civico
+       indipendente, non affiliato al Comune di Pieve Emanuele.</p>
     <span class="badge-agg" id="badge-agg">caricamento…</span>
-    <nav class="principale" style="margin-top:14px;display:flex;gap:8px;">
-      <a href="index.html" style="color:#123785;background:#fff;font-weight:600;text-decoration:none;font-size:13px;padding:6px 14px;border-radius:20px;">Spese quotidiane</a>
-      <a href="bilanci.html" style="color:#fff;background:rgba(255,255,255,.12);text-decoration:none;font-size:13px;padding:6px 14px;border-radius:20px;">Bilanci</a>
-      <a href="confronti.html" style="color:#fff;background:rgba(255,255,255,.12);text-decoration:none;font-size:13px;padding:6px 14px;border-radius:20px;">Come siamo messi</a>
+    <nav class="principale">
+      <a href="index.html" class="attiva">Spese quotidiane</a>
+      <a href="bilanci.html">Bilanci</a>
+      <a href="confronti.html">Come siamo messi</a>
     </nav>
   </div>
 </header>
@@ -275,7 +294,7 @@ async function mostraTesto(id, bottone) {
     } catch {
       testo = await risposta.text();
     }
-    const html = `<div class="intestazione">Copia del testo salvata da OpenSpese il giorno
+    const html = `<div class="intestazione">Copia del testo salvata da Conti in chiaro il giorno
       in cui l'atto era pubblicato all'albo. Fa fede l'originale del Comune.</div>${esc(testo)}`;
     testiLetti[id] = html;
     box.innerHTML = html;

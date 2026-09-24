@@ -875,6 +875,104 @@ def somma_prospetto_liquidazione(testo: str) -> tuple[float | None, int]:
     return (totale if totale > 0 else None), len(valori)
 
 
+# Il dispositivo di una determinazione elenca gli impegni uno per uno:
+# "Di assumere impegno di spesa nei confronti della Ge.Co per un importo
+# complessivo pari a Euro 3.660,00". Un atto che organizza un evento ne
+# contiene otto, verso otto fornitori diversi: leggerne uno solo significa
+# attribuire a un fornitore l'importo di un altro e perdere il resto.
+_IMP = r"\d{1,3}(?:\.\d{3})*,\d{2}|\d+,\d{2}|\d{1,3}(?:\.\d{3})+"
+MAX_IMPEGNI = 30
+FINESTRA_IMPEGNO = 300
+
+# Si lavora a finestre invece che con una regex sola: gli atti scrivono lo
+# stesso impegno in troppi modi perché un unico pattern li copra tutti. Nello
+# stesso documento si trovano "per un importo complessivo", "per un impegno
+# complessivo", il refuso "compleassivo", e l'ordine invertito ("per un importo
+# pari a Euro 840,00 nei confronti dell'Associazione…"). Si individua l'avvio
+# dell'impegno, si legge il testo che segue e da lì si prendono nome e cifra.
+RE_AVVIO_IMPEGNO = re.compile(
+    r"(?:assumere|impegnare)\s+(?:l['’]\s*)?impegn\w*\s+di\s+spesa", re.IGNORECASE)
+RE_NOME_IMPEGNO = re.compile(
+    r"(?:nei\s+con\w*|a\s+favore|in\s+favore)\s+"
+    r"(?:di\s+|del\s+|della\s+|dell['’]\s*|dello\s+|dei\s+|delle\s+)?"
+    r"(?P<nome>.{2,85}?)"
+    r"(?=\s+(?:per\s+un|per\s+il|un\s+importo|importo|al\s+CAP|al\s+Cap|"
+    r"P\.?\s?IVA|avente|con\s+sede)|[,;]|$)",
+    re.IGNORECASE)
+RE_VALORE_IMPEGNO = re.compile(r"(?:€|euro)\s*(" + _IMP + r")", re.IGNORECASE)
+# "Euro 3000,00 + iva 22% per un totale complessivo pari a Euro 3.660,00":
+# quello che il Comune impegna è il secondo, non l'imponibile.
+RE_LORDO_IMPEGNO = re.compile(
+    r"\+\s*i\.?\s?v\.?\s?a\.?[^.;]{0,40}?(?:per\s+un\s+totale|per\s+complessiv\w+)"
+    r"[^.;]{0,25}?(?:€|euro)\s*(" + _IMP + r")", re.IGNORECASE)
+RE_CODA_IMPEGNO = re.compile(
+    r"\s*(?:P\.?\s?IVA.*|C\.?F\.*|avente sede.*|con sede.*|di cui.*)$", re.IGNORECASE)
+RE_PREFISSO_IMPEGNO = re.compile(
+    r"^(?:ditta|societ[àa]|impresa|sig\.?r?a?\.?|maestro|dott\.?|associazione\s+(?=\w))\s+",
+    re.IGNORECASE)
+
+
+def impegni_dispositivo(testo: str) -> list[dict]:
+    """Elenco (beneficiario, importo) degli impegni assunti da una determina."""
+    piatto = re.sub(r"\s+", " ", testo or "")
+    avvii = [m.end() for m in RE_AVVIO_IMPEGNO.finditer(piatto)]
+    voci, visti = [], set()
+    for i, inizio in enumerate(avvii):
+        # La finestra si ferma prima dell'impegno successivo: altrimenti due
+        # impegni vicini si contaminano a vicenda.
+        fine = min(inizio + FINESTRA_IMPEGNO,
+                   avvii[i + 1] - 40 if i + 1 < len(avvii) else len(piatto))
+        finestra = piatto[inizio:fine]
+
+        lordo = RE_LORDO_IMPEGNO.search(finestra)
+        valori = RE_VALORE_IMPEGNO.findall(finestra)
+        valore = importo_italiano(lordo.group(1) if lordo
+                                  else valori[0] if valori else None)
+        if not valore:
+            continue
+
+        m = RE_NOME_IMPEGNO.search(finestra)
+        nome = RE_CODA_IMPEGNO.sub("", m.group("nome")).strip(" .,;–-") if m else ""
+        nome = RE_PREFISSO_IMPEGNO.sub("", nome).strip(" .,;–-")
+        # Lo stesso impegno compare spesso due volte (premessa e dispositivo):
+        # la coppia nome+importo si conta una sola volta.
+        chiave = (nome.lower()[:26], valore)
+        if chiave in visti:
+            continue
+        visti.add(chiave)
+        voci.append({"nome": nome, "importo": valore})
+
+    # Quando lo stesso impegno è citato una volta col nome e una senza, le due
+    # righe hanno lo stesso importo: sommarle raddoppierebbe la spesa.
+    con_nome = {v["importo"] for v in voci if _nome_utile(v["nome"])}
+    voci = [v for v in voci
+            if _nome_utile(v["nome"]) or v["importo"] not in con_nome]
+
+    # Sommare ha senso solo se l'atto è davvero un elenco di impegni verso
+    # fornitori diversi. Altrimenti si finisce per sostituire l'importo
+    # dell'opera con due spese tecniche accessorie, o per sommare cinque
+    # righe anonime che sono lo stesso impegno scritto in modi diversi.
+    identificate = [v for v in voci if _nome_utile(v["nome"])]
+    distinti = {v["nome"].lower()[:24] for v in identificate}
+    if (len(voci) < 3 or len(voci) > MAX_IMPEGNI
+            or len(identificate) < 0.7 * len(voci) or len(distinti) < 3):
+        return []
+    for v in voci:
+        v["nome"] = v["nome"] or "non indicato"
+    return voci
+
+
+def _nome_utile(nome: str) -> bool:
+    """Un nome che identifica davvero qualcuno, non un ruolo o un frammento."""
+    n = (nome or "").strip()
+    if len(n) < 4:
+        return False
+    return not re.match(r"^(?:il\s+|lo\s+|la\s+|stesso\s+|medesim\w+\s+)?"
+                        r"(?:direttore|responsabile|funzionario|rup\b|dipendent|"
+                        r"personale|professionist|tecnic[oi]\b|collaborator)",
+                        n, re.IGNORECASE)
+
+
 def _valori(pattern, testo: str) -> list[float]:
     """Importi catturati da una regola, scartando le soglie di legge.
 
@@ -917,6 +1015,14 @@ def estrai_importo(testo: str, oggetto: str = "",
         somma, n_righe = somma_prospetto_liquidazione(testo)
         if somma:
             return somma, f"prospetto di liquidazione ({n_righe} righe)", False
+    else:
+        # Nelle determine il dispositivo elenca gli impegni: quando sono più
+        # d'uno, l'importo dell'atto è la loro somma. Prenderne uno solo
+        # attribuisce al primo fornitore una cifra che riguarda un altro.
+        voci = impegni_dispositivo(testo)
+        if voci:
+            return (round(sum(v["importo"] for v in voci), 2),
+                    f"somma degli impegni del dispositivo ({len(voci)} voci)", False)
 
     regole = REGOLE_IMPORTO
     if e_liquidazione:
@@ -1030,6 +1136,20 @@ def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
     if importo:
         log.info(f"  Importo da regola '{regola}': {importo:,.2f}"
                  + ("  [DA VERIFICARE]" if incerto else ""))
+
+    # Se il dispositivo impegna verso più fornitori, sono loro i beneficiari:
+    # sceglierne uno solo gli attribuirebbe anche la spesa degli altri.
+    voci = [] if "liquidazione" in (tipo_portale or "").lower() \
+        else impegni_dispositivo(testo)
+    if voci:
+        log.info(f"  {len(voci)} beneficiari dal dispositivo: "
+                 + ", ".join(v["nome"][:24] for v in voci[:4])
+                 + ("…" if len(voci) > 4 else ""))
+        return {**_schema_vuoto(oggetto), "importo_euro": importo,
+                "regola_importo": regola, "importo_incerto": incerto,
+                "cig": _cerca_cig(completo),
+                "beneficiario": _etichetta_multipla(f"{len(voci)} fornitori"),
+                "n_beneficiari": len(voci), "beneficiari_dettaglio": voci}
 
     beneficiario = None
     m = RE_BENEFICIARIO.search(completo)

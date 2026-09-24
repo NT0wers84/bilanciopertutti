@@ -26,7 +26,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from estrattore import estrai_importo, e_entrata_pura
+from estrattore import (estrai_importo, e_entrata_pura, impegni_dispositivo,
+                        _etichetta_multipla)
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
@@ -64,6 +65,16 @@ def ricalcola(spese: list[dict]) -> list[tuple]:
         testo = leggi_testo(s["id"])
         if not testo:
             continue
+
+        # Quando il dispositivo impegna verso più fornitori, il beneficiario
+        # non è uno solo: va sostituito insieme all'importo, altrimenti a un
+        # fornitore resta attribuita la spesa di tutti gli altri.
+        if s.get("tipo_atto") != "liquidazione":
+            voci = impegni_dispositivo(testo)
+            if voci and len(voci) != (s.get("n_beneficiari") or 0):
+                s["beneficiari_dettaglio"] = voci
+                s["n_beneficiari"] = len(voci)
+                s["beneficiario"] = _etichetta_multipla(f"{len(voci)} fornitori")
         nuovo, regola, incerto = estrai_importo(testo, s.get("oggetto", ""),
                                                 s.get("tipo_atto", ""))
         if nuovo is None:
@@ -71,10 +82,13 @@ def ricalcola(spese: list[dict]) -> list[tuple]:
         vecchio, vecchia_regola = s.get("importo_euro"), s.get("regola_importo")
         if nuovo == vecchio:
             continue
-        # Il prospetto vince sempre; altrimenti si aggiorna solo ciò che era
-        # stato deciso dal modello o da una regola che ora non vale più.
-        dal_prospetto = regola.startswith("prospetto di liquidazione")
-        if not dal_prospetto and vecchia_regola and s.get("estrazione") != "regex":
+        # Le due regole che leggono l'atto voce per voce (il prospetto di una
+        # liquidazione, l'elenco degli impegni di una determina) vincono sempre:
+        # è il Comune a fare quel conto. Le altre aggiornano solo ciò che aveva
+        # deciso il modello o una regola che ora non vale più.
+        autorevole = regola.startswith(("prospetto di liquidazione",
+                                        "somma degli impegni"))
+        if not autorevole and vecchia_regola and s.get("estrazione") != "regex":
             continue
         cambi.append((s, vecchio, vecchia_regola, nuovo, regola))
         s["importo_euro"] = nuovo

@@ -62,10 +62,43 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-09-24",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER ESIGENZE CORRELATE ALLA REALIZZAZIONE DELLA XXVII EDIZIONE FESTA COLORI, SAPORI E MUSICHE DELLA MAGNA GRECIA",
-  "beneficiario": "la proposta della Antincendio Master s.a.s",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_euro": 4479.84,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 8,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Ge.Co",
+    "importo": 3660.0
+   },
+   {
+    "nome": "Antincendio Master s.a.s. di Luigi Apuzzo & C",
+    "importo": 780.8
+   },
+   {
+    "nome": "Sebach S.p.A",
+    "importo": 1976.4
+   },
+   {
+    "nome": "AD Security",
+    "importo": 4479.84
+   },
+   {
+    "nome": "Croce Rossa Italiana – Organizzazione di volontariato Comitato di Nova Milanese",
+    "importo": 700.0
+   },
+   {
+    "nome": "Sud Allestimenti di Caruso Pasqualina",
+    "importo": 3660.0
+   },
+   {
+    "nome": "Salumificio Casa Laratta di Marzano Maria",
+    "importo": 4000.0
+   },
+   {
+    "nome": "Curti e Zilioli",
+    "importo": 73.2
+   }
+  ],
+  "importo_euro": 19330.24,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
@@ -78,10 +111,10 @@
   "estrazione": "regex",
   "testo_disponibile": null,
   "e_rimodulazione": false,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
-  "importo_incerto": null,
-  "regola_importo": null
+  "importo_incerto": false,
+  "regola_importo": "somma degli impegni del dispositivo (8 voci)"
  },
  {
   "id": "liquidazione-1896-2026",
@@ -901,10 +934,59 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-09-15",
   "oggetto": "ASSUNZIONE IMPEGNI DI SPESA PER ESIGENZE CORRELATE ALL'ORGANIZZAZIONE DELLA FESTA PATRONALE DI SANT'ALESSANDRO DEL 19 E 20 SETTEMBRE 2026",
-  "beneficiario": null,
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_euro": 5856.0,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 12,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "On Air Group",
+    "importo": 4514.0
+   },
+   {
+    "nome": "On Air Group",
+    "importo": 266.0
+   },
+   {
+    "nome": "Associazione Asino Anch’io APS ETS",
+    "importo": 840.0
+   },
+   {
+    "nome": "Associazione Amici della Musica F. Rotundo",
+    "importo": 600.0
+   },
+   {
+    "nome": "Associazione Culturale Arte e Musica",
+    "importo": 5856.0
+   },
+   {
+    "nome": "Ge. Co di Rho Laura",
+    "importo": 1342.0
+   },
+   {
+    "nome": "Alfa Spettacoli di Severino Giacobone e C",
+    "importo": 1464.0
+   },
+   {
+    "nome": "Associazione Internazionale No Profit Vita World",
+    "importo": 850.0
+   },
+   {
+    "nome": "Paolo Sergio",
+    "importo": 250.0
+   },
+   {
+    "nome": "Curti e Zilioli",
+    "importo": 164.7
+   },
+   {
+    "nome": "Luca Martinelli",
+    "importo": 50.0
+   },
+   {
+    "nome": "Luca Martinelli",
+    "importo": 200.0
+   }
+  ],
+  "importo_euro": 16396.7,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -922,8 +1004,10 @@
   "caratteri_testo": 18297,
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
-  "beneficiario_generico": false,
-  "atti_gemelli": null
+  "beneficiario_generico": true,
+  "atti_gemelli": null,
+  "regola_importo": "somma degli impegni del dispositivo (12 voci)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1641-2026",
@@ -13043,7 +13127,7 @@
   "data_pubblicazione": "2026-04-27",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER LA REALIZZAZIONE DELLA MANIFESTAZIONE CELEBRATIVA DEL 25/4/2026",
   "beneficiario": "Fornitori diversi",
-  "importo_euro": 500.0,
+  "importo_euro": 1433.0,
   "cig": "BB4FE27895",
   "categoria": "Cultura",
   "missione_bdap": 5,
@@ -13054,8 +13138,29 @@
   "caratteri_testo": 11377,
   "fonte": "storico",
   "data_elaborazione": "2026-07-29 17:17",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "n_beneficiari": 5,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Mariani Giancarlo",
+    "importo": 250.0
+   },
+   {
+    "nome": "Sergio Paolo",
+    "importo": 250.0
+   },
+   {
+    "nome": "Devito Nancy al 450/10 del B.P. 2026 - P.F. 1030299000 - Codice CIG BB4FED040D",
+    "importo": 250.0
+   },
+   {
+    "nome": "Curti e Zilioli",
+    "importo": 183.0
+   },
+   {
+    "nome": "non indicato",
+    "importo": 500.0
+   }
+  ],
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -13067,8 +13172,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": true
+  "regola_importo": "somma degli impegni del dispositivo (5 voci)",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-845-2026",
@@ -14407,8 +14512,8 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-03-31",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER LA REALIZZAZIONE EVENTO DENOMINATO PRIMAVERA INSIEME 2026",
-  "beneficiario": "GLM SOLUTION SRLS",
-  "importo_euro": 1110.2,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 2142.2,
   "cig": "BAE10C577C",
   "categoria": "Cultura",
   "missione_bdap": 5,
@@ -14421,10 +14526,29 @@
   "data_elaborazione": "2026-07-17 16:16",
   "e_rimodulazione": false,
   "importo_verificato": true,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 451.40)",
-  "importo_incerto": true
+  "regola_importo": "somma degli impegni del dispositivo (4 voci)",
+  "importo_incerto": false,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "GLM Solution",
+    "importo": 451.4
+   },
+   {
+    "nome": "Luca Martinelli",
+    "importo": 300.0
+   },
+   {
+    "nome": "Associazione Asino Anch’io APS ETS",
+    "importo": 1110.2
+   },
+   {
+    "nome": "Sebach S.p.A",
+    "importo": 280.6
+   }
+  ],
+  "n_beneficiari": 4
  },
  {
   "id": "determinazione-661-2026",
@@ -16083,8 +16207,8 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-02-19",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER REALIZZAZIONE CARNEVALE OLIMPICO PIEVESE 2026",
-  "beneficiario": "Curti e Zilioli s.n.c.",
-  "importo_euro": 2196.0,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 6220.18,
   "cig": "B6DEC9D00B",
   "categoria": "Cultura",
   "missione_bdap": 5,
@@ -16097,10 +16221,45 @@
   "data_elaborazione": "2026-07-17 16:47",
   "e_rimodulazione": false,
   "importo_verificato": true,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 36.60)",
-  "importo_incerto": true
+  "regola_importo": "somma degli impegni del dispositivo (8 voci)",
+  "importo_incerto": false,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "GLM Solution",
+    "importo": 829.6
+   },
+   {
+    "nome": "Arte e Musica",
+    "importo": 1952.0
+   },
+   {
+    "nome": "Agostino Cera",
+    "importo": 500.0
+   },
+   {
+    "nome": "M.P. Spettacoli di Padovani Maurizio sas",
+    "importo": 1586.0
+   },
+   {
+    "nome": "Noc Security S.r.l",
+    "importo": 570.96
+   },
+   {
+    "nome": "Sebach S.p.A",
+    "importo": 355.02
+   },
+   {
+    "nome": "Croce Rossa Italiana",
+    "importo": 390.0
+   },
+   {
+    "nome": "Curti e Zilioli",
+    "importo": 36.6
+   }
+  ],
+  "n_beneficiari": 8
  },
  {
   "id": "determinazione-349-2026",

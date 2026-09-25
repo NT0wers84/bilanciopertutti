@@ -36,6 +36,12 @@ jobs:
       - name: Installa dipendenze Python
         run: pip install -r requirements.txt
 
+      # Prima di leggere qualunque atto: le regole di lettura degli importi
+      # funzionano ancora come devono? Se no il run si ferma qui, prima di
+      # scrivere dati sbagliati nell'archivio e sul sito.
+      - name: Verifica le regole di lettura degli atti
+        run: python scripts/test_estrattore.py
+
       - name: Esegui scraper
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

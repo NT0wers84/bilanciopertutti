@@ -17,6 +17,13 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
 - `scripts/scraper.py` — run giornaliero (albo corrente)
 - `scripts/backfill.py` — recupero storico dalla sezione archivio provvedimenti, a blocchi con stato di avanzamento
 - `scripts/genera_sito.py` — prepara `docs/data/` per il sito
+- `scripts/test_estrattore.py` — rete di sicurezza sulla lettura degli atti. Ogni
+  caso è un errore vero trovato guardando il sito, con accanto la cifra corretta
+  letta sul documento: la liquidazione I.M.E.T. che mostrava 1,6 milioni invece di
+  601.334,66, la determina con otto fornitori, il prospetto con lo storno IVA.
+  Si lancia con `python3 scripts/test_estrattore.py`, senza installare nulla, e
+  gira da solo prima di ogni scraping e di ogni backfill: se una regola smette di
+  funzionare il workflow si ferma **prima** di scrivere dati sbagliati
 - `scripts/publisher_telegram.py` — pubblica le nuove spese sul canale Telegram
 - `data/spese.json` — database flat (unica fonte di verità)
 - `scripts/normalizza.py` — manutenzione qualità: toglie gli atti di sola entrata

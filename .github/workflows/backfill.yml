@@ -63,6 +63,11 @@ jobs:
       - name: Installa dipendenze Python
         run: pip install -r requirements.txt
 
+      # Il backfill rielabora centinaia di atti in un colpo: se le regole di
+      # lettura sono rotte, meglio accorgersene prima e non dopo.
+      - name: Verifica le regole di lettura degli atti
+        run: python scripts/test_estrattore.py
+
       - name: Esegui backfill
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

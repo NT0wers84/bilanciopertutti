@@ -29,6 +29,8 @@ CAMPI_SITO = [
     "descrizione_sintetica", "url_atto", "estrazione", "testo_disponibile",
     "e_rimodulazione", "beneficiario_generico", "atti_gemelli",
     "importo_incerto", "regola_importo", "testo_archiviato",
+    # Dalla scheda dell'albo: classificazione fatta dal Comune, non dedotta
+    "proponente", "classifica", "pubblicato_fino_al",
 ]
 
 

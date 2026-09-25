@@ -267,6 +267,13 @@ const dataIt = iso => {
 // online per anni, quindi la regola vale solo per le liquidazioni.
 const GIORNI_ALBO = 15;
 function scaduto(s) {
+  // Se la scheda dell'albo dichiara la data di fine pubblicazione, quella è
+  // il dato certo: niente stime. Le determinazioni restano online per anni
+  // (alcune fino al 2031), le liquidazioni quindici giorni.
+  if (s.pubblicato_fino_al) {
+    const [g, m, a] = s.pubblicato_fino_al.split("/");
+    return new Date(`${a}-${m}-${g}`) < new Date();
+  }
   if (s.tipo_atto !== "liquidazione" || !s.data_pubblicazione) return false;
   const giorni = (Date.now() - new Date(s.data_pubblicazione)) / 86400000;
   return giorni > GIORNI_ALBO;
@@ -648,6 +655,8 @@ function disegnaFeed() {
       </div>` : ""}
       <div class="spesa-oggetto">${tabellaVoci}
         <div style="margin-top:8px"><strong>Oggetto originale:</strong> ${esc(s.oggetto)}</div>
+        ${s.proponente ? `<div><strong>Settore che ha emesso l'atto:</strong> ${esc(s.proponente)}</div>` : ""}
+        ${s.classifica ? `<div><strong>Classificazione del Comune:</strong> ${esc(s.classifica)}</div>` : ""}
         ${s.capitolo_bilancio ? `<div><strong>Capitolo di bilancio:</strong> ${esc(s.capitolo_bilancio)}</div>` : ""}
         ${s.importo_euro != null && s.iva_inclusa != null
           ? `<div><strong>IVA:</strong> ${s.iva_inclusa ? "inclusa nell'importo" : "esclusa dall'importo"}</div>` : ""}

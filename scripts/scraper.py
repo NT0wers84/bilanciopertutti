@@ -17,7 +17,7 @@ from pathlib import Path
 from datetime import datetime
 
 import portale
-from estrattore import estrai_dati
+from estrattore import estrai_dati, categoria_da_settore
 
 logging.basicConfig(
     level=logging.INFO,
@@ -50,6 +50,18 @@ def elabora_spesa(atto: dict) -> dict:
     testo = portale.estrai_testo_atto(atto, id_cache=id_atto)
     dati = estrai_dati(testo, atto.get("oggetto", ""), atto.get("tipo", ""))
 
+    # La scheda dell'albo porta la classificazione fatta dal Comune. Dove il
+    # settore proponente è inequivocabile vale più della lettura automatica:
+    # un atto emesso dalla Polizia Locale non è "amministrazione generale",
+    # per quanto il testo possa parlare di impegni e capitoli.
+    meta = atto.get("metadati") or {}
+    categoria = dati["categoria"]
+    da_settore = categoria_da_settore(meta.get("proponente", ""))
+    if da_settore and da_settore != categoria:
+        log.info(f"  categoria dal settore «{meta['proponente'][:40]}»: "
+                 f"{categoria} → {da_settore}")
+        categoria = da_settore
+
     return {
         "id": id_atto,
         "numero_raw": atto.get("numero_raw", ""),
@@ -69,7 +81,14 @@ def elabora_spesa(atto: dict) -> dict:
         "iva_inclusa": dati.get("iva_inclusa"),
         "cig": dati["cig"],
         "e_rimodulazione": dati.get("e_rimodulazione", False),
-        "categoria": dati["categoria"],
+        "categoria": categoria,
+        "categoria_da_settore": bool(da_settore),
+        "proponente": meta.get("proponente"),
+        "classifica": meta.get("classifica"),
+        "dirigente": meta.get("dirigente"),
+        # Quando l'atto smette di essere consultabile sul portale: per le
+        # liquidazioni sono quindici giorni, e finora il sito lo stimava.
+        "pubblicato_fino_al": meta.get("pubblicato_fino_al"),
         "missione_bdap": dati["missione_bdap"],
         "capitolo_bilancio": dati["capitolo_bilancio"],
         "descrizione_sintetica": dati["descrizione_sintetica"],

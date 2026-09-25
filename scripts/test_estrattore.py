@@ -27,7 +27,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from estrattore import (                                    # noqa: E402
     importo_italiano, estrai_importo, impegni_dispositivo,
     somma_prospetto_liquidazione, e_entrata_pura, e_variazione_bilancio,
+    categoria_da_settore,
 )
+from portale import metadati_scheda                          # noqa: E402
 from normalizza import ripulisci_coda, ripulisci_prefisso   # noqa: E402
 from portale import e_spesa                                 # noqa: E402
 from genera_sito import _quota_annua                        # noqa: E402
@@ -266,6 +268,60 @@ def test_quota_annua():
              _quota_annua({"importo_euro": None}), 0)
 
 
+def test_metadati_scheda():
+    """La scheda dell'albo è una tabella con una classe per riga. L'HTML qui
+    sotto è copiato dalla pagina vera di un atto del Comune."""
+    sezione("Metadati della scheda dell'albo")
+    from bs4 import BeautifulSoup
+    html = """<table class="table dettaglio-table">
+      <tr class="ap-categoria"><td><span class="label label-info">Categoria</span></td>
+        <td><span>ATTI AMMINISTRATIVI</span></td></tr>
+      <tr class="ap-sottocategoria"><td>Sottocategoria</td><td>DETERMINAZIONE CONTABILE</td></tr>
+      <tr class="ap-proponente"><td>Proponente</td><td>AMBIENTE, ECOLOGIA  E SVILUPPO ECONOMICO</td></tr>
+      <tr class="ap-dirigente"><td>Dirigente/Firmatario</td><td>Dott. Walter Luigi Vignati</td></tr>
+      <tr class="ap-classifica"><td>Classifica</td><td>AMBIENTE: AUTORIZZAZIONI, MONITORAGGIO E CONTROLLO</td></tr>
+      <tr class="ap-dataInizioPubblicazione ap-dataPubblicazione"><td>Periodo Pubblicazione</td>
+        <td>13/01/2026\n\t\t - \n\t\t31/12/2031</td></tr>
+      <tr class="ap-numeroAllegati"><td>Numero allegati</td><td>3</td></tr>
+    </table>"""
+    m = metadati_scheda(BeautifulSoup(html, "html.parser"))
+    verifica("settore proponente", m.get("proponente"),
+             "AMBIENTE, ECOLOGIA E SVILUPPO ECONOMICO")
+    verifica("classifica tematica", m.get("classifica"),
+             "AMBIENTE: AUTORIZZAZIONI, MONITORAGGIO E CONTROLLO")
+    verifica("chi firma", m.get("dirigente"), "Dott. Walter Luigi Vignati")
+    verifica("tipo di atto dichiarato dal Comune", m.get("sottocategoria"),
+             "DETERMINAZIONE CONTABILE")
+    verifica("quando scade la pubblicazione", m.get("pubblicato_fino_al"), "31/12/2031")
+    verifica("da quando è pubblicato", m.get("pubblicato_dal"), "13/01/2026")
+    verifica("una scheda senza tabella non rompe nulla",
+             metadati_scheda(BeautifulSoup("<p>niente</p>", "html.parser")), {})
+
+
+def test_categoria_dal_settore():
+    """Il settore che emette l'atto è una classificazione ufficiale, ma solo
+    quando è inequivocabile: un'area che tiene insieme ambiente e commercio
+    non può decidere, e il testo dell'atto resta più specifico."""
+    sezione("Categoria dedotta dal settore proponente")
+    for settore, atteso in [
+        ("POLIZIA LOCALE", "Polizia locale e sicurezza"),
+        ("SETTORE III AREA SERVIZI SOCIALI", "Sociale e famiglia"),
+        ("AREA CULTURA, EVENTI E BIBLIOTECA", "Cultura"),
+        ("SERVIZIO INFORMATICO COMUNALE", "Amministrazione e servizi generali"),
+        ("RAGIONERIA E TRIBUTI", "Amministrazione e servizi generali"),
+        # ambigui: due ambiti nello stesso nome, non decide il settore
+        ("AMBIENTE, ECOLOGIA  E SVILUPPO ECONOMICO", None),
+        ("SETTORE VI AREA COMUNICAZIONE E RELAZIONI ESTERNE,EVENTI,"
+         "SERVIZI CULTURALI E SPORTIVI", None),
+        # generici: non dicono nulla di utile
+        ("AREA TECNICA", None),
+        ("SEGRETERIA GENERALE", "Amministrazione e servizi generali"),
+        ("", None),
+        (None, None),
+    ]:
+        verifica(f"settore: {str(settore)[:46]}", categoria_da_settore(settore), atteso)
+
+
 def main() -> int:
     print("Rete di sicurezza sulla lettura degli atti")
     print("Ogni caso qui sotto è un errore vero, trovato guardando il sito.")
@@ -282,6 +338,8 @@ def main() -> int:
     test_entrate_non_sono_spese()
     test_nomi_beneficiari()
     test_quota_annua()
+    test_metadati_scheda()
+    test_categoria_dal_settore()
 
     print()
     if saltati:

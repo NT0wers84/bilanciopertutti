@@ -295,6 +295,44 @@ PAROLE_CATEGORIA = [
 ]
 
 
+# Il settore che emette l'atto lo dichiara il Comune stesso nella scheda
+# dell'albo: è una classificazione ufficiale, non una deduzione dal testo.
+# Vale più di qualunque lettura automatica, ma solo quando il nome del settore
+# è inequivocabile: "SERVIZI ALLA PERSONA" dice il sociale, "AREA TECNICA" no,
+# perché può fare strade, scuole o edilizia. Nel dubbio si lascia decidere al
+# testo dell'atto, che è più specifico.
+SETTORE_CATEGORIA = [
+    (r"polizia|vigil", "Polizia locale e sicurezza"),
+    (r"ambiente|ecolog|rifiut|verde", "Ambiente, verde e rifiuti"),
+    (r"istruzion|scolast|scuol", "Istruzione e scuola"),
+    (r"social|persona|anzian|minor|famigl|nido", "Sociale e famiglia"),
+    (r"cultur|bibliotec|event", "Cultura"),
+    (r"sport", "Sport e tempo libero"),
+    (r"urbanistic|edilizi|patrimoni|casa", "Urbanistica e casa"),
+    (r"viabilit|strad|mobilit|trasport", "Strade, viabilità e trasporti"),
+    (r"protezione civile", "Protezione civile"),
+    (r"commerc|attivit[àa] produttiv|svilupp", "Sviluppo economico e commercio"),
+    (r"farmac|sanit", "Sanità"),
+    (r"personale|risorse umane|ragioneri|finanziar|tribut|segreteri|"
+     r"informati|demografi|anagraf|protocoll", "Amministrazione e servizi generali"),
+]
+
+
+def categoria_da_settore(proponente: str) -> str | None:
+    """Categoria dedotta dal settore proponente, o None se ambiguo.
+
+    Restituire None non è una rinuncia: è la scelta di non sovrascrivere una
+    classificazione più informata con una più grossolana.
+    """
+    t = (proponente or "").lower()
+    if not t:
+        return None
+    trovate = {cat for pattern, cat in SETTORE_CATEGORIA if re.search(pattern, t)}
+    # Un settore che tocca due ambiti ("AMBIENTE, ECOLOGIA E SVILUPPO
+    # ECONOMICO") non decide: sceglie il testo dell'atto.
+    return trovate.pop() if len(trovate) == 1 else None
+
+
 def categoria_da_testo(testo: str) -> str:
     """
     Categoria dedotta dalle parole chiave. Ultima risorsa quando il modello

@@ -717,6 +717,17 @@ def estrai_testo_atto(atto: dict, id_cache: str | None = None) -> str:
         return ""
 
     soup = BeautifulSoup(html, "html.parser")
+
+    # I metadati della scheda finiscono nel dict dell'atto, che il chiamante
+    # ha già in mano: così la firma della funzione non cambia e nessun
+    # chiamante esistente si accorge della differenza.
+    metadati = metadati_scheda(soup)
+    if metadati:
+        atto["metadati"] = metadati
+        log.info(f"  scheda: {metadati.get('proponente', 'proponente n.d.')}"
+                 + (f" · fino al {metadati['pubblicato_fino_al']}"
+                    if metadati.get("pubblicato_fino_al") else ""))
+
     link_pdf = _trova_link_pdf(soup)
 
     if link_pdf:
@@ -734,6 +745,51 @@ def estrai_testo_atto(atto: dict, id_cache: str | None = None) -> str:
     if testo and id_cache:
         scrivi_cache_testo(id_cache, testo)
     return testo
+
+
+# La scheda di un atto espone diciannove campi già classificati dal Comune,
+# ognuno in una riga con una classe CSS parlante: <tr class="ap-proponente">.
+# Sono dati strutturati e certi, molto più affidabili di qualunque lettura del
+# PDF: il settore che ha emesso l'atto, la classifica tematica, chi firma, e
+# soprattutto la data in cui la pubblicazione all'albo scade.
+# Si leggono dallo stesso HTML già scaricato per trovare il PDF: nessuna
+# richiesta in più al portale.
+METADATI_SCHEDA = {
+    "ap-proponente": "proponente",
+    "ap-classifica": "classifica",
+    "ap-dirigente": "dirigente",
+    "ap-sottocategoria": "sottocategoria",
+    "ap-numeroAllegati": "numero_allegati",
+    "ap-dataAtto": "data_atto",
+    "ap-dataEsecutivita": "data_esecutivita",
+    "ap-provenienza": "provenienza",
+}
+
+
+def metadati_scheda(soup: BeautifulSoup) -> dict:
+    """I campi già classificati dal Comune nella scheda dell'atto."""
+    dati = {}
+    for riga in soup.find_all("tr"):
+        classi = riga.get("class") or []
+        celle = riga.find_all("td")
+        if len(celle) < 2:
+            continue
+        valore = " ".join(celle[1].get_text(" ", strip=True).split())
+        if not valore:
+            continue
+        for classe in classi:
+            if classe in METADATI_SCHEDA:
+                dati[METADATI_SCHEDA[classe]] = valore
+        # Il periodo di pubblicazione sta in una cella sola: "13/01/2026 -
+        # 31/12/2031". La seconda data dice quando l'atto sparirà dall'albo,
+        # e per le liquidazioni sono quindici giorni.
+        if "ap-dataPubblicazione" in classi or "ap-dataInizioPubblicazione" in classi:
+            date = re.findall(r"\d{2}/\d{2}/\d{4}", valore)
+            if date:
+                dati["pubblicato_dal"] = date[0]
+            if len(date) > 1:
+                dati["pubblicato_fino_al"] = date[1]
+    return dati
 
 
 def url_display_stabile(url_dettaglio: str) -> str:

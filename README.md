@@ -35,7 +35,14 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
 
 1. **Secret** (Settings → Secrets and variables → Actions):
    - `GROQ_API_KEY` — da https://console.groq.com (gratuita)
-   - `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHANNEL_ID` — opzionali
+   - `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHANNEL_ID` — opzionali.
+     Nel secret conviene mettere l'**id numerico** del canale (del tipo
+     `-1001234567890`), non `@username`: l'username si può cambiare e da quel
+     momento il vecchio non risolve più, mentre l'id resta lo stesso per sempre.
+     Per leggerlo: inoltra un messaggio del canale a `@userinfobot`, oppure apri
+     `https://api.telegram.org/bot<TOKEN>/getUpdates` dopo aver pubblicato un post.
+     Se il canale non risponde il workflow diventa rosso: la pubblicazione è
+     l'ultimo passo, quindi i dati del sito sono già stati salvati.
 2. **GitHub Pages**: Settings → Pages → Source: `Deploy from a branch`, branch `main`, cartella `/docs`
 3. **Backfill**: tab Actions → "Conti in chiaro — Backfill Storico" → Run workflow.
    Primo giro consigliato con "solo censimento" = true per scoprire la

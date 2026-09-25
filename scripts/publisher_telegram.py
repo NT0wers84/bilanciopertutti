@@ -6,10 +6,13 @@ centinaia di messaggi storici non interessano a nessuno).
 
 Secrets necessari:
   TELEGRAM_BOT_TOKEN  — token del bot (da @BotFather)
-  TELEGRAM_CHANNEL_ID — username canale con @ oppure id numerico
+  TELEGRAM_CHANNEL_ID — id numerico del canale (consigliato) oppure @username.
+                        L'id numerico non cambia mai; l'username sì, e quando
+                        cambia il vecchio smette di funzionare.
 """
 
 import os
+import sys
 import json
 import time
 import logging
@@ -106,6 +109,35 @@ def formatta_spesa(s: dict) -> str:
     return "\n".join(parti)
 
 
+def canale_raggiungibile(token: str, chat_id: str) -> bool:
+    """Verifica il canale PRIMA di pubblicare.
+
+    Serve perché il caso più probabile di rottura è silenzioso: se il secret
+    contiene l'username (@nome) e l'username del canale viene cambiato, il
+    vecchio non risolve più e ogni invio fallisce con «chat not found». Senza
+    questo controllo il workflow resta verde e le spese del giorno, che lo
+    scraper sovrascrive a ogni run, non vengono pubblicate mai più.
+    """
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{token}/getChat",
+                          json={"chat_id": chat_id}, timeout=30)
+        if r.status_code == 200:
+            nome = r.json().get("result", {}).get("title", "?")
+            log.info(f"Canale Telegram raggiunto: «{nome}»")
+            return True
+        log.error(f"CANALE TELEGRAM NON RAGGIUNGIBILE ({r.status_code}): "
+                  f"{r.text[:200]}")
+        if str(chat_id).startswith("@"):
+            log.error("Il secret TELEGRAM_CHANNEL_ID contiene un username "
+                      f"({chat_id}). Se l'username del canale è stato cambiato, "
+                      "il vecchio non vale più: aggiorna il secret, meglio "
+                      "ancora con l'id numerico del canale, che non cambia mai.")
+        return False
+    except Exception as e:
+        log.error(f"Telegram irraggiungibile: {e}")
+        return False
+
+
 def invia(token: str, chat_id: str, testo: str) -> bool:
     try:
         r = requests.post(
@@ -123,20 +155,23 @@ def invia(token: str, chat_id: str, testo: str) -> bool:
         return False
 
 
-def main():
+def main() -> int:
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHANNEL_ID")
     if not token or not chat_id:
         log.warning("Secret Telegram mancanti: pubblicazione saltata.")
-        return
+        return 0
 
     if not NUOVE_JSON.exists():
         log.info("Nessun file nuove_spese.json: niente da pubblicare.")
-        return
+        return 0
     spese = json.loads(NUOVE_JSON.read_text(encoding="utf-8"))
     if not spese:
         log.info("Nessuna spesa nuova: niente da pubblicare.")
-        return
+        return 0
+
+    if not canale_raggiungibile(token, chat_id):
+        return 1
 
     oggi = date.today().strftime("%d/%m/%Y")
     totale = sum(s.get("importo_euro") or 0 for s in spese)
@@ -147,22 +182,31 @@ def main():
         f"*{len(spese)} {'spesa' if len(spese) == 1 else 'spese'}* "
         f"per un totale di *{esc(eur(totale))}*\\."
     )
-    invia(token, chat_id, intro)
+    inviati = [invia(token, chat_id, intro)]
     time.sleep(1)
 
     if len(spese) > MAX_MESSAGGI:
         log.info(f"{len(spese)} spese > {MAX_MESSAGGI}: pubblico solo il riepilogo con link al sito.")
-        invia(token, chat_id,
-              esc("Troppe spese per elencarle una a una: le trovi tutte su ") +
-              "[conti in chiaro](https://nt0wers84.github.io/bilanciopertutti/)\\.")
-        return
+        inviati.append(invia(
+            token, chat_id,
+            esc("Troppe spese per elencarle una a una: le trovi tutte su ") +
+            "[conti in chiaro](https://nt0wers84.github.io/bilanciopertutti/)\\."))
+    else:
+        for s in spese:
+            inviati.append(invia(token, chat_id, formatta_spesa(s)))
+            time.sleep(1.5)  # rate limit Telegram: max ~20 msg/min per canale
 
-    for s in spese:
-        invia(token, chat_id, formatta_spesa(s))
-        time.sleep(1.5)  # rate limit Telegram: max ~20 msg/min per canale
-
-    log.info(f"Pubblicate {len(spese)} spese su Telegram.")
+    riusciti = sum(1 for x in inviati if x)
+    if riusciti == len(inviati):
+        log.info(f"Pubblicate {len(spese)} spese su Telegram.")
+        return 0
+    # Le spese di oggi non torneranno: nuove_spese.json viene riscritto a ogni
+    # run. Meglio un workflow rosso che un silenzio.
+    log.error(f"Telegram: {len(inviati) - riusciti} messaggi su {len(inviati)} "
+              f"non inviati. Le spese di oggi restano sul sito ma non sono "
+              f"state pubblicate sul canale.")
+    return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

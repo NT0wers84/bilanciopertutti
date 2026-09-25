@@ -46,12 +46,6 @@ jobs:
             sleep 60
           done
 
-      - name: Pubblica su Telegram
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python scripts/publisher_telegram.py
-
       - name: Aggiorna dati del sito
         run: python scripts/genera_sito.py
 
@@ -74,3 +68,12 @@ jobs:
           git add data/ docs/
           git diff --staged --quiet || git commit -m "Aggiornamento spese: $(date '+%Y-%m-%d')"
           git push
+
+      # Ultimo passo, dopo che i dati sono al sicuro nel repository: se il
+      # canale non risponde il job diventa rosso e l'errore si vede, ma il
+      # sito è già stato aggiornato e pubblicato.
+      - name: Pubblica su Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python scripts/publisher_telegram.py

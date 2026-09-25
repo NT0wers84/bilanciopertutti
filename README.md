@@ -17,6 +17,16 @@ Progetto gemello: https://nt0wers84.github.io/albo-pretorio/
 - `scripts/scraper.py` — run giornaliero (albo corrente)
 - `scripts/backfill.py` — recupero storico dalla sezione archivio provvedimenti, a blocchi con stato di avanzamento
 - `scripts/genera_sito.py` — prepara `docs/data/` per il sito
+- `scripts/siope_estrai.py` — i pagamenti di **cassa** del Comune da SIOPE
+  (Ragioneria dello Stato, banca dati Banca d'Italia). Serve a colmare il buco
+  che l'albo non può coprire: le liquidazioni restano pubblicate quindici
+  giorni, SIOPE pubblica ogni mese i pagamenti di tutti i Comuni e li tiene per
+  anni. Il file nazionale è grosso e resta fuori dal repository: si scarica, si
+  filtra sul codice fiscale del Comune e si salva solo l'estratto in
+  `data/siope.json`. Si lancia dal workflow «Pagamenti SIOPE», **la prima volta
+  con `solo_ispezione` attivo**, che dichiara com'è fatto il file senza scrivere
+  niente. I due dati non vanno sommati: l'albo dice quale atto autorizza una
+  spesa, SIOPE quanto è uscito davvero di cassa
 - `scripts/test_estrattore.py` — rete di sicurezza sulla lettura degli atti. Ogni
   caso è un errore vero trovato guardando il sito, con accanto la cifra corretta
   letta sul documento: la liquidazione I.M.E.T. che mostrava 1,6 milioni invece di

@@ -322,6 +322,36 @@ def test_categoria_dal_settore():
         verifica(f"settore: {str(settore)[:46]}", categoria_da_settore(settore), atteso)
 
 
+def test_lettura_siope():
+    """Il tracciato SIOPE non è documentato in modo stabile, quindi le colonne
+    si riconoscono dai nomi. Qui si verifica che il riconoscimento regga le
+    varianti, senza bisogno di scaricare il file nazionale."""
+    sezione("Lettura del file SIOPE")
+    from siope_estrai import mappa_colonne, numero, separatore
+    intestazione = ["ANNO", "MESE", "CODICE_FISCALE", "DENOMINAZIONE",
+                    "CODICE_GESTIONALE", "DESCRIZIONE_GESTIONALE", "IMPORTO"]
+    col = mappa_colonne(intestazione)
+    for campo, posizione in [("anno", 0), ("mese", 1), ("codice_fiscale", 2),
+                             ("ente", 3), ("codice_gestionale", 4),
+                             ("descrizione", 5), ("importo", 6)]:
+        verifica(f"colonna {campo}", col.get(campo), posizione)
+
+    # Varianti di nome viste nei rilasci SIOPE nel tempo
+    varianti = mappa_colonne(["Esercizio", "Periodo", "Cod_Fiscale",
+                              "Des_Ente", "Cod_Gestionale", "Des_Gestionale",
+                              "Pagamenti"])
+    verifica("riconosce i nomi abbreviati", len(varianti), 7)
+    verifica("un'intestazione estranea non produce colonne inventate",
+             mappa_colonne(["pippo", "pluto"]), {})
+
+    verifica("separatore punto e virgola", separatore("a;b;c;d"), ";")
+    verifica("separatore virgola", separatore("a,b,c,d"), ",")
+    for grezzo, atteso in [("1234.56", 1234.56), ("1.234,56", 1234.56),
+                           ("1234,56", 1234.56), ("0", 0.0), ("", None),
+                           ("n.d.", None)]:
+        verifica(f"importo SIOPE {grezzo!r}", numero(grezzo), atteso)
+
+
 def main() -> int:
     print("Rete di sicurezza sulla lettura degli atti")
     print("Ogni caso qui sotto è un errore vero, trovato guardando il sito.")
@@ -340,6 +370,7 @@ def main() -> int:
     test_quota_annua()
     test_metadati_scheda()
     test_categoria_dal_settore()
+    test_lettura_siope()
 
     print()
     if saltati:

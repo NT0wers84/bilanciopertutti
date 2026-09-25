@@ -1,0 +1,64 @@
+name: Conti in chiaro — Pagamenti SIOPE
+
+# Solo manuale. Il file nazionale SIOPE pesa decine di megabyte e cambia una
+# volta al mese: non ha senso scaricarlo ogni giorno.
+#
+# Primo giro: lascia "solo ispezione" = true. Serve a vedere com'è fatto il
+# file prima di fidarsi di quello che ne esce. Guarda il log: dice quante
+# colonne ci sono, quali ha riconosciuto, quante righe sono del Comune e se
+# gli importi sono leggibili. Solo dopo rilancia senza ispezione.
+on:
+  workflow_dispatch:
+    inputs:
+      anno:
+        description: 'Anno da elaborare (vuoto = dal 2021 a oggi)'
+        required: false
+        default: ''
+      solo_ispezione:
+        description: 'Solo ispezione: mostra la struttura del file, non scrive niente'
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conti-in-chiaro-run
+  cancel-in-progress: false
+
+jobs:
+  siope:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Scarica e analizza i pagamenti SIOPE
+        run: |
+          FLAGS=""
+          if [ -n "${{ inputs.anno }}" ]; then
+            FLAGS="--anno ${{ inputs.anno }}"
+          fi
+          if [ "${{ inputs.solo_ispezione }}" = "true" ]; then
+            python scripts/siope_estrai.py --ispeziona $FLAGS
+          else
+            python scripts/siope_estrai.py $FLAGS --applica
+          fi
+
+      - name: Salva i dati nel repository
+        if: ${{ inputs.solo_ispezione != true }}
+        run: |
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
+          git config merge.mantieni-locale.driver true
+          git pull --rebase --autostash
+          git add data/siope.json
+          git diff --staged --quiet || git commit -m "Pagamenti SIOPE: $(date '+%Y-%m-%d')"
+          git push

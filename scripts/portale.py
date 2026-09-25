@@ -650,7 +650,10 @@ def dump_moduli_ricerca(url_pagina: str) -> None:
 # DETTAGLIO ATTO + PDF + TESTO
 # ─────────────────────────────────────────────────────────────────────────────
 
-CACHE_TESTI = Path("data/testi")
+# Unica copia dei testi, ed è quella che il sito pubblica. Tenerne una
+# seconda in data/ significava avere due volte lo stesso file nel repository
+# e doverle mantenere allineate a ogni run.
+CACHE_TESTI = Path("docs/testi")
 
 
 def _percorso_cache(id_atto: str) -> Path:
@@ -684,7 +687,7 @@ def scrivi_cache_testo(id_atto: str, testo: str) -> None:
 def estrai_testo_atto(atto: dict, id_cache: str | None = None) -> str:
     """
     Restituisce il testo dell'atto. Ordine:
-      1. cache locale data/testi/<id>.txt.gz (indipendente dal portale)
+      1. cache locale docs/testi/<id>.txt.gz (indipendente dal portale)
       2. download del PDF dalla pagina di dettaglio, poi salvataggio in cache
 
     La cache è l'assicurazione contro la sparizione degli atti dal portale:

@@ -76,7 +76,7 @@ Il run giornaliero parte da solo (cron 15:30 UTC).
   PNRR fino al 2031). Per questo la serie mensile dei pagamenti parte da luglio
   2026: prima di allora nessuno li aveva archiviati, e non sono più recuperabili
   da fonti pubbliche.
-- I PDF non vengono conservati, ma il **testo estratto sì**: `data/testi/<id>.txt.gz`
+- I PDF non vengono conservati, ma il **testo estratto sì**: `docs/testi/<id>.txt.gz`
   (compresso, pochi KB per atto). `genera_sito.py` lo copia in `docs/testi/`, il
   sito lo mostra con il pulsante «testo archiviato» e il browser lo decomprime da
   solo (`DecompressionStream`). È ciò che rende verificabile una spesa anche

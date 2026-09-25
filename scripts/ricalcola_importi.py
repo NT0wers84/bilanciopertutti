@@ -3,7 +3,7 @@ ricalcola_importi.py — Ricalcola gli importi dai testi già in archivio.
 
 Serve quando cambia la gerarchia di lettura degli importi in estrattore.py:
 invece di riscaricare gli atti dal portale (e di rispendere chiamate a Groq),
-rilegge i testi salvati in `data/testi/` e riapplica le regole correnti.
+rilegge i testi salvati in `docs/testi/` e riapplica le regole correnti.
 
 Aggiorna un record SOLO quando la nuova regola è più affidabile di quella che
 aveva prodotto il valore attuale. La scala di affidabilità, dalla più alta:
@@ -33,7 +33,7 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
 
 SPESE = Path("data/spese.json")
-TESTI = Path("data/testi")
+TESTI = Path("docs/testi")
 
 
 def leggi_testo(id_atto: str) -> str | None:

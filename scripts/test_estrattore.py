@@ -15,7 +15,7 @@ Esce con codice 1 se anche un solo caso fallisce, così può stare in un
 workflow e fermare la pubblicazione prima che i dati sbagliati vadano online.
 
 I casi che richiedono il testo integrale di un atto usano l'archivio in
-data/testi/: se manca, il test viene saltato e dichiarato, non dato per buono.
+docs/testi/: se manca, il test viene saltato e dichiarato, non dato per buono.
 """
 
 import gzip
@@ -34,7 +34,7 @@ from normalizza import ripulisci_coda, ripulisci_prefisso   # noqa: E402
 from portale import e_spesa                                 # noqa: E402
 from genera_sito import _quota_annua                        # noqa: E402
 
-TESTI = Path("data/testi")
+TESTI = Path("docs/testi")
 falliti, passati, saltati = [], 0, []
 
 
@@ -375,7 +375,7 @@ def main() -> int:
     print()
     if saltati:
         print(f"SALTATI {len(saltati)} casi: manca il testo di {', '.join(sorted(set(saltati)))}")
-        print("  (l'archivio data/testi/ non è completo: i casi non sono stati verificati)")
+        print("  (l'archivio docs/testi/ non è completo: i casi non sono stati verificati)")
     if falliti:
         print(f"FALLITI {len(falliti)} casi su {passati + len(falliti)}.")
         print("Il comportamento è cambiato: o è una regressione, o il test va aggiornato")

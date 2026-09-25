@@ -59,8 +59,14 @@ def importa(spese: list[dict], percorso: Path) -> int:
     return len(nuovi)
 
 
-def ricalcola(spese: list[dict]) -> list[tuple]:
-    cambi = []
+def ricalcola(spese: list[dict]) -> tuple[list, list]:
+    """Rilegge gli importi dai testi in archivio.
+
+    Restituisce due liste distinte, perché sono due cose diverse: gli importi
+    che CAMBIANO valore, e quelli che restano identici ma smettono di essere
+    dubbi perché una regola conclusiva ora li conferma.
+    """
+    cambi, confermati = [], []
     for s in spese:
         testo = leggi_testo(s["id"])
         if not testo:
@@ -81,6 +87,13 @@ def ricalcola(spese: list[dict]) -> list[tuple]:
             continue
         vecchio, vecchia_regola = s.get("importo_euro"), s.get("regola_importo")
         if nuovo == vecchio:
+            # Stesso importo, ma una regola conclusiva dove prima non c'era:
+            # l'atto non ha più bisogno dell'avviso «da verificare». Il numero
+            # non cambia, cambia quanto ne siamo sicuri.
+            if s.get("importo_incerto") and not incerto:
+                confermati.append((s, regola))
+                s["importo_incerto"] = False
+                s["regola_importo"] = regola
             continue
         # Le due regole che leggono l'atto voce per voce (il prospetto di una
         # liquidazione, l'elenco degli impegni di una determina) vincono sempre:
@@ -94,7 +107,7 @@ def ricalcola(spese: list[dict]) -> list[tuple]:
         s["importo_euro"] = nuovo
         s["regola_importo"] = regola
         s["importo_incerto"] = incerto
-    return cambi
+    return cambi, confermati
 
 
 def main() -> int:
@@ -108,13 +121,27 @@ def main() -> int:
         importa(spese, Path(sys.argv[sys.argv.index("--importa") + 1]))
         log.info("")
 
-    cambi = ricalcola(spese)
-    log.info(f"IMPORTI RICALCOLATI: {len(cambi)} su {len(spese)} atti\n")
+    cambi, confermati = ricalcola(spese)
+    log.info(f"IMPORTI CAMBIATI: {len(cambi)} su {len(spese)} atti\n")
     for s, vecchio, vr, nuovo, nr in sorted(cambi, key=lambda c: -(c[3] or 0)):
         v = "vuoto" if vecchio is None else f"{vecchio:,.2f}"
         log.info(f"  n.{s['numero_raw']:10} {v:>16} → {nuovo:>16,.2f}")
         log.info(f"      da [{vr or 'modello'}] a [{nr}]")
         log.info(f"      {s['oggetto'][:74]}")
+
+    if confermati:
+        log.info(f"\nIMPORTI CONFERMATI: {len(confermati)} atti perdono l'avviso "
+                 f"«da verificare»")
+        log.info("  Il valore non cambia: cambia che ora una regola conclusiva lo conferma.")
+        regole = {}
+        for s, regola in confermati:
+            chiave = regola.split(" (")[0]
+            regole[chiave] = regole.get(chiave, 0) + 1
+        for regola, n in sorted(regole.items(), key=lambda x: -x[1]):
+            log.info(f"    {n:>4}  {regola}")
+        restano = sum(1 for s in spese if s.get("importo_incerto"))
+        log.info(f"  Restano {restano} importi da verificare (erano "
+                 f"{restano + len(confermati)}).")
 
     if "--applica" in sys.argv:
         SPESE.write_text(json.dumps(spese, ensure_ascii=False, indent=1),

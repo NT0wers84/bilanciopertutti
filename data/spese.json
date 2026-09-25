@@ -1250,8 +1250,8 @@
   "data_elaborazione": "2026-08-19 09:41",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,000.00)",
-  "importo_incerto": true,
+  "regola_importo": "prospetto di liquidazione (6 righe)",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -1837,8 +1837,8 @@
   "data_elaborazione": "2026-08-12 16:19",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 8,090.00)",
-  "importo_incerto": true,
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -1877,8 +1877,8 @@
   "data_elaborazione": "2026-08-12 16:19",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 6,230.00)",
-  "importo_incerto": true,
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -2032,8 +2032,8 @@
   "data_elaborazione": "2026-08-10 16:15",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 47,178.00)",
-  "importo_incerto": true,
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -2072,8 +2072,8 @@
   "data_elaborazione": "2026-08-10 16:15",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 610.00)",
-  "importo_incerto": true,
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -2156,8 +2156,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 33,466.50)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (4 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1583-2026",
@@ -2910,8 +2910,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (4 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1552-2026",
@@ -3230,8 +3230,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 16,614.79)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (6 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1544-2026",
@@ -3578,8 +3578,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 1 righe di tabella (in conflitto con 4,200.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 1 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1534-2026",
@@ -3662,8 +3662,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 1 righe di tabella (in conflitto con 300.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 1 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1527-2026",
@@ -3772,8 +3772,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,100.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1524-2026",
@@ -3877,8 +3877,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 165,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1520-2026",
@@ -4160,8 +4160,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 28,060.00)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1503-2026",
@@ -4360,8 +4360,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 1,367.83)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1495-2026",
@@ -4532,8 +4532,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 1,685.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 2 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1485-2026",
@@ -4813,8 +4813,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 250.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1478-2026",
@@ -4890,8 +4890,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 885.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1476-2026",
@@ -5044,8 +5044,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 2,412.34)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1472-2026",
@@ -5758,8 +5758,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 5 righe di tabella (in conflitto con 400.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 5 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1451-2026",
@@ -6035,8 +6035,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 1 righe di tabella (in conflitto con 12,071.03)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1437-2026",
@@ -6121,8 +6121,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (6 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1435-2026",
@@ -6316,8 +6316,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 1,400.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 2 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1428-2026",
@@ -6404,8 +6404,8 @@
    "2026/724",
    "2026/711"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,115.54)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1426-2026",
@@ -6522,8 +6522,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 30,000.00)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1423-2026",
@@ -6558,8 +6558,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 55,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1422-2026",
@@ -6777,8 +6777,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma di 5 righe di tabella (in conflitto con 15,540.00)",
-  "importo_incerto": true
+  "regola_importo": "prospetto di liquidazione (5 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1417-2026",
@@ -7053,8 +7053,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 255.00)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1395-2026",
@@ -7248,8 +7248,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 184,653.23)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1390-2026",
@@ -7320,8 +7320,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 4,260.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1388-2026",
@@ -7443,8 +7443,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,440.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1385-2026",
@@ -7520,8 +7520,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 12,923.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1383-2026",
@@ -7565,8 +7565,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 602.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1382-2026",
@@ -8213,8 +8213,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 550,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1342-2026",
@@ -9017,8 +9017,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 407.03)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1302-2026",
@@ -9296,8 +9296,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 12,669.58)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1284-2026",
@@ -9455,8 +9455,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 621,000.00)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1255-2026",
@@ -9537,8 +9537,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 230,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1236-2026",
@@ -9584,8 +9584,8 @@
    "2026/724",
    "2026/711"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,451.34)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1235-2026",
@@ -9779,8 +9779,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 536.80)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1219-2026",
@@ -9815,8 +9815,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 1,000,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1218-2026",
@@ -9938,8 +9938,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 3,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1194-2026",
@@ -10420,8 +10420,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 585.60)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1142-2026",
@@ -10622,8 +10622,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 26,837.32)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1137-2026",
@@ -10658,8 +10658,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 208.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1134-2026",
@@ -10929,8 +10929,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 33,580.50)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1107-2026",
@@ -10970,8 +10970,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,989.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1106-2026",
@@ -11006,8 +11006,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 8,791.81)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1105-2026",
@@ -11042,8 +11042,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,660.82)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1104-2026",
@@ -11083,8 +11083,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 24,278.00)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1103-2026",
@@ -11177,8 +11177,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 62.50)",
-  "importo_incerto": true
+  "regola_importo": "somma di 2 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1101-2026",
@@ -11218,8 +11218,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 4,900.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1100-2026",
@@ -11338,8 +11338,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 64.82)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1065-2026",
@@ -11510,8 +11510,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 4,290.10)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1041-2026",
@@ -11710,8 +11710,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 6,098.78)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1036-2026",
@@ -11833,8 +11833,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 297,673.82)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1033-2026",
@@ -11991,8 +11991,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 657.58)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-981-2026",
@@ -12040,8 +12040,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 1,400.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-980-2026",
@@ -12117,8 +12117,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 19,106.27)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-952-2026",
@@ -12449,8 +12449,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,049.60)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-909-2026",
@@ -12485,8 +12485,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 33,169.50)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-904-2026",
@@ -12654,8 +12654,8 @@
    "2026/724",
    "2026/711"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,484.92)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-894-2026",
@@ -12736,8 +12736,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 13,017.77)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-883-2026",
@@ -12854,8 +12854,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 981.49)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-862-2026",
@@ -12956,8 +12956,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 375.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-860-2026",
@@ -13079,8 +13079,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 16,805.50)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-857-2026",
@@ -13115,8 +13115,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 322.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-846-2026",
@@ -13560,8 +13560,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,500.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-795-2026",
@@ -13587,8 +13587,8 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,320,683.75)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-789-2026",
@@ -13756,8 +13756,8 @@
    "2026/724",
    "2026/711"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,233.07)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-740-2026",
@@ -13783,8 +13783,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 660.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-739-2026",
@@ -13864,8 +13864,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 6 righe di tabella (in conflitto con 26,901.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 6 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-735-2026",
@@ -13945,8 +13945,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 1,261.12)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-732-2026",
@@ -14144,8 +14144,8 @@
    "2026/761",
    "2026/711"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,400.97)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-723-2026",
@@ -14258,8 +14258,8 @@
    "2026/761",
    "2026/724"
   ],
-  "regola_importo": "totale complessivo (in conflitto con 2,367.39)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-710-2026",
@@ -14340,8 +14340,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 3,223.68)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-668-2026",
@@ -14421,8 +14421,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 17,469.90)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-665-2026",
@@ -14501,8 +14501,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 13,890.92)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-662-2026",
@@ -14574,8 +14574,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 1,433.50)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-655-2026",
@@ -14628,8 +14628,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,794.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-614-2026",
@@ -14762,8 +14762,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 160.00)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-601-2026",
@@ -14897,8 +14897,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 9,150.00)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-586-2026",
@@ -15004,8 +15004,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 3,660.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-575-2026",
@@ -15058,8 +15058,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale generale (in conflitto con 173,230.79)",
-  "importo_incerto": true
+  "regola_importo": "totale generale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-549-2026",
@@ -15247,8 +15247,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 48.80)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-523-2026",
@@ -15328,8 +15328,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 244.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-515-2026",
@@ -15463,8 +15463,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 629.76)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-494-2026",
@@ -15490,8 +15490,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale dell'intervento (in conflitto con 26,598.00)",
-  "importo_incerto": true
+  "regola_importo": "totale dell'intervento",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-490-2026",
@@ -15599,8 +15599,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 4 righe di tabella (in conflitto con 2,400.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 4 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-482-2026",
@@ -15680,8 +15680,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 4 righe di tabella (in conflitto con 50,005.77)",
-  "importo_incerto": true
+  "regola_importo": "somma di 4 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-462-2026",
@@ -15788,8 +15788,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 149.50)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-456-2026",
@@ -15868,8 +15868,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale complessivo (in conflitto con 30.50)",
-  "importo_incerto": true
+  "regola_importo": "totale complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-440-2026",
@@ -16034,8 +16034,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 42,214.77)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-427-2026",
@@ -16196,8 +16196,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 51.24)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-350-2026",
@@ -16285,8 +16285,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 902,753.46)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-347-2026",
@@ -16478,8 +16478,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "totale generale (in conflitto con 6,007,753.42)",
-  "importo_incerto": true
+  "regola_importo": "totale generale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-333-2026",
@@ -16506,8 +16506,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 12,726.41)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-329-2026",
@@ -16642,8 +16642,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 8,060.20)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-323-2026",
@@ -16780,8 +16780,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 12,939.03)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-292-2026",
@@ -17001,8 +17001,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-276-2026",
@@ -17192,8 +17192,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 5 righe di tabella (in conflitto con 1,000.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 5 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-235-2026",
@@ -17219,8 +17219,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 2 righe di tabella (in conflitto con 1,800.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 2 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-234-2026",
@@ -17302,8 +17302,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 1,317.60)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-203-2026",
@@ -17329,8 +17329,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 500,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-202-2026",
@@ -17494,8 +17494,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-185-2026",
@@ -17740,8 +17740,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,476.60)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-170-2026",
@@ -17933,8 +17933,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata (in conflitto con 16,534.20)",
-  "importo_incerto": true
+  "regola_importo": "somma impegnata/liquidata",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-160-2026",
@@ -18122,8 +18122,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 3 righe di tabella (in conflitto con 2,725.92)",
-  "importo_incerto": true
+  "regola_importo": "somma di 3 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-144-2026",
@@ -18204,8 +18204,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 12,041.77)",
-  "importo_incerto": true
+  "regola_importo": "importo contrattuale",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-141-2026",
@@ -18258,8 +18258,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-139-2026",
@@ -18285,8 +18285,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-138-2026",
@@ -18339,8 +18339,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma di 4 righe di tabella (in conflitto con 6,000.00)",
-  "importo_incerto": true
+  "regola_importo": "somma di 4 righe di tabella",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-135-2026",
@@ -18558,8 +18558,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 268.48)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-107-2026",
@@ -18613,8 +18613,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 500,000.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-105-2026",
@@ -18722,8 +18722,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 569.46)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-058-2026",
@@ -18778,8 +18778,8 @@
   "atti_gemelli": [
    "2026/49"
   ],
-  "regola_importo": "spesa complessiva (in conflitto con 889,400.00)",
-  "importo_incerto": true
+  "regola_importo": "spesa complessiva",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-052-2026",
@@ -18834,8 +18834,8 @@
   "atti_gemelli": [
    "2026/53"
   ],
-  "regola_importo": "spesa complessiva (in conflitto con 889,400.00)",
-  "importo_incerto": true
+  "regola_importo": "spesa complessiva",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-047-2026",
@@ -18968,8 +18968,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 268.48)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-024-2026",

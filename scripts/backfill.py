@@ -18,6 +18,7 @@ Uso:
   python scripts/backfill.py --max-atti 300 [--anno-min 2021] [--solo-censimento]
 """
 
+import sys
 import time
 import logging
 import argparse
@@ -89,7 +90,7 @@ def mappa_url_freschi() -> dict:
     return mappa
 
 
-def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) -> None:
+def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) -> int:
     """
     Rielabora con Groq le spese archiviate:
       - incerti=True: solo quelle con l'importo marcato dubbio
@@ -122,13 +123,15 @@ def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) ->
     log.info(f"Spese da rielaborare: {len(candidate)} ({motivo}) "
              f"— max questo run: {max_atti}")
     if not candidate:
-        return
+        log.info("Nessuna spesa da rielaborare con questo criterio.")
+        return 0
 
     url_freschi = mappa_url_freschi()
-    rielaborate = 0
+    rielaborate = esiti = 0
+    senza_groq = senza_testo = errori = 0
     for s in candidate[:max_atti]:
-        rielaborate += 1
-        log.info(f"[{rielaborate}] {s['numero_raw']} — {s['oggetto'][:60]}")
+        esiti += 1
+        log.info(f"[{esiti}] {s['numero_raw']} — {s['oggetto'][:60]}")
         try:
             # URL fresco (con token di sessione) se disponibile: senza, gli
             # allegati PDF non sono raggiungibili e il testo resta vuoto
@@ -145,10 +148,12 @@ def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) ->
                 s["durata_anni"] = None
                 s["caratteri_testo"] = len(testo)
                 s["testo_disponibile"] = False
+                senza_testo += 1
                 continue
             dati = estrai_dati(testo, s["oggetto"], s.get("tipo_atto", ""))
             if dati["estrazione"] != "groq":
                 log.info("  ancora regex (Groq non disponibile), lascio invariato")
+                senza_groq += 1
                 continue
             for campo in ("beneficiario", "n_beneficiari", "beneficiari_dettaglio",
                           "importo_euro", "importo_testuale", "importo_e_pluriennale",
@@ -161,17 +166,42 @@ def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) ->
             s["testo_disponibile"] = True
             s["caratteri_testo"] = len(testo)
             s["data_elaborazione"] = datetime.now().strftime("%Y-%m-%d %H:%M")
+            rielaborate += 1
             log.info(f"  → {s['beneficiario'] or '?'} | "
                      f"{s['importo_euro'] if s['importo_euro'] is not None else '?'} € | "
                      f"{s['categoria']}")
         except Exception as e:
+            errori += 1
             log.error(f"  Rielaborazione fallita: {e}")
-        if rielaborate % 25 == 0:
+        if esiti % 25 == 0:
             salva(archivio, [])
         time.sleep(1)
     salva(archivio, [])
-    log.info(f"Rielaborate {rielaborate} spese. "
-             f"Restanti con regex: {max(len(candidate) - max_atti, 0)}")
+
+    # Il riepilogo dice cosa è stato fatto DAVVERO. Prima si annunciavano come
+    # rielaborate anche le spese lasciate intatte perché Groq non rispondeva:
+    # un run poteva lavorare quattro minuti, non cambiare niente e chiudere in
+    # verde, senza che nessuno se ne accorgesse.
+    log.info("")
+    log.info(f"ESITO: {rielaborate} spese rielaborate su {esiti} esaminate")
+    if senza_groq:
+        log.warning(f"  {senza_groq} lasciate invariate: Groq non ha risposto "
+                    f"(chiave assente, quota esaurita o rate limit)")
+    if senza_testo:
+        log.warning(f"  {senza_testo} senza testo recuperabile dal portale: "
+                    f"importi azzerati")
+    if errori:
+        log.warning(f"  {errori} fallite per errore")
+    restanti = max(len(candidate) - max_atti, 0)
+    if restanti:
+        log.info(f"  {restanti} ancora da fare: rilancia il workflow")
+
+    if esiti and not rielaborate:
+        log.error("Nessuna spesa rielaborata: il run non è servito a niente. "
+                  "Se il motivo è Groq, controlla il secret GROQ_API_KEY e la "
+                  "quota su console.groq.com prima di rilanciare.")
+        return 1
+    return 0
 
 
 def main():
@@ -202,9 +232,10 @@ def main():
                  else "solo regex")
         log.info(f"MODALITÀ RIESTRAZIONE ({quali})")
         portale.init_sessione()
-        riestrai_regex(args.max_atti, tutte=args.riestrai_tutto,
-                       incerti=args.riestrai_incerti)
-        return
+        # L'esito conta: se non ha rielaborato niente il workflow deve
+        # diventare rosso, non chiudere in silenzio.
+        return riestrai_regex(args.max_atti, tutte=args.riestrai_tutto,
+                              incerti=args.riestrai_incerti)
 
     log.info("=" * 60)
     log.info("OPENSPESE — BACKFILL STORICO v3 (archivio completo albo)")
@@ -274,4 +305,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

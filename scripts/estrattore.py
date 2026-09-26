@@ -301,14 +301,17 @@ PAROLE_CATEGORIA = [
 # è inequivocabile: "SERVIZI ALLA PERSONA" dice il sociale, "AREA TECNICA" no,
 # perché può fare strade, scuole o edilizia. Nel dubbio si lascia decidere al
 # testo dell'atto, che è più specifico.
+# I \b servono: senza, "sport" si trova dentro "traSPORTi" e "persona"
+# dentro "PERSONAle". Due parole innocue che facevano corrispondere il settore
+# a due categorie insieme, con il risultato di non deciderne nessuna.
 SETTORE_CATEGORIA = [
     (r"polizia|vigil", "Polizia locale e sicurezza"),
     (r"ambiente|ecolog|rifiut|verde", "Ambiente, verde e rifiuti"),
     (r"istruzion|scolast|scuol", "Istruzione e scuola"),
-    (r"social|persona|anzian|minor|famigl|nido", "Sociale e famiglia"),
-    (r"cultur|bibliotec|event", "Cultura"),
-    (r"sport", "Sport e tempo libero"),
-    (r"urbanistic|edilizi|patrimoni|casa", "Urbanistica e casa"),
+    (r"social|\bpersone?\b|anzian|minor|famigl|nido", "Sociale e famiglia"),
+    (r"cultur|bibliotec|\beventi?\b", "Cultura"),
+    (r"\bsport", "Sport e tempo libero"),
+    (r"urbanistic|edilizi|patrimoni|\bcasa\b", "Urbanistica e casa"),
     (r"viabilit|strad|mobilit|trasport", "Strade, viabilità e trasporti"),
     (r"protezione civile", "Protezione civile"),
     (r"commerc|attivit[àa] produttiv|svilupp", "Sviluppo economico e commercio"),
@@ -316,6 +319,13 @@ SETTORE_CATEGORIA = [
     (r"personale|risorse umane|ragioneri|finanziar|tribut|segreteri|"
      r"informati|demografi|anagraf|protocoll", "Amministrazione e servizi generali"),
 ]
+
+# Settori che per mestiere toccano più ambiti: i lavori pubblici fanno strade,
+# scuole, impianti sportivi e municipio, quindi il nome dell'ufficio non dice
+# niente sulla singola spesa. Qui la categoria la decide il testo dell'atto.
+RE_SETTORE_GENERICO = re.compile(
+    r"lavori pubblici|opere pubbliche|area tecnica|ufficio tecnico|"
+    r"servizi generali|affari generali|staff|direzione generale", re.IGNORECASE)
 
 
 def categoria_da_settore(proponente: str) -> str | None:
@@ -325,7 +335,7 @@ def categoria_da_settore(proponente: str) -> str | None:
     classificazione più informata con una più grossolana.
     """
     t = (proponente or "").lower()
-    if not t:
+    if not t or RE_SETTORE_GENERICO.search(t):
         return None
     trovate = {cat for pattern, cat in SETTORE_CATEGORIA if re.search(pattern, t)}
     # Un settore che tocca due ambiti ("AMBIENTE, ECOLOGIA E SVILUPPO
@@ -889,28 +899,78 @@ RE_INTESTAZIONE_PROSPETTO = re.compile(
     r"importo\s*\|?\s*iva\s*\n?\s*comp", re.IGNORECASE)
 # Un importo fra due pipe, seguito dal capitolo di bilancio (che è numerico):
 # "| 601.334,66 | 04022.02.90240"
-RE_RIGA_PROSPETTO = re.compile(r"\|\s*(-?\d{1,3}(?:\.\d{3})*,\d{2})\s*\|\s*\d")
+# Una riga del prospetto: "| MERLO ROBERTO | 271,82 | 12112.02.00000". Oltre
+# all'importo si cattura il creditore, che sta nella colonna precedente: è il
+# beneficiario dichiarato dal Comune, e vale più di qualunque nome pescato
+# dalla prosa dell'atto o, peggio, dal blocco della firma digitale.
+# Il nome è opzionale: se una riga non ha la colonna del creditore nella forma
+# attesa l'importo va contato lo stesso, altrimenti il totale cala e nessuno
+# se ne accorge. Prima questa regex pretendeva il nome e perdeva due righe su
+# trentasette in un atto che ne liquidava molte.
+RE_RIGA_PROSPETTO = re.compile(
+    r"\|(?:\s*([^|]{3,70}?)\s*\|)?\s*(-?\d{1,3}(?:\.\d{3})*,\d{2})\s*\|\s*\d")
 MAX_RIGHE_PROSPETTO = 40
+# Righe tecniche del prospetto: non sono fornitori ma destinazioni di legge
+# dello stesso pagamento. L'IVA girata allo Stato in split payment, la
+# ritenuta d'acconto all'Agenzia delle Entrate, i contributi previdenziali.
+# Chi ha fatto il lavoro è l'altro nome.
+RE_NON_CREDITORE = re.compile(
+    r"^(?:esattoria|erario|agenzia delle entrate|iva\b|ritenut|split|"
+    r"tesoreri|inps\b|inail\b|comune di pieve)",
+    re.IGNORECASE)
 
 
-def somma_prospetto_liquidazione(testo: str) -> tuple[float | None, int]:
-    """Somma la colonna degli importi del prospetto finale di liquidazione."""
+# Code che si attaccano al nome quando il PDF viene estratto: la partita IVA
+# della colonna vicina, una descrizione fra parentesi, un codice.
+RE_CODA_CREDITORE = re.compile(
+    r"\s*(?:\(.*|P\.?\s?IVA.*|\bIVA\b.*|C\.?F\.?\s.*|CIG.*|\d{11,}.*)$",
+    re.IGNORECASE)
+
+
+def _nome_creditore(grezzo: str) -> str:
+    return RE_CODA_CREDITORE.sub("", " ".join((grezzo or "").split())).strip(" .,;-")
+
+
+def leggi_prospetto_liquidazione(testo: str) -> tuple[float | None, int, list[dict]]:
+    """Il prospetto finale di liquidazione: totale, righe e creditori.
+
+    È il conto che fa il Comune, riga per riga: la fonte più affidabile sia
+    dell'importo sia di chi lo incassa. I creditori tornano con la somma delle
+    loro righe, così un atto che paga cinque fornitori li mostra tutti e cinque
+    con la rispettiva cifra invece di dire «Fornitori diversi».
+    """
     intestazioni = list(RE_INTESTAZIONE_PROSPETTO.finditer(testo or ""))
     if not intestazioni:
-        return None, 0
+        return None, 0, []
     blocco = testo[intestazioni[-1].end():]
-    valori = []
-    for grezzo in RE_RIGA_PROSPETTO.findall(blocco):
+    valori, per_creditore, ordine = [], {}, []
+    for nome, grezzo in RE_RIGA_PROSPETTO.findall(blocco):
         # importo_italiano() non legge il segno: lo storno dello split payment
         # è negativo e senza di esso la somma conterebbe l'IVA due volte
         negativo = grezzo.strip().startswith("-")
         v = importo_italiano(grezzo.lstrip("-").strip())
-        if v is not None:
-            valori.append(-v if negativo else v)
+        if v is None:
+            continue
+        valore = -v if negativo else v
+        valori.append(valore)
+        pulito = _nome_creditore(nome)
+        if (len(pulito) > 3 and not RE_NON_CREDITORE.match(pulito)
+                and not re.fullmatch(r"[\d/.,\s-]+", pulito)):
+            if pulito not in per_creditore:
+                ordine.append(pulito)
+                per_creditore[pulito] = 0.0
+            per_creditore[pulito] += valore
     if not valori or len(valori) > MAX_RIGHE_PROSPETTO:
-        return None, len(valori)
+        return None, len(valori), []
     totale = round(sum(valori), 2)
-    return (totale if totale > 0 else None), len(valori)
+    creditori = [{"nome": n, "importo": round(per_creditore[n], 2)} for n in ordine]
+    return (totale if totale > 0 else None), len(valori), creditori
+
+
+def somma_prospetto_liquidazione(testo: str) -> tuple[float | None, int]:
+    """Solo totale e numero di righe, per chi non ha bisogno dei creditori."""
+    totale, righe, _ = leggi_prospetto_liquidazione(testo)
+    return totale, righe
 
 
 # Il dispositivo di una determinazione elenca gli impegni uno per uno:
@@ -1175,10 +1235,31 @@ def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
         log.info(f"  Importo da regola '{regola}': {importo:,.2f}"
                  + ("  [DA VERIFICARE]" if incerto else ""))
 
+    e_liquidazione = "liquidazione" in (tipo_portale or "").lower()
+
+    # In una liquidazione il creditore lo dichiara il prospetto contabile. È
+    # l'unico nome certo dell'atto: la prosa parla di operatori, affidatari e
+    # determinazioni precedenti, e in fondo al PDF c'è il certificatore della
+    # firma digitale, che non c'entra niente con la spesa.
+    if e_liquidazione:
+        _, _, creditori = leggi_prospetto_liquidazione(testo)
+        if creditori:
+            nomi = [c["nome"] for c in creditori]
+            log.info(f"  beneficiario dal prospetto: {', '.join(nomi[:3])}"
+                     + ("…" if len(nomi) > 3 else ""))
+            return {**_schema_vuoto(oggetto), "importo_euro": importo,
+                    "regola_importo": regola, "importo_incerto": incerto,
+                    "cig": _cerca_cig(completo),
+                    "beneficiario": (nomi[0] if len(nomi) == 1
+                                     else _etichetta_multipla(f"{len(nomi)} fornitori")),
+                    "n_beneficiari": len(nomi),
+                    # Con più fornitori l'elenco dice chi ha preso quanto,
+                    # invece di nascondere tutto dietro «Fornitori diversi»
+                    "beneficiari_dettaglio": creditori if len(nomi) > 1 else None}
+
     # Se il dispositivo impegna verso più fornitori, sono loro i beneficiari:
     # sceglierne uno solo gli attribuirebbe anche la spesa degli altri.
-    voci = [] if "liquidazione" in (tipo_portale or "").lower() \
-        else impegni_dispositivo(testo)
+    voci = [] if e_liquidazione else impegni_dispositivo(testo)
     if voci:
         log.info(f"  {len(voci)} beneficiari dal dispositivo: "
                  + ", ".join(v["nome"][:24] for v in voci[:4])

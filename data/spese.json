@@ -7,10 +7,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "CODICE ID 103 – INTERVENTO 458 - AMPLIAMENTO CENTRO FORMAZIONE PROFESSIONALE IN COMUNE DI PIEVE EMANUELE AQ1 – LOTTO GEOGRAFICO 2 – LOMBARDIA – SUB LOTTO PRESTAZIONI 3. MISSIONE M5C2 – INVESTIMENTO 2.3 – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITA’ DELL’ABITARE (PINQUA) – FINANZIATO DA NEXT GENERATION EU - CIG SERVIZI TECNICI 917972116A CIG DERIVATO 9442649077. CUP J47H21000220001. LIQUIDAZIONE DELLA FT NR. 52 DEL 07/09/2026 IN FAVORE DELL’ING. ROBERTO MERLO PER IL SERVIZIO DI REDAZIONE E PRESENTAZIONE DELLE PRATICHE DI PREVENZIONE INCENDI PER ATTIVITÀ SOGGETTE A CONTROLLO VVF – CIG BC7331F2FB.",
-  "beneficiario": null,
+  "beneficiario": "MERLO ROBERTO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 8090.0,
+  "importo_euro": 10087.18,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -32,7 +32,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 13074,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "regola_importo": "prospetto di liquidazione (5 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1918-2026",
@@ -42,10 +46,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "CODICE ID 103 – INTERVENTO 459 ASILO NIDO QUARTIERE DELLE ROSE IN COMUNE DI PIEVE EMANUELE – AQ1 – LOTTO GEOGRAFICO 2 – LOMBARDIA – SUB LOTTO PRESTAZIONI 3 MISSIONE M5C2 – INVESTIMENTO 2.3 – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITA’ DELL’ABITARE (PINQUA) – FINANZIATO DA NEXT GENERATION EU – CIG SERVIZI TECNICI 917972116A – DERIVATO 9442766104 CUP J47H21000230001. LIQUIDAZIONE DELLA FT NR. 53 DEL 07/09/2026 IN FAVORE DELL’ING. ROBERTO MERLO PER IL SERVIZIO DI REDAZIONE E PRESENTAZIONE DELLE PRATICHE DI PREVENZIONE INCENDI PER ATTIVITÀ SOGGETTE A CONTROLLO VVF – CIG BC7344BA8A.",
-  "beneficiario": "dare atto che",
+  "beneficiario": "MERLO ROBERTO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 6230.0,
+  "importo_euro": 7727.22,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -67,7 +71,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 13001,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "regola_importo": "prospetto di liquidazione (5 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1917-2026",
@@ -80,7 +88,7 @@
   "beneficiario": "CAP HOLDING S.P.A.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 4932.36,
+  "importo_euro": 5425.6,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -102,7 +110,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 13151,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "regola_importo": "prospetto di liquidazione (6 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1916-2026",
@@ -112,10 +124,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI ILLUMINAZIONE SUL PERCORSO – VIALE DELL’EDIFICIO SCOLASTICO M.L. KING - COLLODI, COMPRESO NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: M.L. KING/COLLODI - CUP J44H20001220001 - FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - FONDI CONFLUITI NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA (DM DEL 08.11.2021). LIQUIDAZIONE DELLA FT NR. 477/00 DEL 31/08/2026 IN FAVORE DELL’OPERATORE TECNI–LUX S.R.L. PER €21.209,70 (IVA AL 22% INCLUSA).",
-  "beneficiario": "LUX S.R.L",
+  "beneficiario": "Tecni-Lux SRL di Carbonar al Ticino (PV)",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 17385.0,
+  "importo_euro": 21209.7,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -137,7 +149,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 12240,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "regola_importo": "prospetto di liquidazione (3 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "determinazione-1915-2026",
@@ -147,7 +163,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "INTEGRAZIONE IMPEGNO DI SPESA SERVIZIO DI ASILO NIDO COMUNALE “PAPAVERI E PAPERE” – CIG 87182363F1",
-  "beneficiario": "Cooperativa sociale Spazio Aperto Servizi Onlus",
+  "beneficiario": "Spazio Aperto Servizi Società Cooperativa Sociale",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 340.85,
@@ -172,7 +188,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 7634,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1914-2026",
@@ -182,10 +200,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 0000202630021517 - FATTURA NR. 0000202630021518 - FATTURA NR. 0000202630023091 - NOTA DI CREDITO NR. 0000202630023092 - FATTURA NR. 0000202630023093 - NOTA DI CREDITO NR. 0000202630023094 - FATTURA NR. 0000202630029912 - FATTURA NR. 0000202630035574 PER CANONE LOCAZIONE - CANONE SERVIZIO FIAT PANDA TARGATA GG777LJ 1.0 FIREFLY 70CV S&S HYBRID CITY L CIG B975426366",
-  "beneficiario": "Leasys Italia S.p.A Partita",
+  "beneficiario": "LEASYS S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 189.82,
+  "importo_euro": 759.28,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -207,7 +225,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 18921,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "regola_importo": "prospetto di liquidazione (24 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1913-2026",
@@ -217,7 +239,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. 1011017354 EMESSA DA KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A. RATA: 11 RELATIVA AL PERIODO DAL 02.06.2026 AL 01.09.2026 CIG Z9C3CDEC44",
-  "beneficiario": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A",
+  "beneficiario": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 120.66,
@@ -242,7 +264,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8995,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1907-2026",
@@ -252,7 +276,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "LIQUIDAZIONE FATTURA EMESSA DALLA SOCIETÀ LEASYS ITALIA S.P.A. PER CANONE NOLEGGIO VEICOLO DI SERVIZIO TARGATO GG037PX AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI",
-  "beneficiario": "LEASYS ITALIA S.P.A.",
+  "beneficiario": "LEASYS S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 227.16,
@@ -277,7 +301,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 6868,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:21"
+  "data_elaborazione": "2026-09-25 19:21",
+  "beneficiario_generico": false,
+  "atti_gemelli": [
+   "2026/1441"
+  ]
  },
  {
   "id": "liquidazione-1906-2026",
@@ -287,10 +315,10 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-25",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE SPAZIO APERTO SERVIZI RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO NELL'A. S. 2025-2026 AD ALUNNI RESIDENTI AVENTI DIRITTO - CIG B8CE786B52",
-  "beneficiario": "SPAZIO APERTO SERVIZI Coop. Sociale Onlus",
+  "beneficiario": "Spazio Aperto Servizi Società Cooperativa Sociale",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 1445.3,
+  "importo_euro": 2743.61,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -312,7 +340,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 11344,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:22"
+  "data_elaborazione": "2026-09-25 19:22",
+  "regola_importo": "prospetto di liquidazione (18 righe)",
+  "importo_incerto": false,
+  "beneficiario_generico": false,
+  "atti_gemelli": null
  },
  {
   "id": "liquidazione-1905-2026",
@@ -347,7 +379,11 @@
   "versione_estrazione": 4,
   "caratteri_testo": 7390,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:22"
+  "data_elaborazione": "2026-09-25 19:22",
+  "beneficiario_generico": false,
+  "atti_gemelli": [
+   "2026/1414"
+  ]
  },
  {
   "id": "determinazione-1904-2026",
@@ -382,7 +418,8 @@
   "versione_estrazione": 4,
   "caratteri_testo": 8833,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:22"
+  "data_elaborazione": "2026-09-25 19:22",
+  "beneficiario_generico": false
  },
  {
   "id": "determinazione-1903-2026",
@@ -417,7 +454,16 @@
   "versione_estrazione": 4,
   "caratteri_testo": 9148,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-25 19:22"
+  "data_elaborazione": "2026-09-25 19:22",
+  "beneficiario_generico": false,
+  "atti_gemelli": [
+   "2026/1427",
+   "2026/1236",
+   "2026/897",
+   "2026/761",
+   "2026/724",
+   "2026/711"
+  ]
  },
  {
   "id": "determinazione-1900-2026",
@@ -454,7 +500,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-24",
   "oggetto": "LIQUIDAZIONE FATT. NR. 1522 DELL’1/09/2026 CAP HOLDING SPA PER SPESE TECNICHE LAVORI DI DEMOLIZIONE TORRE PIEZOMETRICA PIAZZA DELLA CHIESA CIG BC216C101A -",
-  "beneficiario": "Cap Holding S.p.A",
+  "beneficiario": "CAP HOLDING S.P.A.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 5098.83,
@@ -571,9 +617,22 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-23",
   "oggetto": "LIQUIDAZIONE FATTURE MIOS TECHNOLOGY SRL, SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
-  "beneficiario": "MIOS TECHNOLOGY S.R.L.",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "MIOS TECHNOLOGY SRL",
+    "importo": 3532.87
+   },
+   {
+    "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A",
+    "importo": 338.44
+   },
+   {
+    "nome": "SHARP ELECTRONICS SPA",
+    "importo": 85.92
+   }
+  ],
   "importo_euro": 4827.82,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -587,7 +646,7 @@
   "estrazione": "regex",
   "testo_disponibile": null,
   "e_rimodulazione": false,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
   "importo_incerto": false,
   "regola_importo": "prospetto di liquidazione (15 righe)"
@@ -627,7 +686,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-23",
   "oggetto": "INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATIVI SCOLASTICI PRESSO LA SCUOLA PRIMARIA M.L. KING E PRESSO LA SCUOLA DELL'INFANZIA DON ZENO - CUP J47H21001830001 - CIG A01BC0F3B3, FINANZIATO DA NEXT GENERATION EU - M5C2 - INVESTIMENTO 2.1 - INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE, NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR). LIQUIDAZIONE IV SAL E CERTIFICATO DI PAGAMENTO N. 4 IN FAVORE DELL’OPERATORE I.M.E.T. S.R.L.",
-  "beneficiario": "I.M.E.T S.r.l.",
+  "beneficiario": "I.M.E.T. INSTALLAZIONE MATERIALI ELETTRICI TORTONA SRL",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 601334.66,
@@ -683,7 +742,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-23",
   "oggetto": "LIQUIDAZIONE DELLA FATTURA NR. 267/FE DEL 15/09/2026 IN FAVORE DI UNIVERSITA’ DEGLI STUDI GUGLIELMO MARCONI, PER LA PARTECIPAZIONE DI UNA DIPENDENTE AL CORSO DI FORMAZIONE “FINANZA PUBBLICA – PROCESSI, LOGICHE E STRUMENTI AMMINISTRATIVO-CONTABILI NELLA PA” – CIG BCD30389F0.",
-  "beneficiario": null,
+  "beneficiario": "UNIVERSITA' TELEMATICA GUGLIELMO MARCONI",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 180,
@@ -711,7 +770,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-23",
   "oggetto": "LIQUIDAZIONE IN FAVORE DI GE.CO DI LAURA RHO PER INIZIATIVA ATTINENTE POLITICHE GIOVANILI - CIG: BBDBD55CF0",
-  "beneficiario": "GE.CO DI LAURA RHO",
+  "beneficiario": "GE.CO di Rho Laura",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 1900,
@@ -804,7 +863,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630041422 DEL 04/08/2026 - LEASYS ITALIA S.P.A",
-  "beneficiario": "Leasys Italia S.p.A",
+  "beneficiario": "LEASYS S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 943.87,
@@ -836,9 +895,22 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: LAVORARE IN FARMACIA SRL, ARIES GROUP SRL E CGM PHARMAONE SRL",
-  "beneficiario": "Lavorare in Farmacia SRL",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "CGM PHARMAONE SRL",
+    "importo": 200.0
+   },
+   {
+    "nome": "LAVORARE IN FARMACIA SRL",
+    "importo": 12060.0
+   },
+   {
+    "nome": "ARIES GROUP S.R.L",
+    "importo": 3153.6
+   }
+  ],
   "importo_euro": 15413.6,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -857,7 +929,7 @@
   "caratteri_testo": 12580,
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
   "regola_importo": "prospetto di liquidazione (19 righe)",
   "importo_incerto": false
@@ -902,7 +974,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "LIQUIDAZIONE FATTURA EMESSA DALLA COOPERATIVA SOCIALE QUADRIFOGLIO ONLUS RELATIVA AL SUPPORTO EDUCATIVO SCOLASTICO 2025-2026 A UN ALUNNO RESIDENTE - CIG B8DB56B42C",
-  "beneficiario": "COOPERATIVA SOCIALE QUADRIFOGLIO ONLUS",
+  "beneficiario": "COOPERATIVA SOCIALE QUADRIFOGLIO S.C. ONLUS",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 3331.52,
@@ -934,7 +1006,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "SERVIZIO DI PRESIDIO NON ARMATO PRESSO IL CAMPO SPORTIVO MAZZOLA. CIG B91CE2EB58. LIQUIDAZIONE DELLA FATTURA NR. 2026 2881 DEL 31/07/2026 PER €6.032,29 (IVA AL 22% INCLUSA) E FATTURA NR 2026 3196 DEL 31/08/2026 PER €6.032,29 (IVA AL 22% INCLUSA) A FAVORE DI SIVIS SOCIETA’ CONSORTILE PER AZIONI.",
-  "beneficiario": "SIVIS",
+  "beneficiario": "SIVIS SCPA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 12064.58,
@@ -1226,9 +1298,18 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE ACCENTO (CIG B8D82CF08C) E DALLA COOPERATIVA SOCIALE LOGOS (CIG B8A17FB235) RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO AD ALUNNI RESIDENTI AVENTI DIRITTO",
-  "beneficiario": "Cooperativa Sociale Accento",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 2,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "ACCENTO SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 163.31
+   },
+   {
+    "nome": "LOGOS SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 307.53
+   }
+  ],
   "importo_euro": 494.39,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -1247,7 +1328,7 @@
   "caratteri_testo": 8384,
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null
  },
  {
@@ -1258,7 +1339,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE NOTA DI DEBITO PER SERVIZI RESI A FAVORE DI MINORI",
-  "beneficiario": "MINORI",
+  "beneficiario": "ASSOCIAZIONE AMICI DELLA CASA DELL'ACCOGLIENZA ODV",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 9920.0,
@@ -1507,7 +1588,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-08-18",
   "oggetto": "LIQUIDAZIONE DIGITALE SD. FATTURA NR. FPA 47/26 EMESSA DAL DR. CRIMELLA FAUSTO - REALIZZAZIONE DUVRI PER MANUTENZIONE ASCENSORI - CIG B348B01043",
-  "beneficiario": "DR. CRIMELLA FAUSTO",
+  "beneficiario": "CRIMELLA FAUSTO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 761.28,
@@ -2677,14 +2758,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-08-05",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA A FAVORE DELL’ARCH. ROSALBA TEODORO PER I SERVIZI TECNICI RESI PER IL COORDINAMENTO DELLA SICUREZZA IN FASE DI ESECUZIONE E LA REDAZIONE DELLE PERIZIE DI VARIANTE N. 2 E 3 PER L’INTERVENTO DELLA “RETE VERDE METROPOLITANA : RINATURALIZZAZIONE DI AREE DISMESSE OVVERO DEGRADATE E AUMENTO DELLE SUPERFICI DA RIQUALIFICARE A VERDE, CON DIMINUZIONE DELLE AREE PAVIMENTATE TRA LA VIA OLMI E LA VIA LEONCAVALLO” FINANZIATO CON FONDI NELL’AMBITO DEL PNRR – ART. 21 D.L. 152/2021 – PIANI INTEGRATI M5C2 – INVESTIMENTI 2.2; CIG A021916874 CUP J47B22000030006",
-  "beneficiario": "Arch. Rosalba Teodoro",
+  "beneficiario": "TEODORO ROSALBA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Arch. Rosalba Teodoro",
-    "importo": 6256.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 6256.0,
   "importo_testuale": "6.256,00",
   "importo_e_pluriennale": false,
@@ -2833,14 +2909,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-08-04",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 000106/26 DEL 30/06/2026 - SPS 2F IMPIANTI SRL",
-  "beneficiario": "SPS 2F IMPIANTI SRL",
+  "beneficiario": "2F IMPIANTI SRL",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "SPS 2F IMPIANTI SRL",
-    "importo": 219.6
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 219.6,
   "importo_testuale": "219,60",
   "importo_e_pluriennale": false,
@@ -3301,14 +3372,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-31",
   "oggetto": "LIQUIDAZIONE DI LIQUIDAZIONE COMPETENZE A FAVORE DELLO STUDIO STRADIVARIE ARCHITETTI ASSOCIATI DI TRIESTE , PER SALDO PRESTAZIONI PROFESSIONALI PER IL SERVIZIO DI ATTIVITÀ DI DIREZIONE LAVORI E CSE PER L’INTERVENTO N. 460 – PASSARELLA CICLOPEDONALE DI CONNESSIONE CON IL CENTRO CITTADINO IN COMUNE DI PIEVE EMANUELE AQ3 – LOTTO GEOGRAFICO 2- LOMBARDIA -EMILIA ROMAGNA - SUB - LOTTO PRESTAZIONALE 1 – SERVIZI TECNICI DI PROGETTAZIONE. FINANZIATO CON PNRR – MISSIONE M5C2 COMPONENTE C2 INV. 2.3 -PINQUA. CUP J41B21000170001 - CIG 9181242893 - CIG DERIVATO 94453250C5",
-  "beneficiario": "Studio Stradivarie Architetti Associati di Trieste",
+  "beneficiario": "STRADIVARIE ARCHITETTI ASSOCIATI",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Studio Stradivarie Architetti Associati di Trieste",
-    "importo": 32592.87
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 32592.87,
   "importo_testuale": "32.592,87",
   "importo_e_pluriennale": false,
@@ -3341,14 +3407,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-31",
   "oggetto": "LIQUIDAZIONE COMPETENZE A FAVORE DELLO STUDIO STRADIVARIE ARCHITETTI ASSOCIATI DI TRIESTE , PER REDAZIONE DELLA PERIZIA DI VARIANTE-MODIFICA DEL CONTRATTO AI SENSI DELL’ART. 106 CO. 1 B) E C) E CO. 2 DEL D.LGS. N. 50/2016 PER L’INTERVENTO N. 460 – PASSARELLA CICLOPEDONALE DI CONNESSIONE CON IL CENTRO CITTADINO IN COMUNE DI PIEVE EMANUELE AQ3 – LOTTO GEOGRAFICO 2- LOMBARDIA -EMILIA ROMAGNA - SUB - LOTTO PRESTAZIONALE 1 – SERVIZI TECNICI DI PROGETTAZIONE. FINANZIATO CON PNRR – MISSIONE M5C2 COMPONENTE C2 INV. 2.3 -PINQUA. CUP J41B21000170001 - CIG 9181242893 - CIG DERIVATO 94453250C5",
-  "beneficiario": "Studio Stradivarie Architetti Associati di Trieste",
+  "beneficiario": "STRADIVARIE ARCHITETTI ASSOCIATI",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Studio Stradivarie Architetti Associati di Trieste",
-    "importo": 6708.37
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 6708.37,
   "importo_testuale": "6.708,37",
   "importo_e_pluriennale": false,
@@ -3381,14 +3442,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-31",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA SOCIETÀ L.G. IMPIANTI SRL PER OPERE DA IDRAULICO",
-  "beneficiario": "L.G. Impianti Srl",
+  "beneficiario": "L.G. TECNO IMPIANTI SRL",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "L.G. Impianti Srl",
-    "importo": 741.2
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 741.2,
   "importo_testuale": "741,20",
   "importo_e_pluriennale": false,
@@ -3461,14 +3517,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-31",
   "oggetto": "DETERMINZIONE DI LIQUIDAZIONE A FAVORE DELLA COOPERATIVA IL GIARDINONE - COOP SOCIALE DI LOCATE DI TRIULZI (MI9 PER MANUTENZIONE STROARDINARIA DEL VERDE PRESSO LA SCUOLA M.L.KING E E DON ZENO, ALL'INTERNO DELL'INTERVERNTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI SCOLASTICI - FINANZIATO DA NEXT GENERATION , NELL'AMBITO DEL PNRR - M5C2 - 2.1. CIG BBE2C36CFB CUP J47H21001830001",
-  "beneficiario": "Cooperativa Il Giardinone - Coop Sociale",
+  "beneficiario": "IL GIARDINONE COOP. SOC",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cooperativa Il Giardinone - Coop Sociale",
-    "importo": 26837.32
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 26837.32,
   "importo_testuale": "26.837,32",
   "importo_e_pluriennale": false,
@@ -3701,14 +3752,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-31",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA DITTA LAUDONE CINZIA DI FIZZONASCO PIEVE EMANUELE",
-  "beneficiario": "individuale Laudone Cinzia",
+  "beneficiario": "LAUDONE CINZIA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Laudone Cinzia",
-    "importo": 178.16
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 178.16,
   "importo_testuale": "178,16",
   "importo_e_pluriennale": false,
@@ -3885,14 +3931,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-30",
   "oggetto": "LIQUIDAZIONE FATTURA N. 4/2026 DELLA CARTOLERIA LA FIABA DI VEROLA ANNA RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "Cartoleria La Fiaba di Verola Anna",
+  "beneficiario": "VEROLA ANNA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cartoleria La Fiaba di Verola Anna",
-    "importo": 835.28
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 835.28,
   "importo_testuale": "835,28",
   "importo_e_pluriennale": false,
@@ -3925,14 +3966,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-30",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA A FAVORE DELLA COOPERATIVA DEMETRA DI SAN GIORGIO LOMELLINA (PV) PER IL SERVIZIO DI SGOMBERO NEVE E SPARGIMENTO SALE SUL TERRITORIO COMUNALE PER LA STAGIONE INVERNALE 2025-2026 ZONA 1-A",
-  "beneficiario": "Cooperativa Demetra di San Giorgio Lomellina",
+  "beneficiario": "COOPERATIVA DEMETRA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cooperativa Demetra di San Giorgio Lomellina",
-    "importo": 3538.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 3538.0,
   "importo_testuale": "3.538,00",
   "importo_e_pluriennale": false,
@@ -4009,14 +4045,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-30",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE A FAVORE DELLA DITTA DAVIDE MERLI DI VIGEVANO (PV) PER INTERVENTO STRUTTURA VIGILI DEL FUOCO IN VIA NILDE IOTTI - PIEVE EMANUELE",
-  "beneficiario": "Merli Asfalti di Davide Merli",
+  "beneficiario": "MERLI ASFALTI DI MERLI GEOM. DAVIDE",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Merli Asfalti di Davide Merli",
-    "importo": 2440.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 2440.0,
   "importo_testuale": "2.440,00",
   "importo_e_pluriennale": false,
@@ -4413,31 +4444,27 @@
   "data_pubblicazione": "2026-07-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
   "beneficiario": "Fornitori diversi",
-  "n_beneficiari": 2,
+  "n_beneficiari": 5,
   "beneficiari_dettaglio": [
    {
-    "nome": "COOPERATIVA",
-    "importo": null
+    "nome": "COOPERATIVA SOCIALE IL BALZO",
+    "importo": 5431.9
    },
    {
-    "nome": "COOPERATIVA",
-    "importo": null
+    "nome": "VIVENDA SPA",
+    "importo": 602.01
    },
    {
-    "nome": "COOPERATIVA",
-    "importo": null
+    "nome": "ARIES GROUP S.R.L",
+    "importo": 2000.0
    },
    {
-    "nome": "COOPERATIVA",
-    "importo": null
+    "nome": "COOP. SOC. ONLUS \"IL MELOGRANO\"",
+    "importo": 25465.82
    },
    {
-    "nome": "VIA LIBERA COOP.",
-    "importo": 206.22
-   },
-   {
-    "nome": "VIA LIBERA COOP.",
-    "importo": null
+    "nome": "VIA LIBERA COOP. SOCIALE ONLUS",
+    "importo": 196.4
    }
   ],
   "importo_euro": 35450.84,
@@ -4473,14 +4500,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-28",
   "oggetto": "LIQUIDAZIONE FATTURA EMESSA DAL DOTT. MIRKO MELIS PER ATTIVITA' DI REVISIONE AMMINISTRATIVO-CONTABILE PROGETTO SAI - ANNUALITA' 2025",
-  "beneficiario": "Dott. Mirko Melis",
+  "beneficiario": "MELIS MIRKO",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Dott. Mirko Melis",
-    "importo": 2030.08
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 2030.08,
   "importo_testuale": "2.030,08",
   "importo_e_pluriennale": false,
@@ -4714,7 +4736,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-24",
   "oggetto": "IMPEGNO DI SPESA PER IL PAGAMENTO DELLE FORNITURE DI ACQUA PER GLI EDIFICI COMUNALI",
-  "beneficiario": "Cap Holding S.p.A",
+  "beneficiario": "CAP HOLDING S.P.A.",
   "importo_euro": 45000.0,
   "cig": null,
   "categoria": "Urbanistica e casa",
@@ -4791,7 +4813,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-24",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630035578 DEL 03/07/2026 E FATTURA N. 0000202630039487 DEL 16/07/2026 - LEASYS ITALIA S.P.A.",
-  "beneficiario": "Leasys Italia S.p.A",
+  "beneficiario": "LEASYS S.P.A",
   "importo_euro": 948.87,
   "cig": "ZD3314A43F",
   "categoria": "Polizia locale e sicurezza",
@@ -4804,12 +4826,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:46",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "LEASYS ITALIA S.P.A.",
-    "importo": 948.87
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -4832,7 +4849,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-24",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630035576 DEL 03/07/2026 - LEASYS ITALIA S.P.A.",
-  "beneficiario": "Leasys Italia S.p.A",
+  "beneficiario": "LEASYS S.P.A",
   "importo_euro": 189.82,
   "cig": "BAAC25788A",
   "categoria": "Amministrazione e servizi generali",
@@ -4845,12 +4862,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:47",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Leasys Italia S.p.A.",
-    "importo": 189.82
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "189,82",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -4873,7 +4885,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-24",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE FATTURA N. 0000202630035577 DEL 03/07/2026 E FATTURA N. 0000202630039486 DEL 16/07/2026 - LEASYS ITALIA S.P.A.",
-  "beneficiario": "Leasys Italia S.p.A",
+  "beneficiario": "LEASYS S.P.A",
   "importo_euro": 284.54,
   "cig": "Z8E307C9D3",
   "categoria": "Amministrazione e servizi generali",
@@ -4886,12 +4898,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:47",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "LEASYS ITALIA S.P.A.",
-    "importo": null
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "90100.01.03848",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5475,7 +5482,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINAZIONE A CONTRARRE, AFFIDAMENTO DIRETTO AI SENSI DELL’ART. 50, COMMA 1, LETT. B), DEL D.LGS. 31 MARZO 2023, N. 36, DEL SERVIZIO DI ALLACCIAMENTO IDRICO IN VIA DEI GIGLI NELL’AMBITO DELLA MISSIONE M5C2 – INVESTIMENTO 2.3 – “PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITÀ DELL’ABITARE (PINQUA)” FINANZIATO DALL’UNIONE EUROPEA – NEXT GENERATION EU – CODICE PROGETTO ID 103 – CODICE INTERVENTO 459 – “ASILO NIDO QUARTIERE DELLE ROSE” NEL COMUNE DI PIEVE EMANUELE – AQ1 – LOTTO GEOGRAFICO 2 – LOMBARDIA – SUB LOTTO PRESTAZIONI 3 – CUP J47H21000230001. AFFIDAMENTO DEL SERVIZIO ALL’OPERATORE ECONOMICO CAP HOLDING S.P.A. E ASSUNZIONE DEL RELATIVO IMPEGNO DI SPESA PER L’IMPORTO DI €4.932,36 (IVA AL 10% ESCLUSA). CIG BC5CB80E2D.",
-  "beneficiario": "Cap Holding S.p.A",
+  "beneficiario": "CAP HOLDING S.P.A.",
   "importo_euro": 5425.6,
   "cig": "BC5CB80E2D",
   "categoria": "Urbanistica e casa",
@@ -5528,8 +5535,25 @@
   "caratteri_testo": 9415,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:56",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "TONERGROSS SRL",
+    "importo": 897.28
+   },
+   {
+    "nome": "SHARP ELECTRONICS SPA",
+    "importo": 85.92
+   },
+   {
+    "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A",
+    "importo": 338.44
+   },
+   {
+    "nome": "CONVERGE SRL",
+    "importo": 643.5
+   }
+  ],
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5552,7 +5576,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: ARIES GROUP SRL, GAS TECNICI FOLIGNO SRL, SAPIO LIFE SRL, DIEFFE SISTEMI SRL, ECOLOGIA AMBIENTE SRL, TOWA PHARMACEUTICAL SPA, BIOS LINE SPA",
-  "beneficiario": "Ditte diverse",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 6126.97,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -5564,8 +5588,37 @@
   "caratteri_testo": 14545,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 07:57",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "n_beneficiari": 7,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "ARIES GROUP S.R.L",
+    "importo": 3153.6
+   },
+   {
+    "nome": "TOWA PHARMACEUTICAL SPA",
+    "importo": 468.82
+   },
+   {
+    "nome": "BIOS LINE SPA",
+    "importo": 1602.89
+   },
+   {
+    "nome": "ECOLOGIA AMBIENTE SRL A SOCIO UNICO",
+    "importo": 170.0
+   },
+   {
+    "nome": "GAS TECNICI FOLIGNO SRL",
+    "importo": 114.4
+   },
+   {
+    "nome": "SAPIO LIFE SRL",
+    "importo": 52.26
+   },
+   {
+    "nome": "DIEFFE SISTEMI S.R.L",
+    "importo": 565.0
+   }
+  ],
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5575,7 +5628,7 @@
   "testo_disponibile": true,
   "e_rimodulazione": false,
   "importo_verificato": true,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
   "regola_importo": "prospetto di liquidazione (25 righe)",
   "importo_incerto": false
@@ -5869,7 +5922,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "ATTO DI LIQUIDAZIONE FATTURA N° 1/26 DEL 08.07.2026",
-  "beneficiario": "Due fornitori diverse",
+  "beneficiario": "NEPA-RCHE' SRLS",
   "importo_euro": 280.0,
   "cig": "BC3C0EF1EB",
   "categoria": "Cultura",
@@ -5882,12 +5935,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:01",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "NEPA-RCHE' SRLS",
-    "importo": 280.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "280,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5965,8 +6013,37 @@
   "caratteri_testo": 10415,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:03",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "n_beneficiari": 7,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "COOPERATIVA SOCIALE COMUNITA' FAMIGLIARI",
+    "importo": 105.0
+   },
+   {
+    "nome": "COOPERATIVA SOCIALE COMUNITA'",
+    "importo": -5.0
+   },
+   {
+    "nome": "SILOE",
+    "importo": 5494.0
+   },
+   {
+    "nome": "FONDAZIONE COMUNITA' DI ACCOGLIENZA MADRE AMABILE ONLUS",
+    "importo": 2025.0
+   },
+   {
+    "nome": "SOCIETA' COOPERATIVA SOCIALE IL MOSAICO SERVIZI",
+    "importo": 110.0
+   },
+   {
+    "nome": "FUORILUOGHI SOCIETA' COOPERATIVA SOCIALE ONLUS",
+    "importo": 5994.9
+   },
+   {
+    "nome": "ASSOCIAZIONE SOS GIOVANI ONLUS",
+    "importo": 3900.0
+   }
+  ],
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -5989,7 +6066,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-20",
   "oggetto": "ATTO DI LIQUIDAZIONE NOTA PROT. 16943 DEL 15.07.2026",
-  "beneficiario": "Fornitori diversi",
+  "beneficiario": "MARIANI GIANCARLO",
   "importo_euro": 250.0,
   "cig": "BB4FE27895",
   "categoria": "Amministrazione e servizi generali",
@@ -6012,7 +6089,7 @@
   "testo_disponibile": true,
   "e_rimodulazione": false,
   "importo_verificato": true,
-  "beneficiario_generico": true,
+  "beneficiario_generico": false,
   "atti_gemelli": null,
   "regola_importo": "prospetto di liquidazione (3 righe)",
   "importo_incerto": false
@@ -6360,8 +6437,21 @@
   "caratteri_testo": 8945,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:49",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "YAKINE FRUNGILLO AMINA",
+    "importo": 1245.75
+   },
+   {
+    "nome": "ENRICA E DANIELA PETTINARI SNC",
+    "importo": 4954.0
+   },
+   {
+    "nome": "GERLI MONICA",
+    "importo": 5792.09
+   }
+  ],
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6384,7 +6474,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-16",
   "oggetto": "LIQUIDAZIONE FATTURA DATASOFT DI BARLASSINA ALESSANDRO & C. PER CANONE NOLEGGIO MACCHINA FOTOCOPIATRICE AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI",
-  "beneficiario": "DATASOFT di Barlassina Alessandro & C. s.n.c",
+  "beneficiario": "DATASOFT SNC DI BARLASSINA ALESSANDRO E C",
   "importo_euro": 203.74,
   "cig": "B4546BAA6E",
   "categoria": "Amministrazione e servizi generali",
@@ -6397,12 +6487,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:50",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "DATASOFT SNC DI BARLASSINA ALESSANDRO & C.",
-    "importo": null
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "12041,03,07",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6454,7 +6539,9 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1907"
+  ],
   "regola_importo": "prospetto di liquidazione (3 righe)",
   "importo_incerto": false
  },
@@ -6593,7 +6680,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-15",
   "oggetto": "LIQUIDAZIONE FATTURA N. 136/2026 DELLA CARTOLERIA ENRICA E DANIELA PETTINARI SNC RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "Cartoleria Enrica e Daniela Pettinari SNC",
+  "beneficiario": "ENRICA E DANIELA PETTINARI SNC",
   "importo_euro": 6578.25,
   "cig": "U.1.03.0",
   "categoria": "Istruzione e scuola",
@@ -6606,12 +6693,7 @@
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:53",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Cartoleria Enrica e Daniela Pettinari SNC",
-    "importo": 6578.25
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_testuale": "6.578,25",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6634,7 +6716,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-15",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "utenti anziani e disabili",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 33276.62,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -6646,11 +6728,43 @@
   "caratteri_testo": 16084,
   "fonte": "albo",
   "data_elaborazione": "2026-07-29 15:54",
-  "n_beneficiari": 1,
+  "n_beneficiari": 9,
   "beneficiari_dettaglio": [
    {
-    "nome": "utenti anziani e disabili",
-    "importo": null
+    "nome": "VIVENDA SPA",
+    "importo": 602.01
+   },
+   {
+    "nome": "ROMEO SRL",
+    "importo": 2639.3
+   },
+   {
+    "nome": "VIA LIBERA COOP. SOCIALE ONLUS",
+    "importo": 392.8
+   },
+   {
+    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 714.29
+   },
+   {
+    "nome": "SPAZIO APERTO SERVIZI SOC. COOP. SOCIALE ONLUS",
+    "importo": 3728.61
+   },
+   {
+    "nome": "SERENI ORIZZONTI 1 SPA",
+    "importo": 5884.33
+   },
+   {
+    "nome": "A.LA.T.HA COOPERATIVA SOCIALE",
+    "importo": 14884.22
+   },
+   {
+    "nome": "C.R.M. COOP. SOCIALE ONLUS",
+    "importo": 2284.8
+   },
+   {
+    "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
+    "importo": 500.0
    }
   ],
   "importo_testuale": "0,00",
@@ -6662,7 +6776,7 @@
   "testo_disponibile": true,
   "e_rimodulazione": false,
   "importo_verificato": false,
-  "beneficiario_generico": false,
+  "beneficiario_generico": true,
   "atti_gemelli": null,
   "regola_importo": "prospetto di liquidazione (37 righe)",
   "importo_incerto": false
@@ -6818,6 +6932,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1236",
    "2026/897",
    "2026/761",
@@ -7208,7 +7323,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-13",
   "oggetto": "LIQUIDAZIONE FATTURA N. 114/PA EMESSA DA LA CORDATA SCS PER SERVIZIO DI ASSISTENZA AL CITTADINO NELLA PRESENTAZIONE DELLA DOMANDA TELEMATICA RELATIVA AI SERVIZI ABITATIVI PUBBLICI, AVVISO N. 13182",
-  "beneficiario": "Cordata Società Cooperativa Sociale",
+  "beneficiario": "LA CORDATA SOCIETA' COOPERATIVA SOCIALE",
   "importo_euro": 981.49,
   "cig": "BB6B3FA667",
   "categoria": "Amministrazione e servizi generali",
@@ -7361,7 +7476,9 @@
   "e_rimodulazione": false,
   "importo_verificato": true,
   "beneficiario_generico": false,
-  "atti_gemelli": null,
+  "atti_gemelli": [
+   "2026/1905"
+  ],
   "regola_importo": "somma di 1 righe di tabella",
   "importo_incerto": false
  },
@@ -7679,7 +7796,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-07-07",
   "oggetto": "SERVIZIO DI MANUTENZIONE ORDINARIA AL PATRIMONIO COMUNALE – OPERE DA IDRAULICO PRESSO LE STRUTTURE COMUNALI E ALLOGGI ERP. APPROVAZIONE DELLA MODIFICA DEL CONTRATTO AI SENSI DELL' ART. 106 COMMA 12, DEL D.LGS. N. 50/2016, A FAVORE DELLA SOCIETA’ L.G. TECNO IMPIANTI SRL DI GIUSSAGO (PV). ASSUNZIONE IMPEGNO DI SPESA. SMARTCIG Z0D38A32BB",
-  "beneficiario": "L.G. Tecno Impianti srl",
+  "beneficiario": "L.G. TECNO IMPIANTI SRL",
   "importo_euro": 741.2,
   "cig": "Z0D38A32BB",
   "categoria": "Urbanistica e casa",
@@ -9763,7 +9880,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-06-26",
   "oggetto": "DEMOLIZIONE SERBATOIO PENSILE PIAZZA DELLA CHIESA – COMUNE DI PIEVE EMANUELE (MI): APPROVAZIONE PROGETTO ESECUTIVO REDATTO DA CAP HOLDING - CIG BC216C101A",
-  "beneficiario": "Cap Holding S.p.A",
+  "beneficiario": "CAP HOLDING S.P.A.",
   "importo_euro": 249425.52,
   "cig": "BC216C101A",
   "categoria": "Urbanistica e casa",
@@ -9998,6 +10115,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1427",
    "2026/897",
    "2026/761",
@@ -13068,6 +13186,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1427",
    "2026/1236",
    "2026/761",
@@ -13249,7 +13368,7 @@
   "tipo_atto": "determinazione",
   "data_pubblicazione": "2026-04-30",
   "oggetto": "IMPEGNO DI SPESA PER IL SERVIZIO DI ASSISTENZA AL CITTADINO PER LA PRESENTAZIONE DELLA DOMANDA TELEMATICA RELATIVA AI SERVIZI ABITATIVI PUBBLICI, AVVISO N. 13182 - CIG BB6B3FA667",
-  "beneficiario": "Cooperativa La Cordata s.c.s.",
+  "beneficiario": "LA CORDATA SOCIETA' COOPERATIVA SOCIALE",
   "importo_euro": 804.5,
   "cig": "BB6B3FA667",
   "categoria": "Amministrazione e servizi generali",
@@ -14170,6 +14289,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1427",
    "2026/1236",
    "2026/897",
@@ -14558,6 +14678,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1427",
    "2026/1236",
    "2026/897",
@@ -14672,6 +14793,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": [
+   "2026/1903",
    "2026/1427",
    "2026/1236",
    "2026/897",

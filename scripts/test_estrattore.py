@@ -114,6 +114,34 @@ def test_liquidazione_imet():
     verifica("lo storno negativo annulla la riga esattoria", somma, 601334.66)
 
 
+def test_creditore_dal_prospetto():
+    """Il nome nel prospetto è l'unico certo. Nella prosa l'atto parla di
+    «operatore economico» e «affidatario» senza ripetere il nome, e in fondo
+    al PDF c'è ArubaPEC, che firma digitalmente il documento e non c'entra
+    niente con la spesa: veniva scambiata per il beneficiario."""
+    sezione("Chi incassa, secondo il prospetto di liquidazione")
+    from estrattore import leggi_prospetto_liquidazione, _estrai_con_regex
+    t = testo_atto("liquidazione-1918-2026")
+    if t is None:
+        return
+    totale, righe, creditori = leggi_prospetto_liquidazione(t)
+    verifica("creditore riconosciuto", [c["nome"] for c in creditori][:1], ["MERLO ROBERTO"])
+    verifica("totale dal prospetto", totale, 7727.22)
+    dati = _estrai_con_regex(t, "ASILO NIDO QUARTIERE DELLE ROSE", "liquidazione")
+    verifica("il beneficiario non è più il certificatore della firma",
+             dati["beneficiario"], "MERLO ROBERTO")
+    verifica("e nemmeno un frammento di frase",
+             dati["beneficiario"] not in ("dare atto che", None), True)
+
+    # Nel prospetto con lo split payment c'è anche la riga dell'esattoria:
+    # è l'IVA girata allo Stato, non un fornitore
+    t2 = testo_atto("liquidazione-1893-2026")
+    if t2:
+        _, _, cred2 = leggi_prospetto_liquidazione(t2)
+        verifica("l'esattoria IVA non è un fornitore",
+                 any("ESATTORIA" in c["nome"].upper() for c in cred2), False)
+
+
 def test_liquidazione_due_fatture():
     """SIVIS: l'atto liquida DUE fatture da 6.032,29. Il sito mostrava
     41.557,00, che è l'impegno della proroga citato in premessa."""
@@ -313,7 +341,15 @@ def test_categoria_dal_settore():
         ("AMBIENTE, ECOLOGIA  E SVILUPPO ECONOMICO", None),
         ("SETTORE VI AREA COMUNICAZIONE E RELAZIONI ESTERNE,EVENTI,"
          "SERVIZI CULTURALI E SPORTIVI", None),
-        # generici: non dicono nulla di utile
+        # "trasporti" contiene "sport" e "personale" contiene "persona":
+        # senza confini di parola il settore corrispondeva a due categorie e
+        # finiva per non deciderne nessuna
+        ("SETTORE MOBILITA E TRASPORTI", "Strade, viabilità e trasporti"),
+        ("PERSONALE E RISORSE UMANE", "Amministrazione e servizi generali"),
+        # generici per mestiere: fanno strade, scuole e municipio insieme,
+        # quindi il nome dell'ufficio non dice niente sulla singola spesa
+        ("LAVORI PUBBLICI - MANUTENZIONE - TRASPORTI", None),
+        ("SETTORE II OPERE PUBBLICHE", None),
         ("AREA TECNICA", None),
         ("SEGRETERIA GENERALE", "Amministrazione e servizi generali"),
         ("", None),
@@ -359,6 +395,7 @@ def main() -> int:
     test_numeri_italiani()
     test_soglie_di_legge()
     test_liquidazione_imet()
+    test_creditore_dal_prospetto()
     test_liquidazione_due_fatture()
     test_liquidazione_iva_non_doppia()
     test_liquidazione_prende_il_lordo()

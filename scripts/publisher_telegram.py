@@ -162,16 +162,21 @@ def main() -> int:
         log.warning("Secret Telegram mancanti: pubblicazione saltata.")
         return 0
 
+    # Il canale si verifica sempre, anche nei giorni senza spese nuove. Se il
+    # controllo stesse dopo, una configurazione rotta resterebbe invisibile
+    # finché non arriva un atto da pubblicare: si scoprirebbe il guasto nel
+    # momento peggiore, cioè quando c'è qualcosa da dire.
+    if not canale_raggiungibile(token, chat_id):
+        return 1
+
     if not NUOVE_JSON.exists():
         log.info("Nessun file nuove_spese.json: niente da pubblicare.")
         return 0
     spese = json.loads(NUOVE_JSON.read_text(encoding="utf-8"))
     if not spese:
-        log.info("Nessuna spesa nuova: niente da pubblicare.")
+        log.info("Nessuna spesa nuova oggi: niente da pubblicare, "
+                 "ma il canale risponde.")
         return 0
-
-    if not canale_raggiungibile(token, chat_id):
-        return 1
 
     oggi = date.today().strftime("%d/%m/%Y")
     totale = sum(s.get("importo_euro") or 0 for s in spese)

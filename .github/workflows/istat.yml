@@ -1,0 +1,65 @@
+name: Conti in chiaro — Dati ISTAT
+
+# Chi abita a Pieve: popolazione, stranieri, istruzione, lavoro, pendolari,
+# per Pieve, i comuni vicini e la Lombardia. Serve la pagina «Il territorio».
+#
+# Gira da solo una volta l'anno, a metà maggio: ISTAT pubblica la popolazione
+# al 1° gennaio in primavera. Si può lanciare anche a mano.
+#
+# Primo giro a mano: lascia "solo ispezione" = true. Il log dice quali tabelle
+# rispondono, per quali comuni e anni, con quali codici. Nessun file scritto.
+#
+# ISTAT blocca per ore chi fa troppe richieste: lo script ne fa poche e
+# distanziate (circa 6 minuti in tutto). Se fallisce con «ISTAT NON RISPONDE»
+# non rilanciare subito: aspetta un giorno.
+on:
+  schedule:
+    - cron: '0 5 15 5 *'
+  workflow_dispatch:
+    inputs:
+      solo_ispezione:
+        description: 'Solo ispezione: mostra cosa c''è nelle tabelle, non scrive niente'
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conti-in-chiaro-run
+  cancel-in-progress: false
+
+jobs:
+  istat:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configura Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Nel giro programmato inputs.solo_ispezione è vuoto: si applica.
+      - name: Scarica e calcola i dati ISTAT
+        run: |
+          if [ "${{ inputs.solo_ispezione }}" = "true" ]; then
+            python scripts/istat_estrai.py --ispeziona
+          else
+            python scripts/istat_estrai.py --applica
+          fi
+
+      - name: Salva i dati nel repository
+        if: ${{ inputs.solo_ispezione != true }}
+        run: |
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
+          git config merge.mantieni-locale.driver true
+          git pull --rebase --autostash
+          git add data/territorio.json
+          git diff --staged --quiet || git commit -m "Dati ISTAT: $(date '+%Y-%m-%d')"
+          git push

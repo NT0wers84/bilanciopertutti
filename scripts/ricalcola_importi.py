@@ -26,7 +26,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from estrattore import (estrai_importo, e_entrata_pura, impegni_dispositivo,
+from estrattore import (estrai_importo, e_entrata_pura, e_assunzione_personale,
+                        impegni_dispositivo,
                         _etichetta_multipla, leggi_prospetto_liquidazione,
                         chiave_beneficiario)
 
@@ -49,7 +50,8 @@ def importa(spese: list[dict], percorso: Path) -> int:
     """Reintegra atti che mancano dall'archivio (es. persi in un merge)."""
     presenti = {s["id"] for s in spese}
     nuovi = [r for r in json.loads(percorso.read_text(encoding="utf-8"))
-             if r["id"] not in presenti and not e_entrata_pura(r.get("oggetto", ""))]
+             if r["id"] not in presenti and not e_entrata_pura(r.get("oggetto", ""))
+             and not e_assunzione_personale(r.get("oggetto", ""))]
     if nuovi:
         log.info(f"REINTEGRATI {len(nuovi)} atti da {percorso.name}")
         for r in nuovi:

@@ -27,7 +27,8 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).parent))
 from estrattore import (chiave_beneficiario, e_non_beneficiario, e_entrata_pura,
-                        formato_beneficiario, tronca_alla_parola)
+                        e_assunzione_personale, formato_beneficiario,
+                        tronca_alla_parola)
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
@@ -211,23 +212,31 @@ def uniforma_presentazione(spese: list[dict]) -> int:
 
 
 def rimuovi_entrate(spese: list[dict]) -> list[dict]:
-    """Toglie dall'archivio gli atti di sola entrata.
+    """Toglie dall'archivio gli atti che non sono spese verso terzi.
 
-    Sono finiti dentro prima che e_spesa() li riconoscesse: canoni di
-    locazione, proventi delle multe, vendite di immobili. Sono soldi che
-    entrano, e sommarli alle uscite falsa i totali nel verso peggiore.
-    Gli atti misti (accertamento di entrata + contestuale impegno di spesa)
-    restano: quelli una spesa la fanno davvero.
+    Sono finiti dentro prima che e_spesa() li riconoscesse:
+      · atti di sola entrata (canoni di locazione, proventi delle multe,
+        vendite di immobili): soldi che entrano, e sommarli alle uscite falsa
+        i totali nel verso peggiore. Gli atti misti (accertamento di entrata +
+        contestuale impegno di spesa) restano: una spesa la fanno davvero;
+      · assunzioni di personale (concorsi, scorrimento di graduatorie):
+        stipendi di un dipendente, non pagamenti a un fornitore.
     """
     tenute, tolte = [], []
     for s in spese:
-        (tolte if e_entrata_pura(s.get("oggetto", "")) else tenute).append(s)
+        oggetto = s.get("oggetto", "")
+        if e_entrata_pura(oggetto):
+            tolte.append(("sola entrata", s))
+        elif e_assunzione_personale(oggetto):
+            tolte.append(("assunzione di personale", s))
+        else:
+            tenute.append(s)
     if tolte:
-        totale = sum(s.get("importo_euro") or 0 for s in tolte)
-        log.info(f"ATTI DI SOLA ENTRATA (non sono spese: {totale:,.2f} €)")
-        for s in sorted(tolte, key=lambda x: -(x.get("importo_euro") or 0)):
-            log.info(f"  {(s.get('importo_euro') or 0):>12,.2f} €  "
-                     f"n.{s['numero_raw']}  {s['oggetto'][:64]}")
+        totale = sum(s.get("importo_euro") or 0 for _, s in tolte)
+        log.info(f"ATTI CHE NON SONO SPESE VERSO TERZI ({totale:,.2f} €)")
+        for motivo, s in sorted(tolte, key=lambda x: -(x[1].get("importo_euro") or 0)):
+            log.info(f"  {(s.get('importo_euro') or 0):>12,.2f} €  {motivo:<24} "
+                     f"n.{s['numero_raw']}  {s['oggetto'][:60]}")
         log.info(f"→ {len(tolte)} atti rimossi dall'archivio")
     return tenute
 

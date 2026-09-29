@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from estrattore import (                                    # noqa: E402
     importo_italiano, estrai_importo, impegni_dispositivo,
     somma_prospetto_liquidazione, e_entrata_pura, e_variazione_bilancio,
-    categoria_da_settore,
+    e_assunzione_personale, categoria_da_settore,
 )
 from portale import metadati_scheda                          # noqa: E402
 from normalizza import ripulisci_coda, ripulisci_prefisso   # noqa: E402
@@ -261,6 +261,34 @@ def test_entrate_non_sono_spese():
 
     verifica("una variazione di bilancio non è spesa nuova",
              e_variazione_bilancio("VARIAZIONE AL BILANCIO DI PREVISIONE 2026"), True)
+
+    # Le assunzioni di personale non pagano un fornitore; straordinari,
+    # produttività e formazione invece restano. E "ASSUNZIONE IMPEGNO DI
+    # SPESA", la formula più comune degli atti di spesa, non va confusa.
+    sezione("Assunzioni di personale")
+    for oggetto, atteso in [
+        ("SCORRIMENTO GRADUATORIA DEL CONCORSO PUBBLICO, PER ESAMI, PER L’ASSUNZIONE "
+         "A TEMPO INDETERMINATO E A TEMPO PIENO DI N. 1 ISTRUTTORE", True),
+        ("ASSUNZIONE A TEMPO DETERMINATO DI UN AGENTE DI POLIZIA LOCALE", True),
+        ("ASSUNZIONE DI N. 2 COLLABORATORI TRAMITE MOBILITÀ ESTERNA", True),
+        ("ASSUNZIONE IMPEGNO DI SPESA PER LA GESTIONE DEL SERVIZIO DI ACCERTAMENTO", False),
+        ("ASSUNZIONE DI SPESA PER ATTIVITÀ DI MONITORAGGIO DELLA GARZAIA", False),
+        ("ASSUNZIONE DI UN IMPEGNO DI SPESA PER IL SERVIZIO DI PULIZIA", False),
+        ("DETERMINAZIONE DI LIQUIDAZIONE PRESTAZIONE DI LAVORO STRAORDINARIO "
+         "EFFETTUATO DAL PERSONALE DELL'AREA POLIZIA LOCALE", False),
+        ("COMPENSO INCENTIVANTE LA PRODUTTIVITÀ DEL PERSONALE DEI LIVELLI", False),
+        ("ISCRIZIONE DI UNA DIPENDENTE AL CORSO BASE DI SPECIALIZZAZIONE", False),
+        ("APPROVAZIONE DELLA GRADUATORIA DEFINITIVA PER L’ASSEGNAZIONE DI N. 17 "
+         "CONCESSIONI DI COMMERCIO SU AREE PUBBLICHE", False),
+        # finanziamento PNRR di lavori pubblici, non un concorso (atto 2026/1597)
+        ("LAVORI DI MANUTENZIONE STRAORDINARIA - RIFINANZIAMENTO CON MEDIE OPERE "
+         "SCORRIMENTO GRADUATORIA (DM DEL 08.11.2021). APPROVAZIONE", False),
+    ]:
+        verifica(f"e_assunzione_personale: {oggetto[:48]}",
+                 e_assunzione_personale(oggetto), atteso)
+    verifica("e_spesa esclude le assunzioni",
+             e_spesa("determinazione contabile",
+                     "ASSUNZIONE A TEMPO INDETERMINATO DI N. 1 ISTRUTTORE"), False)
 
 
 def test_nomi_beneficiari():

@@ -448,6 +448,31 @@ def e_entrata_pura(oggetto: str) -> bool:
     return not RE_SEGNO_DI_SPESA.search(testo)
 
 
+# Le assunzioni di personale (concorsi, scorrimento di graduatorie, assunzioni
+# a tempo determinato o indeterminato, mobilità in entrata) non sono spese
+# verso un fornitore: sono stipendi futuri di un dipendente, e il sito non li
+# segue. Restano invece straordinari, produttività, incentivi e formazione.
+# Attenzione a "ASSUNZIONE IMPEGNO DI SPESA", che è la formula più comune
+# degli atti di spesa: qui "assunzione" deve riferirsi a una persona.
+RE_ASSUNZIONE_PERSONALE = re.compile(
+    r"assunzion\w*\s+(?:a\s+tempo|in\s+servizio|in\s+ruolo|di\s+n\.?\s*\d|"
+    r"di\s+(?:un|una|due|tre)\s+(?!impegn)|mediante|tramite|"
+    r"per\s+(?:mobilit|scorrimento))|"
+    # Solo la graduatoria di un concorso: "MEDIE OPERE SCORRIMENTO GRADUATORIA
+    # (DM 08.11.2021)" è un finanziamento PNRR di lavori pubblici, e la forma
+    # generica toglieva dall'archivio sei cantieri per un milione di euro.
+    r"scorrimento\s+(?:della\s+|di\s+)?graduatori\w*\s+(?:del\s+|di\s+|della\s+)?"
+    r"(?:concorso|selezion)|"
+    r"concorso\s+pubblico|"
+    r"mobilit[àa]\s+(?:esterna|volontaria|tra\s+enti|in\s+entrata)",
+    re.IGNORECASE)
+
+
+def e_assunzione_personale(oggetto: str) -> bool:
+    """True per gli atti che assumono personale: non sono spese verso terzi."""
+    return bool(RE_ASSUNZIONE_PERSONALE.search(oggetto or ""))
+
+
 def e_rimodulazione(oggetto: str) -> bool:
     """True per gli atti che ridefiniscono un quadro economico esistente."""
     return bool(RE_RIMODULAZIONE.search(oggetto or ""))

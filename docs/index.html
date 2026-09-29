@@ -310,6 +310,15 @@ async function mostraTesto(id, bottone) {
   }
 }
 
+// Accorcia senza spezzare le parole: un testo che finisce a metà lettera
+// sembra un errore del sito, non un testo lungo. Vale per gli atti che non
+// hanno una descrizione scritta e mostrano l'oggetto originale.
+function troncaParola(testo, massimo) {
+  const t = (testo || "").replace(/\s+/g, " ").trim();
+  if (t.length <= massimo) return t;
+  return t.slice(0, massimo).replace(/\s+\S*$/, "").replace(/[ ,;:·–-]+$/, "") + "…";
+}
+
 const esc = s => (s || "").replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
@@ -627,7 +636,7 @@ function disegnaFeed() {
           ${s.importo_euro != null ? eur(s.importo_euro) : "importo da verificare nell'atto"}
           ${s.importo_incerto && s.importo_euro != null ? '<span class="asterisco">?</span>' : ""}</div>
       </div>
-      <div class="spesa-descrizione">${esc(s.descrizione_sintetica) || esc((s.oggetto || "").slice(0, 160))}</div>
+      <div class="spesa-descrizione">${esc(s.descrizione_sintetica) || esc(troncaParola(s.oggetto, 200))}</div>
       <div class="spesa-meta">
         ${tipoTag}
         <span class="tag categoria">${esc(s.categoria || "Da classificare")}</span>

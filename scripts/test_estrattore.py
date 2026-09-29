@@ -49,13 +49,19 @@ def verifica(descrizione: str, ottenuto, atteso) -> None:
 
 
 def testo_atto(id_atto: str):
-    """Il testo archiviato di un atto, o None se non è nell'archivio."""
+    """Il testo archiviato di un atto, o None se non è leggibile.
+
+    Un file irraggiungibile (manca, oppure il filesystem lo tiene occupato)
+    non deve far esplodere l'intera suite: il caso si salta e si dichiara,
+    perché un test non eseguito non è un test superato.
+    """
     p = TESTI / f"{id_atto}.txt.gz"
-    if not p.exists():
-        saltati.append(id_atto)
+    try:
+        with gzip.open(p, "rt", encoding="utf-8", errors="ignore") as f:
+            return f.read()
+    except (OSError, EOFError) as e:
+        saltati.append(f"{id_atto} ({type(e).__name__})")
         return None
-    with gzip.open(p, "rt", encoding="utf-8", errors="ignore") as f:
-        return f.read()
 
 
 def sezione(titolo: str) -> None:
@@ -277,6 +283,46 @@ def test_nomi_beneficiari():
         verifica(f"nome: {grezzo[:48]}", pulisci(grezzo), atteso)
 
 
+def test_forma_dei_nomi():
+    """Nell'elenco delle spese «MERLO ROBERTO» e «Ing. Roberto Merlo» uno
+    sotto l'altro sembrano due fornitori diversi. Il titolo professionale è
+    una qualifica, non il nome."""
+    sezione("Come si scrivono i beneficiari")
+    from estrattore import formato_beneficiario as f
+    for grezzo, atteso in [
+        ("professionista Roberto Migliorino", "ROBERTO MIGLIORINO"),
+        ("Ing. Roberto Merlo", "ROBERTO MERLO"),
+        ("Dott. Mirko Melis", "MIRKO MELIS"),
+        ("Arch. Rosalba Teodoro", "ROSALBA TEODORO"),
+        ("Leasys Italia S.p.A", "LEASYS ITALIA S.P.A"),
+        ("ATM S.P.A.", "ATM S.P.A."),          # il punto della sigla resta
+        ("sig.ra T.G.", "T.G."),
+        ("Fornitori diversi", "FORNITORI DIVERSI"),
+        ("un cittadino con disabilità", "UN CITTADINO CON DISABILITÀ"),
+        (None, None),
+    ]:
+        verifica(f"nome: {str(grezzo)[:40]}", f(grezzo), atteso)
+
+
+def test_descrizione_non_tagliata():
+    """L'oggetto di un atto comunale supera spesso i duecento caratteri:
+    tagliarlo a lunghezza fissa lasciava in fondo mezza parola, e chi legge
+    non capisce se manca del testo o se l'atto è scritto così."""
+    sezione("Descrizioni che non finiscono a metà parola")
+    from estrattore import tronca_alla_parola as t
+    lungo = ("MIGLIORAMENTO DEL DECORO URBANO E DEL TESSUTO URBANO SOCIALE ED "
+             "AMBIENTE CON INTERVENTI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI – "
+             "LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI")
+    risultato = t(lungo)
+    verifica("si chiude con i puntini", risultato.endswith("…"), True)
+    verifica("non spezza l'ultima parola",
+             risultato[:-1].rstrip().split()[-1] in lungo.split(), True)
+    verifica("resta entro la lunghezza voluta", len(risultato) <= 181, True)
+    verifica("un testo corto non viene toccato", t("Spesa breve"), "Spesa breve")
+    verifica("gli spazi doppi si normalizzano", t("a  b"), "a b")
+    verifica("niente testo, niente errore", t(None), None)
+
+
 def test_quota_annua():
     """Un affidamento di quindici anni non è spesa dell'anno: da solo valeva
     l'80% della somma di tutti gli atti."""
@@ -404,6 +450,8 @@ def main() -> int:
     test_salvaguardie_impegni()
     test_entrate_non_sono_spese()
     test_nomi_beneficiari()
+    test_forma_dei_nomi()
+    test_descrizione_non_tagliata()
     test_quota_annua()
     test_metadati_scheda()
     test_categoria_dal_settore()

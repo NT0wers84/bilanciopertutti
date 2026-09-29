@@ -24,7 +24,12 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger(__name__)
 
 NUOVE_JSON = Path("data/nuove_spese.json")
-MAX_MESSAGGI = 20  # oltre, meglio un solo messaggio riassuntivo
+# Telegram accetta circa venti messaggi al minuto per canale. Con la pausa
+# qui sotto se ne mandano diciassette: sotto il tetto, e trenta spese si
+# pubblicano in poco meno di due minuti. Oltre trenta si passa al riepilogo,
+# perché una giornata così va letta sul sito, non nelle notifiche.
+MAX_MESSAGGI = 30
+PAUSA_FRA_MESSAGGI = 3.5
 
 EMOJI_CATEGORIA = {
     "Amministrazione e servizi generali": "🏛️",
@@ -199,7 +204,7 @@ def main() -> int:
     else:
         for s in spese:
             inviati.append(invia(token, chat_id, formatta_spesa(s)))
-            time.sleep(1.5)  # rate limit Telegram: max ~20 msg/min per canale
+            time.sleep(PAUSA_FRA_MESSAGGI)
 
     riusciti = sum(1 for x in inviati if x)
     if riusciti == len(inviati):

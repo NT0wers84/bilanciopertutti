@@ -26,7 +26,8 @@ from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).parent))
-from estrattore import chiave_beneficiario, e_non_beneficiario, e_entrata_pura
+from estrattore import (chiave_beneficiario, e_non_beneficiario, e_entrata_pura,
+                        formato_beneficiario, tronca_alla_parola)
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
@@ -189,6 +190,26 @@ def normalizza_nomi(spese: list[dict]) -> int:
     return modificati
 
 
+def uniforma_presentazione(spese: list[dict]) -> int:
+    """Nomi in maiuscolo senza titoli, descrizioni mai tagliate a metà parola.
+
+    Vale per tutto l'archivio, compresi i record vecchi: nell'elenco delle
+    spese «MERLO ROBERTO» e «Ing. Roberto Merlo» uno sotto l'altro sembrano
+    due fornitori diversi.
+    """
+    n = 0
+    for s in spese:
+        prima = (s.get("beneficiario"), s.get("descrizione_sintetica"))
+        s["beneficiario"] = formato_beneficiario(s.get("beneficiario"))
+        s["descrizione_sintetica"] = tronca_alla_parola(s.get("descrizione_sintetica"))
+        for voce in (s.get("beneficiari_dettaglio") or []):
+            if isinstance(voce, dict) and voce.get("nome"):
+                voce["nome"] = formato_beneficiario(voce["nome"])
+        if prima != (s.get("beneficiario"), s.get("descrizione_sintetica")):
+            n += 1
+    return n
+
+
 def rimuovi_entrate(spese: list[dict]) -> list[dict]:
     """Toglie dall'archivio gli atti di sola entrata.
 
@@ -261,6 +282,9 @@ def main() -> int:
         return 1
     spese = json.loads(SPESE.read_text(encoding="utf-8"))
     partenza = len(spese)
+
+    n_forma = uniforma_presentazione(spese)
+    log.info(f"FORMA DEI NOMI E DELLE DESCRIZIONI\n→ {n_forma} record uniformati\n")
 
     spese = rimuovi_entrate(spese)
     log.info("")

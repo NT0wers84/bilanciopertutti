@@ -343,6 +343,51 @@ def categoria_da_settore(proponente: str) -> str | None:
     return trovate.pop() if len(trovate) == 1 else None
 
 
+# I nomi arrivano dagli atti in tutte le grafie possibili: «MERLO ROBERTO» dal
+# prospetto contabile, «Ing. Roberto Merlo» dalla prosa, «professionista
+# Roberto Migliorino» da una frase mal tagliata. Nell'elenco delle spese
+# convivono male. Si uniformano in maiuscolo, che è la forma dei registri
+# contabili, e si toglie il titolo professionale: è una qualifica, non il nome.
+RE_TITOLO_PROFESSIONALE = re.compile(
+    r"^(?:il\s+|la\s+|lo\s+)?"
+    r"(?:professionist[ae]|profess\.?|dott(?:oressa|\.ssa|ore|\.)?|"
+    r"ing(?:egnere|\.)?|arch(?:itetto|\.)?|geom(?:etra|\.)?|"
+    r"avv(?:ocato|\.)?|rag(?:ioniere|\.)?|p\.?\s?i\.?|"
+    r"sig(?:nora|nor|\.ra|\.)?)\s+(?=\S)", re.IGNORECASE)
+
+
+# Il punto finale di una sigla fa parte del nome: "ATM S.P.A." e le iniziali
+# di una persona ("T.G.") non vanno mutilate.
+RE_FINE_SIGLA = re.compile(r"(?:\b\w\.){2,}$|\b[A-Za-z]{1,4}\.$")
+
+
+def formato_beneficiario(nome: str | None) -> str | None:
+    """Il nome come va mostrato: maiuscolo, senza titolo professionale."""
+    if not nome:
+        return nome
+    ripulito = RE_TITOLO_PROFESSIONALE.sub("", nome.strip()).strip(" ,;-")
+    if not RE_FINE_SIGLA.search(ripulito):
+        ripulito = ripulito.strip(" .,;-")
+    return (ripulito or nome.strip()).upper()
+
+
+def tronca_alla_parola(testo: str | None, massimo: int = 180) -> str | None:
+    """Accorcia senza spezzare le parole a metà.
+
+    L'oggetto di un atto comunale supera spesso i duecento caratteri, e
+    tagliarlo a lunghezza fissa lascia in fondo mezza parola o una sigla
+    mutilata: chi legge non capisce se manca del testo o se l'atto è scritto
+    così. Con i puntini di sospensione si vede che il seguito esiste.
+    """
+    if not testo:
+        return testo
+    testo = " ".join(testo.split())
+    if len(testo) <= massimo:
+        return testo
+    tagliato = testo[:massimo].rsplit(" ", 1)[0].rstrip(" ,;:·–-")
+    return (tagliato or testo[:massimo].rstrip()) + "…"
+
+
 def categoria_da_testo(testo: str) -> str:
     """
     Categoria dedotta dalle parole chiave. Ultima risorsa quando il modello
@@ -706,6 +751,12 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
         risultato[k] = v.strip() if isinstance(v, str) and v.strip() else None
     risultato["iva_inclusa"] = (risultato.get("iva_inclusa")
                                 if isinstance(risultato.get("iva_inclusa"), bool) else None)
+
+    # Ultimo passaggio, comune a Groq e regex: il nome esce sempre nella stessa
+    # forma, e la descrizione non finisce mai a metà parola.
+    risultato["beneficiario"] = formato_beneficiario(risultato.get("beneficiario"))
+    risultato["descrizione_sintetica"] = tronca_alla_parola(
+        risultato.get("descrizione_sintetica"))
     return risultato
 
 
@@ -1210,7 +1261,7 @@ def _schema_vuoto(oggetto: str) -> dict:
         "importo_euro": None, "importo_e_pluriennale": False,
         "durata_anni": None, "importo_primo_anno_testuale": None,
         "iva_inclusa": None, "cig": None, "capitolo_bilancio": None,
-        "descrizione_sintetica": oggetto[:180] if oggetto else None,
+        "descrizione_sintetica": tronca_alla_parola(oggetto) if oggetto else None,
         "categoria": "Da classificare",
     }
 
@@ -1250,8 +1301,9 @@ def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
             return {**_schema_vuoto(oggetto), "importo_euro": importo,
                     "regola_importo": regola, "importo_incerto": incerto,
                     "cig": _cerca_cig(completo),
-                    "beneficiario": (nomi[0] if len(nomi) == 1
-                                     else _etichetta_multipla(f"{len(nomi)} fornitori")),
+                    "beneficiario": formato_beneficiario(
+                        nomi[0] if len(nomi) == 1
+                        else _etichetta_multipla(f"{len(nomi)} fornitori")),
                     "n_beneficiari": len(nomi),
                     # Con più fornitori l'elenco dice chi ha preso quanto,
                     # invece di nascondere tutto dietro «Fornitori diversi»
@@ -1267,7 +1319,8 @@ def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
         return {**_schema_vuoto(oggetto), "importo_euro": importo,
                 "regola_importo": regola, "importo_incerto": incerto,
                 "cig": _cerca_cig(completo),
-                "beneficiario": _etichetta_multipla(f"{len(voci)} fornitori"),
+                "beneficiario": formato_beneficiario(
+                    _etichetta_multipla(f"{len(voci)} fornitori")),
                 "n_beneficiari": len(voci), "beneficiari_dettaglio": voci}
 
     beneficiario = None
@@ -1278,7 +1331,8 @@ def _estrai_con_regex(testo: str, oggetto: str, tipo_portale: str = "") -> dict:
 
     return {**_schema_vuoto(oggetto), "importo_euro": importo,
             "regola_importo": regola, "importo_incerto": incerto,
-            "cig": _cerca_cig(completo), "beneficiario": beneficiario}
+            "cig": _cerca_cig(completo),
+            "beneficiario": formato_beneficiario(beneficiario)}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

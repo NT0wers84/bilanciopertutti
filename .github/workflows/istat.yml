@@ -54,8 +54,11 @@ jobs:
             python scripts/istat_estrai.py --applica
           fi
 
+      # Anche se il passo prima è rosso: se ISTAT è andato e solo il file del
+      # MEF manca, i dati ISTAT vanno salvati lo stesso. Se non c'è niente di
+      # nuovo, il commit non parte. Il workflow resta comunque rosso.
       - name: Salva i dati nel repository
-        if: ${{ inputs.solo_ispezione != true }}
+        if: ${{ !cancelled() && inputs.solo_ispezione != true }}
         run: |
           git config user.name "ContiInChiaroBot"
           git config user.email "bot@conti-in-chiaro.local"

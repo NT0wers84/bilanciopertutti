@@ -39,6 +39,9 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from irpef_estrai import scarica_redditi  # noqa: E402
+
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
 
@@ -496,14 +499,34 @@ def main() -> int:
         return 1
     stampa_indicatori(ind)
 
+    # I redditi vengono dal MEF, non da ISTAT: se il loro file non si trova,
+    # i dati ISTAT si salvano lo stesso e si tengono i redditi dell'anno prima,
+    # ma il workflow finisce in rosso perché qualcuno se ne accorga.
+    redditi = scarica_redditi(COMUNI, LOMBARDIA, USER_AGENT, TIMEOUT, args.ispeziona)
+    esito = 0
+    if redditi:
+        log.info(f"\n  redditi (anno d'imposta {redditi['anno_imposta']})")
+        for a, v in redditi["valori"].items():
+            log.info(f"    {AREE.get(a, a):<18} {v}")
+        mancanti = [AREE[a] for a in AREE if a not in redditi["valori"]]
+        if mancanti:
+            log.error(f"  REDDITI MANCANTI per: {', '.join(mancanti)}")
+            esito = 1
+    else:
+        esito = 1
+        if DESTINAZIONE.exists():
+            redditi = json.loads(DESTINAZIONE.read_text(encoding="utf-8")).get("redditi")
+            log.error("  Redditi non aggiornati: tengo quelli già salvati.")
+
     if args.applica:
-        ind = {"fonte": "ISTAT, esploradati.istat.it",
+        ind = {"fonte": "ISTAT, esploradati.istat.it; MEF, dichiarazioni IRPEF",
                "aggiornato": date.today().isoformat(),
-               "aree": AREE, "pieve": PIEVE, "lombardia": LOMBARDIA, **ind}
+               "aree": AREE, "pieve": PIEVE, "lombardia": LOMBARDIA, **ind,
+               "redditi": redditi}
         DESTINAZIONE.write_text(json.dumps(ind, ensure_ascii=False, indent=1),
                                 encoding="utf-8")
         log.info(f"\nScritto {DESTINAZIONE}")
-    return 0
+    return esito
 
 
 if __name__ == "__main__":

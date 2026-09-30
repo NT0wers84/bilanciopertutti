@@ -1,5 +1,5 @@
 {
- "fonte": "ISTAT, esploradati.istat.it",
+ "fonte": "ISTAT, esploradati.istat.it; MEF, dichiarazioni IRPEF",
  "aggiornato": "2026-09-30",
  "aree": {
   "015173": "Pieve Emanuele",
@@ -485,5 +485,109 @@
     }
    }
   }
+ },
+ "redditi": {
+  "anno_imposta": 2024,
+  "valori": {
+   "ITC4": {
+    "contribuenti_con_reddito": 7378734,
+    "reddito_medio": 29483,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 18.3,
+     "10–15 mila": 9.1,
+     "15–26 mila": 27.7,
+     "26–55 mila": 36.5,
+     "55–75 mila": 4.1,
+     "75–120 mila": 3.0,
+     "oltre 120 mila": 1.4
+    }
+   },
+   "015015": {
+    "contribuenti_con_reddito": 5337,
+    "reddito_medio": 57859,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 18.9,
+     "10–15 mila": 0.0,
+     "15–26 mila": 15.7,
+     "26–55 mila": 34.4,
+     "55–75 mila": 11.1,
+     "75–120 mila": 10.2,
+     "oltre 120 mila": 9.6
+    }
+   },
+   "015115": {
+    "contribuenti_con_reddito": 6790,
+    "reddito_medio": 28720,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 15.9,
+     "10–15 mila": 8.6,
+     "15–26 mila": 28.4,
+     "26–55 mila": 40.0,
+     "55–75 mila": 4.1,
+     "75–120 mila": 2.2,
+     "oltre 120 mila": 0.9
+    }
+   },
+   "015125": {
+    "contribuenti_con_reddito": 7609,
+    "reddito_medio": 26903,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 14.8,
+     "10–15 mila": 8.3,
+     "15–26 mila": 28.7,
+     "26–55 mila": 42.4,
+     "55–75 mila": 3.8,
+     "75–120 mila": 2.0,
+     "oltre 120 mila": 0.0
+    }
+   },
+   "015159": {
+    "contribuenti_con_reddito": 10743,
+    "reddito_medio": 29401,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 15.5,
+     "10–15 mila": 7.9,
+     "15–26 mila": 24.7,
+     "26–55 mila": 42.6,
+     "55–75 mila": 5.4,
+     "75–120 mila": 3.9,
+     "oltre 120 mila": 0.0
+    }
+   },
+   "015173": {
+    "contribuenti_con_reddito": 11805,
+    "reddito_medio": 26119,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 16.4,
+     "10–15 mila": 8.8,
+     "15–26 mila": 29.4,
+     "26–55 mila": 40.9,
+     "55–75 mila": 2.6,
+     "75–120 mila": 1.4,
+     "oltre 120 mila": 0.5
+    }
+   },
+   "015189": {
+    "contribuenti_con_reddito": 29405,
+    "reddito_medio": 24212,
+    "fasce_pct": {
+     "zero o meno": 0.0,
+     "fino a 10 mila": 19.4,
+     "10–15 mila": 10.5,
+     "15–26 mila": 29.6,
+     "26–55 mila": 36.2,
+     "55–75 mila": 2.8,
+     "75–120 mila": 1.5,
+     "oltre 120 mila": 0.0
+    }
+   }
+  },
+  "fonte": "https://www1.finanze.gov.it/finanze/analisi_stat/public/v_4_0_0/contenuti/Redditi_e_principali_variabili_IRPEF_su_base_comunale_CSV_2024.zip"
  }
 }

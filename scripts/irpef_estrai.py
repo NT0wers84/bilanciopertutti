@@ -7,10 +7,9 @@ e si aggiornano con lo stesso workflow annuale.
 LA FONTE
 Il Dipartimento delle Finanze pubblica ogni anno un file con tutti i comuni
 italiani: numero di contribuenti, redditi per tipo, redditi per fascia.
-L'anno d'imposta N esce nella primavera dell'anno N+2. Il file si trova
-leggendo la pagina dell'anno di pubblicazione, così un cambio di percorso sul
-sito del MEF non rompe niente; se la pagina non lo elenca si prova l'indirizzo
-noto.
+L'anno d'imposta N esce nella primavera dell'anno N+2. Il file si cerca
+all'indirizzo noto, dall'anno più recente all'indietro; la pagina del MEF è
+solo un ripiego. Un file più vecchio di RITARDO_MASSIMO anni viene scartato.
 
 Il tracciato non si fissa per posizione: le colonne delle fasce si
 riconoscono dal nome («Reddito complessivo da 10000 a 15000 euro - Frequenza»),
@@ -54,29 +53,44 @@ def _scarica(url: str, user_agent: str, timeout: int) -> bytes | None:
         return None
 
 
+# L'anno d'imposta più recente pubblicato è di solito quello di due anni fa
+# (a settembre 2026 c'è il 2024). Un file più vecchio di così è un errore di
+# ricerca, non un dato da pubblicare.
+RITARDO_MASSIMO = 4
+
+
+def _esiste(url: str, user_agent: str, timeout: int) -> bool:
+    """GET senza leggere il corpo: alcuni server rifiutano HEAD."""
+    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.status == 200
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def trova_file(user_agent: str, timeout: int) -> tuple[str, int] | None:
-    """(url, anno d'imposta) del file più recente. Si parte dalla pagina
-    dell'anno in corso e si torna indietro: il primo elenco che contiene il
-    file dà l'anno più recente pubblicato."""
+    """(url, anno d'imposta) del file più recente.
+
+    Prima l'indirizzo noto, dall'anno più recente plausibile all'indietro. La
+    pagina del MEF viene solo dopo: al primo giro l'avevamo messa davanti e ha
+    restituito il file del 2012, perché la pagina richiesta non era quella
+    attesa e il link più recente che conteneva era di dieci anni prima."""
     oggi = date.today().year
-    for anno_pagina in (oggi, oggi - 1, oggi - 2):
+    for anno in range(oggi - 1, oggi - RITARDO_MASSIMO - 1, -1):
+        url = NOTO.format(anno=anno)
+        if _esiste(url, user_agent, timeout):
+            return url, anno
+    for anno_pagina in (oggi, oggi - 1):
         html = _scarica(PAGINA.format(anno=anno_pagina), user_agent, timeout)
         if not html:
             continue
-        trovati = RE_LINK.findall(html.decode("utf-8", "ignore"))
+        trovati = [(p, int(a)) for p, a in RE_LINK.findall(html.decode("utf-8", "ignore"))
+                   if int(a) >= oggi - RITARDO_MASSIMO]
         if trovati:
             percorso, anno = max(trovati, key=lambda t: t[1])
             url = percorso if percorso.startswith("http") else BASE_FILE + percorso.lstrip("./")
-            return url, int(anno)
-    # Ripiego: l'indirizzo noto, per gli anni d'imposta plausibili
-    for anno in (oggi - 2, oggi - 3):
-        url = NOTO.format(anno=anno)
-        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": user_agent})
-        try:
-            with urllib.request.urlopen(req, timeout=timeout):
-                return url, anno
-        except Exception:  # noqa: BLE001
-            continue
+            return url, anno
     return None
 
 
@@ -198,6 +212,12 @@ def scarica_redditi(comuni: dict, lombardia: str, user_agent: str, timeout: int,
             log.info("  intestazione: " + " | ".join(intestazione[:14]) + " | …")
         risultato = calcola(intestazione, righe, comuni, lombardia)
         risultato["fonte"] = url
+        # Il file dichiara il proprio anno: se non torna con quello cercato o
+        # è troppo vecchio, meglio nessun dato che un dato di dieci anni fa.
+        dichiarato = risultato.get("anno_imposta")
+        if dichiarato != anno or anno < date.today().year - RITARDO_MASSIMO:
+            log.error(f"  anno del file {dichiarato}, atteso {anno}: scartato")
+            return None
         return risultato
     except Exception as e:  # noqa: BLE001
         log.error(f"  file IRPEF illeggibile: {type(e).__name__}: {e}")

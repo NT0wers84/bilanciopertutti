@@ -207,13 +207,13 @@ def somma(righe, **uguale) -> float:
                if all(r.get(k) == v for k, v in uguale.items()))
 
 
-def anno_completo(righe) -> str | None:
+def anno_completo(righe, aree=AREE) -> str | None:
     """L'anno più recente in cui TUTTE le aree hanno dati: confrontare Pieve
     del 2026 con un vicino del 2025 sarebbe un confronto falso."""
     per_anno = defaultdict(set)
     for r in righe:
         per_anno[r["TIME_PERIOD"]].add(r["REF_AREA"])
-    completi = [a for a, aree in per_anno.items() if set(AREE) <= aree]
+    completi = [a for a, presenti in per_anno.items() if set(aree) <= presenti]
     return max(completi) if completi else None
 
 
@@ -303,6 +303,69 @@ def ind_pendolari(righe) -> dict:
     return {"anno": anno, "valori": valori}
 
 
+def ind_famiglie(righe, componenti) -> dict:
+    """Famiglie di una sola persona, famiglie numerose e componenti medi.
+    Il filtro sul totale di NUM_FR_MENB è una cautela: oggi la tabella ha
+    solo quello, ma se ISTAT aggiungesse il dettaglio si conterebbe due volte."""
+    righe = [r for r in righe if r.get("NUM_FR_MENB", "TOT") == "TOT"]
+    anno = anno_completo(righe)
+    valori = {}
+    for a in AREE:
+        r_a = [r for r in righe if r["REF_AREA"] == a and r["TIME_PERIOD"] == anno]
+        tot = somma(r_a, NUM_MEMB="TOT")
+        media = next((r["OBS_VALUE"] for r in componenti
+                      if r["REF_AREA"] == a and r["TIME_PERIOD"] == anno), None)
+        valori[a] = {"famiglie": round(tot),
+                     "una_persona_pct": pct(somma(r_a, NUM_MEMB="N1"), tot),
+                     "cinque_e_piu_pct": pct(somma(r_a, NUM_MEMB="N5")
+                                             + somma(r_a, NUM_MEMB="N6_GE"), tot),
+                     "componenti_medi": media}
+    return {"anno": anno, "valori": valori}
+
+
+# Settori del censimento, nell'ordine in cui si mostrano
+SETTORI = {"A": "Agricoltura", "0011": "Industria e costruzioni",
+           "0026": "Commercio, alberghi e ristoranti",
+           "0091": "Trasporti, logistica e comunicazione",
+           "0092": "Finanza, immobiliare e servizi alle imprese",
+           "0093": "Pubblica amministrazione, scuola, sanità e altri servizi"}
+
+
+def ind_occupati(settore, posizione) -> dict:
+    anno = anno_completo(settore)
+    valori = {}
+    for a in AREE:
+        s_a = [r for r in settore if r["REF_AREA"] == a and r["TIME_PERIOD"] == anno
+               and r.get("GENDER") == "T"]
+        p_a = [r for r in posizione if r["REF_AREA"] == a and r["TIME_PERIOD"] == anno
+               and r.get("GENDER") == "T"]
+        tot = somma(s_a, BRANCH_ECON_ACT="0010")
+        valori[a] = {"settori_pct": {nome: pct(somma(s_a, BRANCH_ECON_ACT=c), tot)
+                                     for c, nome in SETTORI.items()},
+                     "indipendenti_pct": pct(somma(p_a, EMPLOYMENT_STATUS="22"),
+                                             somma(p_a, EMPLOYMENT_STATUS="99"))}
+    return {"anno": anno, "valori": valori}
+
+
+def ind_previsioni(righe) -> dict:
+    """Previsioni comunali ISTAT, scenario mediano. Esistono solo per i
+    comuni: la Lombardia non c'è, e il confronto è fra Pieve e i vicini."""
+    anni = sorted({r["TIME_PERIOD"] for r in righe})
+    if not anni:
+        return {}
+    primo, ultimo = anni[0], anni[-1]
+    valori = {}
+    for a in COMUNI:
+        v = lambda tipo, anno: next((r["OBS_VALUE"] for r in righe
+                                     if r["REF_AREA"] == a and r["TIME_PERIOD"] == anno
+                                     and r.get("DATA_TYPE") == tipo), None)
+        valori[a] = {anno: {"over65_pct": v("POP65OVER", anno),
+                            "under15_pct": v("POP014", anno),
+                            "eta_media": v("MEANAGEP", anno)}
+                     for anno in (primo, ultimo)}
+    return {"da": primo, "a": ultimo, "valori": valori}
+
+
 def calcola(tab: dict) -> dict:
     pop = ind_popolazione(tab["popolazione"]["righe"])
     return {
@@ -311,6 +374,11 @@ def calcola(tab: dict) -> dict:
         "istruzione": ind_istruzione(tab["istruzione"]["righe"]),
         "lavoro": ind_lavoro(tab["lavoro"]["righe"]),
         "pendolari": ind_pendolari(tab["pendolari"]["righe"]),
+        "famiglie": ind_famiglie(tab["famiglie"]["righe"],
+                                 tab["componenti_famiglia"]["righe"]),
+        "occupati": ind_occupati(tab["occupati_settore"]["righe"],
+                                 tab["occupati_posizione"]["righe"]),
+        "previsioni": ind_previsioni(tab["previsioni"]["righe"]),
     }
 
 
@@ -350,7 +418,11 @@ def stampa_indicatori(ind: dict) -> None:
                ("stranieri %", ind["stranieri"]["anno"], ind["stranieri"]["valori"]),
                ("istruzione", ind["istruzione"]["anno"], ind["istruzione"]["valori"]),
                ("lavoro", ind["lavoro"]["anno"], ind["lavoro"]["valori"]),
-               ("pendolari", ind["pendolari"]["anno"], ind["pendolari"]["valori"])]
+               ("pendolari", ind["pendolari"]["anno"], ind["pendolari"]["valori"]),
+               ("famiglie", ind["famiglie"]["anno"], ind["famiglie"]["valori"]),
+               ("occupati", ind["occupati"]["anno"], ind["occupati"]["valori"]),
+               ("previsioni", f"{ind['previsioni'].get('da')}→{ind['previsioni'].get('a')}",
+                ind["previsioni"].get("valori", {}))]
     for titolo, anno, valori in blocchi:
         log.info(f"  {titolo} ({anno})")
         for a, v in valori.items():

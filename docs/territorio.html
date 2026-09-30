@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Il territorio — Conti in chiaro, Pieve Emanuele</title>
+<meta name="description" content="Chi abita a Pieve Emanuele: popolazione, età, famiglie, istruzione, lavoro, redditi e pendolari, a confronto con i comuni vicini e con la Lombardia. Dati ufficiali ISTAT e MEF.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blu: #1B4FCA; --blu-scuro: #123785; --verde: #0E7C5B; --ambra: #B08A00;
+    --rosso: #B3372B; --fondo: #F6F5F1; --carta: #FFFFFF; --testo: #26251F;
+    --grigio: #636158; --bordo: #E4E2DA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--fondo); color: var(--testo); line-height: 1.55; }
+  a { color: var(--blu); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header gemello di «Albo in chiaro»: vedi la nota in index.html */
+  header { background: var(--blu-scuro); color: #fff;
+           padding: 36px 16px 28px; text-align: center; }
+  header .cap { font-size: 11px; font-weight: 600; text-transform: uppercase;
+                letter-spacing: .14em; color: rgba(255,255,255,.9); }
+  header h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400;
+              font-size: 34px; letter-spacing: -0.01em; margin: 10px 0 0; }
+  header .sub { font-size: 15px; margin-bottom: 7px; }
+  header .desc { font-size: 12px; color: rgba(255,255,255,.85); letter-spacing: .01em;
+                 line-height: 1.7; max-width: 560px; margin: 0 auto; }
+  nav.principale { margin-top: 20px; display: flex; gap: 8px;
+                   flex-wrap: wrap; justify-content: center; }
+  nav.principale a { color: #fff; text-decoration: none; font-size: 13px;
+    padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,.12); }
+  nav.principale a.attiva { background: #fff; color: var(--blu-scuro); font-weight: 600; }
+
+  h2.sezione { font-size: 20px; margin: 30px 0 4px; scroll-margin-top: 16px; }
+  h3.sezione { font-size: 1.05rem; margin: 22px 0 4px; }
+  .sottotitolo { font-size: 13.5px; color: var(--grigio); margin-bottom: 14px; max-width: 760px; }
+
+  .card { background: var(--carta); border: 1px solid var(--bordo);
+          border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+  .scorre { overflow-x: auto; }
+  .kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .kpi .valore { font-size: 25px; font-weight: 700; letter-spacing: -0.5px; }
+  .kpi .etichetta { font-size: 12px; color: var(--grigio); margin-top: 3px; }
+  .rosso { color: var(--rosso); } .verde { color: var(--verde); } .ambra { color: var(--ambra); }
+
+  .grafico { position: relative; height: 300px; }
+  .grafico.alto { height: 400px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--bordo); }
+  th:first-child, td:first-child { text-align: left; }
+  th { background: var(--fondo); font-size: 11.5px; color: var(--grigio);
+       text-transform: uppercase; letter-spacing: .3px; }
+  tr:last-child td { border-bottom: none; }
+  tr.pieve td { font-weight: 700; background: #FBEDEB; }
+  tr.regione td { color: var(--grigio); font-style: italic; }
+
+  .spiegazione { background: #EEF3FD; border: 1px solid #C6DAFC; border-radius: 10px;
+    padding: 12px 14px; font-size: 13px; color: #123785; margin: 12px 0; }
+  .cautela { background: #FDF1DC; border: 1px solid #EFD9A8; border-radius: 10px;
+    padding: 12px 14px; font-size: 12.5px; color: #6B4E00; margin: 12px 0; }
+  details.fonti { font-size: 12px; color: var(--grigio); margin: 4px 0 8px; }
+  details.fonti summary { cursor: pointer; color: var(--blu); }
+  details.fonti p { margin-top: 6px; }
+
+  footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
+           padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
+  footer p { margin-bottom: 8px; max-width: 820px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="cap">Monitoraggio civico indipendente</p>
+    <h1>Conti in chiaro</h1>
+    <p class="sub">Pieve Emanuele</p>
+    <p class="desc">Chi abita a Pieve Emanuele: quanti siamo, che età abbiamo, come vivono
+       le famiglie, quanto si studia, dove si lavora, quanto si guadagna. A confronto con i
+       comuni vicini e con la Lombardia.</p>
+    <nav class="principale">
+      <a href="index.html">Spese quotidiane</a>
+      <a href="bilanci.html">Bilanci</a>
+      <a href="confronti.html">Come siamo messi</a>
+      <a href="territorio.html" class="attiva">Il territorio</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="contenuto">
+  <p style="padding:40px 0;color:var(--grigio)">Caricamento dati…</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Perché questa pagina.</strong> I conti del Comune si leggono meglio sapendo
+       chi li paga e chi usa i servizi. Una popolazione più anziana chiede più assistenza,
+       redditi più bassi significano meno addizionale IRPEF.</p>
+    <p><strong>Cosa questi dati non dicono.</strong> Descrivono il territorio, non giudicano
+       l'amministrazione: nessuno di questi numeri dipende dalle scelte del Comune nel breve
+       periodo. Servono come contesto per le altre pagine.</p>
+    <p id="fonti"></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+// toFixed() produce il punto decimale: in italiano serve la virgola
+const dec = (v, n = 1) => v == null ? "n.d."
+  : v.toLocaleString("it-IT", {minimumFractionDigits: n, maximumFractionDigits: n});
+const num = v => v == null ? "n.d." : Math.round(v).toLocaleString("it-IT", {useGrouping: "always"});
+const eur = v => v == null ? "n.d." : num(v) + " €";
+const perc = v => v == null ? "n.d." : dec(v) + "%";
+const segno = v => v == null ? "n.d." : (v > 0 ? "+" : "") + dec(v) + "%";
+
+const COLORE_PIEVE = "#B3372B", COLORE_LOMBARDIA = "#636158";
+const COLORI_VICINI = ["#1B4FCA", "#5B84E0", "#8FAEF0", "#0E7C5B", "#B08A00"];
+
+let D;   // i dati, caricati da data/territorio.json
+const nome = a => D.aree[a];
+const comuni = () => Object.keys(D.aree).filter(a => a !== D.lombardia);
+const tutte = () => Object.keys(D.aree);   // comuni + Lombardia, Pieve per prima
+
+// Dove sta Pieve fra i sei comuni per un valore: la frase si costruisce dai
+// dati, così resta vera quando i dati si aggiornano. Un aggettivo scritto a
+// mano («la più bassa») smetterebbe di esserlo senza che nessuno se ne accorga.
+// `alto` e `basso` sono le frasi per il primo e l'ultimo posto; `medio`
+// riceve posizione e numero di comuni (1 = valore più alto).
+function posizione(valori, alto, basso, medio) {
+  const v = comuni().map(a => valori[a]).filter(x => x != null);
+  const p = valori[D.pieve];
+  if (p == null || v.length < 2) return "";
+  const sopra = v.filter(x => x > p).length;
+  if (sopra === 0) return alto;
+  if (sopra === v.length - 1) return basso;
+  return medio(sopra + 1, v.length);
+}
+// «più alta», «più bassa» o «in linea», con una soglia sotto cui la
+// differenza non va raccontata come differenza.
+const confronto = (a, b, soglia, piu, meno, pari) =>
+  a == null || b == null ? pari : a - b > soglia ? piu : b - a > soglia ? meno : pari;
+
+function righe(celle, opz = {}) {
+  return tutte().filter(a => !opz.soloComuni || a !== D.lombardia).map(a => `
+    <tr class="${a === D.pieve ? "pieve" : a === D.lombardia ? "regione" : ""}">
+      <td>${esc(nome(a))}</td>${celle(a).map(c => `<td>${c}</td>`).join("")}</tr>`).join("");
+}
+
+function tabella(intestazioni, celle, opz) {
+  return `<div class="card scorre"><table><thead><tr>${intestazioni.map(h => `<th>${h}</th>`).join("")}
+    </tr></thead><tbody>${righe(celle, opz)}</tbody></table></div>`;
+}
+
+const fonte = testo => `<details class="fonti"><summary>Fonte e avvertenze</summary><p>${testo}</p></details>`;
+
+// ── Sezioni ──────────────────────────────────────────────────────────────────
+
+function sintesi() {
+  const p = D.pieve, L = D.lombardia, pop = D.popolazione;
+  const anni = Object.keys(pop.serie[p]).sort();
+  const primo = anni[0], ultimo = anni[anni.length - 1];
+  const varPieve = (pop.serie[p][ultimo] / pop.serie[p][primo] - 1) * 100;
+  const ist = D.istruzione.valori, lav = D.lavoro.valori, pen = D.pendolari.valori;
+  const red = D.redditi ? D.redditi.valori : null;
+  return `
+    <h2 class="sezione">In sintesi</h2>
+    <div class="sottotitolo">Pieve Emanuele a confronto con la Lombardia. Ogni numero ha
+      l'anno a cui si riferisce: le fonti non escono tutte insieme.</div>
+    <div class="kpi">
+      <div class="card"><div class="valore">${num(pop.serie[p][ultimo])}</div>
+        <div class="etichetta">abitanti al 1° gennaio ${ultimo} (${segno(varPieve)} dal ${primo})</div></div>
+      <div class="card"><div class="valore">${perc(pop.struttura_eta[p].over65_pct)}</div>
+        <div class="etichetta">ha 65 anni o più (Lombardia ${perc(pop.struttura_eta[L].over65_pct)}) · ${ultimo}</div></div>
+      <div class="card"><div class="valore rosso">${perc(ist[p].laureati_25_49_pct)}</div>
+        <div class="etichetta">laureati fra i 25 e i 49 anni (Lombardia ${perc(ist[L].laureati_25_49_pct)}) · ${D.istruzione.anno}</div></div>
+      <div class="card"><div class="valore verde">${perc(lav[p].occupati_25_64_pct)}</div>
+        <div class="etichetta">occupati fra i 25 e i 64 anni (Lombardia ${perc(lav[L].occupati_25_64_pct)}) · ${D.lavoro.anno}</div></div>
+      <div class="card"><div class="valore">${perc(pen[p].fuori_comune_pct)}</div>
+        <div class="etichetta">dei pendolari esce dal comune ogni giorno (Lombardia ${perc(pen[L].fuori_comune_pct)}) · ${D.pendolari.anno}</div></div>
+      ${red && red[p] ? `<div class="card"><div class="valore">${eur(red[p].reddito_medio)}</div>
+        <div class="etichetta">reddito medio dichiarato (Lombardia ${eur(red[L] && red[L].reddito_medio_da === "totale" ? red[L].reddito_medio : null)}) · redditi ${D.redditi.anno_imposta}</div></div>` : ""}
+    </div>
+    <div class="spiegazione"><strong>Il quadro.</strong> A Pieve Emanuele l'occupazione è
+      ${confronto(lav[p].occupati_25_64_pct, lav[L].occupati_25_64_pct, 1, "più alta", "più bassa", "in linea con")}
+      ${confronto(lav[p].occupati_25_64_pct, lav[L].occupati_25_64_pct, 1, "della", "della", "la")} media lombarda,
+      mentre la quota di laureati è
+      ${posizione(Object.fromEntries(tutte().map(a => [a, ist[a].laureati_25_49_pct])),
+        "la più alta dei sei comuni", "la più bassa dei sei comuni",
+        (k, n) => `${k}ª su ${n} fra i comuni vicini`)}
+      e ${confronto(ist[p].laureati_25_49_pct, ist[L].laureati_25_49_pct, 1, "sopra", "sotto", "in linea con")}
+      quella lombarda. Il ${perc(pen[p].fuori_comune_pct)} di chi si sposta ogni giorno
+      per studio o lavoro esce dal comune.</div>`;
+}
+
+function quantiSiamo() {
+  const s = D.popolazione.serie;
+  const anni = Object.keys(s[D.pieve]).sort();
+  const primo = anni[0], ultimo = anni[anni.length - 1];
+  return `
+    <h2 class="sezione">1. Quanti siamo</h2>
+    <div class="sottotitolo">Residenti al 1° gennaio di ogni anno. Nel grafico ogni comune
+      parte da 100 nel ${primo}: così si confrontano paesi di dimensioni diverse.</div>
+    <div class="card"><div class="grafico"><canvas id="g-popolazione"></canvas></div></div>
+    ${tabella(["", `Abitanti ${primo}`, `Abitanti ${ultimo}`, "Variazione"],
+      a => [num(s[a][primo]), num(s[a][ultimo]), segno((s[a][ultimo] / s[a][primo] - 1) * 100)])}
+    <div class="spiegazione">Dal ${primo} al ${ultimo} Pieve Emanuele è cambiata del
+      ${segno((s[D.pieve][ultimo] / s[D.pieve][primo] - 1) * 100)}:
+      ${posizione(Object.fromEntries(comuni().map(a => [a, s[a][ultimo] / s[a][primo]])),
+        "la crescita più forte dei sei comuni", "la crescita più debole dei sei comuni",
+        (k, n) => `${k}ª su ${n} fra i comuni vicini per crescita`)}.
+      Con variazioni di questa misura il numero di abitanti non cambia il fabbisogno di
+      servizi; lo cambia la composizione per età, nella sezione successiva.</div>
+    ${fonte(`ISTAT, popolazione residente al 1° gennaio (esploradati.istat.it, flussi
+      DCIS_POPRES1). Dati anagrafici, non stime.`)}`;
+}
+
+function eta() {
+  const st = D.popolazione.struttura_eta, pv = D.previsioni;
+  const p = D.pieve, L = D.lombardia;
+  const vecchiaia = Object.fromEntries(tutte().map(a => [a, st[a].indice_vecchiaia]));
+  const prev = pv && pv.valori ? pv.valori : null;
+  return `
+    <h2 class="sezione">2. Età</h2>
+    <div class="sottotitolo">Quota di residenti per classe d'età, Pieve Emanuele a confronto
+      con la Lombardia (${D.popolazione.anno}). L'indice di vecchiaia conta quanti over 65 ci
+      sono ogni 100 ragazzi sotto i 15 anni.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-piramide"></canvas></div></div>
+    ${tabella(["", "Sotto i 15 anni", "65 anni e più", "Indice di vecchiaia"],
+      a => [perc(st[a].under15_pct), perc(st[a].over65_pct), num(st[a].indice_vecchiaia)])}
+    <div class="spiegazione">Pieve ha un indice di vecchiaia di
+      <strong>${num(st[p].indice_vecchiaia)}</strong> contro ${num(st[L].indice_vecchiaia)}
+      della Lombardia: ${confronto(st[p].indice_vecchiaia, st[L].indice_vecchiaia, 5,
+        "è più anziana della", "è più giovane della", "è in linea con la")} media regionale.
+      ${(() => {
+        // Le classi in cui Pieve si discosta di più dalla Lombardia, dai dati
+        const pir = D.popolazione.piramide, cl = Object.keys(pir[p]);
+        const diff = cl.map(c => [c, pir[p][c] - pir[L][c]]);
+        const piu = diff.filter(([, d]) => d >= 0.4).map(([c]) => c);
+        const meno = diff.filter(([, d]) => d <= -0.4).map(([c]) => c);
+        return (piu.length ? `Rispetto alla Lombardia pesano di più le classi ${piu.join(", ")}` : "")
+          + (piu.length && meno.length ? "; di meno " : meno.length ? "Pesano di meno " : "")
+          + (meno.length ? `le classi ${meno.join(", ")}` : "") + (piu.length || meno.length ? "." : "");
+      })()}</div>
+    ${prev ? `
+    <h3 class="sezione">Le previsioni al ${pv.a}</h3>
+    <div class="sottotitolo">Proiezioni ISTAT, scenario mediano: non sono dati ma stime di
+      cosa succede se nascite, morti e migrazioni seguono le tendenze attuali. Esistono solo
+      per i comuni, non per la regione.</div>
+    ${tabella(["", `65 anni e più ${pv.da}`, `65 anni e più ${pv.a}`, `Età media ${pv.da}`, `Età media ${pv.a}`],
+      a => [perc(prev[a][pv.da].over65_pct), perc(prev[a][pv.a].over65_pct),
+            dec(prev[a][pv.da].eta_media), dec(prev[a][pv.a].eta_media)], {soloComuni: true})}
+    <div class="spiegazione">Secondo la proiezione, a Pieve gli over 65 passano dal
+      ${perc(prev[p][pv.da].over65_pct)} al ${perc(prev[p][pv.a].over65_pct)} dei residenti.
+      ${(() => {
+        const fin = comuni().map(a => prev[a][pv.a].over65_pct).filter(x => x != null);
+        return `Nel ${pv.a} tutti i sei comuni starebbero fra il ${perc(Math.min(...fin))}
+          e il ${perc(Math.max(...fin))}: l'invecchiamento non è una particolarità di Pieve,
+          e la domanda di assistenza agli anziani crescerebbe in tutta la zona.`;
+      })()}</div>` : ""}
+    ${fonte(`ISTAT, popolazione per età al 1° gennaio; previsioni comunali della popolazione
+      2025-2050, scenario mediano. La popolazione di Opera può includere persone residenti
+      nella casa di reclusione, che spostano le percentuali di quel comune.`)}`;
+}
+
+function famiglie() {
+  const f = D.famiglie, s = D.stranieri;
+  if (!f) return "";
+  const p = D.pieve, L = D.lombardia;
+  return `
+    <h2 class="sezione">3. Famiglie e cittadinanza</h2>
+    <div class="sottotitolo">Com'è fatta una famiglia a Pieve Emanuele (${f.anno}) e quanti
+      residenti hanno cittadinanza straniera (${s.anno}).</div>
+    ${tabella(["", "Famiglie", "Di una sola persona", "Di 5 persone o più", "Componenti medi", "Stranieri"],
+      a => [num(f.valori[a].famiglie), perc(f.valori[a].una_persona_pct),
+            perc(f.valori[a].cinque_e_piu_pct), dec(f.valori[a].componenti_medi, 2),
+            perc(s.valori[a])])}
+    <div class="spiegazione">A Pieve le famiglie di una sola persona sono il
+      ${perc(f.valori[p].una_persona_pct)},
+      ${confronto(f.valori[p].una_persona_pct, f.valori[L].una_persona_pct, 1,
+        "più che", "meno che", "come")} in Lombardia (${perc(f.valori[L].una_persona_pct)}),
+      con ${dec(f.valori[p].componenti_medi, 2)} componenti medi contro
+      ${dec(f.valori[L].componenti_medi, 2)}. Gli stranieri sono il ${perc(s.valori[p])}
+      dei residenti, ${confronto(s.valori[p], s.valori[L], 1.5,
+        "più che in", "meno che in", "come in")} Lombardia (${perc(s.valori[L])}).</div>
+    ${fonte(`ISTAT, censimento permanente della popolazione (famiglie al 31 dicembre) e
+      popolazione straniera residente al 1° gennaio. I dati del censimento permanente
+      sono stime basate su registri e indagini campionarie.`)}`;
+}
+
+function studioLavoro() {
+  const ist = D.istruzione.valori, lav = D.lavoro.valori, occ = D.occupati;
+  const p = D.pieve, L = D.lombardia;
+  const laureati = Object.fromEntries(tutte().map(a => [a, ist[a].laureati_25_49_pct]));
+  return `
+    <h2 class="sezione">4. Studio e lavoro</h2>
+    <div class="sottotitolo">Titolo di studio fra i 25 e i 49 anni, età in cui gli studi sono
+      di norma conclusi (${D.istruzione.anno}); occupazione fra i 25 e i 64 anni (${D.lavoro.anno}).</div>
+    ${tabella(["", "Laureati 25-49", "Al più licenza media 25-49", "Occupati 25-64", "Disoccupazione",
+               ...(occ ? [`Indipendenti (${occ.anno})`] : [])],
+      a => [perc(ist[a].laureati_25_49_pct), perc(ist[a].al_piu_licenza_media_25_49_pct),
+            perc(lav[a].occupati_25_64_pct), perc(lav[a].disoccupazione_pct),
+            ...(occ ? [perc(occ.valori[a].indipendenti_pct)] : [])])}
+    <div class="spiegazione">Per quota di laureati Pieve è
+      ${posizione(laureati, "prima fra i sei comuni", "ultima fra i sei comuni",
+        (k, n) => `${k}ª su ${n} fra i comuni vicini`)}
+      (${perc(ist[p].laureati_25_49_pct)}, contro ${perc(ist[L].laureati_25_49_pct)} in
+      Lombardia); il tasso di occupazione è
+      ${confronto(lav[p].occupati_25_64_pct, lav[L].occupati_25_64_pct, 1,
+        "più alto della", "più basso della", "in linea con la")} media regionale
+      (${perc(lav[p].occupati_25_64_pct)} contro ${perc(lav[L].occupati_25_64_pct)}).
+      Se questa combinazione è reale, deve vedersi anche nei redditi dichiarati, che vengono
+      da un'altra fonte: molti redditi nelle fasce medie, pochi in quelle alte. La sezione 5
+      permette di verificarlo.</div>
+    ${occ ? `
+    <h3 class="sezione">In che settori lavorano i residenti</h3>
+    <div class="sottotitolo">Occupati residenti per settore, in percentuale (${occ.anno}). Conta
+      dove lavora chi abita qui, non le aziende che hanno sede nel comune.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-settori"></canvas></div></div>
+    <div class="spiegazione">${(() => {
+        // I settori in cui Pieve si discosta di più dalla Lombardia, dai dati
+        const sp = occ.valori[p].settori_pct, sl = occ.valori[L].settori_pct;
+        const d = Object.keys(sp).map(k => [k, sp[k] - sl[k]]).sort((x, y) => y[1] - x[1]);
+        const fmt = ([k]) => `<strong>${esc(k.toLowerCase())}</strong> (${perc(sp[k])} contro ${perc(sl[k])})`;
+        const piu = d.filter(([, x]) => x >= 2).map(fmt);
+        const meno = d.filter(([, x]) => x <= -2).reverse().map(fmt);
+        return `Rispetto alla Lombardia, fra i residenti occupati pesano di più
+          ${piu.join(" e ") || "nessun settore in modo marcato"}${meno.length ? `, di meno ${meno.join(" e ")}` : ""}.
+          La fonte dice in che settore lavora chi abita qui, non per quale datore di lavoro
+          né in quale comune.`;
+      })()}</div>` : ""}
+    ${fonte(`ISTAT, censimento permanente della popolazione: grado di istruzione, condizione
+      professionale, occupati per settore e posizione. Stime basate su registri e indagini
+      campionarie: per comuni di queste dimensioni le differenze di un punto non sono
+      significative. Gli occupati per settore sono disponibili solo per il 2021.`)}`;
+}
+
+function redditi() {
+  const r = D.redditi;
+  if (!r) return "";
+  const v = r.valori, p = D.pieve, L = D.lombardia;
+  const quota = (a, fasce) => {
+    const x = fasce.map(f => v[a].fasce_pct[f]);
+    return x.some(y => y == null) ? null : x.reduce((s, y) => s + y, 0);
+  };
+  const bassi = ["zero o meno", "fino a 10 mila", "10–15 mila"];
+  const alti = ["55–75 mila", "75–120 mila", "oltre 120 mila"];
+  const oscurate = comuni().filter(a => Object.keys(v[a].celle_oscurate || {}).length);
+  const mediaL = v[L].reddito_medio_da === "totale" ? v[L].reddito_medio : null;
+  return `
+    <h2 class="sezione" id="redditi">5. Redditi</h2>
+    <div class="sottotitolo">Contribuenti per fascia di reddito complessivo dichiarato, in
+      percentuale (redditi ${r.anno_imposta}, dichiarazioni ${r.anno_imposta + 1}).</div>
+    <div class="card"><div class="grafico"><canvas id="g-redditi"></canvas></div></div>
+    ${tabella(["", "Reddito medio", "Sotto i 15 mila", "15–55 mila", "Oltre 55 mila"],
+      a => [eur(a === L ? mediaL : v[a].reddito_medio), perc(quota(a, bassi)),
+            perc(quota(a, ["15–26 mila", "26–55 mila"])), perc(quota(a, alti))])}
+    <div class="spiegazione">A Pieve il ${perc(quota(p, ["15–26 mila", "26–55 mila"]))} dei
+      contribuenti dichiara fra 15 e 55 mila euro, contro il
+      ${perc(quota(L, ["15–26 mila", "26–55 mila"]))} della Lombardia. Sotto i 15 mila ci
+      sono il ${perc(quota(p, bassi))} (Lombardia ${perc(quota(L, bassi))}), sopra i 55 mila
+      il ${perc(quota(p, alti))} (Lombardia ${perc(quota(L, alti))}).
+      ${quota(p, bassi) != null && quota(p, alti) != null
+        && quota(p, bassi) < quota(L, bassi) && quota(p, alti) < quota(L, alti)
+        ? `<strong>Il reddito medio più basso di quello lombardo non dipende da una quota
+           maggiore di redditi bassi, ma da una quota minore di redditi alti.</strong> È
+           quello che ci si aspetta da un comune con molti occupati e pochi laureati
+           (sezione 4): due fonti indipendenti, ISTAT e MEF, danno lo stesso quadro.` : ""}</div>
+    <div class="cautela"><strong>Un reddito sotto i 10 mila euro non vuol dire povertà.</strong>
+      È il reddito di un singolo dichiarante, non della famiglia: comprende studenti con
+      lavori saltuari, lavoratori part-time, pensionati con altri redditi in famiglia.
+      ${oscurate.length ? `<br><br><strong>Celle oscurate.</strong> Il MEF non pubblica le
+      fasce con troppo pochi contribuenti, e ne oscura altre perché le prime non si ricavino
+      per differenza: per ${oscurate.map(a => esc(nome(a))).join(", ")} alcune fasce sono
+      «n.d.», e le somme che le contengono non si possono calcolare.` : ""}</div>
+    ${fonte(`MEF, Dipartimento delle Finanze: redditi e principali variabili IRPEF su base
+      comunale, anno d'imposta ${r.anno_imposta}. Il reddito medio è il reddito complessivo
+      dichiarato diviso per il numero di chi lo dichiara. La media lombarda si trova anche
+      in <a href="confronti.html">Come siamo messi</a>.`)}`;
+}
+
+function pendolari() {
+  const pen = D.pendolari;
+  const p = D.pieve, L = D.lombardia;
+  const fuori = Object.fromEntries(tutte().map(a => [a, pen.valori[a].fuori_comune_pct]));
+  return `
+    <h2 class="sezione">6. Pendolari</h2>
+    <div class="sottotitolo">Residenti che ogni giorno si spostano per studio o lavoro, e
+      quanti di loro escono dal comune (${pen.anno}).</div>
+    ${tabella(["", "Si spostano ogni giorno", "Escono dal comune"],
+      a => [num(pen.valori[a].pendolari), perc(pen.valori[a].fuori_comune_pct)])}
+    <div class="spiegazione">Pieve è ${posizione(fuori,
+        "il comune dei sei da cui si esce di più", "il comune dei sei da cui si esce di meno",
+        (k, n) => `${k}ª su ${n} fra i comuni vicini per quota di chi esce`)}:
+      il ${perc(fuori[p])} di chi si sposta va in un altro comune, contro il ${perc(fuori[L])}
+      della Lombardia. Per molti residenti Pieve è il posto dove si abita, non quello dove si
+      lavora o si studia.</div>
+    <div class="cautela">Il dato è del ${pen.anno}, l'ultimo disponibile per comune, ed è
+      precedente alla diffusione del lavoro da casa. Non dice verso dove si va, né quanti
+      entrano a Pieve da fuori: fra le tabelle comunali pubblicate da ISTAT sulla sua banca
+      dati, la destinazione c'è solo per il censimento 2011.</div>
+    ${fonte(`ISTAT, censimento permanente della popolazione: popolazione residente che si
+      sposta giornalmente per studio o lavoro.`)}`;
+}
+
+// ── Grafici ──────────────────────────────────────────────────────────────────
+
+const legenda = { position: "top", labels: { boxWidth: 12, font: { size: 11 } } };
+const colore = (a, i) => a === D.pieve ? COLORE_PIEVE : a === D.lombardia ? COLORE_LOMBARDIA
+  : COLORI_VICINI[i % COLORI_VICINI.length];
+
+function grafici() {
+  const s = D.popolazione.serie;
+  const anni = Object.keys(s[D.pieve]).sort();
+  let i = 0;
+  new Chart(document.getElementById("g-popolazione"), {
+    type: "line",
+    data: { labels: anni, datasets: tutte().map(a => ({
+      label: nome(a),
+      data: anni.map(y => s[a][y] / s[a][anni[0]] * 100),
+      borderColor: colore(a, a === D.pieve || a === D.lombardia ? 0 : i++),
+      backgroundColor: "transparent",
+      borderWidth: a === D.pieve ? 3.5 : 1.5,
+      borderDash: a === D.lombardia ? [6, 4] : [],
+      pointRadius: a === D.pieve ? 3 : 0, tension: .2 })) },
+    options: { maintainAspectRatio: false,
+      plugins: { legend: legenda, tooltip: { callbacks: { label: c =>
+        `${c.dataset.label}: ${dec(c.raw)} (${num(s[tutte()[c.datasetIndex]][c.label])} abitanti)` } } },
+      scales: { y: { ticks: { callback: v => dec(v, 0) } } } }
+  });
+
+  const pir = D.popolazione.piramide;
+  const classi = Object.keys(pir[D.pieve]).reverse();
+  new Chart(document.getElementById("g-piramide"), {
+    type: "bar",
+    data: { labels: classi, datasets: [
+      { label: nome(D.pieve), data: classi.map(c => pir[D.pieve][c]), backgroundColor: COLORE_PIEVE, borderRadius: 2 },
+      { label: nome(D.lombardia), data: classi.map(c => pir[D.lombardia][c]), backgroundColor: "#C9CCD4", borderRadius: 2 },
+    ]},
+    options: { indexAxis: "y", maintainAspectRatio: false,
+      plugins: { legend: legenda, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${dec(c.raw, 2)}%` } } },
+      scales: { x: { ticks: { callback: v => v + "%" } }, y: { ticks: { font: { size: 10 } } } } }
+  });
+
+  if (D.occupati && document.getElementById("g-settori")) {
+    const occ = D.occupati.valori;
+    const settori = Object.keys(occ[D.pieve].settori_pct);
+    const tinte = ["#8C7B3F", "#6C7A89", "#1B4FCA", "#0E7C5B", "#B08A00", "#B3372B"];
+    new Chart(document.getElementById("g-settori"), {
+      type: "bar",
+      data: { labels: tutte().map(nome), datasets: settori.map((st, k) => ({
+        label: st, data: tutte().map(a => occ[a].settori_pct[st]),
+        backgroundColor: tinte[k % tinte.length] })) },
+      options: { indexAxis: "y", maintainAspectRatio: false,
+        plugins: { legend: legenda, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${dec(c.raw)}%` } } },
+        scales: { x: { stacked: true, max: 100, ticks: { callback: v => v + "%" } },
+                  y: { stacked: true } } }
+    });
+  }
+
+  if (D.redditi && document.getElementById("g-redditi")) {
+    const v = D.redditi.valori;
+    const fasce = Object.keys(v[D.pieve].fasce_pct).filter(f => f !== "zero o meno");
+    new Chart(document.getElementById("g-redditi"), {
+      type: "bar",
+      data: { labels: fasce, datasets: [D.pieve, D.lombardia].map(a => ({
+        label: nome(a), data: fasce.map(f => v[a].fasce_pct[f]),
+        backgroundColor: a === D.pieve ? COLORE_PIEVE : "#C9CCD4", borderRadius: 3 })) },
+      options: { maintainAspectRatio: false,
+        plugins: { legend: legenda, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${perc(c.raw)}` } } },
+        scales: { y: { ticks: { callback: v => v + "%" } } } }
+    });
+  }
+}
+
+async function avvia() {
+  try {
+    D = await fetch(`data/territorio.json?v=${Math.floor(Date.now()/60000)}`).then(r => r.json());
+  } catch (e) {
+    document.getElementById("contenuto").innerHTML =
+      '<p style="padding:40px 0">Dati del territorio non disponibili.</p>';
+    return;
+  }
+  document.getElementById("contenuto").innerHTML =
+    sintesi() + quantiSiamo() + eta() + famiglie() + studioLavoro() + redditi() + pendolari();
+  document.getElementById("fonti").innerHTML = `<strong>Fonti.</strong> ${esc(D.fonte)}.
+    Dati aggiornati il ${new Date(D.aggiornato).toLocaleDateString("it-IT")} dal workflow
+    annuale del progetto. Pieve Emanuele è confrontata con gli stessi comuni vicini della
+    pagina <a href="confronti.html">Come siamo messi</a>.`;
+  grafici();
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+}
+
+avvia();
+</script>
+</body>
+</html>

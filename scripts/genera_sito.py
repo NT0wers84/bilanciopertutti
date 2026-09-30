@@ -133,6 +133,12 @@ def main():
     if confronti.exists():
         _scrivi(DOCS_DATA / "confronti.json", confronti.read_text(encoding="utf-8"))
         log.info("Dati di confronto copiati nel sito")
+    # Dati ISTAT e IRPEF del territorio: li scrive il workflow annuale
+    # «Dati ISTAT» (istat_estrai.py); qui vengono solo ricopiati nel sito.
+    territorio = Path("data/territorio.json")
+    if territorio.exists():
+        _scrivi(DOCS_DATA / "territorio.json", territorio.read_text(encoding="utf-8"))
+        log.info("Dati del territorio copiati nel sito")
     log.info(f"Sito aggiornato: {len(spese)} spese · su base annua "
              f"€ {meta['totale_annuo_euro']:,.2f} · valore lordo degli atti "
              f"€ {meta['totale_euro']:,.2f} ({meta['n_pluriennali']} pluriennali)")

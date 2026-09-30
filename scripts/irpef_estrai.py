@@ -115,6 +115,12 @@ def mappa_colonne(intestazione: list[str]) -> dict:
             m["anno"] = i
         elif basso.startswith("numero contribuenti"):
             m["contribuenti"] = i
+        # Il totale del reddito complessivo, se il file lo ha: per il reddito
+        # medio vale più della somma delle fasce, che per la regione perde le
+        # celle oscurate dal MEF (29.483 € contro i 30.202 € ufficiali).
+        t = re.fullmatch(r"reddito complessivo\s*-\s*(frequenza|ammontare)(?: in euro)?", basso)
+        if t:
+            m.setdefault("totale", {})["freq" if t.group(1) == "frequenza" else "ammontare"] = i
         f = RE_FASCIA.search(basso)
         if not f:
             continue
@@ -147,13 +153,22 @@ def leggi(contenuto_zip: bytes) -> tuple[list[str], list[list[str]]]:
 def calcola(intestazione, righe, comuni: dict, lombardia: str) -> dict:
     """Fasce in percentuale dei contribuenti con reddito complessivo, e
     reddito medio, per i comuni cercati e per la Lombardia (somma dei suoi
-    comuni). Le celle oscurate dal MEF per tutela statistica restano fuori:
-    per un comune medio non ce ne sono, per la regione pesano pochissimo."""
+    comuni).
+
+    CELLE OSCURATE. Il MEF lascia vuote le celle che permetterebbero di
+    risalire a pochi contribuenti, e ne oscura altre per non far ricavare le
+    prime per differenza. Nel file del 2024 Rozzano, Opera e Locate hanno
+    vuota la fascia oltre 120 mila, Basiglio quella 10–15 mila. Una cella
+    vuota NON è zero: per un comune la fascia resta «non disponibile» (None),
+    e il reddito medio si calcola solo dal totale ufficiale, perché dalle
+    fasce verrebbe sottostimato. Per la Lombardia le celle oscurate dei
+    comuni piccoli si perdono nella somma; si conta quante sono."""
     m = mappa_colonne(intestazione)
     mancano = [c for c, _ in FASCE if "freq" not in m["fasce"].get(c, {})]
     if "comune" not in m or mancano:
         raise ValueError(f"colonne non riconosciute: comune={'comune' in m}, "
                          f"fasce mancanti={mancano}")
+    tot = m.get("totale", {})
     somme = {}
     for r in righe:
         if len(r) <= m["comune"]:
@@ -165,23 +180,46 @@ def calcola(intestazione, righe, comuni: dict, lombardia: str) -> dict:
         if "regione" in m and r[m["regione"]].strip().lower() == "lombardia":
             aree.append(lombardia)
         for a in aree:
-            s = somme.setdefault(a, {c: [0.0, 0.0] for c, _ in FASCE})
+            s = somme.setdefault(a, {"fasce": {c: [0.0, 0.0] for c, _ in FASCE},
+                                     "oscurate": {c: 0 for c, _ in FASCE},
+                                     "totale": [0.0, 0.0]})
             for c, _ in FASCE:
                 col = m["fasce"][c]
-                s[c][0] += _numero(r[col["freq"]]) or 0
-                if "ammontare" in col:
-                    s[c][1] += _numero(r[col["ammontare"]]) or 0
+                freq = _numero(r[col["freq"]])
+                amm = _numero(r[col["ammontare"]]) if "ammontare" in col else 0
+                if freq is None or amm is None:
+                    s["oscurate"][c] += 1
+                    continue
+                s["fasce"][c][0] += freq
+                s["fasce"][c][1] += amm
+            if "freq" in tot and "ammontare" in tot:
+                s["totale"][0] += _numero(r[tot["freq"]]) or 0
+                s["totale"][1] += _numero(r[tot["ammontare"]]) or 0
     anno = None
     if "anno" in m and righe:
         anno = int(_numero(righe[0][m["anno"]]) or 0) or None
     valori = {}
     for a, s in somme.items():
-        n = sum(v[0] for v in s.values())
+        f, osc, (tot_n, tot_amm) = s["fasce"], s["oscurate"], s["totale"]
+        e_comune = a != lombardia
+        noti = sum(v[0] for c, v in f.items() if not (e_comune and osc[c]))
+        # Denominatore: il totale ufficiale, se il file lo ha; altrimenti la
+        # somma delle fasce note (e le quote sono allora sulle sole fasce note)
+        n = tot_n or noti
+        if tot_n:
+            media = round(tot_amm / tot_n)
+        elif any(osc.values()) and e_comune:
+            media = None   # dalle sole fasce note verrebbe sottostimato
+        else:
+            media = round(sum(v[1] for v in f.values()) / noti) if noti else None
         valori[a] = {
             "contribuenti_con_reddito": round(n),
-            "reddito_medio": round(sum(v[1] for v in s.values()) / n) if n else None,
-            "fasce_pct": {etichetta: round(100 * s[c][0] / n, 1) if n else None
-                          for c, etichetta in FASCE},
+            "reddito_medio": media,
+            "reddito_medio_da": "totale" if tot_n else "somma delle fasce",
+            "fasce_pct": {et: (None if e_comune and osc[c]
+                               else round(100 * f[c][0] / n, 1) if n else None)
+                          for c, et in FASCE},
+            "celle_oscurate": {et: osc[c] for c, et in FASCE if osc[c]},
         }
     return {"anno_imposta": anno, "valori": valori}
 
@@ -202,14 +240,17 @@ def scarica_redditi(comuni: dict, lombardia: str, user_agent: str, timeout: int,
         return None
     try:
         intestazione, righe = leggi(contenuto)
+        m = mappa_colonne(intestazione)
+        # Sempre, non solo in ispezione: dice da dove viene il reddito medio
+        log.info(f"  colonna del totale del reddito complessivo: "
+                 f"{m.get('totale') or 'ASSENTE (media dalle fasce)'}")
         if ispeziona:
-            m = mappa_colonne(intestazione)
             log.info(f"\n══ redditi IRPEF ══\n  righe: {len(righe)}  colonne: {len(intestazione)}")
             log.info(f"  riconosciute: comune={m.get('comune')} regione={m.get('regione')} "
                      f"anno={m.get('anno')} contribuenti={m.get('contribuenti')}")
             for c, _ in FASCE:
                 log.info(f"  fascia {c}: {m['fasce'].get(c)}")
-            log.info("  intestazione: " + " | ".join(intestazione[:14]) + " | …")
+            log.info("  tutte le colonne: " + " | ".join(intestazione))
         risultato = calcola(intestazione, righe, comuni, lombardia)
         risultato["fonte"] = url
         # Il file dichiara il proprio anno: se non torna con quello cercato o

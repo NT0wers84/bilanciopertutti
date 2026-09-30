@@ -10,8 +10,9 @@ name: Conti in chiaro — Dati ISTAT
 # rispondono, per quali comuni e anni, con quali codici. Nessun file scritto.
 #
 # ISTAT blocca per ore chi fa troppe richieste: lo script ne fa poche e
-# distanziate (circa 6 minuti in tutto). Se fallisce con «ISTAT NON RISPONDE»
-# non rilanciare subito: aspetta un giorno.
+# distanziate (circa 6 minuti in tutto, di più se ISTAT è lento). Se fallisce
+# con «ISTAT NON RISPONDE» leggi la riga: HTTP 403/429 = blocco, aspetta un
+# giorno; attesa scaduta = ISTAT lento, riprova fra qualche ora.
 on:
   schedule:
     - cron: '0 5 15 5 *'
@@ -33,7 +34,7 @@ concurrency:
 jobs:
   istat:
     runs-on: ubuntu-22.04
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository

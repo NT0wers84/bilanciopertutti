@@ -45,7 +45,11 @@ log = logging.getLogger(__name__)
 BASE = "https://esploradati.istat.it/SDMXWS/rest"
 USER_AGENT = "ContiInChiaro/1.0 (+https://github.com/NT0wers84/bilanciopertutti)"
 PAUSA = 15          # secondi fra due richieste: resta sotto le 5 al minuto
-TIMEOUT = 180
+# ISTAT a volte impiega minuti a preparare una tabella pesante (la popolazione
+# per singolo anno di età lo è). Un'attesa scaduta non è un blocco: il server
+# stava rispondendo alla richiesta prima. Si riprova UNA volta, dopo una pausa.
+TIMEOUT = 300
+PAUSA_DOPO_TIMEOUT = 90
 
 DESTINAZIONE = Path("data/territorio.json")
 
@@ -95,8 +99,27 @@ _ultima_richiesta = 0.0
 
 
 def richiesta(url: str, accept: str) -> tuple[int, bytes]:
-    """Una richiesta HTTP, distanziata dalla precedente. 404 non è un errore:
-    è la risposta ISTAT a «nessun dato con questi filtri»."""
+    """Una richiesta HTTP, distanziata dalla precedente, con un solo nuovo
+    tentativo se l'attesa scade. I rifiuti espliciti (403, 429) invece fermano
+    tutto subito: lì insistere allunga il blocco."""
+    try:
+        return _richiesta(url, accept)
+    except Lento as e:
+        log.warning(f"  {e}: ISTAT è lento, riprovo una volta fra "
+                    f"{PAUSA_DOPO_TIMEOUT} secondi")
+        time.sleep(PAUSA_DOPO_TIMEOUT)
+        try:
+            return _richiesta(url, accept)
+        except Lento as e2:
+            raise Bloccato(f"{e2} (anche al secondo tentativo)")
+
+
+class Lento(Exception):
+    """L'attesa è scaduta: il server è lento, non necessariamente bloccato."""
+
+
+def _richiesta(url: str, accept: str) -> tuple[int, bytes]:
+    """404 non è un errore: è la risposta ISTAT a «nessun dato con questi filtri»."""
     global _ultima_richiesta
     attesa = PAUSA - (time.monotonic() - _ultima_richiesta)
     if _ultima_richiesta and attesa > 0:
@@ -113,7 +136,13 @@ def richiesta(url: str, accept: str) -> tuple[int, bytes]:
         if e.code in (403, 429, 503):
             raise Bloccato(f"HTTP {e.code} su {url}")
         raise
-    except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+    except TimeoutError as e:
+        raise Lento(f"attesa scaduta dopo {TIMEOUT}s su {url}") from e
+    except urllib.error.URLError as e:
+        if isinstance(e.reason, TimeoutError):
+            raise Lento(f"attesa scaduta dopo {TIMEOUT}s su {url}") from e
+        raise Bloccato(f"{type(e).__name__}: {e} su {url}")
+    except ConnectionError as e:
         raise Bloccato(f"{type(e).__name__}: {e} su {url}")
 
 
@@ -445,8 +474,10 @@ def main() -> int:
         tab = scarica_tutto(con_etichette=args.ispeziona)
     except Bloccato as e:
         log.error(f"\nISTAT NON RISPONDE: {e}")
-        log.error("Probabile blocco per troppe richieste. Non rilanciare subito: "
-                  "ogni tentativo lo allunga. Riprova fra 24 ore.")
+        log.error("Se è un rifiuto (HTTP 403 o 429) è un blocco per troppe "
+                  "richieste: non rilanciare prima di 24 ore, ogni tentativo lo "
+                  "allunga. Se è un'attesa scaduta due volte, ISTAT è lento o "
+                  "fermo: riprova fra qualche ora.")
         return 1
 
     if args.ispeziona:

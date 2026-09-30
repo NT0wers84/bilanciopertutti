@@ -14,9 +14,11 @@ questo:
   · ogni tabella si chiede UNA volta sola per tutti i comuni insieme
     (chiave 015173+015189+...), non una volta per comune;
   · fra una richiesta e l'altra c'è una pausa fissa;
-  · al primo segno di blocco (429, 403, connessione rifiutata o scaduta) lo
-    script si ferma subito invece di riprovare, perché ogni tentativo in più
-    allunga il blocco.
+  · a un rifiuto esplicito (403, 429) lo script si ferma subito invece di
+    riprovare, perché ogni tentativo in più allunga il blocco;
+  · un errore passeggero (attesa scaduta, errore 5xx: ISTAT sotto carico ne
+    dà spesso) si riprova una volta; se persiste si salta quella tabella e si
+    tengono i valori salvati la volta prima.
 
 COME SI USA
     python3 scripts/istat_estrai.py --ispeziona   # mostra cosa c'è, non scrive
@@ -95,7 +97,18 @@ TABELLE = {
 
 
 class Bloccato(Exception):
-    """ISTAT ha smesso di rispondere: si interrompe tutto, senza riprovare."""
+    """ISTAT rifiuta esplicitamente (403, 429): si interrompe tutto, senza
+    riprovare, perché ogni richiesta in più allunga il blocco."""
+
+
+class NonDisponibile(Exception):
+    """Una richiesta è fallita anche al secondo tentativo (server lento o in
+    errore). Riguarda quella tabella, non per forza le altre."""
+
+
+class Lento(Exception):
+    """Errore passeggero: attesa scaduta o errore interno del server (500,
+    502, 503, 504). ISTAT ne dà spesso sotto carico; si riprova una volta."""
 
 
 _ultima_richiesta = 0.0
@@ -103,22 +116,16 @@ _ultima_richiesta = 0.0
 
 def richiesta(url: str, accept: str) -> tuple[int, bytes]:
     """Una richiesta HTTP, distanziata dalla precedente, con un solo nuovo
-    tentativo se l'attesa scade. I rifiuti espliciti (403, 429) invece fermano
-    tutto subito: lì insistere allunga il blocco."""
+    tentativo se l'errore è passeggero."""
     try:
         return _richiesta(url, accept)
     except Lento as e:
-        log.warning(f"  {e}: ISTAT è lento, riprovo una volta fra "
-                    f"{PAUSA_DOPO_TIMEOUT} secondi")
+        log.warning(f"  {e}: riprovo una volta fra {PAUSA_DOPO_TIMEOUT} secondi")
         time.sleep(PAUSA_DOPO_TIMEOUT)
         try:
             return _richiesta(url, accept)
         except Lento as e2:
-            raise Bloccato(f"{e2} (anche al secondo tentativo)")
-
-
-class Lento(Exception):
-    """L'attesa è scaduta: il server è lento, non necessariamente bloccato."""
+            raise NonDisponibile(f"{e2} (anche al secondo tentativo)")
 
 
 def _richiesta(url: str, accept: str) -> tuple[int, bytes]:
@@ -136,17 +143,18 @@ def _richiesta(url: str, accept: str) -> tuple[int, bytes]:
     except urllib.error.HTTPError as e:
         if e.code == 404:
             return 404, e.read()
-        if e.code in (403, 429, 503):
+        if e.code in (403, 429):
             raise Bloccato(f"HTTP {e.code} su {url}")
-        raise
+        if e.code >= 500:
+            raise Lento(f"HTTP {e.code} su {url}") from e
+        raise NonDisponibile(f"HTTP {e.code} su {url}") from e
     except TimeoutError as e:
         raise Lento(f"attesa scaduta dopo {TIMEOUT}s su {url}") from e
-    except urllib.error.URLError as e:
-        if isinstance(e.reason, TimeoutError):
+    except (urllib.error.URLError, ConnectionError) as e:
+        motivo = getattr(e, "reason", e)
+        if isinstance(motivo, TimeoutError):
             raise Lento(f"attesa scaduta dopo {TIMEOUT}s su {url}") from e
-        raise Bloccato(f"{type(e).__name__}: {e} su {url}")
-    except ConnectionError as e:
-        raise Bloccato(f"{type(e).__name__}: {e} su {url}")
+        raise Lento(f"{type(e).__name__}: {e} su {url}") from e
 
 
 def _tag(el) -> str:
@@ -216,18 +224,24 @@ def dati(flusso: str, st: dict, aree: list[str], filtri: dict) -> list[dict]:
 
 
 def scarica_tutto(con_etichette: bool) -> dict:
-    """{nome tabella: {"righe": [...], "struttura": {...}}}. Si ferma al primo
-    blocco; una tabella senza dati resta vuota e non ferma le altre."""
+    """{nome tabella: {"righe": [...], "struttura": {...}}}. Un blocco
+    esplicito ferma tutto; una tabella che non risponde resta vuota e non
+    ferma le altre: dopo dieci minuti di download sarebbe uno spreco buttare
+    via nove tabelle buone per colpa della decima."""
     esito = {}
     for nome, (flusso_comuni, flusso_regione, filtri) in TABELLE.items():
         log.info(f"· {nome}")
-        st = struttura(flusso_comuni, con_etichette)
-        if flusso_regione:
-            righe = dati(flusso_comuni, st, list(COMUNI), filtri)
-            st_reg = struttura(flusso_regione, con_etichette)
-            righe += dati(flusso_regione, st_reg, [LOMBARDIA], filtri)
-        else:
-            righe = dati(flusso_comuni, st, list(AREE), filtri)
+        try:
+            st = struttura(flusso_comuni, con_etichette)
+            if flusso_regione:
+                righe = dati(flusso_comuni, st, list(COMUNI), filtri)
+                st_reg = struttura(flusso_regione, con_etichette)
+                righe += dati(flusso_regione, st_reg, [LOMBARDIA], filtri)
+            else:
+                righe = dati(flusso_comuni, st, list(AREE), filtri)
+        except NonDisponibile as e:
+            log.error(f"  {nome}: NON SCARICATA — {e}")
+            st, righe = {"versione": "?", "dimensioni": [], "etichette": {}}, []
         esito[nome] = {"righe": righe, "struttura": st, "flusso": flusso_comuni}
     return esito
 
@@ -399,19 +413,28 @@ def ind_previsioni(righe) -> dict:
 
 
 def calcola(tab: dict) -> dict:
-    pop = ind_popolazione(tab["popolazione"]["righe"])
-    return {
+    """Gli indicatori di base sono obbligatori (main() lo controlla prima). Gli
+    altri si calcolano solo se le loro tabelle sono arrivate: altrimenti
+    mancano dal risultato, e main() tiene quelli salvati la volta prima."""
+    r = lambda nome: tab[nome]["righe"]
+    pop = ind_popolazione(r("popolazione"))
+    ind = {
         "popolazione": pop,
-        "stranieri": ind_stranieri(tab["stranieri"]["righe"], pop),
-        "istruzione": ind_istruzione(tab["istruzione"]["righe"]),
-        "lavoro": ind_lavoro(tab["lavoro"]["righe"]),
-        "pendolari": ind_pendolari(tab["pendolari"]["righe"]),
-        "famiglie": ind_famiglie(tab["famiglie"]["righe"],
-                                 tab["componenti_famiglia"]["righe"]),
-        "occupati": ind_occupati(tab["occupati_settore"]["righe"],
-                                 tab["occupati_posizione"]["righe"]),
-        "previsioni": ind_previsioni(tab["previsioni"]["righe"]),
+        "stranieri": ind_stranieri(r("stranieri"), pop),
+        "istruzione": ind_istruzione(r("istruzione")),
+        "lavoro": ind_lavoro(r("lavoro")),
+        "pendolari": ind_pendolari(r("pendolari")),
     }
+    if r("famiglie") and r("componenti_famiglia"):
+        ind["famiglie"] = ind_famiglie(r("famiglie"), r("componenti_famiglia"))
+    if r("occupati_settore") and r("occupati_posizione"):
+        ind["occupati"] = ind_occupati(r("occupati_settore"), r("occupati_posizione"))
+    if r("previsioni"):
+        ind["previsioni"] = ind_previsioni(r("previsioni"))
+    return ind
+
+
+FACOLTATIVI = ("famiglie", "occupati", "previsioni", "redditi")
 
 
 # ── Ispezione ────────────────────────────────────────────────────────────────
@@ -450,11 +473,13 @@ def stampa_indicatori(ind: dict) -> None:
                ("stranieri %", ind["stranieri"]["anno"], ind["stranieri"]["valori"]),
                ("istruzione", ind["istruzione"]["anno"], ind["istruzione"]["valori"]),
                ("lavoro", ind["lavoro"]["anno"], ind["lavoro"]["valori"]),
-               ("pendolari", ind["pendolari"]["anno"], ind["pendolari"]["valori"]),
-               ("famiglie", ind["famiglie"]["anno"], ind["famiglie"]["valori"]),
-               ("occupati", ind["occupati"]["anno"], ind["occupati"]["valori"]),
-               ("previsioni", f"{ind['previsioni'].get('da')}→{ind['previsioni'].get('a')}",
-                ind["previsioni"].get("valori", {}))]
+               ("pendolari", ind["pendolari"]["anno"], ind["pendolari"]["valori"])]
+    for nome in ("famiglie", "occupati"):
+        if nome in ind:
+            blocchi.append((nome, ind[nome]["anno"], ind[nome]["valori"]))
+    if ind.get("previsioni"):
+        blocchi.append(("previsioni", f"{ind['previsioni']['da']}→{ind['previsioni']['a']}",
+                        ind["previsioni"]["valori"]))
     for titolo, anno, valori in blocchi:
         log.info(f"  {titolo} ({anno})")
         for a, v in valori.items():
@@ -476,11 +501,9 @@ def main() -> int:
     try:
         tab = scarica_tutto(con_etichette=args.ispeziona)
     except Bloccato as e:
-        log.error(f"\nISTAT NON RISPONDE: {e}")
-        log.error("Se è un rifiuto (HTTP 403 o 429) è un blocco per troppe "
-                  "richieste: non rilanciare prima di 24 ore, ogni tentativo lo "
-                  "allunga. Se è un'attesa scaduta due volte, ISTAT è lento o "
-                  "fermo: riprova fra qualche ora.")
+        log.error(f"\nISTAT RIFIUTA LE RICHIESTE: {e}")
+        log.error("È un blocco per troppe richieste: non rilanciare prima di "
+                  "24 ore, ogni tentativo lo allunga.")
         return 1
 
     if args.ispeziona:
@@ -490,8 +513,16 @@ def main() -> int:
     base = ("popolazione", "stranieri", "istruzione", "lavoro", "pendolari")
     vuote = [n for n in base if not tab[n]["righe"]]
     if vuote:
-        log.error(f"\nTabelle di base senza dati: {', '.join(vuote)}. Non scrivo niente.")
+        log.error(f"\nTabelle di base senza dati: {', '.join(vuote)}. Non scrivo "
+                  "niente. Se nel log c'è «NON SCARICATA», ISTAT era lento o in "
+                  "errore: riprova fra qualche ora.")
         return 1
+    esito = 0
+    saltate = [n for n, t in tab.items() if not t["righe"]]
+    if saltate:
+        log.error(f"\nTabelle non arrivate: {', '.join(saltate)}. Per quelle "
+                  "tengo i valori già salvati; il workflow finisce in rosso.")
+        esito = 1
     try:
         ind = calcola(tab)
     except Exception as e:  # un codice cambiato da ISTAT non deve passare in silenzio
@@ -503,7 +534,6 @@ def main() -> int:
     # i dati ISTAT si salvano lo stesso e si tengono i redditi dell'anno prima,
     # ma il workflow finisce in rosso perché qualcuno se ne accorga.
     redditi = scarica_redditi(COMUNI, LOMBARDIA, USER_AGENT, TIMEOUT, args.ispeziona)
-    esito = 0
     if redditi:
         log.info(f"\n  redditi (anno d'imposta {redditi['anno_imposta']})")
         for a, v in redditi["valori"].items():
@@ -512,17 +542,22 @@ def main() -> int:
         if mancanti:
             log.error(f"  REDDITI MANCANTI per: {', '.join(mancanti)}")
             esito = 1
+        ind["redditi"] = redditi
     else:
         esito = 1
-        if DESTINAZIONE.exists():
-            redditi = json.loads(DESTINAZIONE.read_text(encoding="utf-8")).get("redditi")
-            log.error("  Redditi non aggiornati: tengo quelli già salvati.")
+
+    # Un blocco facoltativo che non è arrivato stavolta resta com'era.
+    precedente = (json.loads(DESTINAZIONE.read_text(encoding="utf-8"))
+                  if DESTINAZIONE.exists() else {})
+    for nome in FACOLTATIVI:
+        if nome not in ind and precedente.get(nome):
+            ind[nome] = precedente[nome]
+            log.error(f"  {nome}: non aggiornato, tengo i valori già salvati")
 
     if args.applica:
         ind = {"fonte": "ISTAT, esploradati.istat.it; MEF, dichiarazioni IRPEF",
                "aggiornato": date.today().isoformat(),
-               "aree": AREE, "pieve": PIEVE, "lombardia": LOMBARDIA, **ind,
-               "redditi": redditi}
+               "aree": AREE, "pieve": PIEVE, "lombardia": LOMBARDIA, **ind}
         DESTINAZIONE.write_text(json.dumps(ind, ensure_ascii=False, indent=1),
                                 encoding="utf-8")
         log.info(f"\nScritto {DESTINAZIONE}")

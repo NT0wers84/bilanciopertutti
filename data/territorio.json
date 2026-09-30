@@ -1,0 +1,489 @@
+{
+ "fonte": "ISTAT, esploradati.istat.it",
+ "aggiornato": "2026-09-30",
+ "aree": {
+  "015173": "Pieve Emanuele",
+  "015189": "Rozzano",
+  "015015": "Basiglio",
+  "015115": "Lacchiarella",
+  "015125": "Locate di Triulzi",
+  "015159": "Opera",
+  "ITC4": "Lombardia"
+ },
+ "pieve": "015173",
+ "lombardia": "ITC4",
+ "popolazione": {
+  "anno": "2026",
+  "serie": {
+   "015173": {
+    "2019": 15610.0,
+    "2020": 15608.0,
+    "2021": 15699.0,
+    "2022": 15671.0,
+    "2023": 15697.0,
+    "2024": 15713.0,
+    "2025": 15739.0,
+    "2026": 15846.0
+   },
+   "015189": {
+    "2019": 41570.0,
+    "2020": 41647.0,
+    "2021": 41844.0,
+    "2022": 41435.0,
+    "2023": 41370.0,
+    "2024": 41336.0,
+    "2025": 41559.0,
+    "2026": 41724.0
+   },
+   "015015": {
+    "2019": 7896.0,
+    "2020": 7949.0,
+    "2021": 7933.0,
+    "2022": 8040.0,
+    "2023": 7980.0,
+    "2024": 7931.0,
+    "2025": 7901.0,
+    "2026": 8027.0
+   },
+   "015115": {
+    "2019": 8927.0,
+    "2020": 8983.0,
+    "2021": 9060.0,
+    "2022": 9060.0,
+    "2023": 9073.0,
+    "2024": 9133.0,
+    "2025": 9135.0,
+    "2026": 9131.0
+   },
+   "015125": {
+    "2019": 10317.0,
+    "2020": 10318.0,
+    "2021": 10290.0,
+    "2022": 10264.0,
+    "2023": 10306.0,
+    "2024": 10332.0,
+    "2025": 10316.0,
+    "2026": 10360.0
+   },
+   "015159": {
+    "2019": 13845.0,
+    "2020": 13963.0,
+    "2021": 14100.0,
+    "2022": 14152.0,
+    "2023": 14295.0,
+    "2024": 14340.0,
+    "2025": 14396.0,
+    "2026": 14463.0
+   },
+   "ITC4": {
+    "2019": 10010833.0,
+    "2020": 10027602.0,
+    "2021": 9981554.0,
+    "2022": 9943004.0,
+    "2023": 9976509.0,
+    "2024": 10012054.0,
+    "2025": 10033918.0,
+    "2026": 10065694.0
+   }
+  },
+  "struttura_eta": {
+   "015173": {
+    "under15_pct": 12.1,
+    "over65_pct": 23.1,
+    "indice_vecchiaia": 192
+   },
+   "015189": {
+    "under15_pct": 12.5,
+    "over65_pct": 22.1,
+    "indice_vecchiaia": 177
+   },
+   "015015": {
+    "under15_pct": 12.2,
+    "over65_pct": 24.4,
+    "indice_vecchiaia": 199
+   },
+   "015115": {
+    "under15_pct": 12.2,
+    "over65_pct": 23.2,
+    "indice_vecchiaia": 190
+   },
+   "015125": {
+    "under15_pct": 13.3,
+    "over65_pct": 20.9,
+    "indice_vecchiaia": 157
+   },
+   "015159": {
+    "under15_pct": 11.9,
+    "over65_pct": 27.0,
+    "indice_vecchiaia": 227
+   },
+   "ITC4": {
+    "under15_pct": 11.9,
+    "over65_pct": 24.2,
+    "indice_vecchiaia": 203
+   }
+  },
+  "piramide": {
+   "015173": {
+    "0-4": 3.55,
+    "5-9": 3.99,
+    "10-14": 4.52,
+    "15-19": 5.04,
+    "20-24": 5.45,
+    "25-29": 6.3,
+    "30-34": 6.14,
+    "35-39": 6.3,
+    "40-44": 6.18,
+    "45-49": 6.08,
+    "50-54": 7.48,
+    "55-59": 7.81,
+    "60-64": 8.03,
+    "65-69": 7.28,
+    "70-74": 5.56,
+    "75-79": 4.66,
+    "80-84": 2.98,
+    "85-89": 1.98,
+    "90+": 0.66
+   },
+   "ITC4": {
+    "0-4": 3.36,
+    "5-9": 3.95,
+    "10-14": 4.6,
+    "15-19": 5.06,
+    "20-24": 5.1,
+    "25-29": 5.36,
+    "30-34": 5.58,
+    "35-39": 5.83,
+    "40-44": 6.15,
+    "45-49": 6.93,
+    "50-54": 8.12,
+    "55-59": 8.21,
+    "60-64": 7.57,
+    "65-69": 6.11,
+    "70-74": 5.22,
+    "75-79": 5.06,
+    "80-84": 3.52,
+    "85-89": 2.74,
+    "90+": 1.51
+   }
+  }
+ },
+ "stranieri": {
+  "anno": "2026",
+  "valori": {
+   "015173": 13.2,
+   "015189": 13.6,
+   "015015": 10.5,
+   "015115": 11.5,
+   "015125": 12.4,
+   "015159": 8.6,
+   "ITC4": 12.5
+  }
+ },
+ "istruzione": {
+  "anno": "2024",
+  "valori": {
+   "015173": {
+    "laureati_25_49_pct": 23.6,
+    "al_piu_licenza_media_25_49_pct": 23.8
+   },
+   "015189": {
+    "laureati_25_49_pct": 26.1,
+    "al_piu_licenza_media_25_49_pct": 26.4
+   },
+   "015015": {
+    "laureati_25_49_pct": 52.5,
+    "al_piu_licenza_media_25_49_pct": 11.5
+   },
+   "015115": {
+    "laureati_25_49_pct": 26.4,
+    "al_piu_licenza_media_25_49_pct": 23.4
+   },
+   "015125": {
+    "laureati_25_49_pct": 29.9,
+    "al_piu_licenza_media_25_49_pct": 20.5
+   },
+   "015159": {
+    "laureati_25_49_pct": 36.7,
+    "al_piu_licenza_media_25_49_pct": 16.5
+   },
+   "ITC4": {
+    "laureati_25_49_pct": 32.1,
+    "al_piu_licenza_media_25_49_pct": 22.3
+   }
+  }
+ },
+ "lavoro": {
+  "anno": "2024",
+  "valori": {
+   "015173": {
+    "occupati_25_64_pct": 79.6,
+    "disoccupazione_pct": 5.2
+   },
+   "015189": {
+    "occupati_25_64_pct": 77.1,
+    "disoccupazione_pct": 6.2
+   },
+   "015015": {
+    "occupati_25_64_pct": 80.6,
+    "disoccupazione_pct": 4.7
+   },
+   "015115": {
+    "occupati_25_64_pct": 80.0,
+    "disoccupazione_pct": 5.2
+   },
+   "015125": {
+    "occupati_25_64_pct": 81.9,
+    "disoccupazione_pct": 4.5
+   },
+   "015159": {
+    "occupati_25_64_pct": 82.0,
+    "disoccupazione_pct": 4.5
+   },
+   "ITC4": {
+    "occupati_25_64_pct": 77.8,
+    "disoccupazione_pct": 5.2
+   }
+  }
+ },
+ "pendolari": {
+  "anno": "2019",
+  "valori": {
+   "015173": {
+    "pendolari": 9497,
+    "fuori_comune_pct": 77.1
+   },
+   "015189": {
+    "pendolari": 23850,
+    "fuori_comune_pct": 63.5
+   },
+   "015015": {
+    "pendolari": 4871,
+    "fuori_comune_pct": 75.7
+   },
+   "015115": {
+    "pendolari": 5278,
+    "fuori_comune_pct": 70.8
+   },
+   "015125": {
+    "pendolari": 6415,
+    "fuori_comune_pct": 71.7
+   },
+   "015159": {
+    "pendolari": 7942,
+    "fuori_comune_pct": 67.5
+   },
+   "ITC4": {
+    "pendolari": 5611802,
+    "fuori_comune_pct": 57.1
+   }
+  }
+ },
+ "famiglie": {
+  "anno": "2024",
+  "valori": {
+   "015173": {
+    "famiglie": 6959,
+    "una_persona_pct": 35.0,
+    "cinque_e_piu_pct": 4.7,
+    "componenti_medi": 2.2616755280931167
+   },
+   "015189": {
+    "famiglie": 18549,
+    "una_persona_pct": 36.5,
+    "cinque_e_piu_pct": 5.1,
+    "componenti_medi": 2.2309558466763706
+   },
+   "015015": {
+    "famiglie": 3433,
+    "una_persona_pct": 32.3,
+    "cinque_e_piu_pct": 4.0,
+    "componenti_medi": 2.301485581124381
+   },
+   "015115": {
+    "famiglie": 4041,
+    "una_persona_pct": 32.8,
+    "cinque_e_piu_pct": 3.8,
+    "componenti_medi": 2.2561247216035634
+   },
+   "015125": {
+    "famiglie": 4604,
+    "una_persona_pct": 35.0,
+    "cinque_e_piu_pct": 4.0,
+    "componenti_medi": 2.2302345786272806
+   },
+   "015159": {
+    "famiglie": 6582,
+    "una_persona_pct": 34.9,
+    "cinque_e_piu_pct": 2.9,
+    "componenti_medi": 2.1748708599209965
+   },
+   "ITC4": {
+    "famiglie": 4594175,
+    "una_persona_pct": 38.8,
+    "cinque_e_piu_pct": 4.3,
+    "componenti_medi": 2.1689067133925026
+   }
+  }
+ },
+ "occupati": {
+  "anno": "2021",
+  "valori": {
+   "015173": {
+    "settori_pct": {
+     "Agricoltura": 0.8,
+     "Industria e costruzioni": 18.0,
+     "Commercio, alberghi e ristoranti": 21.7,
+     "Trasporti, logistica e comunicazione": 14.5,
+     "Finanza, immobiliare e servizi alle imprese": 17.5,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 27.6
+    },
+    "indipendenti_pct": 15.4
+   },
+   "015189": {
+    "settori_pct": {
+     "Agricoltura": 0.5,
+     "Industria e costruzioni": 20.2,
+     "Commercio, alberghi e ristoranti": 23.7,
+     "Trasporti, logistica e comunicazione": 12.4,
+     "Finanza, immobiliare e servizi alle imprese": 21.9,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 21.4
+    },
+    "indipendenti_pct": 17.1
+   },
+   "015015": {
+    "settori_pct": {
+     "Agricoltura": 0.9,
+     "Industria e costruzioni": 12.1,
+     "Commercio, alberghi e ristoranti": 18.3,
+     "Trasporti, logistica e comunicazione": 11.9,
+     "Finanza, immobiliare e servizi alle imprese": 33.5,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 23.3
+    },
+    "indipendenti_pct": 32.0
+   },
+   "015115": {
+    "settori_pct": {
+     "Agricoltura": 1.4,
+     "Industria e costruzioni": 23.7,
+     "Commercio, alberghi e ristoranti": 23.7,
+     "Trasporti, logistica e comunicazione": 12.6,
+     "Finanza, immobiliare e servizi alle imprese": 19.7,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 18.8
+    },
+    "indipendenti_pct": 21.3
+   },
+   "015125": {
+    "settori_pct": {
+     "Agricoltura": 1.3,
+     "Industria e costruzioni": 21.6,
+     "Commercio, alberghi e ristoranti": 21.2,
+     "Trasporti, logistica e comunicazione": 14.0,
+     "Finanza, immobiliare e servizi alle imprese": 19.8,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 22.1
+    },
+    "indipendenti_pct": 16.5
+   },
+   "015159": {
+    "settori_pct": {
+     "Agricoltura": 0.9,
+     "Industria e costruzioni": 19.6,
+     "Commercio, alberghi e ristoranti": 23.6,
+     "Trasporti, logistica e comunicazione": 12.0,
+     "Finanza, immobiliare e servizi alle imprese": 20.2,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 23.7
+    },
+    "indipendenti_pct": 23.2
+   },
+   "ITC4": {
+    "settori_pct": {
+     "Agricoltura": 1.8,
+     "Industria e costruzioni": 28.0,
+     "Commercio, alberghi e ristoranti": 19.4,
+     "Trasporti, logistica e comunicazione": 9.4,
+     "Finanza, immobiliare e servizi alle imprese": 19.1,
+     "Pubblica amministrazione, scuola, sanità e altri servizi": 22.3
+    },
+    "indipendenti_pct": 22.2
+   }
+  }
+ },
+ "previsioni": {
+  "da": "2025",
+  "a": "2050",
+  "valori": {
+   "015173": {
+    "2025": {
+     "over65_pct": 22.6,
+     "under15_pct": 12.6,
+     "eta_media": 45.0
+    },
+    "2050": {
+     "over65_pct": 32.7,
+     "under15_pct": 11.0,
+     "eta_media": 50.1
+    }
+   },
+   "015189": {
+    "2025": {
+     "over65_pct": 21.7,
+     "under15_pct": 13.0,
+     "eta_media": 45.6
+    },
+    "2050": {
+     "over65_pct": 33.6,
+     "under15_pct": 11.3,
+     "eta_media": 50.3
+    }
+   },
+   "015015": {
+    "2025": {
+     "over65_pct": 23.5,
+     "under15_pct": 13.0,
+     "eta_media": 45.9
+    },
+    "2050": {
+     "over65_pct": 34.8,
+     "under15_pct": 10.6,
+     "eta_media": 51.2
+    }
+   },
+   "015115": {
+    "2025": {
+     "over65_pct": 23.0,
+     "under15_pct": 12.7,
+     "eta_media": 46.0
+    },
+    "2050": {
+     "over65_pct": 34.0,
+     "under15_pct": 10.5,
+     "eta_media": 51.0
+    }
+   },
+   "015125": {
+    "2025": {
+     "over65_pct": 20.4,
+     "under15_pct": 13.8,
+     "eta_media": 44.6
+    },
+    "2050": {
+     "over65_pct": 33.3,
+     "under15_pct": 11.5,
+     "eta_media": 50.0
+    }
+   },
+   "015159": {
+    "2025": {
+     "over65_pct": 26.7,
+     "under15_pct": 12.1,
+     "eta_media": 47.5
+    },
+    "2050": {
+     "over65_pct": 32.8,
+     "under15_pct": 11.2,
+     "eta_media": 50.2
+    }
+   }
+  }
+ }
+}

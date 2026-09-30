@@ -77,8 +77,17 @@ AREE = {**COMUNI, LOMBARDIA: "Lombardia"}
 # I filtri riducono il download e valgono solo se il codice esiste: se ISTAT
 # lo cambia, la tabella risponde «nessun dato» e --ispeziona lo mostra.
 TABELLE = {
-    "popolazione": ("22_289_DF_DCIS_POPRES1_6", "22_289_DF_DCIS_POPRES1_1",
-                    {"DATA_TYPE": "JAN", "SEX": "9", "MARITAL_STATUS": "99"}),
+    # La popolazione per singolo anno di età e per tutti gli anni è la tabella
+    # più pesante: ISTAT l'ha lasciata scadere e poi ha chiuso la connessione.
+    # Si chiede in due pezzi leggeri: il totale per tutti gli anni (la serie),
+    # le età solo per gli anni recenti (piramide e struttura). "_startPeriod"
+    # non è una dimensione: dati() lo passa come parametro della richiesta.
+    "popolazione_totale": ("22_289_DF_DCIS_POPRES1_6", "22_289_DF_DCIS_POPRES1_1",
+                           {"DATA_TYPE": "JAN", "SEX": "9", "MARITAL_STATUS": "99",
+                            "AGE": "TOTAL"}),
+    "popolazione_eta": ("22_289_DF_DCIS_POPRES1_6", "22_289_DF_DCIS_POPRES1_1",
+                        {"DATA_TYPE": "JAN", "SEX": "9", "MARITAL_STATUS": "99",
+                         "_startPeriod": str(date.today().year - 2)}),
     "stranieri": ("29_7_DF_DCIS_POPSTRRES1_5", "29_7_DF_DCIS_POPSTRRES1_1",
                   {"DATA_TYPE": "JAN", "SEX": "9", "AGE": "TOTAL"}),
     "istruzione": ("DF_DCSS_ISTR_LAV_PEN_2_TV_1", None,
@@ -161,10 +170,21 @@ def _tag(el) -> str:
     return el.tag.rsplit("}", 1)[-1]
 
 
+_STRUTTURE: dict = {}
+
+
 def struttura(flusso: str, con_etichette: bool) -> dict:
     """Dimensioni del flusso nell'ordine della chiave, versione, e (se chiesto)
     le etichette italiane dei codici. Le etichette servono solo a --ispeziona:
-    costano un download più pesante, perché includono le liste dei codici."""
+    costano un download più pesante, perché includono le liste dei codici.
+    Si chiede una volta per flusso: la popolazione usa lo stesso flusso per
+    due tabelle, e ogni richiesta risparmiata è tempo e rischio in meno."""
+    if (flusso, con_etichette) not in _STRUTTURE:
+        _STRUTTURE[(flusso, con_etichette)] = _struttura(flusso, con_etichette)
+    return _STRUTTURE[(flusso, con_etichette)]
+
+
+def _struttura(flusso: str, con_etichette: bool) -> dict:
     rif = "descendants" if con_etichette else "datastructure"
     stato, corpo = richiesta(f"{BASE}/dataflow/IT1/{flusso}/latest?references={rif}",
                              "application/vnd.sdmx.structure+xml;version=2.1")
@@ -210,6 +230,8 @@ def dati(flusso: str, st: dict, aree: list[str], filtri: dict) -> list[dict]:
     chiave = ".".join("+".join(aree) if d == "REF_AREA" else filtri.get(d, "")
                       for d, _ in st["dimensioni"])
     url = f"{BASE}/data/IT1,{flusso},{st['versione']}/{chiave}/ALL/?detail=dataonly"
+    if filtri.get("_startPeriod"):
+        url += f"&startPeriod={filtri['_startPeriod']}"
     stato, corpo = richiesta(url, "application/vnd.sdmx.data+csv;version=1.0.0")
     if stato == 404:
         log.warning(f"  {flusso}: nessun dato con la chiave {chiave}")
@@ -412,19 +434,29 @@ def ind_previsioni(righe) -> dict:
     return {"da": primo, "a": ultimo, "valori": valori}
 
 
-def calcola(tab: dict) -> dict:
-    """Gli indicatori di base sono obbligatori (main() lo controlla prima). Gli
-    altri si calcolano solo se le loro tabelle sono arrivate: altrimenti
-    mancano dal risultato, e main() tiene quelli salvati la volta prima."""
+def calcola(tab: dict, precedente: dict) -> dict:
+    """Ogni blocco si calcola solo se le sue tabelle sono arrivate; altrimenti
+    manca dal risultato e main() tiene quello salvato la volta prima. ISTAT
+    a volte chiude la connessione proprio sulla tabella più pesante: buttare
+    via per questo tutte le altre (e i redditi) non ha senso."""
     r = lambda nome: tab[nome]["righe"]
-    pop = ind_popolazione(r("popolazione"))
-    ind = {
-        "popolazione": pop,
-        "stranieri": ind_stranieri(r("stranieri"), pop),
-        "istruzione": ind_istruzione(r("istruzione")),
-        "lavoro": ind_lavoro(r("lavoro")),
-        "pendolari": ind_pendolari(r("pendolari")),
-    }
+    ind = {}
+    if r("popolazione_totale") and r("popolazione_eta"):
+        # Il totale sta in entrambe le tabelle: dalla seconda solo le età,
+        # altrimenti gli abitanti degli anni recenti conterebbero due volte
+        ind["popolazione"] = ind_popolazione(
+            r("popolazione_totale") + [x for x in r("popolazione_eta") if x.get("AGE") != "TOTAL"])
+    # La quota di stranieri si calcola sulla popolazione: quella appena
+    # scaricata, o in mancanza quella salvata
+    pop = ind.get("popolazione") or precedente.get("popolazione")
+    if r("stranieri") and pop:
+        ind["stranieri"] = ind_stranieri(r("stranieri"), pop)
+    if r("istruzione"):
+        ind["istruzione"] = ind_istruzione(r("istruzione"))
+    if r("lavoro"):
+        ind["lavoro"] = ind_lavoro(r("lavoro"))
+    if r("pendolari"):
+        ind["pendolari"] = ind_pendolari(r("pendolari"))
     if r("famiglie") and r("componenti_famiglia"):
         ind["famiglie"] = ind_famiglie(r("famiglie"), r("componenti_famiglia"))
     if r("occupati_settore") and r("occupati_posizione"):
@@ -434,7 +466,8 @@ def calcola(tab: dict) -> dict:
     return ind
 
 
-FACOLTATIVI = ("famiglie", "occupati", "previsioni", "redditi")
+BLOCCHI = ("popolazione", "stranieri", "istruzione", "lavoro", "pendolari",
+           "famiglie", "occupati", "previsioni", "redditi")
 
 
 # ── Ispezione ────────────────────────────────────────────────────────────────
@@ -469,12 +502,11 @@ def descrivi(nome: str, t: dict) -> None:
 
 def stampa_indicatori(ind: dict) -> None:
     log.info("\n══ Indicatori calcolati ══")
-    blocchi = [("struttura età", ind["popolazione"]["anno"], ind["popolazione"]["struttura_eta"]),
-               ("stranieri %", ind["stranieri"]["anno"], ind["stranieri"]["valori"]),
-               ("istruzione", ind["istruzione"]["anno"], ind["istruzione"]["valori"]),
-               ("lavoro", ind["lavoro"]["anno"], ind["lavoro"]["valori"]),
-               ("pendolari", ind["pendolari"]["anno"], ind["pendolari"]["valori"])]
-    for nome in ("famiglie", "occupati"):
+    blocchi = []
+    if "popolazione" in ind:
+        blocchi.append(("struttura età", ind["popolazione"]["anno"],
+                        ind["popolazione"]["struttura_eta"]))
+    for nome in ("stranieri", "istruzione", "lavoro", "pendolari", "famiglie", "occupati"):
         if nome in ind:
             blocchi.append((nome, ind[nome]["anno"], ind[nome]["valori"]))
     if ind.get("previsioni"):
@@ -484,6 +516,8 @@ def stampa_indicatori(ind: dict) -> None:
         log.info(f"  {titolo} ({anno})")
         for a, v in valori.items():
             log.info(f"    {AREE[a]:<18} {v}")
+    if "popolazione" not in ind:
+        return
     log.info("  abitanti per anno")
     for a, s in ind["popolazione"]["serie"].items():
         log.info(f"    {AREE[a]:<18} " + " ".join(f"{k}:{round(v)}" for k, v in s.items()))
@@ -510,21 +544,18 @@ def main() -> int:
         for nome, t in tab.items():
             descrivi(nome, t)
 
-    base = ("popolazione", "stranieri", "istruzione", "lavoro", "pendolari")
-    vuote = [n for n in base if not tab[n]["righe"]]
-    if vuote:
-        log.error(f"\nTabelle di base senza dati: {', '.join(vuote)}. Non scrivo "
-                  "niente. Se nel log c'è «NON SCARICATA», ISTAT era lento o in "
-                  "errore: riprova fra qualche ora.")
-        return 1
+    precedente = (json.loads(DESTINAZIONE.read_text(encoding="utf-8"))
+                  if DESTINAZIONE.exists() else {})
     esito = 0
     saltate = [n for n, t in tab.items() if not t["righe"]]
     if saltate:
         log.error(f"\nTabelle non arrivate: {', '.join(saltate)}. Per quelle "
-                  "tengo i valori già salvati; il workflow finisce in rosso.")
+                  "tengo i valori già salvati; il workflow finisce in rosso. Se "
+                  "nel log c'è «NON SCARICATA», ISTAT era lento o in errore: "
+                  "riprova fra qualche ora.")
         esito = 1
     try:
-        ind = calcola(tab)
+        ind = calcola(tab, precedente)
     except Exception as e:  # un codice cambiato da ISTAT non deve passare in silenzio
         log.error(f"\nCalcolo degli indicatori fallito: {type(e).__name__}: {e}")
         return 1
@@ -546,13 +577,18 @@ def main() -> int:
     else:
         esito = 1
 
-    # Un blocco facoltativo che non è arrivato stavolta resta com'era.
-    precedente = (json.loads(DESTINAZIONE.read_text(encoding="utf-8"))
-                  if DESTINAZIONE.exists() else {})
-    for nome in FACOLTATIVI:
+    # Un blocco che non è arrivato stavolta resta com'era.
+    for nome in BLOCCHI:
         if nome not in ind and precedente.get(nome):
             ind[nome] = precedente[nome]
             log.error(f"  {nome}: non aggiornato, tengo i valori già salvati")
+    # Senza questi la pagina non si regge: al primo giro, senza un file
+    # precedente da cui recuperarli, meglio non scrivere niente.
+    base = ("popolazione", "stranieri", "istruzione", "lavoro", "pendolari")
+    if any(n not in ind for n in base):
+        log.error(f"\nMancano blocchi di base ({', '.join(n for n in base if n not in ind)}) "
+                  "e non ci sono valori salvati: non scrivo niente.")
+        return 1
 
     if args.applica:
         ind = {"fonte": "ISTAT, esploradati.istat.it; MEF, dichiarazioni IRPEF",

@@ -1,0 +1,68 @@
+name: Conti in chiaro — Ricalcola importi dai testi archiviati
+
+# Solo manuale. Rilegge i testi degli atti salvati in docs/testi/ e riapplica
+# le regole correnti di lettura di importi e beneficiari, senza riscaricare
+# niente dal portale e senza chiamare Groq. Serve quando cambiano le regole
+# in estrattore.py.
+#
+# Primo giro: lascia "applica" = false. Il log elenca, atto per atto, cosa
+# cambierebbe (importo prima → dopo, e con quale regola). Solo se l'elenco
+# convince, rilancia con "applica" = true: allora scrive e pubblica.
+on:
+  workflow_dispatch:
+    inputs:
+      applica:
+        description: 'Applica i cambi (false = solo anteprima)'
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conti-in-chiaro-run
+  cancel-in-progress: false
+
+jobs:
+  ricalcola:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Configura Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Installa dipendenze Python
+        run: pip install -r requirements.txt
+
+      # Se le regole sono rotte, meglio saperlo prima di riscrivere l'archivio
+      - name: Verifica le regole di lettura degli atti
+        run: python scripts/test_estrattore.py
+
+      - name: Ricalcola
+        run: |
+          if [ "${{ inputs.applica }}" = "true" ]; then
+            python scripts/ricalcola_importi.py --applica
+            python scripts/verifica_dati.py
+            python scripts/genera_sito.py
+          else
+            python scripts/ricalcola_importi.py
+          fi
+
+      - name: Salva risultati nel repository
+        if: ${{ inputs.applica == true }}
+        run: |
+          git config user.name "ContiInChiaroBot"
+          git config user.email "bot@conti-in-chiaro.local"
+          git config merge.mantieni-locale.driver true
+          git pull --rebase --autostash
+          python scripts/verifica_dati.py
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Ricalcolo importi dai testi: $(date '+%Y-%m-%d %H:%M')"
+          git push

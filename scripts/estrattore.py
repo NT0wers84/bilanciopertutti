@@ -853,6 +853,58 @@ def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | No
     return None
 
 
+def _avviso_workflow(messaggio: str) -> None:
+    """Errore nel log e avviso nel riepilogo del run su GitHub Actions.
+
+    Groq si è fermato il 19 agosto 2026 e per sei settimane nessuno se n'è
+    accorto: il fallback regex lavorava in silenzio e il workflow era verde.
+    L'avviso non ferma l'aggiornamento (le spese vanno pubblicate lo stesso),
+    ma compare in cima alla pagina del run."""
+    log.error(messaggio)
+    print(f"::warning title=Groq non funziona::{messaggio}", flush=True)
+
+
+def verifica_groq() -> bool:
+    """Controllo all'avvio: chiave presente, modelli esistenti, una chiamata
+    di prova. Dice PERCHÉ Groq non risponde invece di lasciarlo dedurre da un
+    fallback silenzioso. Se il modello principale è stato ritirato ma quello
+    di riserva esiste ancora, passa alla riserva per tutto il run."""
+    global MODELLO_DEFAULT
+    if not os.environ.get("GROQ_API_KEY"):
+        _avviso_workflow("Secret GROQ_API_KEY assente: tutti gli atti passano "
+                         "dalle regex, meno precise.")
+        return False
+    try:
+        from groq import Groq
+        client = Groq(api_key=os.environ["GROQ_API_KEY"], max_retries=0)
+        disponibili = sorted(m.id for m in client.models.list().data)
+    except Exception as e:  # noqa: BLE001
+        _avviso_workflow(f"Groq irraggiungibile o chiave rifiutata: "
+                         f"{type(e).__name__}: {str(e)[:300]}")
+        return False
+    log.info(f"Groq: {len(disponibili)} modelli disponibili")
+    for modello in (MODELLO_DEFAULT, MODELLO_RISERVA):
+        if modello not in disponibili:
+            _avviso_workflow(f"Il modello {modello} non esiste più su Groq. "
+                             f"Disponibili: {', '.join(disponibili)}")
+    if MODELLO_DEFAULT not in disponibili:
+        if MODELLO_RISERVA in disponibili:
+            log.warning(f"Uso il modello di riserva {MODELLO_RISERVA} per tutto il run")
+            MODELLO_DEFAULT = MODELLO_RISERVA
+        else:
+            return False
+    try:
+        client.chat.completions.create(
+            model=MODELLO_DEFAULT, max_tokens=5, temperature=0,
+            messages=[{"role": "user", "content": "Rispondi solo: ok"}])
+    except Exception as e:  # noqa: BLE001
+        _avviso_workflow(f"Chiamata di prova a {MODELLO_DEFAULT} fallita: "
+                         f"{type(e).__name__}: {str(e)[:300]}")
+        return False
+    log.info(f"Groq risponde: modello {MODELLO_DEFAULT}")
+    return True
+
+
 def _estrai_con_groq(testo: str, oggetto: str) -> dict | None:
     from groq import Groq
     # max_retries=0: i retry li gestiamo noi (l'SDK ritenterebbe anche i 413,

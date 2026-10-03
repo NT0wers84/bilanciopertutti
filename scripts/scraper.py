@@ -17,7 +17,7 @@ from pathlib import Path
 from datetime import datetime
 
 import portale
-from estrattore import estrai_dati, categoria_da_settore
+from estrattore import estrai_dati, categoria_da_settore, verifica_groq
 
 logging.basicConfig(
     level=logging.INFO,
@@ -143,6 +143,9 @@ def main():
         nuove_righe.append(r)
 
     log.info(f"Spese nuove da elaborare: {len(nuove_righe)}")
+    # Si controlla ogni giorno, anche senza spese nuove: un guasto di Groq va
+    # scoperto subito, non il giorno in cui ci sono atti da leggere.
+    verifica_groq()
     if not nuove_righe:
         salva(archivio, [])
         return

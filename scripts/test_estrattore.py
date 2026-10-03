@@ -19,6 +19,7 @@ docs/testi/: se manca, il test viene saltato e dichiarato, non dato per buono.
 """
 
 import gzip
+import os
 import sys
 from pathlib import Path
 
@@ -146,6 +147,32 @@ def test_creditore_dal_prospetto():
         _, _, cred2 = leggi_prospetto_liquidazione(t2)
         verifica("l'esattoria IVA non è un fornitore",
                  any("ESATTORIA" in c["nome"].upper() for c in cred2), False)
+
+
+def test_atto_lungo_intero():
+    """Atto 2026/1980, Jolly Service: 10.932 caratteri, il prospetto in fondo.
+    estrai_dati() passava alle regex il testo ridotto per Groq (7.000
+    caratteri) e chiamava estrai_importo() senza il tipo d'atto: il prospetto
+    spariva, l'importo restava vuoto e il beneficiario diventava «COMP. SIOPE
+    COOPERATIVA», cioè un pezzo dell'intestazione della tabella."""
+    sezione("Atto lungo: le regex leggono il testo intero")
+    from estrattore import estrai_dati
+    t = testo_atto("liquidazione-1980-2026")
+    if t is None:
+        return
+    chiave = os.environ.pop("GROQ_API_KEY", None)   # si prova il ripiego, non Groq
+    try:
+        dati = estrai_dati(t, "ATTO DI LIQUIDAZIONE FATTURA N° 147/PA 148/PA E 149/PA",
+                           "Determinazione di liquidazione")
+    finally:
+        if chiave:
+            os.environ["GROQ_API_KEY"] = chiave
+    # Tre fatture IVA compresa: 672,22 + 1.098,00 + 549,00. Lo storno IVA della
+    # 147 va in entrata (E.3) senza riga dell'esattoria: sommando tutto col
+    # segno si otteneva 2.198,00, cioè la spesa senza una parte dell'IVA.
+    verifica("importo dal prospetto: le fatture IVA compresa", dati["importo_euro"], 2319.22)
+    verifica("creditore dal prospetto", dati["beneficiario"],
+             "COOPERATIVA SOCIALE JOLLY SERVICE ONLUS")
 
 
 def test_liquidazione_due_fatture():
@@ -470,6 +497,7 @@ def main() -> int:
     test_soglie_di_legge()
     test_liquidazione_imet()
     test_creditore_dal_prospetto()
+    test_atto_lungo_intero()
     test_liquidazione_due_fatture()
     test_liquidazione_iva_non_doppia()
     test_liquidazione_prende_il_lordo()

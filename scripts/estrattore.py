@@ -626,7 +626,12 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
         risultato = _estrai_con_groq(testo, oggetto)
 
     if risultato is None:
-        risultato = _estrai_con_regex(testo, oggetto, tipo_portale)
+        # Il testo ridotto serve a Groq, che ha un limite di token. Le regex
+        # non ne hanno, e devono leggere l'atto intero: il prospetto di
+        # liquidazione sta in fondo, e la riduzione a 7.000 caratteri lo
+        # tagliava. L'atto 2026/1980 (10.932 caratteri) usciva senza importo
+        # e con «COMP. SIOPE COOPERATIVA» al posto del creditore.
+        risultato = _estrai_con_regex(testo_grezzo, oggetto, tipo_portale)
         risultato["estrazione"] = "regex"
     else:
         risultato["estrazione"] = "groq"
@@ -671,7 +676,10 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
     # sulla lettura del modello. Il modello tende a raccogliere il valore
     # più vistoso del documento, che spesso è il valore di una convenzione
     # pluriennale e non la spesa dell'atto.
-    dichiarato, regola, incerto = estrai_importo(testo, oggetto)
+    # Testo intero e tipo d'atto: senza il tipo, una liquidazione non passa
+    # dal prospetto contabile, che è la sua fonte più affidabile.
+    dichiarato, regola, incerto = estrai_importo(testo_grezzo, oggetto,
+                                                 risultato["tipo_atto"])
     risultato["regola_importo"] = regola
     risultato["importo_incerto"] = incerto
 
@@ -986,6 +994,10 @@ RE_INTESTAZIONE_PROSPETTO = re.compile(
 RE_RIGA_PROSPETTO = re.compile(
     r"\|(?:\s*([^|]{3,70}?)\s*\|)?\s*(-?\d{1,3}(?:\.\d{3})*,\d{2})\s*\|\s*\d")
 MAX_RIGHE_PROSPETTO = 40
+# Il codice SIOPE che segue l'importo nella riga del prospetto ("U.1.03.02.",
+# "E.9.01.01.0", "U.7.01.01."). Nel testo estratto dal PDF sta una o due
+# righe sotto l'importo, prima della riga successiva della tabella.
+RE_SIOPE_RIGA = re.compile(r"\b([UE]\.\d)\.\d{2}")
 # Righe tecniche del prospetto: non sono fornitori ma destinazioni di legge
 # dello stesso pagamento. L'IVA girata allo Stato in split payment, la
 # ritenuta d'acconto all'Agenzia delle Entrate, i contributi previdenziali.
@@ -1020,7 +1032,8 @@ def leggi_prospetto_liquidazione(testo: str) -> tuple[float | None, int, list[di
         return None, 0, []
     blocco = testo[intestazioni[-1].end():]
     valori, per_creditore, ordine = [], {}, []
-    for nome, grezzo in RE_RIGA_PROSPETTO.findall(blocco):
+    for m in RE_RIGA_PROSPETTO.finditer(blocco):
+        nome, grezzo = m.group(1), m.group(2)
         # importo_italiano() non legge il segno: lo storno dello split payment
         # è negativo e senza di esso la somma conterebbe l'IVA due volte
         negativo = grezzo.strip().startswith("-")
@@ -1028,6 +1041,17 @@ def leggi_prospetto_liquidazione(testo: str) -> tuple[float | None, int, list[di
         if v is None:
             continue
         valore = -v if negativo else v
+        # Il codice SIOPE della riga dice che cosa è. Conta solo la spesa
+        # vera (U.1 correnti, U.2 investimenti): le fatture IVA compresa, e le
+        # eventuali note di credito. Restano fuori gli storni in entrata (E.:
+        # IVA in split payment, ritenute) e le partite di giro (U.7: la riga
+        # dell'esattoria che gira l'IVA allo Stato). Prima si sommava tutto
+        # col segno, e quando lo storno dell'IVA andava in entrata senza la
+        # riga dell'esattoria (IVA di attività commerciali) l'importo perdeva
+        # l'IVA: 2.198,00 invece di 2.319,22 nell'atto 2026/1980.
+        siope = RE_SIOPE_RIGA.search(blocco, m.end(), m.end() + 90)
+        if siope and not siope.group(1).startswith(("U.1", "U.2")):
+            continue
         valori.append(valore)
         pulito = _nome_creditore(nome)
         if (len(pulito) > 3 and not RE_NON_CREDITORE.match(pulito)

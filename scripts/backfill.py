@@ -25,7 +25,7 @@ import argparse
 from datetime import datetime
 
 import portale
-from estrattore import estrai_dati
+from estrattore import estrai_dati, verifica_groq
 from scraper import carica_archivio, chiavi_note, elabora_spesa, salva
 
 logging.basicConfig(
@@ -225,6 +225,11 @@ def main():
                              "dubbio: sono quelle che il sito mostra già come "
                              "«da verificare»")
     args = parser.parse_args()
+
+    # Sceglie i modelli Groq ancora disponibili e avvisa se non ce ne sono:
+    # rielaborare centinaia di atti con Groq rotto vuol dire rifarli a regex
+    if not args.solo_censimento:
+        verifica_groq()
 
     if args.riestrai_regex or args.riestrai_tutto or args.riestrai_incerti:
         quali = ("importi incerti" if args.riestrai_incerti

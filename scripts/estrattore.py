@@ -21,11 +21,26 @@ import logging
 
 log = logging.getLogger(__name__)
 
-# L'8B è il default: sul free tier il 70B ha TPM così bassi che ogni chiamata
-# finisce in 429 (verificato nel backfill del 2026-07-16); l'8B risponde
-# stabilmente e per un'estrazione JSON strutturata è più che sufficiente.
-MODELLO_DEFAULT = os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
-MODELLO_RISERVA = "llama-3.3-70b-versatile"
+# Modelli in ordine di preferenza. Groq li ritira senza preavviso: il 19
+# agosto 2026 sono spariti llama-3.1-8b-instant e llama-3.3-70b-versatile, e
+# per sei settimane tutto è passato dalle regex. verifica_groq() all'avvio
+# sceglie i primi due di questa lista ancora disponibili; se non ce n'è
+# nessuno lo dice nel riepilogo del run. Il più piccolo per primo: sul free
+# tier i modelli grandi hanno limiti di token al minuto più bassi.
+MODELLI_PREFERITI = ["openai/gpt-oss-20b", "openai/gpt-oss-120b", "qwen/qwen3.8-27b"]
+MODELLO_DEFAULT = os.environ.get("GROQ_MODEL", MODELLI_PREFERITI[0])
+MODELLO_RISERVA = MODELLI_PREFERITI[1]
+# I modelli gpt-oss «ragionano» prima di rispondere, e il ragionamento consuma
+# token dallo stesso budget della risposta: con 500 token il JSON poteva
+# restare troncato. Ragionamento al minimo e margine più ampio.
+MAX_TOKENS_RISPOSTA = 1500
+
+
+def _parametri_modello(modello: str) -> dict:
+    """Parametri specifici per famiglia di modello."""
+    if modello.startswith("openai/gpt-oss"):
+        return {"reasoning_effort": "low"}
+    return {}
 
 # Pausa tra chiamate, ADATTIVA: cresce a ogni 429, si riassesta sui successi.
 # Il vero collo di bottiglia del free tier è il TPM (token/minuto).
@@ -813,8 +828,9 @@ def _chiama_modello(client, modello: str, testo: str, oggetto: str) -> dict | No
         try:
             risposta = client.chat.completions.create(
                 model=modello,
-                max_tokens=500,
+                max_tokens=MAX_TOKENS_RISPOSTA,
                 temperature=0,
+                **_parametri_modello(modello),
                 response_format={"type": "json_object"},
                 messages=[
                     {"role": "system", "content": PROMPT_SISTEMA},
@@ -869,7 +885,7 @@ def verifica_groq() -> bool:
     di prova. Dice PERCHÉ Groq non risponde invece di lasciarlo dedurre da un
     fallback silenzioso. Se il modello principale è stato ritirato ma quello
     di riserva esiste ancora, passa alla riserva per tutto il run."""
-    global MODELLO_DEFAULT
+    global MODELLO_DEFAULT, MODELLO_RISERVA
     if not os.environ.get("GROQ_API_KEY"):
         _avviso_workflow("Secret GROQ_API_KEY assente: tutti gli atti passano "
                          "dalle regex, meno precise.")
@@ -883,25 +899,32 @@ def verifica_groq() -> bool:
                          f"{type(e).__name__}: {str(e)[:300]}")
         return False
     log.info(f"Groq: {len(disponibili)} modelli disponibili")
-    for modello in (MODELLO_DEFAULT, MODELLO_RISERVA):
+    # I primi due modelli preferiti ancora disponibili (quello indicato nel
+    # secret GROQ_MODEL, se c'è, ha la precedenza)
+    candidati = [MODELLO_DEFAULT] + [m for m in MODELLI_PREFERITI if m != MODELLO_DEFAULT]
+    validi = [m for m in candidati if m in disponibili]
+    for modello in candidati[:2]:
         if modello not in disponibili:
             _avviso_workflow(f"Il modello {modello} non esiste più su Groq. "
                              f"Disponibili: {', '.join(disponibili)}")
-    if MODELLO_DEFAULT not in disponibili:
-        if MODELLO_RISERVA in disponibili:
-            log.warning(f"Uso il modello di riserva {MODELLO_RISERVA} per tutto il run")
-            MODELLO_DEFAULT = MODELLO_RISERVA
-        else:
-            return False
+    if not validi:
+        _avviso_workflow("Nessuno dei modelli previsti è disponibile: va "
+                         "aggiornato MODELLI_PREFERITI in estrattore.py.")
+        return False
+    if validi[0] != MODELLO_DEFAULT:
+        log.warning(f"Uso {validi[0]} al posto di {MODELLO_DEFAULT}")
+    MODELLO_DEFAULT = validi[0]
+    MODELLO_RISERVA = validi[1] if len(validi) > 1 else validi[0]
     try:
         client.chat.completions.create(
-            model=MODELLO_DEFAULT, max_tokens=5, temperature=0,
+            model=MODELLO_DEFAULT, max_tokens=200, temperature=0,
+            **_parametri_modello(MODELLO_DEFAULT),
             messages=[{"role": "user", "content": "Rispondi solo: ok"}])
     except Exception as e:  # noqa: BLE001
         _avviso_workflow(f"Chiamata di prova a {MODELLO_DEFAULT} fallita: "
                          f"{type(e).__name__}: {str(e)[:300]}")
         return False
-    log.info(f"Groq risponde: modello {MODELLO_DEFAULT}")
+    log.info(f"Groq risponde: modello {MODELLO_DEFAULT}, riserva {MODELLO_RISERVA}")
     return True
 
 

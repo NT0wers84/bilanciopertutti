@@ -53,10 +53,19 @@ def versioni() -> list[str]:
     return esito.stdout.split()
 
 
-def leggi_versione(commit: str) -> dict:
+def leggi_versione(commit: str) -> dict | None:
+    """Gli atti di una versione passata, o None se quella versione è
+    illeggibile: nella storia ci sono file rovinati dai merge di settembre
+    (marcatori di conflitto dentro il JSON), e vanno saltati, non letti."""
     esito = subprocess.run(["git", "show", f"{commit}:{SPESE}"],
-                           capture_output=True, text=True, check=True)
-    return {s["id"]: s for s in json.loads(esito.stdout)}
+                           capture_output=True, text=True)
+    if esito.returncode != 0:
+        return None
+    try:
+        return {s["id"]: s for s in json.loads(esito.stdout)}
+    except (json.JSONDecodeError, KeyError, TypeError):
+        log.info(f"  (versione {commit[:7]} illeggibile, la salto)")
+        return None
 
 
 def main() -> int:
@@ -76,6 +85,8 @@ def main() -> int:
         if not da_fare:
             break
         vecchia = leggi_versione(c)
+        if vecchia is None:
+            continue
         for id_atto in list(da_fare):
             prima = vecchia.get(id_atto)
             # Solo importi letti da un testo vero: quelli che il modello aveva

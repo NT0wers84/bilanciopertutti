@@ -117,8 +117,11 @@ def test_liquidazione_imet():
     verifica("letto dal prospetto contabile",
              regola.startswith("prospetto di liquidazione"), True)
     somma, righe = somma_prospetto_liquidazione(t)
-    verifica("il prospetto ha tre righe (spesa, storno IVA, esattoria)", righe, 3)
-    verifica("lo storno negativo annulla la riga esattoria", somma, 601334.66)
+    # Il prospetto ha tre righe (spesa, storno IVA, esattoria), ma conta solo
+    # quella di spesa (SIOPE U.2): storno (E.9) ed esattoria (U.7) sono il
+    # giroconto dell'IVA allo Stato, già compresa nella fattura.
+    verifica("conta solo la riga di spesa, non storno ed esattoria", righe, 1)
+    verifica("il totale è la fattura IVA compresa", somma, 601334.66)
 
 
 def test_creditore_dal_prospetto():

@@ -48,14 +48,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-10-06",
   "oggetto": "LAVORI DI MANUTENZIONE DEL PATRIMONIO COMUNALE – OPERE EDILI. CIG B879A1F163. APPROVAZIONE DELLA CONTABILITÀ RELATIVA AL III SAL E LIQUIDAZIONE DEL CERTIFICATO DI PAGAMENTO N. 3 – FATTURA NR. 1/206 DEL 30/06/2026 IN FAVORE DI E.M. EDILIZIA MODERNA S.R.L. PER €29.120,28 (IVA AL 22% INCLUSA).",
-  "beneficiario": "E.M. EDILIZIA MODERNA S.R.L.",
+  "beneficiario": "EM EDILIZIA MODERNA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "E.M. EDILIZIA MODERNA S.R.L.",
-    "importo": 29120.28
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 29120.28,
   "importo_testuale": "29.120,28",
   "importo_e_pluriennale": false,
@@ -125,9 +120,34 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-10-06",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "VARIE COOPERATIVE PER SERVIZI A FAVORE DI ANZIANI E DISABILI",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 6,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "SERENI ORIZZONTI 1 SPA",
+    "importo": 4686.86
+   },
+   {
+    "nome": "C.R.M. COOP. SOCIALE ONLUS",
+    "importo": 2479.0
+   },
+   {
+    "nome": "COOPERATIVA SOCIALE IL BALZO",
+    "importo": 5703.5
+   },
+   {
+    "nome": "CROCE DI MALTA SRL",
+    "importo": 573.2
+   },
+   {
+    "nome": "PROGETTOPERSONA SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 750.0
+   },
+   {
+    "nome": "ARIES GROUP S.R.L",
+    "importo": 1100.0
+   }
+  ],
   "importo_euro": 16625.81,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -320,18 +340,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-10-05",
   "oggetto": "LAVORI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANETRO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE DELL’EDIFICIO SCOLASTICO LUIGI GEMELLI, FINANZIATO DA NEXT GENERATION EU M2C4 INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) – (RIFINANZIATO MEDIE OPERE SCORRIMENTO GRADUATORIA D.M. DEL 08/11/2021). CIG B3109406AA. CUP J44H20001150001. APPROVAZIONE RELAZIONE SUL CONTO FINALE E CERTIFICATO DI REGOLARE ESECUZIONE E LIQUIDAZIONE FATTURE NR. 97/2026 DEL 04/09/2026 PER €14.244,53 (IVA AL 10% INCLUSA) E NR. 103/2026 DEL 24/09/2026 PER €36.782,05 (IVA AL 10% INCLUSA) IN FAVORE DI EDIL-JOLLI S.R.L.",
-  "beneficiario": "EDIL-JOLLI S.R.L.",
+  "beneficiario": "EDILJOLLI S.R.L",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Edil-Jolli S.r.l.",
-    "importo": 14244.53
-   },
-   {
-    "nome": "Edil-Jolli S.r.l.",
-    "importo": 36782.05
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 51026.58,
   "importo_testuale": "51.026,58",
   "importo_e_pluriennale": false,
@@ -696,14 +707,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-10-02",
   "oggetto": "ATTO DI LIQUIDAZIONE NOTA DI COMPENSO PROT. 20671 DEL 08.09.2026",
-  "beneficiario": "VISMARA",
+  "beneficiario": "VISMARA RAFFAELLA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "VISMARA",
-    "importo": 250.0
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 250.0,
   "importo_testuale": "300,00",
   "importo_e_pluriennale": false,
@@ -942,14 +948,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-10-01",
   "oggetto": "LIQUIDAZIONE FATTURA N. FPA 47/26 DELLA CARTOLERIA PLUK RELATIVA ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "PLUK DI DOSSI",
+  "beneficiario": "PLUK DI DOSSI DANIELA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "PLUK DI DOSSI",
-    "importo": 56.74
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 56.74,
   "importo_testuale": "56,74",
   "importo_e_pluriennale": false,
@@ -1072,7 +1073,7 @@
   "beneficiario": "ALCE S.A.S. DI CAVAZZINI FULVIO NORBERTO & C.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 130.84,
+  "importo_euro": 159.62,
   "importo_testuale": "159,62",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1095,7 +1096,9 @@
   "caratteri_testo": 8894,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:44",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1951-2026",
@@ -1305,9 +1308,22 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "COOPERATIVA",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 3,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "A.LA.T.HA COOPERATIVA SOCIALE",
+    "importo": 6080.22
+   },
+   {
+    "nome": "VIVENDA SPA",
+    "importo": 717.39
+   },
+   {
+    "nome": "SPAZIO APERTO SERVIZI SOC. COOP. SOCIALE ONLUS",
+    "importo": 10981.96
+   }
+  ],
   "importo_euro": 17779.57,
   "importo_testuale": "25.248,51",
   "importo_e_pluriennale": false,
@@ -1341,9 +1357,26 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA MINORI E FAMIGLIA",
-  "beneficiario": "2 FORNITORI",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 4,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "FUORILUOGHI SOCIETA' COOPERATIVA SOCIALE ONLUS",
+    "importo": 9363.34
+   },
+   {
+    "nome": "SOCIETA' COOPERATIVA SOCIALE IL MOSAICO SERVIZI",
+    "importo": 57.75
+   },
+   {
+    "nome": "SILOE",
+    "importo": 2792.0
+   },
+   {
+    "nome": "MERAKI SOCIETA' COOPERATIVA SOCIALE",
+    "importo": 27929.94
+   }
+  ],
   "importo_euro": 40143.03,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
@@ -1377,31 +1410,19 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: BIOS LINE SPA E TOWA PHARMACEUTICAL SPA",
-  "beneficiario": "AZIENDE DIVERSE",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
     "nome": "BIOS LINE SPA",
-    "importo": 236.26
+    "importo": 2507.66
    },
    {
     "nome": "TOWA PHARMACEUTICAL SPA",
-    "importo": 282.54
-   },
-   {
-    "nome": "TOWA PHARMACEUTICAL SPA",
-    "importo": 282.54
-   },
-   {
-    "nome": "BIOS LINE SPA",
-    "importo": 145.86
-   },
-   {
-    "nome": "TOWA PHARMACEUTICAL SPA",
-    "importo": 2309.64
+    "importo": 801.34
    }
   ],
-  "importo_euro": 3256.84,
+  "importo_euro": 3309.0,
   "importo_testuale": "3.256,84",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1424,7 +1445,9 @@
   "caratteri_testo": 11088,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:47",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "prospetto di liquidazione (6 righe)",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1938-2026",
@@ -1478,7 +1501,7 @@
   "beneficiario": "STUDIO TE.C.N.A. SRL DI CASTAGNARO NICOLA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 1500.0,
+  "importo_euro": 1921.5,
   "importo_testuale": "1.921,50",
   "importo_e_pluriennale": true,
   "durata_anni": 3,
@@ -1501,7 +1524,9 @@
   "caratteri_testo": 13275,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:49",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1936-2026",
@@ -1555,7 +1580,7 @@
   "beneficiario": "ECODIS S.R.L.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 6500.0,
+  "importo_euro": 7930.0,
   "importo_testuale": "7.930,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1578,7 +1603,9 @@
   "caratteri_testo": 8265,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:49",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1934-2026",
@@ -1588,7 +1615,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "LIQUIDAZIONE FATTURE M.T. SPA",
-  "beneficiario": "M.T. SPA",
+  "beneficiario": "MAGGIOLI TRIBUTI S.P.A",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
   "importo_euro": 3797.61,
@@ -1665,23 +1692,23 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "MIGLIORAMENTO DEL DECORO URBANO E DEL TESSUTO URBANO SOCIALE ED AMBIENTE CON INTERVENTI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI – LAVORI DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI ALLE ATTIVITÀ SPORTIVE IN VIA PINI E VIA MOLISE – CUP J47H21001820001 – CIG A0127622C5, FINANZIATO DA NEXT GENERATION EU – M5C2 – INVESTIMENTO 2.1 – INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA, VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE, NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR). LIQUIDAZIONE COMPETENZE RAGGRUPPAMENTO TEMPORANEO DI PROFESSIONISTI, PER LE PER PRESTAZIONI PROFESSIONALI PER IL SERVIZIO DI ATTIVITÀ DI PROGETTAZIONE DEFINITIVA/ESECUTIVA CIG 9508103ECC – CUP J47H21001820001.",
-  "beneficiario": "PROFESSIONISTI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
-    "nome": "Arch. Giuseppe Colombo",
-    "importo": 58474.93
-   },
-   {
-    "nome": "Roberto Migliorino",
-    "importo": 2446.71
-   },
-   {
-    "nome": "Chiara Zara",
+    "nome": "ZARA CHIARA",
     "importo": 8663.79
+   },
+   {
+    "nome": "COLOMBO GIUSEPPE",
+    "importo": 57800.29
+   },
+   {
+    "nome": "MIGLIORINO ROBERTO",
+    "importo": 2446.71
    }
   ],
-  "importo_euro": 69585.43,
+  "importo_euro": 68910.79,
   "importo_testuale": "69.585,43",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1704,7 +1731,9 @@
   "caratteri_testo": 23727,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:51",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "prospetto di liquidazione (9 righe)",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1929-2026",
@@ -1714,14 +1743,9 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-28",
   "oggetto": "INTERVENTI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORAMENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONCIHE DELL’EDIFICIO SCOLASTICO DI M.L.KING /COLLODI – LIQUIDAZIONE DI EDILIZIA MODERNA SRL - ADEGUAMENTO ANTINCENDIO CUP J44H20001220001 - CIG B879A1F163",
-  "beneficiario": "E.M. EDILIZIA MODERNA S.R.L.",
+  "beneficiario": "EM EDILIZIA MODERNA",
   "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "E.M. Edilizia Moderna S.r.l.",
-    "importo": 33382.42
-   }
-  ],
+  "beneficiari_dettaglio": null,
   "importo_euro": 33382.42,
   "importo_testuale": "33.382,42",
   "importo_e_pluriennale": false,
@@ -1840,7 +1864,7 @@
   "beneficiario": "FONDAZIONE LEGAMBIENTE INNOVAZIONE ETS",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 1750.0,
+  "importo_euro": 2135.0,
   "importo_testuale": "2.135,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1863,7 +1887,9 @@
   "caratteri_testo": 10973,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:52",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1925-2026",
@@ -1876,7 +1902,7 @@
   "beneficiario": "GUZZONATO S.R.L.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 23555.0,
+  "importo_euro": 28737.1,
   "importo_testuale": "13.542,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1899,7 +1925,9 @@
   "caratteri_testo": 15088,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:53",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": true
  },
  {
   "id": "determinazione-1924-2026",
@@ -1912,7 +1940,7 @@
   "beneficiario": "RINALDO BIGNAMI",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 1170.0,
+  "importo_euro": 1508.77,
   "importo_testuale": "1.508,77",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -1935,7 +1963,9 @@
   "caratteri_testo": 17311,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:53",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1923-2026",
@@ -1989,7 +2019,7 @@
   "beneficiario": "STUDIO LEGALE BELVEDERE & PARTNERS DI MILANO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 4500.0,
+  "importo_euro": 6600.0,
   "importo_testuale": "6.600,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2012,7 +2042,9 @@
   "caratteri_testo": 17157,
   "fonte": "albo",
   "data_elaborazione": "2026-10-06 10:54",
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1921-2026",
@@ -2025,7 +2057,7 @@
   "beneficiario": "COOPERATIVA SOCIALE ARL",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": null,
+  "importo_euro": 4000.0,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -2047,7 +2079,9 @@
   "versione_estrazione": 4,
   "caratteri_testo": 7258,
   "fonte": "albo",
-  "data_elaborazione": "2026-09-29 20:03"
+  "data_elaborazione": "2026-09-29 20:03",
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1920-2026",
@@ -2560,7 +2594,7 @@
   "beneficiario": "MAGGIOLI S.P.A. CIG BD0A560E2B",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 240,
+  "importo_euro": 292.8,
   "importo_e_pluriennale": false,
   "durata_anni": null,
   "importo_primo_anno": null,
@@ -2575,8 +2609,8 @@
   "e_rimodulazione": false,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "importo_incerto": null,
-  "regola_importo": null
+  "importo_incerto": false,
+  "regola_importo": "importo complessivo, lordo dichiarato"
  },
  {
   "id": "liquidazione-1898-2026",
@@ -2702,20 +2736,20 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-23",
   "oggetto": "LIQUIDAZIONE FATTURE MIOS TECHNOLOGY SRL, SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A.",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
     "nome": "MIOS TECHNOLOGY SRL",
-    "importo": 3532.87
+    "importo": 4310.1
    },
    {
     "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A",
-    "importo": 338.44
+    "importo": 412.9
    },
    {
     "nome": "SHARP ELECTRONICS SPA",
-    "importo": 85.92
+    "importo": 104.82
    }
   ],
   "importo_euro": 4827.82,
@@ -2980,23 +3014,23 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: LAVORARE IN FARMACIA SRL, ARIES GROUP SRL E CGM PHARMAONE SRL",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
     "nome": "CGM PHARMAONE SRL",
-    "importo": 200.0
+    "importo": 244.0
    },
    {
     "nome": "LAVORARE IN FARMACIA SRL",
-    "importo": 12060.0
+    "importo": 14713.2
    },
    {
     "nome": "ARIES GROUP S.R.L",
-    "importo": 3153.6
+    "importo": 3847.4
    }
   ],
-  "importo_euro": 15413.6,
+  "importo_euro": 18804.6,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3016,7 +3050,7 @@
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "prospetto di liquidazione (19 righe)",
+  "regola_importo": "prospetto di liquidazione (8 righe)",
   "importo_incerto": false
  },
  {
@@ -3224,7 +3258,7 @@
   "beneficiario": "TELEMATICO DA PARTE DI MAGGIOLI SPA",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 900.0,
+  "importo_euro": 1098.0,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3243,7 +3277,9 @@
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": false,
-  "atti_gemelli": null
+  "atti_gemelli": null,
+  "regola_importo": "somma impegnata/liquidata, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1867-2026",
@@ -3383,16 +3419,16 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-09-18",
   "oggetto": "LIQUIDAZIONE FATTURE EMESSE DALLA COOPERATIVA SOCIALE ACCENTO (CIG B8D82CF08C) E DALLA COOPERATIVA SOCIALE LOGOS (CIG B8A17FB235) RELATIVE AL SERVIZIO DI ASSISTENZA EDUCATIVA SCOLASTICA RESO AD ALUNNI RESIDENTI AVENTI DIRITTO",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 2,
   "beneficiari_dettaglio": [
    {
     "nome": "ACCENTO SOCIETA' COOPERATIVA SOCIALE",
-    "importo": 163.31
+    "importo": 171.48
    },
    {
     "nome": "LOGOS SOCIETA' COOPERATIVA SOCIALE",
-    "importo": 307.53
+    "importo": 322.91
    }
   ],
   "importo_euro": 494.39,
@@ -3459,7 +3495,7 @@
   "beneficiario": "COMMERCIALE LEM S.N.C.",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 3564.75,
+  "importo_euro": 4349.0,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3478,7 +3514,9 @@
   "fonte": "albo",
   "data_elaborazione": "2026-09-22 19:00",
   "beneficiario_generico": false,
-  "atti_gemelli": null
+  "atti_gemelli": null,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1860-2026",
@@ -4638,7 +4676,7 @@
     "importo": 610.0
    }
   ],
-  "importo_euro": 500.0,
+  "importo_euro": 610.0,
   "importo_testuale": "610,00",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -4658,7 +4696,7 @@
   "data_elaborazione": "2026-08-10 16:15",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false,
   "importo_verificato": true
  },
@@ -5952,7 +5990,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-30",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE NELL’AMBITO DELLA MISURA B1 E B2 - FNA 2025 – DGR N. XII/5926",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 3,
   "beneficiari_dettaglio": [
    {
@@ -5961,27 +5999,11 @@
    },
    {
     "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
-    "importo": 125.0
-   },
-   {
-    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
-    "importo": 125.0
-   },
-   {
-    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
-    "importo": null
-   },
-   {
-    "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
-    "importo": null
+    "importo": 250.0
    },
    {
     "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
-    "importo": 390.0
-   },
-   {
-    "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
-    "importo": 230.0
+    "importo": 620.0
    }
   ],
   "importo_euro": 1260.0,
@@ -6209,10 +6231,19 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-29",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLA DITTA: Q FARMA SPA E FEDERFARMA LOMBARDIA",
-  "beneficiario": "Q FARMA SPA",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": null,
-  "importo_euro": null,
+  "beneficiario": "Fornitori diversi",
+  "n_beneficiari": 2,
+  "beneficiari_dettaglio": [
+   {
+    "nome": "Q FARMA SPA",
+    "importo": 87865.1
+   },
+   {
+    "nome": "FEDERFARMA LOMBARDIA",
+    "importo": 536.8
+   }
+  ],
+  "importo_euro": 88401.9,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6233,7 +6264,7 @@
   "importo_verificato": false,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "tabella di 39 righe: somma non attendibile",
+  "regola_importo": "prospetto di liquidazione (40 righe)",
   "importo_incerto": false
  },
  {
@@ -6392,7 +6423,7 @@
   "beneficiario": null,
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 100000.0,
+  "importo_euro": 110000.0,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6413,7 +6444,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -6528,31 +6559,31 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-28",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "n_beneficiari": 5,
   "beneficiari_dettaglio": [
    {
     "nome": "COOPERATIVA SOCIALE IL BALZO",
-    "importo": 5431.9
+    "importo": 5703.5
    },
    {
     "nome": "VIVENDA SPA",
-    "importo": 602.01
+    "importo": 626.09
    },
    {
     "nome": "ARIES GROUP S.R.L",
-    "importo": 2000.0
+    "importo": 2200.0
    },
    {
     "nome": "COOP. SOC. ONLUS \"IL MELOGRANO\"",
-    "importo": 25465.82
+    "importo": 26739.11
    },
    {
     "nome": "VIA LIBERA COOP. SOCIALE ONLUS",
-    "importo": 196.4
+    "importo": 206.22
    }
   ],
-  "importo_euro": 35450.84,
+  "importo_euro": 35474.92,
   "importo_testuale": null,
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -6574,7 +6605,7 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "prospetto di liquidazione (39 righe)",
+  "regola_importo": "prospetto di liquidazione (14 righe)",
   "importo_incerto": false
  },
  {
@@ -6863,7 +6894,7 @@
   "data_pubblicazione": "2026-07-24",
   "oggetto": "DETERMINAZIONE DI LIQUIDAZIONE PRESTAZIONI DI SERVIZI RICHIESTI DA ALTRI ENTI - COMUNE DI SIZIANO - MESE DI GIUGNO 2026",
   "beneficiario": "COMUNE DI SIZIANO",
-  "importo_euro": 1025.73,
+  "importo_euro": 1367.83,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -6887,7 +6918,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -7532,7 +7563,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "IMPEGNO DI SPESA PER REDAZIONE DI PFTE PER INSERIMENTO DI UN SISTEMA DI VIDEOSORVEGLIANZA URBANA PRESSO PIAZZA PUCCINI . BANDO \"DISTRETTI DEL COMMERCIO\" - CIG BC6CF8408B",
   "beneficiario": "WIP ARCHITETTI S.R.L",
-  "importo_euro": 1900.0,
+  "importo_euro": 2412.34,
   "cig": "BC6CF8408B",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -7556,7 +7587,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata",
+  "regola_importo": "somma impegnata/liquidata, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -7608,7 +7639,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE TONERGROSS S.R.L., SHARP ELECTRONICS (ITALIA) S.P.A., KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A., CONVERGE S.R.L.",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 2397.48,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -7624,19 +7655,19 @@
   "beneficiari_dettaglio": [
    {
     "nome": "TONERGROSS SRL",
-    "importo": 897.28
+    "importo": 1094.69
    },
    {
     "nome": "SHARP ELECTRONICS SPA",
-    "importo": 85.92
+    "importo": 104.82
    },
    {
     "nome": "KYOCERA DOCUMENT SOLUTIONS ITALIA S.P.A",
-    "importo": 338.44
+    "importo": 412.9
    },
    {
     "nome": "CONVERGE SRL",
-    "importo": 643.5
+    "importo": 785.07
    }
   ],
   "importo_testuale": null,
@@ -7661,8 +7692,8 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINA DI LIQUIDAZIONE A FAVORE DELLE DITTE: ARIES GROUP SRL, GAS TECNICI FOLIGNO SRL, SAPIO LIFE SRL, DIEFFE SISTEMI SRL, ECOLOGIA AMBIENTE SRL, TOWA PHARMACEUTICAL SPA, BIOS LINE SPA",
-  "beneficiario": "FORNITORI DIVERSI",
-  "importo_euro": 6126.97,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 7227.67,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -7677,31 +7708,31 @@
   "beneficiari_dettaglio": [
    {
     "nome": "ARIES GROUP S.R.L",
-    "importo": 3153.6
+    "importo": 3847.4
    },
    {
     "nome": "TOWA PHARMACEUTICAL SPA",
-    "importo": 468.82
+    "importo": 515.71
    },
    {
     "nome": "BIOS LINE SPA",
-    "importo": 1602.89
+    "importo": 1791.22
    },
    {
     "nome": "ECOLOGIA AMBIENTE SRL A SOCIO UNICO",
-    "importo": 170.0
+    "importo": 207.4
    },
    {
     "nome": "GAS TECNICI FOLIGNO SRL",
-    "importo": 114.4
+    "importo": 122.29
    },
    {
     "nome": "SAPIO LIFE SRL",
-    "importo": 52.26
+    "importo": 54.35
    },
    {
     "nome": "DIEFFE SISTEMI S.R.L",
-    "importo": 565.0
+    "importo": 689.3
    }
   ],
   "importo_testuale": null,
@@ -7715,7 +7746,7 @@
   "importo_verificato": true,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "prospetto di liquidazione (25 righe)",
+  "regola_importo": "prospetto di liquidazione (13 righe)",
   "importo_incerto": false
  },
  {
@@ -8086,7 +8117,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-22",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA MINORI E FAMIGLIA",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 17934.15,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
@@ -8098,15 +8129,11 @@
   "caratteri_testo": 10415,
   "fonte": "albo",
   "data_elaborazione": "2026-07-27 08:03",
-  "n_beneficiari": 7,
+  "n_beneficiari": 6,
   "beneficiari_dettaglio": [
    {
     "nome": "COOPERATIVA SOCIALE COMUNITA' FAMIGLIARI",
     "importo": 105.0
-   },
-   {
-    "nome": "COOPERATIVA SOCIALE COMUNITA'",
-    "importo": -5.0
    },
    {
     "nome": "SILOE",
@@ -8118,11 +8145,11 @@
    },
    {
     "nome": "SOCIETA' COOPERATIVA SOCIALE IL MOSAICO SERVIZI",
-    "importo": 110.0
+    "importo": 115.5
    },
    {
     "nome": "FUORILUOGHI SOCIETA' COOPERATIVA SOCIALE ONLUS",
-    "importo": 5994.9
+    "importo": 6294.65
    },
    {
     "nome": "ASSOCIAZIONE SOS GIOVANI ONLUS",
@@ -8510,7 +8537,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-16",
   "oggetto": "LIQUIDAZIONE FATTURA N. 141/2026 DELLA CARTOLERIA ENRICA E DANIELA PETTINARI SNC - N. 13/2026 DELLA CARTOLERIA GERLI MONICA E N. 13/2026 DELLA CARTOLERIA YAKINE FRUNGILLO AMINA RELATIVE ALLA FORNITURA DEI LIBRI DI TESTO MINISTERIALI PER L'A.S. 2026-2027 AGLI ALUNNI RESIDENTI A PIEVE EMANUELE",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 11991.84,
   "cig": "U.1.03.0",
   "categoria": "Istruzione e scuola",
@@ -8801,8 +8828,8 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-15",
   "oggetto": "LIQUIDAZIONE FATTURE DIVERSE AREA ANZIANI E DISABILI",
-  "beneficiario": "FORNITORI DIVERSI",
-  "importo_euro": 33276.62,
+  "beneficiario": "Fornitori diversi",
+  "importo_euro": 34044.92,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -8817,7 +8844,7 @@
   "beneficiari_dettaglio": [
    {
     "nome": "VIVENDA SPA",
-    "importo": 602.01
+    "importo": 626.09
    },
    {
     "nome": "ROMEO SRL",
@@ -8825,15 +8852,15 @@
    },
    {
     "nome": "VIA LIBERA COOP. SOCIALE ONLUS",
-    "importo": 392.8
+    "importo": 412.44
    },
    {
     "nome": "PROGETTOPERSON A SOCIETA' COOPERATIVA SOCIALE",
-    "importo": 714.29
+    "importo": 750.0
    },
    {
     "nome": "SPAZIO APERTO SERVIZI SOC. COOP. SOCIALE ONLUS",
-    "importo": 3728.61
+    "importo": 3915.04
    },
    {
     "nome": "SERENI ORIZZONTI 1 SPA",
@@ -8841,11 +8868,11 @@
    },
    {
     "nome": "A.LA.T.HA COOPERATIVA SOCIALE",
-    "importo": 14884.22
+    "importo": 15628.44
    },
    {
     "nome": "C.R.M. COOP. SOCIALE ONLUS",
-    "importo": 2284.8
+    "importo": 2399.04
    },
    {
     "nome": "L'IMPRONTA ASSOCIAZIONE ONLUS",
@@ -8863,7 +8890,7 @@
   "importo_verificato": false,
   "beneficiario_generico": true,
   "atti_gemelli": null,
-  "regola_importo": "prospetto di liquidazione (37 righe)",
+  "regola_importo": "prospetto di liquidazione (20 righe)",
   "importo_incerto": false
  },
  {
@@ -9154,7 +9181,7 @@
   "data_pubblicazione": "2026-07-13",
   "oggetto": "LAVORI PER LA REALIZZAZIONE PASSERELLA CICLOPEDONALE DI COLLEGAMENTO DEL CENTRO CITTADINO IN COMUNE DI PIEVE EMANUELE COD. INT. 460 PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR)_MISSIONE M5 - COMPONENTE C2 - AMBITO INTERVENTO/MISURA 2 - INVESTIMENTO 2.3_PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITÀ DELL’ABITARE – PINQUA. CUP J41B21000170001 – CIG 9927635F8E. ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA DITTA MONACO SPA IN ATTUAZIONE DELLA D.G. N. 70 DEL 08/07/2026 DI APPROVAZIONE DELL’ATTO DI TRANSAZIONE.",
   "beneficiario": "MONACO SPA",
-  "importo_euro": 407100.0,
+  "importo_euro": 447810.0,
   "cig": "9927635F8E",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -9178,7 +9205,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -9190,7 +9217,7 @@
   "data_pubblicazione": "2026-07-13",
   "oggetto": "DETERMINA A CONTRARRE - ASSUNZIONE IMPEGNO DI SPESA PER AGGIORNAMENTO E AMPLIAMENTO RETE WIFI PLESSO VIA DEI GIGLI 7, AFFIDATO ALLA SOCIETÀ MIOS TECHNOLOGY S.R.L., CIG BC4EA5B2A2",
   "beneficiario": "MIOS TECHNOLOGY S.R.L.",
-  "importo_euro": 3532.87,
+  "importo_euro": 4311.0,
   "cig": "BC4EA5B2A2",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -9214,7 +9241,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 4,311.00)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -9267,7 +9294,7 @@
   "data_pubblicazione": "2026-07-13",
   "oggetto": "DETERMINA A CONTRARRE. LAVORI DI MESSA IN SICUREZZA DI N. 1 CORPO LOCULI PRESSO IL CIMITERO COMUNALE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL E APPROVAZIONE REPORT ID 221165585, A FAVORE DELLA SOCIETA’ COSTRUIRE SRL DI LOCATE DI TRIULZI (MI).",
   "beneficiario": "COSTRUIRE SRL DI LOCATE DI TRIULZI (MI)",
-  "importo_euro": 141901.13,
+  "importo_euro": 156091.25,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -9291,7 +9318,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale (in conflitto con 230,000.00)",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -9343,7 +9370,7 @@
   "tipo_atto": "liquidazione",
   "data_pubblicazione": "2026-07-13",
   "oggetto": "LIQUIDAZIONE NOTE DI DEBITO PER SERVIZI RESI A FAVORE DI MINORI E UTENTI CON DISABILITÀ",
-  "beneficiario": "FORNITORI DIVERSI",
+  "beneficiario": "Fornitori diversi",
   "importo_euro": 15650.0,
   "cig": "BA10D1523E",
   "categoria": "Amministrazione e servizi generali",
@@ -9359,31 +9386,19 @@
   "beneficiari_dettaglio": [
    {
     "nome": "LA PIDUNS APS",
-    "importo": 500.0
-   },
-   {
-    "nome": "LA PIDUNS APS",
-    "importo": 2000.0
+    "importo": 2500.0
    },
    {
     "nome": "ASSOCIAZIONE CAMMINIAMO INSIEME PICCOLI PASSI",
     "importo": 400.0
    },
    {
-    "nome": "ASSOCIAZIONE AMICI DELLA CASA DELL'ACCOGLIENZA A ODV",
+    "nome": "ASSOCIAZIONE AMICI DELLA CASA DELL'ACCOGLIENZ A ODV",
     "importo": 10260.0
    },
    {
     "nome": "ASSIA ODV",
     "importo": 2490.0
-   },
-   {
-    "nome": "ASSOCIAZIONE CAMMINIAMO INSIEME PICCOLI PASSI",
-    "importo": null
-   },
-   {
-    "nome": "ASSOCIAZIONE AMICI DELLA CASA DELL'ACCOGLIENZA A ODV",
-    "importo": null
    }
   ],
   "importo_testuale": "15.540,00",
@@ -9752,8 +9767,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1393-2026",
@@ -9829,8 +9844,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1391-2026",
@@ -9918,7 +9933,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER ACQUISTO SULLA PIATTAFORMA MEPA DEL RINNOVO DEL CANONE DI ASSISTENZA, MANUTENZIONE SOFTWARE ANNO 2026, RELATIVO AL SOFTWARE GLOBO SOLO 1, UTILIZZATO DALL'ENTE, AFFIDATO ALLA SOCIETÀ MAGGIOLI S.P.A. CIG BC3DDE5823 - ASSUNZIONE IMPEGNO DI SPESA",
   "beneficiario": "MAGGIOLI S.P.A",
-  "importo_euro": 3491.0,
+  "importo_euro": 4260.0,
   "cig": "BC3DDE5823",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -9942,7 +9957,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -10036,7 +10051,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "AFFIDAMENTO DIRETTO PER ATTIVAZIONE SERVIZIO @E.BOLLO PAGO-PA PER LO SPORTELLO TELEMATICO POLIFUNZIONALE ASSUNZIONE IMPEGNO DI SPESA AFFIDATO ALLA SOCIETÀ MAGGIOLI S.P.A. CIG BC3E361EBF",
   "beneficiario": "MAGGIOLI S.P.A",
-  "importo_euro": 2000.0,
+  "importo_euro": 2440.0,
   "cig": "BC3E361EBF",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -10065,7 +10080,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -10118,7 +10133,7 @@
   "data_pubblicazione": "2026-07-07",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER ACQUISTO SULLA PIATTAFORMA MEPA DEL RINNOVO DEI CANONI DI ASSISTENZA, SOFTWARE ANNO 2026, RELATIVO AL SOFTWARE SICRAWEB EVO: J-CITYGOV, PORTALE PAGAMENTI SPONTANEI PAGOPA, MULTE ON_LINE, AMMINISTRAZIONE TRASPARENTE, ALBO PRETORIO, VISURE ANAGRAFICHE, SERVIZIO CONSERVAZIONE SOSTITUTIVA A NORMA, UTILIZZATI DALL'ENTE, AFFIDATO ALLA SOCIETÀ MAGGIOLI S.P.A. CIG BC3E086385 - ASSUNZIONE IMPEGNO DI SPESA",
   "beneficiario": "MAGGIOLI S.P.A",
-  "importo_euro": 10592.0,
+  "importo_euro": 12923.0,
   "cig": "BC3E086385",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -10142,7 +10157,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -11606,7 +11621,7 @@
   "data_pubblicazione": "2026-06-29",
   "oggetto": "DETERMINA A CONTRARRE - MANUTENZIONE AUTOVETTURA UFFICIO TECNICO - AFFIDAMENTO ALLA SOCIETÀ PROMAUTO S.N.C. - ASSUNZIONE IMPEGNO DI SPESA. CIG BC20725E7B",
   "beneficiario": "PROMAUTO SNC",
-  "importo_euro": 268.88,
+  "importo_euro": 328.03,
   "cig": "BC20725E7B",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -11639,7 +11654,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -11730,7 +11745,7 @@
   "data_pubblicazione": "2026-06-29",
   "oggetto": "AFFIDAMENTO DIRETTO ALLA SOCIETÀ AGRICOLA VISMARA DI PAOLO, ROBERTO ED EDOARDO DI SIZIANO (PV) PER L'ESECUZIONE DI ATTIVITÀ AGRICOLE MECCANIZZATEI, TRINCIATURA E MOVIMENTO TERRA SUL TERRITORIO COMUNALE – IMPEGNO DI SPESA CIG: BC1CEEB82F",
   "beneficiario": "AGRICOLA VISMARA DI PAOLO, ROBERTO ED EDOARDO DI SIZIANO (PV)",
-  "importo_euro": 4999.0,
+  "importo_euro": 6098.78,
   "cig": "BC1CEEB82F",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -11759,7 +11774,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -11800,8 +11815,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1297-2026",
@@ -11882,8 +11897,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1285-2026",
@@ -12130,7 +12145,7 @@
   "data_pubblicazione": "2026-06-18",
   "oggetto": "APPROVAZIONE PROGETTO ESECUTIVO PER LA MESSA IN SICUREZZA DI N. 1 CORPO LOCULI PRESSO IL CIMITERO COMUNALE IN VIA DONATORI DI SANGUE, REDATTO DALLA SOCIETA’ GBRG ENGINEERING SRL DI ZIBIDO SAN GIACOMO (MI)",
   "beneficiario": "GBRG ENGINEERING SRL DI ZIBIDO SAN GIACOMO (MI)",
-  "importo_euro": 42314.77,
+  "importo_euro": 53688.97,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -12159,7 +12174,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -12296,7 +12311,7 @@
   "data_pubblicazione": "2026-06-18",
   "oggetto": "LAVORI DI MANUTENZIONE PER IL RIUSO E LA RAZIONALIZZAZIONE DELLE AREE PUBBLICHE IN PIAZZA CURIEL. ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA SOCIETA' A.T.M. SPA DI MILANO, PER MODIFICA LINEA 220 PER PIAZZA CURIEL E VIA KENNEDY. CIG B1744B63CA CUP J47H21001800001.",
   "beneficiario": "A.T.M. SPA DI MILANO",
-  "importo_euro": 1208.2,
+  "importo_euro": 1474.01,
   "cig": "B1744B63CA",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -12325,7 +12340,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -12366,8 +12381,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1231-2026",
@@ -12378,7 +12393,7 @@
   "data_pubblicazione": "2026-06-18",
   "oggetto": "IMPEGNO DI SPESA PER AFFIDAMENTO DIRETTO DELLA FORNITURA DI UN ROUTER WI-FI PER LA PIATTAFORMA ECOLOGICA COMUNALE DI VIA SICILIA ALLA DITTA TECHNOCONTROL SYSTEM S.R.L.– CIG BBFAD1F04D.",
   "beneficiario": "TECHNOCONTROL SYSTEM SRL",
-  "importo_euro": 440.0,
+  "importo_euro": 536.8,
   "cig": "BBFAD1F04D",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -12402,7 +12417,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -12414,7 +12429,7 @@
   "data_pubblicazione": "2026-06-16",
   "oggetto": "LAVORI DI RIQUALIFCAZIONE DELLA VIABILITA' TRA LA VIA FIZZONASCO E LA VIA RITA LEVI MONTALCINI, PROGRAMMA DEGLI INTERVENTI PER LA RIPRESA ECONOMICA, DI CUI ALLA L.R. 4 MAGGIO 2020 N. 9 DEL 03.03.2021 (DGR N. X1/4381). APPROVAZIONE PERIZIA DI VARIANTE N. 3. CIG B366B0D5F1 E CUP J47H22001210006.",
   "beneficiario": "A.C.M. SRL SOCIETÀ UNIPERSONALE",
-  "importo_euro": 572614.39,
+  "importo_euro": 662410.56,
   "cig": "B366B0D5F1",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -12438,7 +12453,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -12491,7 +12506,7 @@
   "data_pubblicazione": "2026-06-16",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER ACQUISTO, CONFIGURAZIONE ED INSTALLAZIONE N. 4 FIREWALL FORTINET, FORTICLIENT VPN/ZTNA, FORTITOKEN MOBILE MEDIANTE AFFIDAMENTO DIRETTO ALLA SOCIETÀ TELECOM ITALIA S.P.A. CIG: BC01E87642 ASSUNZIONE IMPEGNO DI SPESA",
   "beneficiario": "TELECOM ITALIA S.P.A",
-  "importo_euro": 45850.0,
+  "importo_euro": 55939.0,
   "cig": "BC01E87642",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -12520,7 +12535,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -12532,7 +12547,7 @@
   "data_pubblicazione": "2026-06-16",
   "oggetto": "IMPEGNO DI SPESA PER L’AFFIDAMENTO DIRETTO ALLA SOCIETÀ IN HOUSE AREA SUD MILANO S.P.A. PER IL RECUPERO EVENTO 01/06/2026 PRINCIPIO DI INCENDIO AVVENUTO IN VIA ACERI DURANTE LA RACCOLTA CARTA E CARTONE – CIG BBFE9814A4.",
   "beneficiario": "AREA SUD MILANO S.P.A",
-  "importo_euro": 2727.27,
+  "importo_euro": 3000.0,
   "cig": "BBFE9814A4",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -12561,7 +12576,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -12850,7 +12865,7 @@
   "data_pubblicazione": "2026-06-09",
   "oggetto": "AFFIDAMENTO DIRETTO PER LA FORNITURA DI UN LETTORE MICROCHIP A BASTONE PER L'IDENTIFICAZIONE DEGLI ANIMALI D'AFFEZIONE DA ASSEGNARE AGLI AGENTI ACCERTATORI ECOLOGICI VOLONTARI – IMPEGNO DI SPESA CIG: BBEAACA19F",
   "beneficiario": "AGENTI ACCERTATORI ECOLOGICI VOLONTARI",
-  "importo_euro": 1432.6,
+  "importo_euro": 1747.77,
   "cig": "BBEAACA19F",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -12879,7 +12894,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13014,7 +13029,7 @@
   "data_pubblicazione": "2026-06-08",
   "oggetto": "IMPEGNO DI SPESA 'PER AFFIDAMENTO DIRETTO DEL SERVIZIO DI PULIZIA E MANUTENZIONE DEGLI ORTI COMUNALI – DITTA AGORÀ S.R.L. – CIG BBC449ECF5",
   "beneficiario": "AGORÀ' S.R.L",
-  "importo_euro": 480.0,
+  "importo_euro": 585.6,
   "cig": "BBC449ECF5",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -13043,7 +13058,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13096,7 +13111,7 @@
   "data_pubblicazione": "2026-06-08",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER ACQUISTO SULLA PIATTAFORMA MEPA DI UN TRANSPONDER E 100 BADGE PER LA RILEVAZIONE DELLE TIMBRATURE DEL PERSONALE PRESSO L'ENTE COMUNALE, AFFIDAMENTO ALLA SOCIETA' MAGGIOLI S.P.A. CIG: BBDBB7B5CA ASSUNZIONE IMPEGNO DI SPESA",
   "beneficiario": "MAGGIOLI S.P.A",
-  "importo_euro": 1312.0,
+  "importo_euro": 1600.64,
   "cig": "BBDBB7B5CA",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -13125,7 +13140,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13216,7 +13231,7 @@
   "data_pubblicazione": "2026-06-08",
   "oggetto": "LAVORI DI MANUTENZIONE STRAORDINARIA DEL VERDE PRESSO LA PRESSO LA SCUOLA PRIMARIA M.L. KING E SCUOLA D’INFANZIA DON ZENO ALL’INTERNO DELL’INTERVENTO DI RISTRUTTURAZIONE EDILIZIA DI IMMOBILI PUBBLICI DESTINATI AI SERVIZI EDUCATVI SCOLASTICI – FINANZIATO DA NEXT GENERATION , NELL’AMBITO DEL PNNR – M5C2 – 2.1.. AFFIDAMENTO ALLA SOCIETA’ COOPERATIVA SOCIALE IL GARDINONE DI LOCATE DI TRIULZI (MI). CIG BBE2C36CFB CUP J47H21001830001",
   "beneficiario": "COOPERATIVA SOCIALE IL GIARDINONE DI LOCATE TRIULZI",
-  "importo_euro": 21997.8,
+  "importo_euro": 26837.32,
   "cig": "BBE2C36CFB",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -13245,7 +13260,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13257,7 +13272,7 @@
   "data_pubblicazione": "2026-06-08",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO CERTIFICATO DIGITALE X.509 DI DURATA BIENNALE, COMPRENSIVO DEI SERVIZI DI CONFIGURAZIONE SIOPE+ AFFIDATO ALLA SOCIETÀ MAGGIOLI S.P.A. CIG BBD615C6FF",
   "beneficiario": "MAGGIOLI S.P.A",
-  "importo_euro": 170.0,
+  "importo_euro": 208.0,
   "cig": "BBD615C6FF",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -13281,7 +13296,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13564,7 +13579,7 @@
   "data_pubblicazione": "2026-05-29",
   "oggetto": "IMPEGNO DI SPESA PER L’AFFIDAMENTO DIRETTO DEL SERVIZIO DI DISINFESTAZIONE ANTIZANZARE PRESSO I PLESSI SCOLASTICI “DE FILIPPO” E “RODARI” – CIG BBCC3CF328",
   "beneficiario": "ECODIS S.R.L",
-  "importo_euro": 2450.0,
+  "importo_euro": 2989.0,
   "cig": "BBCC3CF328",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -13593,7 +13608,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13641,7 +13656,7 @@
   "data_pubblicazione": "2026-05-29",
   "oggetto": "IMPEGNO DI SPESA E AFFIDAMENTO DIRETTO ALLA DITTA DCE S.R.L. PER FORNITURA E INSTALLAZIONE COPERTURA QUADRO ELETTRICO E REALIZZAZIONE STAFFE PER NUOVA PESA PRESSO LA PIATTAFORMA ECOLOGICA COMUNALE CIG: BBBE1C2824",
   "beneficiario": "DCE S.R.L.",
-  "importo_euro": 2181.0,
+  "importo_euro": 2660.82,
   "cig": "BBBE1C2824",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -13665,7 +13680,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13677,7 +13692,7 @@
   "data_pubblicazione": "2026-05-29",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL DEL SERVIZIO DI MANUTENZIONE ORDINARIA DI CHIUSURA BUCHE E RIPRISTINI STRADALI NEL COMUNE DI PIEVE EMANUELE, AI SENSI DELL’ART. 50 CO. 1 LETT B) DEL D.LGS. N. 36/2023. APPROVAZIONE REPORT SINTEL 219058201. AFFIDAMENTO ALLA SOCIETÀ SOCIETÀ PITUELLO IMPIANTI DI PITUELLO ANDREA & C. SAS DI SAN GIULIANO MILANESE (MI). CIG BBC94FAD82",
   "beneficiario": "PITUELLO IMPIANTI DI PITUELLO ANDREA & C. SAS",
-  "importo_euro": 19400.0,
+  "importo_euro": 24278.0,
   "cig": "BBC94FAD82",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -13706,7 +13721,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -13932,7 +13947,7 @@
   "data_pubblicazione": "2026-05-26",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER PULIZIE STRAORDINARIE PRESSO IL PALAZZO COMUNALE IN VIA VIQUARTERIO - CIG B66DD30717",
   "beneficiario": "COOPSERVICE S.COOP P.A.",
-  "importo_euro": 53.13,
+  "importo_euro": 64.82,
   "cig": "B66DD30717",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -13961,7 +13976,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -14304,7 +14319,7 @@
   "data_pubblicazione": "2026-05-21",
   "oggetto": "IMPEGNO DI SPESA PER AFFIDAMENTO SERVIZIO DI TRINCIATURA, LAVORAZIONI AGRICOLE MECCANIZZATE E MOVIMENTO TERRA PER LA MANUTENZIONE DEL VERDE PUBBLICO COMUNALE ALLA DITTA GRIGNANI BIO AGRICOLTURA S.N.C. CIG: BBA5CE3011",
   "beneficiario": "GRIGNANI BIO AGRICOLTURA S.N.C. DI GRIGNANI ANDREA & C.",
-  "importo_euro": 4999.0,
+  "importo_euro": 6098.78,
   "cig": "BBA5CE3011",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -14333,7 +14348,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -14415,8 +14430,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1034-2026",
@@ -14427,7 +14442,7 @@
   "data_pubblicazione": "2026-05-21",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI ILLUMINAZIONE SUL PERCORSO - VIALE DELL’EDIFICIO SCOLASTICO M.L. KING - COLLODI, COMPRESO NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: M.L. KING/COLLODI - CUP J44H20001220001 - FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - FONDI CONFLUITI NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA (DM DEL 08.11.2021). AFFIDAMENO ALLA SOCIETA TECNI-LUX SRL DI CARBONAR AL TICINO (PV). CIG BA53C11023",
   "beneficiario": "TECNI-LUX SRL DI CARBONAR AL TICINO (PV)",
-  "importo_euro": 17385.0,
+  "importo_euro": 21209.7,
   "cig": "BA53C11023",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -14456,7 +14471,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -14590,7 +14605,7 @@
   "data_pubblicazione": "2026-05-18",
   "oggetto": "IMPEGNO DI SPESA E AFFIDAMENTO DIRETTO PER LA FORNITURA DI UNA PANCHINA ROSA DEDICATA ALLA SENSIBILIZZAZIONE SULLA FIBROMIALGIA CIG BBA5C3B56C",
   "beneficiario": "DIMCAR S.R.L",
-  "importo_euro": 539.0,
+  "importo_euro": 657.58,
   "cig": "BBA5C3B56C",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -14614,7 +14629,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -15043,7 +15058,7 @@
   "data_pubblicazione": "2026-05-06",
   "oggetto": "DETERMINA A CONTRARRE. SERVIZIO DI PORTIERATO PRESSO IL COMUNE DI PIEVE EMANUELE. AFFIDAMENTO ALLA B&B SERVICE SOCIETA’ COOPERATIVA MULTISERVICE S.C.A.R.L. ASSUNZIONE IMPEGNO DI SPESA.",
   "beneficiario": "COOPERATIVA B&B SERVICE S.C.A.R.L.",
-  "importo_euro": 1680.0,
+  "importo_euro": 2049.6,
   "cig": "BB10709514",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -15072,7 +15087,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -15331,7 +15346,7 @@
   "data_pubblicazione": "2026-04-30",
   "oggetto": "FORNITURA E POSA DI UNA CABINA FONOISOLANTE PRESSO LA CASA DELLA CULTURA IN VIA LUIGI GEMELLI 7 PIEVE EMANUELE. APPROVAZIONE PROCEDURA SINTEL. AFFIDAMENTO ALLA SOCIETA‘ SILENT KONTROL DI MONZA. ASSUNZIONE IMPEGNO DI SPESA . CIG BB6C45A9BF",
   "beneficiario": "SILENT KONTROL SRL DI MONZA",
-  "importo_euro": 10670.3,
+  "importo_euro": 13017.77,
   "cig": "BB6C45A9BF",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -15360,7 +15375,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -15454,7 +15469,7 @@
   "data_pubblicazione": "2026-04-30",
   "oggetto": "IMPEGNO DI SPESA PER IL SERVIZIO DI ASSISTENZA AL CITTADINO PER LA PRESENTAZIONE DELLA DOMANDA TELEMATICA RELATIVA AI SERVIZI ABITATIVI PUBBLICI, AVVISO N. 13182 - CIG BB6B3FA667",
   "beneficiario": "LA CORDATA SOCIETA' COOPERATIVA SOCIALE",
-  "importo_euro": 804.5,
+  "importo_euro": 981.49,
   "cig": "BB6B3FA667",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -15478,7 +15493,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -15674,7 +15689,7 @@
   "data_pubblicazione": "2026-04-29",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL SERVIZIO DI MANUTENZIONE ORDINARIA DEL PATRIMONIO COMUNALE - OPERE DA ELETTRICISTA, AI SENSI DELL’ART. 50 CO. 1 LETT B) DEL D.LGS. N. 36/2023. APPROVAZIONE PROCEDURA SINTEL. AFFIDAMENTO ALLA SOCIETÀ FIMEL SAS DI OPERA (MI) . CIG BB5F6A8AFD",
   "beneficiario": "FIMEL SAS",
-  "importo_euro": 13275.0,
+  "importo_euro": 13775.0,
   "cig": "BB5F6A8AFD",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -15703,7 +15718,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -16393,7 +16408,7 @@
   "data_pubblicazione": "2026-04-13",
   "oggetto": "DETERMINA A CONTRARRE E IMPEGNO DI SPESA, PER LA FORNITURA DI FAMIGLIE DI API DESTINATE ALL’INTEGRAZIONE DELL’APIARIO PRESSO L’OASI NATURALISTICA DEI LAGHETTI DI TOLCINASCO – CIG BB0D343B86",
   "beneficiario": "AGRICOLA APICOLTURA ENZO STEFANI",
-  "importo_euro": 600.0,
+  "importo_euro": 660.0,
   "cig": "BB0D343B86",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -16408,7 +16423,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -16420,7 +16435,7 @@
   "data_pubblicazione": "2026-04-13",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO DELL’INCARICO PROFESSIONALE PER SERVIZIO DI COLLAUDO STATICO IN CORSO D’OPERA RELATIVO ALLE OPERE: CODICE INTERVENTO N. 459 – REALIZZAZIONE ASILO NIDO QUARTIERE DELLE ROSE IN COMUNE DI PIEVE EMANUELE NELL’AMBITO DEL PNRR – M5C2 INV. 2.3 – FINANZIATO DA NEXT GENERATIONE EU – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALI-TÀ DELL’ABITARE (PINQUA) CUP J47H21000230001; CODICE INTERVENTO N. 458 – AM-PLIAMENTO CENTRO DI FORMAZIONE PROFESSIONALE E CO WORKING IN COMUNE DI PIEVE EMANUELE NELL’AMBITO DEL PNRR – M5C2 INV. 2.3 – FINANZIATO DA NEXT GENERATIONE EU – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITÀ DELL’ABITARE (PINQUA) CUP J47H21000220001. AFFIDAMENTO ALLA SOCIETA’ GBRG ENGINEERING SRL ZIBIDO SAN GIACOMO (MI)). ASSUNZIONE IMPEGNO DI SPESA . CIG BB1897A9D9",
   "beneficiario": "GBRG ENGINEERING SRL DI ZIBIDO SAN GIACOMO (MI)",
-  "importo_euro": 13500.0,
+  "importo_euro": 16748.54,
   "cig": "BB1897A9D9",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -16435,7 +16450,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 5,836.76)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -16555,7 +16570,7 @@
   "data_pubblicazione": "2026-04-13",
   "oggetto": "SERVIZIO DI MANUTENZIONE DEL PATRIMONIO COMUNALE – MESSA IN SICUREZZA PRESSO CIMITERO COMUNALE. CONTINUITA' DEL NOLEGGIO PUTELLAZIONI DEL FABBRICATO LOCULI. ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA SOCIETA’ COSTRUIRE SRL DI LOCATE DI TRIULZI (MI) . CIG B4FE27FA27",
   "beneficiario": "COSTRUIRE SRL DI LOCATE DI TRIULZI (MI)",
-  "importo_euro": 1033.7,
+  "importo_euro": 1261.12,
   "cig": "B4FE27FA27",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -16570,7 +16585,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata",
+  "regola_importo": "somma impegnata/liquidata, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -16735,8 +16750,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-724-2026",
@@ -16850,8 +16865,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-711-2026",
@@ -16994,8 +17009,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-667-2026",
@@ -17075,8 +17090,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-664-2026",
@@ -17113,7 +17128,7 @@
   "data_pubblicazione": "2026-03-31",
   "oggetto": "IMPEGNO DI SPESA PER L’AFFIDAMENTO DIRETTO ALLA SOCIETÀ IN HOUSE AREA SUD MILANO S.P.A. DEL SERVIZIO DI RACCOLTA, RIMOZIONE E SMALTIMENTO DI RIFIUTI ABBANDONATI PRESSO SP28 DEL COMUNE DI PIEVE EMANUELE CIG BAF2471558",
   "beneficiario": "AREA SUD MILANO S.P.A",
-  "importo_euro": 11386.0,
+  "importo_euro": 13890.92,
   "cig": "BAF2471558",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -17128,7 +17143,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -17186,7 +17201,7 @@
   "data_pubblicazione": "2026-03-31",
   "oggetto": "INTERVENTO RIMESSA IN SERVIZIO PER CANCELLO CARRAIO MOTORIZZATO PALAZZO MUNICIPALE IN VIA VIQUARTERIO N. 1. AFFIDAMENTO ALLA SOCIETÀ OLMI AUTOMAZIONI SRL, DI SAN DONATO MILANESE. ASSUNZIONE IMPEGNO DI SPESA . CIG BAEE8C5730",
   "beneficiario": "OLMI AUTOMAZIONI S.R.L",
-  "importo_euro": 1175.0,
+  "importo_euro": 1443.5,
   "cig": "BAEE8C5730",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -17201,7 +17216,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -17240,7 +17255,7 @@
   "data_pubblicazione": "2026-03-30",
   "oggetto": "DETERMINA IMPEGNO PER COORDINAMENTO ALLA SICUREZZA IN FASE DI PROGETTAZIONE E ESECUZIONE PESA NELL’ISOLA ECOLOGICA DI VIA SICILIA DELLO STUDIO GEOM. FABIO IDINI DI CASALPUSTERLENGO (LO) – CIG BAE0B94EC0 - CUP J41E22000310001.",
   "beneficiario": "STUDIO IDINI",
-  "importo_euro": 2200.0,
+  "importo_euro": 2794.0,
   "cig": "BAE0B94EC0",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -17255,7 +17270,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -17267,7 +17282,7 @@
   "data_pubblicazione": "2026-03-22",
   "oggetto": "PNRR – MISSIONE M5C2 – INVESTIMENTO 2.3 – PROGRAMMA INNOVATIVO NAZIONALE PER LA QUALITA’ DELL’ABITARE (PINQUA) – FINANZIATO DA NEXT GENERATION EU - CODICE INTERVENTO 460 – LAVORI DI REALIZZAZIONE PASSARELLA CICLOPEDONALE DI COLLEGAMERNTO DEL CENTRO ABITATO COMUNE DI PIEVE EMANUELE. APPROVAZIONE MODIFICA DEL CONTRATTO, AI SENSI DELL’ART. 106 CO. 1B) E 1.C) E CO. 2 DEL D.LGS. N. 50/2016, A FAVORE DELLA SOCIETA’ MONACO SPA DI ROMA E RIDETERMINAZIONE NUOVO QUADRO ECONOMICO.",
   "beneficiario": "MONACO SPA",
-  "importo_euro": 407100.0,
+  "importo_euro": 447810.0,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -17282,7 +17297,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 804,025.48)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -17336,8 +17351,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-611-2026",
@@ -17509,7 +17524,7 @@
   "data_pubblicazione": "2026-03-19",
   "oggetto": "INTERVENTO DI MIGLIORAMENTO DEL DECORO URBANO E DEL TESSUTO DI IMMOBILI PUBBLICI DESTINATI ALLE ATTIVITA’ SPORTIVE DI VIA DEI PINI E VIA MOLISE, FINANZIATI DALL’UNIONE EUROPEA – NEXTGENERATION EU, NELL’AMBITO DEL PNRR - INVESTIMENTI IN PROGETTI DI RIGENERAZIONE URBANA VOLTI A RIDURRE SITUAZIONI DI EMARGINAZIONE E DEGRADO SOCIALE – PNRR – M5C2-I2. ASSUNZIONE IMPEGNO DI SPESA A FAVORE DELLA FEDERAZIONE ITALIANA DI ATLETICA LEGGERA (FIDAL) PER IL SERVIZIO DI COLLAUDO DI OMOLOGAZIONE PER LA PISTA CICLABILE DI ATLETICA LEGGERA PRESSO IL CAMPO SPORTIVO MAZZOLA VIA PINI. CUP J47H21001820001 - CIG BAB685862D",
   "beneficiario": "FEDERAZIONE ITALIANA DI ATLETICA LEGGERA (FIDAL)",
-  "importo_euro": 7500.0,
+  "importo_euro": 9150.0,
   "cig": "BAB685862D",
   "categoria": "Sport e tempo libero",
   "missione_bdap": 6,
@@ -17524,7 +17539,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata",
+  "regola_importo": "somma impegnata/liquidata, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -17616,7 +17631,7 @@
   "data_pubblicazione": "2026-03-17",
   "oggetto": "DETERMINA A CONTRARRE IMPEGNO DI SPESA PER L’AFFIDAMENTO DEI LAVORI DI INTEGRAZIONE DEGLI IMPIANTI ELETTRICI PRESSO IL MERCATO COMUNALE DI PIAZZA PUCCINI – CIG: BAC6E6AA97",
   "beneficiario": "GLM SOLUTION SRLS",
-  "importo_euro": 3000.0,
+  "importo_euro": 3660.0,
   "cig": "BAC6E6AA97",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -17631,7 +17646,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -17940,7 +17955,7 @@
   "data_pubblicazione": "2026-03-11",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER LA VERIFICA PERIODICA BIENNALE STRAORDINARIA ALL’IMPIANTO ELEVATORE PRESSO IL CIMITERO COMUNALE. AFFIDAMENTO ALLA SOCIETÀ SEUCER SRL DI MILANO . CIG B3EC74E773",
   "beneficiario": "SEUCER SRL DI MILANO",
-  "importo_euro": 200.0,
+  "importo_euro": 244.0,
   "cig": "B3EC74E773",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -17955,7 +17970,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -18075,7 +18090,7 @@
   "data_pubblicazione": "2026-03-10",
   "oggetto": "IMPEGNO DI SPESA PER AFFIDAMENTO DIRETTO DELLA FORNITURA DI SACCHETTI PER DEIEZIONI CANINE PER IL DISTRIBUTORE AUTOMATICO DI PIAZZA PUCCINI CIG BAA49D5651",
   "beneficiario": "SEDO GMBH / S.R.L.",
-  "importo_euro": 516.2,
+  "importo_euro": 629.76,
   "cig": "BAA49D5651",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 9,
@@ -18090,7 +18105,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -18645,7 +18660,7 @@
   "data_pubblicazione": "2026-02-27",
   "oggetto": "IMPEGNO DI SPESA DELLA SECONDA FASE PER LE PRESTAZIONI TECNICHE AFFIDATE RELATIVE ALLA PROGETTAZIONE ESECUTIVA, DEPOSITO, DIREZIONE LAVORI E COORDINAMENTO DELLA SICUREZZA IN FASE DI PROGETTAZIONE E ESECUZIONE PER LA MESSA IN SICUREZZA DI N. 1 CORPO LOCULI PRESSO IL CIMITERO COMUNALE , A FAVORE DELLA SOCIETÀ GBRG ENGINEERING SRL DI ZIBIDO SAN GIACOMO (MI). CIG B6883B6480",
   "beneficiario": "GBRG ENGINEERING SRL DI ZIBIDO SAN GIACOMO (MI)",
-  "importo_euro": 42314.77,
+  "importo_euro": 53688.97,
   "cig": "B6883B6480",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -18661,7 +18676,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -18754,7 +18769,7 @@
   "data_pubblicazione": "2026-02-25",
   "oggetto": "AFFIDAMENTO ALLA SOCIETA' KIBERNETES SRL DEI SERVIZI DI GESTIONE IVA E FISCALITA’ PASSIVA ANNI 2026 – 2028 – A SEGUITO DI PROCEDURA MEPA CIG BA6255B449",
   "beneficiario": "KIBERNETES SRL",
-  "importo_euro": 29700.0,
+  "importo_euro": 36234.0,
   "cig": "BA6255B449",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 1,
@@ -18769,7 +18784,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 36,234.00)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -18897,7 +18912,7 @@
   "data_pubblicazione": "2026-02-19",
   "oggetto": "LAVORI DI MANUTENZIONE STRAORDINARIA DELLE STRADE COMUNALI E ABBATTIMENTO BARRIERE ARCHITETTONICHE . APPROVAZIONE REPORT SINTEL . AGGIUDICAZIONE A FAVORE DELLA SOCIETA' CASALUCCI SRL DI SOMMA LOMBARDA (VA). CIG B890AD781F",
   "beneficiario": "CASALUCCI SRL",
-  "importo_euro": 355946.6,
+  "importo_euro": 421911.23,
   "cig": "B890AD781F",
   "categoria": "Strade, viabilità e trasporti",
   "missione_bdap": 10,
@@ -18912,7 +18927,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -18951,7 +18966,7 @@
   "data_pubblicazione": "2026-02-19",
   "oggetto": "FORNITURA PER ACQUISIZIONE KIT PER SELETTORE E DUPLICAZIONI CHIAVI NECESSARIE A FUNZIONAMENTO DELL’IMPIANTO ELEVATORE PER DISABILI PRESSO LA STRUTTURA DEL CENTRO CIVICO IN PIAZZA PUCCINI. AFFIDAMENTO ALLE SOCIETÀ ELELIFT SRL DI BRIVIO (LC) E SOCIETÀ LIFTING ITALIA SRL DI BOGOLESE SORBOLO (PR). ASSUNZIONE IMPEGNI DI SPESA.",
   "beneficiario": "ELELIFT SRL E LIFTING ITALIA SRL",
-  "importo_euro": 100.0,
+  "importo_euro": 122.0,
   "cig": null,
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -18966,7 +18981,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 182.00)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -18994,8 +19009,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-344-2026",
@@ -19050,8 +19065,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-342-2026",
@@ -19117,7 +19132,7 @@
   "data_pubblicazione": "2026-02-18",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER LA REALIZZAZIONE ASILO NIDO QUARTIERE DELLE ROSE IN COMUNE DI PIEVE EMANUELE , NELL’AMBITO DEL PNRR – MISSIONE M5C2 C2 INV. 2.3 – FINANZIATO DA NEXT GENERATION UE – PINQUA – CODICE INTERVENTO 459. APPROVAZIONE PROCEDURA SINTEL . AFFIDAMENTO ALL’ING. MARIO VISMARA DI MOLTENO (LC). ASSUNZIONE IMEPGNO DI SPESA . CUP J47H21000230001- CIG BA3B2AAAC7.",
   "beneficiario": "SPINOSA COSTRUZIONI GENERALI SPA DI ROMA",
-  "importo_euro": 10030.27,
+  "importo_euro": 12726.41,
   "cig": "BA3B2AAAC7",
   "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
@@ -19133,7 +19148,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19253,7 +19268,7 @@
   "data_pubblicazione": "2026-02-17",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI RIPRISTINO BAGNO E LINEE FOGNARIE NELL’INTERVENTO DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANENTO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE DELL’EDIFICIO SCOLASTICO E. DE FILIPPO, FINANZIATO DA NEXT GENERATION EU M2C4 INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR). – RIFINAZIAMENTO CONFLUITO NELLE MEDIE OPERE SCORRIMENTO GRADUATORIA D.M. DEL 08/11/2021. CUP J44H20001160001- CIG BA5D42C59C",
   "beneficiario": "F.A.F. SRL",
-  "importo_euro": 6606.72,
+  "importo_euro": 8060.2,
   "cig": "BA5D42C59C",
   "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
@@ -19269,7 +19284,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19391,7 +19406,7 @@
   "data_pubblicazione": "2026-02-12",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO PER IL SERVIZIO IN CORSO D’OPERA PER IL COLLAUDO TECNICO FUNZIONALE DEGLI IMPIANTI - PER L’AMPLIAMENTO CENTRO DI ROMAZIONE PROFESSIONALE E CO WORKING IN COMUNE DI PEIVE EMANUELE, NELL’AMBITO DEL PNRR – MISSIONE M5C2 C2 INV. 2.3 – FINANZIATO DA NEXT GENE-RATION UE – PINQUA – CODICE INTERVENTO 458. APPROVAZIONE PROCEDURA SIN-TEL . AFFIDAMENTO ALL’ING. MARIO VISMARA DI MOLTENO (LC). ASSUNZIONE IME-PGNO DI SPESA . CUP J47H21000220001- CIG BA3B3B571E",
   "beneficiario": "SPINOSA COSTRUZIONI GENERALI SPA DI ROMA",
-  "importo_euro": 10197.77,
+  "importo_euro": 12939.03,
   "cig": "BA3B3B571E",
   "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
@@ -19407,7 +19422,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19572,8 +19587,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-278-2026",
@@ -19612,7 +19627,7 @@
   "data_pubblicazione": "2026-02-11",
   "oggetto": "DECISIONE A CONTRARRE. INCARICO DI SERVIZIO PER LE OPERAZIONI DI FRAZIONAMENTO CATASTALE DELL’AREA URBANA NELL’INTERVENTO DI RINATURALIZZAZIONE AREE DISMESSE OVVERO DEGRADATE E AUMENTO DELLE SUPERFICI DA RIQUALIFICARE A VERDE, CON DIMINUZIONE DELLE AREE PAVIMENTATE TRA VIA OLMI E VIA LEONCAVALLO , ART. 21 D.L. 152/2021 – PIANI INTEGRATI – M5C2 – INVESTIMENTO 2.2. CUP J47B22000030006. AFFIDAMENTO AL GEOMETRA PAOLO VACCHELLI DI GARLASCO (PV). CIG BA46E4D286",
   "beneficiario": "AGRICOLA CATTANEO SRL DI BERGAMO",
-  "importo_euro": 2900.0,
+  "importo_euro": 3714.9,
   "cig": "BA46E4D286",
   "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
@@ -19628,7 +19643,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19682,8 +19697,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-274-2026",
@@ -19764,8 +19779,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-244-2026",
@@ -19886,7 +19901,7 @@
   "data_pubblicazione": "2026-02-04",
   "oggetto": "PROCEDURA APERTA PER LA FORNITURA ORDINARIA DI MEDICINALI, PARAFARMACI E ALTRI GENERI VENDIBILI NELLE FARMACIE COMUNALI DI PIEVE EMANUELE (MI) - LOTTO 1 CIG 8719228690_AGGIUDICATARIO UNICO LA FAMACIA DEI FARMACISTI - LOTTO 2 CIG CIG 8727293603 COOP. ESERCENTI FARMACIA ART. 3 DEL DOCUMENTO DI GARA AI SENSI DELL'AART 3 DEL DOCUMENTO DI GARA",
   "beneficiario": "UNICO LA FARMACIA DEI FARMACISTI",
-  "importo_euro": 500000.0,
+  "importo_euro": 550000.0,
   "cig": "8727293603",
   "categoria": "Sanità",
   "missione_bdap": 99,
@@ -19902,7 +19917,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 1,100,000.00)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -19914,7 +19929,7 @@
   "data_pubblicazione": "2026-02-02",
   "oggetto": "IMPEGNO DI SPESA PER TRASLOCO ED UPGRADE LINEA TELEFONICA TELECOM ASSOCIAZIONE DONNE INSIEME",
   "beneficiario": null,
-  "importo_euro": 1080.0,
+  "importo_euro": 1317.6,
   "cig": null,
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
@@ -19929,7 +19944,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "somma impegnata/liquidata",
+  "regola_importo": "somma impegnata/liquidata, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19941,7 +19956,7 @@
   "data_pubblicazione": "2026-02-02",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER AFFIDAMENTO DIRETTO DELLA MANUTENZIONE ORDINARIA – SOSTITUZIONE PNEUMATICI DEL VEICOLO COMUNALE PIAGGIO PORTER TARGATO GK607DD",
   "beneficiario": "PNEUS 4 S.R.L.",
-  "importo_euro": 249.6,
+  "importo_euro": 320.0,
   "cig": "BA1EEAFE56",
   "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
@@ -19956,7 +19971,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -19968,7 +19983,7 @@
   "data_pubblicazione": "2026-02-02",
   "oggetto": "DETERMINA A CONTRARRE - ASSUNZIONE IMPEGNO DI SPESA PER RINNOVO ABBONAMENTO AI SERVIZI DI BASE - ANCI RISPONDE E ADESIONE ACCESSO BANCA DATI ACI -PRA - ANCI DIGITALE S.PA. - ANNO 2026 - CIG BA2D6B357A",
   "beneficiario": "ANCI DIGITALE S.PA",
-  "importo_euro": 1199.0,
+  "importo_euro": 1462.78,
   "cig": "BA2D6B357A",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
@@ -19984,7 +19999,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 3,200.00)",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": true
  },
  {
@@ -20039,8 +20054,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-190-2026",
@@ -20094,8 +20109,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-187-2026",
@@ -20148,8 +20163,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-179-2026",
@@ -20352,7 +20367,7 @@
   "data_pubblicazione": "2026-01-28",
   "oggetto": "DECISIONE A CONTRARRE. SERVIZIO PER PROVE DI MATERIALI E STRUTTURE (COMPRESSIONE CUBETTI IN CLS E PROVE A TRAZIONE DI BARRE D’ARMATURA), PER I LAVORI DI MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORAMENTO SISMICO, EFFICIETAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONCIHE EDIFICIO SCOLASTICO VIQUARTERIO . INTERVENTO 2.2 NELL’AMBITO DEL PNRR – RIFINANZIAMENTO CON MEDIE OPERE SCORRIMENTO GRADUATORIA DM 08.11.2021. AFFIDAMENTO ALL' UNIVERSITÀ DEGLI STUDI DI PAVIA, DIPARTIMENTO INGEGNERIA CIVILE E ARCHITETTURA - LABORATORIO PROVE MATERIALI E STRUTTURE “GIORGIO MACCHI “ DI PAVIA. CIG B9FF537E14",
   "beneficiario": null,
-  "importo_euro": 2030.0,
+  "importo_euro": 2476.6,
   "cig": "B9FF537E14",
   "categoria": "Istruzione e scuola",
   "missione_bdap": 99,
@@ -20367,7 +20382,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -20421,8 +20436,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-166-2026",
@@ -20640,8 +20655,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-156-2026",
@@ -20815,7 +20830,7 @@
   "data_pubblicazione": "2026-01-27",
   "oggetto": "DECISIONE A CONTRARRE. AFFIDAMENTO MEDIANTE PIATTAFORMA SINTEL PER I LAVORI DI REALIZZAZIONE DELL’IMPIANTO DI PUBBLICA ILLUMINZIONE SUL PONTE PEDONALE IN PIEVE EMANUELE, AI SENSI DELL’ART. 50 CO. 1 LETT A) DEL D.LGS. N. 36/2023. APPROVAZIONE REPORT SINTEL. AFFIDAMENTO ALLA SOCIETÀ TECNI-LUX S.R.L. DI CARBONARA AL TICINO (PV). CIG B9ECFD2030",
   "beneficiario": "TECNI-LUX SRL DI CARBONAR AL TICINO (PV)",
-  "importo_euro": 9870.3,
+  "importo_euro": 12041.77,
   "cig": "B9ECFD2030",
   "categoria": "Sociale e famiglia",
   "missione_bdap": 99,
@@ -20831,7 +20846,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo contrattuale",
+  "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -20939,8 +20954,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-137-2026",
@@ -21170,7 +21185,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER INTERVENTO DERATTIZZAZIONE INTERNA AULE SCUOLA DELL'INFANZIA COLLODI CIG B9FA95E6AC",
   "beneficiario": null,
-  "importo_euro": 220.0,
+  "importo_euro": 268.48,
   "cig": "B9FA95E6AC",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
@@ -21185,7 +21200,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -21225,7 +21240,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "DETERMINA A CONTRARRE PER L’AFFIDAMENTO DIRETTO DEI LAVORI EDILI DI ADEGUAMENTO DELLA PIATTAFORMA ECOLOGICA COMUNALE PER L’INSTALLAZIONE DI UNA PESA PRESSO IL CENTRO DI RACCOLTA DI VIA SICILIA CIG:B9FAD53A9F.",
   "beneficiario": "BARONIO EREDI S.R.L. VIA GIOVANNI",
-  "importo_euro": 30474.59,
+  "importo_euro": 37178.99,
   "cig": "B9FAD53A9F",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
@@ -21240,7 +21255,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -21334,7 +21349,7 @@
   "data_pubblicazione": "2026-01-21",
   "oggetto": "SERVIZIO DI MANUTENZIONE ORDINARIA DEGLI ASCENSORI E ELEVATORI PRESENTI NELLE STRUTTURE ISTITUZIONALI DI PROPRIETÀ COMUNALE. PROROGA TECNICA AI SENSI DELL’ART. 120 CO. 11 DEL D.LGS. N. 36/2023, A FAVORE DELLA SOCIETÀ SCINDLER SPA DI MILANO. CIG B67286FF69",
   "beneficiario": "SCINDLER SPA",
-  "importo_euro": 2500.0,
+  "importo_euro": 3050.0,
   "cig": "B67286FF69",
   "categoria": "Amministrazione e servizi generali",
   "missione_bdap": 99,
@@ -21349,7 +21364,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {
@@ -21514,8 +21529,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-044-2026",
@@ -21541,8 +21556,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true
+  "regola_importo": "impegno del dispositivo",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-043-2026",
@@ -21580,7 +21595,7 @@
   "data_pubblicazione": "2026-01-13",
   "oggetto": "INTERVENTO DERATTIZZAZIONE INTERNA AULE M.L. KING - CIG B9E59547C5",
   "beneficiario": null,
-  "importo_euro": 220.0,
+  "importo_euro": 268.48,
   "cig": "B9E59547C5",
   "categoria": "Ambiente, verde e rifiuti",
   "missione_bdap": 99,
@@ -21595,7 +21610,7 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
+  "regola_importo": "importo complessivo, lordo dichiarato",
   "importo_incerto": false
  },
  {

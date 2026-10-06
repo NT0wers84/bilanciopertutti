@@ -100,6 +100,17 @@ def main() -> int:
                 for campo in CAMPI:
                     if campo in prima:
                         s[campo] = prima[campo]
+                # Ripristinare vuol dire tornare allo stato di prima, errori
+                # compresi: molti valori venivano dalle regex vecchie. Il
+                # testo non c'è più e non si possono ricontrollare, quindi gli
+                # importi implausibili tornano con l'avviso «da verificare»
+                # (1,76 € per una liquidazione di fatture; 1.010.014,38 €, che è
+                # il finanziamento totale di un progetto PNRR, non una liquidazione)
+                v = s["importo_euro"]
+                if (not (s.get("regola_importo") or "").startswith("prospetto")
+                        and (v < 10 or v > 100_000)):
+                    s["importo_incerto"] = True
+                    log.info(f"             ↳ marcato «da verificare»")
                 ripristinati += 1
 
     log.info(f"\nRipristinati: {ripristinati}. Senza una versione precedente con "

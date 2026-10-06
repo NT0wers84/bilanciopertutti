@@ -30,8 +30,12 @@ jobs:
     timeout-minutes: 30
 
     steps:
+      # Storia completa: ripristina_azzerati.py cerca gli importi nelle
+      # versioni precedenti di data/spese.json
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Configura Python 3.11
         uses: actions/setup-python@v6
@@ -48,10 +52,12 @@ jobs:
       - name: Ricalcola
         run: |
           if [ "${{ inputs.applica }}" = "true" ]; then
+            python scripts/ripristina_azzerati.py --applica
             python scripts/ricalcola_importi.py --applica
             python scripts/verifica_dati.py
             python scripts/genera_sito.py
           else
+            python scripts/ripristina_azzerati.py
             python scripts/ricalcola_importi.py
           fi
 

@@ -138,6 +138,16 @@ def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) ->
             url = url_freschi.get((s["numero_raw"], s["oggetto"]), s["url_atto"])
             testo = portale.estrai_testo_atto({"url_dettaglio": url},
                                               id_cache=s.get("id"))
+            if len(testo.strip()) < 300 and s.get("caratteri_testo"):
+                # Il testo c'era quando l'atto è stato estratto, e oggi il
+                # portale non lo serve più (le liquidazioni restano sull'albo
+                # 15 giorni). I valori di allora vengono da quel testo: si
+                # tengono. Il 6 ottobre 2026 questo caso azzerava 38 importi
+                # veri, dal 2026/1320 al 2026/1407.
+                log.warning(f"  Testo non più disponibile sul portale: tengo i "
+                            f"valori estratti quando c'era ({s['caratteri_testo']} char)")
+                senza_testo += 1
+                continue
             if len(testo.strip()) < 300:
                 log.warning(f"  Testo non recuperato ({len(testo)} char): "
                             f"azzero gli importi inventati e vado avanti")
@@ -189,7 +199,8 @@ def riestrai_regex(max_atti: int, tutte: bool = False, incerti: bool = False) ->
                     f"(chiave assente, quota esaurita o rate limit)")
     if senza_testo:
         log.warning(f"  {senza_testo} senza testo recuperabile dal portale: "
-                    f"importi azzerati")
+                    f"lasciate com'erano, o azzerate se l'importo era stato "
+                    f"dedotto senza testo")
     if errori:
         log.warning(f"  {errori} fallite per errore")
     restanti = max(len(candidate) - max_atti, 0)

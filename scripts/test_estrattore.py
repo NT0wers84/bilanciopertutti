@@ -178,6 +178,77 @@ def test_atto_lungo_intero():
              "COOPERATIVA SOCIALE JOLLY SERVICE ONLUS")
 
 
+def test_modello_e_testo():
+    """Come si combinano la lettura di Groq e le regole sul testo. Le risposte
+    del modello sono quelle vere del backfill del 6 ottobre 2026, simulate."""
+    sezione("Groq e testo: chi vince")
+    import estrattore as E
+    vero = E._estrai_con_groq
+    chiave = os.environ.get("GROQ_API_KEY")
+    os.environ["GROQ_API_KEY"] = "prova"
+
+    def con_modello(id_atto, tipo, risposta):
+        t = testo_atto(id_atto)
+        if t is None:
+            return None
+        E._estrai_con_groq = lambda testo, oggetto: {"tipo_atto": None,
+                                                      "categoria": "Sociale e famiglia",
+                                                      **risposta}
+        return E.estrai_dati(t, "", tipo)
+    try:
+        # 1922: la regola trova l'imponibile (4.500), il modello il lordo
+        # impegnato (6.600, «oltre cassa e IVA per complessivi»): vince il lordo
+        d = con_modello("determinazione-1922-2026", "Determinazione",
+                        {"importo_testuale": "6.600,00", "beneficiario": "Studio Legale Belvedere"})
+        if d:
+            verifica("1922: il lordo del modello batte l'imponibile", d["importo_euro"], 6600.0)
+        # 1930: il prospetto vince sempre, anche sotto il 2% di differenza,
+        # e i creditori vengono dal prospetto, non dal modello
+        d = con_modello("liquidazione-1930-2026", "Determinazione di liquidazione",
+                        {"importo_testuale": "69.585,43", "beneficiario": "Professionisti diversi"})
+        if d:
+            verifica("1930: vince il prospetto", d["importo_euro"], 68910.79)
+            verifica("1930: tre creditori dal prospetto",
+                     len(d["beneficiari_dettaglio"] or []), 3)
+        # 1972: un importo scartato come inventato non rientra come somma
+        # delle voci che il modello stesso aveva inventato
+        d = con_modello("liquidazione-1972-2026", "Determinazione di liquidazione",
+                        {"importo_testuale": "3.206,89", "beneficiario": "MINISTERO",
+                         "beneficiari_dettaglio": [{"nome": "Ministero",
+                                                    "importo_testuale": "3.206,89"}]})
+        if d:
+            verifica("1972: l'importo inventato non rientra", d["importo_euro"], None)
+    finally:
+        E._estrai_con_groq = vero
+        if chiave is None:
+            os.environ.pop("GROQ_API_KEY", None)
+        else:
+            os.environ["GROQ_API_KEY"] = chiave
+
+    # Le stesse correzioni senza modello: le regole sul testo leggono il
+    # lordo dichiarato dopo il netto, e l'impegno del dispositivo
+    for id_atto, atteso in [("determinazione-1922-2026", 6600.0),
+                            ("determinazione-1935-2026", 7930.0),
+                            ("determinazione-1921-2026", 4000.0),
+                            ("determinazione-1927-2026", 26840.0)]:
+        t = testo_atto(id_atto)
+        if t:
+            verifica(f"{id_atto}: importo dalle regole sul testo",
+                     estrai_importo(t, "", "determinazione")[0], atteso)
+    # Due somme nella stessa frase di impegno: la regola si astiene
+    t = testo_atto("determinazione-144-2026")
+    if t:
+        verifica("144: due impegni nella stessa frase, nessuna scelta a caso",
+                 E.impegno_unico_dispositivo(t), None)
+
+    for netto, lordo, atteso in [(4500, 6600, True), (6500, 7930, True),
+                                 (1170, 1508.77, True), (133050, 146355, True),
+                                 (1000, 1000, False), (1000, 2000, False)]:
+        verifica(f"{lordo} è il lordo di {netto}",
+                 E._e_lordo_di(lordo, netto, f"{lordo:,.2f}".replace(",", "X")
+                               .replace(".", ",").replace("X", ".")), atteso)
+
+
 def test_liquidazione_due_fatture():
     """SIVIS: l'atto liquida DUE fatture da 6.032,29. Il sito mostrava
     41.557,00, che è l'impegno della proroga citato in premessa."""
@@ -357,6 +428,11 @@ def test_forma_dei_nomi():
         ("sig.ra T.G.", "T.G."),
         ("Fornitori diversi", "FORNITORI DIVERSI"),
         ("un cittadino con disabilità", "UN CITTADINO CON DISABILITÀ"),
+        # «ditta» e partita IVA non sono parte del nome (backfill 6/10/2026)
+        ("DITTA MAGGIOLI TRIBUTI SPA", "MAGGIOLI TRIBUTI SPA"),
+        ("COOPERATIVA SPAZIO APERTO SERVIZI – P. IVA 10860990158",
+         "COOPERATIVA SPAZIO APERTO SERVIZI"),
+        ("ACF SRL", "ACF SRL"),                 # «CF» dentro un nome resta
         (None, None),
     ]:
         verifica(f"nome: {str(grezzo)[:40]}", f(grezzo), atteso)
@@ -501,6 +577,7 @@ def main() -> int:
     test_liquidazione_imet()
     test_creditore_dal_prospetto()
     test_atto_lungo_intero()
+    test_modello_e_testo()
     test_liquidazione_due_fatture()
     test_liquidazione_iva_non_doppia()
     test_liquidazione_prende_il_lordo()

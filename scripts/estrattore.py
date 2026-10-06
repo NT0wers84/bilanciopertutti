@@ -271,6 +271,58 @@ def _importo_presente(valore: float, testo: str) -> bool:
     return any(v in testo or v in testo_compatto for v in varianti)
 
 
+# Da netto a lordo: IVA (4, 5, 10, 22%), cassa previdenziale (2-5%) e, per
+# gli avvocati, spese generali forfettarie del 15%: 1,15 × 1,04 × 1,22 = 1,46.
+# Atto 2026/1922: 4.500,00 «oltre cassa e IVA per complessivi» 6.600,00.
+# Oltre il 50% in più non è più «lo stesso importo con le tasse».
+LORDO_MIN, LORDO_MAX = 1.035, 1.50
+
+
+def _e_lordo_di(lordo: float, netto: float, testo: str) -> bool:
+    """True se `lordo` è plausibilmente `netto` più IVA e cassa, e compare
+    davvero nel testo dell'atto."""
+    if not lordo or not netto:
+        return False
+    return (LORDO_MIN <= lordo / netto <= LORDO_MAX
+            and _importo_presente(lordo, testo))
+
+
+# «4.500,00 oltre cassa e IVA per complessivi € 6.600,00», «€ 6.500,00 + IVA
+# 22% per un totale di € 7.930,00», «3278,70+IVA (ovvero 4000,00 comprensivo
+# di IVA)»: dopo il netto, una formula di totale e il lordo.
+RE_FORMULA_LORDO = re.compile(
+    r"(?:per\s+complessiv\w+|per\s+un\s+(?:totale|importo)(?:\s+complessiv\w+)?|"
+    r"ovvero|e\s+quindi|pari\s+a|totale\s+(?:complessiv\w+|lordo)?)"
+    r"[^\d]{0,25}?(\d{1,3}(?:\.\d{3})*,\d{2}|\d+,\d{2})", re.IGNORECASE)
+FINESTRA_LORDO = 180
+
+
+def lordo_dichiarato(netto: float, testo: str) -> float | None:
+    """Il lordo dichiarato subito dopo un importo netto, se c'è.
+
+    Le regole sulla prosa trovano spesso l'imponibile, perché è la prima
+    cifra della frase; ma la spesa che il Comune impegna è il totale con IVA
+    e cassa, scritto poco dopo. Si cerca solo nei 180 caratteri che seguono
+    il netto, e il lordo deve stare nel rapporto plausibile con il netto: una
+    cifra qualunque più avanti nel testo non conta."""
+    if not netto or not testo:
+        return None
+    intero, decimali = divmod(round(netto * 100), 100)
+    scritture = {f"{intero:,}".replace(",", ".") + f",{decimali:02d}",
+                 f"{intero},{decimali:02d}"}
+    piatto = re.sub(r"\s+", " ", testo)
+    trovati = []
+    for s in scritture:
+        for m in re.finditer(r"(?<![\d.,])" + re.escape(s) + r"(?![\d])", piatto):
+            coda = piatto[m.end(): m.end() + FINESTRA_LORDO]
+            for f in RE_FORMULA_LORDO.finditer(coda):
+                v = importo_italiano(f.group(1))
+                if v and LORDO_MIN <= v / netto <= LORDO_MAX:
+                    trovati.append(v)
+                    break
+    return max(trovati) if trovati else None
+
+
 def _somma_voci_verificate(voci, testo: str) -> float | None:
     """Somma delle voci di dettaglio che compaiono davvero nel testo."""
     if not isinstance(voci, list):
@@ -380,6 +432,11 @@ def formato_beneficiario(nome: str | None) -> str | None:
     """Il nome come va mostrato: maiuscolo, senza titolo professionale."""
     if not nome:
         return nome
+    # «DITTA MAGGIOLI TRIBUTI SPA», «COOPERATIVA … – P. IVA 10860990158»: la
+    # parola «ditta» e la partita IVA non fanno parte del nome
+    nome = re.sub(r"^\s*ditta\s+", "", nome, flags=re.IGNORECASE)
+    nome = re.sub(r"\s*[-–,]?\s*\(?\s*\b(?:P\.?\s?IVA|C\.F\.|CODICE FISCALE)(?=\W|$).*$", "",
+                  nome, flags=re.IGNORECASE)
     ripulito = RE_TITOLO_PROFESSIONALE.sub("", nome.strip()).strip(" ,;-")
     if not RE_FINE_SIGLA.search(ripulito):
         ripulito = ripulito.strip(" .,;-")
@@ -697,11 +754,28 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
                                                  risultato["tipo_atto"])
     risultato["regola_importo"] = regola
     risultato["importo_incerto"] = incerto
+    da_prospetto = (regola or "").startswith("prospetto")
 
     if dichiarato is not None and testo_utile:
         if imp is None:
             log.info(f"  Importo dal testo ('{regola}'): {dichiarato:,.2f}")
             imp = dichiarato
+        elif da_prospetto:
+            # Il prospetto è il conto fatto dal Comune: vince sempre, anche
+            # per differenze piccole (1930: 69.585,43 del modello contro
+            # 68.910,79 del prospetto, sotto la vecchia soglia del 2%)
+            if abs(imp - dichiarato) > 0.01:
+                log.warning(f"  Modello dice {imp:,.2f}, il prospetto {dichiarato:,.2f}: "
+                            f"vince il prospetto")
+            imp = dichiarato
+        elif _e_lordo_di(imp, dichiarato, testo_grezzo):
+            # Le regole sulla prosa trovano spesso l'imponibile («per
+            # l'importo di 4.500,00 oltre cassa e IVA»); il modello legge il
+            # totale impegnato («per complessivi 6.600,00»). Se la cifra del
+            # modello è nel testo e sta sopra il netto quanto IVA e cassa,
+            # è il lordo, cioè la spesa vera: si tiene quella. Atto 2026/1922.
+            log.info(f"  Il testo dichiara {dichiarato:,.2f} ('{regola}'), il modello "
+                     f"{imp:,.2f}: è il lordo, tengo quello")
         elif abs(imp - dichiarato) / max(dichiarato, 1) > 0.02:
             log.warning(f"  Modello dice {imp:,.2f} ma il testo dichiara "
                         f"{dichiarato:,.2f} ('{regola}'): vince il testo")
@@ -724,11 +798,15 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
             if nome and len(nome) > 3:
                 voci.append({"nome": nome, "importo": valore})
 
-    # Se manca il totale, ricavalo dalla somma delle voci
+    # Se manca il totale, ricavalo dalla somma delle voci, ma solo di quelle
+    # che compaiono davvero nel testo. Senza questo controllo un importo
+    # appena scartato come inventato rientrava come «somma delle voci»
+    # (atto 2026/1972: 3.206,89 scartato e poi pubblicato lo stesso).
     if risultato["importo_euro"] is None and voci:
-        somma = sum(v["importo"] for v in voci if v["importo"])
-        if somma > 0:
-            risultato["importo_euro"] = round(somma, 2)
+        verificate = [v["importo"] for v in voci
+                      if v["importo"] and _importo_presente(v["importo"], testo_grezzo)]
+        if verificate and len(verificate) == len([v for v in voci if v["importo"]]):
+            risultato["importo_euro"] = round(sum(verificate), 2)
 
     # COERENZA: se le voci hanno importi ma non sommano al totale, il
     # dettaglio è inaffidabile (il modello legge numeri di fattura o
@@ -769,6 +847,18 @@ def estrai_dati(testo: str, oggetto: str, tipo_portale: str) -> dict:
             voci[0]["nome"] if voci
             else nome_da_testo(risultato.get("descrizione_sintetica") or "", oggetto)
             or risultato.get("beneficiario"))
+
+    # In una liquidazione con prospetto i creditori li dichiara il Comune,
+    # riga per riga: valgono più del nome letto dal modello, che prendeva
+    # «COOPERATIVA», «M.T. SPA» o un nome troncato. Lo facevano già le regex;
+    # con Groq il prospetto dava l'importo ma non il nome.
+    if risultato["tipo_atto"] == "liquidazione" and da_prospetto:
+        _, _, creditori = leggi_prospetto_liquidazione(testo_grezzo)
+        if creditori:
+            risultato["n_beneficiari"] = len(creditori)
+            risultato["beneficiario"] = (creditori[0]["nome"] if len(creditori) == 1
+                                         else _etichetta_multipla(f"{len(creditori)} fornitori"))
+            risultato["beneficiari_dettaglio"] = creditori if len(creditori) > 1 else None
 
     # Pluriennale
     risultato["importo_e_pluriennale"] = bool(risultato.get("importo_e_pluriennale"))
@@ -1235,6 +1325,58 @@ def impegni_dispositivo(testo: str) -> list[dict]:
     return voci
 
 
+# Le forme con cui un dispositivo impegna una spesa che le regole sulla prosa
+# non vedono: «Di impegnare, la somma complessiva di Euro 3278,70+IVA (ovvero
+# 4000,00 comprensivo di IVA)» (2026/1921), «di assumere conseguente impegno
+# di spesa suddiviso come segue: • € 26.840,00 al cap 1370» (2026/1927, con
+# il refuso «assumerte» poco prima).
+RE_AVVIO_DISPOSITIVO = re.compile(
+    r"(?:assumere|assumerte)\s+(?:un\s+|il\s+|l['’]\s*|conseguente\s+|relativo\s+)?"
+    r"impegn\w*\s+di\s+spesa|\bdi\s+impegnare\b", re.IGNORECASE)
+RE_LORDO_DISPOSITIVO = re.compile(
+    r"(" + _IMP + r")(?![\d,])\s*(?:€|euro)?\s*(?:comprensiv\w+|inclus\w+|compres\w+)"
+    r"\s+(?:di\s+|dell['’]\s*)?(?:iva|oneri)", re.IGNORECASE)
+RE_VALORE_DISPOSITIVO = re.compile(
+    r"(?:€|euro)\.?\s*(" + _IMP + r")(?![\d,])(?!\s*(?:\+\s*iva|\(?\s*oltre))", re.IGNORECASE)
+FINESTRA_DISPOSITIVO = 260
+
+
+def impegno_unico_dispositivo(testo: str) -> float | None:
+    """L'importo impegnato nel dispositivo, quando nessuna regola lo trova.
+
+    Per ogni frase di impegno si prende il lordo («comprensivo di IVA») se
+    c'è, altrimenti il primo importo in euro che non sia seguito da «oltre
+    IVA» o «+IVA» (quello è il netto). Si restituisce un valore solo se tutte
+    le frasi danno lo stesso importo: con valori diversi è un atto a più
+    impegni, e indovinare quale conta è peggio che lasciarlo vuoto."""
+    piatto = re.sub(r"\s+", " ", testo or "")
+    avvii = [m.end() for m in RE_AVVIO_DISPOSITIVO.finditer(piatto)]
+    valori = set()
+    for i, inizio in enumerate(avvii):
+        fine = min(inizio + FINESTRA_DISPOSITIVO,
+                   avvii[i + 1] if i + 1 < len(avvii) else len(piatto))
+        # Si cerca nel testo intero e si tiene solo ciò che INIZIA nella
+        # finestra: tagliare la finestra prima taglierebbe anche l'«oltre IVA»
+        # che segue il netto, e il netto passerebbe per lordo (2026/1927)
+        lordo = RE_LORDO_DISPOSITIVO.search(piatto, inizio)
+        if lordo and lordo.start() < fine:
+            v = importo_italiano(lordo.group(1))
+        else:
+            netti = {importo_italiano(x.group(1))
+                     for x in RE_VALORE_DISPOSITIVO.finditer(piatto, inizio)
+                     if x.start() < fine}
+            netti.discard(None)
+            # Più importi nella stessa frase sono più impegni («la somma di
+            # €.14.500,00 e … la somma di € 3800,00», 2026/144): prenderne uno
+            # è sbagliato, sommarli è un azzardo. Meglio non rispondere.
+            if len(netti) > 1:
+                return None
+            v = netti.pop() if netti else None
+        if v and v not in SOGLIE_NORMATIVE:
+            valori.add(v)
+    return valori.pop() if len(valori) == 1 else None
+
+
 def _nome_utile(nome: str) -> bool:
     """Un nome che identifica davvero qualcuno, non un ruolo o un frammento."""
     n = (nome or "").strip()
@@ -1316,7 +1458,21 @@ def estrai_importo(testo: str, oggetto: str = "",
         # fra quelli dichiarati con la stessa formula.
         scelto = max(valori)
         incerto = len(set(valori)) > 1
+        # Le formule «importo di», «spesa complessiva di» trovano spesso
+        # l'imponibile: se subito dopo l'atto dichiara il totale con IVA e
+        # cassa, la spesa è quello. Non si applica ai «totali» (sono già il
+        # conto finale) né alla formula che dice già «IVA compresa».
+        if not nome.startswith(("totale", "importo liquidato IVA")):
+            lordo = lordo_dichiarato(scelto, completo)
+            if lordo:
+                return lordo, f"{nome}, lordo dichiarato", incerto
         return scelto, nome, incerto
+
+    # Ultima risorsa per le determine: l'impegno scritto nel dispositivo
+    if not e_liquidazione:
+        impegno = impegno_unico_dispositivo(testo)
+        if impegno:
+            return impegno, "impegno del dispositivo", False
 
     # Nessuna dichiarazione esplicita: somma delle righe di tabella,
     # deduplicate e senza IVA erario né storni (caso liquidazione fatture)

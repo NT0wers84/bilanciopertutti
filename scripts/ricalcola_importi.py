@@ -129,8 +129,12 @@ def ricalcola(spese: list[dict]) -> tuple[list, list]:
         # liquidazione, l'elenco degli impegni di una determina) vincono sempre:
         # è il Comune a fare quel conto. Le altre aggiornano solo ciò che aveva
         # deciso il modello o una regola che ora non vale più.
-        autorevole = regola.startswith(("prospetto di liquidazione",
-                                        "somma degli impegni"))
+        # Anche il lordo dichiarato («4.500,00 oltre cassa e IVA per
+        # complessivi 6.600,00»): è l'atto a scrivere il totale, e nel sito
+        # c'erano decine di determine al netto, IVA esclusa.
+        autorevole = (regola.startswith(("prospetto di liquidazione",
+                                         "somma degli impegni"))
+                      or regola.endswith("lordo dichiarato"))
         if not autorevole and vecchia_regola and s.get("estrazione") != "regex":
             continue
         cambi.append((s, vecchio, vecchia_regola, nuovo, regola))

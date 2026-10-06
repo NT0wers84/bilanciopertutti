@@ -137,6 +137,11 @@ def ricalcola(spese: list[dict]) -> tuple[list, list]:
                       or regola.endswith("lordo dichiarato"))
         if not autorevole and vecchia_regola and s.get("estrazione") != "regex":
             continue
+        # L'impegno del dispositivo è un'ultima risorsa: riempie un vuoto o
+        # conferma un valore, non ne sostituisce uno. Nell'atto 2026/52
+        # (convenzione con Siziano) avrebbe portato 17.000 € a 1.250 €.
+        if regola == "impegno del dispositivo" and vecchio is not None:
+            continue
         cambi.append((s, vecchio, vecchia_regola, nuovo, regola))
         s["importo_euro"] = nuovo
         s["regola_importo"] = regola

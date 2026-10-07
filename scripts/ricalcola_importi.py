@@ -27,6 +27,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from estrattore import (estrai_importo, e_entrata_pura, e_assunzione_personale,
+                        e_variazione_bilancio,
                         impegni_dispositivo,
                         _etichetta_multipla, leggi_prospetto_liquidazione,
                         chiave_beneficiario)
@@ -159,6 +160,20 @@ def main() -> int:
     if "--importa" in sys.argv:
         importa(spese, Path(sys.argv[sys.argv.index("--importa") + 1]))
         log.info("")
+
+    # Gli atti che le regole correnti non considerano spese (sola entrata,
+    # assunzioni di personale) escono dall'archivio: lo scraper non li
+    # aggiunge più, ma quelli entrati prima di una regola nuova restavano.
+    fuori = [s for s in spese if e_entrata_pura(s.get("oggetto", ""))
+             or e_assunzione_personale(s.get("oggetto", ""))
+             or e_variazione_bilancio(s.get("oggetto", ""))]
+    if fuori:
+        log.info(f"ATTI CHE NON SONO SPESE VERSO TERZI: {len(fuori)} tolti dall'archivio")
+        for s in fuori:
+            log.info(f"  n.{s['numero_raw']:10} {(s.get('importo_euro') or 0):>14,.2f} €  "
+                     f"{s['oggetto'][:70]}")
+        log.info("")
+        spese = [s for s in spese if s not in fuori]
 
     cambi, confermati, beneficiari = ricalcola(spese)
     log.info(f"IMPORTI CAMBIATI: {len(cambi)} su {len(spese)} atti\n")

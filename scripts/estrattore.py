@@ -478,7 +478,14 @@ RE_VARIAZIONE_BILANCIO = re.compile(
     r"variazion\w*\s+(?:compensativ\w*\s+)?(?:al |del |di )?bilancio|"
     r"variazione compensativa|storno di fondi|prelevamento dal fondo di riserva|"
     r"assestamento generale|riaccertamento (?:ordinario|dei residui)|"
-    r"applicazione (?:dell')?avanzo", re.IGNORECASE)
+    r"applicazione (?:dell')?avanzo|"
+    # La costituzione del fondo per il salario accessorio non paga nessuno:
+    # accantona la cifra, che esce poi con le liquidazioni di produttività,
+    # straordinari e indennità. Contarla insieme a quelle conta due volte gli
+    # stessi soldi (atto 2026/292, 533.682,76 €)
+    r"costituzione\s+(?:e\s+\w+\s+(?:\w+\s+)?)?del\s+fondo\s+(?:per\s+le\s+)?"
+    r"(?:risorse\s+decentrate|per\s+la\s+produttivit|salario\s+accessorio)",
+    re.IGNORECASE)
 
 # Atti che rimodulano una spesa già impegnata: non è spesa nuova
 RE_RIMODULAZIONE = re.compile(
@@ -536,6 +543,10 @@ RE_ASSUNZIONE_PERSONALE = re.compile(
     r"scorrimento\s+(?:della\s+|di\s+)?graduatori\w*\s+(?:del\s+|di\s+|della\s+)?"
     r"(?:concorso|selezion)|"
     r"concorso\s+pubblico|"
+    # «conferimento di incarico a tempo indeterminato e a tempo pieno, in
+    # qualità di assistente sociale» (2026/1904): un'assunzione detta in
+    # un altro modo
+    r"incarico\s+a\s+tempo\s+(?:pieno\s+e\s+)?(?:in)?determinato|"
     r"mobilit[àa]\s+(?:esterna|volontaria|tra\s+enti|in\s+entrata)",
     re.IGNORECASE)
 
@@ -1403,6 +1414,19 @@ def _valori(pattern, testo: str) -> list[float]:
     return fuori
 
 
+RE_OGGETTO_TESTO = re.compile(r"OGGETTO\s*:?\s*\|?\s*(.{20,600}?)(?:\n\s*\n|Dalla Residenza|IL (?:RESPONSABILE|DIRIGENTE|FUNZIONARIO))",
+                              re.IGNORECASE | re.DOTALL)
+
+
+def _oggetto_dichiarato(oggetto: str, testo: str) -> str:
+    """L'oggetto dell'atto: quello della scheda dell'albo se c'è, altrimenti
+    quello scritto in testa al documento."""
+    if oggetto and oggetto.strip():
+        return oggetto
+    m = RE_OGGETTO_TESTO.search(testo or "")
+    return m.group(1) if m else ""
+
+
 def estrai_importo(testo: str, oggetto: str = "",
                    tipo_atto: str = "") -> tuple[float | None, str, bool]:
     """
@@ -1458,6 +1482,15 @@ def estrai_importo(testo: str, oggetto: str = "",
         # fra quelli dichiarati con la stessa formula.
         scelto = max(valori)
         incerto = len(set(valori)) > 1
+        # Se l'oggetto dell'atto dichiara la cifra con la stessa formula, vale
+        # quella: è l'atto a dire quanto impegna. Le premesse ricordano altri
+        # contratti, spesso più grandi, e «la più alta» le faceva vincere.
+        # Atto 2026/1866: l'oggetto dice «per l'importo di €2.534,67», le
+        # premesse citano 794.583,40 € di impegni verso un'altra impresa.
+        nell_oggetto = _valori(pattern, _oggetto_dichiarato(oggetto, testo))
+        if nell_oggetto:
+            scelto = max(nell_oggetto)
+            incerto = len(set(nell_oggetto)) > 1
         # Le formule «importo di», «spesa complessiva di» trovano spesso
         # l'imponibile: se subito dopo l'atto dichiara il totale con IVA e
         # cassa, la spesa è quello. Non si applica ai «totali» (sono già il

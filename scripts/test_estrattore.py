@@ -235,6 +235,14 @@ def test_modello_e_testo():
         if t:
             verifica(f"{id_atto}: importo dalle regole sul testo",
                      estrai_importo(t, "", "determinazione")[0], atteso)
+    # L'oggetto dichiara la cifra dell'atto: le premesse che citano altri
+    # contratti, più grandi, non devono vincere (erano 794.583,40 e 488.400)
+    for id_atto, atteso in [("determinazione-1866-2026", 3215.99),
+                            ("determinazione-1475-2026", 2387.0)]:
+        t = testo_atto(id_atto)
+        if t:
+            verifica(f"{id_atto}: vale la cifra dell'oggetto, al lordo",
+                     estrai_importo(t, "", "determinazione")[0], atteso)
     # Due somme nella stessa frase di impegno: la regola si astiene
     t = testo_atto("determinazione-144-2026")
     if t:
@@ -362,6 +370,14 @@ def test_entrate_non_sono_spese():
 
     verifica("una variazione di bilancio non è spesa nuova",
              e_variazione_bilancio("VARIAZIONE AL BILANCIO DI PREVISIONE 2026"), True)
+    # Il fondo del salario accessorio si costituisce e poi si liquida: la
+    # costituzione accantona, le liquidazioni pagano. Si conta solo il pagamento.
+    verifica("la costituzione del fondo accessorio non è una spesa",
+             e_variazione_bilancio("COSTITUZIONE E DESTINAZIONE PROVVISORIA DEL FONDO "
+                                   "RISORSE DECENTRATE ANNO 2026"), True)
+    verifica("la liquidazione della produttività invece sì",
+             e_variazione_bilancio("COMPENSO INCENTIVANTE LA PRODUTTIVITÀ DEL PERSONALE "
+                                   "DEI LIVELLI, ANNO 2025. LIQUIDAZIONE SALDO."), False)
 
     # Le assunzioni di personale non pagano un fornitore; straordinari,
     # produttività e formazione invece restano. E "ASSUNZIONE IMPEGNO DI
@@ -372,6 +388,8 @@ def test_entrate_non_sono_spese():
          "A TEMPO INDETERMINATO E A TEMPO PIENO DI N. 1 ISTRUTTORE", True),
         ("ASSUNZIONE A TEMPO DETERMINATO DI UN AGENTE DI POLIZIA LOCALE", True),
         ("ASSUNZIONE DI N. 2 COLLABORATORI TRAMITE MOBILITÀ ESTERNA", True),
+        ("ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO "
+         "INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI ASSISTENTE SOCIALE", True),
         ("ASSUNZIONE IMPEGNO DI SPESA PER LA GESTIONE DEL SERVIZIO DI ACCERTAMENTO", False),
         ("ASSUNZIONE DI SPESA PER ATTIVITÀ DI MONITORAGGIO DELLA GARZAIA", False),
         ("ASSUNZIONE DI UN IMPEGNO DI SPESA PER IL SERVIZIO DI PULIZIA", False),

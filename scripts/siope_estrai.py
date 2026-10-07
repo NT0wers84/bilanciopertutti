@@ -268,8 +268,46 @@ def ispeziona_vecchio(anno: int) -> int:
     return 0
 
 
+# Il primo numero del codice gestionale è il titolo della spesa. I titoli 5
+# (chiusura delle anticipazioni di tesoreria) e 7 (partite di giro: ritenute,
+# IVA in split payment) escono dalla cassa ma non sono spesa del Comune: sono
+# restituzione di prestiti di cassa e soldi girati per conto di altri.
+TITOLI = {"1": "Spese correnti", "2": "Spese in conto capitale",
+          "3": "Spese per incremento di attività finanziarie",
+          "4": "Rimborso di prestiti",
+          "5": "Chiusura anticipazioni di tesoreria",
+          "7": "Uscite per conto terzi e partite di giro"}
+TITOLI_SPESA = ("1", "2", "3", "4")
+
+
+def descrizioni_voci() -> dict:
+    """Codice gestionale → descrizione, dall'anagrafica SIOPE delle uscite.
+    Lo stesso codice compare una volta per comparto, con la stessa descrizione:
+    se ne tiene la prima."""
+    contenuto = scarica(ANAGRAFICHE)
+    voci = {}
+    for nome, testo in apri_csv(contenuto):
+        if "CODGEST_USCITE" not in nome.upper():
+            continue
+        for campi in csv.reader(testo, delimiter=","):
+            if len(campi) >= 3:
+                voci.setdefault(campi[0].strip(), campi[2].strip())
+    return voci
+
+
 def estrai(anni: list[int]) -> dict:
-    """Pagamenti mensili del Comune, per codice gestionale."""
+    """Pagamenti di cassa mensili del Comune, per titolo e per voce.
+
+    Il file non ha intestazione: le colonne si leggono per posizione
+    (POSIZIONI). Gli importi sono in centesimi: verificato sul 2021, dove la
+    somma dei pagamenti del Comune è 23,6 milioni in centesimi e sarebbe 2,36
+    miliardi in euro."""
+    codice, _ = codice_ente()
+    if not codice:
+        log.error(f"Codice ente SIOPE non trovato per il CF {CODICE_FISCALE}")
+        return {}
+    descrizioni = descrizioni_voci()
+    log.info(f"Codice ente SIOPE: {codice} · {len(descrizioni):,} voci descritte")
     risultato = {}
     for anno in anni:
         try:
@@ -277,45 +315,45 @@ def estrai(anni: list[int]) -> dict:
         except Exception as e:
             log.warning(f"{anno}: file non disponibile ({e})")
             continue
-        mensili = defaultdict(float)
-        per_voce = defaultdict(float)
-        descrizioni, righe = {}, 0
+        mensili, mensili_spesa = defaultdict(float), defaultdict(float)
+        per_titolo, per_voce = defaultdict(float), defaultdict(float)
+        righe = 0
         for nome, testo in apri_csv(contenuto):
-            prima = testo.readline()
-            sep = separatore(prima)
-            col = mappa_colonne(next(csv.reader([prima], delimiter=sep)))
-            if "codice_fiscale" not in col or "importo" not in col:
-                log.warning(f"  {nome}: colonne chiave non riconosciute, salto")
-                continue
-            for campi in csv.reader(testo, delimiter=sep):
-                if len(campi) <= max(col.values()):
+            for campi in csv.reader(testo, delimiter=","):
+                if len(campi) < 5 or campi[POSIZIONI["ente"]].strip() != codice:
                     continue
-                if campi[col["codice_fiscale"]].strip() != CODICE_FISCALE:
+                v = numero(campi[POSIZIONI["importo"]])
+                if v is None:
                     continue
-                importo = numero(campi[col["importo"]])
-                if importo is None:
-                    continue
+                euro = v / 100
+                voce = campi[POSIZIONI["codice_gestionale"]].strip()
+                titolo = voce[:1]
+                mese = campi[POSIZIONI["mese"]].strip().zfill(2)
                 righe += 1
-                mese = (campi[col["mese"]].strip() if "mese" in col else "")
-                mensili[mese] += importo
-                if "codice_gestionale" in col:
-                    voce = campi[col["codice_gestionale"]].strip()
-                    per_voce[voce] += importo
-                    if "descrizione" in col and voce not in descrizioni:
-                        descrizioni[voce] = campi[col["descrizione"]].strip()
+                mensili[mese] += euro
+                per_titolo[titolo] += euro
+                per_voce[voce] += euro
+                if titolo in TITOLI_SPESA:
+                    mensili_spesa[mese] += euro
         if not righe:
             log.warning(f"{anno}: nessuna riga per {NOME_ENTE}")
             continue
         totale = round(sum(mensili.values()), 2)
-        log.info(f"{anno}: {righe:,} movimenti · totale {totale:,.2f} €")
+        spesa = round(sum(mensili_spesa.values()), 2)
+        log.info(f"{anno}: {righe:,} movimenti · cassa {totale:,.2f} € · "
+                 f"spesa effettiva (titoli 1-4) {spesa:,.2f} € · mesi {len(mensili)}")
         risultato[str(anno)] = {
-            "totale": totale,
-            "mensili": {m: round(v, 2) for m, v in sorted(mensili.items())},
-            "per_codice_gestionale": [
-                {"codice": c, "descrizione": descrizioni.get(c, ""),
-                 "importo": round(v, 2)}
-                for c, v in sorted(per_voce.items(), key=lambda x: -x[1])[:60]
-            ],
+            "totale_cassa": totale,
+            "spesa_effettiva": spesa,
+            "mesi_presenti": len(mensili),
+            "mensili_cassa": {m: round(x, 2) for m, x in sorted(mensili.items())},
+            "mensili_spesa": {m: round(x, 2) for m, x in sorted(mensili_spesa.items())},
+            "per_titolo": [{"titolo": t, "descrizione": TITOLI.get(t, ""),
+                            "importo": round(x, 2)}
+                           for t, x in sorted(per_titolo.items())],
+            "per_voce": [{"codice": c, "descrizione": descrizioni.get(c, ""),
+                          "importo": round(x, 2)}
+                         for c, x in sorted(per_voce.items(), key=lambda x: -x[1])[:60]],
         }
     return risultato
 
@@ -349,7 +387,10 @@ def main() -> int:
                       "dal conto del Comune in quel mese. Non sono confrontabili "
                       "con gli impegni del bilancio né sommabili con le "
                       "liquidazioni dell'albo, che descrivono gli stessi soldi "
-                      "da un altro punto di vista.",
+                      "da un altro punto di vista. La «spesa effettiva» esclude "
+                      "la restituzione delle anticipazioni di tesoreria (titolo 5) "
+                      "e le partite di giro (titolo 7), che escono dalla cassa "
+                      "ma non sono spesa del Comune.",
         "anni": dati,
     }
     if args.applica:

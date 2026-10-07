@@ -34,6 +34,7 @@ SIOPE», che ha la rete per scaricare.
 import argparse
 import csv
 import io
+import itertools
 import json
 import logging
 import re
@@ -143,12 +144,88 @@ def numero(valore: str) -> float | None:
         return None
 
 
+# Il file dei pagamenti NON ha intestazione (verificato sul 2021: la prima
+# riga è «000053540,2021,07,1.03.02.15.006,6217139»). Le colonne sono, per
+# posizione: codice ente SIOPE, anno, mese, codice gestionale, importo. Il
+# codice fiscale non c'è: si ricava dal codice ente con l'anagrafica.
+POSIZIONI = {"ente": 0, "anno": 1, "mese": 2, "codice_gestionale": 3, "importo": 4}
+
+
+def codice_ente() -> tuple[str | None, list[str]]:
+    """Il codice ente SIOPE del Comune, cercato per codice fiscale nei file
+    dell'anagrafica. Restituisce anche le righe trovate, per il log."""
+    contenuto = scarica(ANAGRAFICHE)
+    trovate, codice = [], None
+    for nome, testo in apri_csv(contenuto):
+        log.info(f"\n── anagrafica {nome}")
+        for n, r in enumerate(testo):
+            if n < 3:
+                log.info(f"   {r.rstrip()[:160]}")
+            if CODICE_FISCALE in r:
+                trovate.append(f"{nome}: {r.rstrip()[:200]}")
+                campi = next(csv.reader([r], delimiter=separatore(r)))
+                # il codice ente è il campo di nove cifre che non è il CF
+                for c in campi:
+                    c = c.strip().strip('"')
+                    if re.fullmatch(r"\d{9}", c) and codice is None:
+                        codice = c
+    return codice, trovate
+
+
 def ispeziona(anno: int) -> int:
     """Dichiara com'è fatto il file, senza scrivere niente.
 
-    Tre domande, in ordine: che colonne ci sono, il nostro Comune c'è, e gli
-    importi sono pubblicati riga per riga oppure oscurati.
+    Domande, in ordine: che codice ha il Comune nell'anagrafica SIOPE, che
+    colonne ha il file dei pagamenti, quante righe sono del Comune, e in che
+    unità sono gli importi (euro o centesimi).
     """
+    codice, trovate = codice_ente()
+    log.info(f"\nRighe dell'anagrafica con il CF {CODICE_FISCALE}:")
+    for t in trovate[:10]:
+        log.info(f"   {t}")
+    log.info(f"Codice ente SIOPE ricavato: {codice}")
+
+    contenuto = scarica(USCITE.format(anno=anno))
+    for nome, testo in apri_csv(contenuto):
+        prima = testo.readline()
+        sep = separatore(prima)
+        campi = next(csv.reader([prima], delimiter=sep))
+        senza_intestazione = bool(re.fullmatch(r"\d{6,}", campi[0].strip()))
+        log.info(f"\n── {nome}: separatore '{sep}', {len(campi)} colonne, "
+                 f"{'SENZA' if senza_intestazione else 'con'} intestazione")
+        log.info(f"   prima riga: {campi}")
+        if not senza_intestazione or not codice:
+            continue
+        mensili, voci, righe = defaultdict(float), defaultdict(float), 0
+        esempi = []
+        # una riga alla volta: il file ha milioni di righe
+        for c in itertools.chain([campi], csv.reader(testo, delimiter=sep)):
+            if len(c) < 5 or c[POSIZIONI["ente"]].strip() != codice:
+                continue
+            v = numero(c[POSIZIONI["importo"]])
+            if v is None:
+                continue
+            righe += 1
+            mensili[c[POSIZIONI["mese"]].strip()] += v
+            voci[c[POSIZIONI["codice_gestionale"]].strip()] += v
+            if len(esempi) < 5:
+                esempi.append(c)
+        totale = sum(mensili.values())
+        log.info(f"   righe del Comune (codice {codice}): {righe:,}")
+        for e in esempi:
+            log.info(f"     {e}")
+        log.info(f"   totale dell'anno se gli importi sono in euro:      {totale:,.2f} €")
+        log.info(f"   totale dell'anno se gli importi sono in centesimi: {totale / 100:,.2f} €")
+        log.info("   mesi: " + ", ".join(f"{m}: {v / 100:,.0f}" for m, v in sorted(mensili.items()))
+                 + "  (in euro, se centesimi)")
+        log.info("   voci più grandi (in euro, se centesimi):")
+        for voce, v in sorted(voci.items(), key=lambda x: -x[1])[:8]:
+            log.info(f"     {voce:18} {v / 100:>16,.2f}")
+    return 0
+
+
+def ispeziona_vecchio(anno: int) -> int:
+    """Versione con intestazione: tenuta per il caso in cui SIOPE la rimetta."""
     contenuto = scarica(USCITE.format(anno=anno))
     for nome, testo in apri_csv(contenuto):
         log.info(f"\n── {nome}")

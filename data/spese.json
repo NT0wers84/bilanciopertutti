@@ -2532,48 +2532,6 @@
   "testo_disponibile": true
  },
  {
-  "id": "determinazione-1904-2026",
-  "numero_raw": "2026/1904",
-  "numero": "1904",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-09-25",
-  "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI ASSISTENTE SOCIALE – AREA DEI FUNZIONARI E DELL’ELEVATA QUALIFICAZIONE – NELL’AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI, DELLA SIG.RA CRISTINA GIGANTE E COSTITUZIONE RAPPORTO DI LAVORO.",
-  "beneficiario": "UN ASSISTENTE SOCIALE – AREA DEI FUNZIONARI E DELL’ELEVATA QUALIFICAZIONE – NELLA AREA POLITICHE SOCIALI E SERVIZI SCOLASTICI, SIG.RA CRISTINA GIGANTE",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "Sig.ra Cristina Gigante",
-    "importo": null
-   }
-  ],
-  "importo_euro": null,
-  "importo_testuale": null,
-  "importo_e_pluriennale": false,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "cig": null,
-  "e_rimodulazione": false,
-  "categoria": "Amministrazione e servizi generali",
-  "categoria_da_settore": true,
-  "proponente": "RISORSE UMANE",
-  "classifica": "ASSUNZIONI E CESSAZIONI",
-  "dirigente": "Dott.ssa Lucia Valentina Vialetto",
-  "pubblicato_fino_al": "31/12/2031",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 6800/0",
-  "descrizione_sintetica": "Il Comune assuma un nuovo Assistente Sociale a tempo indeterminato e pieno, con decorrenza dal 01/11/2026.",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5667381",
-  "estrazione": "groq",
-  "versione_estrazione": 4,
-  "caratteri_testo": 8833,
-  "fonte": "albo",
-  "data_elaborazione": "2026-10-06 12:13",
-  "beneficiario_generico": false,
-  "testo_disponibile": true
- },
- {
   "id": "determinazione-1903-2026",
   "numero_raw": "2026/1903",
   "numero": "1903",
@@ -3440,7 +3398,7 @@
   "beneficiario": "RTP CAPOGRUPPO ARCH. GIUSEPPE COLOMBO",
   "n_beneficiari": 1,
   "beneficiari_dettaglio": null,
-  "importo_euro": 794583.4,
+  "importo_euro": 3215.99,
   "importo_testuale": "2.534,67",
   "importo_e_pluriennale": false,
   "durata_anni": null,
@@ -3460,7 +3418,9 @@
   "data_elaborazione": "2026-10-06 12:25",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "testo_disponibile": true
+  "testo_disponibile": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1865-2026",
@@ -4402,8 +4362,8 @@
   "data_elaborazione": "2026-08-12 16:16",
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo",
-  "importo_incerto": true,
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false,
   "importo_verificato": true
  },
  {
@@ -7658,7 +7618,7 @@
   "data_pubblicazione": "2026-07-22",
   "oggetto": "DETERMINAZIONE A CONTRARRE PER L'AFFIDAMENTO DIRETTO, AI SENSI DELL'ART. 50, COMMA 1, LETT. A), DEL D.LGS. 31 MARZO 2023, N. 36, DEI LAVORI DI MANUTENZIONE DELL'IMPIANTO IDRICO PRESSO LA PALESTRA COMUNALE DI PIEVE EMANUELE, SITA IN VIA VIQUARTERIO N. 1., NELL’AMBITO DEI LAVORI DI MANUTENZIONE STRAORDINARIA PER MESSA IN SICUREZZA DELL’EDIFICIO E MIGLIORMANETRO SISMICO, EFFICIENTAMENTO ENERGETICO, ADEGUAMENTO IMPIANTISTICO, ABBATTIMENTO BARRIERE ARCHITETTONICHE EDIFICIO SCOLASTICO: VIQUARTERIO - CUP J44H20001170001 CIG DERIVATO 9977805928, FINANZIATO DA NEXT GENERATION EU - M2C4 - INVESTIMENTO 2.2 NELL’AMBITO DEL PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNNR) - RIFINANZIAMENTO CON MEDIE OPERE SCORRIMENTO GRADUATORIA (DM DEL 08.11.2021). AFFIDAMENTO ALL’OPERATORE ECONOMICO EDICTUM S.R.L.S. E ASSUNZIONE IMPEGNO DI SPESA PER L’IMPORTO DI €2.170,00 (IVA AL 10% ESCLUSA). CIG BC5CE4DDDD.",
   "beneficiario": "EDICTUM S.R.L.S.",
-  "importo_euro": 488400.0,
+  "importo_euro": 2387.0,
   "cig": "BC5CE4DDDD",
   "categoria": "Urbanistica e casa",
   "missione_bdap": 8,
@@ -7682,8 +7642,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 2,387.00)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "determinazione-1474-2026",
@@ -7800,8 +7760,8 @@
   "importo_verificato": true,
   "beneficiario_generico": false,
   "atti_gemelli": null,
-  "regola_importo": "importo complessivo (in conflitto con 4,932.36)",
-  "importo_incerto": true
+  "regola_importo": "importo complessivo, lordo dichiarato",
+  "importo_incerto": false
  },
  {
   "id": "liquidazione-1471-2026",
@@ -13472,46 +13432,6 @@
   "importo_incerto": false
  },
  {
-  "id": "determinazione-1134-2026",
-  "numero_raw": "2026/1134",
-  "numero": "1134",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-06-05",
-  "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI FUNZIONARIO AMMINISTRATIVO CONTABILE – AREA DEI FUNZIONARI E DELL’ELEVATA QUALIFICAZIONE (EX CAT. D – POSIZIONE ECONOMICA INIZIALE D1) – NELL’AREA PROGRAMMAZIONE ECONOMICA E RISORSE UMANE, DEL SIG. ALESSANDRO PICONE E COSTITUZIONE RAPPORTO DI LAVORO",
-  "beneficiario": "UN DIPENDENTE COMUNALE",
-  "importo_euro": null,
-  "cig": "null",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 8000/0 del Bilancio di Previsione e Pluriennale 2026/2028",
-  "descrizione_sintetica": "assunzione a tempo pieno e indeterminato di un funzionario amministrativo contabile",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5416650",
-  "estrazione": "groq",
-  "caratteri_testo": 9142,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 16:41",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "ALESSANDRO PICONE",
-    "importo": null
-   }
-  ],
-  "importo_testuale": "null",
-  "importo_e_pluriennale": true,
-  "durata_anni": null,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "beneficiario_generico": false,
-  "regola_importo": "nessuna regola applicabile",
-  "importo_incerto": false,
-  "importo_verificato": false
- },
- {
   "id": "determinazione-1127-2026",
   "numero_raw": "2026/1127",
   "numero": "1127",
@@ -15099,86 +15019,6 @@
   "atti_gemelli": null,
   "regola_importo": "somma impegnata/liquidata",
   "importo_incerto": false
- },
- {
-  "id": "determinazione-939-2026",
-  "numero_raw": "2026/939",
-  "numero": "939",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-05-11",
-  "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI FUNZIONARIO AMMINISTRATIVO CONTABILE – AREA DEI FUNZIONARI E DELL’ELEVATA QUALIFICAZIONE (EX CAT. D – POSIZIONE ECONOMICA INIZIALE D1) – NELL’AREA LAVORI PUBBLICI E URBANISTICA, DELLA SIG.RA IRENE SOFFIENTINI E COSTITUZIONE RAPPORTO DI LAVORO.",
-  "beneficiario": "UN DIPENDENTE COMUNALE",
-  "importo_euro": null,
-  "cig": "null",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 1655/0 del Bilancio di Previsione e Pluriennale 2025/2027",
-  "descrizione_sintetica": "Assunzione a tempo pieno e indeterminato di un funzionario amministrativo contabile",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5358043",
-  "estrazione": "groq",
-  "caratteri_testo": 8889,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 17:04",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "IRENE SOFFIENTINI",
-    "importo": null
-   }
-  ],
-  "importo_testuale": "null",
-  "importo_e_pluriennale": true,
-  "durata_anni": 3,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "beneficiario_generico": false,
-  "regola_importo": "nessuna regola applicabile",
-  "importo_incerto": false,
-  "importo_verificato": false
- },
- {
-  "id": "determinazione-936-2026",
-  "numero_raw": "2026/936",
-  "numero": "936",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-05-11",
-  "oggetto": "ASSUNZIONE IMPEGNO DI SPESA PER IL CONFERIMENTO DI INCARICO A TEMPO INDETERMINATO E A TEMPO PIENO, IN QUALITÀ DI ISTRUTTORE DELL’AREA DEGLI ISTRUTTORI (EX CAT. C – POSIZIONE ECONOMICA DI ACCESSO C1), NELL’AREA COMUNICAZIONE E RELAZIONI ESTERNE, EVENTI, SERVIZI CULTURALI E SPORTIVI, DELLA SIG.RA LICIA PUNZO E COSTITUZIONE RAPPORTO DI LAVORO.",
-  "beneficiario": "UN DIPENDENTE COMUNALE",
-  "importo_euro": null,
-  "cig": "null",
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 3710/0",
-  "descrizione_sintetica": "assunzione di un dipendente comunale",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5358036",
-  "estrazione": "groq",
-  "caratteri_testo": 9568,
-  "fonte": "storico",
-  "data_elaborazione": "2026-07-29 17:05",
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "LICIA PUNZO",
-    "importo": null
-   }
-  ],
-  "importo_testuale": "null",
-  "importo_e_pluriennale": true,
-  "durata_anni": 3,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 3,
-  "testo_disponibile": true,
-  "e_rimodulazione": false,
-  "beneficiario_generico": false,
-  "regola_importo": "nessuna regola applicabile",
-  "importo_incerto": false,
-  "importo_verificato": false
  },
  {
   "id": "determinazione-917-2026",
@@ -19684,47 +19524,6 @@
   "atti_gemelli": null,
   "regola_importo": "importo contrattuale, lordo dichiarato",
   "importo_incerto": false
- },
- {
-  "id": "determinazione-292-2026",
-  "numero_raw": "2026/292",
-  "numero": "292",
-  "anno": 2026,
-  "tipo_atto": "determinazione",
-  "data_pubblicazione": "2026-02-12",
-  "oggetto": "COSTITUZIONE E DESTINAZIONE PROVVISORIA DEL FONDO RISORSE DECENTRATE ANNO 2026 – ARTT. 79 E 80 DEL CCNL 16/11/2022, IN CONFORMITA’ ALLE DISPOSIZIONI PREVISTE DAL DPCM 17/03/2020.",
-  "beneficiario": "PERSONALE DIPENDENTE",
-  "importo_euro": 533682.76,
-  "cig": null,
-  "categoria": "Amministrazione e servizi generali",
-  "missione_bdap": 1,
-  "capitolo_bilancio": "Cap. 257",
-  "descrizione_sintetica": "Costituzione del fondo per finanziare salario accessorio e indennità di posizione del personale dipendente",
-  "url_atto": "https://pieveemanuele.trasparenza-valutazione-merito.it/web/trasparenza/papca-ap/-/papca/display/5121918",
-  "estrazione": "groq",
-  "caratteri_testo": 9634,
-  "fonte": "storico",
-  "data_elaborazione": "2026-10-06 12:35",
-  "e_rimodulazione": false,
-  "importo_verificato": true,
-  "beneficiario_generico": false,
-  "atti_gemelli": null,
-  "regola_importo": "valore verificato nel testo, regola non identificata",
-  "importo_incerto": true,
-  "n_beneficiari": 1,
-  "beneficiari_dettaglio": [
-   {
-    "nome": "personale dipendente",
-    "importo": 533682.76
-   }
-  ],
-  "importo_testuale": "533.682,76",
-  "importo_e_pluriennale": true,
-  "durata_anni": 3,
-  "importo_primo_anno": null,
-  "iva_inclusa": null,
-  "versione_estrazione": 4,
-  "testo_disponibile": true
  },
  {
   "id": "determinazione-283-2026",

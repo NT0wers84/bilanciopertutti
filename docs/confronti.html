@@ -304,6 +304,25 @@ function bloccoFunzioni(d) {
   `;
 }
 
+// Anticipazioni di tesoreria restituite negli anni non ancora coperti dal
+// rendiconto BDAP, dai pagamenti di cassa SIOPE (titolo 5). Restituisce
+// {anno, importo, periodo} per l'anno SIOPE più recente dopo `ultimoBdap`.
+async function anticipazioniRecenti(ultimoBdap) {
+  let s;
+  try {
+    s = await fetch(`data/siope.json?v=${Math.floor(Date.now()/60000)}`).then(r => r.json());
+  } catch (e) { return null; }
+  const anni = Object.keys(s.anni || {}).map(Number).filter(a => a > ultimoBdap).sort();
+  if (!anni.length) return null;
+  const anno = anni[anni.length - 1], dati = s.anni[anno];
+  const t5 = (dati.per_titolo || []).find(t => t.titolo === "5");
+  const mesi = Object.entries(dati.mensili_cassa || {}).filter(([, v]) => v > 0).map(([m]) => +m);
+  const nomi = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio",
+                "agosto","settembre","ottobre","novembre","dicembre"];
+  return { anno, importo: t5 ? t5.importo : 0,
+           periodo: mesi.length ? `${nomi[Math.min(...mesi) - 1]}–${nomi[Math.max(...mesi) - 1]}` : "" };
+}
+
 async function avvia() {
   let d;
   try {
@@ -318,6 +337,18 @@ async function avvia() {
   const cf = d.capacita_fiscale;
   const cassa = d.cassa_e_debito.serie;
   const ultimaCassa = cassa[cassa.length - 1];
+  // Il rendiconto BDAP arriva un anno e mezzo dopo; i pagamenti di cassa
+  // SIOPE sono mensili. Per gli anni non ancora rendicontati le anticipazioni
+  // restituite si leggono da SIOPE (titolo 5). Il 2021 coincide all'euro con
+  // BDAP (3.617.745 €), per questo le due fonti si possono affiancare.
+  const recente = await anticipazioniRecenti(ultimaCassa.anno);
+  d._anticipazioniSiope = recente;
+  const kpiCassa = recente && recente.importo > 0
+    ? `<div class="card"><div class="valore rosso">${eurC(recente.importo)}</div>
+        <div class="etichetta">anticipazioni di cassa restituite nel ${recente.anno}
+        (${recente.periodo}, dato di cassa SIOPE); erano zero dal 2022 al ${ultimaCassa.anno}</div></div>`
+    : `<div class="card"><div class="valore verde">${eurC(0)}</div>
+        <div class="etichetta">anticipazioni di cassa nel ${ultimaCassa.anno}, erano ${eurC(cassa[0].anticipazioni)} nel ${cassa[0].anno}</div></div>`;
 
   document.getElementById("contenuto").innerHTML = `
     <h2 class="sezione">In sintesi</h2>
@@ -336,8 +367,7 @@ async function avvia() {
         <div class="etichetta">livello dei servizi vs comuni simili (${ultimo.anno})</div></div>
       <div class="card"><div class="valore ambra">${pct(cf.scarto_lombardia_pct)}</div>
         <div class="etichetta">reddito medio vs Lombardia (${cf.anno_imposta})</div></div>
-      <div class="card"><div class="valore verde">${eurC(0)}</div>
-        <div class="etichetta">anticipazioni di cassa nel ${ultimaCassa.anno}, erano ${eurC(cassa[0].anticipazioni)} nel ${cassa[0].anno}</div></div>
+      ${kpiCassa}
     </div>
 
     <h2 class="sezione">1. Spende più di quanto lo Stato stima necessario</h2>
@@ -433,18 +463,42 @@ async function avvia() {
       è nella pagina <a href="territorio.html#redditi">Il territorio</a>.</div>
     <div class="cautela">${esc(cf.avvertenza)}</div>
 
-    <h2 class="sezione">6. Il risanamento della cassa</h2>
+    <h2 class="sezione">6. ${recente && recente.importo > 0
+      ? "La cassa: risanata, poi di nuovo in affanno" : "Il risanamento della cassa"}</h2>
     <div class="sottotitolo">Le <strong>anticipazioni di tesoreria</strong> sono prestiti che il
       Comune chiede alla banca quando non ha liquidità per pagare, e restituisce entro l'anno.
       Usarne molte è il sintomo di una cassa in sofferenza.</div>
     <div class="card"><div class="grafico"><canvas id="g-cassa"></canvas></div></div>
-    <div class="spiegazione"><strong>Il dato più incoraggiante di questa pagina.</strong>
+    <div class="spiegazione">${recente && recente.importo > 0 ? `
       Le anticipazioni sono passate da ${eur(cassa[0].anticipazioni)} nel ${cassa[0].anno}
-      a <strong>zero dal 2022</strong>. Nello stesso periodo la quota di spesa destinata al
+      a <strong>zero dal 2022 al ${ultimaCassa.anno}</strong>: per quattro anni il Comune ha pagato
+      senza chiedere prestiti di cassa. <strong>Nel ${recente.anno} sono tornate</strong>: fra
+      ${recente.periodo.replace("–", " e ")} il Comune ne ha restituite ${eur(recente.importo)},
+      e per restituirle deve averle chieste. ${(() => {
+        // Il confronto si calcola sulla serie, non si scrive a mano: l'ultimo
+        // anno con un valore almeno pari a quello recente
+        const pari = cassa.filter(r => r.anticipazioni >= recente.importo).map(r => r.anno);
+        return pari.length ? `È il valore più alto dal ${Math.max(...pari)}, ma resta sotto i
+          livelli del ${cassa[0].anno} (${eur(cassa[0].anticipazioni)}).`
+          : `È il valore più alto della serie, che parte dal ${cassa[0].anno}.`;
+      })()} Il dato viene dai pagamenti di cassa SIOPE, non
+      ancora dal rendiconto, che per il ${recente.anno} uscirà nel ${recente.anno + 1}.
+      <br><br>Il dato da solo non dice se è un ricorso occasionale, per esempio in attesa di
+      fondi già assegnati come quelli del PNRR, o il ritorno di una difficoltà di cassa.
+      Lo dirà la durata: un'anticipazione chiesta e restituita in poche settimane è una
+      cosa, una che si rinnova mese dopo mese è un'altra.` : `
+      <strong>Il dato più incoraggiante di questa pagina.</strong>
+      Le anticipazioni sono passate da ${eur(cassa[0].anticipazioni)} nel ${cassa[0].anno}
+      a <strong>zero dal 2022</strong>.`}
+      Fra il ${cassa[0].anno} e il ${ultimaCassa.anno} la quota di spesa destinata al
       debito sale dal ${dec(cassa[0].debito_pct)}% al ${dec(ultimaCassa.debito_pct)}%: coerente con il
       passaggio da debiti di cassa a debito strutturato, più costoso in interessi ma molto
       meno rischioso.</div>
-    <div class="cautela">${esc(d.cassa_e_debito.avvertenza)}</div>
+    <div class="cautela">${esc(d.cassa_e_debito.avvertenza)}${recente ? ` Il ${recente.anno}
+      viene da SIOPE (pagamenti di cassa raccolti dalla Banca d'Italia per conto della Ragioneria
+      generale dello Stato), dato parziale fino a ${recente.periodo.split("–").pop()}. Il 2021 di SIOPE
+      coincide all'euro con il rendiconto BDAP (3.617.745 €), per questo le due fonti sono
+      affiancabili.` : ""}</div>
   `;
 
   document.getElementById("fonti").innerHTML =
@@ -542,18 +596,27 @@ function disegnaGrafici(d) {
       scales: { x: { ticks: { callback: v => v+"%" } }, y: { ticks: { font: { size: 11 } } } } }
   });
 
-  const cassa = d.cassa_e_debito.serie;
+  // L'anno SIOPE si aggiunge in coda, con l'etichetta che dice cosa è: dato
+  // di cassa parziale, senza la spesa per debito (che viene dal rendiconto)
+  const cassa = [...d.cassa_e_debito.serie];
+  const sp = d._anticipazioniSiope;
+  if (sp) cassa.push({ anno: `${sp.anno}*`, anticipazioni: sp.importo, debito: null });
   new Chart(document.getElementById("g-cassa"), {
     type: "bar",
     data: { labels: cassa.map(r => r.anno), datasets: [
       { label: "Anticipazioni di cassa", data: cassa.map(r => r.anticipazioni),
-        backgroundColor: "#B3372B", borderRadius: 3 },
+        backgroundColor: cassa.map(r => String(r.anno).endsWith("*") ? "#E08B82" : "#B3372B"),
+        borderRadius: 3 },
       { label: "Spesa per debito", data: cassa.map(r => r.debito),
         backgroundColor: "#B08A00", borderRadius: 3 },
     ]},
     options: { maintainAspectRatio: false,
       plugins: { legend: { position: "top", labels: { boxWidth: 12, font: { size: 11 } } },
-        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw.toLocaleString("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0})}` } } },
+        tooltip: { callbacks: {
+          title: items => String(items[0].label).endsWith("*")
+            ? `${items[0].label.slice(0, -1)} · ${sp.periodo}, pagamenti di cassa SIOPE` : items[0].label,
+          label: c => c.raw == null ? `${c.dataset.label}: dal rendiconto, non ancora uscito`
+            : `${c.dataset.label}: ${c.raw.toLocaleString("it-IT",{style:"currency",currency:"EUR",maximumFractionDigits:0})}` } } },
       scales: { y: { ticks: { callback: v => (v/1e6).toLocaleString("it-IT",{maximumFractionDigits:1})+" mln" } } } }
   });
 }

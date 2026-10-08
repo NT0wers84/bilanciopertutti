@@ -133,6 +133,11 @@ def main():
     if confronti.exists():
         _scrivi(DOCS_DATA / "confronti.json", confronti.read_text(encoding="utf-8"))
         log.info("Dati di confronto copiati nel sito")
+    # Pagamenti di cassa SIOPE: li scrive il workflow «Pagamenti SIOPE»
+    siope = Path("data/siope.json")
+    if siope.exists():
+        _scrivi(DOCS_DATA / "siope.json", siope.read_text(encoding="utf-8"))
+        log.info("Pagamenti SIOPE copiati nel sito")
     # Dati ISTAT e IRPEF del territorio: li scrive il workflow annuale
     # «Dati ISTAT» (istat_estrai.py); qui vengono solo ricopiati nel sito.
     territorio = Path("data/territorio.json")

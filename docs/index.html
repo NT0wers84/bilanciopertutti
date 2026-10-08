@@ -242,6 +242,7 @@
 
 const PER_PAGINA = 25;
 let SPESE = [];
+let SIOPE = null;   // pagamenti di cassa mensili del Comune, da SIOPE
 let filtrate = [];
 let pagina = 0;
 let grafici = {};
@@ -328,11 +329,13 @@ async function avvia() {
     // ?v=<minuto> aggira la cache di GitHub Pages: senza, il browser
     // continua a mostrare i dati vecchi anche dopo un aggiornamento
     const v = `?v=${Math.floor(Date.now() / 60000)}`;
-    const [spese, meta] = await Promise.all([
+    const [spese, meta, siope] = await Promise.all([
       fetch("data/spese.json" + v).then(r => r.json()),
       fetch("data/meta.json" + v).then(r => r.json()).catch(() => null),
+      fetch("data/siope.json" + v).then(r => r.json()).catch(() => null),
     ]);
     SPESE = spese;
+    SIOPE = siope;
     document.getElementById("badge-agg").textContent =
       meta ? `Aggiornato al ${meta.aggiornato} · ${meta.n_spese} atti` : `${spese.length} atti`;
     costruisciFiltri();
@@ -437,7 +440,12 @@ function avvisoLacuna() {
     quelle precedenti non sono più consultabili sul portale e non è stato possibile
     recuperarle. Le spese impegnate, che restano pubblicate per anni, partono invece
     da ${mesiEsteso(primaDet.slice(0, 7))}. Da qui in avanti i pagamenti vengono
-    archiviati ogni giorno, testo dell'atto compreso.</div>`;
+    archiviati ogni giorno, testo dell'atto compreso.${SIOPE ? `
+    <br><br>La <strong>linea</strong> del grafico mostra i pagamenti di cassa del Comune
+    registrati da SIOPE (Ragioneria generale dello Stato), mese per mese, anche dove l'albo
+    non ha più le liquidazioni: dice quanto è uscito, non a chi né per cosa. Sono escluse la
+    restituzione delle anticipazioni di tesoreria e le partite di giro, che non sono spesa.
+    Linea e barre non si sommano: sono gli stessi soldi visti da due lati.` : ""}</div>`;
 }
 
 function azzeraSelezione() { selezione = null; applicaFiltri(); }
@@ -519,6 +527,29 @@ function corrispondeSelezione(s) {
   return true;
 }
 
+// Spesa effettiva mensile da SIOPE (titoli 1-4: escluse la restituzione delle
+// anticipazioni di tesoreria e le partite di giro) per gli anni presenti
+// nell'archivio. Vuota se non va mostrata: vista diversa dai pagamenti,
+// filtri attivi, o file SIOPE assente.
+function siopeMensile() {
+  // L'anno è sempre filtrato (la pagina parte sull'anno più recente) e decide
+  // quale anno di SIOPE mostrare; categoria, ricerca e selezione invece la
+  // nascondono, perché SIOPE è il totale del Comune
+  const anno = document.getElementById("filtro-anno").value;
+  if (!SIOPE || vista !== "liquidazione" || selezione
+      || document.getElementById("filtro-categoria").value
+      || document.getElementById("filtro-testo").value.trim()) return {};
+  const anni = anno ? new Set([anno])
+    : new Set(SPESE.map(s => (s.data_pubblicazione || "").slice(0, 4)).filter(Boolean));
+  const fuori = {};
+  for (const [anno, dati] of Object.entries(SIOPE.anni || {})) {
+    if (!anni.has(anno)) continue;
+    for (const [m, v] of Object.entries(dati.mensili_spesa || {}))
+      if (v > 0) fuori[`${anno}-${m}`] = v;
+  }
+  return fuori;
+}
+
 function aggiornaGrafici() {
   const conImporto = filtrate.filter(s => s.importo_euro != null);
   // Nei grafici gli importi pluriennali entrano pro quota, altrimenti un
@@ -533,14 +564,28 @@ function aggiornaGrafici() {
     const m = (s.data_pubblicazione || "").slice(0, 7);
     if (m) mesi[m] = (mesi[m] || 0) + quota(s);
   });
-  const chiaviMese = Object.keys(mesi).sort();
+  // Pagamenti di cassa SIOPE: tutti i mesi, anche quelli in cui l'albo non ha
+  // più le liquidazioni. Si mostrano solo nella vista dei pagamenti e senza
+  // filtri, perché sono il totale del Comune: accanto a una sola categoria o a
+  // un solo beneficiario sarebbero un confronto falso. Non si sommano alle
+  // barre: sono gli stessi soldi visti dalla cassa invece che dagli atti.
+  const cassa = siopeMensile();
+  const chiaviMese = [...new Set([...Object.keys(mesi), ...Object.keys(cassa)])].sort();
   const nomiMese = ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+  const datasets = [{ label: "Liquidazioni pubblicate all'albo",
+    data: chiaviMese.map(k => mesi[k] ?? null), backgroundColor: "#1B4FCA", borderRadius: 4 }];
+  if (Object.keys(cassa).length) datasets.push({
+    type: "line", label: "Pagamenti di cassa del Comune (SIOPE)",
+    data: chiaviMese.map(k => cassa[k] ?? null), borderColor: "#B08A00",
+    backgroundColor: "#B08A00", pointRadius: 3, tension: .2, spanGaps: false });
   nuovoGrafico("grafico-mensile", {
     type: "bar",
-    data: { labels: chiaviMese.map(k => nomiMese[+k.slice(5) - 1] + " " + k.slice(2, 4)),
-      datasets: [{ data: chiaviMese.map(k => mesi[k]), backgroundColor: "#1B4FCA", borderRadius: 4 }] },
-    options: { maintainAspectRatio: false, plugins: { legend: { display: false },
-      tooltip: { callbacks: { label: c => eur(c.raw) } } },
+    data: { labels: chiaviMese.map(k => nomiMese[+k.slice(5) - 1] + " " + k.slice(2, 4)), datasets },
+    options: { maintainAspectRatio: false,
+      plugins: { legend: { display: datasets.length > 1, position: "top",
+                           labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => c.raw == null ? null
+          : `${datasets.length > 1 ? c.dataset.label + ": " : ""}${eur(c.raw)}` } } },
       scales: { y: { ticks: { callback: v => eurCompatto(v) } } } }
   }, chiaviMese, "mese");
 

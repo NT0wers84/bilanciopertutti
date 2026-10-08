@@ -346,10 +346,31 @@ function redditi() {
   const r = D.redditi;
   if (!r) return "";
   const v = r.valori, p = D.pieve, L = D.lombardia;
+  // Quota di un gruppo di fasce. Se qualche fascia è oscurata dal MEF, la si
+  // ricostruisce per differenza: le percentuali sono calcolate sul totale
+  // ufficiale dei contribuenti, quindi 100 meno le fasce note è quanto sta
+  // nelle fasce nascoste. Si attribuisce al gruppo solo se tutte le fasce
+  // nascoste ci stanno dentro, oppure se l'unica fuori è «zero o meno», che il
+  // MEF oscura quando ha meno di 4 contribuenti (errore al massimo di 3
+  // persone). Altrimenti resta «n.d.». Restituisce {v, stimato}.
   const quota = (a, fasce) => {
-    const x = fasce.map(f => v[a].fasce_pct[f]);
-    return x.some(y => y == null) ? null : x.reduce((s, y) => s + y, 0);
+    const pct = v[a].fasce_pct;
+    const nascoste = Object.keys(pct).filter(f => pct[f] == null);
+    const note = fasce.filter(f => pct[f] != null).reduce((s, f) => s + pct[f], 0);
+    const dentro = nascoste.filter(f => fasce.includes(f));
+    const fuori = nascoste.filter(f => !fasce.includes(f));
+    if (!dentro.length) return { v: note, stimato: false };
+    // dentro il gruppo manca solo la fascia dei redditi nulli: meno di 4 persone
+    if (dentro.every(f => f === "zero o meno")) return { v: note, stimato: true };
+    // fuori dal gruppo manca al massimo quella: la differenza è del gruppo
+    if (fuori.every(f => f === "zero o meno")) {
+      const residuo = 100 - Object.values(pct).filter(x => x != null).reduce((s, x) => s + x, 0);
+      return { v: note + Math.max(residuo, 0), stimato: true };
+    }
+    return { v: null, stimato: false };
   };
+  const cella = q => q.v == null ? "n.d." : (q.stimato ? "≈ " : "") + perc(q.v);
+  const qv = (a, fasce) => quota(a, fasce).v;
   const bassi = ["zero o meno", "fino a 10 mila", "10–15 mila"];
   const alti = ["55–75 mila", "75–120 mila", "oltre 120 mila"];
   const oscurate = comuni().filter(a => Object.keys(v[a].celle_oscurate || {}).length);
@@ -360,15 +381,15 @@ function redditi() {
       percentuale (redditi ${r.anno_imposta}, dichiarazioni ${r.anno_imposta + 1}).</div>
     <div class="card"><div class="grafico"><canvas id="g-redditi"></canvas></div></div>
     ${tabella(["", "Reddito medio", "Sotto i 15 mila", "15–55 mila", "Oltre 55 mila"],
-      a => [eur(a === L ? mediaL : v[a].reddito_medio), perc(quota(a, bassi)),
-            perc(quota(a, ["15–26 mila", "26–55 mila"])), perc(quota(a, alti))])}
-    <div class="spiegazione">A Pieve il ${perc(quota(p, ["15–26 mila", "26–55 mila"]))} dei
+      a => [eur(a === L ? mediaL : v[a].reddito_medio), cella(quota(a, bassi)),
+            cella(quota(a, ["15–26 mila", "26–55 mila"])), cella(quota(a, alti))])}
+    <div class="spiegazione">A Pieve il ${perc(qv(p, ["15–26 mila", "26–55 mila"]))} dei
       contribuenti dichiara fra 15 e 55 mila euro, contro il
-      ${perc(quota(L, ["15–26 mila", "26–55 mila"]))} della Lombardia. Sotto i 15 mila ci
-      sono il ${perc(quota(p, bassi))} (Lombardia ${perc(quota(L, bassi))}), sopra i 55 mila
-      il ${perc(quota(p, alti))} (Lombardia ${perc(quota(L, alti))}).
-      ${quota(p, bassi) != null && quota(p, alti) != null
-        && quota(p, bassi) < quota(L, bassi) && quota(p, alti) < quota(L, alti)
+      ${perc(qv(L, ["15–26 mila", "26–55 mila"]))} della Lombardia. Sotto i 15 mila ci
+      sono il ${perc(qv(p, bassi))} (Lombardia ${perc(qv(L, bassi))}), sopra i 55 mila
+      il ${perc(qv(p, alti))} (Lombardia ${perc(qv(L, alti))}).
+      ${qv(p, bassi) != null && qv(p, alti) != null
+        && qv(p, bassi) < qv(L, bassi) && qv(p, alti) < qv(L, alti)
         ? `<strong>Il reddito medio più basso di quello lombardo non dipende da una quota
            maggiore di redditi bassi, ma da una quota minore di redditi alti.</strong> È
            quello che ci si aspetta da un comune con molti occupati e pochi laureati
@@ -376,10 +397,15 @@ function redditi() {
     <div class="cautela"><strong>Un reddito sotto i 10 mila euro non vuol dire povertà.</strong>
       È il reddito di un singolo dichiarante, non della famiglia: comprende studenti con
       lavori saltuari, lavoratori part-time, pensionati con altri redditi in famiglia.
-      ${oscurate.length ? `<br><br><strong>Celle oscurate.</strong> Il MEF non pubblica le
-      fasce con troppo pochi contribuenti, e ne oscura altre perché le prime non si ricavino
-      per differenza: per ${oscurate.map(a => esc(nome(a))).join(", ")} alcune fasce sono
-      «n.d.», e le somme che le contengono non si possono calcolare.` : ""}</div>
+      ${oscurate.length ? `<br><br><strong>Le cifre con «≈».</strong> Il MEF non pubblica le
+      fasce con meno di 4 contribuenti, e ne oscura altre perché le prime non si ricavino per
+      differenza: è successo per ${oscurate.map(a => esc(nome(a))).join(", ")}. Le quote si
+      ricostruiscono lo stesso, perché il MEF pubblica il numero totale dei contribuenti: la
+      parte che manca alle fasce note è quella nelle fasce nascoste. La fascia dei redditi
+      nulli o negativi, quando è nascosta, conta meno di 4 persone e si considera zero. Le
+      quote ricostruite possono scostarsi di qualche decimo di punto per gli arrotondamenti
+      delle singole fasce: abbastanza per il confronto fra comuni, non per distinguere due
+      valori che differiscono di poco.` : ""}</div>
     ${fonte(`MEF, Dipartimento delle Finanze: redditi e principali variabili IRPEF su base
       comunale, anno d'imposta ${r.anno_imposta}. Il reddito medio è il reddito complessivo
       dichiarato diviso per il numero di chi lo dichiara. La media lombarda si trova anche

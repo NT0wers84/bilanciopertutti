@@ -1,0 +1,2192 @@
+{
+ "ente": "Comune di Pieve Emanuele",
+ "codice_fiscale": "80104290152",
+ "fonte": "SIOPE — Ragioneria Generale dello Stato, banca dati gestita da Banca d'Italia",
+ "url": "https://www.siope.it/documenti/siope2/open/last",
+ "avvertenza": "Sono pagamenti di CASSA: quanto è materialmente uscito dal conto del Comune in quel mese. Non sono confrontabili con gli impegni del bilancio né sommabili con le liquidazioni dell'albo, che descrivono gli stessi soldi da un altro punto di vista. La «spesa effettiva» esclude la restituzione delle anticipazioni di tesoreria (titolo 5) e le partite di giro (titolo 7), che escono dalla cassa ma non sono spesa del Comune.",
+ "anni": {
+  "2021": {
+   "totale_cassa": 23601583.69,
+   "spesa_effettiva": 17899945.3,
+   "mesi_presenti": 12,
+   "mensili_cassa": {
+    "01": 730068.18,
+    "02": 1143634.55,
+    "03": 1446387.46,
+    "04": 3041456.0,
+    "05": 1982383.18,
+    "06": 3341694.92,
+    "07": 2302570.13,
+    "08": 1439205.12,
+    "09": 1821782.74,
+    "10": 2064482.36,
+    "11": 1791605.1,
+    "12": 2496313.95
+   },
+   "mensili_spesa": {
+    "01": 540961.35,
+    "02": 1059471.26,
+    "03": 1310024.67,
+    "04": 2256736.56,
+    "05": 631836.33,
+    "06": 1965234.28,
+    "07": 1544920.35,
+    "08": 1263458.12,
+    "09": 1628278.39,
+    "10": 1900449.01,
+    "11": 1573394.37,
+    "12": 2225180.61
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 0.0
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 15181627.21
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 1704993.34
+    },
+    {
+     "titolo": "3",
+     "descrizione": "Spese per incremento di attività finanziarie",
+     "importo": 2000.0
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 1011324.75
+    },
+    {
+     "titolo": "5",
+     "descrizione": "Chiusura anticipazioni di tesoreria",
+     "importo": 3617745.25
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 2083893.14
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "5.01.01.01.001",
+     "descrizione": "Chiusura Anticipazioni ricevute da istituto tesoriere/cassiere",
+     "importo": 3617745.25
+    },
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 2769051.48
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 1976110.71
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 1881460.34
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1412277.27
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1123408.71
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 991392.07
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 813480.49
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 709998.39
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 708930.58
+    },
+    {
+     "codice": "1.03.02.05.999",
+     "descrizione": "Utenze e canoni per altri servizi n.a.c.",
+     "importo": 523691.37
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 464689.45
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 448883.78
+    },
+    {
+     "codice": "1.03.02.18.014",
+     "descrizione": "Acquisti di servizi socio sanitari a rilevanza sanitaria",
+     "importo": 362174.87
+    },
+    {
+     "codice": "1.04.01.02.004",
+     "descrizione": "Trasferimenti correnti a Citta' metropolitane e Roma capitale",
+     "importo": 352525.83
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 280155.16
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 245238.49
+    },
+    {
+     "codice": "4.03.01.04.003",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine a Cassa Depositi e Prestiti - Gestione CDP SPA",
+     "importo": 241482.23
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 229932.67
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 221869.98
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 204321.48
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 203648.26
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 199658.4
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 196789.64
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 195494.22
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 143774.73
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 141205.17
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 140487.71
+    },
+    {
+     "codice": "1.03.02.99.002",
+     "descrizione": "Altre spese legali",
+     "importo": 135552.39
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 133899.72
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 131246.16
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 125314.96
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 124675.04
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 123431.16
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 111586.69
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 107144.88
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 99705.57
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 97000.0
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 94258.72
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 92177.61
+    },
+    {
+     "codice": "1.04.01.02.003",
+     "descrizione": "Trasferimenti correnti a Comuni",
+     "importo": 83870.87
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 83447.14
+    },
+    {
+     "codice": "2.02.01.09.010",
+     "descrizione": "Infrastrutture idrauliche",
+     "importo": 75672.53
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 67647.76
+    },
+    {
+     "codice": "1.03.02.14.999",
+     "descrizione": "Altri servizi di ristorazione",
+     "importo": 62323.71
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 60911.94
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 58431.62
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 53879.4
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 50450.66
+    },
+    {
+     "codice": "1.03.02.09.012",
+     "descrizione": "Manutenzione ordinaria e riparazioni di terreni e beni materiali non prodotti",
+     "importo": 50394.96
+    },
+    {
+     "codice": "2.02.03.02.002",
+     "descrizione": "Acquisto software",
+     "importo": 50391.22
+    },
+    {
+     "codice": "1.01.01.01.006",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo determinato",
+     "importo": 49603.53
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 44204.46
+    },
+    {
+     "codice": "1.07.05.05.999",
+     "descrizione": "Interessi passivi su mutui e altri finanziamenti a medio lungo termine ad altri soggetti",
+     "importo": 43576.6
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 43389.65
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 41290.48
+    },
+    {
+     "codice": "7.02.01.02.001",
+     "descrizione": "Acquisto di servizi per conto di terzi",
+     "importo": 38298.0
+    },
+    {
+     "codice": "1.04.01.04.001",
+     "descrizione": "Trasferimenti correnti a organismi interni e/o unita' locali della amministrazione",
+     "importo": 37193.24
+    },
+    {
+     "codice": "1.03.02.15.001",
+     "descrizione": "Contratti di servizio di trasporto pubblico",
+     "importo": 32479.3
+    },
+    {
+     "codice": "1.03.02.01.002",
+     "descrizione": "Organi istituzionali dell'amministrazione - Rimborsi",
+     "importo": 27193.33
+    }
+   ]
+  },
+  "2022": {
+   "totale_cassa": 21524023.74,
+   "spesa_effettiva": 19205573.53,
+   "mesi_presenti": 12,
+   "mensili_cassa": {
+    "01": 969206.82,
+    "02": 2040055.3,
+    "03": 1968107.77,
+    "04": 1358649.59,
+    "05": 1628084.46,
+    "06": 2044631.59,
+    "07": 1963601.35,
+    "08": 1415773.18,
+    "09": 1859320.39,
+    "10": 1549909.99,
+    "11": 1123106.2,
+    "12": 3603577.1
+   },
+   "mensili_spesa": {
+    "01": 865957.01,
+    "02": 1914725.96,
+    "03": 1655985.0,
+    "04": 1188379.02,
+    "05": 1496521.53,
+    "06": 1874782.16,
+    "07": 1699845.66,
+    "08": 1314006.97,
+    "09": 1729191.16,
+    "10": 1332468.49,
+    "11": 1007696.81,
+    "12": 3126013.76
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 0.0
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 16585051.51
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 1669889.31
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 950632.71
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 2318450.21
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 2674189.75
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 2091530.41
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 1994923.26
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1413609.7
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1250079.24
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 1009676.97
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 794139.67
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 729093.08
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 722807.98
+    },
+    {
+     "codice": "1.03.02.05.999",
+     "descrizione": "Utenze e canoni per altri servizi n.a.c.",
+     "importo": 604909.69
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 462244.13
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 450145.64
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 380457.15
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 363380.99
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 312924.29
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 300360.96
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 297873.72
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 292430.74
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 268282.44
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 260177.63
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 256097.79
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 232484.36
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 215463.28
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 212799.07
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 210858.76
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 209098.41
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 176524.66
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 167238.95
+    },
+    {
+     "codice": "4.03.01.04.003",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine a Cassa Depositi e Prestiti - Gestione CDP SPA",
+     "importo": 165490.67
+    },
+    {
+     "codice": "7.02.01.01.001",
+     "descrizione": "Acquisto di beni per conto di terzi",
+     "importo": 148717.33
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 146070.93
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 125668.53
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 122202.8
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 120387.48
+    },
+    {
+     "codice": "1.04.01.02.004",
+     "descrizione": "Trasferimenti correnti a Citta' metropolitane e Roma capitale",
+     "importo": 113497.86
+    },
+    {
+     "codice": "1.01.01.01.001",
+     "descrizione": "Arretrati per anni precedenti corrisposti al personale a tempo indeterminato",
+     "importo": 110114.67
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 108050.11
+    },
+    {
+     "codice": "1.10.05.04.001",
+     "descrizione": "Oneri da contenzioso",
+     "importo": 104998.43
+    },
+    {
+     "codice": "1.04.01.01.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Centrali n.a.c.",
+     "importo": 101317.58
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 95623.57
+    },
+    {
+     "codice": "1.03.02.18.014",
+     "descrizione": "Acquisti di servizi socio sanitari a rilevanza sanitaria",
+     "importo": 94638.18
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 86366.82
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 85343.0
+    },
+    {
+     "codice": "2.03.04.01.001",
+     "descrizione": "Contributi agli investimenti a Istituzioni Sociali Private",
+     "importo": 81284.48
+    },
+    {
+     "codice": "1.03.02.99.002",
+     "descrizione": "Altre spese legali",
+     "importo": 80776.41
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 79656.31
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 76036.15
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 67481.73
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 66590.89
+    },
+    {
+     "codice": "1.03.02.99.004",
+     "descrizione": "Altre spese per consultazioni elettorali dell'ente",
+     "importo": 62666.52
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 62334.06
+    },
+    {
+     "codice": "1.03.02.14.999",
+     "descrizione": "Altri servizi di ristorazione",
+     "importo": 60055.43
+    },
+    {
+     "codice": "2.02.03.02.002",
+     "descrizione": "Acquisto software",
+     "importo": 59583.6
+    },
+    {
+     "codice": "2.02.01.07.001",
+     "descrizione": "Server",
+     "importo": 54301.69
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 53768.12
+    },
+    {
+     "codice": "1.07.05.05.999",
+     "descrizione": "Interessi passivi su mutui e altri finanziamenti a medio lungo termine ad altri soggetti",
+     "importo": 45306.95
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 41431.11
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 41031.32
+    },
+    {
+     "codice": "1.04.01.04.001",
+     "descrizione": "Trasferimenti correnti a organismi interni e/o unita' locali della amministrazione",
+     "importo": 37990.64
+    },
+    {
+     "codice": "1.03.01.02.001",
+     "descrizione": "Carta, cancelleria e stampati",
+     "importo": 34443.29
+    }
+   ]
+  },
+  "2023": {
+   "totale_cassa": 26055771.4,
+   "spesa_effettiva": 21278081.36,
+   "mesi_presenti": 12,
+   "mensili_cassa": {
+    "01": 1529846.31,
+    "02": 1316125.11,
+    "03": 1747904.68,
+    "04": 1759825.84,
+    "05": 4006965.49,
+    "06": 3775126.57,
+    "07": 2046081.54,
+    "08": 1145410.23,
+    "09": 1420177.67,
+    "10": 2167205.51,
+    "11": 1887150.15,
+    "12": 3253952.3
+   },
+   "mensili_spesa": {
+    "01": 1515449.5,
+    "02": 1190341.89,
+    "03": 1599659.49,
+    "04": 1582793.45,
+    "05": 1941184.44,
+    "06": 3150220.29,
+    "07": 1723260.89,
+    "08": 1017016.77,
+    "09": 1307128.56,
+    "10": 1969097.0,
+    "11": 1480794.12,
+    "12": 2801134.96
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 0.0
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 17837762.94
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 2849120.51
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 591197.91
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 4777690.04
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 3254478.91
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 2148189.06
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 1917768.88
+    },
+    {
+     "codice": "7.01.99.06.002",
+     "descrizione": "Destinazione  incassi liberi al  reintegro incassi vincolati ai sensi dell?art. 195 del TUEL",
+     "importo": 1839088.6
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 1512112.39
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1498706.89
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1492998.74
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 809046.92
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 741209.68
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 723932.45
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 694039.38
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 652450.03
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 484522.16
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 464691.45
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 402822.68
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 402284.8
+    },
+    {
+     "codice": "7.01.99.06.001",
+     "descrizione": "Utilizzo  incassi vincolati ai sensi dell?art. 195 del TUEL",
+     "importo": 391040.89
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 321116.29
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 286700.23
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 265055.26
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 264498.76
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 257777.13
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 238564.88
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 222038.05
+    },
+    {
+     "codice": "2.02.01.05.999",
+     "descrizione": "Attrezzature n.a.c.",
+     "importo": 212993.39
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 212071.74
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 208845.65
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 203109.1
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 202466.44
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 180810.57
+    },
+    {
+     "codice": "1.04.01.02.003",
+     "descrizione": "Trasferimenti correnti a Comuni",
+     "importo": 173049.94
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 159920.84
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 130648.67
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 129724.25
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 127897.76
+    },
+    {
+     "codice": "2.03.04.01.001",
+     "descrizione": "Contributi agli investimenti a Istituzioni Sociali Private",
+     "importo": 121035.24
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 118183.85
+    },
+    {
+     "codice": "7.02.01.01.001",
+     "descrizione": "Acquisto di beni per conto di terzi",
+     "importo": 118080.23
+    },
+    {
+     "codice": "1.04.01.02.004",
+     "descrizione": "Trasferimenti correnti a Citta' metropolitane e Roma capitale",
+     "importo": 118033.98
+    },
+    {
+     "codice": "1.07.05.05.999",
+     "descrizione": "Interessi passivi su mutui e altri finanziamenti a medio lungo termine ad altri soggetti",
+     "importo": 114955.72
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 112841.1
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 106025.24
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 104133.11
+    },
+    {
+     "codice": "2.02.03.05.001",
+     "descrizione": "Incarichi professionali per la realizzazione di investimenti",
+     "importo": 103080.3
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 97127.42
+    },
+    {
+     "codice": "7.02.03.01.001",
+     "descrizione": "Trasferimenti per conto terzi a Famiglie",
+     "importo": 96503.37
+    },
+    {
+     "codice": "2.02.01.09.001",
+     "descrizione": "Fabbricati ad uso abitativo",
+     "importo": 91794.33
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 86863.52
+    },
+    {
+     "codice": "1.03.02.99.002",
+     "descrizione": "Altre spese legali",
+     "importo": 76994.14
+    },
+    {
+     "codice": "2.02.01.09.016",
+     "descrizione": "Impianti sportivi",
+     "importo": 76536.85
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 65775.78
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 63797.45
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 62004.57
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 60743.35
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 60590.97
+    },
+    {
+     "codice": "1.03.02.15.001",
+     "descrizione": "Contratti di servizio di trasporto pubblico",
+     "importo": 55321.37
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 53539.94
+    },
+    {
+     "codice": "1.04.01.01.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Centrali n.a.c.",
+     "importo": 50118.93
+    },
+    {
+     "codice": "1.04.01.04.001",
+     "descrizione": "Trasferimenti correnti a organismi interni e/o unita' locali della amministrazione",
+     "importo": 47612.35
+    },
+    {
+     "codice": "1.03.02.14.999",
+     "descrizione": "Altri servizi di ristorazione",
+     "importo": 47541.16
+    }
+   ]
+  },
+  "2024": {
+   "totale_cassa": 27918251.44,
+   "spesa_effettiva": 23142286.77,
+   "mesi_presenti": 12,
+   "mensili_cassa": {
+    "01": 1443816.53,
+    "02": 1721933.79,
+    "03": 1331073.44,
+    "04": 1345899.26,
+    "05": 2134706.71,
+    "06": 3841493.6,
+    "07": 2420312.08,
+    "08": 1104376.13,
+    "09": 2789524.35,
+    "10": 2810852.86,
+    "11": 2940138.9,
+    "12": 4034123.79
+   },
+   "mensili_spesa": {
+    "01": 1433697.83,
+    "02": 1489106.19,
+    "03": 1177857.73,
+    "04": 1219706.18,
+    "05": 1994040.05,
+    "06": 2654918.04,
+    "07": 2100029.85,
+    "08": 887486.82,
+    "09": 2196744.96,
+    "10": 2564068.51,
+    "11": 1941100.44,
+    "12": 3483530.17
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 0.0
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 17425938.35
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 4863276.38
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 853072.04
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 4775964.67
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 3090513.37
+    },
+    {
+     "codice": "7.01.99.06.002",
+     "descrizione": "Destinazione  incassi liberi al  reintegro incassi vincolati ai sensi dell?art. 195 del TUEL",
+     "importo": 2159743.74
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 2156482.69
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 2016118.54
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 1770405.29
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1652981.83
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1528110.85
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 935262.44
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 846923.32
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 772816.61
+    },
+    {
+     "codice": "2.02.01.09.016",
+     "descrizione": "Impianti sportivi",
+     "importo": 756027.1
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 744890.32
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 741262.62
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 736328.88
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 565368.97
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 517061.98
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 491454.8
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 398610.52
+    },
+    {
+     "codice": "2.02.01.09.001",
+     "descrizione": "Fabbricati ad uso abitativo",
+     "importo": 362817.29
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 296337.05
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 296055.88
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 294714.1
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 283194.76
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 239496.98
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 228081.46
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 204894.91
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 190190.12
+    },
+    {
+     "codice": "2.02.01.09.019",
+     "descrizione": "Fabbricati ad uso strumentale",
+     "importo": 190135.57
+    },
+    {
+     "codice": "2.02.03.02.002",
+     "descrizione": "Acquisto software",
+     "importo": 179210.95
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 168767.01
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 161632.91
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 155420.64
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 135534.0
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 134222.24
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 133423.62
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 127540.35
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 121203.37
+    },
+    {
+     "codice": "1.04.01.02.004",
+     "descrizione": "Trasferimenti correnti a Citta' metropolitane e Roma capitale",
+     "importo": 119052.31
+    },
+    {
+     "codice": "1.07.05.05.999",
+     "descrizione": "Interessi passivi su mutui e altri finanziamenti a medio lungo termine ad altri soggetti",
+     "importo": 116846.76
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 113862.03
+    },
+    {
+     "codice": "1.04.01.01.020",
+     "descrizione": "Trasferimenti correnti al Ministero dell'economia in attuazione di norme in materia di contenimento di spesa",
+     "importo": 108510.0
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 95738.97
+    },
+    {
+     "codice": "7.02.01.01.001",
+     "descrizione": "Acquisto di beni per conto di terzi",
+     "importo": 87454.76
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 75486.83
+    },
+    {
+     "codice": "1.03.02.13.005",
+     "descrizione": "Servizi ausiliari a beneficio del personale",
+     "importo": 71101.9
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 69171.1
+    },
+    {
+     "codice": "1.03.02.99.002",
+     "descrizione": "Altre spese legali",
+     "importo": 66915.74
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 65303.42
+    },
+    {
+     "codice": "2.03.04.01.001",
+     "descrizione": "Contributi agli investimenti a Istituzioni Sociali Private",
+     "importo": 62647.66
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 62001.55
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 59498.91
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 56033.54
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 54800.87
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 47630.07
+    },
+    {
+     "codice": "7.02.01.02.001",
+     "descrizione": "Acquisto di servizi per conto di terzi",
+     "importo": 46791.63
+    },
+    {
+     "codice": "1.04.01.02.003",
+     "descrizione": "Trasferimenti correnti a Comuni",
+     "importo": 43995.98
+    },
+    {
+     "codice": "1.04.01.01.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Centrali n.a.c.",
+     "importo": 43564.6
+    },
+    {
+     "codice": "4.03.01.04.003",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine a Cassa Depositi e Prestiti - Gestione CDP SPA",
+     "importo": 42878.3
+    },
+    {
+     "codice": "1.03.02.02.005",
+     "descrizione": "Organizzazione e partecipazione a manifestazioni e convegni",
+     "importo": 40397.63
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 39446.48
+    }
+   ]
+  },
+  "2025": {
+   "totale_cassa": 25639326.05,
+   "spesa_effettiva": 22892476.68,
+   "mesi_presenti": 12,
+   "mensili_cassa": {
+    "01": 1130286.5,
+    "02": 1489165.75,
+    "03": 2079867.69,
+    "04": 1606837.36,
+    "05": 3215636.77,
+    "06": 2686421.9,
+    "07": 2864253.78,
+    "08": 1387374.69,
+    "09": 1743627.02,
+    "10": 1791905.8,
+    "11": 2415603.67,
+    "12": 3228345.12
+   },
+   "mensili_spesa": {
+    "01": 1060431.81,
+    "02": 1330791.14,
+    "03": 1917603.23,
+    "04": 1330079.58,
+    "05": 2739120.05,
+    "06": 2374645.45,
+    "07": 2661627.25,
+    "08": 1078165.12,
+    "09": 1599496.1,
+    "10": 1602852.65,
+    "11": 2240367.12,
+    "12": 2957297.18
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 0.0
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 16130835.63
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 5541794.53
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 1219846.52
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 2746849.37
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 2670538.32
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 2077794.78
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 2069331.29
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1745809.19
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 1572850.78
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1542243.48
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 1140600.99
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 1074442.52
+    },
+    {
+     "codice": "2.02.01.09.016",
+     "descrizione": "Impianti sportivi",
+     "importo": 990312.95
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 721249.4
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 710137.28
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 694386.62
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 662955.38
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 597241.67
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 529996.29
+    },
+    {
+     "codice": "4.03.01.04.003",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine a Cassa Depositi e Prestiti - Gestione CDP SPA",
+     "importo": 442855.89
+    },
+    {
+     "codice": "2.05.04.02.001",
+     "descrizione": "Rimborsi in conto capitale ad Amministrazioni Locali di somme non dovute o incassate in eccesso",
+     "importo": 403430.28
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 355732.23
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 342870.22
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 336679.9
+    },
+    {
+     "codice": "7.01.99.06.002",
+     "descrizione": "Destinazione  incassi liberi al  reintegro incassi vincolati ai sensi dell?art. 195 del TUEL",
+     "importo": 296220.3
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 288808.73
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 287577.4
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 280575.89
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 278934.48
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 201685.28
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 200986.28
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 179354.79
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 161831.13
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 160198.46
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 156962.68
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 145327.49
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 130983.67
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 126764.77
+    },
+    {
+     "codice": "1.04.01.01.020",
+     "descrizione": "Trasferimenti correnti al Ministero dell'economia in attuazione di norme in materia di contenimento di spesa",
+     "importo": 108954.45
+    },
+    {
+     "codice": "7.02.01.01.001",
+     "descrizione": "Acquisto di beni per conto di terzi",
+     "importo": 107886.35
+    },
+    {
+     "codice": "1.01.01.01.008",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa documentati per missione, corrisposti al personale a tempo determinato",
+     "importo": 96664.04
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 91634.66
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 87319.83
+    },
+    {
+     "codice": "1.03.02.99.002",
+     "descrizione": "Altre spese legali",
+     "importo": 85393.79
+    },
+    {
+     "codice": "1.07.05.05.999",
+     "descrizione": "Interessi passivi su mutui e altri finanziamenti a medio lungo termine ad altri soggetti",
+     "importo": 75482.68
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 70736.74
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 66853.35
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 65210.33
+    },
+    {
+     "codice": "1.03.02.13.005",
+     "descrizione": "Servizi ausiliari a beneficio del personale",
+     "importo": 62844.48
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 53324.48
+    },
+    {
+     "codice": "2.02.03.05.001",
+     "descrizione": "Incarichi professionali per la realizzazione di investimenti",
+     "importo": 51438.65
+    },
+    {
+     "codice": "1.01.02.01.002",
+     "descrizione": "Contributi previdenza complementare",
+     "importo": 48850.5
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 48614.79
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 47824.89
+    },
+    {
+     "codice": "2.02.01.09.001",
+     "descrizione": "Fabbricati ad uso abitativo",
+     "importo": 47395.5
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 43888.95
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 43845.13
+    },
+    {
+     "codice": "2.02.01.09.010",
+     "descrizione": "Infrastrutture idrauliche",
+     "importo": 43472.66
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 39570.0
+    },
+    {
+     "codice": "7.02.01.02.001",
+     "descrizione": "Acquisto di servizi per conto di terzi",
+     "importo": 37861.45
+    },
+    {
+     "codice": "1.03.02.02.005",
+     "descrizione": "Organizzazione e partecipazione a manifestazioni e convegni",
+     "importo": 37263.03
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 36332.0
+    },
+    {
+     "codice": "1.03.02.15.001",
+     "descrizione": "Contratti di servizio di trasporto pubblico",
+     "importo": 35111.16
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 34463.57
+    }
+   ]
+  },
+  "2026": {
+   "totale_cassa": 26992276.74,
+   "spesa_effettiva": 18734631.6,
+   "mesi_presenti": 10,
+   "mensili_cassa": {
+    "01": 1303285.02,
+    "02": 1480930.98,
+    "03": 1497225.92,
+    "04": 5527877.7,
+    "05": 2983365.62,
+    "06": 3948045.28,
+    "07": 4040367.66,
+    "08": 2285107.54,
+    "09": 3926071.02,
+    "10": 0.0
+   },
+   "mensili_spesa": {
+    "01": 1044583.48,
+    "02": 1342270.17,
+    "03": 1332510.08,
+    "04": 4309883.25,
+    "05": 2202898.35,
+    "06": 1839794.72,
+    "07": 1993214.85,
+    "08": 1221512.56,
+    "09": 3447964.14,
+    "10": 0.0
+   },
+   "per_titolo": [
+    {
+     "titolo": "0",
+     "descrizione": "",
+     "importo": 197787.66
+    },
+    {
+     "titolo": "1",
+     "descrizione": "Spese correnti",
+     "importo": 12981608.72
+    },
+    {
+     "titolo": "2",
+     "descrizione": "Spese in conto capitale",
+     "importo": 5234322.18
+    },
+    {
+     "titolo": "4",
+     "descrizione": "Rimborso di prestiti",
+     "importo": 518700.7
+    },
+    {
+     "titolo": "5",
+     "descrizione": "Chiusura anticipazioni di tesoreria",
+     "importo": 6033815.58
+    },
+    {
+     "titolo": "7",
+     "descrizione": "Uscite per conto terzi e partite di giro",
+     "importo": 2026041.9
+    }
+   ],
+   "per_voce": [
+    {
+     "codice": "5.01.01.01.001",
+     "descrizione": "Chiusura Anticipazioni ricevute da istituto tesoriere/cassiere",
+     "importo": 6033815.58
+    },
+    {
+     "codice": "1.03.02.15.004",
+     "descrizione": "Contratti di servizio per la raccolta rifiuti",
+     "importo": 2041678.55
+    },
+    {
+     "codice": "2.02.01.09.003",
+     "descrizione": "Fabbricati ad uso scolastico",
+     "importo": 1774210.31
+    },
+    {
+     "codice": "1.01.01.01.002",
+     "descrizione": "Voci stipendiali corrisposte al personale a tempo indeterminato",
+     "importo": 1479181.36
+    },
+    {
+     "codice": "1.03.02.99.999",
+     "descrizione": "Altri servizi diversi n.a.c.",
+     "importo": 1393309.74
+    },
+    {
+     "codice": "1.03.02.06.999",
+     "descrizione": "Altri canoni per progetti in partenariato pubblico-privato",
+     "importo": 1248444.08
+    },
+    {
+     "codice": "7.01.01.02.001",
+     "descrizione": "Versamento delle ritenute per scissione contabile IVA (split payment)",
+     "importo": 1229567.5
+    },
+    {
+     "codice": "1.03.01.05.001",
+     "descrizione": "Prodotti farmaceutici ed emoderivati",
+     "importo": 1219000.21
+    },
+    {
+     "codice": "2.02.01.09.999",
+     "descrizione": "Beni immobili n.a.c.",
+     "importo": 1176837.98
+    },
+    {
+     "codice": "1.01.02.01.001",
+     "descrizione": "Contributi obbligatori per il personale",
+     "importo": 651423.5
+    },
+    {
+     "codice": "7.01.02.02.001",
+     "descrizione": "Versamenti di ritenute previdenziali e assistenziali su Redditi da lavoro dipendente riscosse per conto terzi",
+     "importo": 650325.67
+    },
+    {
+     "codice": "1.03.02.15.005",
+     "descrizione": "Contratti di servizio per il conferimento in discarica dei rifiuti",
+     "importo": 572006.6
+    },
+    {
+     "codice": "1.03.02.15.999",
+     "descrizione": "Altre spese per contratti di servizio pubblico",
+     "importo": 546982.9
+    },
+    {
+     "codice": "2.02.01.09.016",
+     "descrizione": "Impianti sportivi",
+     "importo": 521694.68
+    },
+    {
+     "codice": "2.02.01.09.012",
+     "descrizione": "Infrastrutture stradali",
+     "importo": 515098.92
+    },
+    {
+     "codice": "2.02.01.09.013",
+     "descrizione": "Altre vie di comunicazione",
+     "importo": 468455.53
+    },
+    {
+     "codice": "4.03.01.06.001",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine ad altri soggetti con controparte non residente",
+     "importo": 335269.04
+    },
+    {
+     "codice": "1.01.01.01.004",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa per missione, corrisposti al personale a tempo indeterminato",
+     "importo": 326313.97
+    },
+    {
+     "codice": "2.02.01.09.014",
+     "descrizione": "Opere per la sistemazione del suolo",
+     "importo": 290348.96
+    },
+    {
+     "codice": "1.03.02.15.006",
+     "descrizione": "Contratti di servizio per le mense scolastiche",
+     "importo": 279586.54
+    },
+    {
+     "codice": "1.03.02.13.002",
+     "descrizione": "Servizi di pulizia e lavanderia",
+     "importo": 216477.45
+    },
+    {
+     "codice": "1.10.03.01.001",
+     "descrizione": "Versamenti IVA a debito per le gestioni commerciali",
+     "importo": 204268.04
+    },
+    {
+     "codice": "1.02.01.01.001",
+     "descrizione": "Imposta regionale sulle attivita' produttive (IRAP)",
+     "importo": 188994.59
+    },
+    {
+     "codice": "1.03.02.15.008",
+     "descrizione": "Contratti di servizio di assistenza sociale residenziale e semiresidenziale",
+     "importo": 185828.75
+    },
+    {
+     "codice": "1.03.02.11.999",
+     "descrizione": "Altre prestazioni professionali e specialistiche n.a.c.",
+     "importo": 173519.91
+    },
+    {
+     "codice": "1.04.02.02.999",
+     "descrizione": "Altri assegni e sussidi assistenziali",
+     "importo": 149722.91
+    },
+    {
+     "codice": "1.01.01.01.001",
+     "descrizione": "Arretrati per anni precedenti corrisposti al personale a tempo indeterminato",
+     "importo": 145451.37
+    },
+    {
+     "codice": "2.02.01.07.999",
+     "descrizione": "Hardware n.a.c.",
+     "importo": 123220.0
+    },
+    {
+     "codice": "1.04.01.02.004",
+     "descrizione": "Trasferimenti correnti a Citta' metropolitane e Roma capitale",
+     "importo": 122072.7
+    },
+    {
+     "codice": "1.04.01.02.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Locali n.a.c.",
+     "importo": 115599.71
+    },
+    {
+     "codice": "4.03.01.04.003",
+     "descrizione": "Rimborso Mutui e altri finanziamenti a medio lungo termine a Cassa Depositi e Prestiti - Gestione CDP SPA",
+     "importo": 114983.03
+    },
+    {
+     "codice": "2.02.01.04.002",
+     "descrizione": "Impianti",
+     "importo": 112820.68
+    },
+    {
+     "codice": "0.00.00.99.999",
+     "descrizione": "ALTRI PAGAMENTI DA REGOLARIZZARE (pagamenti codificati dal cassiere)",
+     "importo": 107950.05
+    },
+    {
+     "codice": "1.03.02.09.008",
+     "descrizione": "Manutenzione ordinaria e riparazioni di beni immobili",
+     "importo": 100763.3
+    },
+    {
+     "codice": "1.03.02.01.001",
+     "descrizione": "Organi istituzionali dell'amministrazione - Indennita'",
+     "importo": 97461.84
+    },
+    {
+     "codice": "1.07.05.04.003",
+     "descrizione": "Interessi passivi a Cassa Depositi e Prestiti SPA su mutui e altri finanziamenti a medio lungo termine",
+     "importo": 96908.39
+    },
+    {
+     "codice": "1.03.02.05.001",
+     "descrizione": "Telefonia fissa",
+     "importo": 93698.1
+    },
+    {
+     "codice": "0.00.00.99.998",
+     "descrizione": "PAGAMENTI DA REGOLARIZZARE DERIVANTI DAL RIMBORSO DELLE ANTICIPAZIONI DI CASSA (pagamenti codificati dal cassiere)",
+     "importo": 89837.61
+    },
+    {
+     "codice": "1.03.02.07.006",
+     "descrizione": "Licenze d'uso per software",
+     "importo": 89239.26
+    },
+    {
+     "codice": "1.10.04.01.003",
+     "descrizione": "Premi di assicurazione per responsabilita' civile verso terzi",
+     "importo": 87606.7
+    },
+    {
+     "codice": "1.03.02.05.005",
+     "descrizione": "Acqua",
+     "importo": 87109.65
+    },
+    {
+     "codice": "1.01.01.01.008",
+     "descrizione": "Indennita' ed altri compensi, esclusi i rimborsi spesa documentati per missione, corrisposti al personale a tempo determinato",
+     "importo": 77133.29
+    },
+    {
+     "codice": "2.02.01.04.001",
+     "descrizione": "Macchinari",
+     "importo": 73938.88
+    },
+    {
+     "codice": "1.04.03.99.999",
+     "descrizione": "Trasferimenti correnti a altre imprese",
+     "importo": 73381.38
+    },
+    {
+     "codice": "1.03.02.05.004",
+     "descrizione": "Energia elettrica",
+     "importo": 71036.75
+    },
+    {
+     "codice": "2.03.04.01.001",
+     "descrizione": "Contributi agli investimenti a Istituzioni Sociali Private",
+     "importo": 69029.32
+    },
+    {
+     "codice": "4.02.02.01.999",
+     "descrizione": "Chiusura Anticipazioni a titolo oneroso ricevute da altri soggetti",
+     "importo": 68448.63
+    },
+    {
+     "codice": "1.07.05.04.999",
+     "descrizione": "Interessi passivi a altre imprese su finanziamenti a medio lungo termine",
+     "importo": 58144.65
+    },
+    {
+     "codice": "1.03.01.02.999",
+     "descrizione": "Altri beni e materiali di consumo n.a.c.",
+     "importo": 49609.39
+    },
+    {
+     "codice": "1.04.01.01.999",
+     "descrizione": "Trasferimenti correnti a altre Amministrazioni Centrali n.a.c.",
+     "importo": 49200.0
+    },
+    {
+     "codice": "1.03.02.09.011",
+     "descrizione": "Manutenzione ordinaria e riparazioni di altri beni materiali",
+     "importo": 46095.45
+    },
+    {
+     "codice": "1.04.02.05.999",
+     "descrizione": "Altri trasferimenti a famiglie n.a.c.",
+     "importo": 45882.04
+    },
+    {
+     "codice": "1.03.02.15.003",
+     "descrizione": "Contratti di servizio per il trasporto di disabili e anziani",
+     "importo": 45301.35
+    },
+    {
+     "codice": "1.03.02.13.005",
+     "descrizione": "Servizi ausiliari a beneficio del personale",
+     "importo": 45014.71
+    },
+    {
+     "codice": "2.02.01.03.001",
+     "descrizione": "Mobili e arredi per ufficio",
+     "importo": 44262.21
+    },
+    {
+     "codice": "1.03.02.16.002",
+     "descrizione": "Spese postali",
+     "importo": 41956.87
+    },
+    {
+     "codice": "1.01.01.01.003",
+     "descrizione": "Straordinario per il personale a tempo indeterminato",
+     "importo": 41111.76
+    },
+    {
+     "codice": "7.02.01.02.001",
+     "descrizione": "Acquisto di servizi per conto di terzi",
+     "importo": 38897.62
+    },
+    {
+     "codice": "2.02.01.05.999",
+     "descrizione": "Attrezzature n.a.c.",
+     "importo": 34314.3
+    },
+    {
+     "codice": "7.01.03.01.001",
+     "descrizione": "Versamenti di ritenute erariali su Redditi da lavoro autonomo per conto terzi",
+     "importo": 34067.69
+    }
+   ]
+  }
+ }
+}

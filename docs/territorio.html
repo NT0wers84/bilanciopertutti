@@ -271,28 +271,93 @@ function eta() {
 }
 
 function famiglie() {
-  const f = D.famiglie, s = D.stranieri;
+  const f = D.famiglie;
   if (!f) return "";
   const p = D.pieve, L = D.lombardia;
   return `
-    <h2 class="sezione">3. Famiglie e cittadinanza</h2>
-    <div class="sottotitolo">Com'è fatta una famiglia a Pieve Emanuele (${f.anno}) e quanti
-      residenti hanno cittadinanza straniera (${s.anno}).</div>
-    ${tabella(["", "Famiglie", "Di una sola persona", "Di 5 persone o più", "Componenti medi", "Stranieri"],
+    <h2 class="sezione">3. Famiglie</h2>
+    <div class="sottotitolo">Com'è fatta una famiglia a Pieve Emanuele (${f.anno}).</div>
+    ${tabella(["", "Famiglie", "Di una sola persona", "Di 5 persone o più", "Componenti medi"],
       a => [num(f.valori[a].famiglie), perc(f.valori[a].una_persona_pct),
-            perc(f.valori[a].cinque_e_piu_pct), dec(f.valori[a].componenti_medi, 2),
-            perc(s.valori[a])])}
+            perc(f.valori[a].cinque_e_piu_pct), dec(f.valori[a].componenti_medi, 2)])}
     <div class="spiegazione">A Pieve le famiglie di una sola persona sono il
       ${perc(f.valori[p].una_persona_pct)},
       ${confronto(f.valori[p].una_persona_pct, f.valori[L].una_persona_pct, 1,
         "più che", "meno che", "come")} in Lombardia (${perc(f.valori[L].una_persona_pct)}),
       con ${dec(f.valori[p].componenti_medi, 2)} componenti medi contro
-      ${dec(f.valori[L].componenti_medi, 2)}. Gli stranieri sono il ${perc(s.valori[p])}
-      dei residenti, ${confronto(s.valori[p], s.valori[L], 1.5,
-        "più che in", "meno che in", "come in")} Lombardia (${perc(s.valori[L])}).</div>
-    ${fonte(`ISTAT, censimento permanente della popolazione (famiglie al 31 dicembre) e
-      popolazione straniera residente al 1° gennaio. I dati del censimento permanente
-      sono stime basate su registri e indagini campionarie.`)}`;
+      ${dec(f.valori[L].componenti_medi, 2)}.</div>
+    ${fonte(`ISTAT, censimento permanente della popolazione (famiglie al 31 dicembre). I dati
+      del censimento permanente sono stime basate su registri e indagini campionarie.`)}`;
+}
+
+function stranieri() {
+  const s = D.stranieri, c = D.cittadinanze, q = D.cittadinanza_acquisita;
+  const p = D.pieve, L = D.lombardia;
+  const primo = c && c.paesi && c.paesi[0];
+  const serie = s.serie || {};
+  const anniSerie = Object.keys(serie[p] || {}).sort();
+  const aree = c ? Object.keys(c.aree[p].quote_pct) : [];
+  // Aree in cui Pieve si discosta di più dalla Lombardia (almeno 3 punti)
+  const scarti = c ? aree.map(a => [a, c.aree[p].quote_pct[a] - c.aree[L].quote_pct[a]])
+    .filter(([, d]) => Math.abs(d) >= 3).sort((x, y) => y[1] - x[1]) : [];
+  return `
+    <h2 class="sezione">4. Stranieri e provenienze</h2>
+    <div class="sottotitolo">Quanti residenti hanno cittadinanza straniera, da dove vengono,
+      e quanti sono diventati italiani. Ogni dato ha il suo anno: le tre fonti ISTAT non
+      escono insieme.</div>
+    <div class="kpi">
+      <div class="card"><div class="valore">${perc(s.valori[p])}</div>
+        <div class="etichetta">residenti con cittadinanza straniera (Lombardia ${perc(s.valori[L])}) · ${s.anno}</div></div>
+      ${q ? `<div class="card"><div class="valore">${perc(q.valori[p].italiani_acquisiti_pct)}</div>
+        <div class="etichetta">residenti diventati italiani (Lombardia ${perc(q.valori[L].italiani_acquisiti_pct)}) · ${q.anno}</div></div>
+      <div class="card"><div class="valore">${perc(q.valori[p].insieme_pct)}</div>
+        <div class="etichetta">stranieri e diventati italiani insieme (Lombardia ${perc(q.valori[L].insieme_pct)}) · ${q.anno}</div></div>` : ""}
+      ${primo ? `<div class="card"><div class="valore" style="font-size:21px">${esc(primo.nome)}</div>
+        <div class="etichetta">primo paese di cittadinanza: ${num(primo.pieve)} residenti,
+        il ${perc(primo.pieve_pct)} degli stranieri (Lombardia ${perc(primo.lombardia_pct)}) · ${c.anno}</div></div>` : ""}
+    </div>
+
+    ${anniSerie.length > 1 ? `
+    <h3 class="sezione">Come è cambiata la quota</h3>
+    <div class="sottotitolo">Residenti con cittadinanza straniera sul totale, al 1° gennaio di ogni anno.</div>
+    <div class="card"><div class="grafico"><canvas id="g-stranieri"></canvas></div></div>
+    <div class="spiegazione">Fra il ${anniSerie[0]} e il ${anniSerie[anniSerie.length - 1]} la
+      quota di stranieri a Pieve passa da ${perc(serie[p][anniSerie[0]])} a
+      ${perc(serie[p][anniSerie[anniSerie.length - 1]])}; in Lombardia da
+      ${perc(serie[L][anniSerie[0]])} a ${perc(serie[L][anniSerie[anniSerie.length - 1]])}.</div>` : ""}
+
+    ${c ? `
+    <h3 class="sezione">I paesi di cittadinanza</h3>
+    <div class="sottotitolo">I ${c.paesi.length} paesi con più residenti a Pieve, in percentuale
+      sul totale degli stranieri, e il peso degli stessi paesi in Lombardia (${c.anno}).
+      A Pieve sono rappresentati ${c.paesi_a_pieve} paesi.</div>
+    <div class="card"><div class="grafico alto"><canvas id="g-paesi"></canvas></div></div>
+
+    <h3 class="sezione">Le aree di provenienza</h3>
+    <div class="sottotitolo">Stranieri per area geografica di cittadinanza, in percentuale (${c.anno}).</div>
+    ${tabella(["", "Stranieri", ...aree], a => [num(c.aree[a].stranieri),
+      ...aree.map(x => perc(c.aree[a].quote_pct[x]))])}
+    <div class="spiegazione">${primo ? `Primo paese di cittadinanza a Pieve:
+      <strong>${esc(primo.nome)}</strong>, con il ${perc(primo.pieve_pct)} degli stranieri
+      (in Lombardia lo stesso paese pesa il ${perc(primo.lombardia_pct)}).` : ""}
+      ${scarti.length ? `Rispetto alla Lombardia pesano di più
+        ${scarti.filter(([, d]) => d > 0).map(([a]) => `<strong>${esc(a)}</strong>
+          (${perc(c.aree[p].quote_pct[a])} contro ${perc(c.aree[L].quote_pct[a])})`).join(" e ") || "nessuna area in modo marcato"}${
+        scarti.some(([, d]) => d < 0) ? `, di meno ${scarti.filter(([, d]) => d < 0).map(([a]) =>
+          `<strong>${esc(a)}</strong> (${perc(c.aree[p].quote_pct[a])} contro
+          ${perc(c.aree[L].quote_pct[a])})`).join(" e ")}` : ""}.`
+        : "La ripartizione per area è simile a quella lombarda."}</div>` : ""}
+
+    <div class="cautela"><strong>La cittadinanza non è la provenienza.</strong> Chi diventa
+      italiano esce dal conto degli stranieri, e i figli degli stranieri nati in Italia sono
+      stranieri finché non chiedono la cittadinanza. Per questo la quota degli «stranieri e
+      diventati italiani insieme» descrive meglio quanti residenti hanno una storia di
+      migrazione. La popolazione di Opera può includere persone residenti nella casa di
+      reclusione.</div>
+    ${fonte(`ISTAT: popolazione straniera residente al 1° gennaio (quota e serie);
+      popolazione straniera per paese di cittadinanza (paesi e aree); censimento permanente
+      della popolazione, italiani per acquisizione e stranieri al 31 dicembre. Le aree sono
+      gli aggregati ISTAT; «Oceania, apolidi e altro» è ciò che resta del totale.`)}`;
 }
 
 function studioLavoro() {
@@ -300,7 +365,7 @@ function studioLavoro() {
   const p = D.pieve, L = D.lombardia;
   const laureati = Object.fromEntries(tutte().map(a => [a, ist[a].laureati_25_49_pct]));
   return `
-    <h2 class="sezione">4. Studio e lavoro</h2>
+    <h2 class="sezione">5. Studio e lavoro</h2>
     <div class="sottotitolo">Titolo di studio fra i 25 e i 49 anni, età in cui gli studi sono
       di norma conclusi (${D.istruzione.anno}); occupazione fra i 25 e i 64 anni (${D.lavoro.anno}).</div>
     ${tabella(["", "Laureati 25-49", "Al più licenza media 25-49", "Occupati 25-64", "Disoccupazione",
@@ -317,7 +382,7 @@ function studioLavoro() {
         "più alto della", "più basso della", "in linea con la")} media regionale
       (${perc(lav[p].occupati_25_64_pct)} contro ${perc(lav[L].occupati_25_64_pct)}).
       Se questa combinazione è reale, deve vedersi anche nei redditi dichiarati, che vengono
-      da un'altra fonte: molti redditi nelle fasce medie, pochi in quelle alte. La sezione 5
+      da un'altra fonte: molti redditi nelle fasce medie, pochi in quelle alte. La sezione 6
       permette di verificarlo.</div>
     ${occ ? `
     <h3 class="sezione">In che settori lavorano i residenti</h3>
@@ -376,7 +441,7 @@ function redditi() {
   const oscurate = comuni().filter(a => Object.keys(v[a].celle_oscurate || {}).length);
   const mediaL = v[L].reddito_medio_da === "totale" ? v[L].reddito_medio : null;
   return `
-    <h2 class="sezione" id="redditi">5. Redditi</h2>
+    <h2 class="sezione" id="redditi">6. Redditi</h2>
     <div class="sottotitolo">Contribuenti per fascia di reddito complessivo dichiarato, in
       percentuale (redditi ${r.anno_imposta}, dichiarazioni ${r.anno_imposta + 1}).</div>
     <div class="card"><div class="grafico"><canvas id="g-redditi"></canvas></div></div>
@@ -393,7 +458,7 @@ function redditi() {
         ? `<strong>Il reddito medio più basso di quello lombardo non dipende da una quota
            maggiore di redditi bassi, ma da una quota minore di redditi alti.</strong> È
            quello che ci si aspetta da un comune con molti occupati e pochi laureati
-           (sezione 4): due fonti indipendenti, ISTAT e MEF, danno lo stesso quadro.` : ""}</div>
+           (sezione 5): due fonti indipendenti, ISTAT e MEF, danno lo stesso quadro.` : ""}</div>
     <div class="cautela"><strong>Un reddito sotto i 10 mila euro non vuol dire povertà.</strong>
       È il reddito di un singolo dichiarante, non della famiglia: comprende studenti con
       lavori saltuari, lavoratori part-time, pensionati con altri redditi in famiglia.
@@ -417,7 +482,7 @@ function pendolari() {
   const p = D.pieve, L = D.lombardia;
   const fuori = Object.fromEntries(tutte().map(a => [a, pen.valori[a].fuori_comune_pct]));
   return `
-    <h2 class="sezione">6. Pendolari</h2>
+    <h2 class="sezione">7. Pendolari</h2>
     <div class="sottotitolo">Residenti che ogni giorno si spostano per studio o lavoro, e
       quanti di loro escono dal comune (${pen.anno}).</div>
     ${tabella(["", "Si spostano ogni giorno", "Escono dal comune"],
@@ -504,6 +569,44 @@ function grafici() {
         scales: { y: { ticks: { callback: v => v + "%" } } } }
     });
   }
+
+  // Quota di stranieri anno per anno, stesso stile del grafico della popolazione
+  const ss = (D.stranieri || {}).serie;
+  if (ss && document.getElementById("g-stranieri")) {
+    const anniS = Object.keys(ss[D.pieve]).sort();
+    let k = 0;
+    new Chart(document.getElementById("g-stranieri"), {
+      type: "line",
+      data: { labels: anniS, datasets: tutte().map(a => ({
+        label: nome(a), data: anniS.map(y => ss[a][y] ?? null),
+        borderColor: colore(a, a === D.pieve || a === D.lombardia ? 0 : k++),
+        backgroundColor: "transparent", borderWidth: a === D.pieve ? 3.5 : 1.5,
+        borderDash: a === D.lombardia ? [6, 4] : [],
+        pointRadius: a === D.pieve ? 3 : 0, tension: .2 })) },
+      options: { maintainAspectRatio: false,
+        plugins: { legend: legenda, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${perc(c.raw)}` } } },
+        scales: { y: { ticks: { callback: v => v + "%" } } } }
+    });
+  }
+
+  // Primi paesi a Pieve contro la Lombardia, in % sul totale degli stranieri
+  const cz = D.cittadinanze;
+  if (cz && document.getElementById("g-paesi")) {
+    new Chart(document.getElementById("g-paesi"), {
+      type: "bar",
+      data: { labels: cz.paesi.map(x => x.nome), datasets: [
+        { label: nome(D.pieve), data: cz.paesi.map(x => x.pieve_pct),
+          backgroundColor: COLORE_PIEVE, borderRadius: 3 },
+        { label: nome(D.lombardia), data: cz.paesi.map(x => x.lombardia_pct),
+          backgroundColor: "#C9CCD4", borderRadius: 3 }] },
+      options: { indexAxis: "y", maintainAspectRatio: false,
+        plugins: { legend: legenda, tooltip: { callbacks: { label: c => {
+          const x = cz.paesi[c.dataIndex];
+          return c.datasetIndex === 0 ? `${c.dataset.label}: ${perc(c.raw)} (${num(x.pieve)} residenti)`
+            : `${c.dataset.label}: ${perc(c.raw)}`; } } } },
+        scales: { x: { ticks: { callback: v => v + "%" } } } }
+    });
+  }
 }
 
 async function avvia() {
@@ -515,7 +618,7 @@ async function avvia() {
     return;
   }
   document.getElementById("contenuto").innerHTML =
-    sintesi() + quantiSiamo() + eta() + famiglie() + studioLavoro() + redditi() + pendolari();
+    sintesi() + quantiSiamo() + eta() + famiglie() + stranieri() + studioLavoro() + redditi() + pendolari();
   document.getElementById("fonti").innerHTML = `<strong>Fonti.</strong> ${esc(D.fonte)}.
     Dati aggiornati il ${new Date(D.aggiornato).toLocaleDateString("it-IT")} dal workflow
     annuale del progetto. Pieve Emanuele è confrontata con gli stessi comuni vicini della

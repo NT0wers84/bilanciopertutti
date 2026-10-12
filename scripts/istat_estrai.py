@@ -104,10 +104,13 @@ TABELLE = {
     "previsioni": ("165_1245_DF_DCIS_PREVCOM_4", None, {}),
     # Stranieri per paese di cittadinanza: un flusso per tutti i comuni, uno
     # per Italia, regioni e province. Da verificare con --ispeziona.
-    "cittadinanze": ("29_317_DF_DCIS_POPSTRCIT1_23", "29_317_DF_DCIS_POPSTRCIT1_1", {}),
+    "cittadinanze": ("29_317_DF_DCIS_POPSTRCIT1_23", "29_317_DF_DCIS_POPSTRCIT1_1",
+                     {"SEX": "9"}),
     # Italiani dalla nascita, italiani per acquisizione e stranieri (censimento)
-    "cittadinanza_acquisita": ("DF_DCSS_MIGR_BACKG_PAR_TV_1_COM", None, {}),
+    "cittadinanza_acquisita": ("DF_DCSS_MIGR_BACKG_PAR_TV_1_COM", None,
+                               {"GENDER": "T"}),
 }
+CON_ETICHETTE = {"cittadinanze"}
 
 
 class Bloccato(Exception):
@@ -261,10 +264,12 @@ def scarica_tutto(con_etichette: bool, solo: list[str] | None = None) -> dict:
             continue
         log.info(f"· {nome}")
         try:
-            st = struttura(flusso_comuni, con_etichette)
+            # I nomi dei paesi servono alla pagina, non solo all'ispezione
+            etichette = con_etichette or nome in CON_ETICHETTE
+            st = struttura(flusso_comuni, etichette)
             if flusso_regione:
                 righe = dati(flusso_comuni, st, list(COMUNI), filtri)
-                st_reg = struttura(flusso_regione, con_etichette)
+                st_reg = struttura(flusso_regione, etichette)
                 righe += dati(flusso_regione, st_reg, [LOMBARDIA], filtri)
             else:
                 righe = dati(flusso_comuni, st, list(AREE), filtri)
@@ -329,9 +334,77 @@ def ind_popolazione(righe) -> dict:
 
 def ind_stranieri(righe, popolazione: dict) -> dict:
     anno = anno_completo(righe)
+    anni = sorted({r["TIME_PERIOD"] for r in righe})
     return {"anno": anno, "valori": {
         a: pct(somma(righe, REF_AREA=a, TIME_PERIOD=anno),
-               popolazione["serie"][a].get(anno)) for a in AREE}}
+               popolazione["serie"][a].get(anno)) for a in AREE},
+        # quota per anno: stessa fonte, stesso giorno (1° gennaio)
+        "serie": {a: {y: pct(somma(righe, REF_AREA=a, TIME_PERIOD=y),
+                             popolazione["serie"][a].get(y))
+                      for y in anni if popolazione["serie"][a].get(y)}
+                  for a in AREE}}
+
+
+# Le aree geografiche di cittadinanza, come le aggrega ISTAT. Africa, Asia e
+# America sono la somma delle loro sottoaree; ciò che resta del totale
+# («Mondo») va in «Oceania, apolidi e altro».
+AREE_CITTADINANZA = [
+    ("Unione europea", lambda c: c == "EU28"),
+    ("Altri paesi europei", lambda c: c == "XEUR_NEU28_OTH"),
+    ("Africa", lambda c: c.startswith("AFR_")),
+    ("Asia", lambda c: c.startswith(("ASI_", "XASI_"))),
+    ("America", lambda c: c.startswith("AME_")),
+]
+PAESI_MOSTRATI = 10
+
+
+def ind_cittadinanze(righe, etichette: dict) -> dict:
+    """Primi paesi di cittadinanza a Pieve, con il peso degli stessi paesi in
+    Lombardia, e la ripartizione per area geografica in tutti i comuni.
+    I paesi hanno codici di due lettere; gli altri codici sono aggregati."""
+    anno = anno_completo(righe)
+    r_anno = [r for r in righe if r["TIME_PERIOD"] == anno]
+    totale = {a: somma(r_anno, REF_AREA=a, CITIZENSHIP="WORLD") for a in AREE}
+    per_codice = defaultdict(lambda: defaultdict(float))
+    for r in r_anno:
+        per_codice[r["REF_AREA"]][r.get("CITIZENSHIP")] += r["OBS_VALUE"] or 0
+    paesi_pieve = sorted(((c, v) for c, v in per_codice[PIEVE].items()
+                          if len(c or "") == 2 and v > 0), key=lambda x: -x[1])
+    paesi = [{"codice": c, "nome": etichette.get(c, c),
+              "pieve": round(v), "pieve_pct": pct(v, totale[PIEVE]),
+              "lombardia_pct": pct(per_codice[LOMBARDIA].get(c, 0), totale[LOMBARDIA])}
+             for c, v in paesi_pieve[:PAESI_MOSTRATI]]
+    aree = {}
+    for a in AREE:
+        quote, assegnati = {}, 0.0
+        for nome, appartiene in AREE_CITTADINANZA:
+            v = sum(x for c, x in per_codice[a].items() if c and appartiene(c))
+            quote[nome] = pct(v, totale[a])
+            assegnati += v
+        resto = totale[a] - assegnati
+        if resto < -0.005 * totale[a]:
+            log.warning(f"  cittadinanze {AREE[a]}: le aree sommano più del totale "
+                        f"({assegnati:.0f} > {totale[a]:.0f}): aggregati sovrapposti?")
+        quote["Oceania, apolidi e altro"] = pct(max(resto, 0), totale[a])
+        aree[a] = {"stranieri": round(totale[a]), "quote_pct": quote}
+    return {"anno": anno, "paesi": paesi, "aree": aree,
+            "paesi_a_pieve": len(paesi_pieve)}
+
+
+def ind_cittadinanza_acquisita(righe) -> dict:
+    """Italiani per acquisizione e stranieri sul totale dei residenti. Chi
+    diventa italiano esce dal conto degli stranieri: insieme danno quanti
+    residenti hanno una storia di migrazione propria o della famiglia."""
+    righe = [r for r in righe if r.get("PLACE_BIRTH_PAR", "ALL") == "ALL"]
+    anno = anno_completo(righe)
+    valori = {}
+    for a in AREE:
+        v = lambda ind: somma(righe, REF_AREA=a, TIME_PERIOD=anno, INDICATOR=ind)
+        tot, acquisiti, stranieri = v("RESPOP_AV"), v("NATIT"), v("RESFORPOP_AV")
+        valori[a] = {"italiani_acquisiti_pct": pct(acquisiti, tot),
+                     "stranieri_pct": pct(stranieri, tot),
+                     "insieme_pct": pct(acquisiti + stranieri, tot)}
+    return {"anno": anno, "valori": valori}
 
 
 def ind_istruzione(righe) -> dict:
@@ -470,11 +543,19 @@ def calcola(tab: dict, precedente: dict) -> dict:
         ind["occupati"] = ind_occupati(r("occupati_settore"), r("occupati_posizione"))
     if r("previsioni"):
         ind["previsioni"] = ind_previsioni(r("previsioni"))
+    if r("cittadinanze"):
+        st = tab["cittadinanze"]["struttura"]
+        cl = dict(st.get("dimensioni", [])).get("CITIZENSHIP")
+        ind["cittadinanze"] = ind_cittadinanze(r("cittadinanze"),
+                                               st.get("etichette", {}).get(cl, {}))
+    if r("cittadinanza_acquisita"):
+        ind["cittadinanza_acquisita"] = ind_cittadinanza_acquisita(r("cittadinanza_acquisita"))
     return ind
 
 
 BLOCCHI = ("popolazione", "stranieri", "istruzione", "lavoro", "pendolari",
-           "famiglie", "occupati", "previsioni", "redditi")
+           "famiglie", "occupati", "previsioni", "redditi",
+           "cittadinanze", "cittadinanza_acquisita")
 
 
 # ── Ispezione ────────────────────────────────────────────────────────────────

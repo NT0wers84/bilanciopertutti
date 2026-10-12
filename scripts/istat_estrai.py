@@ -102,6 +102,11 @@ TABELLE = {
     "occupati_settore": ("DF_DCSS_EMPLP_2_COM", None, {}),
     "occupati_posizione": ("DF_DCSS_EMPLP_1_COM", None, {}),
     "previsioni": ("165_1245_DF_DCIS_PREVCOM_4", None, {}),
+    # Stranieri per paese di cittadinanza: un flusso per tutti i comuni, uno
+    # per Italia, regioni e province. Da verificare con --ispeziona.
+    "cittadinanze": ("29_317_DF_DCIS_POPSTRCIT1_23", "29_317_DF_DCIS_POPSTRCIT1_1", {}),
+    # Italiani dalla nascita, italiani per acquisizione e stranieri (censimento)
+    "cittadinanza_acquisita": ("DF_DCSS_MIGR_BACKG_PAR_TV_1_COM", None, {}),
 }
 
 
@@ -245,13 +250,15 @@ def dati(flusso: str, st: dict, aree: list[str], filtri: dict) -> list[dict]:
     return righe
 
 
-def scarica_tutto(con_etichette: bool) -> dict:
+def scarica_tutto(con_etichette: bool, solo: list[str] | None = None) -> dict:
     """{nome tabella: {"righe": [...], "struttura": {...}}}. Un blocco
     esplicito ferma tutto; una tabella che non risponde resta vuota e non
     ferma le altre: dopo dieci minuti di download sarebbe uno spreco buttare
     via nove tabelle buone per colpa della decima."""
     esito = {}
     for nome, (flusso_comuni, flusso_regione, filtri) in TABELLE.items():
+        if solo and nome not in solo:
+            continue
         log.info(f"· {nome}")
         try:
             st = struttura(flusso_comuni, con_etichette)
@@ -439,7 +446,7 @@ def calcola(tab: dict, precedente: dict) -> dict:
     manca dal risultato e main() tiene quello salvato la volta prima. ISTAT
     a volte chiude la connessione proprio sulla tabella più pesante: buttare
     via per questo tutte le altre (e i redditi) non ha senso."""
-    r = lambda nome: tab[nome]["righe"]
+    r = lambda nome: tab.get(nome, {}).get("righe", [])
     ind = {}
     if r("popolazione_totale") and r("popolazione_eta"):
         # Il totale sta in entrambe le tabelle: dalla seconda solo le età,
@@ -490,7 +497,17 @@ def descrivi(nome: str, t: dict) -> None:
             continue
         codici = Counter(r.get(dim) for r in righe)
         nomi = st["etichette"].get(cl, {})
-        elenco = "; ".join(f"{c}={nomi.get(c, '?')}" for c in sorted(codici, key=str)[:25])
+        if len(codici) > 25:
+            # Tanti codici (paesi, età): i più pesanti a Pieve nell'ultimo anno
+            ultimo = max(r["TIME_PERIOD"] for r in righe)
+            peso = Counter()
+            for r in righe:
+                if r["REF_AREA"] == PIEVE and r["TIME_PERIOD"] == ultimo:
+                    peso[r.get(dim)] += r["OBS_VALUE"] or 0
+            ordine = [c for c, _ in peso.most_common()] + sorted(set(codici) - set(peso), key=str)
+        else:
+            ordine = sorted(codici, key=str)
+        elenco = "; ".join(f"{c}={nomi.get(c, '?')}" for c in ordine[:25])
         altro = f" (+{len(codici) - 25})" if len(codici) > 25 else ""
         log.info(f"  {dim}: {elenco}{altro}")
     pieve = [r for r in righe if r["REF_AREA"] == PIEVE][:3]
@@ -530,10 +547,17 @@ def main() -> int:
                       help="mostra cosa c'è nelle tabelle, non scrive niente")
     modo.add_argument("--applica", action="store_true",
                       help=f"scrive {DESTINAZIONE}")
+    p.add_argument("--tabelle", default="",
+                   help="solo queste tabelle, separate da virgola (es. cittadinanze); "
+                        "le altre restano come sono")
     args = p.parse_args()
+    solo = [t.strip() for t in args.tabelle.split(",") if t.strip()] or None
+    if solo and (ignote := [t for t in solo if t not in TABELLE]):
+        log.error(f"Tabelle sconosciute: {ignote}. Disponibili: {', '.join(TABELLE)}")
+        return 1
 
     try:
-        tab = scarica_tutto(con_etichette=args.ispeziona)
+        tab = scarica_tutto(con_etichette=args.ispeziona, solo=solo)
     except Bloccato as e:
         log.error(f"\nISTAT RIFIUTA LE RICHIESTE: {e}")
         log.error("È un blocco per troppe richieste: non rilanciare prima di "
@@ -543,6 +567,9 @@ def main() -> int:
     if args.ispeziona:
         for nome, t in tab.items():
             descrivi(nome, t)
+        # Ispezione di poche tabelle: basta vederle, il resto non si ricalcola
+        if solo:
+            return 0
 
     precedente = (json.loads(DESTINAZIONE.read_text(encoding="utf-8"))
                   if DESTINAZIONE.exists() else {})

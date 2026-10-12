@@ -23,6 +23,10 @@ on:
         type: boolean
         required: false
         default: true
+      tabelle:
+        description: 'Solo queste tabelle, separate da virgola (vuoto = tutte). Es. cittadinanze,cittadinanza_acquisita'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -48,10 +52,11 @@ jobs:
       # Nel giro programmato inputs.solo_ispezione è vuoto: si applica.
       - name: Scarica e calcola i dati ISTAT
         run: |
+          TABELLE="${{ inputs.tabelle }}"
           if [ "${{ inputs.solo_ispezione }}" = "true" ]; then
-            python scripts/istat_estrai.py --ispeziona
+            python scripts/istat_estrai.py --ispeziona --tabelle "$TABELLE"
           else
-            python scripts/istat_estrai.py --applica
+            python scripts/istat_estrai.py --applica --tabelle "$TABELLE"
           fi
 
       # Anche se il passo prima è rosso: se ISTAT è andato e solo il file del

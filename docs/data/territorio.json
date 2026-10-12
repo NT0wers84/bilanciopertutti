@@ -12,198 +12,87 @@
  },
  "pieve": "015173",
  "lombardia": "ITC4",
- "cittadinanze": {
-  "anno": "2025",
-  "paesi": [
-   {
-    "codice": "RO",
-    "nome": "Romania",
-    "pieve": 276,
-    "pieve_pct": 13.9,
-    "lombardia_pct": 13.8
-   },
-   {
-    "codice": "EG",
-    "nome": "Egitto",
-    "pieve": 189,
-    "pieve_pct": 9.5,
-    "lombardia_pct": 9.0
-   },
-   {
-    "codice": "LK",
-    "nome": "Sri Lanka (ex Ceylon)",
-    "pieve": 155,
-    "pieve_pct": 7.8,
-    "lombardia_pct": 2.8
-   },
-   {
-    "codice": "PE",
-    "nome": "Perù",
-    "pieve": 131,
-    "pieve_pct": 6.6,
-    "lombardia_pct": 4.0
-   },
-   {
-    "codice": "AL",
-    "nome": "Albania",
-    "pieve": 116,
-    "pieve_pct": 5.8,
-    "lombardia_pct": 6.7
-   },
-   {
-    "codice": "UA",
-    "nome": "Ucraina",
-    "pieve": 101,
-    "pieve_pct": 5.1,
-    "lombardia_pct": 5.5
-   },
-   {
-    "codice": "CN",
-    "nome": "Cina",
-    "pieve": 94,
-    "pieve_pct": 4.7,
-    "lombardia_pct": 5.9
-   },
-   {
-    "codice": "EC",
-    "nome": "Ecuador",
-    "pieve": 87,
-    "pieve_pct": 4.4,
-    "lombardia_pct": 2.1
-   },
-   {
-    "codice": "PH",
-    "nome": "Filippine",
-    "pieve": 77,
-    "pieve_pct": 3.9,
-    "lombardia_pct": 4.3
-   },
-   {
-    "codice": "LY",
-    "nome": "Libia",
-    "pieve": 59,
-    "pieve_pct": 3.0,
-    "lombardia_pct": 0.0
-   }
-  ],
-  "aree": {
-   "015173": {
-    "stranieri": 1987,
-    "quote_pct": {
-     "Unione europea": 17.7,
-     "Altri paesi europei": 14.8,
-     "Africa": 25.8,
-     "Asia": 25.8,
-     "America": 16.0,
-     "Oceania, apolidi e altro": 0.0
-    }
-   },
-   "015189": {
-    "stranieri": 5353,
-    "quote_pct": {
-     "Unione europea": 13.7,
-     "Altri paesi europei": 11.8,
-     "Africa": 30.7,
-     "Asia": 26.4,
-     "America": 17.4,
-     "Oceania, apolidi e altro": 0.0
-    }
-   },
-   "015015": {
-    "stranieri": 806,
-    "quote_pct": {
-     "Unione europea": 25.8,
-     "Altri paesi europei": 18.4,
-     "Africa": 3.0,
-     "Asia": 44.4,
-     "America": 8.3,
-     "Oceania, apolidi e altro": 0.1
-    }
-   },
-   "015115": {
-    "stranieri": 1052,
-    "quote_pct": {
-     "Unione europea": 21.2,
-     "Altri paesi europei": 14.8,
-     "Africa": 18.8,
-     "Asia": 39.0,
-     "America": 6.1,
-     "Oceania, apolidi e altro": 0.1
-    }
-   },
-   "015125": {
-    "stranieri": 1294,
-    "quote_pct": {
-     "Unione europea": 17.8,
-     "Altri paesi europei": 11.7,
-     "Africa": 22.9,
-     "Asia": 22.9,
-     "America": 24.8,
-     "Oceania, apolidi e altro": 0.0
-    }
-   },
-   "015159": {
-    "stranieri": 1198,
-    "quote_pct": {
-     "Unione europea": 18.2,
-     "Altri paesi europei": 13.6,
-     "Africa": 18.4,
-     "Asia": 33.6,
-     "America": 16.1,
-     "Oceania, apolidi e altro": 0.0
-    }
-   },
-   "ITC4": {
-    "stranieri": 1221520,
-    "quote_pct": {
-     "Unione europea": 18.5,
-     "Altri paesi europei": 17.2,
-     "Africa": 26.0,
-     "Asia": 25.9,
-     "America": 12.3,
-     "Oceania, apolidi e altro": 0.0
-    }
-   }
-  },
-  "paesi_a_pieve": 86
- },
- "cittadinanza_acquisita": {
-  "anno": "2023",
+ "stranieri": {
+  "anno": "2026",
   "valori": {
+   "015173": 13.2,
+   "015189": 13.6,
+   "015015": 10.5,
+   "015115": 11.5,
+   "015125": 12.4,
+   "015159": 8.6,
+   "ITC4": 12.5
+  },
+  "serie": {
    "015173": {
-    "italiani_acquisiti_pct": 5.3,
-    "stranieri_pct": 12.0,
-    "insieme_pct": 17.3
+    "2019": 11.2,
+    "2020": 11.5,
+    "2021": 11.5,
+    "2022": 11.4,
+    "2023": 11.7,
+    "2024": 12.0,
+    "2025": 12.6,
+    "2026": 13.2
    },
    "015189": {
-    "italiani_acquisiti_pct": 5.3,
-    "stranieri_pct": 12.4,
-    "insieme_pct": 17.7
+    "2019": 11.0,
+    "2020": 11.3,
+    "2021": 12.0,
+    "2022": 11.8,
+    "2023": 12.2,
+    "2024": 12.4,
+    "2025": 12.9,
+    "2026": 13.6
    },
    "015015": {
-    "italiani_acquisiti_pct": 2.7,
-    "stranieri_pct": 10.5,
-    "insieme_pct": 13.2
+    "2019": 10.4,
+    "2020": 10.6,
+    "2021": 10.9,
+    "2022": 10.9,
+    "2023": 10.9,
+    "2024": 10.5,
+    "2025": 10.2,
+    "2026": 10.5
    },
    "015115": {
-    "italiani_acquisiti_pct": 2.7,
-    "stranieri_pct": 11.3,
-    "insieme_pct": 14.1
+    "2019": 10.0,
+    "2020": 10.3,
+    "2021": 11.4,
+    "2022": 11.0,
+    "2023": 11.0,
+    "2024": 11.3,
+    "2025": 11.5,
+    "2026": 11.5
    },
    "015125": {
-    "italiani_acquisiti_pct": 4.0,
-    "stranieri_pct": 12.4,
-    "insieme_pct": 16.5
+    "2019": 10.9,
+    "2020": 11.4,
+    "2021": 12.3,
+    "2022": 12.3,
+    "2023": 12.3,
+    "2024": 12.4,
+    "2025": 12.5,
+    "2026": 12.4
    },
    "015159": {
-    "italiani_acquisiti_pct": 3.0,
-    "stranieri_pct": 8.0,
-    "insieme_pct": 11.1
+    "2019": 7.8,
+    "2020": 8.1,
+    "2021": 8.6,
+    "2022": 7.9,
+    "2023": 8.1,
+    "2024": 8.0,
+    "2025": 8.3,
+    "2026": 8.6
    },
    "ITC4": {
-    "italiani_acquisiti_pct": 4.6,
-    "stranieri_pct": 12.0,
-    "insieme_pct": 16.6
+    "2019": 11.3,
+    "2020": 11.5,
+    "2021": 11.9,
+    "2022": 11.6,
+    "2023": 11.8,
+    "2024": 12.0,
+    "2025": 12.2,
+    "2026": 12.5
    }
   }
  },
@@ -498,18 +387,6 @@
     "85-89": 2.74,
     "90+": 1.51
    }
-  }
- },
- "stranieri": {
-  "anno": "2026",
-  "valori": {
-   "015173": 13.2,
-   "015189": 13.6,
-   "015015": 10.5,
-   "015115": 11.5,
-   "015125": 12.4,
-   "015159": 8.6,
-   "ITC4": 12.5
   }
  },
  "istruzione": {
@@ -815,6 +692,201 @@
      "under15_pct": 11.2,
      "eta_media": 50.2
     }
+   }
+  }
+ },
+ "cittadinanze": {
+  "anno": "2025",
+  "paesi": [
+   {
+    "codice": "RO",
+    "nome": "Romania",
+    "pieve": 276,
+    "pieve_pct": 13.9,
+    "lombardia_pct": 13.8
+   },
+   {
+    "codice": "EG",
+    "nome": "Egitto",
+    "pieve": 189,
+    "pieve_pct": 9.5,
+    "lombardia_pct": 9.0
+   },
+   {
+    "codice": "LK",
+    "nome": "Sri Lanka (ex Ceylon)",
+    "pieve": 155,
+    "pieve_pct": 7.8,
+    "lombardia_pct": 2.8
+   },
+   {
+    "codice": "PE",
+    "nome": "Perù",
+    "pieve": 131,
+    "pieve_pct": 6.6,
+    "lombardia_pct": 4.0
+   },
+   {
+    "codice": "AL",
+    "nome": "Albania",
+    "pieve": 116,
+    "pieve_pct": 5.8,
+    "lombardia_pct": 6.7
+   },
+   {
+    "codice": "UA",
+    "nome": "Ucraina",
+    "pieve": 101,
+    "pieve_pct": 5.1,
+    "lombardia_pct": 5.5
+   },
+   {
+    "codice": "CN",
+    "nome": "Cina",
+    "pieve": 94,
+    "pieve_pct": 4.7,
+    "lombardia_pct": 5.9
+   },
+   {
+    "codice": "EC",
+    "nome": "Ecuador",
+    "pieve": 87,
+    "pieve_pct": 4.4,
+    "lombardia_pct": 2.1
+   },
+   {
+    "codice": "PH",
+    "nome": "Filippine",
+    "pieve": 77,
+    "pieve_pct": 3.9,
+    "lombardia_pct": 4.3
+   },
+   {
+    "codice": "LY",
+    "nome": "Libia",
+    "pieve": 59,
+    "pieve_pct": 3.0,
+    "lombardia_pct": 0.0
+   }
+  ],
+  "aree": {
+   "015173": {
+    "stranieri": 1987,
+    "quote_pct": {
+     "Unione europea": 17.7,
+     "Altri paesi europei": 14.8,
+     "Africa": 25.8,
+     "Asia": 25.8,
+     "America": 16.0,
+     "Oceania, apolidi e altro": 0.0
+    }
+   },
+   "015189": {
+    "stranieri": 5353,
+    "quote_pct": {
+     "Unione europea": 13.7,
+     "Altri paesi europei": 11.8,
+     "Africa": 30.7,
+     "Asia": 26.4,
+     "America": 17.4,
+     "Oceania, apolidi e altro": 0.0
+    }
+   },
+   "015015": {
+    "stranieri": 806,
+    "quote_pct": {
+     "Unione europea": 25.8,
+     "Altri paesi europei": 18.4,
+     "Africa": 3.0,
+     "Asia": 44.4,
+     "America": 8.3,
+     "Oceania, apolidi e altro": 0.1
+    }
+   },
+   "015115": {
+    "stranieri": 1052,
+    "quote_pct": {
+     "Unione europea": 21.2,
+     "Altri paesi europei": 14.8,
+     "Africa": 18.8,
+     "Asia": 39.0,
+     "America": 6.1,
+     "Oceania, apolidi e altro": 0.1
+    }
+   },
+   "015125": {
+    "stranieri": 1294,
+    "quote_pct": {
+     "Unione europea": 17.8,
+     "Altri paesi europei": 11.7,
+     "Africa": 22.9,
+     "Asia": 22.9,
+     "America": 24.8,
+     "Oceania, apolidi e altro": 0.0
+    }
+   },
+   "015159": {
+    "stranieri": 1198,
+    "quote_pct": {
+     "Unione europea": 18.2,
+     "Altri paesi europei": 13.6,
+     "Africa": 18.4,
+     "Asia": 33.6,
+     "America": 16.1,
+     "Oceania, apolidi e altro": 0.0
+    }
+   },
+   "ITC4": {
+    "stranieri": 1221520,
+    "quote_pct": {
+     "Unione europea": 18.5,
+     "Altri paesi europei": 17.2,
+     "Africa": 26.0,
+     "Asia": 25.9,
+     "America": 12.3,
+     "Oceania, apolidi e altro": 0.0
+    }
+   }
+  },
+  "paesi_a_pieve": 86
+ },
+ "cittadinanza_acquisita": {
+  "anno": "2023",
+  "valori": {
+   "015173": {
+    "italiani_acquisiti_pct": 5.3,
+    "stranieri_pct": 12.0,
+    "insieme_pct": 17.3
+   },
+   "015189": {
+    "italiani_acquisiti_pct": 5.3,
+    "stranieri_pct": 12.4,
+    "insieme_pct": 17.7
+   },
+   "015015": {
+    "italiani_acquisiti_pct": 2.7,
+    "stranieri_pct": 10.5,
+    "insieme_pct": 13.2
+   },
+   "015115": {
+    "italiani_acquisiti_pct": 2.7,
+    "stranieri_pct": 11.3,
+    "insieme_pct": 14.1
+   },
+   "015125": {
+    "italiani_acquisiti_pct": 4.0,
+    "stranieri_pct": 12.4,
+    "insieme_pct": 16.5
+   },
+   "015159": {
+    "italiani_acquisiti_pct": 3.0,
+    "stranieri_pct": 8.0,
+    "insieme_pct": 11.1
+   },
+   "ITC4": {
+    "italiani_acquisiti_pct": 4.6,
+    "stranieri_pct": 12.0,
+    "insieme_pct": 16.6
    }
   }
  }

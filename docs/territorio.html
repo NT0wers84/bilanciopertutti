@@ -72,6 +72,16 @@
   footer { margin-top: 40px; background: var(--carta); border-top: 1px solid var(--bordo);
            padding: 24px 16px; font-size: 12.5px; color: var(--grigio); }
   footer p { margin-bottom: 8px; max-width: 820px; }
+
+  /* Invito al canale Telegram, come nel progetto gemello «Albo in chiaro» */
+  .telegram-cta { margin: 22px auto 6px; text-align: center; }
+  .telegram-cta p { font-size: 12px; font-weight: 600; color: var(--grigio); margin: 0 auto 10px;
+    text-transform: uppercase; letter-spacing: .07em; max-width: none; }
+  .telegram-cta a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px;
+    font-weight: 600; padding: 9px 18px; background: var(--blu-scuro); color: #fff;
+    border-radius: 8px; text-decoration: none; }
+  .telegram-cta a:hover { opacity: .9; }
+  .telegram-cta svg { width: 16px; height: 16px; }
 </style>
 </head>
 <body>
@@ -106,6 +116,15 @@
        l'amministrazione: nessuno di questi numeri dipende dalle scelte del Comune nel breve
        periodo. Servono come contesto per le altre pagine.</p>
     <p id="fonti"></p>
+    <div class="telegram-cta">
+      <p>Ricevi le spese su Telegram</p>
+      <a href="https://t.me/contiinchiaropieve" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 4 3 11l6 2.5M21 4l-3.5 16-8.5-6.5M21 4 9 13.5v5.5l3-3.5"/></svg>
+        Segui il canale
+      </a>
+    </div>
   </div>
 </footer>
 
